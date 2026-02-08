@@ -1,81 +1,70 @@
 ## 工业界最新动向
 
-**Linux From Scratch (LFS) 宣布停止支持 System V 版本**
-久负盛名的 Linux From Scratch (LFS) 项目宣布将不再维护基于 System V 的版本，未来将全面转向 systemd。官方表示这一决定主要是由于维护工作量巨大，目前所有编辑均为志愿者，面对上游数千个软件包的更新已不堪重负。这一变动标志着在 DIY Linux 社区中，传统的 init 系统正逐渐让位于现代化的初始化系统。
+**Wine 11.2 发布，持续优化 Linux 上的 Adobe Photoshop 体验**
+Wine 社区发布了 11.2 开发版本，其 Staging 分支引入了更多针对 Adobe Photoshop 的兼容性补丁。该版本致力于解决在 Linux 环境下运行大型专业软件时的图形渲染和 API 调用问题。随着补丁的不断完善，Linux 用户在无需虚拟机的情况下运行高性能创意软件的体验将得到显著提升。
+原文：[Wine-Staging 11.2 Brings More Patches to Help Adobe Photoshop on Linux](https://www.phoronix.com/news/Wine-Staging-11.2)
+
+**Linux From Scratch (LFS) 宣布放弃 System V 版本**
+著名的「从零开始构建 Linux」项目 LFS 宣布将停止维护 System V 初始化系统的版本，未来将全面转向 systemd。官方表示，由于上游软件包更新量巨大，完全依赖志愿者的编辑团队已无法承受同时维护两套初始化系统的负担。这一决定标志着在自定义系统构建领域，传统的 System V 正在加速退出历史舞台。
 原文：[Linux from Scratch to drop System V versions](https://lwn.net/Articles/1057509/)
 
-**ReKindle：专为电子墨水屏设计的 Web 操作系统**
-ReKindle 是一款专门针对 E-ink 电子墨水设备优化的 Web 操作系统，旨在提升低刷新率屏幕上的阅读与交互体验。该系统通过 Web 技术提供了轻量化的界面，试图解决传统移动操作系统在电子书阅读器上运行缓慢的问题。它为各类电子阅读器和低功耗显示设备提供了一个统一且高效的软件平台。
+**ReKindle：专为电子墨水屏设备设计的 Web 操作系统**
+ReKindle 是一款新兴的基于 Web 技术的操作系统，旨在为各类 E-ink（电子墨水屏）设备提供流畅的交互体验。该系统针对电子墨水屏刷新率低的特性进行了深度优化，通过轻量化的架构提升响应速度。这为旧款电子阅读器的重获新生以及新型低功耗设备的开发提供了新的软件平台。
 原文：[ReKindle – web-based operating system designed specifically for E-ink devices](https://rekindle.ink)
 
-**Wine 11.2 发布，持续提升跨平台兼容性**
-Wine 项目发布了 11.2 版本，进一步增强了在 Linux、BSD 和 macOS 上运行 Windows 应用程序的能力。此版本包含多项性能优化和错误修复，特别是在处理复杂图形应用和办公软件方面表现更佳。对于希望从 Windows 迁移到 Linux 平台的专业用户和游戏玩家来说，这依然是不可或缺的兼容层工具。
-原文：[Wine 11.2 – Run Windows Applications on Linux, BSD, Solaris and macOS](https://gitlab.winehq.org/wine/wine/-/releases/wine-11.2)
-
-**Matchlock：为 AI 智能体打造的 Linux 沙箱环境**
-Matchlock 是一款基于 Linux 的新型沙箱工具，专门用于隔离和运行 AI 智能体生成的代码。随着 AI 自动编程的普及，如何安全地执行未经审核的代码成为挑战，Matchlock 通过内核级隔离确保了执行环境的安全。该工具为开发者在构建自动化 AI 工作流时提供了一层关键的安全保障。
-原文：[Matchlock: Linux-based sandboxing for AI agents](https://github.com/jingkaihe/matchlock)
-
-**BreezyBox：无需 Linux 内核的 ESP32 嵌入式操作系统**
-BreezyBox 为 ESP32-S3 芯片提供了一个类似 DOS 的操作环境，完全绕过了重量级的 Linux 内核。它内置了 Shell、应用安装程序和快速文本驱动，旨在为嵌入式开发提供极致的响应速度和低开销体验。这对于追求老派编程体验或在资源受限硬件上进行高性能开发的工程师极具吸引力。
+**BreezyBox：在 ESP32 上实现无需 Linux 的类 DOS 交互环境**
+开发者推出了 BreezyBox 项目，在 ESP32-S3 微控制器上实现了包含 Shell、应用安装程序和 Vi 编辑器的完整环境，且不依赖 Linux 内核。该项目通过自定义的快速文本模式驱动程序，在嵌入式硬件上复刻了早期 DOS 时代的编程体验。这种「去内核化」的尝试为资源受限的物联网设备提供了一种极简且高效的开发思路。
 原文：[Show HN: Look Ma, No Linux: Shell, App Installer, Vi, Cc on ESP32-S3 / BreezyBox](https://github.com/valdanylchuk/breezydemo)
 
-**Portview：轻量级 Linux 端口诊断工具**
-Portview 是一款仅 930 KB 且零依赖的 Linux 端口查看工具，旨在简化网络诊断流程。它通过直观的界面告诉用户哪些进程正在占用特定端口，从而替代了复杂的 `lsof` 或 `netstat` 命令组合。该工具采用单二进制文件分发，非常适合系统管理员在各类服务器环境中快速部署使用。
-原文：[Show HN: Portview, A diagnostic-first port viewer for Linux (~930 KB, zero deps)](https://github.com/Mapika/portview)
-
-**开源办公与创作软件迎来重大更新**
-LibreOffice 26.2 和专业音频工作站 Ardour 9.0 相继发布。LibreOffice 重点改进了复杂文档的处理性能和与闭源格式的兼容性；而 Ardour 9.0 则引入了用户期待已久的 Region FX 和触摸屏支持。这些更新巩固了 Linux 在专业办公和多媒体创作领域的地位。
-原文：[LibreOffice 26.2 released](https://lwn.net/Articles/1057256/)
-原文：[Ardour 9.0 released](https://lwn.net/Articles/1057548/)
+**Matchlock：基于 Linux 沙箱的 AI 智能体安全工作负载方案**
+Matchlock 是一个利用 Linux 内核安全特性构建的沙箱环境，专门用于保护 AI 智能体（AI Agents）的运行负载。它通过严格的隔离机制防止 AI 模型在执行任务时对宿主系统造成潜在威胁。随着 AI 自动化工具的普及，这种针对 AI 场景优化的内核级安全方案正成为工业界关注的重点。
+原文：[Matchlock – Secures AI agent workloads with a Linux-based sandbox](https://github.com/jingkaihe/matchlock)
 
 ---
 
 ## 学术界最新研究
 
-本节今日暂无突出动态。
+**本节今日暂无突出动态**
 
 ---
 
 ## Linux 内核社区热点与趋势
 
-**内核机器学习库 ML-Lib 提案引发关注**
-开发者 Viacheslav Dubeyko 向内核邮件列表提交了在 Linux 内核中引入机器学习库（ML-Lib）的 RFC 提案。该库旨在允许内核子系统利用 ML 模型进行逻辑优化和配置调整，例如通过 eBPF 注入合成逻辑。虽然目前该提案还处于早期阶段且文档尚不完善，但它展示了内核向“智能化”自我优化演进的潜在方向。
+**内核机器学习库 ML-Lib 提案引发社区关注**
+开发者 Viacheslav Dubeyko 提交了一份在 Linux 内核中引入机器学习库（ML-Lib）的 RFC 提案。该库旨在通过 ML 模型优化内核子系统的逻辑配置，例如根据内部状态动态调整 I/O 调度或内存管理策略。尽管这一想法极具前瞻性，但由于缺乏详细文档和实际应用案例，目前在社区中仍存在关于内核复杂性和安全性的广泛讨论。
 原文：[ML-Lib: Machine Learning Library Proposed for the Linux Kernel](https://www.phoronix.com/news/Linux-Kernel-ML-LIB-RFC)
 
-**GCC 17 将支持内核控制流完整性（CFI）**
-内核安全专家 Kees Cook 提交了一套补丁，旨在为 GCC 编译器添加内核控制流完整性（CFI）支持。此前该功能主要依赖 Clang 的特定标志，GCC 的加入将使更多使用 GNU 工具链的发行版能够获得这一关键的安全防护。CFI 能够有效防止攻击者通过劫持间接跳转来利用系统漏洞，显著提升内核的防御能力。
-原文：[Kernel control-flow-integrity support comes to GCC](https://lwn.net/Articles/1056601/)
-
-**交换子系统现代化：告别 swap map**
-Linux 内核正计划对交换（swap）子系统进行深度现代化改造，核心举措是用新的“交换表（swap table）”结构替换陈旧的 swap map。这项工作旨在简化内存管理代码并提升在高负载下的交换效率。预计在接下来的几个内核版本中，用户将看到更简洁、更快速的内存交换逻辑。
+**内核交换子系统现代化：从 Swap Map 转向 Swap Table**
+Linux 内核正在推进交换（Swap）子系统的重构工作，计划用全新的「Swap Table」结构取代陈旧的「Swap Map」。这一改进旨在简化内核处理交换空间的逻辑，并显著提升在高负载下的内存交换速度。预计在接下来的几个内核发布周期中，用户将感受到更高效的内存管理性能。
 原文：[Modernizing swapping: the end of the swap map](https://lwn.net/Articles/1057102/)
 
-**Futex Robust List API 改进讨论**
-在 Linux Plumbers 会议上，开发者讨论了现有 robust futex API 存在的竞态条件等问题。该 API 负责在进程退出时清理其持有的锁，对 Linux 游戏性能和系统稳定性至关重要。社区正寻求通过新的 API 设计来彻底解决这些难以触发的边缘错误，以提供更可靠的用户态同步机制。
-原文：[API changes for the futex robust list](https://lwn.net/Articles/1056387/)
+**GCC 17 将引入内核控制流完整性（CFI）支持**
+安全专家 Kees Cook 提交了一套补丁，旨在为 GCC 编译器添加内核控制流完整性（CFI）支持，该特性此前主要由 Clang 提供。CFI 技术通过限制间接跳转的范围，能有效防御多种旨在劫持内核执行流的攻击。如果该补丁顺利并入 GCC 17，将进一步统一 Linux 内核在不同编译器下的安全防护水平。
+原文：[Kernel control-flow-integrity support comes to GCC](https://lwn.net/Articles/1056601/)
 
-**多版本稳定版内核与 6.19-rc8 发布**
-内核维护者 Greg Kroah-Hartman 发布了包括 6.18.9、6.12.69 在内的六个稳定版内核更新，修复了大量已知漏洞。同时，Linus Torvalds 发布了 6.19-rc8，标志着新版本已进入最后的打磨阶段。建议所有生产环境用户及时跟进这些包含重要安全补丁的 LTS 更新。
+**内核发布动态：6.19-rc8 发布与多版本稳定版更新**
+Linus Torvalds 发布了 6.19-rc8，标志着新内核版本已进入最后的打磨阶段。与此同时，Greg Kroah-Hartman 发布了包括 6.18.9、6.12.69 在内的六个稳定版内核更新，修复了大量安全漏洞和功能错误。社区强烈建议所有生产环境用户及时升级到最新的稳定分支以确保系统安全。
 原文：[Six stable kernels for Friday](https://lwn.net/Articles/1057550/)
-原文：[6.19-rc8: mainline](https://www.kernel.org/)
+
+**Tyr 项目：利用 Rust 为 Arm Mali GPU 开发驱动程序**
+由 Arm、Collabora 和 Google 联合发起的 Tyr 项目取得了重要进展，成功在 Rust 编写的驱动上运行了 3D 游戏。该项目响应了内核 DRM 子系统未来可能强制要求使用 Rust 编写新驱动的趋势。Tyr 的成功不仅证明了 Rust 在复杂图形驱动开发中的可行性，也为 Arm 架构设备的开源驱动支持开辟了新路径。
+原文：[The future for Tyr](https://lwn.net/Articles/1055590/)
 
 ---
 
 ## 业界大厂动向
 
-**Meta 将 Linux 内核打造为全球规模的负载均衡器**
-Meta（原 Facebook）分享了其如何深度定制 Linux 内核，将其转化为支撑全球业务的负载均衡系统。通过大规模应用 eBPF 技术和对内核网络栈的针对性修改，Meta 实现了极高的吞吐量和灵活的流量调度。这一案例充分展示了 Linux 内核在超大规模云基础设施中的可塑性和核心价值。
+**Meta：将 Linux 内核转化为全球规模的负载均衡器**
+Meta（原 Facebook）分享了其如何利用 eBPF 和 XDP 技术，将标准的 Linux 内核改造为支撑全球业务的负载均衡系统。通过在内核早期阶段处理数据包，Meta 实现了极高的吞吐量和极低的延迟，摆脱了传统硬件负载均衡器的限制。这一实践充分展示了 Linux 内核在可编程网络领域的巨大潜力。
 原文：[How Meta Made Linux a Planet-Scale Load Balancer](https://softwarefrontier.substack.com/p/how-meta-turned-the-linux-kernel)
 
-**Arm、Google 与 Collabora 联合开发 Rust GPU 驱动**
-由 Arm、Google 和 Collabora 联合发起的 Tyr 项目，成功为 Arm Mali 硬件开发出了基于 Rust 语言的 GPU 驱动原型。该驱动在 Linux Plumbers 会议上展示了流畅运行 3D 游戏的能力，并计划在 2026 年正式并入主线。这符合 Linux 内核 DRM 子系统未来强制要求使用 Rust 编写新驱动的发展趋势。
-原文：[The future for Tyr](https://lwn.net/Articles/1055590/)
+**SpaceX 与 xAI 愿景：轨道数据中心与自复制基础设施**
+埃隆·马斯克旗下的 SpaceX 与 xAI 正在探讨更深层次的整合，其核心在于构建「轨道数据中心」以规避地球能源限制。该愿景还涉及利用 AI 驱动的机器人构建自复制的月球工厂和星际基础设施。虽然这一计划听起来带有科幻色彩，但其对分布式操作系统和极端环境下系统稳定性的要求，正推动着相关前沿技术的研发。
+原文：[SpaceX-xAI Merger: Nobody's Talking About the von Neumann Elephant in the Room](https://news.ycombinator.com/item?id=46933827)
 
-**各大发行版厂商密集发布安全更新**
-包括 Red Hat、Oracle、SUSE 和 Ubuntu 在内的业界大厂近期密集发布了针对内核、glibc 及各类系统组件的安全补丁。这些更新涵盖了从底层驱动到上游应用（如 Python、OpenSSL）的多个漏洞修复。这体现了企业级 Linux 供应商在维护开源生态安全方面的协同努力。
-原文：[Security updates for Friday](https://lwn.net/Articles/1057506/)
-原文：[Security updates for Thursday](https://lwn.net/Articles/1057381/)
+**Google 与 Collabora 推动内核 Futex API 改进**
+针对 Linux 游戏性能中的瓶颈，来自 Google 和 Collabora 的开发者正在推动 Futex Robust List API 的变更。该提案旨在解决现有 API 在处理进程异常退出时锁清理不彻底的竞态条件问题。这一改进对于提升 Steam Deck 等 Linux 游戏设备的系统稳定性和多线程性能具有重要意义。
+原文：[API changes for the futex robust list](https://lwn.net/Articles/1056387/)
 
 ---
 
@@ -83,8 +72,10 @@ Meta（原 Facebook）分享了其如何深度定制 Linux 内核，将其转化
 
 ### Hacker News
 
+- [SpaceX-xAI Merger: Nobody's Talking About the von Neumann Elephant in the Room](https://news.ycombinator.com/item?id=46933827)
+- [Wine-Staging 11.2 Brings More Patches to Help Adobe Photoshop on Linux](https://www.phoronix.com/news/Wine-Staging-11.2)
 - [Show HN: Portview, A diagnostic-first port viewer for Linux (~930 KB, zero deps)](https://github.com/Mapika/portview)
-- [Matchlock: Linux-based sandboxing for AI agents](https://github.com/jingkaihe/matchlock)
+- [Matchlock – Secures AI agent workloads with a Linux-based sandbox](https://github.com/jingkaihe/matchlock)
 - [Busy Months in KDE Linux](https://pointieststick.com/2026/02/06/busy-months-in-kde-linux/)
 - [I went back to Linux and it was a mistake](https://www.theverge.com/report/875077/linux-was-a-mistake)
 - [ReKindle – web-based operating system designed specifically for E-ink devices](https://rekindle.ink)
