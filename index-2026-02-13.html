@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OS 领域每日洞察 - 2026-02-13</title>
+  <style>
+    :root {
+      --bg: #f6f4f0;
+      --bg-bar: #ebe8e3;
+      --bg-card: #fffefb;
+      --bg-card-hover: #f5f3ef;
+      --text: #2d2a26;
+      --text-muted: #5c5852;
+      --text-dim: #7a756e;
+      --accent: #5a7a9e;
+      --border: #ddd9d2;
+      --radius: 10px;
+      --font: "Segoe UI", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      font-size: 15px;
+    }
+
+    /* 门户顶栏 */
+    .masthead {
+      background: var(--bg-bar);
+      border-bottom: 1px solid var(--border);
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 0;
+    }
+    .masthead-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .masthead h1 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin: 0;
+      letter-spacing: -0.02em;
+      color: var(--text);
+    }
+    .masthead .meta {
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+    }
+
+    /* 主内容区：多栏门户布局 */
+    .main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 3rem;
+    }
+
+    /* 板块：每个 h2 为一个频道块 */
+    .content .section {
+      margin-bottom: 2.5rem;
+    }
+    .content h2 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+      margin: 0 0 1rem;
+      padding: 0.6rem 1rem;
+      background: var(--bg-bar);
+      border-radius: var(--radius);
+      border-left: 4px solid var(--accent);
+    }
+    .content h2:first-child { margin-top: 0; }
+
+    .content h2:has(+ h3) {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      border-left-color: var(--text-dim);
+    }
+
+    /* 板块内卡片网格（每个 h2 后的 ul） */
+    .content h2 + ul {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1rem;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .content h2 + ul li {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.15rem 1.2rem;
+      transition: background .15s, border-color .15s;
+    }
+    .content h2 + ul li:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--text-dim);
+    }
+    .content h2 + ul li strong {
+      display: block;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+      line-height: 1.4;
+    }
+    .content h2 + ul li p {
+      margin: 0 0 0.5rem;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.58;
+    }
+    .content h2 + ul li p:last-of-type { margin-bottom: 0; }
+    .content h2 + ul li a[href^="http"] {
+      font-size: 0.8125rem;
+      color: var(--accent);
+    }
+    .content h2 + ul li a[href^="http"]:hover { text-decoration: underline; }
+
+    .content .ref-section {
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+    .content h2 + h3 { margin-top: 1.25rem; }
+    .content h3 {
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--text-dim);
+      margin: 1rem 0 0.4rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .content h3 + ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 0.25rem;
+    }
+    .content h3 + ul li {
+      background: transparent;
+      border: none;
+      padding: 0.2rem 0;
+      font-size: 0.8125rem;
+    }
+    .content h3 + ul li strong { font-size: inherit; margin-bottom: 0; }
+    .content h3 + ul li a { color: var(--accent); }
+    .content h3 + ul li a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <header class="masthead">
+    <div class="masthead-inner">
+      <h1>OS 领域每日洞察 - 2026-02-13</h1>
+      <span class="meta">2026-02-13 05:01 UTC</span>
+    </div>
+  </header>
+  <main class="main">
+    <div class="content"><h2>Linux 内核社区热点与趋势</h2>
+<p><strong>Linux 7.0 合并窗口开启，内存管理迎来多项性能优化</strong><br />
+随着 Linux 7.0 合并窗口的推进，内存管理（MM）子系统引入了大量优化补丁。这些改进旨在提升内存分配效率和系统在高负载下的响应速度，为即将发布的 Fedora 44 和 Ubuntu 26.04 等发行版奠定基础。Phoronix 指出，这些底层变动将显著改善现代多核处理器的性能表现。<br />
+原文：<a href="https://www.phoronix.com/news/Linux-7.0-MM">Linux 7.0 MM Changes Bring Some Very Nice Performance Optimizations</a></p>
+<p><strong>EXT4 与 XFS 文件系统在 Linux 7.0 中获得重大升级</strong><br />
+Linux 7.0 针对主流文件系统进行了深度调优，EXT4 现在支持更高效的并发直接 I/O 写入，显著提升了数据库等应用的性能。同时，XFS 引入了实验性的“自动自愈”功能，能够在系统运行时检测并修复元数据错误，增强了文件系统的健壮性。这些特性标志着 Linux 在企业级存储可靠性方面迈出了新的一步。<br />
+原文：<a href="https://www.phoronix.com/news/Linux-7.0-EXT4">EXT4 In Linux 7.0 Improves Write Performance For Concurrent Direct I/O Writes</a><br />
+原文：<a href="https://www.phoronix.com/news/XFS-Linux-7.0">XFS Introducing Autonomous Self-Healing Capabilities With Linux 7.0</a></p>
+<p><strong>Linux 7.0 移除不安全的 SHA-1 模块签名支持</strong><br />
+为了进一步提升内核安全性，Linux 7.0 正式移除了使用 SHA-1 算法签署内核模块的功能，因为该算法在现代安全标准下已不再可靠。虽然系统仍允许加载现有的 SHA-1 签名模块以保持兼容性，但新模块的签署必须转向更安全的算法。这一举措体现了内核社区在淘汰过时加密技术方面的坚定立场。<br />
+原文：<a href="https://www.phoronix.com/news/Linux-7.0-Modules-No-SHA1-Sign">Linux 7.0 Removes Support For Signing Modules With Insecure SHA-1</a></p>
+<p><strong>Linus Torvalds 确认 Linux 7.0 发布节奏，拒绝部分 MMC 变更</strong><br />
+Linus Torvalds 近期确认了 Linux 7.0 的版本号跳跃，并预计稳定版将于 4 月中旬发布。在合并窗口期间，Linus 拒绝了一批 MMC（多媒体卡）子系统的变更请求，理由是代码质量未达标或存在潜在回归风险。这再次展示了内核维护者对代码合并的严格把关。<br />
+原文：<a href="https://pbxscience.com/linux-7-0-confirmed-by-linus-torvalds-stable-version-due-mid-april/">Linux 7.0 Confirmed by Linus Torvalds: Stable Version Due Mid-April</a><br />
+原文：<a href="https://www.phoronix.com/news/Linux-7.0-No-MMC-Changes">Linus Torvalds rejects MMC changes for Linux 7.0 cycle</a></p>
+<p><strong>网络子系统准备迎接 WiFi 8，同时清理过时驱动</strong><br />
+Linux 7.0 的网络拉取请求展示了内核的演进：一方面，开发者正在为 WiFi 8（超高可靠性 UHR）支持奠定基础；另一方面，内核正式移除了最后一个通过并行打印机端口运行的以太网驱动程序。这种“去旧迎新”的策略保证了内核在支持前沿技术的同时，能够保持代码库的精简。<br />
+原文：<a href="https://www.phoronix.com/news/Linux-7.0-Networking">Linux 7.0 Networking: Prepping For WiFi 8 UHR While Dropping Last Parallel Port Ethernet Driver</a></p>
+<h2>业界大厂动向</h2>
+<p><strong>OpenAI 发布 GPT-5.3-Codex-Spark，代码生成速度提升 15 倍</strong><br />
+OpenAI 推出了专为实时编程设计的 GPT-5.3-Codex-Spark 模型，其生成速度较前代产品提升了 15 倍。该模型支持 128k 上下文窗口，旨在为开发者提供近乎瞬时的代码补全和逻辑建议。目前该模型已在 ChatGPT Pro 用户的研究预览版中上线，标志着 AI 辅助编程进入了极速时代。<br />
+原文：<a href="https://thenewstack.io/openais-new-codex-spark-is-optimized-for-speed/">OpenAI’s new Codex Spark model is built for speed</a></p>
+<p><strong>Microsoft 发布 VS Code 1.109，打造多智能体开发中心</strong><br />
+微软在 2026 年 1 月的更新中，将 VS Code 定位为开发者的“多智能体指挥中心”。新版本增强了对 AI Agent 的集成，允许不同功能的 AI 助手在编辑器内协同工作，处理从代码编写到测试部署的全流程。这一更新反映了开发工具从单纯的代码编辑器向 AI 协作平台转型的趋势。<br />
+原文：<a href="https://thenewstack.io/vs-code-becomes-multi-agent-command-center-for-developers/">VS Code becomes multi-agent command center for developers</a></p>
+<p><strong>OpenAI 揭秘如何扩展 PostgreSQL 以支持 ChatGPT 的海量查询</strong><br />
+OpenAI 分享了其技术架构细节，展示了如何通过在 Azure 上运行单主节点 PostgreSQL 配合近 50 个只读副本，支撑每秒数百万次的查询。通过优化查询模式并将写密集型负载迁移到分片系统，OpenAI 成功在极高并发下保持了低延迟。这一案例为超大规模云原生数据库的应用提供了宝贵经验。<br />
+原文：<a href="https://www.infoq.com/news/2026/02/openai-runs-chatgpt-postgres/">OpenAI Scales Single Primary Postgresql to Millions of Queries per Second for ChatGPT</a></p>
+<p><strong>WhatsApp 使用 Rust 重写媒体解析库以提升安全性</strong><br />
+为了应对针对 30 亿用户的恶意软件威胁，WhatsApp 将其媒体处理库从 C++ 改写为 Rust。通过将 16 万行 C++ 代码替换为 9 万行内存安全的 Rust 代码，WhatsApp 显著降低了内存溢出等漏洞风险。该项目名为 Kaleidoscope，利用差异化模糊测试确保了与旧版本的完全兼容。<br />
+原文：<a href="https://www.infoq.com/news/2026/02/whatsapp-rust-media-malware/">WhatsApp Deploys Rust-Based Media Parser to Block Malware on 3 Billion Devices</a></p>
+<p><strong>Red Hat 推进 RHEL 10 开发并深化与英国国防部合作</strong><br />
+红帽公司近期披露了 RHEL 10 的开发幕后故事，重点强调了其在混合云和 AI 能力方面的提升。同时，红帽与英国国防部签署了新的企业协议，旨在通过红帽的边缘管理器和 OpenShift 平台，为现代国防行动提供弹性的数字骨干。<br />
+原文：<a href="https://www.redhat.com/en/blog/friday-five-february-13-2026-red-hat">Friday Five — February 13, 2026</a></p>
+<h2>云原生领域</h2>
+<p><strong>Kubernetes 宣布 Ingress NGINX 将于 2026 年正式退休</strong><br />
+Kubernetes 指导委员会发布紧急声明，确认 Ingress NGINX 项目由于缺乏维护者，将于 2026 年 3 月停止所有更新和安全补丁。官方强烈建议用户立即开始向 Gateway API 或其他第三方控制器迁移，以避免未来出现安全真空。这一决定对全球约半数的云原生环境将产生深远影响。<br />
+原文：<a href="https://kubernetes.io/blog/2026/01/29/ingress-nginx-statement/">Ingress NGINX: Statement from the Kubernetes Steering and Security Response Committees</a></p>
+<p><strong>Kubernetes v1.35 预览：引入原地 Pod 重启与数值容忍操作符</strong><br />
+即将到来的 Kubernetes v1.35 版本引入了多项重磅特性，包括支持在不销毁 Pod 的情况下原地重启所有容器，这对 AI/ML 训练任务的故障恢复至关重要。此外，扩展的容忍度操作符现在支持数值比较（如“大于”），允许平台团队更精细地控制工作负载在竞价实例或不同 SLA 节点上的调度。<br />
+原文：<a href="https://kubernetes.io/blog/2026/01/02/kubernetes-v1-35-restart-all-containers/">Kubernetes v1.35: New level of efficiency with in-place Pod restart</a><br />
+原文：<a href="https://kubernetes.io/blog/2026/01/05/kubernetes-v1-35-numeric-toleration-operators/">Kubernetes v1.35: Extended Toleration Operators to Support Numeric Comparisons (Alpha)</a></p>
+<p><strong>CNCF 推出 Kthena 项目：云原生时代的 LLM 推理路由</strong><br />
+Volcano 社区宣布启动 Kthena 子项目，旨在为全球开发者提供高性能的 LLM 推理路由和编排系统。Kthena 针对大模型推理的特殊需求进行了优化，能够根据负载和模型特性动态调度请求。这标志着 CNCF 生态在 AI 基础设施标准化方面迈出了关键一步。<br />
+原文：<a href="https://www.cncf.io/blog/2026/01/28/introducing-kthena-llm-inference-for-the-cloud-native-era/">Introducing Kthena: LLM inference for the cloud native era</a></p>
+<p><strong>Cluster API v1.12 发布，支持原地更新与链式升级</strong><br />
+新版本的 Cluster API 显著降低了 Kubernetes 集群生命周期管理的复杂性，引入了原地更新功能。用户现在可以像管理 Deployment 一样声明式地更新控制平面和工作节点，而无需重新创建机器。这一改进极大提升了大规模集群运维的平滑度和效率。<br />
+原文：<a href="https://kubernetes.io/blog/2026/01/27/cluster-api-v1-12-release/">Cluster API v1.12: Introducing In-place Updates and Chained Upgrades</a></p>
+<p><strong>Node Readiness Controller：更精细的节点就绪管理</strong><br />
+Kubernetes 社区推出了 Node Readiness Controller，允许用户根据自定义的健康信号（如 GPU 固件状态、存储驱动就绪情况）动态管理节点污点。这解决了标准“Ready”状态无法涵盖复杂基础设施依赖的问题。通过该控制器，工作负载只会被调度到真正完全就绪的节点上。<br />
+原文：<a href="https://kubernetes.io/blog/2026/02/03/introducing-node-readiness-controller/">Introducing Node Readiness Controller</a></p>
+<h2>AI 领域</h2>
+<p><strong>Iocaine：利用“毒化”技术对抗 AI 爬虫机器人</strong><br />
+为了应对日益严重的 AI 抓取工具对网站的“分布式拒绝服务”式攻击，开发者推出了名为 Iocaine 的开源工具。该工具通过生成看似合理但实际无意义的虚假数据来“毒化”爬虫抓取的内容，从而降低其训练价值。这种方法旨在从经济成本上让恶意爬虫变得不可持续。<br />
+原文：<a href="https://lwn.net/Articles/1056953/">Poisoning scraperbots with iocaine</a></p>
+<p><strong>62% 的企业已使用 Java 驱动 AI 应用开发</strong><br />
+一份最新报告显示，Java 在企业级 AI 应用中的地位正在迅速上升，超过六成的受访企业选择 Java 作为其 AI 基础设施的基础语言。尽管 Python 在模型训练中占据主导，但 Java 在生产环境的稳定性、集成能力和大规模并发处理上更具优势。这一趋势预示着 AI 开发生态正在向多元化和工程化演进。<br />
+原文：<a href="https://thenewstack.io/2026-java-ai-apps/">62% of enterprises now use Java to power AI apps</a></p>
+<p><strong>多模态 RAG 系统：打破 AI 系统的“图像盲区”</strong><br />
+目前的生成式 AI 应用大多集中在文本 RAG（检索增强生成），而忽略了图像数据。新研究指出，通过引入多模态 RAG 和混合搜索技术，企业可以实现与 PDF 中的图表、扫描件等非文本内容的深度交互。这将极大地扩展 AI 在金融、医疗等依赖复杂文档行业的应用场景。<br />
+原文：<a href="https://thenewstack.io/multimodal-rag-hybrid-search/">Your RAG System is probably image-blind, but it doesn’t have to be</a></p>
+<p><strong>AI 智能体安全警告：为何不应让 AI 直接修改源代码</strong><br />
+Dynatrace 等安全专家指出，虽然 AI 智能体在自动化运维中表现出色，但直接授予其源码修改权限存在巨大风险。专家建议应建立“AI 安全机制”，让 AI 专注于可观测性和建议生成，而非直接操作核心逻辑。这种“人在回路”的模式是当前企业部署 AI 智能体的稳健选择。<br />
+原文：<a href="https://thenewstack.io/dynatrace-ai-safety-mechanism/">The reason AI agents shouldn’t touch your source code — and what they should do instead</a></p>
+<h2>工业界最新动向</h2>
+<p><strong>Arch Linux 在龙芯 LoongArch 架构上表现出色</strong><br />
+最新的基准测试显示，Arch Linux 在国产龙芯 3B6000 处理器上运行非常流畅。测试涵盖了 12 核/24 线程的硬件环境，证明了 LoongArch 架构在开源社区支持下已具备较高的实用性。对于追求高性能国产化替代方案的用户来说，这是一个积极的信号。<br />
+原文：<a href="https://www.phoronix.com/review/arch-linux-loongarch">Arch Linux Running Well On LoongArch - Loongson 3B6000 Benchmarks</a></p>
+<p><strong>Ubuntu 24.04.4 LTS 发布，搭载 Linux 6.17 HWE 内核</strong><br />
+Canonical 正式发布了 Ubuntu 24.04 的第四个点版本，主要更新是引入了 Linux 6.17 硬件启用（HWE）内核。这一更新为现有的长期支持版用户带来了更好的新硬件兼容性和性能优化，确保了企业级桌面的持续演进。<br />
+原文：<a href="https://www.phoronix.com/news/Ubuntu-24.04.4-LTS">Ubuntu 24.04.4 LTS Now Available With Linux 6.17 HWE Kernel</a></p>
+<p><strong>Framework 笔记本因内存短缺面临每月调价压力</strong><br />
+DIY 笔记本制造商 Framework 表示，由于全球 RAM 供应短缺，公司不得不每月调整产品价格。尽管 Framework 致力于透明化定价，但供应链的不确定性仍对其模块化硬件策略构成了挑战。公司预计在情况好转前，价格可能还会进一步波动。<br />
+原文：<a href="https://arstechnica.com/gadgets/2026/02/frameworks-ram-prices-climbing-on-a-monthly-cadence-with-more-hikes-to-come/">DIY PC maker Framework has needed monthly price hikes to navigate the RAM shortage</a></p>
+<p><strong>Debian DFSG 团队启用新流程以加速软件包审核</strong><br />
+Debian 的自由软件指导方针（DFSG）团队宣布上线新的仪表板和队列处理流程，旨在解决软件包审核积压问题。新工具将提高审核透明度，并鼓励更多开发者参与到许可协议的审查中。这一举措有助于缩短新软件进入 Debian 官方仓库的时间。<br />
+原文：<a href="https://lwn.net/Articles/1058480/">Debian DFSG Team announces new dashboard and queue processes</a></p>
+<h2>学学界最新研究</h2>
+<p><strong>BYOS：利用知识驱动的 LLM 优化 Linux 内核配置</strong><br />
+研究人员提出了一种名为 BYOS 的框架，旨在解决 Linux 内核调优中配置空间巨大且依赖复杂的难题。该框架通过将结构化领域知识引入 LLM，有效减少了 AI 生成配置时的“幻觉”现象，提升了调优的解释性和鲁棒性。实验证明，BYOS 在不同内核版本和工作负载下均表现出优异的性能优化效果。<br />
+原文：<a href="https://arxiv.org/abs/2503.09663">BYOS: Knowledge-driven Large Language Models Bring Your Own Operating System More Excellent</a></p>
+<p><strong>加固 OSv Unikernel：高效的地址空间随机化设计</strong><br />
+针对 Unikernel 往往忽略安全防护的问题，这项研究为 OSv 系统引入了高效的地址随机化（ASLR）机制。通过对核心内存管理和加载例程的针对性修改，研究人员成功降低了应用基址和线程栈的可预测性。性能评估显示，该设计在增强安全性的同时，几乎没有增加系统开销。<br />
+原文：<a href="https://arxiv.org/abs/2602.11445">Hardening the OSv Unikernel with Efficient Address Randomization: Design and Performance Evaluation</a></p>
+<p><strong>KBVQ-MoE：针对混合专家模型的高效压缩技术</strong><br />
+随着 MoE 模型参数量的激增，其在资源受限环境下的部署变得困难。该论文提出了一种结合 KLT 引导的 SVD 与偏置校正矢量量化的压缩方法，专门针对 MoE 模型中的冗余表示进行优化。这种方法在实现超低比特压缩的同时，最大限度地保留了模型的推理精度。<br />
+原文：<a href="https://arxiv.org/abs/2602.11184">KBVQ-MoE: KLT-guided SVD with Bias-Corrected Vector Quantization for MoE Large Language Models</a></p>
+<p><strong>BLGC：确定性状态演化的有界局部生成器类</strong><br />
+该研究形式化了一类在图索引状态系统上运行的局部保持确定性算子。通过定义 BLGC 类，研究证明了增量更新成本与系统总维度无关，实现了全局状态大小与计算努力的结构性解耦。这一理论框架为大规模分布式系统的确定性演化提供了数学支撑。<br />
+原文：<a href="https://arxiv.org/abs/2602.11476">Bounded Local Generator Classes for Deterministic State Evolution</a></p>
+<hr /></div>
+  </main>
+</body>
+</html>
