@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OS 领域每日洞察 - 2026-02-14</title>
+  <style>
+    :root {
+      --bg: #f6f4f0;
+      --bg-bar: #ebe8e3;
+      --bg-card: #fffefb;
+      --bg-card-hover: #f5f3ef;
+      --text: #2d2a26;
+      --text-muted: #5c5852;
+      --text-dim: #7a756e;
+      --accent: #5a7a9e;
+      --border: #ddd9d2;
+      --radius: 10px;
+      --font: "Segoe UI", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      font-size: 15px;
+    }
+
+    /* 门户顶栏 */
+    .masthead {
+      background: var(--bg-bar);
+      border-bottom: 1px solid var(--border);
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 0;
+    }
+    .masthead-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .masthead h1 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin: 0;
+      letter-spacing: -0.02em;
+      color: var(--text);
+    }
+    .masthead .meta {
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+    }
+
+    /* 主内容区：多栏门户布局 */
+    .main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 3rem;
+    }
+
+    /* 板块：每个 h2 为一个频道块 */
+    .content .section {
+      margin-bottom: 2.5rem;
+    }
+    .content h2 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+      margin: 0 0 1rem;
+      padding: 0.6rem 1rem;
+      background: var(--bg-bar);
+      border-radius: var(--radius);
+      border-left: 4px solid var(--accent);
+    }
+    .content h2:first-child { margin-top: 0; }
+
+    .content h2:has(+ h3) {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      border-left-color: var(--text-dim);
+    }
+
+    /* 板块内卡片网格（每个 h2 后的 ul） */
+    .content h2 + ul {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1rem;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .content h2 + ul li {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.15rem 1.2rem;
+      transition: background .15s, border-color .15s;
+    }
+    .content h2 + ul li:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--text-dim);
+    }
+    .content h2 + ul li strong {
+      display: block;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+      line-height: 1.4;
+    }
+    .content h2 + ul li p {
+      margin: 0 0 0.5rem;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.58;
+    }
+    .content h2 + ul li p:last-of-type { margin-bottom: 0; }
+    .content h2 + ul li a[href^="http"] {
+      font-size: 0.8125rem;
+      color: var(--accent);
+    }
+    .content h2 + ul li a[href^="http"]:hover { text-decoration: underline; }
+
+    .content .ref-section {
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+    .content h2 + h3 { margin-top: 1.25rem; }
+    .content h3 {
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--text-dim);
+      margin: 1rem 0 0.4rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .content h3 + ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 0.25rem;
+    }
+    .content h3 + ul li {
+      background: transparent;
+      border: none;
+      padding: 0.2rem 0;
+      font-size: 0.8125rem;
+    }
+    .content h3 + ul li strong { font-size: inherit; margin-bottom: 0; }
+    .content h3 + ul li a { color: var(--accent); }
+    .content h3 + ul li a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <header class="masthead">
+    <div class="masthead-inner">
+      <h1>OS 领域每日洞察 - 2026-02-14</h1>
+      <span class="meta">2026-02-14 05:00 UTC</span>
+    </div>
+  </header>
+  <main class="main">
+    <div class="content"><h2>Linux 内核社区热点与趋势</h2>
+<p><strong>Linux 7.0 合并窗口开启，多项重量级特性涌现</strong><br />
+Linux 7.0 内核合并窗口现已正式开启，目前已接受超过 7600 个非合并提交。尽管 Linus Torvalds 认为版本号跳跃并无特殊技术含义，但 7.0 版本依然引入了大量改进，包括内存管理优化、新型文件系统特性以及对量子抗性算法的支持。这一版本的发布标志着内核在处理现代硬件和安全挑战方面迈出了重要一步。<br />
+原文：<a href="https://lwn.net/Articles/1057769/">The first half of the 7.0 merge window</a></p>
+<p><strong>XFS 文件系统引入自主自愈功能</strong><br />
+在 Linux 7.0 中，XFS 文件系统将引入在线文件系统检查与修复（在线 fsck）的初步支持，使其具备自主自愈能力。这一特性允许系统在不卸载文件系统的情况下检测并修复元数据损坏，极大提升了服务器和数据中心的可用性。该功能预计将在今年春季发布的 Fedora 44 和 Ubuntu 26.04 LTS 中得到应用。<br />
+原文：<a href="https://www.phoronix.com/news/XFS-Linux-7.0">XFS Introducing Autonomous Self-Healing Capabilities With Linux 7.0</a></p>
+<p><strong>Linux 7.0 引入 ML-DSA 量子抗性签名支持</strong><br />
+为了应对未来量子计算对传统加密算法的威胁，Linux 7.0 内核正式集成了基于模块格的数字签名算法（ML-DSA）。这是内核在后量子加密（PQC）领域的重要布局，旨在确保系统在量子时代依然具备可靠的身份验证和数据完整性保护能力。<br />
+原文：<a href="https://www.phoronix.com/news/Linux-7.0-Crypto-ML-DSA">Linux 7.0 Lands ML-DSA Quantum-Resistant Signature Support</a></p>
+<p><strong>内核清理：移除已损坏 19 年的 Intel 440BX EDAC 驱动</strong><br />
+Linux 7.0 进行了一项迟到已久的“大扫除”，移除了针对 Intel 440BX/460GX 芯片组的错误检测与纠正（EDAC）驱动。该驱动不仅针对的是 Pentium II/III 时代的陈旧硬件，而且在内核中已被确认损坏超过 19 年。此次移除体现了内核社区在维护代码质量和清理技术债方面的决心。<br />
+原文：<a href="https://www.phoronix.com/news/Linux-Drops-Old-440BX-EDAC">Linux Gets Rid Of Intel 440BX EDAC Driver For Old Pentium CPUs After Being Broken For 19+ Years</a></p>
+<p><strong>Linus Torvalds 拒绝 Linux 7.0 周期中的 MMC 变更</strong><br />
+在最近的合并窗口中，Linus Torvalds 拒绝了 MMC（多媒体卡）子系统的更新请求。这反映了 Linus 对合并代码质量的严格把控，通常是因为提交的代码存在结构性问题或缺乏足够的测试。此类决策确保了主线内核的稳定性和可靠性。<br />
+原文：<a href="https://www.phoronix.com/news/Linux-7.0-No-MMC-Changes">Linus Torvalds rejects MMC changes for Linux 7.0 cycle</a></p>
+<hr />
+<h2>业界大厂动向</h2>
+<p><strong>Red Hat 启动 Project Hummingbird，追求“近乎零”CVE 容器镜像</strong><br />
+红帽（Red Hat）宣布推出 Project Hummingbird，旨在通过现代化构建系统提供更新频率更高、漏洞更少的容器镜像。该项目反映了企业对软件供应链安全的极致追求，特别是在受监管行业中，对“零已知漏洞”的需求已成为刚需。红帽希望通过此举在不牺牲代码完整性的前提下，加快安全补丁的交付速度。<br />
+原文：<a href="https://www.redhat.com/en/blog/chasing-holy-grail-why-red-hats-hummingbird-project-aims-near-zero-cves">Chasing the holy grail: Why Red Hat’s Hummingbird project aims for "near zero" CVEs</a></p>
+<p><strong>Apple 在操作系统中引入量子安全加密技术</strong><br />
+苹果公司详细介绍了其在最新操作系统中部署的量子安全加密方案，以保护用户数据免受未来量子计算机的破解。这一举措涵盖了 iMessage 等核心服务的协议升级，标志着消费级操作系统开始全面进入后量子安全时代。苹果此举旨在建立长期的隐私保护屏障，防止“先拦截、后破解”的潜在威胁。<br />
+原文：<a href="https://support.apple.com/nl-nl/guide/security/secc7c82e533/web">Quantum-secure cryptography in Apple operating systems</a></p>
+<p><strong>NVIDIA 为 Nouveau 驱动提供 GA100 GPU 的开源 GSP 支持</strong><br />
+NVIDIA 本周向开源 Nouveau 内核驱动提交了新补丁，旨在通过 GPU 系统处理器（GSP）实现对 GA100 GPU 的支持。这一动作虽然不是针对开发中的 Nova 驱动，但显著增强了现有开源驱动对高性能计算 GPU 的兼容性。这表明 NVIDIA 在持续改善其硬件在 Linux 开源生态下的使用体验。<br />
+原文：<a href="https://www.phoronix.com/news/Nouveau-GSP-NVIDIA-GA100">NVIDIA Posts Open-Source Nouveau GSP Driver Support For GA100</a></p>
+<p><strong>Microsoft 推出代理式云运营模式，应对 AI 负载复杂度</strong><br />
+微软 Azure 宣布了一种全新的“代理式云运营”（Agentic Cloud Operations）模式，旨在利用 AI 代理自动处理复杂的云基础设施任务。随着 AI 工作负载的激增，传统的运维模式已难以应对海量规模和复杂性，新框架通过自主协作的 AI 代理来提升系统的灵活性和可靠性。<br />
+原文：<a href="https://azure.microsoft.com/en-us/blog/agentic-cloud-operations-a-new-way-to-run-the-cloud/">Agentic cloud operations: A new way to run the cloud</a></p>
+<p><strong>Android 17 首个 Beta 版本面向 Pixel 设备发布</strong><br />
+谷歌正式发布了 Android 17 的第一个 Beta 测试版，目前已支持多款 Pixel 设备。虽然首个版本尚未引入显著的功能变化，但它开启了新一代安卓系统的公开测试周期。开发者现在可以开始在新系统上测试应用的兼容性，并探索底层的 API 变动。<br />
+原文：<a href="https://arstechnica.com/gadgets/2026/02/the-first-android-17-beta-is-now-available-on-pixel-devices/">The first Android 17 beta is now available on Pixel devices</a></p>
+<hr />
+<h2>云原生领域</h2>
+<p><strong>Kubernetes 官方发出严重警告：Ingress NGINX 将于 2026 年 3 月退役</strong><br />
+Kubernetes 指导委员会和安全响应委员会发布联合声明，确认 Ingress NGINX 项目因缺乏维护者将于 2026 年 3 月正式退役。目前约有一半的云原生环境依赖该组件，退役后将不再有任何安全补丁或错误修复。官方强烈敦促用户立即开始迁移至 Gateway API 或其他第三方 Ingress 控制器，以规避潜在的安全风险。<br />
+原文：<a href="https://kubernetes.io/blog/2026/01/29/ingress-nginx-statement/">Ingress NGINX: Statement from the Kubernetes Steering and Security Response Committees</a></p>
+<p><strong>Cluster API v1.12 发布：引入就地更新与链式升级</strong><br />
+Cluster API v1.12 版本正式发布，显著降低了 Kubernetes 集群生命周期管理的摩擦。新版本引入了“就地更新”功能，允许在不重新创建机器的情况下更新集群配置，同时“链式升级”功能简化了跨版本的复杂升级流程。这些改进进一步增强了声明式集群管理的灵活性和易用性。<br />
+原文：<a href="https://kubernetes.io/blog/2026/01/27/cluster-api-v1-12-release/">Cluster API v1.12: Introducing In-place Updates and Chained Upgrades</a></p>
+<p><strong>Kubernetes 引入节点就绪控制器（Node Readiness Controller）</strong><br />
+为了解决现代集群中节点对复杂基础设施（如 GPU 固件、存储驱动）的依赖问题，Kubernetes 宣布推出节点就绪控制器。该项目通过声明式系统动态管理节点污点（Taints），确保工作负载仅被调度到完全满足特定基础设施要求的节点上。这超越了传统的二进制“Ready”状态，提供了更精细的调度保障。<br />
+原文：<a href="https://kubernetes.io/blog/2026/02/03/introducing-node-readiness-controller/">Introducing Node Readiness Controller</a></p>
+<p><strong>CNCF 成立 Checkpoint/Restore 工作组，优化 AI 与长耗时任务</strong><br />
+CNCF 宣布成立新的 Kubernetes Checkpoint/Restore 工作组，专注于将检查点/恢复功能集成到容器编排中。该技术可用于优化 Jupyter 笔记本等交互式负载的资源利用，加速 LLM 推理服务的启动，并为分布式模型训练提供容错能力。这标志着 Kubernetes 在支持高性能计算和 AI 任务方面迈出了关键一步。<br />
+原文：<a href="https://kubernetes.io/blog/2026/01/21/introducing-checkpoint-restore-wg/">Announcing the Checkpoint/Restore Working Group</a></p>
+<p><strong>Kubernetes v1.35 预览：支持 Pod 就地重启</strong><br />
+即将到来的 Kubernetes 1.35 版本将引入“重启所有容器”的 Alpha 特性，允许对 Pod 进行全量就地重启。相比于删除并重新创建 Pod，这种方式更加高效且节省资源，特别适用于 AI/ML 训练任务中的状态重置。这一特性为开发者提供了更灵活的故障处理和状态管理手段。<br />
+原文：<a href="https://kubernetes.io/blog/2026/01/02/kubernetes-v1-35-restart-all-containers/">Kubernetes v1.35: New level of efficiency with in-place Pod restart</a></p>
+<hr />
+<h2>AI 领域</h2>
+<p><strong>OpenAI 发布 GPT-5.3-Codex-Spark：代码生成速度提升 15 倍</strong><br />
+OpenAI 推出了专门针对代码编写优化的新模型 GPT-5.3-Codex-Spark，其运行速度比前代产品快 15 倍。该模型在定制的硬件上运行，旨在为开发者提供近乎实时的代码建议和自动化编程体验。这一突破性进展预示着 AI 辅助编程将从“建议模式”转向更高效的“实时协作模式”。<br />
+原文：<a href="https://thenewstack.io/openais-new-codex-spark-is-optimized-for-speed/">OpenAI’s new Codex Spark model is built for speed</a></p>
+<p><strong>GitHub 推出 Agentic Workflows，将“持续 AI”引入 CI/CD</strong><br />
+GitHub 宣布在其 CI/CD 流水中集成代理式工作流（Agentic Workflows），使 AI 代理能够自主处理代码审查、漏洞修复和部署任务。这超越了简单的代码补全，实现了 AI 在软件开发生命周期中的深度参与。通过这种方式，企业可以实现更高级别的自动化，减轻开发者的重复性劳动。<br />
+原文：<a href="https://thenewstack.io/github-agentic-workflows-overview/">GitHub’s Agentic Workflows bring “continuous AI” into the CI/CD loop</a></p>
+<p><strong>Google 发布 Gemini 3 Deep Think：深耕科学与工程研究</strong><br />
+谷歌发布了 Gemini 3 Deep Think 模型，专注于解决复杂的科学、研究和工程难题。该模型具备更强的逻辑推理能力，能够处理需要深度思考的多步骤任务。谷歌旨在通过此模型推动 AI 在前沿科研领域的应用，辅助人类专家进行突破性创新。<br />
+原文：<a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-deep-think/">Gemini 3 Deep Think: Advancing science, research and engineering</a></p>
+<p><strong>Go 语言社区讨论：如何处理 AI 生成的提交（CL）？</strong><br />
+Go 语言开发团队正在讨论如何应对日益增多的 AI 生成代码提交。社区关注的焦点在于如何确保这些提交的质量、版权合规性以及是否会增加维护者的负担。这一讨论反映了开源社区在 AI 时代面临的普遍挑战：如何在利用 AI 提升效率的同时，保持代码库的纯净和可维护性。<br />
+原文：<a href="https://groups.google.com/g/golang-dev/c/4Li4Ovd_ehE/m/8L9s_jq4BAAJ">What should we do with CLs generated by AI?</a></p>
+<p><strong>报告显示 62% 的企业使用 Java 驱动 AI 应用</strong><br />
+根据最新行业报告，Java 凭借其在企业级架构中的统治地位，已成为 62% 企业构建 AI 应用的基础语言。虽然 Python 在模型训练中占优，但在生产环境的集成和扩展方面，Java 依然是许多大型组织的首选。这表明 AI 正在加速融入传统企业软件生态。<br />
+原文：<a href="https://thenewstack.io/2026-java-ai-apps/">62% of enterprises now use Java to power AI apps</a></p>
+<hr />
+<h2>工业界最新动向</h2>
+<p><strong>Git 演进展望：为下一个十年做准备</strong><br />
+在 FOSDEM 2026 会议上，专家讨论了 Git 版本控制系统的未来演进方向，重点解决其在处理超大规模仓库和现代开发流程中的短板。Git 正在引入新的后端存储格式和优化算法，以确保在未来十年依然是全球开发者的首选工具。作为基础设施级的软件，Git 的每一次重大改进都将影响数千万开发者的工作效率。<br />
+原文：<a href="https://lwn.net/Articles/1057561/">Evolving Git for the next decade</a></p>
+<p><strong>AMD EPYC 9005 系列处理器的 SEV-SNP 性能评测</strong><br />
+针对 AMD 最新的 EPYC 9005 "Turin" 服务器，一项详尽的性能评测展示了安全加密虚拟化（SEV-SNP）对机密计算的影响。测试显示，在开启硬件级内存加密和完整性保护时，性能损耗通常在 2% 到 10% 之间。随着 Ubuntu 26.04 等新系统的优化，机密计算的开销有望进一步降低，推动其在云端的普及。<br />
+原文：<a href="https://www.phoronix.com/review/amd-epyc-9005-sev-snp">Evaluating The Performance Cost To AMD SEV-SNP On EPYC 9005 VMs</a></p>
+<p><strong>Debian 成立新 DFSG 团队，旨在清理软件包积压</strong><br />
+Debian 项目领导人宣布成立新的 DFSG（Debian 自由软件指导方针）与授权团队，并部署了新的仪表板工具。该团队的首要任务是缩短“NEW”队列的等待时间，加速新软件包的审核与入库流程。这一举措旨在提升 Debian 社区的运作效率，吸引更多开发者参与贡献。<br />
+原文：<a href="https://lwn.net/Articles/1058480/">Debian DFSG Team announces new dashboard and queue processes</a></p>
+<p><strong>对抗 AI 爬虫：网站运营者使用“毒药”数据进行反击</strong><br />
+面对日益猖獗的 AI 爬虫，网站运营者开始采用名为 iocaine 的工具生成无意义的“垃圾”数据，以污染爬虫抓取的内容。这种策略旨在降低被抓取数据的经济价值，从而从根源上遏制未经授权的大规模数据采集。这标志着内容创作者与 AI 巨头之间在数据所有权方面的博弈进入了技术对抗阶段。<br />
+原文：<a href="https://lwn.net/Articles/1056953/">Poisoning scraperbots with iocaine</a></p>
+<p><strong>Arch Linux 在龙芯 LoongArch 架构上运行良好</strong><br />
+最新的测试报告显示，Arch Linux 在国产龙芯 LoongArch 架构上表现出色，生态适配日益完善。这为国产 CPU 用户提供了一个高性能、滚动更新的操作系统选择。随着社区支持的深入，LoongArch 在开源世界的影响力正在稳步提升。<br />
+原文：<a href="https://www.phoronix.com/review/arch-linux-loongarch">Arch Linux Running Well on LoongArch</a></p>
+<hr />
+<h2>学术界最新研究</h2>
+<p><strong>Moss：基于 Rust 的异步 Linux 兼容内核取得重大进展</strong><br />
+Moss 项目是一个使用 Rust 编写的 AArch64 异步内核，旨在实现与 Linux 的二进制兼容。在最新的进展中，该内核已成功启动进入动态链接的 Arch Linux 用户空间，并能运行 bash、strace、ps 和 top 等核心工具。这项研究展示了使用现代安全语言重构高性能操作系统内核的可行性，为未来内核架构的演进提供了参考。<br />
+原文：<a href="https://news.ycombinator.com/item?id=47003335">Moss: A Linux-compatible Rust async kernel, 3 months on</a></p>
+<p><strong>研究人员发现仅 45 个碱基长的自复制 RNA</strong><br />
+一项生物学研究发现，极短的 RNA 分子（仅 45 个碱基长）竟然能够实现自我复制。这一发现对于理解生命起源具有重要意义，暗示了在复杂的生命形式出现之前，简单的分子可能已经具备了自我演化的能力。虽然这属于生命科学领域，但其关于“自组织系统”的逻辑对计算机科学中的自修复系统研究亦有启发。<br />
+原文：<a href="https://arstechnica.com/science/2026/02/researchers-find-small-rnas-that-can-make-copies-of-themselves/">Tiny, 45 base long RNA can make copies of itself</a></p>
+<hr /></div>
+  </main>
+</body>
+</html>
