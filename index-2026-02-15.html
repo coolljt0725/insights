@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OS 领域每日洞察 - 2026-02-15</title>
+  <style>
+    :root {
+      --bg: #f6f4f0;
+      --bg-bar: #ebe8e3;
+      --bg-card: #fffefb;
+      --bg-card-hover: #f5f3ef;
+      --text: #2d2a26;
+      --text-muted: #5c5852;
+      --text-dim: #7a756e;
+      --accent: #5a7a9e;
+      --border: #ddd9d2;
+      --radius: 10px;
+      --font: "Segoe UI", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      font-size: 15px;
+    }
+
+    /* 门户顶栏 */
+    .masthead {
+      background: var(--bg-bar);
+      border-bottom: 1px solid var(--border);
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 0;
+    }
+    .masthead-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .masthead h1 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin: 0;
+      letter-spacing: -0.02em;
+      color: var(--text);
+    }
+    .masthead .meta {
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+    }
+
+    /* 主内容区：多栏门户布局 */
+    .main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 3rem;
+    }
+
+    /* 板块：每个 h2 为一个频道块 */
+    .content .section {
+      margin-bottom: 2.5rem;
+    }
+    .content h2 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+      margin: 0 0 1rem;
+      padding: 0.6rem 1rem;
+      background: var(--bg-bar);
+      border-radius: var(--radius);
+      border-left: 4px solid var(--accent);
+    }
+    .content h2:first-child { margin-top: 0; }
+
+    .content h2:has(+ h3) {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      border-left-color: var(--text-dim);
+    }
+
+    /* 板块内卡片网格（每个 h2 后的 ul） */
+    .content h2 + ul {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1rem;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .content h2 + ul li {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.15rem 1.2rem;
+      transition: background .15s, border-color .15s;
+    }
+    .content h2 + ul li:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--text-dim);
+    }
+    .content h2 + ul li strong {
+      display: block;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+      line-height: 1.4;
+    }
+    .content h2 + ul li p {
+      margin: 0 0 0.5rem;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.58;
+    }
+    .content h2 + ul li p:last-of-type { margin-bottom: 0; }
+    .content h2 + ul li a[href^="http"] {
+      font-size: 0.8125rem;
+      color: var(--accent);
+    }
+    .content h2 + ul li a[href^="http"]:hover { text-decoration: underline; }
+
+    .content .ref-section {
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+    .content h2 + h3 { margin-top: 1.25rem; }
+    .content h3 {
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--text-dim);
+      margin: 1rem 0 0.4rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .content h3 + ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 0.25rem;
+    }
+    .content h3 + ul li {
+      background: transparent;
+      border: none;
+      padding: 0.2rem 0;
+      font-size: 0.8125rem;
+    }
+    .content h3 + ul li strong { font-size: inherit; margin-bottom: 0; }
+    .content h3 + ul li a { color: var(--accent); }
+    .content h3 + ul li a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <header class="masthead">
+    <div class="masthead-inner">
+      <h1>OS 领域每日洞察 - 2026-02-15</h1>
+      <span class="meta">2026-02-15 05:01 UTC</span>
+    </div>
+  </header>
+  <main class="main">
+    <div class="content"><h2>Linux 内核社区热点与趋势</h2>
+<p><strong>Linux 7.0 合并窗口开启，多项性能优化与新特性涌现</strong><br />
+Linux 7.0 的合并窗口已经开启，目前已接受超过 7600 个非合并提交。尽管版本号从 6.19 跳至 7.0 更多是基于版本计数的习惯而非重大架构变革，但该版本仍引入了包括 F2FS 文件系统性能优化、Arm 64 字节单拷贝原子指令支持以及多车道 SPI 支持等重要更新。这标志着内核在支持现代硬件特性和提升存储效率方面迈出了新的一步。<br />
+原文：<a href="https://lwn.net/Articles/1057769/">The first half of the 7.0 merge window</a></p>
+<p><strong>F2FS 文件系统在 Linux 7.0 中迎来关键性能提升</strong><br />
+闪存友好文件系统（F2FS）在即将发布的 Linux 7.0 内核中引入了多项关键性能优化。这些改进旨在进一步提升固态存储设备的读写效率，并优化了元数据处理逻辑。对于依赖高性能闪存存储的用户和移动设备厂商而言，这将带来更流畅的系统响应体验。<br />
+原文：<a href="https://www.phoronix.com/news/Linux-7.0-F2FS">F2FS Delivers "Several Key Performance Optimizations" With Linux 7.0</a></p>
+<p><strong>Linux 7.0 引入 ML-DSA 抗量子签名算法支持</strong><br />
+为了应对未来量子计算对传统加密体系的威胁，Linux 7.0 内核正式集成了基于模块格的数字签名算法（ML-DSA）。这是内核加密子系统向抗量子加密（PQC）迈出的重要一步，确保了系统在长效安全通信中的可靠性。该特性的加入反映了内核社区对前沿安全标准的高度关注。<br />
+原文：<a href="https://www.phoronix.com/news/Linux-7.0-Crypto-ML-DSA">Linux 7.0 Lands ML-DSA Quantum-Resistant Signature Support</a></p>
+<p><strong>内核撤回“可撤销资源管理”补丁系列</strong><br />
+原计划在 Linux 7.0 中合并的“可撤销（revocable）资源管理”补丁系列因发现潜在问题而被临时撤回。该系列补丁旨在解决瞬态设备（如热插拔设备）消失时内核数据结构的生命周期管理难题。社区决定推迟合并以进行更深入的测试和设计调整，这体现了内核开发中稳定性优先的原则。<br />
+原文：<a href="https://lwn.net/Articles/1058041/">The reverting of revocable</a></p>
+<p><strong>Linux 7.0 增强对 Arm 架构与新型硬件的支持</strong><br />
+Linux 7.0 增加了对 Arm 64 字节单拷贝原子指令（LS64/LS64V）的支持，这将显著提升高性能计算场景下的同步效率。此外，HID 子系统也进行了更新，增加了对 PS4/PS5 版《摇滚乐队 4》吉他控制器以及多种新型笔记本电脑特性的支持。这些更新展示了 Linux 内核在专业外设和最新处理器指令集方面的广泛兼容性。<br />
+原文：<a href="https://www.phoronix.com/news/ARM64-Linux-7.0">ARM64 Linux 7.0</a> | <a href="https://www.phoronix.com/news/Linux-7.0-HID">Linux 7.0 HID Changes</a></p>
+<hr />
+<h2>业界大厂动向</h2>
+<p><strong>Red Hat 启动 Project Hummingbird 计划，追求“近零 CVE”容器镜像</strong><br />
+红帽（Red Hat）宣布推出 Project Hummingbird，旨在通过更频繁的更新频率提供几乎不含已知漏洞（CVE）的容器镜像。该项目反映了企业级开源软件分发模式的转变，即在不牺牲代码完整性的前提下，大幅缩短安全补丁的交付周期。这对于受严格监管行业的用户来说，是提升软件供应链安全的关键举措。<br />
+原文：<a href="https://www.redhat.com/en/blog/chasing-holy-grail-why-red-hats-hummingbird-project-aims-near-zero-cves">Chasing the holy grail: Why Red Hat’s Hummingbird project aims for "near zero" CVEs</a></p>
+<p><strong>NVIDIA 为旧款 GPU 提供开源 Nouveau GSP 驱动支持</strong><br />
+NVIDIA 本周向开源 Nouveau 内核驱动提交了新补丁，旨在为 GA100 GPU 提供 GPU 系统处理器（GSP）支持。虽然 NVIDIA 正在开发全新的 Nova 驱动，但此次对现有 Nouveau 驱动的增强将改善旧款硬件在开源环境下的初始化和性能表现。这显示了 NVIDIA 在逐步开放其硬件接口和改善 Linux 开源驱动体验方面的持续努力。<br />
+原文：<a href="https://www.phoronix.com/news/Nouveau-GSP-NVIDIA-GA100">NVIDIA Posts Open-Source Nouveau GSP Driver Support For GA100</a></p>
+<p><strong>VS Code 转型为开发者多智能体协作中心</strong><br />
+微软在 VS Code 2026 年 1 月更新（v1.109）中，将其定位为“开发者的多智能体指挥中心”。新版本强化了与各类 AI 编程代理的集成，允许开发者在编辑器内无缝调度多个 AI 工具进行代码编写、审查和调试。这一举措标志着 IDE 正在从单纯的代码编辑工具演变为 AI 驱动的自动化开发平台。<br />
+原文：<a href="https://thenewstack.io/vs-code-becomes-multi-agent-command-center-for-developers/">VS Code becomes multi-agent command center for developers</a></p>
+<p><strong>AWS 将 Cedar 策略语言捐赠给 CNCF 并承诺支持 MCP 协议</strong><br />
+亚马逊云科技（AWS）将其开源的授权策略语言 Cedar 捐赠给了云原生计算基金会（CNCF）作为沙箱项目。同时，AWS 宣布将持续支持模型上下文协议（MCP），并将其移交给 Linux 基金会托管。这些动作表明 AWS 致力于推动云原生安全和 AI 代理架构的标准化与开放生态建设。<br />
+原文：<a href="https://aws.amazon.com/blogs/opensource/cedar-joins-cncf-as-a-sandbox-project/">Cedar Joins CNCF as a Sandbox Project</a></p>
+<p><strong>Intel 停止部分量子编译器开源项目的维护</strong><br />
+继近期关闭多个开源项目后，Intel 本周正式停止了其基于 LLVM 的量子编译器插件项目 Quantum Passes 的开源维护。该项目原计划作为 Intel 量子 SDK 的一部分提供额外的编译优化。此举反映了 Intel 在非核心开源业务上的战略收缩和资源重新分配。<br />
+原文：<a href="https://www.phoronix.com/news/Intel-Quantum-Passes-OSS-End">Intel Ends Work On Quantum Compiler Open-Source Bits</a></p>
+<hr />
+<h2>云原生领域</h2>
+<p><strong>Kubernetes v1.35 引入多项重磅 Alpha 特性，增强 Pod 管理灵活性</strong><br />
+即将发布的 Kubernetes v1.35 引入了“原地重启所有容器”的功能，允许在不删除 Pod 的情况下重置其状态，这对 AI/ML 训练任务尤为重要。此外，新版本还增加了可变的持久卷（PV）节点亲和性支持，以及支持数值比较的扩展容忍度运算符。这些改进显著提升了 Kubernetes 处理复杂状态和动态资源调度的能力。<br />
+原文：<a href="https://kubernetes.io/blog/2026/01/02/kubernetes-v1-35-restart-all-containers/">Kubernetes v1.35: New level of efficiency with in-place Pod restart</a></p>
+<p><strong>CNCF 警告 Ingress NGINX 将于 2026 年 3 月退役</strong><br />
+Kubernetes 指导委员会发布声明，确认关键基础设施项目 Ingress NGINX 将于 2026 年 3 月正式退役。由于长期缺乏足够的维护者，该项目届时将停止所有安全补丁和错误修复。官方强烈建议用户立即开始向 Gateway API 或其他第三方 Ingress 控制器迁移，以避免潜在的安全风险。<br />
+原文：<a href="https://kubernetes.io/blog/2026/01/29/ingress-nginx-statement/">Ingress NGINX: Statement from the Kubernetes Steering and Security Response Committees</a></p>
+<p><strong>Cluster API v1.12 发布，支持原地更新与链式升级</strong><br />
+Cluster API v1.12 版本正式发布，引入了备受期待的原地更新（In-place updates）和链式升级功能。这些新特性减少了集群生命周期管理中的摩擦，允许平台团队更平滑地更新控制平面和工作节点。该版本的发布进一步巩固了 Cluster API 作为跨云 Kubernetes 集群自动化管理标准工具的地位。<br />
+原文：<a href="https://www.cncf.io/blog/2026/02/09/cluster-api-v1-12-introducing-in-place-updates-and-chained-upgrades/">Cluster API v1.12: Introducing in-place updates and chained upgrades</a></p>
+<p><strong>Azazel：基于 eBPF 的轻量级 Docker 恶意软件分析沙箱</strong><br />
+开发者发布了名为 Azazel 的开源工具，利用 eBPF 技术在 Docker 容器中实现高性能的恶意软件行为追踪。它通过 19 个 eBPF 挂钩点捕获系统调用、文件 I/O 和网络连接，并使用 cgroup 进行精确过滤。相比传统的重量级沙箱，Azazel 提供了更低的开销和更强的内核版本兼容性，是云原生安全分析的利器。<br />
+原文：<a href="https://github.com/beelzebub-labs/azazel">Show HN: Azazel – Lightweight eBPF-based malware analysis sandbox using Docker</a></p>
+<p><strong>Kubernetes 成立 Checkpoint/Restore 工作组</strong><br />
+Kubernetes 社区宣布成立全新的 Checkpoint/Restore 工作组，专注于将容器快照与恢复功能集成到核心平台中。该技术可用于优化交互式工作负载（如 Jupyter notebooks）的资源利用率，并加速大型应用（如 LLM 推理服务）的启动速度。这一动作预示着 Kubernetes 将在提升长时运行任务的容错性和效率方面取得突破。<br />
+原文：<a href="https://kubernetes.io/blog/2026/01/21/introducing-checkpoint-restore-wg/">Announcing the Checkpoint/Restore Working Group</a></p>
+<hr />
+<h2>AI 领域</h2>
+<p><strong>OpenAI 发布 Codex Spark 模型，主打极速开发体验</strong><br />
+OpenAI 推出了全新的 GPT-5.3-Codex-Spark 模型，该模型专门针对软件开发场景中的生成速度进行了优化。与之前的 Codex 系列相比，Spark 模型在保持高准确度的同时显著降低了延迟，旨在为实时代码补全和交互式编程代理提供更流畅的支持。这一发布进一步加剧了 AI 编程辅助工具市场的竞争。<br />
+原文：<a href="https://thenewstack.io/openais-new-codex-spark-is-optimized-for-speed/">OpenAI’s new Codex Spark model is built for speed</a></p>
+<p><strong>Cloudflare 推出“Markdown for Agents”，将网页转化为 AI 友好格式</strong><br />
+Cloudflare 推出了一项新功能，可自动将 HTML 网页转换为 Markdown 格式，以便 AI 代理更好地抓取和理解内容。随着 AI 搜索和代理逐渐取代传统搜索引擎，该工具旨在帮助网站所有者将其内容转化为 AI 易于处理的结构化数据。这标志着互联网内容分发正在从“为人设计”向“为 AI 代理设计”转变。<br />
+原文：<a href="https://blog.cloudflare.com/markdown-for-agents/">Introducing Markdown for Agents</a></p>
+<p><strong>GitHub 引入代理化工作流，实现 CI/CD 中的“持续 AI”</strong><br />
+GitHub 宣布在其平台中集成代理化工作流（Agentic Workflows），将 AI 代理直接引入软件交付流水线。这些代理不仅能编写代码，还能自动处理测试失败、优化构建配置并参与代码审查。这一特性旨在实现真正的“持续 AI”，让 AI 成为开发团队中全天候工作的虚拟成员。<br />
+原文：<a href="https://thenewstack.io/github-agentic-workflows-overview/">GitHub’s Agentic Workflows bring “continuous AI” into the CI/CD loop</a></p>
+<p><strong>研究人员利用 iocaine 算法对抗 AI 爬虫“投毒”</strong><br />
+为了应对日益严重的 AI 爬虫对网站资源的无节制抓取，开发者推出了名为 iocaine 的开源工具。该工具通过生成看似合理但实际无意义的“垃圾文本”来干扰爬虫，从而降低被抓取数据的经济价值。这种“投毒”策略反映了内容创作者与 AI 巨头之间在数据版权和资源占用上的激烈博弈。<br />
+原文：<a href="https://lwn.net/Articles/1056953/">Poisoning scraperbots with iocaine</a></p>
+<p><strong>Transformers.js v4 预览版发布，支持在浏览器中运行更强大的模型</strong><br />
+Hugging Face 发布了 Transformers.js v4 的预览版，进一步增强了在 Web 浏览器中直接运行机器学习模型的能力。新版本优化了 WebGPU 加速，并支持更多先进的模型架构，使得开发者无需后端服务器即可构建复杂的 AI 应用。这对于保护用户隐私和降低 AI 应用的运营成本具有重要意义。<br />
+原文：<a href="https://huggingface.co/blog/transformersjs-v4">Transformers.js v4 Preview: Now Available on NPM!</a></p>
+<hr />
+<h2>工业界最新动向</h2>
+<p><strong>Vim 9.2 正式发布，引入实验性 Wayland 支持</strong><br />
+老牌文本编辑器 Vim 发布了 9.2 版本，带来了多项现代化更新。最显著的变化是增加了对 Wayland 协议的实验性支持，并优化了在高分屏（HiDPI）下的显示效果。此外，新版本还改进了 Vim9 脚本语言和差异比较模式，显示出这一经典工具在 Linux 桌面环境演进中依然保持着强大的生命力。<br />
+原文：<a href="https://www.phoronix.com/news/Vim-9.2-Released">Vim 9.2 Released With Experimental Wayland Support</a></p>
+<p><strong>GNOME 50 Beta 版发布，VRR 可变刷新率进入稳定阶段</strong><br />
+GNOME 桌面环境发布了 50 版本的 Beta 预览，预计将于 3 月正式发布。该版本最大的亮点是可变刷新率（VRR）功能终于达到稳定状态，将显著提升 Linux 用户的游戏和视频观看体验。同时，GNOME OS 开始采用 systemd-confext 技术，进一步推动了不可变操作系统的技术演进。<br />
+原文：<a href="https://www.phoronix.com/news/GNOME-50-Beta">GNOME 50 Beta Released With Stable VRR</a></p>
+<p><strong>Git 社区探讨未来十年的演进方向</strong><br />
+在 FOSDEM 2026 大会上，Git 核心维护者讨论了该版本控制系统在未来十年面临的挑战与改进计划。重点包括优化大规模仓库的性能、改进用户界面友好度以及应对 AI 生成代码带来的版本管理新需求。作为全球开发者必备的工具，Git 的持续演进对整个开源生态的稳定性至关重要。<br />
+原文：<a href="https://lwn.net/Articles/1057561/">Evolving Git for the next decade</a></p>
+<p><strong>Moss：基于 Rust 编写的 Linux 兼容异步内核取得重大进展</strong><br />
+开源项目 Moss 宣布其基于 Rust 编写的内核已能成功引导至 Arch Linux 的用户空间。该内核采用异步设计，目前已支持 ptrace、动态链接 glibc 以及 procfs 等关键特性。Moss 的进展展示了使用内存安全语言重新实现 Linux 兼容内核的可行性，吸引了系统编程社区的广泛关注。<br />
+原文：<a href="https://news.ycombinator.com/item?id=47003335">Moss: A Linux-compatible Rust async kernel, 3 months on</a></p>
+<p><strong>Linux 手册页（man pages）发布 6.17 版本，新增 C 代码搜索工具</strong><br />
+Linux 手册页项目发布了 6.17 更新，除了大量文档修订外，还引入了一个名为 <code>grepc</code> 的新工具。该工具允许 C 程序员在不建立索引的情况下，快速在大型项目中搜索函数定义等代码片段。这一实用工具的加入将进一步提升开发者在 Linux 环境下的底层开发效率。<br />
+原文：<a href="https://lwn.net/Articles/1058323/">Linux man pages 6.17 released</a></p>
+<hr />
+<h2>学术界最新研究</h2>
+<p><strong>形式化验证在编程面试中的应用：Lean 4 与 Dafny 的对比研究</strong><br />
+一项最新的研究探讨了 Lean 4 和 Dafny 等形式化验证语言在解决编程面试问题中的表现。研究通过对比两种语言在逻辑证明和代码正确性验证上的差异，分析了它们在工业界普及的潜力。这为系统软件开发中如何利用数学证明来消除代码缺陷提供了有趣的视角。<br />
+原文：<a href="https://ntaylor.ca/posts/proving-the-coding-interview-lean/">Leaning Into the Coding Interview: Lean 4 vs Dafny cage-match</a></p>
+<p><strong>Dada 编程语言研究：探索新的所有权与共享模型</strong><br />
+编程语言研究项目 Dada 发布了关于其“共享（Sharing）”机制的最新进展。Dada 旨在探索比 Rust 更易用的所有权模型，通过引入新的语法和运行时逻辑来简化并发编程中的内存安全问题。该研究对于未来系统级语言如何平衡性能与开发效率具有重要的参考价值。<br />
+原文：<a href="https://smallcultfollowing.com/babysteps/blog/2026/02/14/sharing-in-dada/">Sharing in Dada</a></p>
+<p><strong>生物信息学研究：发现仅 45 个碱基长的自复制 RNA</strong><br />
+学术界在生命起源研究领域取得突破，发现了长度仅为 45 个碱基的微小 RNA 片段能够进行自我复制。这一发现不仅对生物学具有重大意义，也为计算生物学和分子信息处理提供了新的模型。研究暗示了极简系统实现复杂功能的可能性，对理解基础系统架构有启发作用。<br />
+原文：<a href="https://arstechnica.com/science/2026/02/researchers-find-small-rnas-that-can-make-copies-of-themselves/">Tiny, 45 base long RNA can make copies of itself</a></p>
+<hr /></div>
+  </main>
+</body>
+</html>
