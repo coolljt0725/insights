@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OS 领域每日洞察 - 2026-02-17</title>
+  <style>
+    :root {
+      --bg: #f6f4f0;
+      --bg-bar: #ebe8e3;
+      --bg-card: #fffefb;
+      --bg-card-hover: #f5f3ef;
+      --text: #2d2a26;
+      --text-muted: #5c5852;
+      --text-dim: #7a756e;
+      --accent: #5a7a9e;
+      --border: #ddd9d2;
+      --radius: 10px;
+      --font: "Segoe UI", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      font-size: 15px;
+    }
+
+    /* 门户顶栏 */
+    .masthead {
+      background: var(--bg-bar);
+      border-bottom: 1px solid var(--border);
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 0;
+    }
+    .masthead-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .masthead h1 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin: 0;
+      letter-spacing: -0.02em;
+      color: var(--text);
+    }
+    .masthead .meta {
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+    }
+
+    /* 主内容区：多栏门户布局 */
+    .main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 3rem;
+    }
+
+    /* 板块：每个 h2 为一个频道块 */
+    .content .section {
+      margin-bottom: 2.5rem;
+    }
+    .content h2 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+      margin: 0 0 1rem;
+      padding: 0.6rem 1rem;
+      background: var(--bg-bar);
+      border-radius: var(--radius);
+      border-left: 4px solid var(--accent);
+    }
+    .content h2:first-child { margin-top: 0; }
+
+    .content h2:has(+ h3) {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      border-left-color: var(--text-dim);
+    }
+
+    /* 板块内卡片网格（每个 h2 后的 ul） */
+    .content h2 + ul {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1rem;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .content h2 + ul li {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.15rem 1.2rem;
+      transition: background .15s, border-color .15s;
+    }
+    .content h2 + ul li:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--text-dim);
+    }
+    .content h2 + ul li strong {
+      display: block;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+      line-height: 1.4;
+    }
+    .content h2 + ul li p {
+      margin: 0 0 0.5rem;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.58;
+    }
+    .content h2 + ul li p:last-of-type { margin-bottom: 0; }
+    .content h2 + ul li a[href^="http"] {
+      font-size: 0.8125rem;
+      color: var(--accent);
+    }
+    .content h2 + ul li a[href^="http"]:hover { text-decoration: underline; }
+
+    .content .ref-section {
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+    .content h2 + h3 { margin-top: 1.25rem; }
+    .content h3 {
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--text-dim);
+      margin: 1rem 0 0.4rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .content h3 + ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 0.25rem;
+    }
+    .content h3 + ul li {
+      background: transparent;
+      border: none;
+      padding: 0.2rem 0;
+      font-size: 0.8125rem;
+    }
+    .content h3 + ul li strong { font-size: inherit; margin-bottom: 0; }
+    .content h3 + ul li a { color: var(--accent); }
+    .content h3 + ul li a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <header class="masthead">
+    <div class="masthead-inner">
+      <h1>OS 领域每日洞察 - 2026-02-17</h1>
+      <span class="meta">2026-02-17 05:01 UTC</span>
+    </div>
+  </header>
+  <main class="main">
+    <div class="content"><h2>Linux 内核社区热点与趋势</h2>
+<p><strong>Linux 7.0 合并窗口开启，多项重量级特性涌入</strong><br />
+Linux 7.0 合并窗口现已正式开启，目前已接受超过 7600 个非合并提交。尽管版本号遵循常规递增逻辑，但 7.0 版本引入了包括 AMD Zen 5 地址转换支持、RISC-V 用户态控制流完整性（CFI）以及更多 Rust 驱动核心增强等关键特性。这标志着内核在硬件支持多样性和内存安全语言集成方面迈出了重要一步。<br />
+原文：<a href="https://lwn.net/Articles/1057769/">The first half of the 7.0 merge window</a></p>
+<p><strong>紧急发布 Linux 6.19.2 及多个 LTS 版本以修复启动故障</strong><br />
+在 Linux 6.19.1 发布后不久，社区发现了一个导致部分系统无法启动的严重回归问题。稳定版维护者 Greg Kroah-Hartman 迅速发布了 6.19.2 以及 6.18.12、6.12.73 和 6.6.126 等多个长期支持（LTS）版本，通过回滚问题提交来解决该故障。官方建议如果当前系统运行正常则无需升级，但受启动问题困扰的用户应立即更新。<br />
+原文：<a href="https://www.phoronix.com/news/Linux-6.19.2-Released">Linux 6.19.2 and Other LTS Kernels Released to Fix Systems Not Booting</a></p>
+<p><strong>Linux 7.0 增强 Rust 驱动支持并优化 PCI 子系统</strong><br />
+Linux 7.0 内核在驱动核心层面进行了多项改进，旨在进一步降低 Rust 语言编写内核驱动的门槛。同时，PCI 子系统也进行了更新，更好地隔离了过时的 CardBus 代码，以避免在现代 PC 设备上产生干扰。这些变动体现了内核在清理遗留代码的同时，积极拥抱现代编程范式的趋势。<br />
+原文：<a href="https://www.phoronix.com/news/Linux-7.0-Driver-Core">Linux 7.0 Driver Core Changes Bring More Enhancements For Rust Kernel Drivers</a></p>
+<p><strong>内核引入自定义启动 Logo 功能并移除陈旧芯片组支持</strong><br />
+Linus Torvalds 近期合并了允许在编译时轻松替换 Tux 企鹅启动 Logo 的代码，为发行版和嵌入式设备提供了更便捷的定制化手段。与此同时，Linux 7.0 正式移除了拥有 28 年历史的 Intel 440BX 芯片组相关驱动，标志着内核正在逐步清理极老旧硬件的支持以减轻维护负担。<br />
+原文：<a href="https://www.phoronix.com/news/Linux-7.0-FBDEV-Alternate-Logo">Linux 7.0 Merges The Code To Replace The Tux Boot Logo At Build Time</a></p>
+<hr />
+<h2>业界大厂动向</h2>
+<p><strong>Gentoo Linux 为规避 Copilot 训练迁往 Codeberg</strong><br />
+Gentoo Linux 项目宣布正式开始从 GitHub 迁移至 Codeberg 托管平台。此举的主要动机是由于微软 Copilot 在 GitHub 仓库上进行 AI 训练引发了社区对代码版权和开源伦理的担忧。目前 Gentoo 的主项目已在 Codeberg 上线并开始接收拉取请求，这反映了开源社区对 AI 训练数据来源的抵制情绪。<br />
+原文：<a href="https://www.phoronix.com/news/Gentoo-Starts-Codeberg-Use">Gentoo Linux Begins Codeberg Migration In Moving Away From GitHub</a></p>
+<p><strong>红帽发布主权就绪评估工具并推进“零 CVE”项目</strong><br />
+红帽公司推出了“数字主权就绪评估工具”，旨在帮助欧洲及全球企业在满足合规性的同时保持操作自由。此外，红帽还通过“Hummingbird 项目”致力于提供几乎无已知漏洞（Zero CVE）的容器镜像，通过更频繁的更新频率提升软件供应链的安全透明度。<br />
+原文：<a href="https://www.redhat.com/en/blog/how-sovereign-your-strategy-introducing-red-hat-sovereignty-readiness-assessment-tool">How sovereign is your strategy? Introducing the Red Hat Sovereignty Readiness Assessment tool</a></p>
+<p><strong>谷歌发布 Gemini 3 Deep Think 模型聚焦科学与工程</strong><br />
+谷歌正式推出了 Gemini 3 Deep Think 模型，该模型专门针对复杂的科学研究、高级编程和工程问题进行了优化。它具备更强的逻辑推理能力，旨在帮助专业人员处理需要深度思考和多步规划的任务。这一发布进一步巩固了谷歌在大模型推理能力领域的竞争地位。<br />
+原文：<a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-deep-think/">Gemini 3 Deep Think: Advancing science, research and engineering</a></p>
+<p><strong>微软将 VS Code 打造为开发者多智能体指挥中心</strong><br />
+在 VS Code 2026 年 1 月的更新中，微软引入了多智能体协作功能，使其不仅是一个编辑器，更是一个 AI 驱动的开发中枢。开发者现在可以更高效地调度多个 AI 智能体来处理代码生成、调试和文档编写等任务。这一举措预示着开发工具正从“辅助编写”向“智能编排”转型。<br />
+原文：<a href="https://thenewstack.io/vs-code-becomes-multi-agent-command-center-for-developers/">VS Code becomes multi-agent command center for developers</a></p>
+<hr />
+<h2>云原生领域</h2>
+<p><strong>Kubernetes 宣布 Ingress NGINX 将于 2026 年退役</strong><br />
+Kubernetes 指导委员会发布声明，由于缺乏足够的维护者，关键基础设施项目 Ingress NGINX 将于 2026 年 3 月正式退役。届时将停止所有安全补丁和错误修复，官方强烈建议用户立即开始向 Gateway API 或其他第三方控制器迁移。这一消息对全球约半数的云原生环境具有重大影响，需引起运维团队的高度重视。<br />
+原文：<a href="https://kubernetes.io/blog/2026/01/29/ingress-nginx-statement/">Ingress NGINX: Statement from the Kubernetes Steering and Security Response Committees</a></p>
+<p><strong>Kubernetes v1.35 引入 Pod 原地重启特性</strong><br />
+即将发布的 Kubernetes 1.35 版本将引入“重启所有容器”的 Alpha 特性，允许用户在不删除并重建 Pod 的情况下实现原地重启。这一功能对于 AI/ML 训练任务尤为重要，因为它能显著降低重置应用状态时的资源开销和延迟。这标志着 Kubernetes 在支持高性能计算负载方面又迈出了关键一步。<br />
+原文：<a href="https://kubernetes.io/blog/2026/01/02/kubernetes-v1-35-restart-all-containers/">Kubernetes v1.35: New level of efficiency with in-place Pod restart</a></p>
+<p><strong>Cluster API v1.12 发布，支持原地更新与链式升级</strong><br />
+Cluster API (CAPI) v1.12 版本正式发布，引入了备受期待的原地更新功能，减少了集群生命周期管理中的摩擦。新版本允许平台团队以声明式方式定义集群状态，并由控制器自动完成复杂的链式升级任务。这些改进大幅提升了大规模 Kubernetes 集群运维的简便性和稳定性。<br />
+原文：<a href="https://www.cncf.io/blog/2026/02/09/cluster-api-v1-12-introducing-in-place-updates-and-chained-upgrades/">Cluster API v1.12: Introducing in-place updates and chained upgrades</a></p>
+<p><strong>CNCF 报告 2025 年项目活跃度：云原生已成为“隐形基础设施”</strong><br />
+CNCF 发布的最新报告显示，云原生技术在 2025 年已完全融入企业底层架构，成为支撑日常业务的“隐形基础设施”。报告通过分析代码贡献量和部署数据指出，社区的能量正从核心编排向可观测性、安全和 AI 基础设施领域扩散。这表明云原生生态已进入成熟期，正通过标准化推动更广泛的行业变革。<br />
+原文：<a href="https://www.cncf.io/blog/2026/02/09/what-cncf-project-velocity-in-2025-reveals-about-cloud-natives-future/">What CNCF Project Velocity in 2025 Reveals About Cloud Native’s Future</a></p>
+<hr />
+<h2>AI 领域</h2>
+<p><strong>curl 创始人抨击 AI 生成的低质量安全报告</strong><br />
+curl 项目负责人 Daniel Stenberg 在 FOSDEM 2026 上指出，AI 驱动的工具正在产生大量低质量的安全报告，这在某种程度上是对开源维护者的“拒绝服务攻击”（DDoS）。虽然 AI 有时能发现人类忽略的漏洞，但处理大量虚假报告耗费了开发者巨大的精力。他呼吁社区在使用 AI 辅助安全分析时应更加负责任。<br />
+原文：<a href="https://thenewstack.io/curls-daniel-stenberg-ai-is-ddosing-open-source-and-fixing-its-bugs/">cURL’s Daniel Stenberg: AI slop is DDoSing open source</a></p>
+<p><strong>OpenClaw 智能体系统引发安全争议</strong><br />
+近期备受关注的开源智能体框架 OpenClaw 被部分安全专家称为“安全灾难”，原因是其在执行自动化任务时缺乏足够的隔离保护。尽管如此，开发者仍在使用它构建复杂的业务自动化流程，如通过 WhatsApp 管理合同和发票。专家建议在使用此类智能体时应配合 Deno 等沙箱技术以确保系统安全。<br />
+原文：<a href="https://thenewstack.io/deno-sandbox-security-secrets/">OpenClaw is being called a security “Dumpster fire”</a></p>
+<p><strong>GitHub 推出 Agentic Workflows 将 AI 引入 CI/CD 循环</strong><br />
+GitHub 宣布在其 CI/CD 流程中集成智能体工作流，旨在实现“持续 AI”集成。不同于简单的代码补全，这些智能体可以自主处理测试修复、依赖更新和复杂的发布逻辑。这一举措标志着 DevOps 正在向 AIOps 深度演进，进一步提升了软件交付的自动化水平。<br />
+原文：<a href="https://thenewstack.io/github-agentic-workflows-overview/">GitHub’s Agentic Workflows bring “continuous AI” into the CI/CD loop</a></p>
+<p><strong>Vocalinux：面向 Linux 的 100% 离线隐私语音输入工具</strong><br />
+开发者推出了一款名为 Vocalinux 的开源工具，支持在 Linux 系统上进行完全离线的语音转文字。该工具利用 whisper.cpp 等技术，并支持 Vulkan GPU 加速，确保用户的语音数据不会被上传至云端。这为对隐私敏感的 Linux 用户提供了一个强大的生产力替代方案。<br />
+原文：<a href="https://vocalinux.com/">Vocalinux // 100% offline voice typing for Linux</a></p>
+<hr />
+<h2>工业界最新动向</h2>
+<p><strong>Vim 9.2 正式发布，引入实验性 Wayland 支持</strong><br />
+经典文本编辑器 Vim 发布了 9.2 版本，带来了显著的脚本语言增强和改进的差异模式。最引人注目的是该版本增加了对 Wayland 协议的实验性支持，并引入了新的交互式教学模式。这显示了这款老牌编辑器在保持核心竞争力的同时，也在积极适配现代 Linux 桌面环境。<br />
+原文：<a href="https://lwn.net/Articles/1058744/">Vim 9.2 released</a></p>
+<p><strong>GlassFish 8.0 发布，全面兼容 Jakarta EE 11</strong><br />
+Eclipse 基金会正式发布了 GlassFish 8.0，这是 Jakarta EE 11 的一个兼容实现。新版本引入了对虚拟线程的支持，显著增强了应用安全性和数据访问性能。作为 Java 企业级应用服务器的标杆，GlassFish 的更新为开发者利用现代 Java 特性构建高性能后端服务提供了坚实基础。<br />
+原文：<a href="https://www.infoq.com/news/2026/02/glassfish-8-released/">GlassFish 8.0 Delivers Compatibility with Jakarta EE 11</a></p>
+<p><strong>Linux Mint 维持高人气，但维护者压力倍增</strong><br />
+作为最受欢迎的 Linux 发行版之一，Linux Mint 的成功也给其维护团队带来了巨大的心理和工作压力。项目负责人表示，虽然用户群体的增长令人振奋，但处理海量反馈和维持高质量更新已让团队感到疲惫。社区正在讨论如何通过优化开发流程和增加资助来缓解这一现状。<br />
+原文：<a href="https://www.theregister.com/2026/02/16/mints_success_and_stress/">Price of popularity: Linux Mint's success also means maintainer stress</a></p>
+<p><strong>新型流体可存储太阳能并在数月后释放热量</strong><br />
+科研人员开发出一种受 DNA 启发的特殊分子流体，能够高效捕获太阳能并将其以化学能形式储存。这种流体可以在数月后根据需要释放热量，打破了以往太阳能热存储的时间限制。该技术有望为数据中心和工业设施提供一种全新的、可持续的能源管理方案。<br />
+原文：<a href="https://arstechnica.com/science/2026/02/dna-inspired-molecule-breaks-records-for-storing-solar-heat/">A fluid can store solar energy and then release it as heat months later</a></p>
+<hr />
+<h2>学术界最新研究</h2>
+<p><strong>ThunderAgent：一种程序感知的快速智能体推理系统</strong><br />
+研究人员提出了一种名为 ThunderAgent 的新型推理系统，旨在解决现有智能体工作流中 LLM 引擎与工具编排器资源分配脱节的问题。该系统将智能体工作流抽象为“LLM 程序”，实现了对异构资源的统一视图，显著优化了 KV 缓存管理和工具执行环境。实验表明，ThunderAgent 在处理复杂多轮对话任务时具有更高的效率。<br />
+原文：<a href="https://arxiv.org/abs/2602.13692">ThunderAgent: A Simple, Fast and Program-Aware Agentic Inference System</a></p>
+<p><strong>Cuttlefish：在 Rust 中实现亚 100 纳秒级的分布式基准测试</strong><br />
+学术界展示了一个名为 Cuttlefish 的无协调状态内核框架，利用 io_uring、SIMD 和零拷贝技术实现了极高性能。该研究探讨了如何在 Rust 中可靠地测试亚 100 纳秒的代码路径，其实测的内核准入周期仅为 13 纳秒左右。这为构建超低延迟的分布式系统提供了重要的理论和实践参考。<br />
+原文：<a href="https://github.com/abokhalill/cuttlefish">How do you reliably benchmark sub-100ns code paths in Rust</a></p>
+<p><strong>研究揭示文本具有内在曲率，语义空间并非平坦</strong><br />
+一项名为 "Text Has Curvature" 的研究提出，自然语言文本在语义层面具有内在的离散曲率信号。研究者通过理论证明和实证分析发现，语义推理在自然语料库中表现出非平坦特征，这为使用双曲空间或混合曲率流形进行语言建模提供了科学依据。这一发现可能彻底改变未来大模型嵌入空间的设计思路。<br />
+原文：<a href="https://arxiv.org/abs/2602.13418">Text Has Curvature</a></p>
+<p><strong>VeRA：大规模验证推理数据增强框架</strong><br />
+针对当前 AI 评估基准容易被模型“背诵”的问题，研究人员提出了 VeRA 框架。该框架能将基准问题转换为可执行规范，通过自动生成有效配置和确定性验证器，从单个种子问题衍生出大量高质量、可验证的训练数据。这为衡量 AI 的真实推理能力提供了一种鲁棒且可扩展的评估手段。<br />
+原文：<a href="https://arxiv.org/abs/2602.13217">VeRA: Verified Reasoning Data Augmentation at Scale</a></p>
+<hr /></div>
+  </main>
+</body>
+</html>
