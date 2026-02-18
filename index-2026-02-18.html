@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OS 领域每日洞察 - 2026-02-18</title>
+  <style>
+    :root {
+      --bg: #f6f4f0;
+      --bg-bar: #ebe8e3;
+      --bg-card: #fffefb;
+      --bg-card-hover: #f5f3ef;
+      --text: #2d2a26;
+      --text-muted: #5c5852;
+      --text-dim: #7a756e;
+      --accent: #5a7a9e;
+      --border: #ddd9d2;
+      --radius: 10px;
+      --font: "Segoe UI", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      font-size: 15px;
+    }
+
+    /* 门户顶栏 */
+    .masthead {
+      background: var(--bg-bar);
+      border-bottom: 1px solid var(--border);
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 0;
+    }
+    .masthead-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .masthead h1 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin: 0;
+      letter-spacing: -0.02em;
+      color: var(--text);
+    }
+    .masthead .meta {
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+    }
+
+    /* 主内容区：多栏门户布局 */
+    .main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 3rem;
+    }
+
+    /* 板块：每个 h2 为一个频道块 */
+    .content .section {
+      margin-bottom: 2.5rem;
+    }
+    .content h2 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+      margin: 0 0 1rem;
+      padding: 0.6rem 1rem;
+      background: var(--bg-bar);
+      border-radius: var(--radius);
+      border-left: 4px solid var(--accent);
+    }
+    .content h2:first-child { margin-top: 0; }
+
+    .content h2:has(+ h3) {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      border-left-color: var(--text-dim);
+    }
+
+    /* 板块内卡片网格（每个 h2 后的 ul） */
+    .content h2 + ul {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1rem;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .content h2 + ul li {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.15rem 1.2rem;
+      transition: background .15s, border-color .15s;
+    }
+    .content h2 + ul li:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--text-dim);
+    }
+    .content h2 + ul li strong {
+      display: block;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+      line-height: 1.4;
+    }
+    .content h2 + ul li p {
+      margin: 0 0 0.5rem;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.58;
+    }
+    .content h2 + ul li p:last-of-type { margin-bottom: 0; }
+    .content h2 + ul li a[href^="http"] {
+      font-size: 0.8125rem;
+      color: var(--accent);
+    }
+    .content h2 + ul li a[href^="http"]:hover { text-decoration: underline; }
+
+    .content .ref-section {
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+    .content h2 + h3 { margin-top: 1.25rem; }
+    .content h3 {
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--text-dim);
+      margin: 1rem 0 0.4rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .content h3 + ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 0.25rem;
+    }
+    .content h3 + ul li {
+      background: transparent;
+      border: none;
+      padding: 0.2rem 0;
+      font-size: 0.8125rem;
+    }
+    .content h3 + ul li strong { font-size: inherit; margin-bottom: 0; }
+    .content h3 + ul li a { color: var(--accent); }
+    .content h3 + ul li a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <header class="masthead">
+    <div class="masthead-inner">
+      <h1>OS 领域每日洞察 - 2026-02-18</h1>
+      <span class="meta">2026-02-18 05:01 UTC</span>
+    </div>
+  </header>
+  <main class="main">
+    <div class="content"><h2>Linux 内核社区热点与趋势</h2>
+<p><strong>Linux 7.0 合并窗口开启，多项性能优化与硬件支持入库</strong><br />
+Linux 7.0 的合并窗口现已开启，带来了大量底层改进。其中，Paragon Software 维护的 NTFS3 驱动获得了持续优化，而 <code>close_range</code> 系统调用也迎来了显著的执行速度提升。此外，针对 AMD Zen 5 平台的 CXL 地址转换功能以及针对下一代 Zen 6 "Venice" 处理器的 RMPOPT 指令支持也已并入，后者旨在降低 SEV-SNP 加密虚拟机的运行开销。<br />
+原文：<a href="https://lwn.net/Articles/1057769/">The first half of the 7.0 merge window</a><br />
+原文：<a href="https://www.phoronix.com/news/NTFS3-Linux-7.0">NTFS3 Driver Sees Improvements In Linux 7.0</a><br />
+原文：<a href="https://www.phoronix.com/news/AMD-RMPOPT-Linux">AMD Preparing Linux Kernel For "RMPOPT"</a></p>
+<p><strong>内核紧急发布多个稳定版本，修复导致系统无法引导的严重回归</strong><br />
+Greg Kroah-Hartman 紧急发布了 Linux 6.19.2 以及 6.18.12、6.12.73 等多个长期支持（LTS）版本。这些版本仅包含一个关键变更：回滚了之前版本中导致部分系统在引导阶段崩溃的错误提交。社区建议所有遇到启动问题的用户立即升级，若当前系统运行稳定则可暂缓。<br />
+原文：<a href="https://www.phoronix.com/news/Linux-6.19.2-Released">Linux 6.19.2 and Other LTS Kernels Released to Fix Systems Not Booting</a><br />
+原文：<a href="https://www.kernel.org/">next-20260217: linux-next</a></p>
+<p><strong>Linux 7.0 引入新型 LED 驱动，支持自主动画引擎</strong><br />
+在 Linux 7.0 的更新中，一个新的德州仪器（TI）RGB LED 驱动引起了关注。该驱动集成了“自主动画引擎”控制功能，允许硬件在无需 CPU 干预的情况下执行复杂的灯光动画。这一改进对于嵌入式设备和服务器指示灯的低功耗管理具有重要意义。<br />
+原文：<a href="https://www.phoronix.com/news/Linux-7.0-LEDs">Linux 7.0 Lands New TI RGB LED Driver With "Autonomous Animation Engine"</a></p>
+<hr />
+<h2>业界大厂动向</h2>
+<p><strong>Red Hat 与软银合作，利用 llm-d 优化 AI-RAN 编排</strong><br />
+Red Hat 宣布将其 llm-d 开源框架集成到软银的 AI-RAN 编排器 AITRAS 中。llm-d 旨在无线接入网（RAN）内动态且智能地分配大语言模型的推理任务，从而提高硬件利用率。此举标志着电信基础设施正从单纯的连接提供者向支持 AI 推理的边缘计算平台转型。<br />
+原文：<a href="https://www.redhat.com/en/blog/how-llm-d-brings-critical-resource-optimization-softbanks-ai-ran-orchestrator">How llm-d brings critical resource optimization with SoftBank’s AI-RAN orchestrator</a></p>
+<p><strong>Anthropic 发布 Claude 3.6 Sonnet，性能直逼顶级模型</strong><br />
+Anthropic 推出了 Claude 3.6 Sonnet，宣称其在编程任务上达到了顶级模型 Opus 的水平，但维持了 Sonnet 级别的定价。该模型在处理复杂逻辑和长上下文代码生成方面表现出色，旨在吸引更多开发者在生产环境中使用。这一发布进一步加剧了大模型市场在性能与成本平衡点上的竞争。<br />
+原文：<a href="https://thenewstack.io/claude-sonnet-46-launch/">Anthropic’s new Claude Sonnet 4.6 promises Opus-level coding at Sonnet pricing</a></p>
+<p><strong>微软 .NET 在 Linux 上引入 IO_uring 支持，性能大幅提升</strong><br />
+微软针对 Linux 平台的 .NET 运行时提交了使用 IO_uring 处理套接字（Socket）操作的补丁。初步测试显示，利用 Linux 内核的高性能异步 I/O 接口后，网络密集型应用的吞吐量和延迟表现均有显著改善。这体现了微软在跨平台开发工具中深度集成 Linux 特性的持续努力。<br />
+原文：<a href="https://www.phoronix.com/news/Microsoft-dotNET-IO-uring">Microsoft .NET On Linux Patches Use IO_uring For Massive Performance Benefits</a></p>
+<p><strong>Canonical 更新通用公钥基础设施 upki 项目进展</strong><br />
+Canonical 披露了其通用 PKI（upki）项目的最新动态，目前核心撤销引擎已建立并投入使用。该项目旨在为 Ubuntu 26.04 LTS 提供一个更安全、自动化的证书管理方案，目前正在 Canonical 数据中心进行生产部署测试。upki 的目标是简化大规模 Linux 系统的身份验证与安全通信流程。<br />
+原文：<a href="https://lwn.net/Articles/1059184/">An update on upki</a></p>
+<hr />
+<h2>云原生领域</h2>
+<p><strong>Kubernetes 官方警告：Ingress NGINX 将于 2026 年 3 月退役</strong><br />
+Kubernetes 指导委员会发布严正声明，确认 Ingress NGINX 项目因缺乏维护者，将于 2026 年 3 月正式停止支持。届时将不再发布任何安全补丁或错误修复，社区强烈建议用户立即开始向 Gateway API 或其他第三方控制器迁移。由于该项目支撑了全球约一半的云原生环境，此举被视为行业重大的安全风险预警。<br />
+原文：<a href="https://kubernetes.io/blog/2026/01/29/ingress-nginx-statement/">Ingress NGINX: Statement from the Kubernetes Steering and Security Response Committees</a></p>
+<p><strong>Kubernetes v1.35 引入 Pod 原地重启功能，助力 AI/ML 负载</strong><br />
+在最新的 Kubernetes v1.35 版本中，引入了“重启所有容器”的 Alpha 特性，允许在不删除和重建 Pod 的情况下重置其内部状态。这一功能对于 AI 训练和推理任务尤为重要，因为它能显著减少故障恢复时的资源开销和时间。此外，v1.35 还增强了对 GPU 固件等基础设施依赖的就绪性检查。<br />
+原文：<a href="https://kubernetes.io/blog/2026/01/02/kubernetes-v1-35-restart-all-containers/">Kubernetes v1.35: New level of efficiency with in-place Pod restart</a></p>
+<p><strong>Cluster API v1.12 发布，支持原地更新与链式升级</strong><br />
+Cluster API v1.12 版本正式发布，重点引入了原地更新（In-place updates）和链式升级功能。这些改进减少了在管理 Kubernetes 集群生命周期时的摩擦，使得平台团队能够更平滑地执行节点配置变更。该版本进一步强化了声明式管理在复杂多集群环境中的可用性。<br />
+原文：<a href="https://www.cncf.io/blog/2026/02/09/cluster-api-v1-12-introducing-in-place-updates-and-chained-upgrades/">Cluster API v1.12: Introducing in-place updates and chained upgrades</a></p>
+<p><strong>CNCF 报告：2025 年云原生项目活跃度揭示未来趋势</strong><br />
+CNCF 发布了 2025 年度项目速度报告，显示云原生技术已成为“隐形基础设施”，深入各行各业。报告指出，OpenTelemetry 已成为贡献者数量第二多的项目，仅次于 Kubernetes，反映出可观测性在现代架构中的核心地位。同时，针对 AI 基础设施的标准化工作正成为社区新的增长点。<br />
+原文：<a href="https://www.cncf.io/blog/2026/02/09/what-cncf-project-velocity-in-2025-reveals-about-cloud-natives-future/">What CNCF Project Velocity in 2025 Reveals About Cloud Native’s Future</a></p>
+<hr />
+<h2>AI 领域</h2>
+<p><strong>curl 创始人抨击 AI 生成的低质量安全报告造成“拒绝服务”攻击</strong><br />
+curl 项目负责人 Daniel Stenberg 在 FOSDEM 2026 上指出，大量由 AI 生成的虚假或低质量安全报告正充斥着开源项目的维护通道。这种现象被他形容为对维护者的“分布式拒绝服务（DDoS）”攻击，极大地消耗了人力资源。尽管 AI 偶尔能发现真实漏洞，但目前其产生的“垃圾信息”远多于有效贡献。<br />
+原文：<a href="https://thenewstack.io/curls-daniel-stenberg-ai-is-ddosing-open-source-and-fixing-its-bugs/">cURL’s Daniel Stenberg: AI slop is DDoSing open source</a></p>
+<p><strong>Raypher：基于 Rust 的内核驱动，用于沙箱化 AI 智能体</strong><br />
+开发者推出了一款名为 Raypher 的工具，利用 Rust 编写的内核级驱动（Linux 上使用 eBPF，Windows 上使用 WFP）来安全地运行 AI 智能体。与传统的 Docker 容器方案不同，Raypher 在系统调用层面拦截网络连接和文件操作，防止智能体删除工作区外的文件或泄露 API 密钥。该项目旨在为本地运行的 AI 智能体提供更轻量且更安全的执行环境。<br />
+原文：<a href="https://raypherlabs.tech/">Show HN: Raypher – a Rust-Based Kernel Driver to Sandbox "Bare Metal" AI Agents</a></p>
+<p><strong>GitHub 推出智能体工作流，将 AI 深度集成至 CI/CD 循环</strong><br />
+GitHub 宣布推出“智能体工作流（Agentic Workflows）”，旨在将 AI 的能力从单纯的代码编写扩展到持续集成与交付的全过程。这些智能体可以自动处理代码审查、生成 PR 描述以及根据模糊描述查找提交记录。此举标志着 GitHub 试图将 AI 从辅助工具转变为能够自主执行复杂开发任务的“数字成员”。<br />
+原文：<a href="https://thenewstack.io/github-agentic-workflows-overview/">GitHub’s Agentic Workflows bring “continuous AI” into the CI/CD loop</a></p>
+<p><strong>Vocalinux：为 Linux 用户提供 100% 离线的语音输入方案</strong><br />
+Vocalinux 是一款专注于隐私的开源听写工具，支持在 Linux 机器上完全离线运行。它集成了 whisper.cpp 和 VOSK 等引擎，并支持通过 Vulkan 进行 GPU 加速，确保语音数据不被上传至云端。该工具兼容 X11 和 Wayland，为对隐私敏感的 Linux 用户提供了高效的交互手段。<br />
+原文：<a href="https://vocalinux.com/">Show HN: Vocalinux // 100% offline voice typing for Linux</a></p>
+<hr />
+<h2>工业界最新动向</h2>
+<p><strong>KDE Plasma 6.6 正式发布，带来多项桌面体验改进</strong><br />
+知名桌面环境 KDE Plasma 发布了 6.6 版本，引入了全局主题创建功能和 Spectacle 截图工具中的文字提取功能。此外，该版本还显著提升了辅助功能，并配备了全新的屏幕键盘。开发者称其为“已知宇宙中最好的桌面”，在不牺牲灵活性的前提下极大简化了用户操作。<br />
+原文：<a href="https://www.phoronix.com/news/KDE-Plasma-6.6">KDE Plasma 6.6 Released With Many Excellent Improvements</a></p>
+<p><strong>Gentoo Linux 迁移至 Codeberg，以规避 GitHub Copilot 训练</strong><br />
+Gentoo Linux 项目正式启动了从 GitHub 向 Codeberg 的迁移工作。这一决策的主要动机是反对微软利用 GitHub 仓库数据训练 Copilot AI 模型。Gentoo 社区希望通过转向更符合自由软件精神的托管平台，保护其代码不被未经授权的 AI 学习。<br />
+原文：<a href="https://www.phoronix.com/news/Gentoo-Starts-Codeberg-Use">Gentoo Linux Begins Codeberg Migration In Moving Away From GitHub</a></p>
+<p><strong>Vim 9.2 发布，引入实验性 Wayland 支持与交互式教程</strong><br />
+经典文本编辑器 Vim 发布了 9.2 版本，重点增强了 Vim9 脚本语言的功能，并改进了差异比较（diff）模式。值得注意的是，该版本增加了对 Wayland 协议的实验性支持，顺应了 Linux 桌面显示服务器的演进趋势。同时，新增的交互式导师模式旨在帮助新用户更快上手。<br />
+原文：<a href="https://lwn.net/Articles/1058744/">Vim 9.2 released</a></p>
+<p><strong>AsteroidOS 2.0 发布，为旧款智能手表注入 Linux 活力</strong><br />
+经过八年的开发，针对智能手表的开源操作系统 AsteroidOS 发布了 2.0 稳定版。该项目旨在让十年前的硬件重新焕发生机，提供零追踪、全本地控制的隐私保护体验。虽然不追求大规模普及，但它为 Linux 爱好者提供了一个有趣的腕上黑客平台。<br />
+原文：<a href="https://asteroidos.org/news/2-0-release/index.html">Show HN: AsteroidOS 2.0 – Nobody asked, we shipped anyway</a></p>
+<hr />
+<h2>学术界最新研究</h2>
+<p><strong>ResearchGym：在真实世界 AI 研究任务上评估语言模型智能体</strong><br />
+研究人员推出了 ResearchGym 评测基准，通过复用顶级会议（ICML、ICLR、ACL）的论文仓库来评估 AI 智能体端到端的科研能力。实验发现，即使是像 GPT-5 级别的智能体，在提出新假设和运行实验方面仍存在明显的“能力-可靠性”差距。该研究为未来 AI 辅助科研（AI for Science）的发展提供了重要的度量工具。<br />
+原文：<a href="https://arxiv.org/abs/2602.15112">ResearchGym: Evaluating Language Model Agents on Real-World AI Research</a></p>
+<p><strong>UberWeb：关于 20 万亿 Token 多语言数据集的策展洞察</strong><br />
+该研究探讨了跨 13 种语言的大规模多语言数据策展，挑战了所谓的“多语言诅咒”。研究发现，多语言训练中的性能下降往往源于数据质量和构成的缺陷，而非模型容量限制。通过优化单一语言（如英语）的数据质量，可以显著提升其他非英语语言的表现，为构建高质量全球化模型提供了新思路。<br />
+原文：<a href="https://arxiv.org/abs/2602.15210">"UberWeb: Insights from Multilingual Curation for a 20-Trillion-Token Dataset</a></p>
+<p><strong>BindCLIP：用于虚拟筛选的统一对比生成表示学习框架</strong><br />
+针对药物研发中的虚拟筛选任务，研究者提出了 BindCLIP 框架，旨在更精准地识别活性配体。该模型通过结合对比学习和受口袋约束的扩散生成任务，克服了以往模型对细微结合相互作用不敏感的问题。实验证明，BindCLIP 在根据真实结合兼容性对配体进行排序方面具有显著优势。<br />
+原文：<a href="https://arxiv.org/abs/2602.15236">BindCLIP: A Unified Contrastive-Generative Representation Learning Framework for Virtual Screening</a></p>
+<p><strong>PolyNODE：M-多层流形上的变维神经常微分方程</strong><br />
+传统的神经 ODE 模型受限于流形维度的固定性，难以处理维度变化的数据。本文引入了 PolyNODEs，这是几何深度学习中首个支持变维度的流形模型，能够在 M-多层流形上运行。该研究在具有维度瓶颈的自动编码器等应用中展示了其处理复杂动力系统的潜力。<br />
+原文：<a href="https://arxiv.org/abs/2602.15128">PolyNODE: Variable-dimension Neural ODEs on M-polyfolds</a></p>
+<hr /></div>
+  </main>
+</body>
+</html>
