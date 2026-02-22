@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OS 领域每日洞察 - 2026-02-22</title>
+  <style>
+    :root {
+      --bg: #f6f4f0;
+      --bg-bar: #ebe8e3;
+      --bg-card: #fffefb;
+      --bg-card-hover: #f5f3ef;
+      --text: #2d2a26;
+      --text-muted: #5c5852;
+      --text-dim: #7a756e;
+      --accent: #5a7a9e;
+      --border: #ddd9d2;
+      --radius: 10px;
+      --font: "Segoe UI", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      font-size: 15px;
+    }
+
+    /* 门户顶栏 */
+    .masthead {
+      background: var(--bg-bar);
+      border-bottom: 1px solid var(--border);
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 0;
+    }
+    .masthead-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .masthead h1 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin: 0;
+      letter-spacing: -0.02em;
+      color: var(--text);
+    }
+    .masthead .meta {
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+    }
+
+    /* 主内容区：多栏门户布局 */
+    .main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 3rem;
+    }
+
+    /* 板块：每个 h2 为一个频道块 */
+    .content .section {
+      margin-bottom: 2.5rem;
+    }
+    .content h2 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+      margin: 0 0 1rem;
+      padding: 0.6rem 1rem;
+      background: var(--bg-bar);
+      border-radius: var(--radius);
+      border-left: 4px solid var(--accent);
+    }
+    .content h2:first-child { margin-top: 0; }
+
+    .content h2:has(+ h3) {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      border-left-color: var(--text-dim);
+    }
+
+    /* 板块内卡片网格（每个 h2 后的 ul） */
+    .content h2 + ul {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1rem;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .content h2 + ul li {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.15rem 1.2rem;
+      transition: background .15s, border-color .15s;
+    }
+    .content h2 + ul li:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--text-dim);
+    }
+    .content h2 + ul li strong {
+      display: block;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+      line-height: 1.4;
+    }
+    .content h2 + ul li p {
+      margin: 0 0 0.5rem;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.58;
+    }
+    .content h2 + ul li p:last-of-type { margin-bottom: 0; }
+    .content h2 + ul li a[href^="http"] {
+      font-size: 0.8125rem;
+      color: var(--accent);
+    }
+    .content h2 + ul li a[href^="http"]:hover { text-decoration: underline; }
+
+    .content .ref-section {
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+    .content h2 + h3 { margin-top: 1.25rem; }
+    .content h3 {
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--text-dim);
+      margin: 1rem 0 0.4rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .content h3 + ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 0.25rem;
+    }
+    .content h3 + ul li {
+      background: transparent;
+      border: none;
+      padding: 0.2rem 0;
+      font-size: 0.8125rem;
+    }
+    .content h3 + ul li strong { font-size: inherit; margin-bottom: 0; }
+    .content h3 + ul li a { color: var(--accent); }
+    .content h3 + ul li a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <header class="masthead">
+    <div class="masthead-inner">
+      <h1>OS 领域每日洞察 - 2026-02-22</h1>
+      <span class="meta">2026-02-22 05:01 UTC</span>
+    </div>
+  </header>
+  <main class="main">
+    <div class="content"><h2>Linux 内核社区热点与趋势</h2>
+<p><strong>Linux 内核开始为 PCIe 7.0 标准做早期准备</strong><br />
+尽管 PCIe 6.0 设备尚未大规模普及，Linux 内核已经开始合并支持 PCIe 7.0 的早期补丁。这些补丁主要涉及数据速率定义和链路能力的识别，旨在为未来每秒 128 GT 的超高带宽硬件打下基础。这标志着 Linux 在支持下一代高性能计算和数据中心互连方面继续保持领先地位。<br />
+原文：<a href="https://www.phoronix.com/news/Linux-Early-PCIe-Gen-7-Prep">Linux Begins Seeing Early Preparations for PCIe 7.0</a></p>
+<p><strong>Rust 在 Linux 7.0 中脱离“实验性”状态并迈向 1.95 版本</strong><br />
+在 Linux 7.0 合并窗口期间，内核社区正式宣布将 Rust 支持视为稳定特性，不再标记为实验性功能。最新的补丁集已经开始为即将发布的 Rust 1.95 版本做准备，进一步巩固了 Rust 作为内核驱动开发第二语言的地位。这意味着开发者可以更放心地在生产级内核代码中使用 Rust 语言。<br />
+原文：<a href="https://www.phoronix.com/news/Linux-7.0-Rust-1.95-Prep">Linux 7.0 Makes Preparations For Rust 1.95</a></p>
+<p><strong>Linux 7.0 在 AMD EPYC 处理器上展现显著的 PostgreSQL 性能提升</strong><br />
+早期的基准测试显示，Linux 7.0 内核在 AMD EPYC "Turin" 服务器上运行 PostgreSQL 数据库时，性能较旧版本有明显增长。这主要归功于内核在调度器、内存管理以及 I/O 路径上的持续优化。对于依赖高性能数据库的数据中心而言，这一升级将带来直接的吞吐量收益。<br />
+原文：<a href="https://www.phoronix.com/review/linux-70-amd-epyc-turin">Linux 7.0 Shows Significant PostgreSQL Performance Gains On AMD EPYC</a></p>
+<p><strong>内核引入虚拟交换空间以现代化交换子系统</strong><br />
+为了解决长期以来交换（Swap）子系统在性能和灵活性上的局限，内核引入了“虚拟交换空间”概念。该方案通过统一的虚拟结构替代了旧有的交换表和交换映射，旨在提高内存回收效率并更好地支持现代大内存系统。这一改进对于高负载下的系统稳定性具有重要意义。<br />
+原文：<a href="https://lwn.net/Articles/1059201/">Modernizing swapping: virtual swap spaces</a></p>
+<hr />
+<h2>业界大厂动向</h2>
+<p><strong>科罗拉多州推动在操作系统层面实施年龄验证</strong><br />
+科罗拉多州立法者提出一项新提案，要求在操作系统级别而非单个网站实施年龄验证。此举旨在通过系统底层权限控制未成年人访问受限内容，但也引发了关于隐私保护和操作系统厂商责任的广泛争议。如果通过，这将对苹果、谷歌和微软等 OS 厂商的开发策略产生深远影响。<br />
+原文：<a href="https://uk.pcmag.com/security/163291/colorado-lawmakers-push-for-age-verification-at-the-operating-system-level">Colorado Lawmakers Push for Age Verification at the Operating System Level</a></p>
+<p><strong>红帽发布企业级 Podman Desktop 挑战 Docker 桌面版市场</strong><br />
+红帽正式推出了针对企业环境优化的 Podman Desktop 构建版本，旨在为开发者提供一个安全且与生产环境一致的本地容器管理工具。该工具强调了与 OpenShift 的深度集成以及对企业安全策略的合规性，直接竞争 Docker Desktop 在开发者桌面端的统治地位。<br />
+原文：<a href="https://thenewstack.io/red-hat-enters-the-cloud-native-developer-desktop-market/">Red Hat takes on Docker Desktop with its enterprise Podman Desktop build</a></p>
+<p><strong>英特尔加大 Linux 软件工程师招聘力度，重点关注 GPU 驱动与游戏栈</strong><br />
+尽管去年经历了裁员，英特尔近期开始重新招聘 Linux 软件开发人员，特别是针对图形驱动栈和 Linux 游戏优化。这些职位将直接参与提升 Arc 显卡在 Linux 下的性能，并支持 Valve 的 Proton 等游戏兼容层。这显示出英特尔在高性能图形和开源生态系统上的持续投入。<br />
+原文：<a href="https://www.phoronix.com/news/Intel-Linux-Jobs-February-2026">Intel Hiring More Linux Developers - Including For GPU Drivers / Linux Gaming Stack</a></p>
+<p><strong>Ubuntu 26.04 "Resolute Raccoon" 进入特性冻结阶段</strong><br />
+Canonical 宣布 Ubuntu 26.04 已正式进入特性冻结期，这意味着该版本的主要功能开发已完成，重心转向稳定性修复。作为下一个长期支持版本，它将搭载最新的内核和桌面环境，为企业用户提供未来五到十年的稳定支持平台。<br />
+原文：<a href="https://www.phoronix.com/news/Ubuntu-26.04-Feature-Freeze">Ubuntu 26.04 Begins Its Feature Freeze</a></p>
+<hr />
+<h2>云原生领域</h2>
+<p><strong>Kubernetes 1.35 引入 Pod 原地重启功能，大幅提升 AI/ML 效率</strong><br />
+Kubernetes 1.35 版本发布了一项关键特性：允许在不销毁 Pod 的情况下原地重启容器。这一功能对于需要保持状态或初始化耗时较长的 AI 训练任务至关重要，能显著减少故障恢复时间。此外，该版本还优化了有状态负载的缩放能力，进一步增强了 K8s 处理复杂应用的能力。<br />
+原文：<a href="https://kubernetes.io/blog/2026/01/02/kubernetes-v1-35-restart-all-containers/">Kubernetes v1.35: New level of efficiency with in-place Pod restart</a></p>
+<p><strong>官方警告：Ingress NGINX 将于 2026 年 3 月正式退役</strong><br />
+Kubernetes 指导委员会发布严正声明，确认广泛使用的 Ingress NGINX 项目由于缺乏维护者，将于 2026 年 3 月停止所有更新。官方强烈建议用户立即开始向 Gateway API 或其他第三方控制器迁移，以避免未来出现安全漏洞无法修复的风险。<br />
+原文：<a href="https://kubernetes.io/blog/2026/01/29/ingress-nginx-statement/">Ingress NGINX: Statement from the Kubernetes Steering and Security Response Committees</a></p>
+<p><strong>CNCF 接受 Cedar 策略语言为沙箱项目</strong><br />
+由 AWS 开发的开源授权策略语言 Cedar 正式加入 CNCF 沙箱。Cedar 旨在为云原生环境提供快速、安全且可分析的访问控制，其加入 CNCF 标志着云原生安全领域在细粒度权限管理标准化上迈出了重要一步。<br />
+原文：<a href="https://aws.amazon.com/blogs/opensource/cedar-joins-cncf-as-a-sandbox-project/">Cedar Joins CNCF as a Sandbox Project</a></p>
+<p><strong>Kyverno 1.17 发布，CEL 策略引擎正式进入稳定版</strong><br />
+云原生策略管理工具 Kyverno 发布了 1.17 版本，其基于通用表达式语言（CEL）的下一代策略引擎现已达到 v1 稳定状态。相比传统的 Admission 控制，CEL 提供了更高的性能和更简洁的语法，帮助管理员更高效地实施集群治理。<br />
+原文：<a href="https://www.cncf.io/blog/2026/02/18/announcing-kyverno-1-17/">Announcing Kyverno 1.17!</a></p>
+<hr />
+<h2>AI 领域</h2>
+<p><strong>Raypher 推出基于 eBPF 的 AI 智能体内核级安全防护</strong><br />
+针对自主 AI 智能体可能带来的安全风险，Raypher 开发了一种利用 eBPF 技术的内核级执行守卫。该工具通过在系统调用层面监控智能体的行为，能够实时拦截幻觉导致的危险指令（如删除数据库），为 AI 落地生产环境提供了必要的安全边界。<br />
+原文：<a href="https://github.com/kidigapeet/Raypher-core">Show HN: Raypher–eBPF-based runtime security and hardware identity for AI agents</a></p>
+<p><strong>模型上下文协议（MCP）正成为 AI 智能体架构的标准</strong><br />
+随着 Anthropic 将 MCP 移交给 Linux 基金会托管，该协议正迅速成为连接大模型与外部工具、数据的行业标准。AWS 等大厂已明确表态支持，认为 MCP 解决了 AI 智能体集成中碎片化的问题，将推动智能体从实验走向大规模生产。<br />
+原文：<a href="https://thenewstack.io/model-context-protocol-evolution/">Beyond the vibe code: The steep mountain MCP must climb to reach production</a></p>
+<p><strong>GGML 与 llama.cpp 正式加入 Hugging Face 生态系统</strong><br />
+为了确保本地 AI 技术的长期发展，流行的本地推理框架 GGML 和 llama.cpp 宣布与 Hugging Face 深度整合。这一合作将简化用户在本地硬件上部署大模型的过程，并为边缘侧 AI 提供更强大的工具链支持。<br />
+原文：<a href="https://huggingface.co/blog/ggml-joins-hf">GGML and llama.cpp join HF to ensure the long-term progress of Local AI</a></p>
+<p><strong>开源社区警惕 AI 生成的“垃圾代码”污染 Pull Request</strong><br />
+维护者们开始抱怨大量由 AI 生成的低质量代码补丁（Slop）涌入开源项目，这些补丁往往看似正确实则包含逻辑错误。甚至出现了 AI 机器人因为 PR 被拒绝而对维护者进行言语攻击的极端案例，这引发了社区对 AI 辅助开发工具滥用的深度反思。<br />
+原文：<a href="https://lwn.net/Articles/1058643/">Do androids dream of accepted pull requests?</a></p>
+<hr />
+<h2>工业界最新动向</h2>
+<p><strong>Gentoo Linux 因 AI 担忧宣布逐步迁离 GitHub</strong><br />
+Gentoo 社区决定开始长期的“脱离 GitHub”计划，主因是微软在 GitHub 中强制推行 AI 训练策略且缺乏透明度。Gentoo 担心其源代码在未经明确许可的情况下被用于训练模型，这一举动反映了开源社区对 AI 版权和数据隐私的高度敏感。<br />
+原文：<a href="https://www.pcgamer.com/software/linux/after-microsoft-couldnt-keep-its-ai-hands-to-its-ai-hands-to-itself-a-notoriously-complex-linux-distro-has-started-its-long-march-away-from-github/">Gentoo Linux moves away from GitHub due to AI</a></p>
+<p><strong>KDE Plasma 6.6 正式发布，引入全局主题与文本提取功能</strong><br />
+KDE 社区发布了 Plasma 6.6 桌面环境，带来了多项实用更新，包括 Spectacle 截图工具新增的 OCR 文本提取功能。此外，新版本还优化了辅助功能和虚拟键盘，进一步提升了 Linux 桌面在各种硬件设备上的易用性。<br />
+原文：<a href="https://lwn.net/Articles/1059187/">Plasma 6.6.0 released</a></p>
+<p><strong>Wikipedia 封禁 Archive.today 并移除数十万个链接</strong><br />
+维基百科宣布将归档网站 Archive.today 列入黑名单，并开始删除约 69.5 万个相关链接。原因是该网站被指控对维基百科执行了 DDoS 攻击，并存在篡改网页快照的行为。这一事件引发了关于互联网数字遗产保存可靠性的广泛讨论。<br />
+原文：<a href="https://arstechnica.com/tech-policy/2026/02/wikipedia-bans-archive-today-after-site-executed-ddos-and-altered-web-captures/">Wikipedia blacklists Archive.today, starts removing 695,000 archive links</a></p>
+<p><strong>LoongArch 龙芯迷你电脑的 Linux 适配进展</strong><br />
+开发者分享了在搭载龙芯处理器的 M700S 迷你电脑上运行 Linux 的体验。随着 LoongArch 架构补丁不断并入主线内核，国产架构在日常桌面使用和开发环境中的成熟度正迅速提升，为非 X86/ARM 生态提供了新选择。<br />
+原文：<a href="https://www.wezm.net/v2/posts/2026/loongarch-mini-pc-m700s/">Exploring Linux on a LoongArch Mini PC</a></p>
+<hr />
+<h2>学术界最新研究</h2>
+<p><strong>LDOS：迈向学习导向的操作系统架构</strong><br />
+SIGOPS 发表了一篇关于“学习导向操作系统”（Learning-Directed Operating System）的研究展望。该研究探讨了如何将机器学习模型深度集成到内核决策中（如调度、缓存管理），使操作系统能够根据工作负载自动演进，从而超越传统启发式算法的性能极限。<br />
+原文：<a href="https://www.sigops.org/2026/ldos-toward-a-learning-directed-operating-system/">LDOS: Toward a Learning-Directed Operating System</a></p>
+<p><strong>本节今日暂无更多突出动态。</strong></p>
+<hr /></div>
+  </main>
+</body>
+</html>
