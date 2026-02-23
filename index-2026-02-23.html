@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OS 领域每日洞察 - 2026-02-23</title>
+  <style>
+    :root {
+      --bg: #f6f4f0;
+      --bg-bar: #ebe8e3;
+      --bg-card: #fffefb;
+      --bg-card-hover: #f5f3ef;
+      --text: #2d2a26;
+      --text-muted: #5c5852;
+      --text-dim: #7a756e;
+      --accent: #5a7a9e;
+      --border: #ddd9d2;
+      --radius: 10px;
+      --font: "Segoe UI", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      font-size: 15px;
+    }
+
+    /* 门户顶栏 */
+    .masthead {
+      background: var(--bg-bar);
+      border-bottom: 1px solid var(--border);
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 0;
+    }
+    .masthead-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .masthead h1 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin: 0;
+      letter-spacing: -0.02em;
+      color: var(--text);
+    }
+    .masthead .meta {
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+    }
+
+    /* 主内容区：多栏门户布局 */
+    .main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 3rem;
+    }
+
+    /* 板块：每个 h2 为一个频道块 */
+    .content .section {
+      margin-bottom: 2.5rem;
+    }
+    .content h2 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+      margin: 0 0 1rem;
+      padding: 0.6rem 1rem;
+      background: var(--bg-bar);
+      border-radius: var(--radius);
+      border-left: 4px solid var(--accent);
+    }
+    .content h2:first-child { margin-top: 0; }
+
+    .content h2:has(+ h3) {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      border-left-color: var(--text-dim);
+    }
+
+    /* 板块内卡片网格（每个 h2 后的 ul） */
+    .content h2 + ul {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1rem;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .content h2 + ul li {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.15rem 1.2rem;
+      transition: background .15s, border-color .15s;
+    }
+    .content h2 + ul li:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--text-dim);
+    }
+    .content h2 + ul li strong {
+      display: block;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+      line-height: 1.4;
+    }
+    .content h2 + ul li p {
+      margin: 0 0 0.5rem;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.58;
+    }
+    .content h2 + ul li p:last-of-type { margin-bottom: 0; }
+    .content h2 + ul li a[href^="http"] {
+      font-size: 0.8125rem;
+      color: var(--accent);
+    }
+    .content h2 + ul li a[href^="http"]:hover { text-decoration: underline; }
+
+    .content .ref-section {
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+    .content h2 + h3 { margin-top: 1.25rem; }
+    .content h3 {
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--text-dim);
+      margin: 1rem 0 0.4rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .content h3 + ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 0.25rem;
+    }
+    .content h3 + ul li {
+      background: transparent;
+      border: none;
+      padding: 0.2rem 0;
+      font-size: 0.8125rem;
+    }
+    .content h3 + ul li strong { font-size: inherit; margin-bottom: 0; }
+    .content h3 + ul li a { color: var(--accent); }
+    .content h3 + ul li a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <header class="masthead">
+    <div class="masthead-inner">
+      <h1>OS 领域每日洞察 - 2026-02-23</h1>
+      <span class="meta">2026-02-23 05:01 UTC</span>
+    </div>
+  </header>
+  <main class="main">
+    <div class="content"><h2>Linux 内核社区热点与趋势</h2>
+<p><strong>Linux 7.0-rc1 正式发布，合并窗口关闭</strong><br />
+Linus Torvalds 发布了 Linux 7.0 的第一个候选版本（rc1），标志着该开发周期的合并窗口正式关闭。虽然版本号从 6.x 跳跃到 7.0 主要是因为 Linus 习惯在 x.19 之后进行大版本更迭，但此版本确实包含大量新特性，如对 AMD Zen 6 处理器的初步支持和 Rust 语言工具链的进一步集成。这一版本的发布预示着内核开发进入了稳定和修复阶段。<br />
+原文：<a href="https://www.phoronix.com/news/Linux-7.0-rc1-Released">Linux 7.0-rc1 Released With Many New Features</a></p>
+<p><strong>Linux 7.0 贡献名单新增 Linux-Next 创始人</strong><br />
+在 Linux 7.0-rc1 发布前的最后时刻，内核贡献名单（CREDITS）正式加入了 Stephen Rothwell。Stephen 在过去 18 年里一直负责维护 Linux-Next 分支，这是内核开发流程中至关重要的一环，用于集成和测试即将进入主线的代码。这一举动体现了社区对长期维护基础设施贡献者的认可。<br />
+原文：<a href="https://www.phoronix.com/news/Linux-7.0-Credits-Linux-Next">Linux 7.0 Credits Now Honor The Creator Of Linux-Next</a></p>
+<p><strong>内核引入虚拟交换空间（Virtual Swap Spaces）以优化内存交换性能</strong><br />
+内核开发者 Nhat Pham 提交了一系列补丁，旨在通过引入单一的“虚拟交换空间”来替换现有的交换表结构。这一改进解决了长期以来交换子系统在性能和管理上的痛点，能够更高效地跟踪交换缓存状态。该工作是内核内存管理现代化的重要一步，特别是在高负载服务器环境下具有显著意义。<br />
+原文：<a href="https://lwn.net/Articles/1059201/">Modernizing swapping: virtual swap spaces</a></p>
+<p><strong>Linux 7.0 将默认启用 AccECN 以优化 TCP 拥塞控制</strong><br />
+“更精确的显式拥塞通知”（AccECN）机制将在 Linux 7.0 中默认开启，该机制通过改进 TCP 协议反馈网络拥塞的方式来提升传输效率。AccECN 能够提供比传统 ECN 更细粒度的拥塞信号，有助于减少数据包丢失并降低延迟。这一变化将惠及公共互联网和私有数据中心网络。<br />
+原文：<a href="https://lwn.net/Articles/1058666/">More accurate congestion notification for TCP</a></p>
+<p><strong>Asahi Linux 发布 6.19 进度报告，Apple Silicon 支持大幅提升</strong><br />
+Asahi Linux 项目组分享了在 Apple M 系列芯片上运行 Linux 的最新进展，其上游化补丁数量已显著减少，显示出更多代码已被主线内核接受。目前 GPU 驱动程序仍是最大的开发挑战，代码量超过 2 万行，但整体系统稳定性已大幅增强。该项目继续引领着非 x86 架构 Linux 生态的边界。<br />
+原文：<a href="https://lwn.net/Articles/1059339/">An Asahi Linux progress report</a></p>
+<hr />
+<h2>业界大厂动向</h2>
+<p><strong>微软游戏业务重大人事变动：Phil Spencer 卸任</strong><br />
+在微软效力 38 年的 Phil Spencer 宣布卸任微软游戏首席执行官一职，这一消息在业界引发震动。接任者为微软 CoreAI 高管 Asha Sharma，这一人事安排暗示微软未来可能将 AI 技术更深度地整合进其游戏生态系统。Spencer 在任期间主导了多次重大收购，他的离去标志着 Xbox 时代的转折。<br />
+原文：<a href="https://arstechnica.com/gaming/2026/02/microsoft-gaming-chief-phil-spencer-steps-down-after-38-years-with-company/">Microsoft gaming chief Phil Spencer steps down after 38 years with company</a></p>
+<p><strong>红帽发布企业版 Podman Desktop，正面竞争 Docker Desktop</strong><br />
+红帽推出了专为企业设计的 Podman Desktop 构建版，旨在为开发者提供一个安全、合规的本地容器管理环境。该工具解决了开发者本地环境与生产端 Kubernetes 环境不一致的问题，提供了更好的安全加固和集成体验。此举进一步巩固了红帽在云原生开发工具链中的地位。<br />
+原文：<a href="https://thenewstack.io/red-hat-enters-the-cloud-native-developer-desktop-market/">Red Hat takes on Docker Desktop with its enterprise Podman Desktop build</a></p>
+<p><strong>Meta 旗舰元宇宙服务 Horizon 宣布脱离 VR 硬件限制</strong><br />
+Meta 宣布其元宇宙社交平台 Horizon 将不再局限于 VR 头显，开始向移动端和网页端全面开放。尽管 Meta 强调将继续研发 VR 硬件，但这一战略调整表明公司正试图通过降低准入门槛来挽救用户增长。这一转变反映了元宇宙概念在商业化路径上的现实妥协。<br />
+原文：<a href="https://arstechnica.com/gadgets/2026/02/metas-flagship-metaverse-service-leaves-vr-behind/">Meta's flagship metaverse service leaves VR behind</a></p>
+<p><strong>红帽将 Insights 服务更名为 Lightspeed，强化 AI 预测分析</strong><br />
+红帽宣布将其预测性分析服务 Red Hat Insights 正式更名为 Red Hat Lightspeed，并集成了更多 AI 驱动的功能。该服务旨在通过 AI 洞察帮助用户更快地识别系统漏洞、合规性问题和性能瓶颈。更名后的服务将作为红帽混合云战略中智能运维的核心组件。<br />
+原文：<a href="https://www.redhat.com/en/blog/simplify-red-hat-enterprise-linux-provisioning-image-builder-new-red-hat-lightspeed-security-and-management-integrations">Simplify Red Hat Enterprise Linux provisioning in image builder with new Red Hat Lightspeed security and management integrations</a></p>
+<hr />
+<h2>云原生领域</h2>
+<p><strong>Kubernetes 1.35 发布：Pod 原地重启与有状态负载缩放成亮点</strong><br />
+Kubernetes v1.35 版本引入了多项重磅特性，其中“Pod 原地调整（In-Place Pod Resize）”正式进入 GA 阶段，允许在不重启容器的情况下调整资源配额。此外，新版本还支持“原地重启所有容器”，这对于 AI/ML 训练任务中的故障恢复至关重要。这些改进显著提升了 Kubernetes 处理大规模、复杂负载的效率。<br />
+原文：<a href="https://thenewstack.io/kubernetes-vpa-inplace-resize/">Why Kubernetes 1.35 is a game-changer for stateful workload scaling</a></p>
+<p><strong>Ingress NGINX 宣布将于 2026 年 3 月退役</strong><br />
+Kubernetes 指导委员会发布声明，由于缺乏足够的维护者，关键基础设施项目 Ingress NGINX 将于 2026 年 3 月正式退役。届时将停止所有安全补丁和功能更新，官方强烈建议用户立即开始迁移至 Gateway API 或其他第三方控制器。这一消息对全球约半数的云原生环境构成了直接的安全挑战。<br />
+原文：<a href="https://kubernetes.io/blog/2026/01/29/ingress-nginx-statement/">Ingress NGINX: Statement from the Kubernetes Steering and Security Response Committees</a></p>
+<p><strong>Kyverno 1.17 发布，CEL 策略引擎进入稳定版</strong><br />
+云原生策略管理工具 Kyverno 发布 1.17 版本，其核心改进是基于通用表达式语言（CEL）的策略引擎正式达标稳定状态。相比传统的 JSON 模式，CEL 提供了更高的性能和更强的表达能力，使得复杂策略的验证更加高效。这一版本标志着 Kyverno 向高性能策略治理迈出了关键一步。<br />
+原文：<a href="https://www.cncf.io/blog/2026/02/18/announcing-kyverno-1-17/">Announcing Kyverno 1.17!</a></p>
+<p><strong>CNCF 成立 Checkpoint/Restore 工作组，优化 AI 与 Java 应用启动</strong><br />
+CNCF 宣布成立新的 Kubernetes Checkpoint/Restore 工作组，专注于将容器快照与恢复功能集成到 Kubernetes 中。该技术可以显著加速 Java 应用和大型语言模型（LLM）推理服务的启动速度，并为长周期训练任务提供容错能力。这一举措旨在解决云原生环境下高性能计算任务的资源利用率问题。<br />
+原文：<a href="https://kubernetes.io/blog/2026/01/21/introducing-checkpoint-restore-wg/">Announcing the Checkpoint/Restore Working Group</a></p>
+<hr />
+<h2>AI 领域</h2>
+<p><strong>Cloudflare 推出“Markdown for Agents”，让网站对 AI 友好</strong><br />
+Cloudflare 发布了一项名为“Markdown for Agents”的新功能，能够自动将网页 HTML 转换为 AI Agent 易于理解的 Markdown 格式。随着 AI 智能体逐渐取代传统搜索引擎进行信息检索，这一工具可以帮助网站更好地被 AI 索引和利用。这是基础设施厂商主动适应“Agent 优先”互联网趋势的重要动作。<br />
+原文：<a href="https://thenewstack.io/cloudflares-markdown-for-agents-automatically-make-websites-more-aifriendly/">Cloudflare’s Markdown for Agents automatically make websites agent-ready</a></p>
+<p><strong>GGML 与 llama.cpp 正式加入 Hugging Face 生态</strong><br />
+开源 AI 领域的重要项目 GGML 和 llama.cpp 宣布加入 Hugging Face，以确保本地 AI 技术的长期发展。这一合作将简化量化模型在 Hugging Face 平台上的分发与使用，进一步推动大模型在消费级硬件上的普及。这对开源 AI 社区的工程化标准具有里程碑意义。<br />
+原文：<a href="https://huggingface.co/blog/ggml-joins-hf">GGML and llama.cpp join HF to ensure the long-term progress of Local AI</a></p>
+<p><strong>Raypher 推出基于 eBPF 的 AI Agent 运行时安全防护</strong><br />
+针对自主 AI Agent 可能带来的安全风险，Raypher 开发了一种内核级的执行保护层，利用 eBPF 技术监控 Agent 的行为。该工具可以在 Agent 产生幻觉并尝试执行危险命令（如删除数据库）时，实现微秒级的拦截。这为当前缺乏运行时边界的 AI Agent 生态系统提供了必要的安全底座。<br />
+原文：<a href="https://github.com/kidigapeet/Raypher-core">Show HN: Raypher–eBPF-based runtime security and hardware identity for AI agents</a></p>
+<p><strong>Ollama 0.17 发布，优化 OpenClaw 智能体集成</strong><br />
+流行的本地大模型运行工具 Ollama 发布 v0.17 版本，重点增强了对 OpenClaw 智能体框架的支持。新版本改进了用户引导流程，使得开发者能够更轻松地在本地构建和部署具备自主能力的 AI 助手。Ollama 继续通过降低门槛来巩固其在本地 AI 开发领域的领先地位。<br />
+原文：<a href="https://www.phoronix.com/news/ollama-0.17">ollama 0.17 Released With Improved OpenClaw Onboarding</a></p>
+<hr />
+<h2>工业界最新动向</h2>
+<p><strong>Cloudflare 遭遇 BGP 路由故障导致服务中断</strong><br />
+2026 年 2 月 20 日，Cloudflare 发生了一起服务中断事故，影响了使用“自带 IP”（BYOIP）服务的客户。事故原因是 BGP 路由在互联网中被撤回，导致相关流量无法到达。Cloudflare 随后发布了详细的事故报告，再次引发了业界对全球网络基础设施脆弱性的讨论。<br />
+原文：<a href="https://blog.cloudflare.com/cloudflare-outage-february-20-2026/">Cloudflare outage on February 20, 2026</a></p>
+<p><strong>科罗拉多州提议在操作系统层面实施年龄验证</strong><br />
+科罗拉多州立法者正在推动一项新法案，要求在操作系统（OS）层面而非单个网站层面进行用户年龄验证。这一提议旨在通过系统级权限控制未成年人访问有害内容，但也引发了关于隐私保护和技术实现难度的激烈辩论。如果通过，这将对苹果、谷歌等 OS 厂商的开发策略产生深远影响。<br />
+原文：<a href="https://uk.pcmag.com/security/163291/colorado-lawmakers-push-for-age-verification-at-the-operating-system-level">Colorado Lawmakers Push for Age Verification at the Operating System Level</a></p>
+<p><strong>GNU Gawk 5.4 发布，引入新正则引擎并提升文件读取速度</strong><br />
+广泛使用的文本处理工具 GNU Awk 发布了 5.4 版本，引入了全新的 MinRX 正则表达式匹配器。新版本在处理大规模文本文件时表现出更快的读取速度，并修复了多个长期存在的兼容性问题。作为 Linux 工具链中的基石，Gawk 的更新将直接提升各类自动化脚本的运行效率。<br />
+原文：<a href="https://www.phoronix.com/news/GNU-Gawk-5.4-Released">GNU Gawk 5.4 Released With New MinRX Regex Matcher, Faster Reading Of Files</a></p>
+<p><strong>开源社区寻找 Discord 替代方案以应对强制年龄验证</strong><br />
+由于 Discord 宣布将实施严格的 AI 驱动年龄验证，许多开源项目（如 Mastodon）开始寻找替代方案。目前 Zulip 等开源聊天平台成为热门选择，因为它们更符合开源社区对隐私和数据自主权的追求。这一趋势反映了开源生态对闭源协作工具依赖风险的警惕。<br />
+原文：<a href="https://lwn.net/Articles/1058319/">Open-source Discord alternatives</a></p>
+<hr />
+<h2>学术界最新研究</h2>
+<p><strong>LDOS：迈向学习驱动的操作系统</strong><br />
+SIGOPS 发表了一篇关于“学习驱动操作系统”（LDOS）的研究，探讨了如何利用机器学习模型替换内核中的传统启发式算法。研究指出，通过在调度、内存管理和预取等环节引入在线学习，系统可以更好地适应动态负载。这一方向被认为是未来十年操作系统架构演进的核心趋势之一。<br />
+原文：<a href="https://www.sigops.org/2026/ldos-toward-a-learning-directed-operating-system/">LDOS: Toward a Learning-Directed Operating System</a></p>
+<p><strong>TempoNet：基于 Transformer 和强化学习的实时调度器</strong><br />
+arXiv 披露了一项名为 TempoNet 的研究，提出了一种结合 Transformer 架构和深度 Q 学习的实时调度方案。该系统通过“紧急程度令牌化”技术，能够在亚毫秒级时间内对无序任务集进行全局推理。实验表明，该调度器在工业级多核环境下的截止日期达成率显著优于传统算法。<br />
+原文：<a href="https://arxiv.org/abs/2602.18109">TempoNet: Slack-Quantized Transformer-Guided Reinforcement Scheduler</a></p>
+<p><strong>BioBridge：通过持续预训练增强 LLM 的生物学推理能力</strong><br />
+研究人员提出了 BioBridge 框架，旨在解决通用大模型在蛋白质序列理解方面的不足。该框架采用领域增量持续预训练（DICP）技术，将蛋白质领域知识与通用推理能力同步注入模型，有效缓解了灾难性遗忘。这一研究为 AI 在生物制药和生命科学领域的应用提供了更强的底座模型。<br />
+原文：<a href="https://arxiv.org/abs/2602.17680">BioBridge: Bridging Proteins and Language for Enhanced Biological Reasoning</a></p>
+<p><strong>LATMiX：针对 LLM 微缩放量化的可学习仿射变换</strong><br />
+针对大语言模型在量化过程中出现的离群值问题，LATMiX 研究提出了一种可学习的仿射变换方法。该方法能够显著提高模型在 4 位及以下低比特量化时的鲁棒性，特别是在现代硬件支持的微缩放（MX）数据格式下表现优异。这项技术对于在边缘设备上部署高性能大模型具有重要价值。<br />
+原文：<a href="https://arxiv.org/abs/2602.17681">LATMiX: Learnable Affine Transformations for Microscaling Quantization of LLMs</a></p>
+<hr /></div>
+  </main>
+</body>
+</html>
