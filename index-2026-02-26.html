@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OS 领域每日洞察 - 2026-02-26</title>
+  <style>
+    :root {
+      --bg: #f6f4f0;
+      --bg-bar: #ebe8e3;
+      --bg-card: #fffefb;
+      --bg-card-hover: #f5f3ef;
+      --text: #2d2a26;
+      --text-muted: #5c5852;
+      --text-dim: #7a756e;
+      --accent: #5a7a9e;
+      --border: #ddd9d2;
+      --radius: 10px;
+      --font: "Segoe UI", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      font-size: 15px;
+    }
+
+    /* 门户顶栏 */
+    .masthead {
+      background: var(--bg-bar);
+      border-bottom: 1px solid var(--border);
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 0;
+    }
+    .masthead-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .masthead h1 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin: 0;
+      letter-spacing: -0.02em;
+      color: var(--text);
+    }
+    .masthead .meta {
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+    }
+
+    /* 主内容区：多栏门户布局 */
+    .main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 3rem;
+    }
+
+    /* 板块：每个 h2 为一个频道块 */
+    .content .section {
+      margin-bottom: 2.5rem;
+    }
+    .content h2 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+      margin: 0 0 1rem;
+      padding: 0.6rem 1rem;
+      background: var(--bg-bar);
+      border-radius: var(--radius);
+      border-left: 4px solid var(--accent);
+    }
+    .content h2:first-child { margin-top: 0; }
+
+    .content h2:has(+ h3) {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      border-left-color: var(--text-dim);
+    }
+
+    /* 板块内卡片网格（每个 h2 后的 ul） */
+    .content h2 + ul {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1rem;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .content h2 + ul li {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.15rem 1.2rem;
+      transition: background .15s, border-color .15s;
+    }
+    .content h2 + ul li:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--text-dim);
+    }
+    .content h2 + ul li strong {
+      display: block;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+      line-height: 1.4;
+    }
+    .content h2 + ul li p {
+      margin: 0 0 0.5rem;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.58;
+    }
+    .content h2 + ul li p:last-of-type { margin-bottom: 0; }
+    .content h2 + ul li a[href^="http"] {
+      font-size: 0.8125rem;
+      color: var(--accent);
+    }
+    .content h2 + ul li a[href^="http"]:hover { text-decoration: underline; }
+
+    .content .ref-section {
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+    .content h2 + h3 { margin-top: 1.25rem; }
+    .content h3 {
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--text-dim);
+      margin: 1rem 0 0.4rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .content h3 + ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 0.25rem;
+    }
+    .content h3 + ul li {
+      background: transparent;
+      border: none;
+      padding: 0.2rem 0;
+      font-size: 0.8125rem;
+    }
+    .content h3 + ul li strong { font-size: inherit; margin-bottom: 0; }
+    .content h3 + ul li a { color: var(--accent); }
+    .content h3 + ul li a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <header class="masthead">
+    <div class="masthead-inner">
+      <h1>OS 领域每日洞察 - 2026-02-26</h1>
+      <span class="meta">2026-02-26 05:01 UTC</span>
+    </div>
+  </header>
+  <main class="main">
+    <div class="content"><h2>Linux 内核社区热点与趋势</h2>
+<p><strong>Linux 7.0-rc1 正式发布，合并窗口顺利关闭</strong><br />
+Linux 内核 7.0 版本的第一个候选版本已正式发布，标志着本次合并窗口的结束。本次合并共包含 11,588 个非合并提交，涵盖了大量驱动更新和核心子系统改进，其中 WiFi 驱动 rtl8723bs 意外获得了大量代码清理关注。这一版本的发布为接下来的测试和稳定周期奠定了基础。<br />
+原文：<a href="https://www.kernel.org/">7.0-rc1: mainline</a></p>
+<p><strong>多款 LTS 内核版本维护周期获得延长</strong><br />
+稳定版维护者 Greg Kroah-Hartman 宣布延长 Linux 6.18、6.12 和 6.6 三个长期支持（LTS）系列的维护期限。其中 6.6 版本将支持至 2027 年底，而 6.12 和 6.18 将支持至 2028 年底，为企业级用户提供了更长久的系统稳定性保障。<br />
+原文：<a href="https://www.phoronix.com/news/Linux-6.18-LTS-6.12-6.6-Extend">Linux 6.18 LTS / 6.12 LTS / 6.6 LTS Support Periods Extended</a></p>
+<p><strong>Linux 7.1 计划引入 cgroup 子调度器支持</strong><br />
+开发者正在为 Linux 7.1 开发一项令人期待的新特性，即基于 sched_ext 的 cgroup 子调度器支持。该功能允许在 cgroup 层面进行更精细的 CPU 资源调度管理，进一步增强了内核在复杂工作负载下的灵活性。<br />
+原文：<a href="https://www.phoronix.com/news/cgroup-sub-scheduler-sched-ext">Sub-Scheduler Support Could Be One Of The Most Exciting Features To Come For Linux 7.1</a></p>
+<p><strong>内核合并 RK3588 与 RK3576 视频解码器支持</strong><br />
+瑞芯微（Rockchip）的高性能芯片 RK3588 和 RK3576 的视频解码器驱动已正式合并至 Linux 主线内核。这意味着使用这些芯片的单板计算机和嵌入式设备将能够获得原生的硬件加速解码能力，显著提升多媒体处理性能。<br />
+原文：<a href="https://www.collabora.com/news-and-blog/news-and-events/rk3588-and-rk3576-video-decoders-support-merged-in-the-upstream-linux-kernel.html">RK3588 and RK3576 video decoders support merged in the upstream Linux Kernel</a></p>
+<p><strong>clone3() 系统调用拟引入 AUTOREAP 等新标志</strong><br />
+内核开发者 Christian Brauner 提议为 clone3() 增加两个新标志，其中 AUTOREAP 标志允许进程在退出时自动回收，无需父进程等待。这一提议旨在优化 pidfd 机制下的进程管理，但在安全模型方面引发了社区的一定争议。<br />
+原文：<a href="https://lwn.net/Articles/1059673/">As ye clone(), so shall ye AUTOREAP</a></p>
+<p><strong>BPF 硬件内存隔离方案讨论遇冷</strong><br />
+有开发者建议利用硬件内存保护键（MPK）来增强内核 BPF 实现的安全性，防止 BPF 程序未经授权访问内存。然而，由于缺乏社区互动和具体补丁集的公开分享，该提议在即将举行的技术峰会上获得讨论的可能性较低。<br />
+原文：<a href="https://lwn.net/Articles/1059218/">No hardware memory isolation for BPF programs</a></p>
+<h2>业界大厂动向</h2>
+<p><strong>React 基金会正式成立并加入 Linux 基金会</strong><br />
+Meta 宣布将 React 项目移交给新成立的 React 基金会，并由 Linux 基金会托管。此举旨在通过中立的治理模式促进 React 生态系统的长期健康发展，吸引更多企业参与贡献，改变了以往由单一公司主导的局面。<br />
+原文：<a href="https://react.dev/blog/2026/02/24/the-react-foundation">The React Foundation: A New Home for React Hosted by the Linux Foundation</a></p>
+<p><strong>AMD 发布 EPYC 8005 "Sorano" 系列处理器</strong><br />
+AMD 推出了针对嵌入式和主流服务器市场的 EPYC 8005 系列处理器，采用了最新的 Zen 5 架构。该系列填补了高端 9005 系列与入门级 4005 系列之间的空白，为数据中心提供了更具性价比的算力选择。<br />
+原文：<a href="https://www.phoronix.com/news/AMD-EPYC-8005-Series">AMD Announces The EPYC 8005 "Sorano" Series</a></p>
+<p><strong>Firefox 148/149 发布，引入 AI 控制与安全增强</strong><br />
+Mozilla 发布了 Firefox 148 正式版及 149 Beta 版，新增了“一键关闭 AI 增强”功能，允许用户拒绝浏览器内的 AI 提示。此外，新版本还引入了 setHTML API 以增强 XSS 攻击防护，并为 Beta 用户带来了便捷的分屏浏览模式。<br />
+原文：<a href="https://www.phoronix.com/news/Firefox-149-Beta">Firefox 149 Beta Released With Convenient Split-View Mode</a></p>
+<p><strong>Arm 与 Linaro 联合 AMD 等厂商启动 CoreCollective 联盟</strong><br />
+一个新的行业联盟 CoreCollective 正式成立，旨在加强 Arm 软件生态系统的开放协作。令人关注的是，AMD 作为创始成员加入了该联盟，显示出主要芯片厂商在推动 Arm 架构软件标准化方面的共同利益。<br />
+原文：<a href="https://www.phoronix.com/news/CoreCollective">Arm &amp; Linaro Launch New "CoreCollective" Consortium - With Backing From AMD &amp; Others</a></p>
+<p><strong>NVIDIA 招聘工程师优化 Linux 上的 Proton 与 Vulkan 性能</strong><br />
+NVIDIA 正在招聘专门的软件工程师，负责提升其显卡在 Linux 环境下运行 Proton 兼容层和 Vulkan API 的表现。这表明 NVIDIA 正在加大对 Linux 游戏生态的支持力度，以应对日益增长的 Linux 玩家需求。<br />
+原文：<a href="https://www.techpowerup.com/346714/nvidia-hiring-engineers-to-optimize-proton-and-vulkan-api-performance-on-linux">NVIDIA hiring engineers to optimize Proton and Vulkan API performance on Linux</a></p>
+<h2>云原生领域</h2>
+<p><strong>Kubernetes 1.35 版本发布，强化 AI 基础设施能力</strong><br />
+Kubernetes v1.35（代号 Timbernetes）正式发布，其特性更新高度指向 AI 工作负载。新版本引入了 Pod 原地重启、可变 PersistentVolume 节点亲和性以及增强的 GPU 节点就绪管理，进一步巩固了 Kubernetes 作为“AI 操作系统”的地位。<br />
+原文：<a href="https://www.cncf.io/blog/2026/02/23/kubernetes-as-ais-operating-system-1-35-release-signals/">Kubernetes as AI’s operating system: 1.35 release signals</a></p>
+<p><strong>Ingress NGINX 将于 2026 年 3 月退役</strong><br />
+Kubernetes 指导委员会发布紧急声明，确认 Ingress NGINX 项目因缺乏维护者将于 2026 年 3 月停止更新。官方强烈建议用户立即开始向 Gateway API 或其他第三方控制器迁移，以避免未来出现安全漏洞和维护真空。<br />
+原文：<a href="https://kubernetes.io/blog/2026/01/29/ingress-nginx-statement/">Ingress NGINX: Statement from the Kubernetes Steering and Security Response Committees</a></p>
+<p><strong>Kyverno 1.17 发布，CEL 策略引擎进入稳定版</strong><br />
+云原生策略管理工具 Kyverno 发布了 1.17 版本，标志着其基于通用表达式语言（CEL）的下一代策略引擎正式达产。这一更新提供了更高性能的策略校验能力，并简化了复杂安全规则的编写流程。<br />
+原文：<a href="https://www.cncf.io/blog/2026/02/18/announcing-kyverno-1-17/">Announcing Kyverno 1.17!</a></p>
+<p><strong>Cluster API v1.12 引入原地更新与链式升级</strong><br />
+Cluster API 发布 v1.12 版本，显著降低了集群生命周期管理的摩擦。新版本支持在不重新创建机器的情况下进行原地更新，并引入了链式升级机制，极大提升了大规模 Kubernetes 集群运维的效率和可用性。<br />
+原文：<a href="https://kubernetes.io/blog/2026/01/27/cluster-api-v1-12-release/">Cluster API v1.12: Introducing In-place Updates and Chained Upgrades</a></p>
+<p><strong>Cedar 授权策略语言加入 CNCF 沙箱项目</strong><br />
+由 AWS 开源的 Cedar 策略语言已正式加入 CNCF 沙箱。Cedar 旨在为云原生环境提供快速、安全且可分析的授权控制，其加入 CNCF 将有助于推动跨平台的细粒度访问控制标准化。<br />
+原文：<a href="https://aws.amazon.com/blogs/opensource/cedar-joins-cncf-as-a-sandbox-project/">Cedar Joins CNCF as a Sandbox Project</a></p>
+<h2>AI 领域</h2>
+<p><strong>llama.cpp 与 GGML 正式加入 Hugging Face 生态</strong><br />
+流行的本地 AI 推理框架 llama.cpp 及其底层库 GGML 宣布加入 Hugging Face。这一整合将确保本地 AI 技术的长期发展，并为用户在边缘设备和个人电脑上运行大模型提供更无缝的工具链支持。<br />
+原文：<a href="https://huggingface.co/blog/ggml-joins-hf">GGML and llama.cpp join HF to ensure the long-term progress of Local AI</a></p>
+<p><strong>AWS 推出 Strands Labs 探索实验性 Agent 技术</strong><br />
+AWS 启动了名为 Strands Labs 的 GitHub 组织，专门用于发布最前沿的实验性 AI Agent 开发工具。该项目包含 Python 和 TypeScript 版本的 SDK，旨在帮助开发者探索智能体在复杂工作流中的应用边界。<br />
+原文：<a href="https://aws.amazon.com/blogs/opensource/introducing-strands-labs-get-hands-on-today-with-state-of-the-art-experimental-approaches-to-agentic-development/">Introducing Strands Labs: Get hands-on today with state-of-the-art, experimental approaches to agentic development</a></p>
+<p><strong>Cloudflare 推出“Markdown for Agents”使网站对 AI 更友好</strong><br />
+Cloudflare 发布了一项新功能，能够自动将网页内容转换为 AI Agent 易于理解的 Markdown 格式。这解决了 AI 爬虫在解析复杂 HTML 时遇到的困难，提升了智能体在自动化任务中的信息获取准确度。<br />
+原文：<a href="https://thenewstack.io/cloudflares-markdown-for-agents-automatically-make-websites-more-aifriendly/">Cloudflare’s Markdown for Agents automatically make websites agent-ready</a></p>
+<p><strong>开源 Agent 操作系统 OpenFang 引起关注</strong><br />
+一个名为 OpenFang 的开源 Agent 操作系统项目在开发者社区走红。该系统旨在为 AI 智能体提供底层的运行环境和资源调度能力，探索如何构建一个以 AI 为核心的全新计算架构。<br />
+原文：<a href="https://github.com/RightNow-AI/openfang">Open-Source Agent Operating System</a></p>
+<p><strong>AegisBPF：利用 eBPF LSM 实现 AI Agent 的运行时安全增强</strong><br />
+开发者推出了 AegisBPF 工具，利用 Linux 安全模块（LSM）和 eBPF 技术为 AI Agent 提供确定性的运行时保护。该工具可以在文件访问、网络连接等操作发生前进行同步拦截，有效防止 Agent 执行破坏性命令。<br />
+原文：<a href="https://github.com/ErenAri/Aegis-BPF">Show HN: AegisBPF – Deterministic Runtime Enforcement via eBPF LSM</a></p>
+<h2>工业界最新动向</h2>
+<p><strong>Scaleway 推出基于 Asahi Linux 的 M2 Pro Mac Mini 云服务器</strong><br />
+云服务商 Scaleway 宣布推出搭载 Asahi Linux 的专用 M2 Pro Mac Mini 服务器。这是 Asahi Linux 首次大规模进入公共云市场，为开发者提供了在高性能 Arm 架构上运行原生 Linux 环境的新选择。<br />
+原文：<a href="https://www.scaleway.com/en/mac-mini-asahi-linux/">Asahi Linux in the Cloud: Scaleway Launches Dedicated M2 Pro Mac Mini Servers</a></p>
+<p><strong>Mesa 26.0.1 发布，修复 WebGPU 关键安全漏洞</strong><br />
+开源图形栈 Mesa 发布了 26.0.1 补丁版本，紧急修复了一个涉及 WebGPU 上下文的越界内存访问漏洞。该漏洞可能导致浏览器环境下的安全风险，官方建议所有 Linux 用户尽快更新图形驱动。<br />
+原文：<a href="https://www.phoronix.com/news/Mesa-26.0.1-Released">Mesa 26.0.1 Released With Important Security Fix For OOB Memory Access From WebGPU</a></p>
+<p><strong>LibreOffice Online 项目宣布重启</strong><br />
+Document Foundation 宣布将重新激活此前处于停滞状态的 LibreOffice Online 项目。该项目旨在提供一个可由用户自行托管的网页版办公套件，此次重启标志着开源社区在挑战商业在线办公软件方面迈出了新的一步。<br />
+原文：<a href="https://lwn.net/Articles/1060087/">Restarting LibreOffice Online</a></p>
+<p><strong>Cloudflare 全平台支持后量子加密技术</strong><br />
+Cloudflare 宣布其 SASE 产品 Cloudflare One 已全面支持后量子加密（PQC）。通过实施最新的 IETF 混合加密草案，Cloudflare 能够保护用户免受未来量子计算机对当前加密协议的潜在威胁。<br />
+原文：<a href="https://blog.cloudflare.com/post-quantum-sase/">Cloudflare One is the first SASE offering modern post-quantum encryption across the full platform</a></p>
+<p><strong>OpenZFS 2.4.1 发布，兼容 Linux 6.19 内核</strong><br />
+OpenZFS 发布了 2.4.1 维护版本，主要增加了对最新稳定版 Linux 6.19 内核的支持。此外，该版本还修复了大量在 2.4 大版本发布后发现的稳定性问题，提升了文件系统在生产环境中的可靠性。<br />
+原文：<a href="https://www.phoronix.com/news/OpenZFS-2.4.1-Released">OpenZFS 2.4.1 Released With Linux 6.19 Compatibility, Many Fixes</a></p>
+<h2>学学界最新研究</h2>
+<p><strong>Latent Context Compilation：将长上下文蒸馏为便携式内存</strong><br />
+研究人员提出了一种名为“潜上下文编译”的框架，利用 LoRA 模块作为编译器，将长文本内容蒸馏为紧凑的缓冲区 Token。这些 Token 是无状态且可移植的，能够与冻结的基础模型即插即用，显著降低了长上下文处理的计算开销。<br />
+原文：<a href="https://arxiv.org/abs/2602.21221">Latent Context Compilation: Distilling Long Context into Compact Portable Memory</a></p>
+<p><strong>ACAR：具有可审计决策轨迹的多模型自适应路由</strong><br />
+该研究介绍了一种名为 ACAR 的测量框架，用于在多模型编排中研究任务路由。通过计算探测样本的自一致性方差，系统可以自动决定任务应由单模型还是多模型集成执行，并在保证准确率的同时提供完整的决策审计追踪。<br />
+原文：<a href="https://arxiv.org/abs/2602.21231">ACAR: Adaptive Complexity Routing for Multi-Model Ensembles with Auditable Decision Traces</a></p>
+<p><strong>SymTorch：深度神经网络符号蒸馏框架</strong><br />
+SymTorch 是一个旨在将神经网络组件转换为可解释数学表达式的库。它通过包装模型组件并利用符号回归技术，将复杂的黑盒模型转化为人类可读的闭式方程，为发现物理定律和数学关系提供了自动化工具。<br />
+原文：<a href="https://arxiv.org/abs/2602.21307">SymTorch: A Framework for Symbolic Distillation of Deep Neural Networks</a></p>
+<p><strong>cVMDx：基于扩散模型的确定性轨迹预测框架</strong><br />
+针对自动驾驶中的轨迹预测挑战，研究者提出了 cVMDx 框架。该框架利用 DDIM 采样技术，在保持扩散模型生成多样性的同时，将推理时间缩短了 100 倍，使其能够满足实时自动驾驶系统的严苛要求。<br />
+原文：<a href="https://arxiv.org/abs/2602.21319">Uncertainty-Aware Diffusion Model for Multimodal Highway Trajectory Prediction via DDIM Sampling</a></p>
+<p><strong>HiPPO Zoo：可解释状态空间模型的显式记忆机制</strong><br />
+该研究重新审视了 HiPPO 框架，通过将信号投影到正交多项式基上，为序列数据提供了原则性的压缩方法。研究探讨了 Mamba 等非线性状态空间模型表示历史信息的机制，增强了此类模型在处理长程依赖任务时的可解释性。<br />
+原文：<a href="https://arxiv.org/abs/2602.21340">HiPPO Zoo: Explicit Memory Mechanisms for Interpretable State Space Models</a></p>
+<hr /></div>
+  </main>
+</body>
+</html>
