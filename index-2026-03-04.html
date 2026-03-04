@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OS 领域每日洞察 - 2026-03-04</title>
+  <style>
+    :root {
+      --bg: #f6f4f0;
+      --bg-bar: #ebe8e3;
+      --bg-card: #fffefb;
+      --bg-card-hover: #f5f3ef;
+      --text: #2d2a26;
+      --text-muted: #5c5852;
+      --text-dim: #7a756e;
+      --accent: #5a7a9e;
+      --border: #ddd9d2;
+      --radius: 10px;
+      --font: "Segoe UI", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      font-size: 15px;
+    }
+
+    /* 门户顶栏 */
+    .masthead {
+      background: var(--bg-bar);
+      border-bottom: 1px solid var(--border);
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 0;
+    }
+    .masthead-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .masthead h1 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin: 0;
+      letter-spacing: -0.02em;
+      color: var(--text);
+    }
+    .masthead .meta {
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+    }
+
+    /* 主内容区：多栏门户布局 */
+    .main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 3rem;
+    }
+
+    /* 板块：每个 h2 为一个频道块 */
+    .content .section {
+      margin-bottom: 2.5rem;
+    }
+    .content h2 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+      margin: 0 0 1rem;
+      padding: 0.6rem 1rem;
+      background: var(--bg-bar);
+      border-radius: var(--radius);
+      border-left: 4px solid var(--accent);
+    }
+    .content h2:first-child { margin-top: 0; }
+
+    .content h2:has(+ h3) {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      border-left-color: var(--text-dim);
+    }
+
+    /* 板块内卡片网格（每个 h2 后的 ul） */
+    .content h2 + ul {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1rem;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .content h2 + ul li {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.15rem 1.2rem;
+      transition: background .15s, border-color .15s;
+    }
+    .content h2 + ul li:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--text-dim);
+    }
+    .content h2 + ul li strong {
+      display: block;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+      line-height: 1.4;
+    }
+    .content h2 + ul li p {
+      margin: 0 0 0.5rem;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.58;
+    }
+    .content h2 + ul li p:last-of-type { margin-bottom: 0; }
+    .content h2 + ul li a[href^="http"] {
+      font-size: 0.8125rem;
+      color: var(--accent);
+    }
+    .content h2 + ul li a[href^="http"]:hover { text-decoration: underline; }
+
+    .content .ref-section {
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+    .content h2 + h3 { margin-top: 1.25rem; }
+    .content h3 {
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--text-dim);
+      margin: 1rem 0 0.4rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .content h3 + ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 0.25rem;
+    }
+    .content h3 + ul li {
+      background: transparent;
+      border: none;
+      padding: 0.2rem 0;
+      font-size: 0.8125rem;
+    }
+    .content h3 + ul li strong { font-size: inherit; margin-bottom: 0; }
+    .content h3 + ul li a { color: var(--accent); }
+    .content h3 + ul li a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <header class="masthead">
+    <div class="masthead-inner">
+      <h1>OS 领域每日洞察 - 2026-03-04</h1>
+      <span class="meta">2026-03-04 05:01 UTC</span>
+    </div>
+  </header>
+  <main class="main">
+    <div class="content"><h2>Linux 内核社区热点与趋势</h2>
+<p><strong>Linux 7.1 将在发生致命 ACPI 错误时默认关机</strong><br />
+在即将发布的 Linux 7.1 内核中，内核默认行为将发生重要变化：一旦遇到任何致命的 ACPI 错误，系统将尝试自动关机。在此之前，Linux 内核仅对 ACPI 致命错误进行日志记录，而新的策略旨在通过主动关机来保护硬件免受潜在损坏。这一改动对于提升关键任务系统的安全性和硬件寿命具有积极意义。<br />
+原文：<a href="https://www.phoronix.com/news/Linux-7.1-ACPI-Error-Power-Off">Linux 7.1 Will Power Off The System By Default If A Fatal ACPI Error Occurs</a></p>
+<p><strong>AMD 提交 DPTCi 驱动引发 AI 生成代码争议</strong><br />
+AMD 近期向 Linux 内核邮件列表提交了动态功率与热配置接口（DPTCi）驱动的 RFC 补丁，旨在优化 Ryzen 掌上游戏机的功耗与散热。然而，该驱动部分由 AI 辅助编写且未事先声明，在社区内引发了激烈讨论。内核维护者对 AI 生成代码的质量、透明度以及潜在的维护负担表示担忧，这反映了内核社区在接纳 AI 工具辅助开发时的审慎态度。<br />
+原文：<a href="https://www.phoronix.com/news/AMD-DPTCi-Linux-Driver">AMD DPTCi Driver Posted For Linux To Better Enhance Ryzen Gaming Handhelds</a></p>
+<p><strong>Linux 分组套接字竞态条件漏洞 CVE-2025-38617 详情披露</strong><br />
+安全研究人员详细分析了 Linux 内核分组套接字（Packet Sockets）中的一个高危竞态条件漏洞。该漏洞允许攻击者通过精心构造的并发操作实现权限提升或内核崩溃，属于典型的“双重竞态”攻击。目前相关补丁已合并至主流稳定版本，社区提醒广大用户及时更新内核以防范潜在的本地提权风险。<br />
+原文：<a href="https://blog.calif.io/p/a-race-within-a-race-exploiting-cve">A Race Within a Race: Exploiting CVE-2025-38617 in Linux Packet Sockets</a></p>
+<p><strong>内核社区持续推进原子缓冲写（Atomic Buffered Writes）特性</strong><br />
+长期以来，Linux 仅在直接 I/O 中支持原子写，而缓冲 I/O 的原子性支持一直是技术难点。在最近的讨论中，开发者们正尝试通过改进文件系统页缓存管理来实现多块数据的原子写入，以确保操作要么全部成功要么全部失败。这一特性对于数据库应用至关重要，预计将成为 2026 年 LSFMM+BPF 峰会的核心议题。<br />
+原文：<a href="https://lwn.net/Articles/1060063/">The ongoing quest for atomic buffered writes</a></p>
+<p><strong>Intel 为未来处理器准备 ChkTag 内存标记技术支持</strong><br />
+Intel 正在调整 Linux 内核中的线性地址掩码（LAM）支持，以为即将推出的硬件内存标记技术 ChkTag 做准备。ChkTag 旨在通过硬件层面检测缓冲区溢出和释放后使用（UAF）等内存安全漏洞，是 x86 生态系统咨询小组的重要成果。通过与内核 LAM 机制的深度整合，该技术将显著增强 Linux 系统在应对现代内存攻击时的防御能力。<br />
+原文：<a href="https://www.phoronix.com/news/Intel-Linux-LAM-ChkTag">Intel Adapting Linux's LAM In Preparing For ChkTag</a></p>
+<hr />
+<h2>业界大厂动向</h2>
+<p><strong>苹果发布 M5 系列芯片，引入“融合架构”与芯片组设计</strong><br />
+苹果正式推出了 M5 Pro 和 M5 Max 芯片，标志着其自研硅片架构的又一次重大飞跃。新芯片采用了被称为“融合架构”的设计，通过增加芯片组（Chiplets）数量和引入三类不同的 CPU 核心来优化性能与能效比。此外，新一代 GPU 架构的加入显著提升了图形处理能力，进一步巩固了苹果在高性能移动计算领域的领先地位。<br />
+原文：<a href="https://www.phoronix.com/news/Apple-M5-Pro-M5-Max">Apple Announces "Fusion Architecture" With M5 Pro &amp; M5 Max</a></p>
+<p><strong>Google Chrome 浏览器将发布周期缩短至两周</strong><br />
+Google 宣布从今年晚些时候开始，Chrome 浏览器的正式版本发布频率将从目前的四周一次提高到两周一次。此举旨在更快地向用户交付新功能、安全修复和性能改进，以应对日益激烈的浏览器市场竞争。对于开发者而言，这意味着需要适应更快的迭代节奏，同时也对自动化测试和发布流程提出了更高要求。<br />
+原文：<a href="https://thenewstack.io/chrome-two-week-releases/">Google’s Chrome browser moves to a two-week release cycle</a></p>
+<p><strong>Red Hat 发布 OpenShift AI 3.3，强化生产环境治理</strong><br />
+红帽公司推出了 OpenShift AI 3.3 版本，重点解决企业 AI 项目从试点转向生产环境时的治理难题。新版本引入了集中式的 AI 资产中心，帮助企业在保证开发者快速访问的同时，实现对模型生命周期的严格监管。此外，该版本还针对多模型和多智能体（Multi-agent）的未来趋势进行了优化，提供了更强大的推理服务器支持。<br />
+原文：<a href="https://www.redhat.com/en/blog/whats-new-red-hat-openshift-ai-33-ui-moving-pilot-production">What’s new with Red Hat OpenShift AI 3.3 UI: Moving from pilot to production</a></p>
+<p><strong>Meta 将 React 移交给独立基金会，但仍保留控制权</strong><br />
+Meta 近期宣布为流行的前端框架 React 成立专门的基金会，以推动其开源治理的透明化。虽然此举被视为向社区化迈进的重要一步，但 Meta 依然在技术决策和核心维护团队中保留了显著影响力。这一动作反映了大型科技公司在维护开源生态领导力与响应社区去中心化诉求之间的微妙平衡。<br />
+原文：<a href="https://thenewstack.io/react-foundation-open-source-governance/">Meta gave React its own foundation. But it’s not letting go just yet.</a></p>
+<p><strong>摩托罗拉与 GrapheneOS 基金会达成安全合作</strong><br />
+摩托罗拉宣布与专注于隐私保护的 GrapheneOS 基金会建立合作伙伴关系，共同强化智能手机的安全性。双方将协作确保未来的摩托罗拉设备能够完美兼容 GrapheneOS 这一高度安全的 Android 分支版本。这一合作对于追求极致隐私保护的用户群体具有重要意义，也展示了主流硬件厂商对开源安全社区的认可。<br />
+原文：<a href="https://lwn.net/Articles/1060913/">Motorola announces a partnership with the GrapheneOS Foundation</a></p>
+<hr />
+<h2>云原生领域</h2>
+<p><strong>Kubernetes 宣布将于 2026 年 3 月正式退役 Ingress-NGINX</strong><br />
+Kubernetes 指导委员会发布声明，确认由于缺乏维护者，关键基础设施项目 Ingress-NGINX 将于 2026 年 3 月停止所有更新。官方强烈建议用户立即开始向 Gateway API 或其他第三方 Ingress 控制器迁移，以避免未来出现安全漏洞无法修复的风险。这一决定在云原生社区引发了巨大震动，因为目前约有一半的云原生环境依赖该组件。<br />
+原文：<a href="https://kubernetes.io/blog/2026/01/29/ingress-nginx-statement/">Ingress NGINX: Statement from the Kubernetes Steering and Security Response Committees</a></p>
+<p><strong>Kubernetes v1.35 引入 Pod 原地重启功能</strong><br />
+在最新的 Kubernetes v1.35 版本中，引入了“重启所有容器”的 Alpha 特性，支持在不删除 Pod 的情况下原地重置其状态。这一功能对于 AI/ML 任务尤为重要，因为它允许应用在遇到故障时快速恢复，而无需重新经历耗时的资源调度和初始化过程。通过减少对调度器的压力，该特性显著提升了大规模集群的运行效率。<br />
+原文：<a href="https://kubernetes.io/blog/2026/01/02/kubernetes-v1-35-restart-all-containers/">Kubernetes v1.35: New level of efficiency with in-place Pod restart</a></p>
+<p><strong>WebAssembly 插件简化 Kubernetes 的可扩展性</strong><br />
+WebAssembly (Wasm) 正在成为扩展 Kubernetes 生态系统的新宠，通过将 Wasm 插件集成到 Helm 等工具中，开发者可以更轻松地编排跨环境的二进制文件。Wasm 提供了近乎原生的性能和极高的安全性隔离，使得在边缘计算和受限环境中扩展 K8s 功能变得更加简单。这种方式避免了传统容器镜像体积过大和启动慢的问题，为云原生应用提供了更轻量级的选择。<br />
+原文：<a href="https://thenewstack.io/how-webassembly-plugins-are-simplifying-kubernetes-extensibility/">How WebAssembly plugins simplify Kubernetes extensibility</a></p>
+<p><strong>CNCF 接受 Cedar 策略语言进入沙箱计划</strong><br />
+开源授权策略语言 Cedar 正式加入云原生计算基金会（CNCF）成为沙箱项目。Cedar 旨在为云原生环境提供快速、安全且可分析的授权机制，允许开发者以声明式方式定义复杂的访问控制逻辑。加入 CNCF 将有助于 Cedar 在中立的治理下吸引更多贡献者，并加速其在微服务架构中的标准化进程。<br />
+原文：<a href="https://aws.amazon.com/blogs/opensource/cedar-joins-cncf-as-a-sandbox-project/">Cedar Joins CNCF as a Sandbox Project</a></p>
+<p><strong>Kubernetes 成立 Checkpoint/Restore 工作组</strong><br />
+为了优化交互式工作负载（如 Jupyter Notebook）和 AI 推理服务的启动速度，Kubernetes 正式成立了 Checkpoint/Restore 工作组。该工作组致力于将进程快照与恢复功能深度集成到 K8s 调度中，从而实现长时运行任务的容错和资源的动态优化。这一技术的成熟将极大提升分布式模型训练和大规模无服务器计算的可靠性。<br />
+原文：<a href="https://kubernetes.io/blog/2026/01/21/introducing-checkpoint-restore-wg/">Announcing the Checkpoint/Restore Working Group</a></p>
+<hr />
+<h2>AI 领域</h2>
+<p><strong>OpenAI 发布 GPT-5.3 Instant，主打低延迟与更自然的交互</strong><br />
+在 Google 发布 Gemini 3.1 Flash-Lite 的同一天，OpenAI 推出了 GPT-5.3 家族的新成员 GPT-5.3 Instant。该模型旨在通过极高的响应速度减少交互中的“尴尬停顿”，并优化了对话的自然度。此举被视为 OpenAI 在实时 AI 应用市场对 Google 的直接回击，进一步加剧了轻量级高性能大模型的竞争。<br />
+原文：<a href="https://thenewstack.io/openai-gpt-5-1-instant/">OpenAI’s GPT-5.3 Instant promises to dial down the cringe</a></p>
+<p><strong>Model Context Protocol (MCP) 移交至 Linux 基金会托管</strong><br />
+由 Anthropic 发起的模型上下文协议（MCP）现已正式移交给 Linux 基金会，旨在建立 AI 智能体与外部数据源交互的开放标准。AWS 等大厂对此表示高度支持，认为此举将增强开发者对该协议长期成功的信心。MCP 的标准化将简化 AI 智能体集成各种工具和数据库的过程，推动智能体架构的互操作性。<br />
+原文：<a href="https://aws.amazon.com/blogs/opensource/shaping-the-future-of-mcp-aws-commitment-and-vision/">Shaping the future of MCP: AWS’s commitment and vision</a></p>
+<p><strong>Sutra.team 推出首个面向自主智能体的操作系统</strong><br />
+Sutra.team 发布了一款专门为 AI 智能体设计的操作系统，旨在让智能体能够像团队中的专家一样自主运行，而非仅仅是简单的聊天接口。该系统内置了 15 种生产级智能体和 32 种技能，支持在 Slack、Telegram 等平台部署。其核心理念是通过“便携式思维格式”（JSON）实现智能体的可导出和完全所有权，彻底改变了人机协作的模式。<br />
+原文：<a href="https://www.sutra.team/">Show HN: Sutra.team – The First OS for Autonomous Agents</a></p>
+<p><strong>llama.cpp 正式加入 Hugging Face 社区</strong><br />
+为了确保本地 AI 技术的长期进步，备受推崇的开源推理框架 llama.cpp 及其底层库 GGML 宣布加入 Hugging Face。这一整合将为开发者提供更无缝的体验，使得在消费级硬件上运行大规模语言模型变得更加简单和高效。Hugging Face 的资源支持将加速 llama.cpp 的功能迭代，并巩固其在本地 AI 推理领域的领导地位。<br />
+原文：<a href="https://huggingface.co/blog/ggml-joins-hf">GGML and llama.cpp join HF to ensure the long-term progress of Local AI</a></p>
+<p><strong>研究显示 LLM 能够大规模精准识别匿名用户身份</strong><br />
+一项最新的安全研究警告称，大语言模型（LLM）具备以惊人准确率大规模“去匿名化”伪名用户的能力。通过分析文本风格、行为模式和公开数据，AI 可以轻松关联起原本隔离的身份信息。这一发现意味着传统的隐私保护手段在 AI 时代可能面临失效，对网络安全和个人隐私治理提出了严峻挑战。<br />
+原文：<a href="https://arstechnica.com/security/2026/03/llms-can-unmask-pseudonymous-users-at-scale-with-surprising-accuracy/">LLMs can unmask pseudonymous users at scale with surprising accuracy</a></p>
+<hr />
+<h2>工业界最新动向</h2>
+<p><strong>加州拟推行 AB 1043 法案，要求所有操作系统进行年龄验证</strong><br />
+加利福尼亚州提出了一项极具争议的法律草案 AB 1043，要求包括 Linux 在内的所有操作系统必须集成年龄验证机制。开源社区对此表示强烈担忧，认为这可能强制要求在内核或基础系统调用层面加入监控代码，严重威胁开源软件的自由度和用户隐私。如果法案通过，可能会导致许多开源项目被迫停止在加州提供服务，或引发操作系统架构的根本性变革。<br />
+原文：<a href="https://shujisado.org/2026/03/02/californias-ab-1043-could-regulate-every-linux-command/">California's AB 1043 Could Regulate Every Linux Command</a></p>
+<p><strong>CIQ 推出 RLC Pro：专为 AI 时代打造的企业级 Linux</strong><br />
+Rocky Linux 的幕后公司 CIQ 发布了 RLC Pro，这是一款专门针对 AI 工作负载优化的商业支持版企业 Linux 发行版。RLC Pro 提供了更长的生命周期支持和针对 AI 基础设施的深度优化，旨在为企业提供比传统发行版更稳定、更高效的运行环境。此举标志着企业级 Linux 市场正加速向 AI 基础设施供应商转型。<br />
+原文：<a href="https://thenewstack.io/ciq-launches-rlc-pro-for-enterprise-linux-for-the-ai-era/">RLC Pro is an enterprise Linux for the AI era</a></p>
+<p><strong>埃森哲以 12 亿美元收购 Ookla 及 Speedtest</strong><br />
+IT 服务巨头埃森哲（Accenture）宣布斥资 12 亿美元收购 Ookla，后者拥有广为人知的 Speedtest、Downdetector 等网络测试与监测工具。埃森哲计划将这些数据资产整合到其电信和 IT 咨询业务中，以提供更精准的网络性能分析服务。这次收购反映了网络质量数据在数字化转型和 5G/6G 部署中的核心商业价值。<br />
+原文：<a href="https://arstechnica.com/information-technology/2026/03/downdetector-speedtest-sold-to-it-service-provider-accenture-in-1-2b-deal/">Downdetector, Speedtest sold to IT service provider Accenture in $1.2B deal</a></p>
+<p><strong>Gram 1.0 发布：去除 AI 与遥测功能的 Zed 编辑器分支</strong><br />
+开源项目 Gram 发布了 1.0 版本，它是高性能编辑器 Zed 的一个“固执”的分支，彻底移除了所有 AI 功能、协作特性和遥测代码。开发者表示，Gram 的目标是回归纯粹的本地开发体验，不受企业控制和隐私追踪的影响。这一项目的流行反映了部分开发者对当前软件工具过度“AI 化”和侵犯隐私倾向的反弹。<br />
+原文：<a href="https://lwn.net/Articles/1060912/">Gram 1.0 released</a></p>
+<p><strong>德国 Sovereign Tech Agency 扩大对开源维护者的资助</strong><br />
+德国主权技术机构宣布扩大其奖学金计划，除了资助核心开源维护者外，现在还向社区经理和技术文档撰写者开放。该计划旨在通过资金支持，提升关键开源基础设施的可持续性和安全性，减少对单一商业实体的依赖。这一举措被视为欧洲推动技术主权和开源生态健康发展的典范。<br />
+原文：<a href="https://www.phoronix.com/news/Sovereign-Tech-Fellowship-2026">Sovereign Tech Fellowship Opens Up To Community Managers, Technical Writers</a></p>
+<hr />
+<h2>学术界最新研究</h2>
+<p><strong>分层存储中的虚拟内存辅助缓冲管理研究</strong><br />
+来自数据库社区的研究探讨了在包含 DRAM、CXL 内存和远程内存的多级存储架构中，如何优化缓冲管理。论文提出了一种通用的 n 级存储管理框架，利用虚拟内存机制实现跨层级的数据自动迁移。该研究对于提升大规模数据处理系统的内存利用率和降低访问延迟具有重要的理论指导意义。<br />
+原文：<a href="https://arxiv.org/abs/2603.03271">Virtual-Memory Assisted Buffer Management In Tiered Memory</a></p>
+<p><strong>LoRA 微调中的灾难性遗忘与子空间几何规律</strong><br />
+研究人员提出了一种几何理论，通过梯度子空间相互作用的视角来解释低秩自适应（LoRA）中的灾难性遗忘现象。研究发现遗忘程度遵循一个简单的几何定律，即与任务梯度子空间之间的最小主角度相关。这一发现揭示了 LoRA 的秩不变特性，为开发更稳定的持续学习算法提供了数学基础。<br />
+原文：<a href="https://arxiv.org/abs/2603.02224">Subspace Geometry Governs Catastrophic Forgetting in Low-Rank Adaptation</a></p>
+<p><strong>Neural Paging：为图灵完备智能体设计的上下文管理策略</strong><br />
+针对 LLM 智能体有限且昂贵的上下文窗口问题，论文引入了“神经分页”（Neural Paging）架构。该方法将符号推理与资源管理解耦，通过一个轻量级的可微页面控制器来模拟操作系统的分页机制，保留未来效用最高的 Token。实验证明，这种分层架构能显著提升智能体处理长程任务的能力。<br />
+原文：<a href="https://arxiv.org/abs/2603.02228">Neural Paging: Learning Context Management Policies for Turing-Complete Agents</a></p>
+<p><strong>PRISM：基于过程奖励模型引导的推理算法</strong><br />
+为了解决深度思考（DeepThink）系统在推理过程中缺乏可靠纠错信号的问题，研究者提出了 PRISM 算法。该算法利用步骤级的验证来引导候选解的生成与聚合，有效防止了长时间思考导致的错误放大。在复杂的数学和科学任务中，PRISM 展现出了比传统推理方法更强的鲁棒性和计算效率。<br />
+原文：<a href="https://arxiv.org/abs/2603.02479">PRISM: Pushing the Frontier of Deep Think via Process Reward Model-Guided Inference</a></p>
+<p><strong>suRNNs：用于长程序列建模的高效稀疏选择性更新循环神经网络</strong><br />
+传统的 RNN 在处理包含大量噪声或静默的信号时容易出现“记忆衰减”，论文提出了选择性更新 RNN（suRNNs）来解决这一问题。suRNNs 学习在输入冗余时保持内存状态，仅在关键信息出现时进行神经元级别的更新。这种非线性架构在处理音频、视频等长序列数据时表现优异，显著降低了计算开销并增强了长程依赖捕捉能力。<br />
+原文：<a href="https://arxiv.org/abs/2603.02226">Efficient Sparse Selective-Update RNNs for Long-Range Sequence Modeling</a></p>
+<hr /></div>
+  </main>
+</body>
+</html>
