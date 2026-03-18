@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OS 领域每日洞察 - 2026-03-18</title>
+  <style>
+    :root {
+      --bg: #f6f4f0;
+      --bg-bar: #ebe8e3;
+      --bg-card: #fffefb;
+      --bg-card-hover: #f5f3ef;
+      --text: #2d2a26;
+      --text-muted: #5c5852;
+      --text-dim: #7a756e;
+      --accent: #5a7a9e;
+      --border: #ddd9d2;
+      --radius: 10px;
+      --font: "Segoe UI", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      font-size: 15px;
+    }
+
+    /* 门户顶栏 */
+    .masthead {
+      background: var(--bg-bar);
+      border-bottom: 1px solid var(--border);
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 0;
+    }
+    .masthead-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .masthead h1 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin: 0;
+      letter-spacing: -0.02em;
+      color: var(--text);
+    }
+    .masthead .meta {
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+    }
+
+    /* 主内容区：多栏门户布局 */
+    .main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 3rem;
+    }
+
+    /* 板块：每个 h2 为一个频道块 */
+    .content .section {
+      margin-bottom: 2.5rem;
+    }
+    .content h2 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+      margin: 0 0 1rem;
+      padding: 0.6rem 1rem;
+      background: var(--bg-bar);
+      border-radius: var(--radius);
+      border-left: 4px solid var(--accent);
+    }
+    .content h2:first-child { margin-top: 0; }
+
+    .content h2:has(+ h3) {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      border-left-color: var(--text-dim);
+    }
+
+    /* 板块内卡片网格（每个 h2 后的 ul） */
+    .content h2 + ul {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1rem;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .content h2 + ul li {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.15rem 1.2rem;
+      transition: background .15s, border-color .15s;
+    }
+    .content h2 + ul li:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--text-dim);
+    }
+    .content h2 + ul li strong {
+      display: block;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+      line-height: 1.4;
+    }
+    .content h2 + ul li p {
+      margin: 0 0 0.5rem;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.58;
+    }
+    .content h2 + ul li p:last-of-type { margin-bottom: 0; }
+    .content h2 + ul li a[href^="http"] {
+      font-size: 0.8125rem;
+      color: var(--accent);
+    }
+    .content h2 + ul li a[href^="http"]:hover { text-decoration: underline; }
+
+    .content .ref-section {
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+    .content h2 + h3 { margin-top: 1.25rem; }
+    .content h3 {
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--text-dim);
+      margin: 1rem 0 0.4rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .content h3 + ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 0.25rem;
+    }
+    .content h3 + ul li {
+      background: transparent;
+      border: none;
+      padding: 0.2rem 0;
+      font-size: 0.8125rem;
+    }
+    .content h3 + ul li strong { font-size: inherit; margin-bottom: 0; }
+    .content h3 + ul li a { color: var(--accent); }
+    .content h3 + ul li a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <header class="masthead">
+    <div class="masthead-inner">
+      <h1>OS 领域每日洞察 - 2026-03-18</h1>
+      <span class="meta">2026-03-18 04:01 UTC</span>
+    </div>
+  </header>
+  <main class="main">
+    <div class="content"><h2>Linux 内核社区热点与趋势</h2>
+<p><strong>Sashiko：基于大语言模型的 Linux 内核补丁审查系统发布</strong><br />
+Roman Gushchin 宣布推出名为 Sashiko 的智能体系统，旨在利用大语言模型（LLM）自动审查发送至 Linux 内核邮件列表的补丁。该系统基于 Gemini 3.1 Pro 构建，在对 1000 个历史漏洞补丁的测试中成功识别了 53% 的错误，而这些错误此前均被人类审查者忽略。这一工具的出现标志着 AI 开始深度介入内核开发的质量控制环节，尽管其准确率仍有提升空间，但已展现出极高的辅助价值。<br />
+原文：<a href="https://lore.kernel.org/lkml/7ia4o6kmpj5s.fsf@castle.c.googlers.com/">Sashiko – an agentic system for Linux kernel changes</a></p>
+<p><strong>systemd 260 正式发布：移除 SysV 服务脚本支持并引入 AI 文档</strong><br />
+作为 Linux 生态中最核心的初始化系统，systemd 260 版本带来了重大变革，正式移除了对旧版 SysV 服务脚本的支持，标志着向现代化管理机制的彻底转型。新版本还引入了名为 mstack 的新特性，并首次在官方文档中增加了关于 AI 智能体集成的指导内容。这些变化将直接影响 2026 年上半年发布的各大主流 Linux 发行版。<br />
+原文：<a href="https://www.phoronix.com/news/systemd-260-Released">systemd 260 Released: mstack, SysV Service Scripts Removed &amp; AI Agents Documentation</a></p>
+<p><strong>内核开发者修复 eBPF 自旋锁（Spinlock）相关疑难问题</strong><br />
+开发者分享了在 Linux 内核中修复 eBPF 自旋锁问题的详细过程，探讨了在高性能网络和监控场景下 eBPF 程序如何安全地处理并发竞争。该修复解决了在复杂调用链中可能导致的死锁或内存不一致风险，进一步增强了 eBPF 在生产环境中的稳定性。这对于依赖 eBPF 进行可观测性和安全防护的云原生应用至关重要。<br />
+原文：<a href="https://rovarma.com/articles/a-tale-about-fixing-ebpf-spinlock-issues-in-the-linux-kernel/">A tale about fixing eBPF spinlock issues in the Linux kernel</a></p>
+<p><strong>Fedora 提议建立“沙箱”技术生命周期以促进创新</strong><br />
+Fedora 项目负责人 Jef Spaleta 提出了一项名为“温和建议”的计划，旨在为 Fedora 引入一种正式的技术创新生命周期结构。该提案希望通过建立“沙箱”机制，让实验性技术在不影响发行版稳定性的前提下进行迭代，从而吸引更多开源项目在 Fedora 上首发。目前社区对此反应积极，认为这将增强 Fedora 在前沿技术领域的竞争力。<br />
+原文：<a href="https://lwn.net/Articles/1062579/">Fedora ponders a "sandbox" technology lifecycle</a></p>
+<p><strong>ARM64 架构下 CRC64 算法性能提升近 6 倍</strong><br />
+Linux 内核邮件列表提交了一项针对 ARM64 架构的优化补丁，通过利用 ARM NEON 指令集加速 CRC64-NVMe 实现。测试数据显示，在现代 Arm 处理器上，该优化带来了接近 6 倍的性能提升。这一改进将显著受益于高性能存储和网络传输场景，降低数据校验带来的 CPU 开销。<br />
+原文：<a href="https://www.phoronix.com/news/ARM-NEON-CRC64-6x">ARM NEON Accelerated CRC64 Optimization Shows Nearly 6x Improvement</a></p>
+<hr />
+<h2>业界大厂动向</h2>
+<p><strong>英伟达发布 Dynamo 1.0：首个专为 AI 工厂设计的操作系统</strong><br />
+英伟达（Nvidia）正式推出了 Dynamo 1.0，将其定义为支撑大规模 AI 计算集群和“AI 工厂”的核心操作系统。Dynamo 旨在优化 GPU 资源的调度、网络通信以及大规模分布式训练的效率，解决传统操作系统在处理超大规模 AI 负载时的瓶颈。此举显示了英伟达试图通过软件栈进一步巩固其在 AI 基础设施领域的统治地位。<br />
+原文：<a href="https://nvidianews.nvidia.com/news/dynamo-1-0">Nvidia announces Dynamo 1.0, first operating system designed for AI factories</a></p>
+<p><strong>OpenAI 发布 GPT-5.4 mini 与 nano：开启子智能体协作时代</strong><br />
+OpenAI 推出了两款轻量化模型 GPT-5.4 mini 和 nano，专门针对智能体（Agentic AI）系统中的任务委派场景进行优化。这两款模型体积更小、响应更快，适合处理代码搜索、文档解析等子任务，旨在降低复杂 AI 系统的运行成本并提高并发处理能力。这标志着 AI 模型开发正从追求“大而全”转向针对特定工作流的“小而精”。<br />
+原文：<a href="https://thenewstack.io/gpt-54-nano-mini/">OpenAI’s GPT-5.4 mini and nano are built for the subagent era</a></p>
+<p><strong>AWS、谷歌、微软等巨头联合投资 1250 万美元强化开源安全</strong><br />
+Linux 基金会宣布获得来自 OpenAI、亚马逊 AWS、谷歌、微软、GitHub 等公司的联合资助，总额达 1250 万美元，用于应对 AI 时代下开源软件面临的安全威胁。这笔资金将投入到 Alpha Omega 计划和 OpenSSF 基金会，重点解决 AI 生成的代码漏洞以及针对开源供应链的自动化攻击。这体现了业界大厂在 AI 风险面前对开源生态稳定性的共同承诺。<br />
+原文：<a href="https://aws.amazon.com/blogs/opensource/aws-and-others-invest-12-5m-to-defend-the-open-source-ecosystem-from-ai-threats/">AWS and Others Invest $12.5M to Defend the Open Source Ecosystem from AI Threats</a></p>
+<p><strong>英特尔发布二进制优化工具（IBOT）并更新 Core Ultra 处理器</strong><br />
+英特尔在发布 Core Ultra 200HX Plus 系列处理器的同时，推出了一款名为“Intel Binary Optimization Tool”的软件。该工具旨在通过对已编译的二进制文件进行后处理优化，提升其在最新架构上的执行效率。此外，英特尔还更新了其图形编译器和计算运行时，增加了对新硬件特性的支持，以应对日益增长的本地 AI 推理需求。<br />
+原文：<a href="https://www.phoronix.com/news/Intel-Binary-Optimization-Tool">Intel Announces Core Ultra 200HX Plus Along With "Intel Binary Optimization Tool"</a></p>
+<p><strong>AWS 将 MCP 协议移交至 Linux 基金会并推出 Strands Labs</strong><br />
+亚马逊 AWS 宣布继续支持由 Anthropic 发起的模型上下文协议（MCP），并推动其移交给 Linux 基金会进行中立化治理。同时，AWS 推出了 Strands Labs，一个专门用于实验性智能体开发工具的 GitHub 组织，旨在为开发者提供最前沿的 AI 智能体 SDK。这些动作表明 AWS 正在积极构建围绕 AI 智能体的开放标准和开发者生态。<br />
+原文：<a href="https://aws.amazon.com/blogs/opensource/shaping-the-future-of-mcp-aws-commitment-and-vision/">Shaping the future of MCP: AWS’s commitment and vision</a></p>
+<hr />
+<h2>云原生领域</h2>
+<p><strong>Zeroboot：基于写时复制（CoW）的亚毫秒级虚拟机沙箱</strong><br />
+开发者推出 Zeroboot 项目，通过利用 Linux 的 <code>MAP_PRIVATE</code> 映射和写时复制（CoW）机制，实现了极速的虚拟机启动。该技术不再从头引导微型 VM，而是从已加载运行环境的快照中直接分叉（Fork）出新的 KVM 实例，启动时间缩短至亚毫秒级。这种方法兼顾了虚拟机的强隔离性和容器的高性能，为 Serverless 函数计算提供了新的思路。<br />
+原文：<a href="https://github.com/adammiribyan/zeroboot">Show HN: Sub-millisecond VM sandboxes using CoW memory forking</a></p>
+<p><strong>KubeVirt 持续增长：在 Kubernetes 中统一管理虚拟机与容器</strong><br />
+KubeVirt 开源项目近期受到广泛关注，它允许团队在 Kubernetes 控制平面内直接运行和管理传统的虚拟机（VM）。随着企业从传统虚拟化平台向云原生架构迁移，KubeVirt 提供了平滑过渡的方案，支持虚拟机的实时迁移和高性能存储集成。这使得 Kubernetes 真正成为了能够承载各类异构负载的通用基础设施平台。<br />
+原文：<a href="https://thenewstack.io/kubevirt-live-migration-mayastor/">What is KubeVirt and why it’s growing</a></p>
+<p><strong>Chainguard 推出 OS 软件包：简化定制化容器安全</strong><br />
+安全容器厂商 Chainguard 宣布推出 Chainguard OS 软件包，允许 DevOps 团队在保留自定义 Linux 发行版的同时，利用其经过安全加固的组件。此举旨在解决企业在追求容器镜像最小化和安全性时面临的定制化难题，降低了维护“无发行版”（Distroless）镜像的门槛。该方案通过提供经过验证的低漏洞软件包，帮助企业从源头收缩攻击面。<br />
+原文：<a href="https://thenewstack.io/chainguard-os-packages-containers/">Chainguard thinks most DevOps teams are solving container security the hard way</a></p>
+<p><strong>Red Hat 发布 OpenShift Service Mesh 3.3：引入后量子加密支持</strong><br />
+红帽（Red Hat）正式发布了基于 Istio 1.28 的 OpenShift 服务网格 3.3 版本，重点增强了安全性和 AI 负载支持。该版本引入了实验性的后量子加密（PQC）支持，以应对未来量子计算带来的安全挑战，并优化了对外部虚拟机接入网格的能力。此外，新版本还集成了 Kiali 2.22，显著提升了复杂微服务架构的可观测性。<br />
+原文：<a href="https://www.redhat.com/en/blog/openshift-service-mesh-33-adds-post-quantum-cryptography">Introducing OpenShift Service Mesh 3.3 with post-quantum cryptography</a></p>
+<p><strong>CNCF 深度解析：Kubernetes Pod 重启机制的底层原理</strong><br />
+CNCF 官方博客发布了一份针对 Kubernetes 1.35 版本的生产环境指南，详细梳理了 Pod 重启的四种不同场景及其背后的触发机制。文章澄清了工程师在面对“Pod 重启”时的术语误区，并提供了基于实际案例的排障建议。这对于提升云原生应用的可观测性和 SRE 团队的运维效率具有极高的参考价值。<br />
+原文：<a href="https://www.cncf.io/blog/2026/03/17/when-kubernetes-restarts-your-pod-and-when-it-doesnt/">When Kubernetes restarts your pod — And when it doesn’t</a></p>
+<hr />
+<h2>AI 领域</h2>
+<p><strong>基于 Claude Code 构建的“智能体操作系统”引发关注</strong><br />
+有开发者尝试在 Claude Code 基础上构建了一套完整的“操作系统”逻辑，不再通过编写复杂的 Prompt，而是通过系统级的指令和工具调用来管理开发任务。这种模式将 AI 视为计算核心，通过定义标准化的接口和权限控制，实现了更高效的代码生成和项目维护。这预示着未来软件开发可能从“人机交互”转向“智能体自主运行”。<br />
+原文：<a href="https://medium.com/@assaf_85431/i-stopped-writing-prompts-i-built-an-operating-system-instead-b7a001fff25a">I stopped writing prompts and built an operating system on top of Claude Code</a></p>
+<p><strong>Sulcus：将 AI 存储从被动数据库转变为主动“反应式记忆”</strong><br />
+Sulcus 项目提出了一种全新的 AI 记忆管理方案，将其比作 LLM 的虚拟内存管理单元（VMMU）。不同于传统的向量数据库，Sulcus 引入了“热度”和“半衰期”等热力学属性，能够根据使用频率自动强化或遗忘记忆，并能主动向智能体推送相关信息。该系统声称能减少 90% 的令牌消耗，显著提升了长程对话的效率。<br />
+原文：<a href="https://sulcus.dforge.ca">Show HN: Sulcus Reactive AI Memory</a></p>
+<p><strong>World ID 计划为 AI 智能体提供加密唯一的人类身份背书</strong><br />
+为了防止 AI 智能体集群在互联网上泛滥并造成系统过载，World ID 提出了一种基于虹膜扫描的加密身份验证方案。该方案允许人类用户为其拥有的 AI 智能体背书，赋予其唯一的数字身份，从而在保持隐私的同时实现可追溯性和访问控制。这为解决 AI 时代的身份欺诈和自动化攻击提供了一种底层技术手段。<br />
+原文：<a href="https://arstechnica.com/ai/2026/03/world-id-wants-you-to-put-a-cryptographically-unique-human-identity-behind-your-ai-agents/">How World ID wants to put a unique human identity on every AI agent</a></p>
+<p><strong>Railguard：为 Claude Code 提供更精细的权限控制网关</strong><br />
+针对 Claude Code 默认权限管理过于极端的缺陷，开发者推出了 Railguard 工具，作为智能体调用系统工具的中间层。Railguard 能够在 2 毫秒内对每一个工具调用请求进行拦截，并根据预设规则决定是允许、拦截还是询问用户，从而在安全性和自动化效率之间取得了平衡。<br />
+原文：<a href="https://github.com/railyard-dev/railguard">Show HN: Railguard – A safer –dangerously-skip-permissions for Claude Code</a></p>
+<p><strong>WebMCP：将任意网页转化为 AI 智能体的 MCP 服务器</strong><br />
+WebMCP 是一款 Chrome 扩展，它能够将任何正在浏览的网页实时转化为符合模型上下文协议（MCP）的服务器。这意味着 AI 智能体可以直接通过标准接口读取网页内容、提取数据或进行交互，极大地扩展了智能体获取实时信息的能力。该工具降低了网页数据接入 AI 工作流的复杂度。<br />
+原文：<a href="https://thenewstack.io/webmcp-chrome-ai-agents/">WebMCP turns any Chrome web page into an MCP server for AI agents</a></p>
+<hr />
+<h2>工业界最新动向</h2>
+<p><strong>AlmaLinux Kitten 10 宣布支持 RISC-V 架构</strong><br />
+作为 RHEL 的重要社区衍生版，AlmaLinux 宣布其最新的 Kitten 10 开发分支开始正式支持 RISC-V 指令集架构。这一举动为 RISC-V 硬件生态提供了企业级的操作系统支持，有助于推动该架构在服务器和嵌入式领域的商业化应用。目前，相关的构建镜像已向社区开放下载。<br />
+原文：<a href="https://www.phoronix.com/news/AlmaLinux-Adds-RISC-V">AlmaLinux OS Kitten 10 Begins Supporting RISC-V</a></p>
+<p><strong>AMD BC250 矿卡被改造为高性能本地 AI 推理平台</strong><br />
+由于加密货币市场的变化，大量基于 Zen 2 架构和 RDNA 1.5 GPU 的 AMD BC-250 APU 矿板流向二手市场。开发者通过调整 Linux 内核的 TTM 内存管理参数，成功解锁了其全部 16GB 统一内存，使其能够以约 38 tok/s 的速度运行 Qwen3.5-35B 等大型 MoE 模型。这为低成本构建本地 AI 推理硬件提供了一个极具性价比的方案。<br />
+原文：<a href="https://github.com/akandr/bc250">Show HN: 35B MoE LLM and other models locally on an old AMD crypto APU (BC250)</a></p>
+<p><strong>ProtonOS：使用 C# 编写的实验性裸机操作系统</strong><br />
+ProtonOS 是一个完全使用 C# 语言编写的裸机操作系统项目，并在开发过程中大量使用了 Claude AI 的辅助。该项目展示了在非传统系统编程语言下构建内核、内存管理和基础驱动的可能性，反映了现代 AI 工具如何降低底层系统开发的门槛。<br />
+原文：<a href="https://github.com/ProtonOS/ProtonOS">ProtonOS – Bare-metal operating system written in C# (Claude-assisted)</a></p>
+<p><strong>OpenJDK 26 正式发布：彻底移除 Java Applet API</strong><br />
+Java 平台的最新参考实现 OpenJDK 26 正式发布，标志着一个时代的终结——曾经风靡一时的 Java Applet API 被彻底移除。除了清理旧技术债，新版本还带来了多项性能优化和语言特性的改进，旨在提升 Java 在现代云原生和微服务环境中的运行效率。<br />
+原文：<a href="https://www.phoronix.com/news/OpenJDK-Java-26-Released">OpenJDK 26 Released With The Java Applet API Finally Removed</a></p>
+<p><strong>Blender 5.1 发布：默认开启 AMD GPU 硬件光线追踪</strong><br />
+领先的开源 3D 建模软件 Blender 发布了 5.1 版本，最显著的变化是在 Linux 和 Windows 平台上默认开启了 AMD GPU 的硬件光线追踪支持。此外，新版本还引入了 Raycast 节点，并进一步完善了 Vulkan 后端的性能，为开源图形创作提供了更强大的算力支持。<br />
+原文：<a href="https://www.phoronix.com/news/Blender-5.1-Released">Blender 5.1 Released With Raycast Nodes, AMD GPU Ray-Tracing By Default</a></p>
+<hr />
+<h2>学术界最新研究</h2>
+<p><strong>DetShare：在灵活的 GPU 共享中保证语义与性能确定性</strong><br />
+来自 arXiv 的研究提出了一种名为 DetShare 的新型 GPU 共享系统，旨在解决现代数据中心中硬件利用率与服务延迟之间的矛盾。DetShare 引入了“GPU 协程”抽象，在无需修改内核代码的前提下，实现了语义确定性（结果一致）和性能确定性（可预测的尾部延迟）。该研究为多租户环境下的 GPU 高效调度提供了新的理论框架。<br />
+原文：<a href="https://arxiv.org/abs/2603.15042">Guaranteeing Semantic and Performance Determinism in Flexible GPU Sharing</a></p>
+<p><strong>NextMem：面向 LLM 智能体的事实性潜空间记忆框架</strong><br />
+研究人员针对 LLM 智能体在长期任务中记忆不稳定的问题，提出了 NextMem 框架。该框架利用自回归自动编码器构建潜空间记忆，通过两阶段训练过程确保记忆的准确重建与高效提取。相比传统的文本检索增强（RAG），NextMem 在减少上下文负担的同时，显著提升了智能体对历史事实的调用精度。<br />
+原文：<a href="https://arxiv.org/abs/2603.15634">NextMem: Towards Latent Factual Memory for LLM-based Agents</a></p>
+<p><strong>CGAE：基于鲁棒性审计的智能体经济权限管理架构</strong><br />
+随着 AI 智能体开始具备执行交易、管理预算等经济能力，其安全性变得至关重要。论文提出了“理解门控智能体经济”（CGAE）架构，通过对抗性鲁棒性审计来量化智能体的理解能力，并以此作为其经济权限的上限。该研究为 AI 智能体在金融和商业领域的合规部署提供了形式化的安全保障。<br />
+原文：<a href="https://arxiv.org/abs/2603.15639">The Comprehension-Gated Agent Economy: A Robustness-First Architecture for AI Economic Agency</a></p>
+<p><strong>DynaTrust：防御多智能体系统中“潜伏智能体”的动态信任图</strong><br />
+针对多智能体协作中可能出现的“潜伏攻击”（平时表现正常，关键时刻反水），研究者提出了 DynaTrust 防御机制。该机制将智能体间的协作建模为动态信任图，将信任视为连续演化的变量而非静态标签。通过实时监测行为偏离度，系统能有效识别并隔离潜在的恶意智能体，同时保持较低的误报率。<br />
+原文：<a href="https://arxiv.org/abs/2603.15661">DynaTrust: Defending Multi-Agent Systems Against Sleeper Agents via Dynamic Trust Graphs</a></p>
+<p><strong>探索 Transformer 中 Attention 机制的本质：QV 范式</strong><br />
+这篇论文从语言学和第一性原理出发，重新审视了 Transformer 架构中的 QKV（Query-Key-Value）机制。研究者提出了一种简化的 QV 范式，并证明在特定场景下仅靠 QV 即可达到甚至超过现有架构的性能。该理论框架为 MQA、GQA 等变体提供了统一的解释，并指出了未来模型架构优化的潜在路径。<br />
+原文：<a href="https://arxiv.org/abs/2603.15665">QV May Be Enough: Toward the Essence of Attention in LLMs</a></p>
+<hr /></div>
+  </main>
+</body>
+</html>
