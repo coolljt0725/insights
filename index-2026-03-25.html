@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OS 领域每日洞察 - 2026-03-25</title>
+  <style>
+    :root {
+      --bg: #f6f4f0;
+      --bg-bar: #ebe8e3;
+      --bg-card: #fffefb;
+      --bg-card-hover: #f5f3ef;
+      --text: #2d2a26;
+      --text-muted: #5c5852;
+      --text-dim: #7a756e;
+      --accent: #5a7a9e;
+      --border: #ddd9d2;
+      --radius: 10px;
+      --font: "Segoe UI", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      font-size: 15px;
+    }
+
+    /* 门户顶栏 */
+    .masthead {
+      background: var(--bg-bar);
+      border-bottom: 1px solid var(--border);
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 0;
+    }
+    .masthead-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .masthead h1 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin: 0;
+      letter-spacing: -0.02em;
+      color: var(--text);
+    }
+    .masthead .meta {
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+    }
+
+    /* 主内容区：多栏门户布局 */
+    .main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 3rem;
+    }
+
+    /* 板块：每个 h2 为一个频道块 */
+    .content .section {
+      margin-bottom: 2.5rem;
+    }
+    .content h2 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+      margin: 0 0 1rem;
+      padding: 0.6rem 1rem;
+      background: var(--bg-bar);
+      border-radius: var(--radius);
+      border-left: 4px solid var(--accent);
+    }
+    .content h2:first-child { margin-top: 0; }
+
+    .content h2:has(+ h3) {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      border-left-color: var(--text-dim);
+    }
+
+    /* 板块内卡片网格（每个 h2 后的 ul） */
+    .content h2 + ul {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1rem;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .content h2 + ul li {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.15rem 1.2rem;
+      transition: background .15s, border-color .15s;
+    }
+    .content h2 + ul li:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--text-dim);
+    }
+    .content h2 + ul li strong {
+      display: block;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+      line-height: 1.4;
+    }
+    .content h2 + ul li p {
+      margin: 0 0 0.5rem;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.58;
+    }
+    .content h2 + ul li p:last-of-type { margin-bottom: 0; }
+    .content h2 + ul li a[href^="http"] {
+      font-size: 0.8125rem;
+      color: var(--accent);
+    }
+    .content h2 + ul li a[href^="http"]:hover { text-decoration: underline; }
+
+    .content .ref-section {
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+    .content h2 + h3 { margin-top: 1.25rem; }
+    .content h3 {
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--text-dim);
+      margin: 1rem 0 0.4rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .content h3 + ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 0.25rem;
+    }
+    .content h3 + ul li {
+      background: transparent;
+      border: none;
+      padding: 0.2rem 0;
+      font-size: 0.8125rem;
+    }
+    .content h3 + ul li strong { font-size: inherit; margin-bottom: 0; }
+    .content h3 + ul li a { color: var(--accent); }
+    .content h3 + ul li a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <header class="masthead">
+    <div class="masthead-inner">
+      <h1>OS 领域每日洞察 - 2026-03-25</h1>
+      <span class="meta">2026-03-25 04:00 UTC</span>
+    </div>
+  </header>
+  <main class="main">
+    <div class="content"><h2>Linux 内核社区热点与趋势</h2>
+<p><strong>内核开发者提议彻底移除 <code>strncpy()</code> 以提升安全性</strong><br />
+长期以来，<code>strncpy()</code> 因其不保证以 NULL 结尾且易导致缓冲区溢出的特性而被视为不安全的函数。内核安全专家 Kees Cook 表示，经过社区长期的努力，现在终于可以将其从 Linux 内核代码库中彻底移除。这一举措标志着内核在内存安全和消除潜在漏洞方面迈出了重要一步。<br />
+原文：<a href="https://hachyderm.io/@kees/116282745861595200">We can remove strncpy() from the Linux kernel finally</a></p>
+<p><strong>内核专家深度解析 zswap 与 zram 的技术误区</strong><br />
+Chris Down 发布了一篇详细的技术分析，旨在澄清开发者对 zswap 和 zram 这两个压缩交换子系统的常见误解。虽然两者都通过压缩页面来缓解内存压力，但它们在处理内存回收的策略上有着本质区别。文章强调，如果选择不当，这些子系统可能会比完全不使用交换空间更严重地损害系统性能。<br />
+原文：<a href="https://lwn.net/Articles/1064478/">Down: Debunking zswap and zram myths</a></p>
+<p><strong>Linux 7.1 将解决 HID 设备多电池报告限制</strong><br />
+目前的 Linux 内核在处理具有多个电池的 HID 设备（如游戏耳机、无线耳塞或绘图板）时存在报告限制。即将发布的 Linux 7.1 内核将引入相关补丁，允许系统准确识别并报告单个 HID 设备中的多个电池状态。这一改进将显著提升移动外设和游戏硬件在 Linux 下的用户体验。<br />
+原文：<a href="https://www.phoronix.com/news/Linux-7.1-Multi-Battery-HID">Linux 7.1 To Overcome Reporting Limitation For Multiple Batteries Per HID Device</a></p>
+<p><strong>io_uring 在新版本内核中性能全面超越 libaio</strong><br />
+最新的性能测试显示，io_uring 在跨多个 Linux 内核版本的对比中已正式超越传统的 libaio。研究还发现了一个与 IOMMU 陷阱相关的意外性能瓶颈，这为高性能数据库和存储系统的优化提供了重要参考。这一进展进一步巩固了 io_uring 作为 Linux 异步 I/O 未来标准的地位。<br />
+原文：<a href="https://blog.ydb.tech/how-io-uring-overtook-libaio-performance-across-linux-kernels-and-an-unexpected-iommu-trap-ea6126d9ef14">io_uring, libaio performance across Linux kernels and an unexpected IOMMU trap</a></p>
+<hr />
+<h2>业界大厂动向</h2>
+<p><strong>Arm 发布首款面向 AI 数据中心的 AGI CPU 芯片</strong><br />
+Arm 公司今日宣布推出其历史上首款自研硅片产品——AGI CPU，旨在直接进军 AI 数据中心市场。该 CPU 补充了 Arm 现有的 IP 授权模式，提供了一个生产就绪的硬件平台，以应对日益增长的生成式 AI 计算需求。此举标志着 Arm 从单纯的架构授权商向高性能计算硬件供应商的战略转型。<br />
+原文：<a href="https://www.phoronix.com/news/Arm-AGI-CPU">Arm Announces AGI CPU For AI Data Centers</a></p>
+<p><strong>NVIDIA 发布 595.58.03 稳定版驱动，深化 AI 与 Kubernetes 支持</strong><br />
+NVIDIA 正式发布了 R595 分支的首个稳定版 Linux 驱动，带来了 DRI3 v1.2 支持和增强的 Vulkan 功能。在 KubeCon Europe 期间，NVIDIA 强调了其在开源领域的投入，特别是针对 AI 工作负载在 Kubernetes 环境下的优化。新驱动旨在提升数据中心 GPU 在容器化环境中的调度效率和稳定性。<br />
+原文：<a href="https://www.phoronix.com/news/NVIDIA-595.58.03-Linux">NVIDIA 595.58.03 Linux Driver Debuts As Stable R595 Build</a></p>
+<p><strong>Apple 发布 iOS/macOS 26.4 更新，引入多项系统级调整</strong><br />
+苹果公司今日推送了 iOS、iPadOS 和 macOS 的 26.4 版本更新，包含了一系列中等规模的功能改进和底层优化。此次更新比以往的小版本更具实质性，修复了多个已知的内核漏洞并提升了跨设备协作的流畅度。此外，苹果确认其地图应用将于今夏开始引入广告推荐机制。<br />
+原文：<a href="https://arstechnica.com/gadgets/2026/03/apple-releases-ios-ipados-macos-26-4-with-a-long-list-of-medium-size-tweaks/">Apple releases iOS, iPadOS, macOS 26.4 with a long list of medium-size tweaks</a></p>
+<p><strong>AMD 联合 CIQ 推出针对 AI 和 HPC 优化的 Rocky Linux 版本</strong><br />
+AMD 宣布与 CIQ 合作，为 Rocky Linux 提供专门针对 AMD 硬件优化的构建版本。该版本将重点关注人工智能（AI）和高性能计算（HPC）工作负载，并深度集成 AMD 的 ROCm 软件栈。此举旨在为企业用户在 RHEL 兼容生态中提供更强大的算力支持。<br />
+原文：<a href="https://www.phoronix.com/news/AMD-Rocky-Linux-Optimized">AMD-Optimized Rocky Linux Distribution To Focus On AI &amp; HPC Workloads</a></p>
+<hr />
+<h2>云原生领域</h2>
+<p><strong>IBM、Red Hat 与 Google 联合向 CNCF 捐赠 llm-d 推理框架</strong><br />
+llm-d 作为一个可复制的 Kubernetes 蓝图，旨在为任何环境部署高性能的 AI 推理栈。通过将其捐赠给 CNCF 托管，各大厂商希望建立分布式推理的开放标准，填补 AI 实验与大规模生产环境之间的能力差距。这将使 Kubernetes 成为运行最先进 AI 基础设施的核心平台。<br />
+原文：<a href="https://thenewstack.io/llm-d-cncf-kubernetes-inference/">IBM, Red Hat, and Google just donated a Kubernetes blueprint for LLM inference to the CNCF</a></p>
+<p><strong>Broadcom 将 Velero 备份工具捐赠给 CNCF</strong><br />
+Broadcom 旗下的 VMware 宣布将知名的 Kubernetes 备份与灾难恢复工具 Velero 捐赠给 CNCF 作为沙箱项目。此举旨在通过中立的治理模式进一步推动 Velero 的社区参与度，并巩固其作为云原生数据保护标准的地位。这对于依赖 Kubernetes 进行任务关键型部署的企业来说是一个重大利好。<br />
+原文：<a href="https://thenewstack.io/broadcom-velero-cncf-kubernetes/">Broadcom donates Velero to CNCF</a></p>
+<p><strong>CNCF 宣布 Kyverno 毕业，云原生社区开发者规模接近 2000 万</strong><br />
+在 KubeCon Europe 上，CNCF 宣布策略管理引擎 Kyverno 正式从孵化阶段毕业，标志着其在企业级声明式治理方面的成熟。同时，最新的调研报告显示，全球云原生开发者社区已增长至近 2000 万人。报告还指出，平台工程和 AI 基础设施的采用正成为推动社区增长的核心动力。<br />
+原文：<a href="https://www.cncf.io/announcements/2026/03/24/cloud-native-computing-foundation-announces-kyvernos-graduation/">Cloud Native Computing Foundation Announces Kyverno’s Graduation</a></p>
+<p><strong>Kubernetes 官方再次重申 Ingress-NGINX 将于 2026 年 3 月退役</strong><br />
+Kubernetes 指导委员会发布严正声明，提醒用户 Ingress-NGINX 项目将于一年后彻底停止维护。届时将不再提供任何安全补丁或错误修复，受影响的环境覆盖了约一半的云原生部署。官方强烈建议用户立即开始向 Gateway API 或其他第三方控制器迁移，以避免潜在的安全风险。<br />
+原文：<a href="https://kubernetes.io/blog/2026/01/29/ingress-nginx-statement/">Ingress NGINX: Statement from the Kubernetes Steering and Security Response Committees</a></p>
+<hr />
+<h2>AI 领域</h2>
+<p><strong>Anthropic 推出 Claude Code：AI 代理现可直接控制计算机完成任务</strong><br />
+Anthropic 发布了 Claude Code 的研究预览版，允许 AI 代理在用户授权下接管计算机操作以完成复杂的编程和系统任务。尽管功能强大，但官方提醒其安全防护机制并非绝对，建议用户在受控环境中谨慎使用。这一进展标志着 AI 从单纯的对话助手向具备实际操作能力的“行动代理”演进。<br />
+原文：<a href="https://arstechnica.com/ai/2026/03/claude-code-can-now-take-over-your-computer-to-complete-tasks/">Claude Code can now take over your computer to complete tasks</a></p>
+<p><strong>OpenAI 宣布计划关停 Sora 视频生成器，转向业务生产力领域</strong><br />
+在 Sora 发布仅 15 个月后，OpenAI 传出消息称将关闭该视频生成服务。据报道，这一决策是为了将资源重新聚焦于商业和生产力用例，而非纯粹的创意视频生成。与此同时，OpenAI 也在加强针对青少年的 AI 安全政策，并计划投入 10 亿美元用于疾病治愈和社区项目。<br />
+原文：<a href="https://arstechnica.com/ai/2026/03/openai-plans-to-shut-down-sora-just-15-months-after-its-launch/">OpenAI announces plans to shut down its Sora video generator</a></p>
+<p><strong>LiteLLM 在 PyPI 仓库遭遇供应链攻击，泄露大量敏感凭据</strong><br />
+流行的 AI 工具库 LiteLLM (版本 1.82.8) 被发现包含恶意代码，该攻击通过 <code>.pth</code> 文件在 Python 进程启动时自动执行。该恶意软件会窃取 SSH 密钥、云服务凭据和加密货币钱包等敏感信息并外传。社区敦促所有安装了该版本的开发者立即检查系统并更换相关密钥。<br />
+原文：<a href="https://lwn.net/Articles/1064479/">LiteLLM on PyPI is compromised</a></p>
+<p><strong>Llamacpp 在 Linux 上实现统一系统内存卸载支持</strong><br />
+得益于 Linux 内核、NVIDIA 开源驱动和 CUDA 13 的最新变化，llamacpp 现在支持在 Linux 上进行统一/异构内存管理。这意味着开发者可以更有效地利用系统 RAM 来辅助 GPU 进行大模型推理，降低了对昂贵显存的依赖。这一特性有望显著减少对大规模 AI 数据中心的依赖，推动本地化 AI 推理的发展。<br />
+原文：<a href="https://news.ycombinator.com/item?id=47510953">Tell HN: Llamacpp now supports unified system RAM offloading on Linux</a></p>
+<hr />
+<h2>工业界最新动向</h2>
+<p><strong>PHP 社区投票决定更改许可证，转向更通用的 BSD 协议</strong><br />
+PHP 项目正计划将其长期使用的自定义许可证（PHP v3.01 和 Zend v2.0）替换为 BSD 3-clause 许可证。此举旨在消除多年来因自定义许可证导致的法律困惑，并使 PHP 与现代开源生态更加兼容。目前 RFC 投票正在进行中，预计将于 2026 年 4 月初完成。<br />
+原文：<a href="https://lwn.net/Articles/1063993/">A PHP license change is imminent</a></p>
+<p><strong>Firefox 149.0 发布：引入分屏视图与内置 VPN</strong><br />
+Mozilla 发布了 Firefox 浏览器 149.0 正式版，最显著的新功能是支持在单个窗口中并排查看两个网页的分屏模式。此外，该版本还集成了一个仅限浏览器流量的内置 VPN 服务，增强了用户的隐私保护。这些改进旨在提升多任务处理效率并应对日益复杂的网络安全环境。<br />
+原文：<a href="https://lwn.net/Articles/1064537/">Firefox 149.0 released</a></p>
+<p><strong>数字绘画软件 Krita 6.0 发布，完成 Qt6 迁移并增强 Wayland 支持</strong><br />
+Krita 项目今日宣布推出 6.0 版本，这是该软件向 Qt6 框架迁移的重要里程碑。新版本不仅带来了显著的性能提升，还大幅改善了在 Wayland 合成器下的运行稳定性。同时，Krita 5.3 也同步发布，为仍需使用 Qt5 的用户提供支持。<br />
+原文：<a href="https://www.phoronix.com/news/Krita-6.0-Released">Krita 6.0 Released With Qt6 Port &amp; Better Wayland Support</a></p>
+<p><strong>微软 Windows 部门负责人承诺修复系统的“自残性”缺陷</strong><br />
+针对用户对 Windows 系统日益增加的不满，Windows 业务负责人承诺将着手修复系统中那些影响用户体验的顽疾。这包括过度广告、复杂的设置界面以及系统更新带来的不便。此举被视为微软试图挽回开发者和高级用户对 Windows 平台信心的重要表态。<br />
+原文：<a href="https://www.theregister.com/2026/03/24/windows_boss_promises/">Windows boss promises to heal the operating system's self-inflicted wounds</a></p>
+<hr />
+<h2>学术界最新研究</h2>
+<p><strong>Tock 操作系统：从学术研究到保护千万台计算机的十年历程</strong><br />
+一篇新论文回顾了 Tock 操作系统的十年发展史。Tock 最初是为城市感知应用设计的科研系统，利用 Rust 语言和硬件保护机制在极小内存（64kB）设备上实现了安全的并行编程。如今，它已广泛部署在数据中心服务器的信任根硬件和数百万台笔记本电脑中，证明了科研原型向工业级安全系统转化的成功路径。<br />
+原文：<a href="https://arxiv.org/abs/2603.22585">Tock: From Research to Securing 10 Million Computers</a></p>
+<p><strong>Wayfinder：实现操作系统配置的自动化定制优化</strong><br />
+针对特定应用手动优化操作系统配置通常需要极高的专业知识，Wayfinder 框架提出了一种全自动化的 OS 定制方法。该研究解决了现代 OS 配置空间巨大、难以量化以及存在大量无效配置的挑战。Wayfinder 不仅能减少内存占用和攻击面，还能针对性能指标进行深度优化，显著降低了系统调优的门槛。<br />
+原文：<a href="https://arxiv.org/abs/2603.23425">Wayfinder: Automated Operating System Specialization</a></p>
+<p><strong>基于特征稀疏性的注意力机制扩展研究</strong><br />
+Transformer 模型在处理超长上下文时受限于 $O(n^2)$ 的计算成本。该研究提出了一种名为“稀疏特征注意力”（SFA）的新方法，通过将查询和键表示为 k-稀疏代码，在保持表达能力的同时将成本降至 $\Theta(n^2 k^2/d)$。研究者还开发了 FlashSFA 内核，利用 IO 感知技术在不实例化密集矩阵的情况下直接操作稀疏重叠，大幅提升了长文本处理效率。<br />
+原文：<a href="https://arxiv.org/abs/2603.22300">Scaling Attention via Feature Sparsity</a></p>
+<hr /></div>
+  </main>
+</body>
+</html>
