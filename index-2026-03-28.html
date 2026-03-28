@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OS 领域每日洞察 - 2026-03-28</title>
+  <style>
+    :root {
+      --bg: #f6f4f0;
+      --bg-bar: #ebe8e3;
+      --bg-card: #fffefb;
+      --bg-card-hover: #f5f3ef;
+      --text: #2d2a26;
+      --text-muted: #5c5852;
+      --text-dim: #7a756e;
+      --accent: #5a7a9e;
+      --border: #ddd9d2;
+      --radius: 10px;
+      --font: "Segoe UI", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      font-size: 15px;
+    }
+
+    /* 门户顶栏 */
+    .masthead {
+      background: var(--bg-bar);
+      border-bottom: 1px solid var(--border);
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 0;
+    }
+    .masthead-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .masthead h1 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin: 0;
+      letter-spacing: -0.02em;
+      color: var(--text);
+    }
+    .masthead .meta {
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+    }
+
+    /* 主内容区：多栏门户布局 */
+    .main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 3rem;
+    }
+
+    /* 板块：每个 h2 为一个频道块 */
+    .content .section {
+      margin-bottom: 2.5rem;
+    }
+    .content h2 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+      margin: 0 0 1rem;
+      padding: 0.6rem 1rem;
+      background: var(--bg-bar);
+      border-radius: var(--radius);
+      border-left: 4px solid var(--accent);
+    }
+    .content h2:first-child { margin-top: 0; }
+
+    .content h2:has(+ h3) {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      border-left-color: var(--text-dim);
+    }
+
+    /* 板块内卡片网格（每个 h2 后的 ul） */
+    .content h2 + ul {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1rem;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .content h2 + ul li {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.15rem 1.2rem;
+      transition: background .15s, border-color .15s;
+    }
+    .content h2 + ul li:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--text-dim);
+    }
+    .content h2 + ul li strong {
+      display: block;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+      line-height: 1.4;
+    }
+    .content h2 + ul li p {
+      margin: 0 0 0.5rem;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.58;
+    }
+    .content h2 + ul li p:last-of-type { margin-bottom: 0; }
+    .content h2 + ul li a[href^="http"] {
+      font-size: 0.8125rem;
+      color: var(--accent);
+    }
+    .content h2 + ul li a[href^="http"]:hover { text-decoration: underline; }
+
+    .content .ref-section {
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+    .content h2 + h3 { margin-top: 1.25rem; }
+    .content h3 {
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--text-dim);
+      margin: 1rem 0 0.4rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .content h3 + ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 0.25rem;
+    }
+    .content h3 + ul li {
+      background: transparent;
+      border: none;
+      padding: 0.2rem 0;
+      font-size: 0.8125rem;
+    }
+    .content h3 + ul li strong { font-size: inherit; margin-bottom: 0; }
+    .content h3 + ul li a { color: var(--accent); }
+    .content h3 + ul li a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <header class="masthead">
+    <div class="masthead-inner">
+      <h1>OS 领域每日洞察 - 2026-03-28</h1>
+      <span class="meta">2026-03-28 04:01 UTC</span>
+    </div>
+  </header>
+  <main class="main">
+    <div class="content"><h2>Linux 内核社区热点与趋势</h2>
+<ul>
+<li>
+<p><strong>DRBD 驱动程序尝试将 15 年的积累合并入 Linux 主线</strong><br />
+  分布式复制块设备（DRBD）的开发团队正致力于将维护了近 15 年的树外（out-of-tree）代码与 Linux 内核主线进行同步。这是一项庞大的工程，目前开发者已开始提交补丁集进行审查和测试，旨在消除长期以来的代码脱节。如果成功合并，将显著增强 Linux 原生的高可用存储和块设备镜像能力。<br />
+  原文：<a href="https://www.phoronix.com/news/DRBD-15-Years-Code-Changes">DRBD Driver Working To Land ~15 Years Worth Of Changes Into The Linux Kernel</a></p>
+</li>
+<li>
+<p><strong>Linux 内核引入基于 BPF 的 I/O 调度器</strong><br />
+  继基于 BPF 的 CPU 调度器（sched_ext）取得进展后，社区现在展示了基于 BPF 的 I/O 调度方案。该技术允许开发者使用 eBPF 动态地定义和加载 I/O 调度策略，而无需重新编译内核。这为针对特定应用场景（如数据库或高并发存储）进行极致性能优化提供了极大的灵活性。<br />
+  原文：<a href="https://www.phoronix.com/news/BPF-IO-Scheduler-Linux">BPF-Based I/O Scheduler For Linux Demonstrated</a></p>
+</li>
+<li>
+<p><strong>NVIDIA 为 Vera Rubin 平台提交补丁，修复 CPU 性能减半问题</strong><br />
+  NVIDIA 工程师在即将推出的 Vera Rubin 平台上发现了 CPU 密集型工作负载性能下降近两倍的问题，并为此提交了 Linux 调度器补丁。这些补丁旨在改进 SMT（同步多线程）感知的不对称 CPU 容量处理，确保内核能正确调度任务。这一修复对于下一代高性能计算平台的效率至关重要。<br />
+  原文：<a href="https://www.phoronix.com/news/NVIDIA-Vera-Rubin-SMT-Sched-Fix">Linux Patches Posted To Fix ~2x Performance Drop For CPU Workloads On NVIDIA Vera Rubin</a></p>
+</li>
+<li>
+<p><strong>Linux 内核掌门人称 AI 提交的错误报告质量大幅提升</strong><br />
+  Linux 内核维护者指出，AI 生成的错误报告在短时间内经历了从“垃圾信息”到“高质量报告”的质变。虽然早期 AI 报告常包含虚假信息，但现在的工具已能提供更精准的分析和复现步骤。这一变化预示着 AI 将在内核测试和质量保证中扮演越来越重要的角色。<br />
+  原文：<a href="https://github.blog/developer-skills/github/how-to-level-up-your-git-game-with-github-cli/">AI bug reports went from junk to legit overnight, says Linux kernel czar</a></p>
+</li>
+<li>
+<p><strong>Intel Xe 驱动改进 Linux 7.1 中的显存压力处理</strong><br />
+  Intel 为其 Xe 内核图形驱动程序提交了新更新，重点改进了显存（vRAM）压力下的处理机制和内存溢出（OOM）行为。通过引入新的用户态 API，驱动程序能更好地管理可清除的缓冲区对象，提升系统在重负载下的稳定性。这些改进预计将在下个月的 Linux 7.1 合并窗口中落地。<br />
+  原文：<a href="https://www.phoronix.com/news/Intel-Xe-Purgeable-BO">Intel Xe Driver Improves Memory Pressure / Out-Of-Memory Behavior For vRAM With Linux 7.1</a></p>
+</li>
+<li>
+<p><strong>LoongArch 平台紧急发布稳定版内核修复回归问题</strong><br />
+  Greg Kroah-Hartman 发布了 Linux 6.12.79 稳定版，专门用于撤销导致 LoongArch 架构无法编译的错误补丁。该版本仅包含这一项关键修复，旨在解决 6.12.78 版本中出现的回归问题。对于龙芯平台的用户和开发者来说，这是一个必须升级的维护版本。<br />
+  原文：<a href="https://lwn.net/Articles/1065018/">Stable kernel update to fix regression on LoongArch platform</a></p>
+</li>
+</ul>
+<h2>业界大厂动向</h2>
+<ul>
+<li>
+<p><strong>Ubuntu 26.04 LTS Beta 版发布，搭载内核 7.0 与 GNOME 50</strong><br />
+  Canonical 正式发布了 Ubuntu 26.04 LTS 的测试版本，该版本集成了最新的 Linux 7.0 内核和 GNOME 50 桌面环境。作为长期支持版本，它引入了大量性能优化和硬件支持更新，为企业级部署和开发者环境提供了坚实基础。用户现在可以下载测试，以体验下一代 Linux 桌面和服务器系统的特性。<br />
+  原文：<a href="https://9to5linux.com/ubuntu-26-04-lts-beta-is-out-now-with-linux-kernel-7-0-and-gnome-50">Ubuntu 26.04 LTS Beta Is Out Now with Linux Kernel 7.0 and Gnome 50</a></p>
+</li>
+<li>
+<p><strong>Framework Computer 加大对 KDE 社区的支持力度</strong><br />
+  以模块化笔记本闻名的 Framework Computer 宣布成为 KDE 社区的资助者，进一步深化其对开源桌面的支持。该公司近期推出的搭载 Ryzen AI Max 的高性能桌面系统也预示着其在 Linux 硬件领域的野心。此举有助于提升 KDE Plasma 在其硬件上的兼容性和用户体验。<br />
+  原文：<a href="https://www.phoronix.com/news/Framework-KDE-Patron">Framework Computer Steps Up Their Support For KDE</a></p>
+</li>
+<li>
+<p><strong>AMD Ryzen 9 9950X3D2 曝光：单芯片集成 208MB 缓存</strong><br />
+  AMD 披露了其新款旗舰处理器 Ryzen 9 9950X3D2，该芯片通过在两个 CPU 核心显存上分别堆叠 64MB 额外缓存，实现了惊人的 208MB 总缓存。这种设计旨在大幅提升游戏和特定计算任务的性能，进一步巩固 AMD 在高性能桌面市场的地位。该产品展示了 3D 缓存技术在多核架构中的最新应用。<br />
+  原文：<a href="https://arstechnica.com/gadgets/2026/03/amds-ryzen-9-9950x3d2-dual-edition-crams-208mb-of-cache-into-a-single-chip/">AMD's Ryzen 9 9950X3D2 Dual Edition crams 208MB of cache into a single chip</a></p>
+</li>
+<li>
+<p><strong>苹果正式停产 Mac Pro 桌面电脑，且无后续计划</strong><br />
+  苹果公司已将搭载 M2 Ultra 芯片的 Mac Pro 从官网上架，并明确表示目前没有推出替代产品的计划。这标志着苹果在高性能工作站策略上的重大转变，未来可能更侧重于 Mac Studio 等更紧凑的机型。对于依赖 PCIe 扩展的专业用户来说，这无疑是一个时代的终结。<br />
+  原文：<a href="https://arstechnica.com/gadgets/2026/03/apple-has-finally-discontinued-the-mac-pro-desktop-after-years-of-fitful-effort/">Apple pulls the plug on its high-priced, oft-neglected Mac Pro desktop</a></p>
+</li>
+<li>
+<p><strong>KDE Plasma 6.6 在 NVIDIA 驱动下表现出优于 GNOME 50 的性能</strong><br />
+  最新的基准测试显示，在 Ubuntu 26.04 环境下使用 NVIDIA 595 系列驱动时，KDE Plasma 6.6 在多个游戏和图形测试中领先于 GNOME 50。这一结果延续了此前在 AMD 显卡上的测试趋势，表明 KDE 在 Wayland 优化和图形效率方面取得了显著进步。对于追求极致性能的 Linux 游戏玩家，KDE 正在成为更具吸引力的选择。<br />
+  原文：<a href="https://www.phoronix.com/review/nvidia-595-kde-gnome">KDE Plasma 6.6 Showing Frequent Performance Advantage Over GNOME 50 With NVIDIA R595 Driver</a></p>
+</li>
+</ul>
+<h2>云原生领域</h2>
+<ul>
+<li>
+<p><strong>Kubernetes 社区宣布成立 AI 网关工作组（AI Gateway WG）</strong><br />
+  为了应对 AI 工作负载在 Kubernetes 环境中的网络挑战，社区正式成立了 AI 网关工作组。该小组将专注于开发基于 Gateway API 的标准和最佳实践，以支持 AI 流量的策略强制、负载均衡和可观测性。这标志着 Kubernetes 正在从通用的编排平台向专门优化的 AI 基础设施演进。<br />
+  原文：<a href="https://kubernetes.io/blog/2026/03/09/announcing-ai-gateway-wg/">Announcing the AI Gateway Working Group</a></p>
+</li>
+<li>
+<p><strong>Red Hat OpenShift Virtualization 4.21 发布，引入生成式 AI 助手</strong><br />
+  红帽发布了 OpenShift Virtualization 的最新版本，旨在简化混合云环境下的虚拟机管理。新版本引入了 OpenShift Lightspeed，这是一个集成在虚拟化操作中的生成式 AI 助手，能够帮助管理员进行故障排除和配置优化。此外，多集群管理和引导式网络配置功能也得到了显著增强。<br />
+  原文：<a href="https://www.redhat.com/en/blog/whats-new-red-hat-openshift-virtualization-421">What's new in Red Hat OpenShift Virtualization 4.21</a></p>
+</li>
+<li>
+<p><strong>CNCF 探讨 AI 模型权重分发的挑战：基础设施的滞后性</strong><br />
+  CNCF 博客指出，随着 AI 采用率的加速，如何在大规模环境下可靠地管理和分发巨大的模型权重文件已成为关键瓶颈。现有的云原生基础设施在处理数十 GB 级别的静态权重文件时显得力不从心，需要新的存储和网络分发协议。文章呼吁社区关注这一被忽视的底层设施建设。<br />
+  原文：<a href="https://www.cncf.io/blog/2026/03/27/the-weight-of-ai-models-why-infrastructure-always-arrives-slowly/">The weight of AI models: Why infrastructure always arrives slowly</a></p>
+</li>
+<li>
+<p><strong>PyPI 仓库中的 telnyx 软件包遭受高影响力供应链攻击</strong><br />
+  每月下载量超百万次的 Python 软件包 <code>telnyx</code> 被发现包含恶意代码，攻击者在 3 月 27 日发布的版本中注入了后门。该恶意代码会从远程服务器下载隐藏在音频文件中的二进制载荷，并在 Linux/macOS 上窃取凭据或在 Windows 上植入持久化木马。这再次敲响了开源软件供应链安全的警钟。<br />
+  原文：<a href="https://lwn.net/Articles/1065059/">The telnyx packages on PyPI have been compromised</a></p>
+</li>
+<li>
+<p><strong>美国参议员提议强制披露数据中心用电量</strong><br />
+  多位美国参议员致信能源信息署，要求对数据中心的电力消耗进行年度强制披露。随着 AI 需求的激增，数据中心的能耗已成为电网负担和气候政策的焦点。此举可能导致云厂商面临更严格的环境监管和透明度要求。<br />
+  原文：<a href="https://arstechnica.com/tech-policy/2026/03/senators-want-us-energy-information-agency-to-monitor-data-center-electricity-usage/">Senators want US energy information agency to monitor data center electricity usage</a></p>
+</li>
+</ul>
+<h2>AI 领域</h2>
+<ul>
+<li>
+<p><strong>GitHub Copilot 将使用用户交互数据训练模型并共享给微软</strong><br />
+  GitHub 宣布将开始利用用户的 Copilot 交互数据来训练其 AI 模型，并将这些数据与微软共享。这一政策引发了关于代码隐私和企业知识产权保护的广泛讨论。虽然 GitHub 提供了关闭选项，但默认开启的策略让许多开发者感到不安。<br />
+  原文：<a href="https://thenewstack.io/github-copilot-interaction-data/">GitHub will train AI models on your Copilot data — and share it with Microsoft</a></p>
+</li>
+<li>
+<p><strong>OpenAI 为 Codex 引入插件功能，对标 Claude Code</strong><br />
+  OpenAI 宣布为其 Codex 模型添加插件支持，允许其连接 Box、Figma 和 Linear 等第三方服务。这一举措旨在扩展 Codex 的功能边界，使其不仅能编写代码，还能直接与开发工作流中的工具进行交互。此举被视为对 Anthropic 最近推出的 Claude Code 工具的直接回应。<br />
+  原文：<a href="https://thenewstack.io/openais-codex-gets-plugins/">OpenAI’s Codex gets plugins</a></p>
+</li>
+<li>
+<p><strong>LiteLLM 供应链遭入侵，数千名开发者受影响</strong><br />
+  流行的 AI 网关库 LiteLLM 在 PyPI 上的版本被发现植入了信息窃取恶意软件。由于该库被广泛用于连接各种大模型，此次攻击可能导致大量 API 密钥和敏感配置泄露。LWN 分析指出，这暴露了现代 AI 开发生态中软件供应链的脆弱性。<br />
+  原文：<a href="https://lwn.net/Articles/1064693/">The many failures leading to the LiteLLM compromise</a></p>
+</li>
+<li>
+<p><strong>AMD ROCm 7.12 技术预览版发布，增加消费级 GPU 支持</strong><br />
+  AMD 发布了 ROCm 7.12 预览版，进一步扩大了对消费级 APU 和 GPU 的支持范围。这一版本是迈向 ROCm 8.0 的重要一步，旨在让更多开发者能在普通硬件上运行 AI 工作负载。AMD 正在努力缩小与 NVIDIA CUDA 生态在易用性和普及度上的差距。<br />
+  原文：<a href="https://www.phoronix.com/news/AMD-ROCm-7.12-Tech-Preview">AMD ROCm 7.12 Tech Preview Brings More Consumer APU &amp; GPU Support</a></p>
+</li>
+<li>
+<p><strong>Sashiko：基于 Agent 的 Linux 内核代码审查系统</strong><br />
+  GitHub 上出现了一个名为 Sashiko 的新项目，旨在利用 AI Agent 自动化 Linux 内核的代码审查流程。该系统尝试理解复杂的内核逻辑并识别潜在的漏洞或不规范代码。这代表了 AI 在底层系统软件工程中从辅助编写向深度审计进化的趋势。<br />
+  原文：<a href="https://github.com/sashiko-dev/sashiko">Sashiko agentic Linux kernel code review system</a></p>
+</li>
+<li>
+<p><strong>红帽探讨 AI 安全：身份验证与访问控制是核心</strong><br />
+  红帽在最新的技术博客中强调，AI 安全不仅仅是保护模型本身，更需要构建完整的系统防御体系。文章详细讨论了如何利用零信任架构、身份验证和授权机制来防止提示词注入（Prompt Injection）和非授权操作。这为企业在生产环境中部署 AI 提供了安全指南。<br />
+  原文：<a href="https://www.redhat.com/en/blog/ai-security-identity-and-access-control">AI security: Identity and access control</a></p>
+</li>
+</ul>
+<h2>工业界最新动向</h2>
+<ul>
+<li>
+<p><strong>Dolby 起诉 Snapchat 侵权，AV1 视频编码的“免版税”承诺遭质疑</strong><br />
+  Dolby 因视频编解码器专利问题对 Snapchat 提起诉讼，这让号称开源、免版税的 AV1 编码标准陷入法律争议。尽管科技巨头们宣称 AV1 是免费的，但 Dolby 的诉讼表明底层专利池可能并未完全清理。这一事件可能影响工业界对 AV1 的大规模采用信心。<br />
+  原文：<a href="https://arstechnica.com/gadgets/2026/03/av1s-open-royalty-free-promise-in-question-as-dolby-sues-snapchat-over-codec/">AV1’s open, royalty-free promise in question as Dolby sues Snapchat over codec</a></p>
+</li>
+<li>
+<p><strong>Rivian 与大众完成新型区域架构的冬季测试</strong><br />
+  Rivian 与大众集团的合资企业完成了新一代汽车区域架构（Zonal Architecture）的冬季严苛测试。这一架构通过减少线束和优化电子控制单元，显著提升了软件定义汽车的效率。此次里程碑的达成也为 Rivian 开启了来自大众的 10 亿美元后续资金支持。<br />
+  原文：<a href="https://arstechnica.com/cars/2026/03/rivian-and-vw-group-complete-winter-testing-of-new-zonal-architecture/">Rivian and VW Group complete winter testing of new zonal architecture</a></p>
+</li>
+<li>
+<p><strong>索尼再次上调 PS5 售价，涨幅达 100 至 150 美元</strong><br />
+  受内存和存储组件短缺导致的成本上升影响，索尼宣布再次提高 PlayStation 5 的全球售价。这一罕见的生命周期中后期涨价反映了消费电子供应链面临的持续压力。对于消费者而言，硬件购买成本的增加可能会抑制近期的游戏市场增长。<br />
+  原文：<a href="https://arstechnica.com/gadgets/2026/03/sony-is-raising-playstation-5-prices-again-this-time-by-between-100-and-150/">Sony is raising PlayStation 5 prices again, this time by between $100 and $150</a></p>
+</li>
+<li>
+<p><strong>FBI 局长个人邮箱遭黑客入侵，疑为报复行为</strong><br />
+  美国司法部证实，FBI 局长 Kash Patel 的个人电子邮箱遭到黑客攻击。黑客声称此举是为了报复 Patel 此前发出的“猎杀黑客”誓言。这一事件凸显了即便在高层政府官员中，个人网络安全防护依然存在薄弱环节。<br />
+  原文：<a href="https://arstechnica.com/tech-policy/2026/03/doj-confirms-fbi-director-kash-patels-personal-email-was-hacked/">DOJ confirms FBI Director Kash Patel’s personal email was hacked</a></p>
+</li>
+</ul>
+<h2>学术界最新研究</h2>
+<ul>
+<li>
+<p><strong>Bigoish：测试 Rust 算法的经验计算复杂度</strong><br />
+  研究者发布了 <code>bigoish</code> 工具，旨在通过经验观察来测试 Rust 算法的实际计算复杂度。与传统的理论分析不同，该工具通过运行不同规模的数据并分析耗时趋势，帮助开发者识别代码中隐藏的性能陷阱。这对于优化高性能系统软件中的核心算法具有很强的实践价值。<br />
+  原文：<a href="https://docs.rs/bigoish/">Bigoish: Test the empirical computational complexity of Rust algorithms</a></p>
+</li>
+<li>
+<p><strong>单体架构扩展至百万行代码的 113 条实践教训</strong><br />
+  一份详尽的研究报告总结了将单体应用扩展至 100 万行代码过程中的 113 条工程教训。文章挑战了“必须微服务化”的流行观点，展示了如何通过良好的模块化设计和工具链在单体架构下维持开发效率。这些经验对于正在面临架构选型压力的系统架构师具有重要的参考意义。<br />
+  原文：<a href="https://www.semicolonandsons.com/articles/scaling-a-monolith-to-1m-loc-113-pragmatic-lessons-from-tech-lead-to-cto">Scaling a Monolith to 1M LOC: 113 Pragmatic Lessons from Tech Lead to CTO</a></p>
+</li>
+<li>
+<p><strong>编程语言中的效应处理（Effect Handling）深度思考</strong><br />
+  学术讨论文章《Pondering Effects》探讨了现代编程语言中效应系统的设计与实现。文章对比了不同语言处理副作用（如 I/O、状态、异常）的机制，并讨论了这些设计对程序正确性和可维护性的影响。这对于关注编译器设计和函数式编程的开发者提供了深度的理论洞察。<br />
+  原文：<a href="https://wiki.alopex.li/PonderingEffects">Pondering Effects</a></p>
+</li>
+</ul>
+<hr /></div>
+  </main>
+</body>
+</html>
