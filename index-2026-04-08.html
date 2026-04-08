@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OS 领域每日洞察 - 2026-04-08</title>
+  <style>
+    :root {
+      --bg: #f6f4f0;
+      --bg-bar: #ebe8e3;
+      --bg-card: #fffefb;
+      --bg-card-hover: #f5f3ef;
+      --text: #2d2a26;
+      --text-muted: #5c5852;
+      --text-dim: #7a756e;
+      --accent: #5a7a9e;
+      --border: #ddd9d2;
+      --radius: 10px;
+      --font: "Segoe UI", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      font-size: 15px;
+    }
+
+    /* 门户顶栏 */
+    .masthead {
+      background: var(--bg-bar);
+      border-bottom: 1px solid var(--border);
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 0;
+    }
+    .masthead-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .masthead h1 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin: 0;
+      letter-spacing: -0.02em;
+      color: var(--text);
+    }
+    .masthead .meta {
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+    }
+
+    /* 主内容区：多栏门户布局 */
+    .main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 3rem;
+    }
+
+    /* 板块：每个 h2 为一个频道块 */
+    .content .section {
+      margin-bottom: 2.5rem;
+    }
+    .content h2 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+      margin: 0 0 1rem;
+      padding: 0.6rem 1rem;
+      background: var(--bg-bar);
+      border-radius: var(--radius);
+      border-left: 4px solid var(--accent);
+    }
+    .content h2:first-child { margin-top: 0; }
+
+    .content h2:has(+ h3) {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      border-left-color: var(--text-dim);
+    }
+
+    /* 板块内卡片网格（每个 h2 后的 ul） */
+    .content h2 + ul {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1rem;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .content h2 + ul li {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.15rem 1.2rem;
+      transition: background .15s, border-color .15s;
+    }
+    .content h2 + ul li:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--text-dim);
+    }
+    .content h2 + ul li strong {
+      display: block;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+      line-height: 1.4;
+    }
+    .content h2 + ul li p {
+      margin: 0 0 0.5rem;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.58;
+    }
+    .content h2 + ul li p:last-of-type { margin-bottom: 0; }
+    .content h2 + ul li a[href^="http"] {
+      font-size: 0.8125rem;
+      color: var(--accent);
+    }
+    .content h2 + ul li a[href^="http"]:hover { text-decoration: underline; }
+
+    .content .ref-section {
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+    .content h2 + h3 { margin-top: 1.25rem; }
+    .content h3 {
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--text-dim);
+      margin: 1rem 0 0.4rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .content h3 + ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 0.25rem;
+    }
+    .content h3 + ul li {
+      background: transparent;
+      border: none;
+      padding: 0.2rem 0;
+      font-size: 0.8125rem;
+    }
+    .content h3 + ul li strong { font-size: inherit; margin-bottom: 0; }
+    .content h3 + ul li a { color: var(--accent); }
+    .content h3 + ul li a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <header class="masthead">
+    <div class="masthead-inner">
+      <h1>OS 领域每日洞察 - 2026-04-08</h1>
+      <span class="meta">2026-04-08 04:01 UTC</span>
+    </div>
+  </header>
+  <main class="main">
+    <div class="content"><h2>Linux 内核社区热点与趋势</h2>
+<p><strong>Linux 内核维护者推进移除 Intel 486 处理器支持</strong><br />
+由于 Intel 486 架构过于陈旧且维护成本日益增高，内核社区正正式推进将其从主线代码中移除。开发者认为，即使在 486 支持上花费一秒钟也是对现代系统开发资源的浪费。这一举动标志着 Linux 正在加速摆脱极早期 x86 硬件的包袱，以优化现代处理器的代码路径。<br />
+原文：<a href="https://arstechnica.com/gadgets/2026/04/linux-kernel-maintainers-are-following-through-on-removing-intel-486-support/">Linux kernel maintainers are following through on removing Intel 486 support</a></p>
+<p><strong>Linux 稳定版维护者 Greg KH 采用新模糊测试工具 Clanker</strong><br />
+Linux 内核“二把手” Greg Kroah-Hartman 开始使用名为 "gregkh_clanker_t1000" 的新模糊测试工具来挖掘内核漏洞。该工具旨在通过自动化手段发现隐藏在复杂代码路径中的安全隐患，提升稳定版内核的安全性。这反映了内核社区在面对日益复杂的安全威胁时，正积极引入更先进的自动化审计手段。<br />
+原文：<a href="https://www.phoronix.com/news/Greg-KH-Clanker-Linux-Bugs">Linux's Second-In-Command Turns To New Fuzzing Tools For Uncovering Kernel Bugs</a></p>
+<p><strong>Intel QAT 驱动将在 Linux 7.1 中支持 Zstd 硬件卸载</strong><br />
+即将发布的 Linux 7.1 内核将为 Intel QuickAssist (QAT) 驱动引入 Zstd 压缩算法的硬件卸载支持。该功能覆盖了 QAT 第 4 到第 6 代加速器，能够显著降低 CPU 在处理大规模数据压缩和解压时的负载。这对于高性能存储和云服务场景来说是一个重要的性能提升。<br />
+原文：<a href="https://www.phoronix.com/news/Intel-QAT-Linux-7.1-Zstd">Intel QAT Driver With Linux 7.1 Adding Zstd Offload Support</a></p>
+<p><strong>RISC-V 架构的 XIP 特性因长期维护问题将被移除</strong><br />
+Linux 内核计划移除 RISC-V 架构下的“就地执行”（XIP）功能，该功能原本允许内核直接从 ROM 或闪存中运行以节省内存。由于该特性在过去几个月中频繁出现破坏性故障且缺乏有效维护，社区决定将其退役。这凸显了新兴架构在快速演进过程中，对低频使用特性的清理与取舍。<br />
+原文：<a href="https://www.phoronix.com/news/RISC-V-XIP-Being-Removed">RISC-V XIP Linux Feature Being Removed After It Keeps Breaking For Months At A Time</a></p>
+<p><strong>AMD 为 90 年代的 InterWave 声卡提交 Linux 内核补丁</strong><br />
+令人惊讶的是，AMD 在 2026 年仍为 1990 年代的 InterWave ISA 声卡提交了新的 Linux 内核补丁。这些补丁主要涉及代码清理和对现代内核标准的适配，体现了 Linux 对古董级硬件极长周期的支持传统。这种“陈年佳酿”式的维护在开源社区中引发了广泛的讨论和怀旧情怀。<br />
+原文：<a href="https://www.phoronix.com/news/AMD-InterWave-2026-Linux-">AMD InterWave ISA Sound Card Driver Seeing New Linux Patches In 2026</a></p>
+<hr />
+<h2>业界大厂动向</h2>
+<p><strong>AWS、Google、微软及 OpenAI 联合注资 1250 万美元保护开源生态</strong><br />
+为了应对 AI 生成的漏洞报告激增带来的挑战，多家科技巨头联合向 Linux 基金会旗下的 OpenSSF 等项目注资。这笔资金将用于提升开源软件的安全性，防止 AI 增强型攻击利用开源组件中的弱点。这标志着业界在 AI 时代对开源供应链安全达成了高度共识。<br />
+原文：<a href="https://aws.amazon.com/blogs/opensource/aws-and-others-invest-12-5m-to-defend-the-open-source-ecosystem-from-ai-threats/">AWS and Others Invest $12.5M to Defend the Open Source Ecosystem from AI Threats</a></p>
+<p><strong>Amazon S3 推出 S3 Files 功能，将对象存储转化为文件系统</strong><br />
+亚马逊云科技（AWS）发布了 S3 Files，允许用户像使用传统文件系统一样操作 S3 对象存储。这一功能解决了对象存储在处理文件级操作时的复杂性，为大数据分析和 AI 训练提供了更便捷的数据访问接口。这进一步模糊了块存储、文件存储与对象存储之间的界限。<br />
+原文：<a href="https://thenewstack.io/aws-s3-files-filesystem/">Amazon S3 Files gives the world’s biggest object store a file system</a></p>
+<p><strong>Intel 开发全新开源着色器编译器 Jay 以提升 Linux 图形性能</strong><br />
+Intel 正在为其 Linux 开源驱动（OpenGL 和 Vulkan）开发名为 Jay 的新一代着色器编译器。Jay 旨在优化现代 Intel 硬件上的图形渲染效率，提供比现有编译器更好的性能表现。该项目的推进将直接改善 Linux 用户在游戏和专业图形应用中的体验。<br />
+原文：<a href="https://www.phoronix.com/news/Intel-Jay-Mesa-Shader-Compiler">Jay: A New Open-Source Shader Compiler Being Developed For Intel GPUs</a></p>
+<p><strong>Ubuntu 26.04 针对 AMD Ryzen AI Max "Strix Halo" 进行性能优化</strong><br />
+最新的测试显示，Ubuntu 26.04 在 AMD 旗舰级 APU Strix Halo 上表现出显著的性能提升。通过对 Zen 5 架构和 Radeon 8060S 显卡的深度适配，Linux 系统在移动工作站和高端笔记本上的运行效率得到了进一步释放。这证明了 Canonical 与硬件厂商在 Linux 发行版性能调优方面的紧密合作。<br />
+原文：<a href="https://www.phoronix.com/review/ubuntu-2604-ryzen-ai-max">Ubuntu 26.04 Provides More Performance For AMD Ryzen AI Max "Strix Halo"</a></p>
+<p><strong>Cloudflare 计划在 2029 年实现全面的后量子安全</strong><br />
+面对量子计算对现有加密体系的潜在威胁，Cloudflare 更新了其路线图，目标是在 2029 年前完成全线产品的后量子加密迁移。该公司正在积极部署抗量子算法，以保护用户免受未来量子攻击的影响。这一举措反映了互联网基础设施提供商对长期安全风险的预判。<br />
+原文：<a href="https://blog.cloudflare.com/post-quantum-roadmap/">Cloudflare targets 2029 for full post-quantum security</a></p>
+<hr />
+<h2>云原生领域</h2>
+<p><strong>Amazon EKS 推出 Auto Mode 以简化 Kubernetes 运维</strong><br />
+AWS 发布了 EKS Auto Mode，旨在通过自动化管理节点和基础设施来消除 Kubernetes 的运维繁琐。该模式可以自动处理节点的扩展、修补和优化，让开发者更专注于应用本身而非底层集群管理。这是云厂商在降低 K8s 使用门槛方面的又一重要尝试。<br />
+原文：<a href="https://thenewstack.io/eks-auto-mode-kubernetes/">Amazon EKS Auto Mode wants to end Kubernetes toil — one node at a time</a></p>
+<p><strong>Kubescape 4.0 发布，引入企业级稳定性和 AI 威胁检测</strong><br />
+作为 CNCF 的重要安全项目，Kubescape 4.0 带来了更具前瞻性的安全防护功能，包括对 Kubernetes 环境的实时威胁监测。新版本重点提升了在大规模集群中的扫描效率，并集成了 AI 辅助的安全分析能力。这标志着云原生安全工具正从被动合规转向主动防御。<br />
+原文：<a href="https://www.cncf.io/blog/2026/03/26/announcing-kubescape-4-0-enterprise-stability-meets-the-ai-era/">Announcing Kubescape 4.0 Enterprise Stability Meets the AI Era</a></p>
+<p><strong>Ingress2Gateway 1.0 发布，助力用户迁移至 Gateway API</strong><br />
+随着 Ingress-NGINX 逐步退役，Kubernetes 社区推出了 Ingress2Gateway 工具的 1.0 版本。该工具能够自动将现有的 Ingress 配置转换为更现代、功能更丰富的 Gateway API 资源。这为企业从旧有的网络架构平滑过渡到新标准提供了关键的技术支持。<br />
+原文：<a href="https://kubernetes.io/blog/2026/03/20/ingress2gateway-1-0-release/">Announcing Ingress2Gateway 1.0: Your Path to Gateway API</a></p>
+<p><strong>Kubernetes 引入 Agent Sandbox 以支持长周期 AI 智能体运行</strong><br />
+为了应对 AI 2.0 时代对长周期、有状态智能体的需求，Kubernetes 社区提出了 Agent Sandbox 概念。该方案旨在为 AI 智能体提供隔离且持久的运行环境，使其能够跨多个 Pod 保持上下文并执行复杂任务。这标志着 K8s 正在从简单的容器编排平台演进为 AI 智能体的操作系统。<br />
+原文：<a href="https://kubernetes.io/blog/2026/03/20/running-agents-on-kubernetes-with-agent-sandbox/">Running Agents on Kubernetes with Agent Sandbox</a></p>
+<p><strong>Cedar 授权策略语言正式加入 CNCF 沙箱项目</strong><br />
+由 AWS 开发的开源授权策略语言 Cedar 已正式成为 CNCF 的沙箱项目。Cedar 提供了一种快速、安全且可分析的方式来定义云原生环境中的访问控制策略。加入 CNCF 将有助于 Cedar 在多云和混合云环境中获得更广泛的社区支持和标准化。<br />
+原文：<a href="https://aws.amazon.com/blogs/opensource/cedar-joins-cncf-as-a-sandbox-project/">Cedar Joins CNCF as a Sandbox Project</a></p>
+<hr />
+<h2>AI 领域</h2>
+<p><strong>Google 发布 MedGemma 1.5：增强多模态医疗分析能力</strong><br />
+Google 介绍了 MedGemma 1.5 4B 模型，该模型在医疗影像处理、解剖定位和文档理解方面有了显著提升。它能够处理 CT/MRI 3D 卷轴数据及病理切片，并在 3D 影像诊断准确率上比前代提升了 11%。这一进展展示了轻量级大模型在专业医疗垂直领域的巨大潜力。<br />
+原文：<a href="https://arxiv.org/abs/2604.05081">MedGemma 1.5 Technical Report</a></p>
+<p><strong>Anthropic 的 Claude Mythos 曝光，专注于网络安全能力</strong><br />
+Anthropic 正在开发名为 Claude Mythos 的新模型，该模型专门针对网络安全任务进行了优化。尽管目前尚未对公众开放，但初步评估显示其在漏洞分析和代码审计方面具有极强的表现。这引发了业界对 AI 在攻防两端双刃剑效应的持续关注。<br />
+原文：<a href="https://thenewstack.io/anthropic-claude-mythos-cybersecurity/">Anthropic’s Claude Mythos is now available, but not for you</a></p>
+<p><strong>IBM 发布 Granite 4.0 3B Vision：针对企业文档的紧密型多模态模型</strong><br />
+IBM 推出了 Granite 系列的新成员，专注于处理企业级文档和图表理解。该模型在保持较小参数规模的同时，优化了对复杂表格和视觉信息的提取能力。这为企业在本地部署高效、低能耗的 AI 助手提供了新的选择。<br />
+原文：<a href="https://huggingface.co/blog/ibm-granite/granite-4-vision">Granite 4.0 3B Vision: Compact Multimodal Intelligence for Enterprise Documents</a></p>
+<p><strong>调查显示 Google AI Overviews 每小时产生数百万条错误信息</strong><br />
+一项针对 Google 搜索中 AI 概览功能的测试发现，其准确率仅为 90% 左右，这意味着每小时可能有数百万次查询得到错误答案。尽管 90% 的准确率看似很高，但在搜索这种基础设施级应用中，10% 的错误率仍会带来严重的社会影响。这再次引发了关于大模型幻觉与搜索可靠性的激烈讨论。<br />
+原文：<a href="https://arstechnica.com/google/2026/04/analysis-finds-google-ai-overviews-is-wrong-10-percent-of-the-time/">Testing suggests Google's AI Overviews tell millions of lies per hour</a></p>
+<p><strong>开源领袖质疑 Meta 是否会真正“开源”其 AI 模型</strong><br />
+尽管 Meta 宣称将发布一系列开源 AI 模型，但开源社区领袖对其授权条款和真实开放程度表示怀疑。争议焦点在于 Meta 的许可证是否符合开放源代码定义（OSD），以及其是否保留了过多的控制权。这反映了大型科技公司与开源社区在 AI 时代对“开源”定义的博弈。<br />
+原文：<a href="https://thenewstack.io/meta-open-source-models/">Open-source leaders question whether Meta’s Alexandr Wang will truly give away its AI models</a></p>
+<hr />
+<h2>工业界最新动向</h2>
+<p><strong>Apollo.io 收购 Pocus，推进 AI 原生销售操作系统愿景</strong><br />
+销售情报平台 Apollo.io 宣布收购产品驱动销售（PLG）平台 Pocus。此次收购旨在整合双方的数据和 AI 能力，打造一个全栈式的 AI 原生转到市场（GTM）操作系统。这预示着企业级 SaaS 正在向更深度的 AI 集成和自动化方向转型。<br />
+原文：<a href="https://www.morningstar.com/news/pr-newswire/20260319ne14558/apolloio-acquires-pocus-to-advance-its-vision-for-an-ai-native-gtm-operating-system">Apollo.io Acquires Pocus</a></p>
+<p><strong>Valve 为 Apple Vision Pro 推出原生 Steam Link 应用</strong><br />
+Valve 正式发布了适配 Vision Pro 的原生 Steam Link，允许用户在苹果的头显上流畅串流运行 PC 游戏。相比之前的第三方方案，原生应用提供了更低的延迟和更好的交互体验。这为 Vision Pro 的游戏生态补齐了重要的一环，也展示了跨平台串流技术的成熟。<br />
+原文：<a href="https://arstechnica.com/gaming/2026/04/valve-brings-native-steam-link-app-to-apples-vision-pro/">Valve brings native Steam Link app to Apple's Vision Pro</a></p>
+<p><strong>分析报告指出苹果与联想笔记本的可修复性得分最低</strong><br />
+最新的笔记本可修复性分析显示，苹果和联想的产品在维修便捷性方面表现不佳，得分垫底。尽管苹果的 MacBook Neo 在设计上有所改进，但整体行业仍面临零部件序列化和拆解困难等挑战。这促使消费者和监管机构更加关注电子产品的“维修权”问题。<br />
+原文：<a href="https://arstechnica.com/gadgets/2026/04/apple-has-the-lowest-grades-in-laptop-phone-repairability-analysis/">Apple and Lenovo have the least repairable laptops, analysis finds</a></p>
+<p><strong>美国最高法院推翻关于 ISP 必须切断盗版用户网络连接的裁决</strong><br />
+最高法院在针对 ISP 运营商 Cox 的裁决中，推翻了要求其切断多次侵权用户网络连接的判决。这一裁决对互联网服务提供商来说是一个重大胜利，减轻了其在版权保护方面的连带责任压力。这标志着版权方与平台方在互联网侵权治理责任边界上的又一次法律调整。<br />
+原文：<a href="https://arstechnica.com/tech-policy/2026/04/scotus-overturns-5th-circuit-ruling-that-told-isp-to-kick-pirates-off-internet/">SCOTUS overturns 5th Circuit ruling that told ISP to kick pirates off Internet</a></p>
+<p><strong>Framework 报告内存成本上涨，但部分硬件价格有所下调</strong><br />
+以模块化著称的笔记本厂商 Framework 发布更新称，受行业波动影响，内存和 SSD 的成本持续增加。不过，公司通过供应链优化，在 Framework 16 等特定型号上实现了部分价格下调。这展示了小众硬件厂商在应对全球供应链压力时的灵活性。<br />
+原文：<a href="https://www.phoronix.com/news/Framework-Memory-Costs-April">Framework Reports More Memory Cost Increases, Some Good News For Framework 16</a></p>
+<hr />
+<h2>学术界最新研究</h2>
+<p><strong>MegaTrain：在单显卡上实现百亿参数大模型的全精度训练</strong><br />
+来自 arXiv 的研究提出了一种名为 MegaTrain 的内存中心化系统，能够仅用一块 GPU 训练超过 100B 参数的大模型。该系统通过将参数和优化器状态存储在 CPU 内存中，并将 GPU 视为瞬时计算引擎，突破了显存容量的限制。这种方法通过流水线双缓冲技术解决了 CPU-GPU 带宽瓶颈，为低成本大模型训练开辟了新路径。<br />
+原文：<a href="https://arxiv.org/abs/2604.05091">MegaTrain: Full Precision Training of 100B+ Parameter Large Language Models on a Single GPU</a></p>
+<p><strong>Pramana：利用古印度 Navya-Nyaya 逻辑提升 LLM 的推理能力</strong><br />
+研究人员引入了 Pramana 框架，通过在具有 2500 年历史的印度 Navya-Nyaya 逻辑上进行微调，来增强大模型的认识论推理能力。不同于传统的思维链，该框架强制执行结构化的六阶段推理，旨在减少模型在复杂逻辑任务中的幻觉。实验表明，这种古老逻辑体系能有效帮助 AI 在缺乏明确证据时保持严谨。<br />
+原文：<a href="https://arxiv.org/abs/2604.04937">Pramana: Fine-Tuning Large Language Models for Epistemic Reasoning through Navya-Nyaya</a></p>
+<p><strong>Qurator：跨异构云提供商的量子-经典混合工作流调度</strong><br />
+随着量子计算融入 HPC 系统，Qurator 提出了一种架构无关的任务调度器，旨在优化量子线路的排队时间和保真度。该研究将混合负载建模为动态有向无环图（DAG），并根据异构云端的实时状态进行智能分配。这为未来量子计算在云端的规模化应用提供了关键的调度理论支撑。<br />
+原文：<a href="https://arxiv.org/abs/2604.05505">Qurator: Scheduling Hybrid Quantum-Classical Workflows Across Heterogeneous Cloud Providers</a></p>
+<p><strong>Horizon-LM：一种以 RAM 为中心的 LLM 训练架构</strong><br />
+Horizon-LM 研究挑战了传统的以 GPU 为中心的执行范式，提出将模型状态持久化在主机 RAM 中。这种设计解耦了模型规模与多 GPU 集群的紧密绑定，使得在单节点上进行指令微调和领域适配变得更加可行。该研究为解决当前 AI 训练中显存容量增长滞后于模型规模增长的问题提供了新思路。<br />
+原文：<a href="https://arxiv.org/abs/2602.04816">Horizon-LM: A RAM-Centric Architecture for LLM Training</a></p>
+<p><strong>Blind-Spot Mass：量化机器学习系统部署中的覆盖风险</strong><br />
+该研究提出了一个名为“盲点质量”（B_n）的框架，利用 Good-Turing 估计法来量化模型在未见状态空间中的风险。研究指出，现代 ML 系统在长尾分布下往往存在“覆盖盲区”，标准测试集无法反映真实部署中的可靠性。这一理论框架为构建更安全的 AI 系统提供了科学的度量指标。<br />
+原文：<a href="https://arxiv.org/abs/2604.05057">Blind-Spot Mass: A Good-Turing Framework for Quantifying Deployment Coverage Risk in Machine Learning Systems</a></p>
+<hr /></div>
+  </main>
+</body>
+</html>
