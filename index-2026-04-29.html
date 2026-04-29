@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OS 领域每日洞察 - 2026-04-29</title>
+  <style>
+    :root {
+      --bg: #f6f4f0;
+      --bg-bar: #ebe8e3;
+      --bg-card: #fffefb;
+      --bg-card-hover: #f5f3ef;
+      --text: #2d2a26;
+      --text-muted: #5c5852;
+      --text-dim: #7a756e;
+      --accent: #5a7a9e;
+      --border: #ddd9d2;
+      --radius: 10px;
+      --font: "Segoe UI", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      font-size: 15px;
+    }
+
+    /* 门户顶栏 */
+    .masthead {
+      background: var(--bg-bar);
+      border-bottom: 1px solid var(--border);
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 0;
+    }
+    .masthead-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .masthead h1 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin: 0;
+      letter-spacing: -0.02em;
+      color: var(--text);
+    }
+    .masthead .meta {
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+    }
+
+    /* 主内容区：多栏门户布局 */
+    .main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 3rem;
+    }
+
+    /* 板块：每个 h2 为一个频道块 */
+    .content .section {
+      margin-bottom: 2.5rem;
+    }
+    .content h2 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+      margin: 0 0 1rem;
+      padding: 0.6rem 1rem;
+      background: var(--bg-bar);
+      border-radius: var(--radius);
+      border-left: 4px solid var(--accent);
+    }
+    .content h2:first-child { margin-top: 0; }
+
+    .content h2:has(+ h3) {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      border-left-color: var(--text-dim);
+    }
+
+    /* 板块内卡片网格（每个 h2 后的 ul） */
+    .content h2 + ul {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1rem;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .content h2 + ul li {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.15rem 1.2rem;
+      transition: background .15s, border-color .15s;
+    }
+    .content h2 + ul li:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--text-dim);
+    }
+    .content h2 + ul li strong {
+      display: block;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+      line-height: 1.4;
+    }
+    .content h2 + ul li p {
+      margin: 0 0 0.5rem;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.58;
+    }
+    .content h2 + ul li p:last-of-type { margin-bottom: 0; }
+    .content h2 + ul li a[href^="http"] {
+      font-size: 0.8125rem;
+      color: var(--accent);
+    }
+    .content h2 + ul li a[href^="http"]:hover { text-decoration: underline; }
+
+    .content .ref-section {
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+    .content h2 + h3 { margin-top: 1.25rem; }
+    .content h3 {
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--text-dim);
+      margin: 1rem 0 0.4rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .content h3 + ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 0.25rem;
+    }
+    .content h3 + ul li {
+      background: transparent;
+      border: none;
+      padding: 0.2rem 0;
+      font-size: 0.8125rem;
+    }
+    .content h3 + ul li strong { font-size: inherit; margin-bottom: 0; }
+    .content h3 + ul li a { color: var(--accent); }
+    .content h3 + ul li a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <header class="masthead">
+    <div class="masthead-inner">
+      <h1>OS 领域每日洞察 - 2026-04-29</h1>
+      <span class="meta">2026-04-29 04:01 UTC</span>
+    </div>
+  </header>
+  <main class="main">
+    <div class="content"><h2>Linux 内核社区热点与趋势</h2>
+<p><strong>Fedora Linux 44 正式发布，搭载 GNOME 50 与 KDE Plasma 6.6</strong><br />
+Fedora 项目组宣布 Fedora 44 正式发布，该版本继续走在 Linux 创新的前沿。新版本在工作站版中默认采用了最新的 GNOME 50 桌面环境，同时为 KDE 变体版本提供了 Plasma 6.6 体验及改进的登录管理器。此外，针对 Apple Silicon Mac 的 Fedora Asahi Remix 也同步更新，进一步扩大了对现代硬件生态的支持。<br />
+原文：<a href="https://www.phoronix.com/news/Fedora-44-Released">Fedora 44 Released For Living On The Leading-Edge Of Linux Innovations</a></p>
+<p><strong>IBM 更新 Linux 补丁，在 s390 架构上实现 ARM64 KVM 虚拟化</strong><br />
+IBM 提交了第二版 Linux 内核补丁，旨在其 Z 系列服务器（s390 架构）上启用 ARM64 虚拟化加速。这一举措是 IBM 与 Arm 合作开发“双架构”硬件的初步成果，允许 AArch64 软件通过内核虚拟机（KVM）在 IBM 主机上高效运行。该功能对于需要在大型机环境整合多样化工作负载的企业具有重要意义。<br />
+原文：<a href="https://www.phoronix.com/news/ARM64-On-s390-IBM-Z-v2">IBM Updates Linux Patches For Introducing ARM64 KVM Virtualization On s390</a></p>
+<p><strong>GCC 16 编译器改进错误消息，引入实验性 HTML 输出功能</strong><br />
+即将发布的 GCC 16.1 稳定版对编译器错误提示进行了大幅增强，旨在提升开发者的调试效率。新版本不仅优化了错误消息的文字描述，还引入了一个实验性的 HTML 输出选项，允许开发者在浏览器中更直观地查看编译问题。这些改进体现了传统开发工具在用户体验和现代化展示方面的持续演进。<br />
+原文：<a href="https://www.phoronix.com/news/GCC-16-Error-Messages">GCC 16's Improved Error Messages, Experimental HTML Output</a></p>
+<p><strong>7-Zip 26.01 Linux 版支持大页内存以加速压缩性能</strong><br />
+最新发布的 7-Zip 26.01 版本为 Linux 用户带来了显著的性能优化，现在支持利用大页内存（Huge Pages）进行操作。通过减少页表条目和 TLB 缓存压力，该功能可以有效提升高负载下的压缩速度。此外，新版本还增加了关于提取归档时输出目录路径生成的多个新选项。<br />
+原文：<a href="https://www.phoronix.com/news/7-Zip-26.01">7-Zip 26.01 Now Allows Making Use Of Huge Pages On Linux For Faster Compression</a></p>
+<p><strong>Linux 7.0 内核在 RK3588 芯片上实现 4K 视频硬件加速解码</strong><br />
+开发者成功在 Linux 7.0 主线内核中实现了瑞芯微 RK3588 芯片的 4K 视频硬件解码支持。此前，该高性能 SoC 的多媒体加速往往依赖于厂商的旧版内核分支，主线化进程一直较为缓慢。这一突破意味着基于 RK3588 的单板计算机和嵌入式设备现在可以运行更纯净、更现代的 Linux 系统，并获得完整的图形性能。<br />
+原文：<a href="https://seoulsaram.org/articles/RK3588/mainline-hwdec">Hardware-accelerated 4K video on RK3588 with Linux 7.0</a></p>
+<p><strong>内核社区悼念 GNOME 易用性专家 Seth Nickell 与 R 语言核心成员 Tomáš Kalibera</strong><br />
+Linux 社区近期痛失两位重要贡献者：GNOME 易用性项目的先驱 Seth Nickell 和 R 语言核心团队成员 Tomáš Kalibera。Seth Nickell 自高中时代起就致力于让 Linux 桌面变得易于使用，对 GNOME 生态影响深远；Tomáš Kalibera 则在 R 语言的底层开发中贡献良多。社区成员纷纷发文纪念他们对开源事业的卓越贡献和无私精神。<br />
+原文：<a href="https://lwn.net/Articles/1070213/">Remembering Seth Nickell</a> / <a href="https://lwn.net/Articles/1070185/">In Memoriam: Tomáš Kalibera</a></p>
+<h2>业界大厂动向</h2>
+<p><strong>Ubuntu 26.04 LTS 在创作者工作站性能测试中领先 Windows 11</strong><br />
+在针对搭载 AMD Threadripper PRO 9975WX 的高性能工作站测试中，新发布的 Ubuntu 26.04 LTS 在多数专业创作者负载下表现优于 Windows 11 Pro。测试涵盖了渲染、编译及计算密集型任务，显示出 Linux 在多核调度和文件系统效率上的优势。这进一步巩固了 Ubuntu 作为高端工程和创意专业人士首选操作系统的地位。<br />
+原文：<a href="https://www.phoronix.com/review/ubuntu-2604-windows-11">Ubuntu 26.04 LTS Leads Over Windows 11 In Creator Workstation Performance</a></p>
+<p><strong>Canonical 澄清 Ubuntu “AI 开关”计划：通过移除 Snap 实现且初始为可选</strong><br />
+针对近期关于 Ubuntu 集成 AI 功能的争议，Canonical 高层澄清称，所谓的“AI 杀死开关”最初将作为可选功能提供。用户可以通过移除相关的 Snap 软件包来完全禁用 AI 特性，确保系统的纯净性。Canonical 强调其 AI 战略将优先考虑用户控制权，避免强制推送可能干扰工作流的自动化工具。<br />
+原文：<a href="https://www.phoronix.com/news/Ubuntu-AI-Kill-Switch-Opt-In">Ubuntu's "AI Kill Switch" Is Achieved By Removing Snaps, Initially Opt-In</a></p>
+<p><strong>GitHub 将根据实际 AI 使用量对 Copilot 用户进行计费</strong><br />
+GitHub 宣布将改变 Copilot 的计费模式，开始根据用户的实际 AI 使用量收费，而非单一的订阅制。官方表示，这是由于重度用户带来的推理成本不断攀升，平台已无法继续消化这些开支。这一调整可能会影响企业和开发者对 AI 辅助编程工具的成本评估，促使行业寻找更高效的推理方案。<br />
+原文：<a href="https://arstechnica.com/ai/2026/04/github-will-start-charging-copilot-users-based-on-their-actual-ai-usage/">GitHub will start charging Copilot users based on their actual AI usage</a></p>
+<p><strong>AMD 发布 Halo Box 迷你电脑的 Linux RGB LED 驱动程序</strong><br />
+AMD 为其在 CES 2026 上展示的 Ryzen AI Halo Box 迷你电脑提交了专门的 Linux 驱动，用于控制其独特的 RGB 灯条。该设备搭载了强大的 Strix Halo SoC，被定位为 NVIDIA DGX Spark 的竞争产品，旨在为 AI 开发者提供本地计算平台。驱动的及时跟进显示了 AMD 对 Linux 开发者生态的重视。<br />
+原文：<a href="https://www.phoronix.com/news/AMD-Halo-Box-RGB-LED-Driver">AMD Introducing New Linux Driver For Their Halo Box: For Its RGB LED Light Bar</a></p>
+<p><strong>Google 高管称开发者对 AI 编程工具的忠诚度极低</strong><br />
+Google Cloud 首席布道师 Richard Seroter 指出，当前的开发者对特定的 AI 编程工具几乎没有忠诚度，他们更倾向于根据任务需求随时切换工具。Google 表示并不介意开发者使用哪种 AI 工具，而是致力于提供开放的底层基础设施和多样化的模型选择。这种观点反映了 AI 开发辅助市场竞争的白热化以及工具链的高度碎片化。<br />
+原文：<a href="https://thenewstack.io/google-doesnt-care/">“Developer loyalty is at zero right now”: Google doesn’t care which AI coding tool you use</a></p>
+<p><strong>Red Hat 探讨数字主权与基于镜像的 AI 代理操作系统基础</strong><br />
+Red Hat 在其官方博客中强调，数字主权已成为企业董事会关注的核心风险，而不仅仅是技术合规问题。为此，Red Hat 正在开发一种基于镜像的“代理操作系统（Agentic OS）”原型，利用 fedora-bootc 等开源工具构建加固的运行环境。这种设计旨在为自主 AI 代理提供一个安全、可重复且符合主权要求的底层架构。<br />
+原文：<a href="https://www.redhat.com/en/blog/sovereignty-mandate-why-open-hybrid-cloud-boardrooms-new-risk-frontier">The sovereignty mandate: Why open hybrid cloud is the boardroom’s new risk frontier</a></p>
+<h2>云原生领域</h2>
+<p><strong>Kubernetes v1.36 发布：引入控制器陈旧性缓解与增强的可观测性</strong><br />
+Kubernetes v1.36 版本正式发布，重点解决了控制器因视图过时而采取错误行动的“陈旧性（Staleness）”问题。新版本引入了多项特性来缓解这一风险，并为控制器行为提供了更好的监控指标。此外，该版本还包含 70 项增强功能，其中 18 项已达到稳定阶段，标志着 Kubernetes 在生产环境的健壮性上又迈进了一步。<br />
+原文：<a href="https://kubernetes.io/blog/2026/04/28/kubernetes-v1-36-staleness-mitigation-for-controllers/">Kubernetes v1.36: Staleness Mitigation and Observability for Controllers</a></p>
+<p><strong>Gateway API v1.5 发布：多项核心特性晋升至稳定版</strong><br />
+Kubernetes 网络小组发布了 Gateway API v1.5，这是该项目迄今为止规模最大的更新。新版本将 HTTPRoute、TLSRoute、CORS 过滤器和客户端证书验证等六项广泛需求的实验性特性移至标准通道（GA）。这标志着 Gateway API 已成熟到足以在大多数生产场景中替代传统的 Ingress 资源。<br />
+原文：<a href="https://kubernetes.io/blog/2026/04/21/gateway-api-v1-5/">Gateway API v1.5: Moving features to Stable</a></p>
+<p><strong>Broadcom 押注私有云回归，推动 VMware Cloud Foundation 演进</strong><br />
+Broadcom 正在通过 VMware Cloud Foundation (VCF) 积极推动私有云的复兴，将其从单纯的基础设施堆栈转变为现代应用底座。VCF 深度集成了 Kubernetes 平台，旨在为企业提供与公有云一致的开发体验，同时保留本地部署的控制权和安全性。这一战略反映了企业在成本压力下，开始重新评估混合云与私有云的价值。<br />
+原文：<a href="https://thenewstack.io/broadcom-vcf-kubernetes-platform/">Why Broadcom is betting on a private cloud comeback</a></p>
+<p><strong>Pulumi 宣布全面支持 Bun 运行时，无需安装 Node.js</strong><br />
+基础设施即代码工具 Pulumi 在 3.227.0 版本中实现了对 Bun 运行时的完整支持。开发者现在可以在配置文件中直接指定使用 Bun 来执行整个基础设施程序，而不再仅仅将其作为包管理器。这一改进利用了 Bun 的高性能特性，为云原生开发者提供了更快的部署速度和更简洁的工具链。<br />
+原文：<a href="https://www.infoq.com/news/2026/04/pulumi-bun-support/">Pulumi Adds Full Bun Runtime Support</a></p>
+<p><strong>CNCF 内部服务集群从 ingress-nginx 迁移至 Envoy Gateway</strong><br />
+由于 Kubernetes 项目宣布 ingress-nginx 进入退休阶段，CNCF 已将其内部服务集群成功迁移至 Envoy Gateway。这次迁移涉及 codimd 和 GUAC 等关键内部服务，展示了从传统 Ingress 向基于 Gateway API 的现代网关转型的实际路径。CNCF 希望通过此举为社区提供最佳实践参考，推动生态系统向更现代的网络架构演进。<br />
+原文：<a href="https://www.cncf.io/blog/2026/04/13/ingress-nginx-to-envoy-gateway-migration-on-cncf-internal-services-cluster/">ingress-nginx to Envoy Gateway migration on CNCF internal services cluster</a></p>
+<h2>AI 领域</h2>
+<p><strong>Claude 托管代理因“恶意软件提醒”系统提示导致任务失败</strong><br />
+有开发者反馈，Anthropic 的 Claude 托管代理在执行代码生成任务时，会因系统强制附加的恶意软件扫描指令而产生误判。代理在确认代码安全后，仍会错误地认为自己被禁止修改任何代码，从而导致任务中断并产生不必要的 Token 费用。这一问题凸显了 AI 代理在处理复杂安全指令与实际任务逻辑之间的冲突，目前开发者正敦促官方修复。<br />
+原文：<a href="https://github.com/anthropics/claude-code/issues/49363">Regression: malware reminder on every read still causes subagent refusals</a></p>
+<p><strong>Sentry 推出 Seer Agent：支持自然语言调试生产环境问题</strong><br />
+应用监控服务商 Sentry 发布了名为 Seer Agent 的新工具，允许开发者使用自然语言诊断生产环境中的错误。该代理能够理解复杂的错误堆栈，并结合上下文提供修复建议，极大地降低了排查问题的门槛。这是 AI 与可观测性领域结合的典型案例，旨在将传统的被动告警转变为主动的智能分析。<br />
+原文：<a href="https://thenewstack.io/sentrys-seer-agent-debug/">Sentry’s Seer Agent lets developers debug production issues in natural language</a></p>
+<p><strong>SAS 通过 Viya MCP 服务器向所有 AI 代理开放其分析引擎</strong><br />
+老牌分析软件厂商 SAS 宣布推出 Viya MCP 服务器，使其强大的分析和决策引擎能够被 Claude、Copilot 等任何 AI 代理调用。通过模型上下文协议（MCP），AI 代理可以安全地访问受监管行业（如金融、政府）的专业数据和算法。此举旨在打破 AI 模型与深层行业分析工具之间的隔阂，提升 AI 代理在专业领域的实用性。<br />
+原文：<a href="https://thenewstack.io/sas-viya-mcp-governance/">SAS opens its analytics engine to Claude, Copilot and any AI agent with Viya MCP Server</a></p>
+<p><strong>AI 驱动的漏洞发现范式转移：非专家也能轻松发现安全漏洞</strong><br />
+CNCF 博客指出，AI 模型正在深刻改变软件漏洞发现的速度和规模，使得非专业人士也能以极低的门槛找到真实的系统漏洞。这对开源项目维护者提出了巨大挑战，传统的漏洞报告处理流程可能无法应对 AI 生成的大量报告。文章呼吁社区加强 AI 辅助的安全防御工具建设，以应对日益严峻的安全形势。<br />
+原文：<a href="https://www.cncf.io/blog/2026/04/16/the-ai-driven-shift-in-vulnerability-discovery-what-maintainers-and-bug-finders-need-to-know/">The AI-driven shift in vulnerability discovery: What maintainers and bug finders need to know</a></p>
+<p><strong>东京羽田机场测试类人机器人进行行李分拣以应对劳动力短缺</strong><br />
+日本航空公司开始在羽田机场测试使用类人机器人处理旅客行李，旨在缓解日益严重的劳动力短缺问题。这些机器人不仅能装载货物，未来还可能承担飞机客舱清洁等任务。这一实验展示了 AI 与机器人技术在重体力劳动自动化领域的应用潜力，是服务业数字化转型的重要尝试。<br />
+原文：<a href="https://arstechnica.com/ai/2026/04/japan-airlines-tests-having-robots-instead-of-humans-handle-travelers-luggage/">Humanoid robots start sorting luggage in Tokyo airport test amid labor shortage</a></p>
+<h2>工业界最新动向</h2>
+<p><strong>德国 Sovereign Tech Agency 启动新倡议以支持开放标准</strong><br />
+德国主权技术机构（Sovereign Tech Fund）宣布启动“主权技术标准”倡议，旨在为开源软件标准及其维护者提供关键财务支持。该机构过去几年已成功资助了多个核心开源项目，新倡议将重点放在确保数字基础设施的标准化和互操作性上。这体现了欧洲国家在提升技术自主权和保障供应链安全方面的持续投入。<br />
+原文：<a href="https://www.phoronix.com/news/Sovereign-Tech-Standards">Sovereign Tech Agency Launches New Initiative To Help Open Standards</a></p>
+<p><strong>Valve 更新 GameNetworkingSockets 库，结束近四年的停更状态</strong><br />
+Valve 旗下的开源网络库 GameNetworkingSockets 在沉寂近四年后发布了 v1.5 版本。该库是《反恐精英》和《Dota 2》等知名游戏的基础传输层，被广泛用于处理不可靠的游戏网络通信。此次更新修复了长期积累的错误并提升了稳定性，对于依赖该库的开源游戏开发者来说是一个重大利好。<br />
+原文：<a href="https://www.phoronix.com/news/GameNetworkingSockets-1.5">Valve Updates GameNetworkingSockets After Nearly Four Year Hiatus</a></p>
+<p><strong>通用汽车 Super Cruise 辅助驾驶系统行驶里程突破 10 亿英里</strong><br />
+通用汽车宣布其 Super Cruise 脱手驾驶辅助系统自 2017 年推出以来，累计行驶里程已超过 10 亿英里。该系统目前仅在经过地理围栏标记的高速公路上运行，强调“脱手但需注视前方”的安全理念。这一里程碑标志着大规模辅助驾驶技术在真实道路环境下的可靠性得到了初步验证。<br />
+原文：<a href="https://arstechnica.com/cars/2026/04/gms-super-cruise-passes-a-billion-driven-miles-since-2017/">A billion miles in less than a decade: GM's Super Cruise reaches a milestone</a></p>
+<p><strong>Modder 发布 PS5-Linux，将游戏主机转变为全功能 Linux PC</strong><br />
+有开发者发布了针对 PlayStation 5 的 Linux 移植版本，成功将这款游戏主机转变为一台功能完备的 Linux 个人电脑。通过特定的漏洞利用，用户可以在 PS5 上运行标准的 Linux 发行版并进行办公或轻度游戏。虽然这主要属于极客社区的探索，但也展示了现代游戏硬件在通用计算方面的潜在能力。<br />
+原文：<a href="https://www.notebookcheck.net/Modder-releases-PS5-Linux-that-turns-the-console-into-a-fully-functional-Linux-gaming-PC.1284961.0.html">Modder releases PS5-Linux that turns console into a functional Linux PC</a></p>
+<h2>学术界最新研究</h2>
+<p><strong>Rust 还是 C？嵌入式固件开发的工业案例对比研究</strong><br />
+一项针对工业微控制器的案例研究对比了 Rust 和 C 语言在开发相同功能 IoT 固件时的表现。研究发现，在内存占用和执行速度方面，Rust 完全可以与 C 竞争，且没有明显的性能劣势。该论文还展示了 Ariel OS 如何利用 Rust 的安全特性提供更可靠的嵌入式运行环境，为工业界转向内存安全语言提供了实证支持。<br />
+原文：<a href="https://arxiv.org/abs/2604.25679">Embedded Rust or C Firmware? Lessons from an Industrial Microcontroller Use Case with Ariel OS</a></p>
+<p><strong>不可压缩知识探针：通过事实容量估算黑盒大模型参数量</strong><br />
+由于闭源模型厂商不披露参数规模，研究人员提出了一种名为“不可压缩知识探针（IKP）”的新方法。该方法基于一个物理直觉：存储一定数量的事实至少需要相应比例的权重。通过测试模型对 1400 个冷门事实问题的掌握程度，研究者可以推算出模型参数量的下限，为评估闭源模型的真实规模提供了新的科学手段。<br />
+原文：<a href="https://arxiv.org/abs/2604.24827">Incompressible Knowledge Probes: Estimating Black-Box LLM Parameter Counts via Factual Capacity</a></p>
+<p><strong>Nautile-370M：在小型推理模型中结合频谱记忆与注意力机制</strong><br />
+研究人员推出了 Nautile-370M，这是一个仅有 3.7 亿参数的小型语言模型，旨在受限资源下实现高效推理。该模型采用混合架构，将 SeqCond 注意力层（一种线性时间频谱序列算子）与传统 Transformer 层交替使用。这种设计既保留了序列模型处理长上下文的效率，又发挥了注意力机制在令牌路由上的表达能力。<br />
+原文：<a href="https://arxiv.org/abs/2604.24809">Nautile-370M: Spectral Memory Meets Attention in a Small Reasoning Model</a></p>
+<p><strong>FormalScience：利用 Lean 语言实现科学领域的自动化形式化证明</strong><br />
+针对将非正式科学推理转化为可验证代码的挑战，研究者提出了 FormalScience 框架。该框架允许非形式化语言专家通过人机协作的方式，生成语法正确且语义对齐的物理或数学证明。通过在物理学领域的应用，该研究展示了如何以较低成本实现复杂科学理论的自动化形式化验证。<br />
+原文：<a href="https://arxiv.org/abs/2604.23002">FormalScience: Scalable Human-in-the-Loop Autoformalisation of Science with Agentic Code Generation in Lean</a></p>
+<p><strong>幂律分布的力量：非对称性赋能组合推理能力</strong><br />
+传统观点认为将训练数据调整为均匀分布有助于模型学习长尾技能，但该研究发现，在幂律分布下训练的模型在组合推理任务中表现更好。理论分析表明，自然语言的幂律特性实际上降低了学习复杂技能组合所需的样本量。这一发现挑战了数据增强的常规思路，为优化大模型预训练数据分布提供了新视角。<br />
+原文：<a href="https://arxiv.org/abs/2604.22951">The Power of Power Law: Asymmetry Enables Compositional Reasoning</a></p>
+<p><strong>minAction.net：从生物学原理出发的能源优先神经架构设计</strong><br />
+研究人员通过超过 2200 场实验评估了“能源感知型”学习在视觉、文本等多种任务中的表现。研究发现，并不存在一种通用的“最佳架构”，最优架构高度依赖于任务模态和数据集的交互。该研究提倡在设计 AI 模型时应效仿生物系统，将计算能耗作为核心约束，而非仅仅追求准确率。<br />
+原文：<a href="https://arxiv.org/abs/2604.24805">minAction.net: Energy-First Neural Architecture Design -- From Biological Principles to Systematic Validation</a></p>
+<hr /></div>
+  </main>
+</body>
+</html>
