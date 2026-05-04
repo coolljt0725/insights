@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OS 领域每日洞察 - 2026-05-04</title>
+  <style>
+    :root {
+      --bg: #f6f4f0;
+      --bg-bar: #ebe8e3;
+      --bg-card: #fffefb;
+      --bg-card-hover: #f5f3ef;
+      --text: #2d2a26;
+      --text-muted: #5c5852;
+      --text-dim: #7a756e;
+      --accent: #5a7a9e;
+      --border: #ddd9d2;
+      --radius: 10px;
+      --font: "Segoe UI", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      font-size: 15px;
+    }
+
+    /* 门户顶栏 */
+    .masthead {
+      background: var(--bg-bar);
+      border-bottom: 1px solid var(--border);
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 0;
+    }
+    .masthead-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .masthead h1 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin: 0;
+      letter-spacing: -0.02em;
+      color: var(--text);
+    }
+    .masthead .meta {
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+    }
+
+    /* 主内容区：多栏门户布局 */
+    .main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 3rem;
+    }
+
+    /* 板块：每个 h2 为一个频道块 */
+    .content .section {
+      margin-bottom: 2.5rem;
+    }
+    .content h2 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+      margin: 0 0 1rem;
+      padding: 0.6rem 1rem;
+      background: var(--bg-bar);
+      border-radius: var(--radius);
+      border-left: 4px solid var(--accent);
+    }
+    .content h2:first-child { margin-top: 0; }
+
+    .content h2:has(+ h3) {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      border-left-color: var(--text-dim);
+    }
+
+    /* 板块内卡片网格（每个 h2 后的 ul） */
+    .content h2 + ul {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1rem;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .content h2 + ul li {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.15rem 1.2rem;
+      transition: background .15s, border-color .15s;
+    }
+    .content h2 + ul li:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--text-dim);
+    }
+    .content h2 + ul li strong {
+      display: block;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+      line-height: 1.4;
+    }
+    .content h2 + ul li p {
+      margin: 0 0 0.5rem;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.58;
+    }
+    .content h2 + ul li p:last-of-type { margin-bottom: 0; }
+    .content h2 + ul li a[href^="http"] {
+      font-size: 0.8125rem;
+      color: var(--accent);
+    }
+    .content h2 + ul li a[href^="http"]:hover { text-decoration: underline; }
+
+    .content .ref-section {
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+    .content h2 + h3 { margin-top: 1.25rem; }
+    .content h3 {
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--text-dim);
+      margin: 1rem 0 0.4rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .content h3 + ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 0.25rem;
+    }
+    .content h3 + ul li {
+      background: transparent;
+      border: none;
+      padding: 0.2rem 0;
+      font-size: 0.8125rem;
+    }
+    .content h3 + ul li strong { font-size: inherit; margin-bottom: 0; }
+    .content h3 + ul li a { color: var(--accent); }
+    .content h3 + ul li a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <header class="masthead">
+    <div class="masthead-inner">
+      <h1>OS 领域每日洞察 - 2026-05-04</h1>
+      <span class="meta">2026-05-04 04:01 UTC</span>
+    </div>
+  </header>
+  <main class="main">
+    <div class="content"><h2>Linux 内核社区热点与趋势</h2>
+<p><strong>Linux 7.1-rc2 发布，修复 Steam Deck OLED 音频及多项回归问题</strong><br />
+Linux 7.1 的第二个候选版本已经发布，主要集中在合并窗口结束后的错误修复和回归处理。其中最受关注的是针对 Steam Deck OLED 版音频问题的修复，以及针对各种硬件驱动的稳定性调整。这标志着 7.1 内核进入了平稳的测试周期，旨在为正式发布扫清障碍。<br />
+原文：<a href="https://www.phoronix.com/news/Linux-7.1-rc2-Released">Linux 7.1-rc2 Released With Audio Fix For Steam Deck OLED, Other Fixes</a></p>
+<p><strong>Linux 7.1-rc2 进一步完善全新 NTFS 内核驱动</strong><br />
+在最新的 7.1-rc2 中，开发者对新引入的 NTFS 驱动进行了多项修复。该驱动相比之前的 Paragon NTFS3 驱动提供了更好的性能和更丰富的功能，旨在彻底取代陈旧的只读驱动和用户态 FUSE 驱动。这些改进将显著提升 Linux 系统对 Windows 文件系统的兼容性和访问效率。<br />
+原文：<a href="https://www.phoronix.com/news/NTFS-Driver-Fixes-Linux-7.1-rc2">New NTFS Driver Sees More Fixes with Linux 7.1-Rc2</a></p>
+<p><strong>复古硬件焕发新生：Linux 内核为 2026 年的 ISA 声卡提供电源管理支持</strong><br />
+尽管 Linux 社区正在逐步淘汰 i486 等陈旧架构，但针对 Turtle Beach WaveFront 等 ISA 接口声卡的开发却意外活跃。最新的补丁为这些诞生于 90 年代的硬件引入了挂起与恢复（Suspend/Resume）支持。这体现了 Linux 内核对长尾硬件的极致兼容性，即便在现代内核中，老旧硬件依然能获得功能更新。<br />
+原文：<a href="https://www.phoronix.com/news/Turtle-Beach-WaveFront-SnR">Turtle Beach WaveFront ISA Sound Cards Seeing Suspend/Resume Support On Linux In 2026</a></p>
+<h2>业界大厂动向</h2>
+<p><strong>Google 公布 Summer of Code 2026 项目，AI 与 LLM 成为核心主题</strong><br />
+Google 宣布了 2026 年“编程之夏”（GSoC）的入选项目，今年开源社区对 AI 和大语言模型（LLM）的拥抱达到了前所未有的高度。除了大量的 AI 集成项目外，还涵盖了 GNOME 的 GPU 重置恢复、FreeBSD 新特性开发等系统级任务。该计划通过资助学生开发者，持续为开源生态注入新鲜血液并推动技术前沿探索。<br />
+原文：<a href="https://www.phoronix.com/news/GSoC-2026-Exciting-Projects">Many Exciting Google Summer of Code 2026 Projects &amp; A Lot Of AI</a></p>
+<p><strong>微软通过 PowerToys 为 Windows 11 引入类 Linux 的窗口控制技巧</strong><br />
+微软在最新的 PowerToys 工具集中测试了一项新功能，允许用户以类似 Linux 窗口管理器的风格来控制窗口。这种改进被认为极大地提升了高级用户的操作效率，甚至有声音呼吁将其作为 Windows 系统的默认功能。这反映了桌面操作系统在交互设计上正不断吸收开源社区的优秀实践。<br />
+原文：<a href="https://www.windowslatest.com/2026/05/01/i-tested-powertoys-new-linux-style-window-controls-on-windows-11-and-they-belong-in-the-os-by-default/">Microsoft brings a Linux-style window trick to Windows 11 via PowerToys</a></p>
+<p><strong>Red Hat 任命 Daniel Aw 为亚太区副总裁兼总经理</strong><br />
+红帽公司宣布 Daniel Aw 接任亚太区领导职务，负责推动该地区下一阶段的业务增长。他将重点关注客户在 AI 和开放混合云技术方面的成功转型。Daniel 拥有超过 30 年的国际经验，此前曾领导红帽在亚太区的企业业务，此次升迁显示了红帽对亚太市场及 AI 战略的重视。<br />
+原文：<a href="https://www.redhat.com/en/blog/getting-know-daniel-aw-vice-president-general-manager-red-hat-apac-0">Getting to know Daniel Aw, Vice President &amp; General Manager, Red Hat APAC</a></p>
+<p><strong>Ubuntu 与 Canonical 官网在遭受 DDoS 攻击后已恢复正常</strong><br />
+此前 Ubuntu 和 Canonical 的官方网站遭遇了分布式拒绝服务（DDoS）攻击，导致部分服务一度不可用。目前官方确认所有受影响的网站已重新上线，用户可以正常进行系统更新和访问文档。这一事件再次提醒了开源基础设施在面对网络安全威胁时的脆弱性与韧性。<br />
+原文：<a href="https://news.ycombinator.com/item?id=47985502">Ubuntu back up, In Saturday after DDoS attacks</a></p>
+<h2>云原生领域</h2>
+<p><strong>Kubernetes v1.36 引入悬停任务（Suspended Jobs）的可变资源配置</strong><br />
+Kubernetes v1.36 将“修改悬停 Job 的 Pod 资源”功能推向 Beta 阶段，允许在 Job 启动或恢复前调整其 CPU、内存及 GPU 请求。这一特性对于批处理和机器学习负载至关重要，因为这类任务的资源需求往往在创建时难以精确预估。通过该功能，集群管理员和调度器可以根据当前集群容量动态优化资源分配。<br />
+原文：<a href="https://kubernetes.io/blog/2026/04/27/kubernetes-v1-36-mutable-pod-resources-for-suspended-jobs/">Kubernetes v1.36: Mutable Pod Resources for Suspended Jobs (beta)</a></p>
+<p><strong>Bhatti：基于 Firecracker 的自托管微虚拟机编排器</strong><br />
+Bhatti 是一款开源的微虚拟机（MicroVM）编排工具，支持在任何具备 KVM 支持的设备上运行。它利用 Firecracker 技术实现极速启动，热启动仅需 3.7 毫秒，并支持空闲自动暂停和快照恢复。该工具为多租户环境设计，提供了加密密钥管理和速率限制，是构建轻量级 Serverless 基础设施的理想选择。<br />
+原文：<a href="https://bhatti.sh/">Show HN: Bhatti – Self-hostable Firecracker orchestrator with auto pause/wake</a></p>
+<p><strong>Kubernetes 镜像分发器（Image Promoter）完成架构重构</strong><br />
+负责将容器镜像从暂存区推送到生产注册表（registry.k8s.io）的核心工具 kpromo 完成了大规模重构。开发团队在不中断服务的情况下删除了 20% 的陈旧代码，并显著提升了镜像签名和分发的速度。这次“隐形重构”确保了 Kubernetes 发布流程的现代化，同时维持了全球数百万次拉取请求的稳定性。<br />
+原文：<a href="https://kubernetes.io/blog/2026/03/17/image-promoter-rewrite/">The Invisible Rewrite: Modernizing the Kubernetes Image Promoter</a></p>
+<p><strong>Kubernetes 环境下自主 AI 代理的安全防护实践</strong><br />
+随着自主 AI 代理成为新的云原生负载，传统的 Kubernetes 安全假设面临挑战，如动态依赖和不可预测的资源消耗。文章提出了基于 Job 的隔离模式、使用 Vault 管理短期凭证以及四阶段信任模型等生产级安全模式。这些措施旨在为非确定性的 AI 推理周期提供可观测性和安全边界。<br />
+原文：<a href="https://www.infoq.com/articles/securing-autonomous-ai-agents-kubernetes/">Securing Autonomous AI Agents on Kubernetes</a></p>
+<h2>AI 领域</h2>
+<p><strong>Token Arena：统一 AI 推理能效与认知能力的持续基准测试</strong><br />
+Token Arena 引入了一个全新的基准测试框架，旨在从端点（Endpoint）粒度评估 AI 模型。它综合了输出速度、首字延迟、价格、有效上下文和输出质量五个维度，并结合能源估算给出“每正确答案消耗焦耳数”等复合指标。这种方法比传统的模型级对比更贴近实际部署决策，帮助开发者在成本、性能与能效间取得平衡。<br />
+原文：<a href="https://arxiv.org/abs/2605.00300">Token Arena: A Continuous Benchmark Unifying Energy and Cognition in AI Inference</a></p>
+<p><strong>AgentFloor 基准测试：探索小型开源模型在工具使用上的极限</strong><br />
+AgentFloor 是一个包含 30 个任务的确定性基准测试，旨在评估模型在指令遵循、多步协作和长程规划方面的能力。通过对 16 个开源模型（0.27B 到 32B 参数）的评估，研究发现小型模型在处理常规结构化任务时具有极高性价比。这为开发者提供了路由建议：哪些任务可以交给小模型处理，哪些必须依赖顶级闭源模型。<br />
+原文：<a href="https://arxiv.org/abs/2605.00334">AgentFloor: How Far Up the tool use Ladder Can Small Open-Weight Models Go?</a></p>
+<p><strong>ARMOR 2025：针对军事合规性与决策支持的 AI 安全基准</strong><br />
+现有的 AI 安全基准多关注民用社交风险，而 ARMOR 2025 填补了军事领域的空白。该基准基于战争法、交战规则和联合伦理条例，评估大模型在国防应用中的决策可靠性。这对于确保 AI 在高风险军事决策支持中符合法律和道德规范具有重要意义。<br />
+原文：<a href="https://arxiv.org/abs/2605.00245">ARMOR 2025: A Military-Aligned Benchmark for Evaluating Large Language Model Safety</a></p>
+<p><strong>揭示 LLM 代理中的“工具使用税”：性能损耗与收益的权衡</strong><br />
+虽然工具增强推理被认为能提升可靠性，但研究发现存在“工具使用税”，即工具调用协议本身引入的性能下降。在存在语义干扰的情况下，工具带来的收益有时无法抵消其格式开销和协议负担。研究者提出了因子干预框架，建议开发者在设计代理时需审慎评估工具调用的必要性。<br />
+原文：<a href="https://arxiv.org/abs/2605.00136">Are Tools All We Need? Unveiling the Tool-Use Tax in LLM Agents</a></p>
+<h2>工业界最新动向</h2>
+<p><strong>SAS 转型策略：将 AI 视为 Fortune 500 企业的实用工具</strong><br />
+拥有 50 年历史的软件巨头 SAS 在其 Innovate 2026 大会上强调，AI 不应被神化，而应被视为解决业务问题的“工具”。SAS 致力于将代理式 AI 与治理框架结合，帮助大型企业在现有业务流程中安全地集成 AI 能力。这种务实的态度旨在消除企业对 AI 泡沫的担忧，推动 AI 在工业界的规模化落地。<br />
+原文：<a href="https://thenewstack.io/sas-innovate-agentic-ai-governance/">“To us, it’s just a tool”: How SAS is selling AI to the Fortune 500</a></p>
+<p><strong>大型机现代化成为 AI 驱动型企业的必选项</strong><br />
+随着新一代专业人才进入大型机领域，传统系统的现代化已不再是可选项。为了支持 AI 驱动的业务需求，企业必须将旧有的大型机架构与现代云原生技术栈融合。这种转型不仅是为了技术升级，更是为了在 AI 时代保持核心业务数据的处理能力与实时性。<br />
+原文：<a href="https://thenewstack.io/open-mainframe-enterprise-modernization/">Mainframe modernization is no longer optional for the AI-driven enterprise</a></p>
+<p><strong>Notepad++ 官方警告：Mac 平台出现虚假侵权版本</strong><br />
+Notepad++ 官方发布公告，提醒用户警惕在 Mac 平台上出现的虚假 Notepad++ 应用程序。这些版本不仅侵犯了商标权，还可能携带恶意软件，因为官方并未发布过 Mac 原生版本。这一事件凸显了开源软件在流行后面临的品牌保护和供应链安全挑战。<br />
+原文：<a href="https://notepad-plus-plus.org/news/npp-trademark-infringement/">Fake Notepad++ for Mac</a></p>
+<h2>学术界最新研究</h2>
+<p><strong>SAGA：针对 GPU 集群上 AI 代理推理的工作流原子调度</strong><br />
+传统的 GPU 调度器将每个 LLM 调用视为独立请求，导致 AI 代理在多步链式调用中频繁丢弃中间状态，延迟增加 3-8 倍。SAGA 提出将整个代理工作流视为首等调度单元，通过“代理执行图”预测 KV 缓存重用。实验表明，该方法能显著降低端到端延迟，性能接近理论最优离线策略。<br />
+原文：<a href="https://arxiv.org/abs/2605.00528">SAGA: Workflow-Atomic Scheduling for AI Agent Inference on GPU Clusters</a></p>
+<p><strong>重新审视分布式实时推理：云端可能比想象中更近</strong><br />
+传统观点认为云端推理因网络波动不适合延迟敏感的控制任务，但该研究对此提出了挑战。通过配置高吞吐计算资源，云平台可以有效分摊通信开销，在满足实时控制期限的同时，显著降低本地设备的能耗。这一发现为网络物理系统（CPS）的架构设计提供了新的思路。<br />
+原文：<a href="https://arxiv.org/abs/2605.00005">Cloud Is Closer Than It Appears: Revisiting the Tradeoffs of Distributed Real-Time Inference</a></p>
+<p><strong>FedACT：异构数据源上的并发联邦智能调度</strong><br />
+在现实应用中，多个机器学习任务往往需要在共享的设备池上同时训练，而单一任务的优化技术在多任务环境下表现不佳。FedACT 提出了一种感知资源异构性的设备调度方法，旨在解决设备性能差异和资源利用率低的问题。该研究提升了联邦学习系统在处理复杂、并发任务时的整体性能。<br />
+原文：<a href="https://arxiv.org/abs/2605.00011">FedACT: Concurrent Federated Intelligence across Heterogeneous Data Sources</a></p>
+<p><strong>AirFM-DDA：面向 AI 原生 6G 的时延-多普勒-角度域无线基础模型</strong><br />
+现有的无线基础模型多在时空频域操作，导致多径分量交织，难以学习通用表示。AirFM-DDA 提出在时延-多普勒-角度（DDA）域进行参数化，能够更清晰地解耦物理层特征。该模型为 6G 网络设计提供了一种高效、具备物理可解释性的 AI 原生方案。<br />
+原文：<a href="https://arxiv.org/abs/2605.00020">AirFM-DDA: Air-Interface Foundation Model in the Delay-Doppler-Angle Domain for AI-Native 6G</a></p>
+<hr /></div>
+  </main>
+</body>
+</html>
