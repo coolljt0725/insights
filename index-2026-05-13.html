@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OS 领域每日洞察 - 2026-05-13</title>
+  <style>
+    :root {
+      --bg: #f6f4f0;
+      --bg-bar: #ebe8e3;
+      --bg-card: #fffefb;
+      --bg-card-hover: #f5f3ef;
+      --text: #2d2a26;
+      --text-muted: #5c5852;
+      --text-dim: #7a756e;
+      --accent: #5a7a9e;
+      --border: #ddd9d2;
+      --radius: 10px;
+      --font: "Segoe UI", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      font-size: 15px;
+    }
+
+    /* 门户顶栏 */
+    .masthead {
+      background: var(--bg-bar);
+      border-bottom: 1px solid var(--border);
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 0;
+    }
+    .masthead-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .masthead h1 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin: 0;
+      letter-spacing: -0.02em;
+      color: var(--text);
+    }
+    .masthead .meta {
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+    }
+
+    /* 主内容区：多栏门户布局 */
+    .main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 3rem;
+    }
+
+    /* 板块：每个 h2 为一个频道块 */
+    .content .section {
+      margin-bottom: 2.5rem;
+    }
+    .content h2 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+      margin: 0 0 1rem;
+      padding: 0.6rem 1rem;
+      background: var(--bg-bar);
+      border-radius: var(--radius);
+      border-left: 4px solid var(--accent);
+    }
+    .content h2:first-child { margin-top: 0; }
+
+    .content h2:has(+ h3) {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      border-left-color: var(--text-dim);
+    }
+
+    /* 板块内卡片网格（每个 h2 后的 ul） */
+    .content h2 + ul {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1rem;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .content h2 + ul li {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.15rem 1.2rem;
+      transition: background .15s, border-color .15s;
+    }
+    .content h2 + ul li:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--text-dim);
+    }
+    .content h2 + ul li strong {
+      display: block;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+      line-height: 1.4;
+    }
+    .content h2 + ul li p {
+      margin: 0 0 0.5rem;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.58;
+    }
+    .content h2 + ul li p:last-of-type { margin-bottom: 0; }
+    .content h2 + ul li a[href^="http"] {
+      font-size: 0.8125rem;
+      color: var(--accent);
+    }
+    .content h2 + ul li a[href^="http"]:hover { text-decoration: underline; }
+
+    .content .ref-section {
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+    .content h2 + h3 { margin-top: 1.25rem; }
+    .content h3 {
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--text-dim);
+      margin: 1rem 0 0.4rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .content h3 + ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 0.25rem;
+    }
+    .content h3 + ul li {
+      background: transparent;
+      border: none;
+      padding: 0.2rem 0;
+      font-size: 0.8125rem;
+    }
+    .content h3 + ul li strong { font-size: inherit; margin-bottom: 0; }
+    .content h3 + ul li a { color: var(--accent); }
+    .content h3 + ul li a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <header class="masthead">
+    <div class="masthead-inner">
+      <h1>OS 领域每日洞察 - 2026-05-13</h1>
+      <span class="meta">2026-05-13 04:01 UTC</span>
+    </div>
+  </header>
+  <main class="main">
+    <div class="content"><h2>Linux 内核社区热点与趋势</h2>
+<p><strong>内核子系统探索利用 dma-buf 进行用户态读写操作</strong><br />
+在 2026 年 Linux 存储、文件系统、内存管理和 BPF 峰会上，开发者讨论了如何让 dma-buf 子系统支持由用户空间发起的读写操作。dma-buf 通常用于驱动程序间的缓冲区共享以实现高效的设备间 I/O，而新提议旨在进一步提升其效率，使其能直接服务于用户态应用。这一改进有望减少数据拷贝开销，提升高性能计算和多媒体处理的系统表现。<br />
+原文：<a href="https://lwn.net/Articles/1072317/">Using dma-bufs for read and write operations</a></p>
+<p><strong>透明巨页（THP）拟支持扩展至 1GB 规格</strong><br />
+目前的透明巨页（THP）在 x86 架构上通常为 2MB，开发者 Usama Arif 正在推动将其扩展至 PUD 级别的 1GB 规格。虽然 1GB 巨页在分配和碎片管理上存在巨大挑战，但它能显著降低超大规模内存应用（如大型数据库）的 TLB 未命中率。该议题在 LSFMM+BPF 峰会上引发了关于内存管理复杂性与性能收益权衡的热烈讨论。<br />
+原文：<a href="https://lwn.net/Articles/1071716/">Scaling transparent huge pages to 1GB</a></p>
+<p><strong>IBM s390 架构开始引入 Rust 语言支持</strong><br />
+IBM 工程师提交了首批补丁，旨在为 Linux 内核在 s390 架构上提供 Rust 编程语言支持。这是继 x86 和 ARM 之后，又一重要企业级架构拥抱内核 Rust 开发。此举将允许开发者在大型机环境中使用 Rust 编写更安全的驱动程序和内核模块，进一步扩大了 Rust 在系统编程中的版图。<br />
+原文：<a href="https://www.phoronix.com/news/IBM-s390-Linux-Kernel-Rust">IBM s390 Is The Latest Architecture Seeing Rust Linux Kernel Support</a></p>
+<p><strong>Linux 调度器优化助力老旧“土豆”硬件提升游戏性能</strong><br />
+Intel 资深内核工程师 Peter Zijlstra 正在开发一组调度器补丁，旨在优化老旧硬件（如 Sandy Bridge 处理器）的性能表现。通过改进调度逻辑，这些补丁在低端或过时硬件上展现出了显著的游戏帧率提升。这一工作证明了通过内核算法优化，依然可以挖掘旧设备的剩余价值，改善用户体验。<br />
+原文：<a href="https://www.phoronix.com/news/Linux-Flatten-The-Pick">Linux Scheduler Work Helping Boost Gaming Performance On Old "Potato" Hardware</a></p>
+<p><strong>内核优化意外导致 QUIC 协议出现性能“死循环”</strong><br />
+Cloudflare 研究发现，Linux 内核的一项空闲状态优化在特定情况下会导致 QUIC 协议的拥塞窗口被锁定在最小值。该问题源于内核对“空闲”周期的误判，使得 CUBIC 算法无法正确区分 RTT 等待和真正的应用空闲。目前相关修复方案已经提出，重点在于更精确地测量空闲周期以避免性能骤降。<br />
+原文：<a href="https://blog.cloudflare.com/quic-death-spiral-fix/">When "idle" isn't idle: how a Linux kernel optimization became a QUIC bug</a></p>
+<p><strong>OpenZFS 2.4.2 发布，正式支持 Linux 7.0 内核</strong><br />
+作为领先的开源文件系统实现，OpenZFS 发布了 2.4.2 稳定版，重点增加了对 Linux 7.0 内核的支持。除了兼容性更新，该版本还包含了大量针对 Linux 和 FreeBSD 平台的错误修复。这确保了在最新内核环境下，用户依然能获得稳定且高性能的存储服务。<br />
+原文：<a href="https://www.phoronix.com/news/OpenZFS-2.4.2-Released">OpenZFS 2.4.2 Released With Linux 7.0 Kernel Support, Many Bug Fixes</a></p>
+<hr />
+<h2>业界大厂动向</h2>
+<p><strong>Red Hat Summit 2026：全面转向 AgentOps 与企业级 AI 代理</strong><br />
+红帽在亚特兰大峰会上宣布了 Red Hat AI (RHAI) 3.4 的重大进展，重点推出 AgentOps 框架以缩短 AI 实验与生产之间的差距。红帽认为 AI 代理将成为企业的“超级用户”，并为此在 OpenShift 上集成了模型上下文协议（MCP）目录。这一战略旨在通过标准化的基础设施，解决 AI 代理在企业环境中的部署、治理和安全问题。<br />
+原文：<a href="https://thenewstack.io/red-hat-ai-maas/">Red Hat is betting on AgentOps to close the gap between AI experiments and production</a></p>
+<p><strong>Google 计划推出 Android 驱动的笔记本电脑 Googlebooks</strong><br />
+Google 披露了其名为“Googlebooks”的新型笔记本电脑愿景，该设备将由 Android 系统驱动并深度集成 AI 功能。这标志着 Google 试图通过 AI 重新定义移动计算与桌面办公的界限，预计将在 2026 年对 Android 进行大规模的 AI 架构重构。此举可能对现有的 ChromeOS 市场定位产生深远影响。<br />
+原文：<a href="https://arstechnica.com/gadgets/2026/05/googles-android-powered-laptops-are-called-googlebooks-and-theyre-coming-this-year/">Google's Android-powered laptops are called Googlebooks, and they're coming this year</a></p>
+<p><strong>Microsoft 利用 CPU 加速 Windows 11 应用与动画响应</strong><br />
+微软正在为 Windows 11 引入一种低延迟配置文件，通过更积极地调用 CPU 资源来提升应用启动速度和系统动画的流畅度。虽然 macOS 和 Linux 已有类似机制，但微软此举旨在进一步优化现代 PC 的感知性能。这一改进将直接惠及对交互延迟敏感的用户，提升整体操作系统的响应感。<br />
+原文：<a href="https://arstechnica.com/gadgets/2026/05/speed-boosting-low-latency-profile-is-one-of-the-improvements-coming-to-windows-11/">Microsoft will lean on your CPU to speed up Windows 11's apps and animations</a></p>
+<p><strong>SAP 发布 AI Agent Hub，旨在统一管理多供应商 AI 代理</strong><br />
+在 Sapphire 2026 大会上，SAP 推出了 AI Agent Hub，试图成为企业管理所有 AI 代理的中心平台。该平台不仅支持 SAP 自家的 Joule 代理，还兼容其他供应商构建的代理，解决企业面临的“代理碎片化”问题。此外，SAP 还宣布 Joule Studio 将支持 Cursor 和 Claude Code 等流行开发工具。<br />
+原文：<a href="https://thenewstack.io/sap-ai-agent-hub/">SAP launches AI Agent Hub at Sapphire 2026 to tame vendor agent sprawl</a></p>
+<p><strong>NVIDIA 与 ServiceNow 合作推出 OpenShell 以保障企业 AI 代理安全</strong><br />
+NVIDIA 首席执行官黄仁勋与 ServiceNow 负责人共同推广 OpenShell 框架，旨在为企业 AI 代理提供安全的运行环境。该框架针对 AI 代理自动管理凭据、高速交互等特性进行了专门设计，弥补了传统软件栈在代理自动化方面的安全短板。这反映了工业界对 AI 代理权限失控风险的深度担忧。<br />
+原文：<a href="https://thenewstack.io/nvidia-openshell-agent-runtime/">Jensen Huang and Bill McDermott bet on OpenShell to secure enterprise AI agents</a></p>
+<hr />
+<h2>云原生领域</h2>
+<p><strong>Kubernetes v1.36 引入服务端分片 List 和 Watch 功能</strong><br />
+随着集群规模扩展至数万节点，控制器在监听 Pod 等高基数资源时面临巨大的性能压力。Kubernetes v1.36 引入了服务端分片技术（KEP-5866），允许 API Server 在源头过滤事件，使每个控制器副本仅接收其负责的数据切片。这一 Alpha 特性将显著降低大规模集群中控制器的 CPU、内存和网络带宽消耗。<br />
+原文：<a href="https://kubernetes.io/blog/2026/05/06/kubernetes-v1-36-server-side-sharded-list-and-watch/">Kubernetes v1.36: Server-Side Sharded List and Watch</a></p>
+<p><strong>Kubernetes v1.36 实现用户命名空间（User Namespaces）正式商用（GA）</strong><br />
+经过多年的开发，用户命名空间支持在 v1.36 中达到 GA 状态，这标志着 Linux 容器的“无根（rootless）”安全隔离在 K8s 中完全成熟。该功能允许容器内拥有 root 权限而不会影响宿主机安全，极大地增强了多租户环境下的安全性。这对于需要 CAP_NET_ADMIN 等特权但又不希望破坏宿主机隔离的场景至关重要。<br />
+原文：<a href="https://kubernetes.io/blog/2026/04/23/kubernetes-v1-36-userns-ga/">Kubernetes v1.36: User Namespaces in Kubernetes are finally GA</a></p>
+<p><strong>Pod 级别资源的原地垂直伸缩在 v1.36 进入 Beta 阶段</strong><br />
+Kubernetes v1.36 宣布 Pod 级别的资源原地垂直伸缩功能进入 Beta 阶段并默认开启。用户现在可以动态调整运行中 Pod 的总资源预算（.spec.resources），而通常无需重启容器。这一特性简化了带有边车（sidecar）容器的复杂 Pod 管理，提高了集群资源的利用率和灵活性。<br />
+原文：<a href="https://kubernetes.io/blog/2026/04/30/kubernetes-v1-36-inplace-pod-level-resources-beta/">Kubernetes v1.36: In-Place Vertical Scaling for Pod-Level Resources Graduates to Beta</a></p>
+<p><strong>Cloud Custodian 成立十周年，发布 AI 时代治理新策略</strong><br />
+作为 CNCF 的孵化项目，Cloud Custodian 在其十周年之际探讨了在 AI 代理时代的角色。该项目通过统一的 DSL 管理公有云、K8s 和基础设施即代码，正演变为 AI 治理的关键组件。在 AI 代理频繁操作云资源的背景下，Cloud Custodian 提供了必要的合规性约束和自动化治理手段。<br />
+原文：<a href="https://www.cncf.io/blog/2026/05/12/a-decade-of-governance-cloud-custodian-at-10-and-its-role-in-the-agentic-ai-era/">A decade of governance: Cloud Custodian at 10 and its role in the agentic AI era</a></p>
+<p><strong>云原生可观测性栈的“三足鼎立”困局依然存在</strong><br />
+尽管 OpenTelemetry 等标准已经成熟，但大多数云原生团队仍运行着三套独立的可观测性栈（指标、链路、日志）。CNCF 博客指出，标准化的理论与实际落地的复杂性之间存在鸿沟，工具的集成度仍有待提高。如何打破数据孤岛，实现真正的统一观测，依然是 2026 年云原生领域的核心挑战。<br />
+原文：<a href="https://www.cncf.io/blog/2026/05/06/the-tools-are-ready-so-why-are-most-cloud-native-teams-still-running-three-observability-stacks/">The tools are ready. So why are most cloud native teams still running three observability stacks?</a></p>
+<hr />
+<h2>AI 领域</h2>
+<p><strong>针对欺诈检测与反洗钱（AML）的合规级 LLMOps 架构</strong><br />
+金融合规领域对 LLM 的需求与通用聊天场景大不相同，涉及大量前缀重用、架构约束和证据丰富的长文本。研究人员提出了一种基于 Llama 和 Qwen 等开源模型的 LLMOps 栈，重点优化了 KV 缓存效率和输出验证。该方案通过 vLLM 等工具实现了高性能的结构化输出，满足了金融监管对严谨性和可追溯性的要求。<br />
+原文：<a href="https://arxiv.org/abs/2605.11232">Rethinking LLMOps for Fraud and AML: Building a Compliance-Grade LLM Serving Stack</a></p>
+<p><strong>SkillGen：通过轨迹合成实现可验证的 AI 代理技能</strong><br />
+SkillGen 是一个多智能体框架，能够从基础智能体的运行轨迹中合成可重用的、人类可读的“技能”。它通过对比成功和失败的案例，识别出成功的模式和常见的失败模式，从而生成经过验证的技能插件。这种方法无需重新训练模型即可提升 LLM 代理的能力，且生成的技能可被人类审计，增强了系统的可控性。<br />
+原文：<a href="https://arxiv.org/abs/2605.10999">SkillGen: Verified Inference-Time Agent Skill Synthesis</a></p>
+<p><strong>视觉语言模型（VLM）中的视觉锚定偏差研究</strong><br />
+研究发现，图像中嵌入的数字锚点会系统性地误导视觉语言模型（VLM）的质量判断。这种偏差在不同架构的模型中普遍存在，且其影响甚至超过了严重的图像质量退化。通过层级探测分析，研究揭示了模型内部视觉信息与数值信息集成的机制，为构建更具鲁棒性的多模态模型提供了理论依据。<br />
+原文：<a href="https://arxiv.org/abs/2605.11218">Don't Look at the Numbers: Visual Anchoring Bias and Layer-wise Representation in VLMs</a></p>
+<p><strong>亚马逊员工因压力使用 AI 工具进行“Tokenmaxxing”</strong><br />
+由于公司内部推动使用 AI 工具的压力，亚马逊员工开始利用内部 AI 自动化处理非核心任务，这种现象被称为“Tokenmaxxing”。员工试图通过最大化 AI 生成的内容来应对考核压力，但这引发了关于工作质量和 AI 滥用的讨论。这反映了大型企业在强制推行 AI 转型过程中可能出现的文化与流程异化。<br />
+原文：<a href="https://arstechnica.com/ai/2026/05/amazon-employees-are-tokenmaxxing-due-to-pressure-to-use-ai-tools/">Amazon employees are "tokenmaxxing" due to pressure to use AI tools</a></p>
+<p><strong>Hopper：面向大型机和 COBOL 的代理式开发环境</strong><br />
+Hypercubic 公司推出了 Hopper，这是一个专门为大型机（Mainframe）和 COBOL 语言设计的 AI 代理开发环境。它旨在将现代 AI 能力引入古老的金融和工业遗留系统，帮助开发者更高效地维护和更新关键基础设施。这一工具的出现标志着 AI 代理正深入到数字化程度最低但最重要的核心业务领域。<br />
+原文：<a href="https://www.hypercubic.ai/hopper">Show HN: Agentic interface for mainframes and COBOL</a></p>
+<hr />
+<h2>工业界最新动向</h2>
+<p><strong>Wine Wayland 驱动合并指针扭曲（Pointer Warp）支持</strong><br />
+Wine 的原生 Wayland 驱动程序迈出了重要一步，正式支持了 <code>wp_pointer_warp_v1</code> 协议。这一功能对于需要在 Linux 下通过 Wine 运行的游戏和专业图形应用至关重要，因为它允许应用精确控制光标位置。这标志着 Wine 在脱离 XWayland、实现纯原生 Wayland 支持的道路上取得了实质性进展。<br />
+原文：<a href="https://www.phoronix.com/news/Wine-Wayland-Pointer-Warp">Wine Wayland Driver Merges Pointer Warp Support</a></p>
+<p><strong>FreeBSD 15.2 致力于提供开箱即用的 KDE 桌面体验</strong><br />
+FreeBSD 社区计划在 15.2 版本中实现从文本安装程序直接安装 KDE 桌面的选项。虽然该计划在之前的版本中多次推迟，但目前的进展表明 FreeBSD 正努力改善其作为桌面操作系统的易用性。此举旨在吸引更多希望在 BSD 系统上获得现代图形环境的用户。<br />
+原文：<a href="https://www.phoronix.com/news/FreeBSD-15.2-KDE-Desktop">FreeBSD 15.2 Will Aim For The Nice KDE Desktop Installation Experience</a></p>
+<p><strong>Haiku 操作系统初步实现 ARM64 SMP 多核支持</strong><br />
+受 BeOS 启发的开源操作系统 Haiku 最近在 ARM64 架构上实现了初步的对称多处理（SMP）支持。虽然目前主要在虚拟化环境中运行，但这为 Haiku 适配现代 ARM 硬件（如树莓派或 ARM 笔记本）奠定了基础。此外，Haiku 在 4 月份还进行了一系列其他性能和稳定性的改进。<br />
+原文：<a href="https://www.phoronix.com/news/Haiku-OS-ARM64-SMP">BeOS-Inspired Haiku Finally Sees Initial ARM64 SMP Support</a></p>
+<p><strong>Fwupd 2.1.3 发布，支持模块化手机固件更新</strong><br />
+Linux 固件更新工具 Fwupd 发布了 2.1.3 版本，新增了对模块化智能手机固件更新的支持。随着 Dell 和 Lenovo 成为 Linux 供应商固件服务（LVFS）的顶级赞助商，Fwupd 的生态系统正持续扩大。该版本还改进了对多种外设和嵌入式设备的兼容性，进一步巩固了其在 Linux 硬件管理中的核心地位。<br />
+原文：<a href="https://www.phoronix.com/news/Fwupd-2.1.3-Released">Fwupd 2.1.3 Brings Firmware Updating To Modular Smartphones</a></p>
+<p><strong>ARCTIC 官方为 Linux 7.2 开发风扇控制器驱动</strong><br />
+散热厂商 ARCTIC 正在直接参与 Linux 内核驱动开发，预计将在 7.2 版本中引入其风扇控制器的官方支持。与以往依赖社区逆向工程不同，厂商的主动参与确保了风扇速度监控和 PWM 控制的准确性与稳定性。这体现了硬件厂商对 Linux 桌面和服务器用户群体的日益重视。<br />
+原文：<a href="https://www.phoronix.com/news/ARCTIC-Fan-Controller-Linux-7.2">ARCTIC Fan Controller Driver Expected To Land In Linux 7.2</a></p>
+<hr />
+<h2>学术界最新研究</h2>
+<p><strong>研究揭示：Harness 设计决定了小语言模型（SLM）的运行稳定性</strong><br />
+arXiv 的一项实验分析表明，对于 2-3B 参数的小语言模型，其运行性能高度依赖于“Harness（工程框架）”的设计。研究对比了原始提示词、简单包装和四阶段流水线（计划-&gt;执行-&gt;验证-&gt;恢复）三种方案，发现流水线设计能显著提升任务成功率。这一结论挑战了“模型越大越好”的直觉，强调了系统工程在 SLM 部署中的核心作用。<br />
+原文：<a href="https://arxiv.org/abs/2605.12129">It's Not the Size: Harness Design Determines Operational Stability in Small Language Models</a></p>
+<p><strong>Compute ICE-AGE：基于持久语义图的计算范式</strong><br />
+该论文提出了一种在 Apple Silicon M2 硬件上实现的持久语义图引擎，旨在解决现代 AI 系统重复计算语义状态的问题。不同于依赖上下文重放的概率推理，该系统通过局部保持遍历和有界局部变异，在持久图拓扑上增量演化语义连续性。这种方法有望大幅降低 AI 推理的计算功耗，并提升状态维持的结构稳定性。<br />
+原文：<a href="https://arxiv.org/abs/2602.16736">The Compute ICE-AGE: Invariant Compute Envelope under Addressable Graph Evolution</a></p>
+<p><strong>康奈尔大学发布仅 2000 行代码的教学操作系统 egos-2000</strong><br />
+康奈尔大学发布了一个名为 egos-2000 的微型操作系统，其核心代码量仅为 2000 行。该系统旨在为操作系统教学提供一个简洁、可读且功能完备的参考实现，涵盖了进程管理、内存分配和文件系统等核心组件。它为学生和研究人员理解现代操作系统底层原理提供了一个极佳的切入点。<br />
+原文：<a href="https://github.com/yhzhang0128/egos-2000">Two Thousand Line educational operating system released by Cornell University</a></p>
+<p><strong>LogMILP：基于弱监督学习的日志异常定位框架</strong><br />
+针对大规模网络系统中日志标注昂贵的问题，LogMILP 提出了一种仅需“包级（bag-level）”标签即可实现实例级异常定位的框架。该方法结合了原型引导的结构建模和反事实扰动一致性正则化，能够精准识别导致系统异常的关键日志条目。这为自动化运维（AIOps）中的细粒度故障根因分析提供了高效的新工具。<br />
+原文：<a href="https://arxiv.org/abs/2605.10988">Seeing the Needle in the Haystack: Towards Weakly-Supervised Log Instance Anomaly Localization via Counterfactual Perturbation</a></p>
+<p><strong>Vertex-Softmax：实现 Transformer 注意力机制的精确验证</strong><br />
+论文证明了 Transformer 中 Softmax 函数的最优解可以通过线性复杂度的算法在约束框的顶点处获得。基于此发现，作者提出了 Vertex-Softmax 算子，这是目前能获得的基于分值区间最紧致的健全边界。该研究对于提升 Transformer 模型的形式化验证效率和安全性具有重要的理论意义。<br />
+原文：<a href="https://arxiv.org/abs/2605.10974">Vertex-Softmax: Tight Transformer Verification via Exact Softmax Optimization</a></p>
+<hr /></div>
+  </main>
+</body>
+</html>
