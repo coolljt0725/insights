@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OS 领域每日洞察 - 2026-05-15</title>
+  <style>
+    :root {
+      --bg: #f6f4f0;
+      --bg-bar: #ebe8e3;
+      --bg-card: #fffefb;
+      --bg-card-hover: #f5f3ef;
+      --text: #2d2a26;
+      --text-muted: #5c5852;
+      --text-dim: #7a756e;
+      --accent: #5a7a9e;
+      --border: #ddd9d2;
+      --radius: 10px;
+      --font: "Segoe UI", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      font-size: 15px;
+    }
+
+    /* 门户顶栏 */
+    .masthead {
+      background: var(--bg-bar);
+      border-bottom: 1px solid var(--border);
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 0;
+    }
+    .masthead-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .masthead h1 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin: 0;
+      letter-spacing: -0.02em;
+      color: var(--text);
+    }
+    .masthead .meta {
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+    }
+
+    /* 主内容区：多栏门户布局 */
+    .main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 3rem;
+    }
+
+    /* 板块：每个 h2 为一个频道块 */
+    .content .section {
+      margin-bottom: 2.5rem;
+    }
+    .content h2 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+      margin: 0 0 1rem;
+      padding: 0.6rem 1rem;
+      background: var(--bg-bar);
+      border-radius: var(--radius);
+      border-left: 4px solid var(--accent);
+    }
+    .content h2:first-child { margin-top: 0; }
+
+    .content h2:has(+ h3) {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      border-left-color: var(--text-dim);
+    }
+
+    /* 板块内卡片网格（每个 h2 后的 ul） */
+    .content h2 + ul {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1rem;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .content h2 + ul li {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.15rem 1.2rem;
+      transition: background .15s, border-color .15s;
+    }
+    .content h2 + ul li:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--text-dim);
+    }
+    .content h2 + ul li strong {
+      display: block;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+      line-height: 1.4;
+    }
+    .content h2 + ul li p {
+      margin: 0 0 0.5rem;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.58;
+    }
+    .content h2 + ul li p:last-of-type { margin-bottom: 0; }
+    .content h2 + ul li a[href^="http"] {
+      font-size: 0.8125rem;
+      color: var(--accent);
+    }
+    .content h2 + ul li a[href^="http"]:hover { text-decoration: underline; }
+
+    .content .ref-section {
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+    .content h2 + h3 { margin-top: 1.25rem; }
+    .content h3 {
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--text-dim);
+      margin: 1rem 0 0.4rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .content h3 + ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 0.25rem;
+    }
+    .content h3 + ul li {
+      background: transparent;
+      border: none;
+      padding: 0.2rem 0;
+      font-size: 0.8125rem;
+    }
+    .content h3 + ul li strong { font-size: inherit; margin-bottom: 0; }
+    .content h3 + ul li a { color: var(--accent); }
+    .content h3 + ul li a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <header class="masthead">
+    <div class="masthead-inner">
+      <h1>OS 领域每日洞察 - 2026-05-15</h1>
+      <span class="meta">2026-05-15 04:01 UTC</span>
+    </div>
+  </header>
+  <main class="main">
+    <div class="content"><h2>Linux 内核社区热点与趋势</h2>
+<p><strong>近期 Linux 内核连续曝出多个高危本地权限提升漏洞，安全形势严峻。</strong> 继 Dirty Frag 和 Fragnesia 之后，名为 <code>ssh-keysign-pwn</code> 的新漏洞（影响 5.10 及以上版本）被公开，该漏洞利用 <code>ptrace_may_access</code> 与 <code>pidfd_getfd</code> 的逻辑缺陷，允许非特权用户读取 root 拥有的文件。尽管 Greg Kroah-Hartman 发布了 7.0.7、6.18.30 和 6.12.88 等多个稳定版内核，但目前的更新尚未包含 Fragnesia 的补丁，社区正面临巨大的修复压力。<br />
+原文：<a href="https://github.com/0xdeadbeefnetwork/ssh-keysign-pwn">New Linux LPE, 5.10 and above (ptrace_may_access mm-NULL + pidfd_getfd)</a></p>
+<p><strong>2026 年 Linux 存储、文件系统、内存管理与 BPF 峰会（LSFMM+BPF）深入讨论了内存管理架构的革新。</strong> Chris Li 提出了“策略组（Policy Groups）”概念，旨在解决当前 Control Groups 在资源管理之外的局限性，特别是在复杂内存分配策略上的不足。同时，Lorenzo Stoakes 提出了“COW 上下文”方案，试图重构被视为“破碎抽象”的匿名页反向映射机制，以提升性能并降低代码复杂度。<br />
+原文：<a href="https://lwn.net/Articles/1072517/">Policy groups for memory management</a></p>
+<p><strong>Intel 与 AMD 在内核调度与硬件支持方面取得新进展。</strong> Intel 领导的“缓存感知调度（Cache Aware Scheduling）”补丁集在经过一年的测试后，因其在 Intel 和 AMD 处理器上显著的性能提升，正接近合并入主线内核。与此同时，AMD 正在为 Linux 7.2 内核准备 AIE4 NPU 硬件支持，并修复了 Linux 7.1 中动态 EPP（能源性能偏好）功能引发的初期问题。<br />
+原文：<a href="https://www.phoronix.com/news/Linux-Cache-Aware-Sched-Nears">Intel's Cache Aware Scheduling Inches Closer To Being Merged For Linux</a></p>
+<hr />
+<h2>业界大厂动向</h2>
+<p><strong>Red Hat 在 2026 年度峰会上强调了 AI 基础设施的统一性与主权。</strong> 红帽展示了其涵盖基础设施、数据主权与智能化的统一平台，旨在帮助企业在不绑定特定供应商的情况下快速部署 AI。此外，红帽宣布 2027 年峰会将回归波士顿，继续推动开源协作与企业级 AI 落地。<br />
+原文：<a href="https://www.redhat.com/en/blog/friday-five-may-15-2026-red-hat">Friday Five — May 15, 2026</a></p>
+<p><strong>AMD 持续优化开源软件栈，并承诺为旧款 GPU 提供硬件加速支持。</strong> 最新的 ROCm 7.2.3 版本在 Radeon AI PRO R9700 等显卡上展现了显著的性能飞跃。此外，AMD 宣布将原本为新架构设计的 FSR 4 上scaling 技术引入 RDNA2 和 RDNA3 等旧款 GPU，尽管这可能会带来一定的性能开销，但极大提升了旧硬件的生命周期。<br />
+原文：<a href="https://www.phoronix.com/review/amd-rocm7-723">ROCm 7.0.0 vs. ROCm 7.2.3 Performance On The AMD Radeon AI PRO R9700</a></p>
+<p><strong>Anthropic 披露其 AI 模型 Mythos 协助发现了苹果桌面操作系统中的多个漏洞。</strong> 这一案例展示了生成式 AI 在自动化漏洞挖掘领域的巨大潜力，AI 不再仅仅是辅助编程工具，正成为系统安全审计的核心力量。同时，Anthropic 也发布了关于 Claude Code 质量下降的复盘报告，指出推理降级和缓存 Bug 是导致用户投诉的主因。<br />
+原文：<a href="https://www.wsj.com/tech/ai/anthropics-mythos-helped-find-bugs-in-apples-desktop-operating-system-339da403">Anthropic's Mythos Helped Find Bugs in Apple's Desktop Operating System</a></p>
+<hr />
+<h2>云原生领域</h2>
+<p><strong>Kubernetes v1.36 版本发布，引入多项关键特性并移除不安全旧功能。</strong> 该版本正式弃用了 Service 的 <code>externalIPs</code> 字段，以彻底解决长期存在的 CVE-2020-8554 安全漏洞。在功能增强方面，卷组快照（Volume Group Snapshots）正式进入 GA 阶段，为多卷工作负载提供崩溃一致性的备份能力；同时，Pod 级资源管理器进入 Alpha 阶段，支持对高性能工作负载进行更精细的 NUMA 亲和性调度。<br />
+原文：<a href="https://kubernetes.io/blog/2026/05/14/kubernetes-v1-36-deprecation-and-removal-of-service-externalips/">Kubernetes v1.36: Deprecation and removal of Service ExternalIPs</a></p>
+<p><strong>Red Hat OpenShift AI 3.4 强化了“模型即服务（MaaS）”与自动化能力。</strong> 新版本引入了 AutoML 和 AutoRAG 技术预览版，旨在自动化 AI 生命周期的繁琐环节，降低企业构建高性能检索系统的门槛。通过与 Red Hat Connectivity Link 集成，企业可以更有效地治理和扩展生产环境中的 AI 模型服务。<br />
+原文：<a href="https://www.redhat.com/en/blog/scaling-enterprise-ai-delivering-models-service-openshift-ai-34">Scaling enterprise AI: Delivering Models-as-a-Service with Red Hat OpenShift AI 3.4</a></p>
+<p><strong>Pinterest 工程师通过排查“CPU 僵尸”进程解决了 Kubernetes 平台的性能瓶颈。</strong> 调查发现，一个未使用的 Amazon ECS 代理导致了内存 cgroup 泄漏，进而引发 CPU 饥饿，影响了机器学习训练任务。这一案例强调了在云原生环境中理解系统默认配置和底层资源隔离机制的重要性。<br />
+原文：<a href="https://www.infoq.com/news/2026/05/pinterest-cpu-zombies-bottleneck/">Pinterest Engineers Eliminate CPU Zombies to Resolve Production Bottlenecks</a></p>
+<hr />
+<h2>AI 领域</h2>
+<p><strong>AWS 发布一系列工具，旨在构建完整的 AI Agent 生态系统。</strong> 亚马逊宣布 MCP（模型上下文协议）服务器正式商用，允许 AI Agent 安全地访问所有 AWS 服务。此外，Amazon WorkSpaces 为 AI Agent 提供了专属桌面环境，使其能够像人类一样通过计算机视觉操作缺乏 API 的遗留桌面应用，极大地扩展了 Agent 的自动化边界。<br />
+原文：<a href="https://aws.amazon.com/blogs/aws/the-aws-mcp-server-is-now-generally-available/">The AWS MCP Server is now generally available</a></p>
+<p><strong>OpenAI 与 Anthropic 在移动端与计费模式上持续演进。</strong> OpenAI 将 Codex 模型引入 ChatGPT 移动应用，增强了移动端的编程辅助能力。Anthropic 则对其 Agent SDK 采取了独立的计费池模式，反映了 AI 行业正从简单的对话计费转向复杂的程序化、代理化任务计费。<br />
+原文：<a href="https://thenewstack.io/openai-codex-chatgpt-mobile/">OpenAI brings Codex to the ChatGPT mobile app</a></p>
+<p><strong>IBM 发布 Granite 多语言嵌入模型 R2，主打高效与长上下文。</strong> 该模型采用 Apache 2.0 协议开源，在 100M 以下参数级别中提供了顶级的检索质量，并支持高达 32K 的上下文长度。这为开发者在构建多语言 RAG（检索增强生成）系统时提供了一个高性能且低成本的底座。<br />
+原文：<a href="https://huggingface.co/blog/ibm-granite/granite-embedding-multilingual-r2">Granite Embedding Multilingual R2: Open Apache 2.0 Multilingual Embeddings with 32K Context</a></p>
+<hr />
+<h2>工业界最新动向</h2>
+<p><strong>高性能 JavaScript 运行时 Bun 完成了其核心的 Rust 重写并已合并。</strong> 这一重大架构调整旨在进一步提升 Bun 的性能与内存安全性，标志着该项目在挑战 Node.js 地位上迈出了关键一步。Rust 的引入预计将解决此前 Zig 实现中遇到的一些复杂并发与内存管理难题。<br />
+原文：<a href="https://www.reddit.com/r/rust/comments/1tcrmjs/rewrite_bun_in_rust_has_been_merged/">Bun's Rust rewrite has been merged</a></p>
+<p><strong>KDE Plasma 6.7 Beta 发布，重点回归“大屏模式（Big Screen）”。</strong> 该版本为电视等大尺寸显示器优化了 UI 体验，并引入了联合模块（Union Modules）等新特性。测试显示，新版大屏模式运行流畅，有望在下个月的正式版中为 Linux 桌面进入客厅市场提供强力支撑。<br />
+原文：<a href="https://www.phoronix.com/news/KDE-Plasma-6.7-Beta-Released">KDE Plasma 6.7 Beta Released With Plasma Big Screen</a></p>
+<p><strong>数据中心能耗需求与居民用电矛盾日益凸显。</strong> 在加州塔霍湖地区，能源供应商因优先保障内华达州数据中心的电力供应而引发当地居民不满。随着 AI 算力需求的激增，如何平衡工业发展与民生用电已成为科技产业必须面对的社会治理难题。<br />
+原文：<a href="https://arstechnica.com/ai/2026/05/energy-supplier-abandons-lake-tahoe-residents-to-serve-data-centers/">Energy supplier abandons Lake Tahoe residents to serve data centers</a></p>
+<hr />
+<h2>学术界最新研究</h2>
+<p><strong>SemaTune：利用大语言模型实现语义感知的在线操作系统调优。</strong> 来自 arXiv 的研究提出了一种名为 SemaTune 的框架，它将操作系统的配置参数、遥测数据和历史记录转化为决策上下文，利用 LLM 的推理能力进行动态调优。该方法克服了传统黑盒优化无法理解参数间逻辑结构的缺陷，显著提升了长周期服务的运行效率。<br />
+原文：<a href="https://arxiv.org/abs/2605.15026">SemaTune: Semantic-Aware Online OS Tuning with Large Language Models</a></p>
+<p><strong>EMA：面向学习型系统的高效模型自适应框架。</strong> 针对网络负载和运行目标不断变化的动态环境，EMA 系统支持学习型系统以极低的开销实现模型自适应。相比于传统的重新训练，EMA 能够快速响应环境漂移，减少数据采集需求，确保系统在异构长周期运行中的性能稳定性。<br />
+原文：<a href="https://arxiv.org/abs/2605.13942">EMA: Efficient Model Adaptation for Learning-based Systems</a></p>
+<p><strong>HodgeCover：利用高阶拓扑覆盖驱动稀疏混合专家模型（MoE）的压缩。</strong> 研究发现，现有的 MoE 压缩算法往往忽略了专家之间的三元兼容性，导致合并时出现结构性障碍。该论文引入了单纯复形拉普拉斯算子的调和核概念，通过 Hodge 分解精确识别可合并的专家组，在不损失精度的情况下大幅降低了推理成本。<br />
+原文：<a href="https://arxiv.org/abs/2605.13997">HodgeCover: Higher-Order Topological Coverage Drives Compression of Sparse Mixture-of-Experts</a></p>
+<hr /></div>
+  </main>
+</body>
+</html>
