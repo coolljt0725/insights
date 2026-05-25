@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OS 领域每日洞察 - 2026-05-25</title>
+  <style>
+    :root {
+      --bg: #f6f4f0;
+      --bg-bar: #ebe8e3;
+      --bg-card: #fffefb;
+      --bg-card-hover: #f5f3ef;
+      --text: #2d2a26;
+      --text-muted: #5c5852;
+      --text-dim: #7a756e;
+      --accent: #5a7a9e;
+      --border: #ddd9d2;
+      --radius: 10px;
+      --font: "Segoe UI", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      font-size: 15px;
+    }
+
+    /* 门户顶栏 */
+    .masthead {
+      background: var(--bg-bar);
+      border-bottom: 1px solid var(--border);
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 0;
+    }
+    .masthead-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .masthead h1 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin: 0;
+      letter-spacing: -0.02em;
+      color: var(--text);
+    }
+    .masthead .meta {
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+    }
+
+    /* 主内容区：多栏门户布局 */
+    .main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 3rem;
+    }
+
+    /* 板块：每个 h2 为一个频道块 */
+    .content .section {
+      margin-bottom: 2.5rem;
+    }
+    .content h2 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+      margin: 0 0 1rem;
+      padding: 0.6rem 1rem;
+      background: var(--bg-bar);
+      border-radius: var(--radius);
+      border-left: 4px solid var(--accent);
+    }
+    .content h2:first-child { margin-top: 0; }
+
+    .content h2:has(+ h3) {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      border-left-color: var(--text-dim);
+    }
+
+    /* 板块内卡片网格（每个 h2 后的 ul） */
+    .content h2 + ul {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1rem;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .content h2 + ul li {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.15rem 1.2rem;
+      transition: background .15s, border-color .15s;
+    }
+    .content h2 + ul li:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--text-dim);
+    }
+    .content h2 + ul li strong {
+      display: block;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+      line-height: 1.4;
+    }
+    .content h2 + ul li p {
+      margin: 0 0 0.5rem;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.58;
+    }
+    .content h2 + ul li p:last-of-type { margin-bottom: 0; }
+    .content h2 + ul li a[href^="http"] {
+      font-size: 0.8125rem;
+      color: var(--accent);
+    }
+    .content h2 + ul li a[href^="http"]:hover { text-decoration: underline; }
+
+    .content .ref-section {
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+    .content h2 + h3 { margin-top: 1.25rem; }
+    .content h3 {
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--text-dim);
+      margin: 1rem 0 0.4rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .content h3 + ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 0.25rem;
+    }
+    .content h3 + ul li {
+      background: transparent;
+      border: none;
+      padding: 0.2rem 0;
+      font-size: 0.8125rem;
+    }
+    .content h3 + ul li strong { font-size: inherit; margin-bottom: 0; }
+    .content h3 + ul li a { color: var(--accent); }
+    .content h3 + ul li a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <header class="masthead">
+    <div class="masthead-inner">
+      <h1>OS 领域每日洞察 - 2026-05-25</h1>
+      <span class="meta">2026-05-25 04:00 UTC</span>
+    </div>
+  </header>
+  <main class="main">
+    <div class="content"><h2>Linux 内核社区热点与趋势</h2>
+<p><strong>Linux 7.1-rc5 发布，Linus Torvalds 批评琐碎补丁过多</strong><br />
+Linus Torvalds 发布了 Linux 7.1 的第五个候选版本，但他对当前合并的大量琐碎驱动补丁表示不满。他认为在发布周期的后期（rc5 阶段），社区应专注于修复回归错误，而非合并那些无关紧要的长期问题修复，并表示未来将对这类代码变动采取更严格的审查态度。<br />
+原文：<a href="https://lwn.net/Articles/1074172/">Kernel prepatch 7.1-rc5</a></p>
+<p><strong>AI 编程助手在 Linux 内核补丁中的贡献显著增加</strong><br />
+本周 Linux 7.1-rc5 的更新中包含了一大批由 Claude Code 和 GitHub Copilot 等 AI 代理生成或协作编写的补丁。这些补丁主要涉及图形驱动和 WiFi 驱动的修复，显示出 AI 工具在处理内核底层代码和驱动维护方面的应用正日益深入。<br />
+原文：<a href="https://www.phoronix.com/news/Linux-7.1-rc5-AI-This-Week">GitHub Copilot &amp; Claude Code Helped With Graphics, WiFi Linux Driver Issues This Week</a></p>
+<p><strong>Linux 7.2 计划移除过时的 ISA 语音合成器驱动</strong><br />
+继移除 Intel 486 支持后，Linux 内核计划在 7.2 版本中进一步清理陈旧硬件支持，首当其冲的是已数十年无人使用的 ISA 接口语音合成器驱动。此举旨在减轻内核的长期维护负担，移除那些既无活跃用户也无正式维护者的冗余代码。<br />
+原文：<a href="https://www.phoronix.com/news/Linux-Dropping-Double-Talk">Linux To Remove ISA Speech Synthesizer Driver That Likely Hasn't Been Used In Decades</a></p>
+<p><strong>KernelScript：一种用于内核定制的新型领域特定语言</strong><br />
+Multikernel Technologies 公司正在开发名为 KernelScript 的编程语言，专门用于 Linux 内核的定制和针对特定应用的优化。该语言旨在简化内核功能的扩展流程，为开发者提供一种更高效、更安全的方式来调整系统行为。<br />
+原文：<a href="https://www.phoronix.com/news/KernelScript">KernelScript: A Programming Language For Kernel Customization &amp; App Optimizations</a></p>
+<p><strong>Linux 内核本地提权漏洞 CVE-2026-46333 预警</strong><br />
+Qualys 研究团队披露了一个存在于 Linux 内核 ptrace 路径中的本地提权漏洞。攻击者可以利用该漏洞获取 root 权限并泄露敏感凭据，目前相关社区已在紧急推动补丁修复，建议系统管理员关注更新。<br />
+原文：<a href="https://blog.qualys.com/vulnerabilities-threat-research/2026/05/20/cve-2026-46333-local-root-privilege-escalation-and-credential-disclosure-in-the-linux-kernel-ptrace-path">Local Root Privilege Escalation and Credential Disclosure in the Linux Kernel</a></p>
+<h2>业界大厂动向</h2>
+<p><strong>Google I/O 2026 汇总：发布 100 项 AI 相关更新</strong><br />
+在 Google I/O 2026 大会上，Google 展示了其在 AI 领域的全面布局，包括 Gemini 模型的最新进展及其在搜索、办公协作和 Android 系统中的深度集成。公司强调了 AI 代理（Agents）在提升生产力方面的核心地位，并发布了多项针对开发者的工具更新。<br />
+原文：<a href="https://blog.google/innovation-and-ai/technology/ai/google-io-2026-all-our-announcements/">100 things we announced at I/O 2026</a></p>
+<p><strong>AWS 推出托管型 MCP 服务器，强化 AI 代理的 API 访问安全</strong><br />
+AWS 宣布其托管的模型上下文协议（MCP）服务器正式商用，为 AI 编码代理提供了一种标准化的接口来访问 AWS API 和文档。该服务通过 IAM 权限控制和审计功能，确保 AI 代理在执行操作时不会获得过宽的凭据，提升了企业级 AI 应用的安全性。<br />
+原文：<a href="https://www.infoq.com/news/2026/05/aws-mcp-ga/">AWS MCP Server Reaches GA with Full API Coverage and IAM-Based Governance</a></p>
+<p><strong>Google BigQuery 引入跨引擎 Iceberg 支持</strong><br />
+Google 宣布在 BigQuery 中推出服务器端 Apache Iceberg REST 目录预览版，实现了与 Spark、Flink 和 Trino 等引擎的互操作性。这意味着团队可以在不重复存储数据的情况下，跨多个计算引擎创建、更新和查询同一份 Iceberg 表，极大提升了数据湖仓的效率。<br />
+原文：<a href="https://www.infoq.com/news/2026/05/google-cross-engine-iceberg/">Google Cloud Introduces Cross-Engine Iceberg Support in BigQuery</a></p>
+<p><strong>OpenJDK 27 动态：Vector API 与紧凑对象头进入目标阶段</strong><br />
+OpenJDK 社区近期对 JDK 27 的开发计划进行了密集更新，Vector API 和紧凑对象头（Compact Object Headers）等重要特性已正式进入目标阶段。此外，G1 垃圾回收器被提议作为 JDK 27 的默认配置，旨在进一步优化 Java 应用的内存占用和执行性能。<br />
+原文：<a href="https://www.infoq.com/news/2026/05/jdk-news-roundup-may18-2026/">OpenJDK News Roundup: Vector API, Compact Object Headers and G1GC as Default in JDK 27</a></p>
+<h2>云原生领域</h2>
+<p><strong>Kubernetes v1.36 引入服务端分片 List/Watch 机制</strong><br />
+随着集群规模扩展至数万节点，传统的客户端过滤模式已成为 API Server 的性能瓶颈。Kubernetes v1.36 引入了服务端分片 List/Watch（Alpha 阶段），允许 API Server 在源头过滤事件，使每个控制器副本仅接收其负责的数据切片，显著降低了网络和 CPU 开销。<br />
+原文：<a href="https://kubernetes.io/blog/2026/05/06/kubernetes-v1-36-server-side-sharded-list-and-watch/">Kubernetes v1.36: Server-Side Sharded List and Watch</a></p>
+<p><strong>Kubernetes v1.36 推进 Pod 级资源原地垂直伸缩至 Beta 阶段</strong><br />
+该特性允许用户在不重启容器的情况下，动态调整运行中 Pod 的总资源预算。这对于包含 Sidecar 容器的复杂 Pod 尤为重要，能够实现容器间资源池的灵活共享，目前该功能已在 v1.36 中默认开启。<br />
+原文：<a href="https://kubernetes.io/blog/2026/04/30/kubernetes-v1-36-inplace-pod-level-resources-beta/">Kubernetes v1.36: In-Place Vertical Scaling for Pod-Level Resources Graduates to Beta</a></p>
+<p><strong>Jaeger 通过 ClickHouse 存储实现 8.6 倍数据压缩</strong><br />
+分布式链路追踪系统 Jaeger 的维护者分享了引入 ClickHouse 作为存储后端的实践经验。在大规模生产环境下，ClickHouse 成功实现了对 1000 万个 Span 的高效存储，并达到了 8.6 倍的压缩比，大幅降低了可观测性数据的存储成本。<br />
+原文：<a href="https://thenewstack.io/jaeger-clickhouse-storage-backend/">How Jaeger hit 8.6× compression on 10 million spans with ClickHouse</a></p>
+<p><strong>CNCF 欢迎 CVS Health 作为白金会员加入</strong><br />
+医疗巨头 CVS Health 正式加入云原生计算基金会（CNCF）担任白金会员，旨在通过云原生技术推动医疗服务的现代化和安全性。此举标志着云原生技术在受监管严格的传统行业中得到了更广泛的认可和应用。<br />
+原文：<a href="https://www.cncf.io/announcements/2026/05/18/cncf-welcomes-cvs-health-as-a-platinum-member-to-expand-cloud-native-collaboration/">CNCF Welcomes CVS Health as a Platinum Member To Expand Cloud Native Collaboration</a></p>
+<h2>AI 领域</h2>
+<p><strong>Google 为 Genkit 推出中间件架构，增强 AI 应用拦截能力</strong><br />
+Google 在其 AI 应用开发框架 Genkit 中引入了中间件层，允许开发者在模型调用、工具执行和生成循环中插入自定义逻辑。这一更新为生产环境中的 AI 系统提供了更强的可靠性、安全性和编排控制能力。<br />
+原文：<a href="https://www.infoq.com/news/2026/05/google-genkit-middleware/">Google Introduces Middleware Architecture for Genkit Applications</a></p>
+<p><strong>AWS 发布开源脚本运行时 Rex，强化 AI 代理安全策略</strong><br />
+AWS 宣布推出 Trusted Remote Execution (Rex)，这是一个基于 Rhai 语言的开源脚本运行时，所有系统操作都必须经过 Cedar 策略授权。Rex 为 AI 代理和人类用户提供了一个受限的执行环境，防止脚本越权访问宿主机资源。<br />
+原文：<a href="https://aws.amazon.com/blogs/opensource/introducing-trusted-remote-execution-policy-enforced-scripts-for-ai-agents-and-humans/">Introducing Trusted Remote Execution: Policy-Enforced Scripts for AI Agents and Humans</a></p>
+<p><strong>业界探讨 AI 代理的能效衡量指标：每成功目标消耗能量 (EpG)</strong><br />
+随着 AI 代理从单次调用转向多步协作，传统的单次推理能耗指标已无法准确反映成本。新提出的 A-LEMS 框架建议以“每成功完成一个目标”的能耗作为衡量标准，将重试、工具调用和故障恢复的成本全部纳入考量。<br />
+原文：<a href="https://arxiv.org/abs/2605.22883">Energy per Successful Goal: Goal-Level Energy Accounting for Agentic AI Systems</a></p>
+<h2>工业界最新动向</h2>
+<p><strong>AMD Vivado 2026.1 免费版将停止支持 Linux 平台</strong><br />
+AMD 宣布其 FPGA 开发工具 Vivado 2026.1 的基础版（免费版）将不再支持 Linux 平台，仅保留 Windows 支持。这一决定在开发者社区引发了强烈反响，许多依赖 Linux 环境进行硬件开发的工程师对此表示担忧。<br />
+原文：<a href="https://www.amd.com/en/products/software/adaptive-socs-and-fpgas/vivado/vivado-licensing-options.html">No Linux support on free version of Vivado 2026.1</a></p>
+<p><strong>Flatpak 宣布未来将依赖 systemd</strong><br />
+流行的 Linux 应用打包格式 Flatpak 确认其后续版本将把 systemd 作为硬性依赖。这一变动意味着在不使用 systemd 的 Linux 发行版（如 Alpine 或某些精简版）上运行 Flatpak 将变得更加困难，引发了关于 Linux 生态多样性的讨论。<br />
+原文：<a href="https://www.osnews.com/story/145071/flatpak-will-depend-on-systemd/">Flatpak will depend on systemd</a></p>
+<p><strong>Boot-Time Wizard 工具助力嵌入式 Linux 优化启动速度</strong><br />
+针对嵌入式领域对快速启动的严苛要求，新推出的 Boot-Time Wizard 工具旨在帮助开发者识别和消除启动过程中的瓶颈。该工具通过可视化分析和自动化建议，协助厂商在资源受限的硬件上实现更短的系统就绪时间。<br />
+原文：<a href="https://www.phoronix.com/news/Boot-Time-Wizard-Linux">Boot-Time Wizard Aims To Help Reduce Linux Boot Times</a></p>
+<p><strong>FreeBSD 基金会执行董事尝试将 FreeBSD 作为笔记本主力系统</strong><br />
+为了改善 FreeBSD 在移动设备上的用户体验，FreeBSD 基金会执行董事近期开始尝试在笔记本电脑上日常使用该系统。此举旨在推动 FreeBSD 在硬件兼容性、电源管理以及 KDE 桌面环境方面的持续优化。<br />
+原文：<a href="https://www.phoronix.com/news/FreeBSD-On-Laptop-Driver">FreeBSD Foundation Executive Director Tries Daily Driving FreeBSD On Laptop</a></p>
+<h2>学术界最新研究</h2>
+<p><strong>Latent Cache Flow：无需文本的模型间高效通信</strong><br />
+研究人员提出了一种名为 LCF 的新方法，允许 LLM 代理之间直接交换压缩后的 KV 缓存，而无需经过繁琐的文本编解码过程。该方法通过联合翻译和压缩技术，显著降低了通信延迟并减少了信息损失，适用于上下文不同的多代理协作场景。<br />
+原文：<a href="https://arxiv.org/abs/2605.22863">Latent Cache Flow: Model-to-Model Communication Without Text</a></p>
+<p><strong>The Deterministic Horizon：架构决定的推理能力上限</strong><br />
+该研究通过对 12 种 Transformer 架构的分析，证明了模型存在一个由层数和嵌入宽度决定的“确定性地平线”。一旦推理深度超过此限度，无论增加多少训练数据或微调参数，模型的准确率都无法进一步提升，这为可信 AI 系统的设计提供了重要参考。<br />
+原文：<a href="https://arxiv.org/abs/2605.23024">The Deterministic Horizon: Impossibility Results as Design Specifications for Trustworthy AI Systems</a></p>
+<p><strong>ManiF-SMC：基于流形表示遗忘的机器卸载框架</strong><br />
+为了落实“被遗忘权”，研究者提出了 ManiF-SMC 框架，通过自模式连接引导模型遗忘特定数据。该方法通过将待删除样本的表示推向保留数据的语义边界，实现了比传统标签操纵更有效的卸载效果，且不损害模型的原始性能。<br />
+原文：<a href="https://arxiv.org/abs/2605.22871">Approximate Machine Unlearning through Manifold Representation Forgetting Guided by Self Mode Connectivity</a></p>
+<p><strong>NeuroNL2LTL：自然语言到线性时序逻辑的神经符号翻译</strong><br />
+该论文介绍了一个名为 NeuroNL2LTL 的框架，旨在将自然语言需求精确翻译为形式化的 LTL 逻辑。通过结合神经翻译的流畅性和符号验证的严谨性，该系统能够自动纠正翻译中的逻辑错误，降低了形式化验证在安全关键系统中的使用门槛。<br />
+原文：<a href="https://arxiv.org/abs/2605.22874">NeuroNL2LTL: A Neurosymbolic Framework for Natural Language Translation of Linear Temporal Logic</a></p>
+<hr /></div>
+  </main>
+</body>
+</html>
