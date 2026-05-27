@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OS 领域每日洞察 - 2026-05-27</title>
+  <style>
+    :root {
+      --bg: #f6f4f0;
+      --bg-bar: #ebe8e3;
+      --bg-card: #fffefb;
+      --bg-card-hover: #f5f3ef;
+      --text: #2d2a26;
+      --text-muted: #5c5852;
+      --text-dim: #7a756e;
+      --accent: #5a7a9e;
+      --border: #ddd9d2;
+      --radius: 10px;
+      --font: "Segoe UI", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      font-size: 15px;
+    }
+
+    /* 门户顶栏 */
+    .masthead {
+      background: var(--bg-bar);
+      border-bottom: 1px solid var(--border);
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 0;
+    }
+    .masthead-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .masthead h1 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin: 0;
+      letter-spacing: -0.02em;
+      color: var(--text);
+    }
+    .masthead .meta {
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+    }
+
+    /* 主内容区：多栏门户布局 */
+    .main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 3rem;
+    }
+
+    /* 板块：每个 h2 为一个频道块 */
+    .content .section {
+      margin-bottom: 2.5rem;
+    }
+    .content h2 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+      margin: 0 0 1rem;
+      padding: 0.6rem 1rem;
+      background: var(--bg-bar);
+      border-radius: var(--radius);
+      border-left: 4px solid var(--accent);
+    }
+    .content h2:first-child { margin-top: 0; }
+
+    .content h2:has(+ h3) {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      border-left-color: var(--text-dim);
+    }
+
+    /* 板块内卡片网格（每个 h2 后的 ul） */
+    .content h2 + ul {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1rem;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .content h2 + ul li {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.15rem 1.2rem;
+      transition: background .15s, border-color .15s;
+    }
+    .content h2 + ul li:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--text-dim);
+    }
+    .content h2 + ul li strong {
+      display: block;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+      line-height: 1.4;
+    }
+    .content h2 + ul li p {
+      margin: 0 0 0.5rem;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.58;
+    }
+    .content h2 + ul li p:last-of-type { margin-bottom: 0; }
+    .content h2 + ul li a[href^="http"] {
+      font-size: 0.8125rem;
+      color: var(--accent);
+    }
+    .content h2 + ul li a[href^="http"]:hover { text-decoration: underline; }
+
+    .content .ref-section {
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+    .content h2 + h3 { margin-top: 1.25rem; }
+    .content h3 {
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--text-dim);
+      margin: 1rem 0 0.4rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .content h3 + ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 0.25rem;
+    }
+    .content h3 + ul li {
+      background: transparent;
+      border: none;
+      padding: 0.2rem 0;
+      font-size: 0.8125rem;
+    }
+    .content h3 + ul li strong { font-size: inherit; margin-bottom: 0; }
+    .content h3 + ul li a { color: var(--accent); }
+    .content h3 + ul li a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <header class="masthead">
+    <div class="masthead-inner">
+      <h1>OS 领域每日洞察 - 2026-05-27</h1>
+      <span class="meta">2026-05-27 04:01 UTC</span>
+    </div>
+  </header>
+  <main class="main">
+    <div class="content"><h2>Linux 内核社区热点与趋势</h2>
+<p><strong>Linux 内存管理峰会探讨透明大页（THP）优化</strong><br />
+在 2026 年 Linux 存储、文件系统、内存管理与 BPF 峰会上，开发者 Nico Pache 介绍了改进透明大页（THP）自动管理的研究，旨在降低应用使用大页的门槛。随后 David Hildenbrand 领导的会议则讨论了如何从利用率不高的进程中回收 THP，以平衡性能提升与内存开销。这些讨论反映了内核社区在提升 TLB 利用率和减少内存管理开销方面的持续努力。<br />
+原文：<a href="https://lwn.net/Articles/1073407/">Better automatic management of transparent huge pages</a></p>
+<p><strong>Btrfs 文件系统准备在 Linux 7.2 中支持 Huge Folios</strong><br />
+经过多个内核周期的实验，Btrfs 文件系统正准备在即将到来的 Linux 7.2 中正式引入对 Huge Folios 的支持。这一改进旨在利用现代内核的内存管理特性，提升大文件处理性能并减少元数据操作开销。这标志着 Btrfs 在现代化内存管理适配方面迈出了重要一步。<br />
+原文：<a href="https://www.phoronix.com/news/Btrfs-Huge-Folios-Linux-7.2">Btrfs Preps Huge Folios Support Ahead Of Linux 7.2</a></p>
+<p><strong>谷歌专家提交后量子加密算法 ML-KEM 与 X-Wing 补丁</strong><br />
+来自谷歌的 Linux 加密专家 Eric Biggers 提交了一组概念验证补丁，为内核引入了 ML-KEM 和 X-Wing 等后量子加密（PQC）算法。随着量子计算威胁的临近，这些补丁旨在为 Linux 内核提供抵御未来量子攻击的安全基础。这显示了主流厂商在基础设施安全前瞻性布局上的紧迫感。<br />
+原文：<a href="https://www.phoronix.com/news/Linux-PoC-ML-KEM-X-Wing">ML-KEM + X-Wing Patches Posted For Linux To Help With Post-Quantum Security</a></p>
+<p><strong>Curl 维护者感叹安全报告压力达到历史巅峰</strong><br />
+Curl 创始人 Daniel Stenberg 发文表示，当前项目面临前所未有的安全报告压力，单次发布周期内已确认 12 个漏洞，创下历史纪录。他指出，这种压力不仅是工作量上的，更是心理上的，因为维护者对全球数十亿设备的安全负有责任感。社区正面临如何在保持开源热情的同时处理海量高优先级安全任务的严峻挑战。<br />
+原文：<a href="https://lwn.net/Articles/1074449/">Stenberg: The pressure</a></p>
+<p><strong>社区提议使用 asciinema 录屏作为开源贡献的“人类证明”</strong><br />
+针对 AI 生成代码泛滥的问题，Dillo 浏览器维护者 Rodrigo Arias Mallo 建议要求新贡献者使用 asciinema 记录编程过程。他认为，虽然 LLM 可以生成补丁，但模拟人类思考、犯错并修正的动态过程对目前的 AI 来说仍较困难。这一提议引发了关于如何在高效率开发与确保贡献真实性之间取得平衡的讨论。<br />
+原文：<a href="https://lwn.net/Articles/1074534/">Arias: Human proof for FOSS contributions</a></p>
+<hr />
+<h2>业界大厂动向</h2>
+<p><strong>NVIDIA Vera 数据中心 CPU 跑分曝光：ARM 架构性能新标杆</strong><br />
+NVIDIA 专为智能体 AI（Agentic AI）设计的 ARM 架构 CPU "Vera" 的早期基准测试结果显示，其 Olympus 核心在 Linux 环境下表现强劲。其性能在多个维度上展现出足以与 Intel 和 AMD 顶级 x86_64 处理器竞争的实力，这在以往的 ARM 处理器中非常罕见。该芯片预计于今年晚些时候大规模量产，将进一步强化 NVIDIA 在 AI 基础设施领域的统治地位。<br />
+原文：<a href="https://www.phoronix.com/review/nvidia-vera-benchmarks">NVIDIA Vera CPU Benchmarks: Olympus Cores Delivering The Best Performance Ever Seen On ARM</a></p>
+<p><strong>Red Hat 发布 RHEL 10.2 与 9.8，引入智能演进与量子防御</strong><br />
+红帽正式发布了 RHEL 10.2 和 9.8 版本，将其定位为支撑关键应用和 AI 创新的“强大引擎”。新版本不仅简化了混合云管理，还引入了针对量子计算风险的主动防御机制。此外，红帽还推出了“密封镜像”（Sealed Images）技术，将系统完整性校验从启动阶段延伸至运行阶段，确保边缘和数据中心环境的安全。<br />
+原文：<a href="https://www.redhat.com/en/blog/rhel-102-and-98-intelligent-evolution-enterprise-linux">Red Hat Enterprise Linux 10.2 and 9.8 are here: The intelligent evolution of enterprise Linux</a></p>
+<p><strong>Intel 为 Linux 开发 pmtctl 工具以处理平台遥测数据</strong><br />
+Intel 向内核邮件列表提交了 17 个补丁，旨在引入名为 <code>pmtctl</code> 的新工具，用于与 Intel 平台监控技术（PMT）进行交互。该工具允许管理员更方便地获取硬件底层的遥测数据，对于大规模数据中心的设备健康监控和性能调优具有重要意义。目前该工具已集成在内核源码树中进行审核。<br />
+原文：<a href="https://www.phoronix.com/news/Intel-pmtctl-Tool">Intel Working On pmtctl Tool For Linux In Dealing With Platform Telemetry Data</a></p>
+<p><strong>Meta 重启 CacheLib 开源项目以应对高昂的 DRAM 成本</strong><br />
+在沉寂两年后，Meta（原 Facebook）发布了 CacheLib 缓存引擎的新版本。由于 AI 浪潮导致 DRAM 价格飙升，Meta 重新启用了这一利用非易失性存储（NVM）来抵消内存成本的技术。CacheLib 的更新旨在帮助企业在不牺牲性能的前提下，通过更高效的混合存储架构降低大规模服务的运行成本。<br />
+原文：<a href="https://www.phoronix.com/news/CacheLib-2026.05.25">Meta's CacheLib Sees New Release After Two Year Hiatus For Helping With High DRAM Prices</a></p>
+<p><strong>谷歌 ANGLE 合并 Wayland 支持，加速 Chromium 嵌入式框架适配</strong><br />
+谷歌的 ANGLE 层（用于将 OpenGL ES 调用转换为底层图形 API）现已正式合并 Wayland 支持。这一改动解决了 Chromium 嵌入式框架（CEF）在现代 Linux 桌面环境下的原生显示问题。这意味着基于 CEF 的应用（如各类桌面客户端）将很快能在 Wayland 下享受更流畅、更低延迟的图形性能。<br />
+原文：<a href="https://www.phoronix.com/news/ANGLE-Merges-Wayland">Google's ANGLE Merges Wayland Support, Unblocking Chromium Embedded Framework On Wayland</a></p>
+<hr />
+<h2>云原生领域</h2>
+<p><strong>Kubernetes v1.36 引入 Pod 级资源管理器 Alpha 特性</strong><br />
+Kubernetes v1.36 引入了 Pod 级资源管理器，将资源分配模型从容器级别演进到 Pod 级别。这一特性对于机器学习训练、高频交易等对性能敏感的负载至关重要，因为它允许跨容器的 NUMA 对齐和独占资源分配。这解决了现代 Pod 中多个容器（如 Sidecar）竞争资源导致的性能不可预测问题。<br />
+原文：<a href="https://kubernetes.io/blog/2026/05/01/kubernetes-v1-36-feature-pod-level-resource-managers-alpha/">Kubernetes v1.36: Pod-Level Resource Managers (Alpha)</a></p>
+<p><strong>etcd v3.7.0 首个测试版发布，引入 RangeStream 特性</strong><br />
+SIG-Etcd 宣布 etcd v3.7.0-beta.0 可用，这是 Kubernetes 核心存储组件的重要更新。新版本引入了备受期待的 RangeStream 功能，显著提升了处理大规模查询结果集的效率和可靠性。此外，该版本还进行了大量的代码重构，旨在提高分布式数据库的安全性和运维稳定性。<br />
+原文：<a href="https://kubernetes.io/blog/2026/05/20/etcd-370-beta/">Announcing etcd 3.7.0-beta.0</a></p>
+<p><strong>Jaeger 演进支持通过 OpenTelemetry 追踪 AI 智能体</strong><br />
+随着软件架构向 AI 驱动演进，分布式追踪工具 Jaeger 正在适配 OpenTelemetry 以支持对 AI 智能体（AI Agents）的追踪。这一变化旨在帮助工程师理解 AI 智能体在复杂微服务环境中的决策路径和交互过程。通过这种方式，可观测性工具正从传统的请求追踪转向对自主逻辑流的深度洞察。<br />
+原文：<a href="https://www.cncf.io/blog/2026/05/26/how-jaeger-is-evolving-to-trace-ai-agents-with-opentelemetry/">How Jaeger is evolving to trace AI agents with OpenTelemetry</a></p>
+<p><strong>Kubernetes v1.36 将卷组快照（Volume Group Snapshots）推向 GA</strong><br />
+Kubernetes 宣布卷组快照功能在 v1.36 中正式达到通用可用（GA）阶段。该功能允许用户对一组相关的持久卷（PV）进行崩溃一致性（Crash-consistent）的快照操作，这对于多卷数据库的备份与恢复至关重要。目前该特性仅支持 CSI 驱动，标志着 Kubernetes 存储编排能力的进一步成熟。<br />
+原文：<a href="https://kubernetes.io/blog/2026/05/08/kubernetes-v1-36-volume-group-snapshot-ga/">Kubernetes v1.36: Moving Volume Group Snapshots to GA</a></p>
+<p><strong>Cloudflare 发布 Workflows V2，支持 5 万并发工作流</strong><br />
+Cloudflare 推出了重新设计的分布式工作流编排系统 Workflows V2，支持确定性重放执行。新版本大幅提升了扩展能力，可支持 5 万个并发实例和 200 万个队列任务，特别针对 AI 智能体和数据流水线进行了优化。这一发布增强了边缘计算环境处理复杂异步任务的可靠性。<br />
+原文：<a href="https://www.infoq.com/news/2026/05/cloudflare-workflows-v2-release/">Cloudflare Introduces Workflows V2 with Deterministic Execution and 50K Concurrent Workflows</a></p>
+<hr />
+<h2>AI 领域</h2>
+<p><strong>Anthropic Claude 平台正式登陆 AWS 托管服务</strong><br />
+Anthropic 宣布 Claude 平台在 AWS 上正式商用，AWS 客户现在可以直接使用其原生的身份验证、计费和监控服务来访问 Claude 模型。这一合作进一步模糊了模型厂商与云基础设施供应商的界限，为企业提供了更合规、更集成的 AI 部署选项。<br />
+原文：<a href="https://www.infoq.com/news/2026/05/anthropic-claude-aws/">Anthropic Launches Claude Platform on AWS</a></p>
+<p><strong>Hugging Face 发布开源 3D 打印双足机器人项目</strong><br />
+Hugging Face 首次推出了一个价值 2500 美元的开源机器人项目，包含可 3D 打印的人形机器人腿部设计。该项目旨在降低机器人研究的门槛，让开发者能够结合 AI 模型进行物理环境下的运动控制实验。这标志着 AI 社区正从纯软件领域向具身智能硬件领域快速扩张。<br />
+原文：<a href="https://arstechnica.com/ai/2026/05/3d-printable-humanoid-legs-let-robotics-experiments-run-wild/">3D-printable humanoid legs let robotics experiments run wild</a></p>
+<p><strong>Starlette 框架曝出严重漏洞，数百万 AI 智能体面临风险</strong><br />
+在每周下载量达 3.25 亿次的 Python 库 Starlette 中发现了名为 "BadHost" 的关键漏洞。由于许多 AI 智能体和 LLM 应用依赖该框架构建 API，该漏洞可能导致严重的远程攻击。安全专家警告开发者尽快更新，以防止自主运行的 AI 智能体被恶意接管。<br />
+原文：<a href="https://arstechnica.com/information-technology/2026/05/millions-of-ai-agents-imperiled-by-critical-vulnerability-in-open-source-package/">Millions of AI agents imperiled by critical vulnerability in open source package</a></p>
+<p><strong>Typerion 推出面向 AI 时代的“结构化操作系统”</strong><br />
+Typerion 提出了一个全新的操作系统概念，旨在将结构化观察、人类规范化和受限的 AI 演进集成到统一的运行时中。该系统试图解决 AI 在传统 OS 中难以受控的问题，通过“收敛验证”确保 AI 的行为符合系统预期。这代表了操作系统架构在 AI 原生时代的一种激进探索。<br />
+原文：<a href="https://typerion.io">Show HN: The Structural Operating System for the AI Era</a></p>
+<p><strong>多项 AI 智能体基准测试发布：关注长期可靠性与任务对齐</strong><br />
+今日学术界发布了多项针对 AI 智能体的评估框架，包括关注智能体长期运行可靠性的 AgingBench、评估业务流一致性的 Anchor，以及衡量智能体与人类意图对齐的 JobBench。这些工具的出现表明，AI 评估正从简单的问答转向复杂的、长周期的真实业务场景模拟。<br />
+原文：<a href="https://arxiv.org/abs/2605.26302">Your Agents Are Aging Too: Agent Lifespan Engineering</a> | <a href="https://arxiv.org/abs/2605.26329">JobBench: Aligning Agent Work With Human Will</a></p>
+<hr />
+<h2>工业界最新动向</h2>
+<p><strong>AlmaLinux 10.2 发布，提供社区驱动的 RHEL 10.2 体验</strong><br />
+AlmaLinux 项目宣布发布 10.2 版本，继续作为 RHEL 的社区替代方案提供稳定的企业级 Linux 体验。在红帽改变源代码访问策略后，AlmaLinux 通过与上游保持 ABI 兼容，赢得了大量寻求 CentOS 替代者的企业用户。此次更新同步了 RHEL 10.2 的核心改进，进一步巩固了其在企业 Linux 生态中的地位。<br />
+原文：<a href="https://www.phoronix.com/news/AlmaLinux-10.2-Released">AlmaLinux 10.2 Released For Latest Community-Driven RHEL 10.2 Experience</a></p>
+<p><strong>ReactOS 实现对 ARM64 架构的实验性支持</strong><br />
+旨在实现 Windows 二进制兼容的开源项目 ReactOS 现已初步支持 64 位 ARM 架构。虽然目前仍处于实验阶段，但这为在 ARM 设备（如树莓派或骁龙笔记本）上运行旧版 Windows 应用提供了可能性。这对于工业控制和老旧软件维护领域具有潜在的商业价值。<br />
+原文：<a href="https://www.phoronix.com/news/ReactOS-On-ARM64-Experiment">ReactOS Now Running On ARM64 In Experimental Form</a></p>
+<p><strong>Pavona 开源硅生态系统启动，Meta 与高通等巨头加盟</strong><br />
+GlobalPlatform 宣布启动 Pavona 项目，旨在建立一个可认证的开源硅芯片生态系统。创始成员包括 Meta、高通、Tenstorrent 和牛津大学等，目标是提升硬件供应链的透明度和安全性。这一动作反映了工业界对开源硬件和可信执行环境（TEE）标准化的高度重视。<br />
+原文：<a href="https://www.phoronix.com/news/Pavona-Open-Source-Silicon">Pavona Aims To Provide A Certification-Ready, Open-Source Silicon Ecosystem</a></p>
+<p><strong>Simula One：基于 Linux 的独立 VR 计算机开启预订</strong><br />
+Simula One 是一款运行完整 Linux 发行版的独立虚拟现实计算机，旨在为开发者提供沉浸式的编程环境。与传统的 VR 头显不同，它强调办公和开发生产力，允许用户在虚拟空间中排列无限的 Linux 窗口。这种尝试挑战了目前由 Meta 和苹果主导的消费级空间计算市场。<br />
+原文：<a href="https://shop.simulavr.com/">The Simula One: Linux VR Computer</a></p>
+<p><strong>马斯克称美军自杀式无人机违规使用 Starlink 终端</strong><br />
+埃隆·马斯克表示，美军在自杀式无人机中使用了标准的 Starlink 终端，这违反了 SpaceX 关于禁止将民用服务用于武器系统的规定。他指出军方承包商应使用专为国防设计的 Starshield 服务。这一事件再次引发了关于商业低轨卫星网络在现代冲突中角色与监管的广泛讨论。<br />
+原文：<a href="https://arstechnica.com/tech-policy/2026/05/musk-says-us-military-suicide-drones-used-starlink-in-violation-of-spacex-rules/">Musk says US military suicide drones used Starlink in violation of SpaceX rules</a></p>
+<hr />
+<h2>学术界最新研究</h2>
+<p><strong>LearnedCache：集成 eBPF 与感知器的 Linux 页面缓存替换策略</strong><br />
+研究人员开发了 LearnedCache，这是一种利用 eBPF 技术集成到内核中的单层感知器缓存替换算法。该研究打破了传统页面缓存依赖启发式规则（如 LRU）的局限，通过机器学习动态适应多变的负载模式。实验表明，这种方法在减少磁盘访问和提升应用性能方面具有显著潜力，且保持了极低的内核开销。<br />
+原文：<a href="https://arxiv.org/abs/2605.26168">LearnedCache: An eBPF-Integrated Perceptron-Based Eviction Policy for the Linux Page Cache</a></p>
+<p><strong>Sandlock：利用非特权 Linux 原语约束 AI 智能体代码执行</strong><br />
+针对 AI 智能体运行不可信代码的安全风险，Sandlock 提出了一种轻量级的进程沙箱方案。它利用 Linux 原语将静态策略编译为内核强制规则，同时通过微型监控器处理运行时决策。相比容器或微型虚拟机，Sandlock 在保持极低启动成本的同时，提供了更细粒度的系统调用控制。<br />
+原文：<a href="https://arxiv.org/abs/2605.26298">Sandlock: Confining AI Agent Code with Unprivileged Linux Primitives</a></p>
+<p><strong>GEM：基于几何熵混合的 LLM 数据筛选优化框架</strong><br />
+论文提出了 GEM 框架，将 LLM 预训练的数据筛选问题重新定义为超球体上的变分问题。通过引入混合平衡正则化项，GEM 有效解决了传统聚类方法中的“聚类坍塌”问题，能够发现隐藏的语义结构。这种方法在不增加数据总量的前提下，显著提升了模型预训练的效率和最终性能。<br />
+原文：<a href="https://arxiv.org/abs/2605.26121">GEM: Geometric Entropy Mixing for Optimal LLM Data Curation</a></p>
+<p><strong>InfoQuant：面向低比特 LLM 量化的激活分布整形技术</strong><br />
+针对低比特量化中激活值离群点导致的精度损失，InfoQuant 提出了一种面向分立化设计的激活转换方法。研究分析了什么样的激活分布更易于被量化器处理，并通过数学手段对分布进行整形。该技术为在资源受限设备上部署高性能、低功耗的 LLM 提供了新的理论支撑。<br />
+原文：<a href="https://arxiv.org/abs/2605.26175">InfoQuant: Shaping Activation Distributions for Low-Bit LLM Quantization</a></p>
+<p><strong>约束税（Constraint Tax）：衡量小模型结构化输出的性能损失</strong><br />
+研究人员引入了“约束税”概念，用于量化小语言模型（SLM）在强制输出 JSON 或 Schema 等结构化数据时导致的逻辑准确度下降。实验证明，强制约束并非无代价，对于 3B 以下的模型，这种约束可能显著损害其解决任务的能力。这一发现提醒开发者在边缘侧部署 AI 时需权衡输出格式与推理质量。<br />
+原文：<a href="https://arxiv.org/abs/2605.26128">The Constraint Tax: Measuring Validity-Correctness Tradeoffs in Structured Outputs</a></p>
+<hr /></div>
+  </main>
+</body>
+</html>
