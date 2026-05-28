@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OS 领域每日洞察 - 2026-05-28</title>
+  <style>
+    :root {
+      --bg: #f6f4f0;
+      --bg-bar: #ebe8e3;
+      --bg-card: #fffefb;
+      --bg-card-hover: #f5f3ef;
+      --text: #2d2a26;
+      --text-muted: #5c5852;
+      --text-dim: #7a756e;
+      --accent: #5a7a9e;
+      --border: #ddd9d2;
+      --radius: 10px;
+      --font: "Segoe UI", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      font-size: 15px;
+    }
+
+    /* 门户顶栏 */
+    .masthead {
+      background: var(--bg-bar);
+      border-bottom: 1px solid var(--border);
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 0;
+    }
+    .masthead-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .masthead h1 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin: 0;
+      letter-spacing: -0.02em;
+      color: var(--text);
+    }
+    .masthead .meta {
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+    }
+
+    /* 主内容区：多栏门户布局 */
+    .main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 3rem;
+    }
+
+    /* 板块：每个 h2 为一个频道块 */
+    .content .section {
+      margin-bottom: 2.5rem;
+    }
+    .content h2 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+      margin: 0 0 1rem;
+      padding: 0.6rem 1rem;
+      background: var(--bg-bar);
+      border-radius: var(--radius);
+      border-left: 4px solid var(--accent);
+    }
+    .content h2:first-child { margin-top: 0; }
+
+    .content h2:has(+ h3) {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      border-left-color: var(--text-dim);
+    }
+
+    /* 板块内卡片网格（每个 h2 后的 ul） */
+    .content h2 + ul {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1rem;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .content h2 + ul li {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.15rem 1.2rem;
+      transition: background .15s, border-color .15s;
+    }
+    .content h2 + ul li:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--text-dim);
+    }
+    .content h2 + ul li strong {
+      display: block;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+      line-height: 1.4;
+    }
+    .content h2 + ul li p {
+      margin: 0 0 0.5rem;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.58;
+    }
+    .content h2 + ul li p:last-of-type { margin-bottom: 0; }
+    .content h2 + ul li a[href^="http"] {
+      font-size: 0.8125rem;
+      color: var(--accent);
+    }
+    .content h2 + ul li a[href^="http"]:hover { text-decoration: underline; }
+
+    .content .ref-section {
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+    .content h2 + h3 { margin-top: 1.25rem; }
+    .content h3 {
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--text-dim);
+      margin: 1rem 0 0.4rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .content h3 + ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 0.25rem;
+    }
+    .content h3 + ul li {
+      background: transparent;
+      border: none;
+      padding: 0.2rem 0;
+      font-size: 0.8125rem;
+    }
+    .content h3 + ul li strong { font-size: inherit; margin-bottom: 0; }
+    .content h3 + ul li a { color: var(--accent); }
+    .content h3 + ul li a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <header class="masthead">
+    <div class="masthead-inner">
+      <h1>OS 领域每日洞察 - 2026-05-28</h1>
+      <span class="meta">2026-05-28 04:01 UTC</span>
+    </div>
+  </header>
+  <main class="main">
+    <div class="content"><h2>Linux 内核社区热点与趋势</h2>
+<p><strong>Dirty Frag 内核零日漏洞威胁容器与微虚拟机沙箱</strong><br />
+安全研究员披露了名为“Dirty Frag”的两个 Linux 内核漏洞（CVE-2026-43284 和 CVE-2026-43500），该漏洞可让普通用户在 2017 年后发布的大多数 Linux 发行版上获得根权限。微软已确认该漏洞正被积极利用，其本质是一种页缓存写入原语，能诱导内核覆盖内存中的任意文件。尽管威胁巨大，但在 Firecracker 等微虚拟机环境下的测试表明，由于其独特的隔离机制，该边界依然能够保持稳固。<br />
+原文：<a href="https://news.ycombinator.com/item?id=48304227">Dirty Frag: a kernel zero-day vs. container and microVM sandboxes</a></p>
+<p><strong>Ubuntu 26.10 计划搭载 Linux 7.2 内核发布</strong><br />
+Canonical 内核团队确认，即将发布的 Ubuntu 26.10 将采用 Linux 7.2 内核，这标志着该发行版在内核版本更新上保持了极高的节奏。Linux 7.2 预计将引入多项重要特性，包括针对 AMD Zen 5 架构的缓存感知调度优化以及 Intel TDX 的运行时更新。这一决策将确保 Ubuntu 用户能够第一时间获得最新的硬件支持和系统性能提升。<br />
+原文：<a href="https://www.phoronix.com/news/Ubuntu-26.10-With-Linux-7.2">Ubuntu 26.10 Planning to Ship with the Linux 7.2 Kernel</a></p>
+<p><strong>Greg Kroah-Hartman 称 Rust 将在 AI 时代拯救 Linux</strong><br />
+内核维护者 Greg Kroah-Hartman 在近期讨论中指出，随着 AI 生成代码的普及，内存安全问题将变得更加严峻，而 Rust 语言是应对这一挑战的关键。他认为 Rust 提供的编译时安全保证能够有效抵御 AI 可能引入的低级编程错误，从而保障内核的长期稳定性。这一观点进一步巩固了 Rust 在 Linux 内核开发中作为 C 语言重要补充的地位。<br />
+原文：<a href="https://www.zdnet.com/article/rust-will-save-linux-from-ai-says-greg-kroah-hartman/">Rust Will Save Linux from AI, Says Greg Kroah-Hartman</a></p>
+<p><strong>Linux 内核计划淘汰 x32 ABI 架构支持</strong><br />
+Linux 开发者正在讨论移除 x86_64 处理器上的 x32 ABI 支持，该架构允许在 64 位寄存器环境下使用 32 位指针以减少内存占用。尽管 x32 曾被寄予厚望，但多年来其采用率极低，且维护成本日益增加。如果该计划实施，将简化内核代码库，但也可能影响少数依赖该特性的旧系统或特定高性能计算场景。<br />
+原文：<a href="https://www.phoronix.com/news/Linux-x32-ABI-2026">Linux Developers Looking At Retiring The x32 ABI</a></p>
+<p><strong>Intel TDX 运行时更新特性有望进入 Linux 7.2</strong><br />
+Intel 工程师长期开发的受信任域扩展（TDX）模块运行时更新功能已接近完成，预计将合并至 Linux 7.2。该特性允许管理员在不重启服务器的情况下更新 TDX 模块，这对于云服务商部署安全补丁至关重要。这将显著降低机密计算环境的维护停机时间，提升大规模集群的安全性。<br />
+原文：<a href="https://www.phoronix.com/news/Intel-TDX-Runtime-Update-7.2">Intel TDX Runtime Updates Looks Like It Will Land For Linux 7.2</a></p>
+<h2>业界大厂动向</h2>
+<p><strong>NVIDIA 计划每年向台湾投资 1500 亿美元打造 AI 中心</strong><br />
+NVIDIA 首席执行官黄仁勋宣布，公司计划每年投入 1500 亿美元将台湾打造为全球 AI 革命的“震中”。这一巨额投资涵盖了研发、供应链强化以及基础设施建设，旨在巩固其在 AI 硬件领域的领导地位。此举反映了 NVIDIA 在全球地缘政治压力下，依然选择深耕其核心制造与技术合作伙伴生态。<br />
+原文：<a href="https://arstechnica.com/tech-policy/2026/05/nvidia-ceo-wants-taiwan-to-be-center-of-ai-revolution-not-us/">Nvidia bets $150B on Taiwan as Trump's plan to make US an AI hub backfires</a></p>
+<p><strong>Snowflake 向 AWS 承诺 60 亿美元投入 AI 基础设施</strong><br />
+数据仓库巨头 Snowflake 宣布在未来五年内向亚马逊云科技（AWS）投入 60 亿美元，重点用于 Graviton 计算资源和 AI 基础设施。这笔投资旨在深化双方在生成式 AI 领域的合作，为 Snowflake 用户提供更强大的数据处理和模型训练能力。这标志着云原生数据平台正加速向 AI 驱动的智能架构转型。<br />
+原文：<a href="https://thenewstack.io/snowflake-aws-6b-commitment/">Snowflake commits $6B to AWS as it pushes deeper into AI</a></p>
+<p><strong>NVIDIA 发布 CUDA 13.3，引入 Python 1.0 与 C++ Tile 支持</strong><br />
+NVIDIA 推出了 CUDA 13.3 版本，这是其统一 GPU 编程栈的一次重大升级，正式发布了 CUDA Python 1.0。新版本还为 C++ 开发者引入了 CUDA Tile 特性，旨在简化复杂的显存管理和计算任务调度。这些改进将进一步降低 GPU 编程门槛，提升 AI 与科学计算的开发效率。<br />
+原文：<a href="https://www.phoronix.com/news/NVIDIA-CUDA-13.3-Released">NVIDIA CUDA 13.3 Rolls Out CUDA Python 1.0, CUDA Tile For C++</a></p>
+<p><strong>Canonical 推出 Workshop 工具简化开发环境启动</strong><br />
+Ubuntu 背后的 Canonical 公司发布了一款名为 Workshop 的新工具，基于 Snap 格式，旨在帮助开发者快速启动和管理隔离的开发环境。该工具通过预配置的容器化环境，解决了“在我的机器上能运行”的典型问题。Workshop 的推出体现了 Canonical 在提升开发者体验和推广 Snap 生态方面的持续努力。<br />
+原文：<a href="https://www.phoronix.com/news/Canonical-Ubuntu-Workshop">Canonical Releases Workshop As New Way Of Launching Development Environments</a></p>
+<p><strong>NVIDIA 彻底关停服役 20 年的 Windows XP 时代控制面板</strong><br />
+NVIDIA 宣布正式停用其经典的“NVIDIA 控制面板”，该组件自 Windows XP 时代起已服务超过 20 年。所有相关功能现已完全迁移至现代化的“NVIDIA App”中，提供更整合的驱动更新、游戏优化和设置管理体验。这一变动标志着 NVIDIA 在软件生态上完成了从旧式架构向现代交互设计的全面转型。<br />
+原文：<a href="https://arstechnica.com/gadgets/2026/05/nvidia-kills-windows-xp-era-control-panel-after-20-years-of-dedicated-service/">Nvidia kills Windows XP-era Control Panel "after 20 years of dedicated service"</a></p>
+<h2>云原生领域</h2>
+<p><strong>OpenTelemetry 正式从 CNCF 毕业，确立观测性标准地位</strong><br />
+云原生计算基金会（CNCF）宣布 OpenTelemetry 项目正式毕业，这标志着该项目在生产环境的广泛采用和技术成熟度达到了最高标准。作为厂商中立的观测性框架，OpenTelemetry 已成为处理指标、日志和追踪的事实标准。其毕业将进一步推动企业在多云环境下构建统一的监控与诊断体系。<br />
+原文：<a href="https://www.cncf.io/announcements/2026/05/21/cloud-native-computing-foundation-announces-opentelemetrys-graduation-solidifying-status-as-the-de-facto-observability-standard/">Cloud Native Computing Foundation Announces OpenTelemetry’s Graduation</a></p>
+<p><strong>网易游戏在 Kubernetes 上实现 LLM 30 秒冷启动</strong><br />
+网易游戏分享了其在 Kubernetes 集群上优化大模型推理的经验，通过改进数据传输和缓存机制，成功将 LLM 的冷启动时间缩短至 30 秒。该案例强调了在云原生环境下，弹性计算的价值取决于数据移动的速度。这一技术突破对于需要快速响应用户需求的生成式 AI 应用具有重要的参考价值。<br />
+原文：<a href="https://www.cncf.io/blog/2026/05/21/how-netease-games-achieved-30-second-llm-cold-starts-on-kubernetes/">How NetEase Games achieved 30-second LLM cold starts on Kubernetes</a></p>
+<p><strong>Kubernetes v1.36 引入云控制器路由同步新指标</strong><br />
+在最新的 Kubernetes v1.36 版本中，云控制器管理器（CCM）引入了一个名为 <code>route_sync_total</code> 的 Alpha 级计数器指标。该指标旨在帮助运维人员验证基于事件监听的路由对账功能，减少对云服务商 API 的无效调用。这一改进提升了大规模集群在云环境下的网络稳定性，并降低了基础设施的 API 负载。<br />
+原文：<a href="https://kubernetes.io/blog/2026/05/15/ccm-new-metric-route-sync-total/">Kubernetes v1.36: New Metric for Route Sync in the Cloud Controller Manager</a></p>
+<p><strong>混合版本代理在 Kubernetes v1.36 中晋升为 Beta 阶段</strong><br />
+Kubernetes v1.36 将“混合版本代理”（Mixed Version Proxy）功能升级为 Beta 并默认启用，旨在解决集群升级期间不同版本 API Server 间的资源路由问题。该功能可确保旧版 API Server 接收到的新资源请求被正确转发至新版节点，避免出现错误的 404 响应。这显著提升了高可用集群在滚动升级过程中的安全性与可靠性。<br />
+原文：<a href="https://kubernetes.io/blog/2026/05/15/kubernetes-1-36-feature-mixed-version-proxy-beta/">Kubernetes v1.36: Mixed Version Proxy Graduates to Beta</a></p>
+<p><strong>Red Hat 推出 llm-d 推理调度器提升 GPU 集群效率</strong><br />
+红帽（Red Hat）在其博客中介绍了 llm-d 推理调度器，该工具能够通过感知推理负载，在相同的 16 块 GPU 上支持两倍的用户数量。它通过对分布式集群中每个节点、队列和缓存的实时可见性，实现了请求的智能路由。这种针对 LLM 特性的调度优化，能有效降低企业的 GPU 使用成本并提升并发处理能力。<br />
+原文：<a href="https://www.redhat.com/en/blog/same-16-gpus-twice-users-inference-aware-routing-llm-clusters">The same 16 GPUs, twice the users: Inference-aware routing for LLM clusters</a></p>
+<h2>AI 领域</h2>
+<p><strong>MOT 工具发布：旨在打击 AI 领域的“开放洗白”现象</strong><br />
+在 2026 北美开源峰会上，专家介绍了模型开放性工具（MOT），用于评估大模型是否真正符合开源定义。目前许多被称为“开源”的模型实际上仅是“开放权重”，并不符合 OSI 的标准。MOT 工具通过多维度评分，帮助用户识别真实的开源模型，抵制业界日益严重的“开放洗白”（Openwashing）趋势。<br />
+原文：<a href="https://lwn.net/Articles/1073420/">MOT: a tool to fight openwashing in AI</a></p>
+<p><strong>Agyn：基于 Kubernetes 的开源 AI Agent 托管平台</strong><br />
+Agyn 作为一个全新的开源平台，旨在解决 AI Agent 在生产环境中的大规模运行、隔离与治理难题。它提供了基于信号驱动的状态化 Serverless 运行时，并采用零信任安全模型来管理 Agent 的特权访问。该平台不绑定特定模型或云厂商，为企业构建复杂的 Agent 工作流提供了标准化的基础设施。<br />
+原文：<a href="https://arxiv.org/abs/2605.27575">Agyn: An Open-Source Platform for AI Agents</a></p>
+<p><strong>安全警示：AI 编码 Agent 正在安装无人维护的恶意包</strong><br />
+安全研究机构指出，AI 编码 Agent 在执行任务时，存在自动安装不存在或无人拥有的软件包的风险，这为供应链攻击打开了大门。由于 Agent 缺乏责任追究机制，黑客可以通过抢注这些包名来实施攻击。这一发现凸显了在引入 AI 自动化开发工具时，建立严格的安全审计和包管理策略的紧迫性。<br />
+原文：<a href="https://thenewstack.io/aikido-ai-agents-security/">“There is no accountability”: AI coding agents are installing packages no one owns</a></p>
+<p><strong>YouTube 将开始自动为 AI 生成的视频添加标签</strong><br />
+为了应对生成式 AI 内容的泛滥，YouTube 宣布将利用自动化技术识别并标注 AI 创作的视频。虽然这一举措旨在提高内容透明度，但对于高度逼真或仅部分使用 AI 的视频，识别难度依然存在。此举是大型内容平台加强 AI 治理、防止虚假信息传播的重要一步。<br />
+原文：<a href="https://arstechnica.com/google/2026/05/youtube-to-begin-automatically-labeling-ai-videos/">YouTube to begin automatically labeling AI videos</a></p>
+<p><strong>Soro：针对塔吉克语优化的轻量级对话大模型</strong><br />
+研究人员发布了 Soro 系列模型，这是专门为塔吉克斯坦在有限算力和网络环境下设计的对话模型。该模型基于 Gemma 3 权重，在 19 亿 token 的塔吉克语语料库上进行了持续预训练和指令微调。Soro 的推出填补了小语种在高质量 AI 助手领域的空白，并配套发布了相应的评估基准。<br />
+原文：<a href="https://arxiv.org/abs/2605.27379">Soro: A Lightweight Foundation Model and Chatbot for Tajik</a></p>
+<h2>工业界最新动向</h2>
+<p><strong>Patchlings：面向汽车微控制器的安全热补丁框架</strong><br />
+针对现代汽车软件更新缓慢且难以符合 ISO 26262 安全标准的问题，研究者提出了 Patchlings 框架。这是首个专为汽车电子控制单元（ECU）设计的、支持 Flash 执行（XIP）架构的热补丁方案。该技术允许在不重启系统的情况下修复漏洞，同时确保符合严格的行业监管要求，极大地缩短了汽车软件的维护周期。<br />
+原文：<a href="https://arxiv.org/abs/2605.27804">Patchlings: Safety-Preserving Flash-Based Hotpatching for Automotive Microcontrollers</a></p>
+<p><strong>Vivado 免费版本据报已恢复对 Linux 的支持</strong><br />
+赛灵思（Xilinx）的 FPGA 开发套件 Vivado 在其最新的免费版本中重新加入了对 Linux 操作系统的支持。此前该特性的缺失曾引起开源硬件社区的不满，限制了开发者在非 Windows 环境下的工作流。这一回归被视为对开发者反馈的积极响应，将促进基于 Linux 的 FPGA 开发生态。<br />
+原文：<a href="https://twitter.com/HotAisle/status/2059706563665998317">Linux reportedly restored to the free version of Vivado</a></p>
+<p><strong>SpaceX 将为美国太空军构建“传感器到射手”目标定位网络</strong><br />
+美国太空军确认，SpaceX 已获准建设一个先进的卫星网络，旨在实现从传感器探测到武器打击的快速目标锁定。该项目强调速度与规模并重，利用低轨卫星群提供近乎实时的战场感知能力。这标志着商业航天技术在国防工业中的应用进入了更深层次的战术集成阶段。<br />
+原文：<a href="https://arstechnica.com/space/2026/05/us-space-force-confirms-spacex-will-build-sensor-to-shooter-targeting-network/">US Space Force confirms SpaceX will build sensor-to-shooter targeting network</a></p>
+<p><strong>红帽警示：数字证书有效期缩短将导致手动更新模式失效</strong><br />
+红帽博客指出，随着安全标准提升，数字证书的最长有效期正从 398 天大幅缩短至 47 天。这意味着传统的年度手动更新流程将无法应对高频的替换需求，极易导致业务中断。企业必须转向自动化的证书管理（如 ACME 协议），以适应这一行业趋势。<br />
+原文：<a href="https://www.redhat.com/en/blog/when-certificates-expire-8x-faster-manual-renewals-break">When certificates expire 8x faster, manual renewals break</a></p>
+<p><strong>NASA 卫星展示探测地面 GPS 干扰源的能力</strong><br />
+NASA 的科学卫星在伊朗上空成功定位了神秘的 GPS 干扰源，展示了其在科研之外的军事与民用安全潜力。这种“双重用途”能力可以帮助全球监测导航信号的完整性，应对日益增多的电子战威胁。这一发现为利用现有空间基础设施保障全球定位系统安全提供了新思路。<br />
+原文：<a href="https://arstechnica.com/gadgets/2026/05/nasa-satellites-can-spot-gps-jammers-on-earth/">Mystery GPS jammer in Iran becomes test for NASA satellites’ capabilities</a></p>
+<h2>学术界最新研究</h2>
+<p><strong>实时内核中的边界优先级感知锁（BPL）研究</strong><br />
+多核实时系统需要对共享资源访问进行延迟限制，但传统的 FIFO 锁无法区分任务的重要性。研究者提出了一种批量优先级锁（BPL），通过根据请求顺序分组并结合优先级调度，在维持最坏情况等待时间边界的同时，显著降低了高优先级任务的平均延迟。该研究为提升实时操作系统的资源竞争效率提供了新算法。<br />
+原文：<a href="https://arxiv.org/abs/2605.27620">Bounded Priority-Aware Locking for Real-Time Kernels</a></p>
+<p><strong>为什么 LLM 在因果发现中失败及干预型 Agent 的解法</strong><br />
+论文证明了 LLM 在因果发现上的失败具有根本性：现有的微调和上下文学习无法区分产生相似观测数据的不同因果图。研究者提出了一种“内核阻碍定理”，指出模型内部表示必须无限增长才能解决此类问题。通过引入能够进行实验干预的 Agent 架构，可以有效逃脱这一理论困境，实现更可靠的科学推理。<br />
+原文：<a href="https://arxiv.org/abs/2605.27567">Why LLMs Fail at Causal Discovery and How Interventional Agents Escape</a></p>
+<p><strong>RULER：机器卸载（Machine Unlearning）的表示层验证</strong><br />
+机器卸载旨在从已训练模型中移除特定数据的影响，但传统方法仅在输出层验证，容易在中间表示中留下残留。研究者提出了 RULER 指标体系，通过测量遗忘集记录在模型内部表示中的位置变化，来深度验证数据是否被真正“抹除”。这一研究为 AI 隐私保护和合规性审计提供了更严谨的工具。<br />
+原文：<a href="https://arxiv.org/abs/2605.27569">RULER: Representation-Level Verification of Machine Unlearning</a></p>
+<p><strong>简单状态空间模型（S4D）在时间序列分类中超越 Mamba</strong><br />
+尽管基于 Mamba 的复杂架构在序列建模中大行其道，但这项系统性研究发现，简单的对角状态空间模型（S4D）在大型时间序列分类基准测试中表现更优。S4D 在准确性和效率上均挑战了“越复杂越好”的假设。该研究建议在处理时间序列任务时，应重新评估 SSM 设计空间中的简洁方案。<br />
+原文：<a href="https://arxiv.org/abs/2605.27406">A Simple State Space Model Excels at Multivariate Time Series Classification</a></p>
+<p><strong>液体神经网络（LNN）与 LSTM 在序列识别中的对比分析</strong><br />
+该研究对液体神经网络（特别是闭式连续时间网络 CfC）与传统的 LSTM 在四种不同序列模态下进行了基准测试。结果显示，LNN 在捕捉现实世界物理过程的连续时间动态方面具有显著优势，且在处理时间丢弃等鲁棒性测试中表现更强。这为临床医疗和神经形态数据处理等对时间敏感的领域提供了新的模型选择。<br />
+原文：<a href="https://arxiv.org/abs/2605.27467">Comparative Analysis of Liquid Neural Networks and LSTM</a></p>
+<hr /></div>
+  </main>
+</body>
+</html>
