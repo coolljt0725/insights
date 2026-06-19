@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OS 领域每日洞察 - 2026-06-19</title>
+  <style>
+    :root {
+      --bg: #f6f4f0;
+      --bg-bar: #ebe8e3;
+      --bg-card: #fffefb;
+      --bg-card-hover: #f5f3ef;
+      --text: #2d2a26;
+      --text-muted: #5c5852;
+      --text-dim: #7a756e;
+      --accent: #5a7a9e;
+      --border: #ddd9d2;
+      --radius: 10px;
+      --font: "Segoe UI", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      font-size: 15px;
+    }
+
+    /* 门户顶栏 */
+    .masthead {
+      background: var(--bg-bar);
+      border-bottom: 1px solid var(--border);
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 0;
+    }
+    .masthead-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .masthead h1 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin: 0;
+      letter-spacing: -0.02em;
+      color: var(--text);
+    }
+    .masthead .meta {
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+    }
+
+    /* 主内容区：多栏门户布局 */
+    .main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 3rem;
+    }
+
+    /* 板块：每个 h2 为一个频道块 */
+    .content .section {
+      margin-bottom: 2.5rem;
+    }
+    .content h2 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+      margin: 0 0 1rem;
+      padding: 0.6rem 1rem;
+      background: var(--bg-bar);
+      border-radius: var(--radius);
+      border-left: 4px solid var(--accent);
+    }
+    .content h2:first-child { margin-top: 0; }
+
+    .content h2:has(+ h3) {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      border-left-color: var(--text-dim);
+    }
+
+    /* 板块内卡片网格（每个 h2 后的 ul） */
+    .content h2 + ul {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1rem;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .content h2 + ul li {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.15rem 1.2rem;
+      transition: background .15s, border-color .15s;
+    }
+    .content h2 + ul li:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--text-dim);
+    }
+    .content h2 + ul li strong {
+      display: block;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+      line-height: 1.4;
+    }
+    .content h2 + ul li p {
+      margin: 0 0 0.5rem;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.58;
+    }
+    .content h2 + ul li p:last-of-type { margin-bottom: 0; }
+    .content h2 + ul li a[href^="http"] {
+      font-size: 0.8125rem;
+      color: var(--accent);
+    }
+    .content h2 + ul li a[href^="http"]:hover { text-decoration: underline; }
+
+    .content .ref-section {
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+    .content h2 + h3 { margin-top: 1.25rem; }
+    .content h3 {
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--text-dim);
+      margin: 1rem 0 0.4rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .content h3 + ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 0.25rem;
+    }
+    .content h3 + ul li {
+      background: transparent;
+      border: none;
+      padding: 0.2rem 0;
+      font-size: 0.8125rem;
+    }
+    .content h3 + ul li strong { font-size: inherit; margin-bottom: 0; }
+    .content h3 + ul li a { color: var(--accent); }
+    .content h3 + ul li a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <header class="masthead">
+    <div class="masthead-inner">
+      <h1>OS 领域每日洞察 - 2026-06-19</h1>
+      <span class="meta">2026-06-19 04:01 UTC</span>
+    </div>
+  </header>
+  <main class="main">
+    <div class="content"><h2>Linux 内核社区热点与趋势</h2>
+<p><strong>Linux 7.2 合并窗口开启，多项核心子系统迎来重大更新</strong><br />
+Linux 7.2 内核合并窗口已随 7.1 版本的发布正式开启，目前已有超过 7000 个非合并变更集被拉入主线。本次更新涵盖了内存管理、文件系统及架构支持等多个核心领域，标志着下一代内核的功能特性已基本定型。开发者正密切关注新引入的特性对系统稳定性和性能的潜在影响。<br />
+原文：<a href="https://lwn.net/Articles/1078068/">The first half of the 7.2 merge window</a></p>
+<p><strong>AMD ISP4 驱动正式并入 Linux 7.2，完善高端笔记本摄像头支持</strong><br />
+经过长期的开发与等待，AMD ISP4 驱动终于在 Linux 7.2 合并窗口期间进入主线内核。该驱动的加入补齐了 HP ZBook Ultra G1a 等搭载最新 Ryzen 处理器的高端笔记本在 Linux 下的硬件支持短板，解决了 Web 摄像头无法驱动的问题。这标志着 AMD 在 Linux 移动端多媒体支持方面迈出了重要一步。<br />
+原文：<a href="https://www.phoronix.com/news/Linux-7.2-Media">AMD ISP4 Driver Merged To Linux 7.2 Kernel</a></p>
+<p><strong>AI 助手 Claude 协助修复困扰 AMD GPU 多年的显示冻结漏洞</strong><br />
+一个追溯至 2017 年、导致众多 AMD 笔记本在长时间使用后显示器冻结的内核驱动漏洞，近期在 AI 工具 Claude Code 的帮助下找到了解决方案。开发者利用 AI 分析了复杂的代码提交历史和错误报告，定位了导致问题的关键提交。目前该修复补丁正准备并入内核，展示了 AI 在解决遗留系统复杂 Bug 方面的巨大潜力。<br />
+原文：<a href="https://www.phoronix.com/news/AMDGPU-Fixing-Display-Freeze">Claude AI Assists In Fixing Years Old AMD Radeon Linux Display Bug Affecting Numerous Laptops</a></p>
+<p><strong>Linux 7.2 强化定时器安全性，防止恶意拒绝服务攻击</strong><br />
+为了提升内核的健壮性，Linux 7.2 引入了一系列针对定时器核心子系统的改进，旨在防御“愚蠢或恶意”的拒绝服务（DoS）尝试。新机制通过对设置在过去时间的定时器进行更严格的校验和处理，防止系统资源被无效任务耗尽。这一安全加固措施对于提升多租户云环境下的内核稳定性具有重要意义。<br />
+原文：<a href="https://www.phoronix.com/news/Linux-7.2-Timers">Linux 7.2 Protects Against "Stupid Or Malicious" DoS Attempts By Arming Timers In The Past</a></p>
+<p><strong>EXT4 文件系统优化：提升目录哈希计算与快速提交性能</strong><br />
+在 Linux 7.2 中，EXT4 文件系统迎来了多项性能优化，重点改进了快速提交（Fast Commit）的处理逻辑。此外，新版本还引入了更高效的目录哈希计算方法，旨在提升大规模目录下的文件检索速度。这些底层优化将直接惠及高负载服务器和数据库应用场景。<br />
+原文：<a href="https://www.phoronix.com/news/Linux-7.2-EXT4">EXT4 Reworks Fast Commit Handling &amp; Faster Directory Hash Computation</a></p>
+<hr />
+<h2>业界大厂动向</h2>
+<p><strong>IBM 与 Red Hat 启动 Project Lightwell，投入 50 亿美元捍卫软件供应链安全</strong><br />
+IBM 与 Red Hat 联合披露了一项名为 Project Lightwell 的宏大计划，旨在通过 2 万名工程师的协作，建立一个安全的软件分发清算中心。该项目获得了金融和关键基础设施领域领导者的支持，旨在解决开源软件供应链中的信任与安全难题。这笔高达 50 亿美元的投资显示了大厂在保障企业级软件织物安全方面的决心。<br />
+原文：<a href="https://www.redhat.com/en/blog/friday-five-june-19-2026-red-hat">Friday Five — June 19, 2026</a></p>
+<p><strong>NVIDIA Vera CPU 性能评测曝光，ARM 服务器市场竞争加剧</strong><br />
+最新的性能基准测试对比了 NVIDIA Vera CPU 与 Ampere Altra Max 在 Linux 环境下的表现。测试结果显示，Vera CPU 在多项计算密集型任务中展现出显著优势，进一步巩固了 NVIDIA 在高性能 ARM 服务器领域的地位。随着 AmpereOne 供应受限，Vera CPU 正在成为 DIY 和发烧友构建 ARM Linux 服务器的热门选择。<br />
+原文：<a href="https://www.phoronix.com/review/ampere-altra-nvidia-vera">How NVIDIA Vera CPU Performance Compares To The Ampere Altra Max</a></p>
+<p><strong>Google 更新 Android 开发者验证时间表，强化应用商店安全监管</strong><br />
+Google 宣布将从本月起推出新的系统服务，以支持即将于 9 月生效的 Android 开发者身份验证新规。该政策要求所有在支持的应用商店中发布应用的开发者必须完成严格的身份核实，以打击恶意软件分发。此举旨在提升 Android 生态系统的整体安全性，但也给个人开发者带来了额外的合规成本。<br />
+原文：<a href="https://arstechnica.com/gadgets/2026/06/google-shares-updated-timeline-for-rolling-out-android-developer-verification/">Android verification is coming: Google confirms timeline and supported app stores</a></p>
+<p><strong>Red Hat 更新 RISC-V 开发预览版，基于 RHEL 10.2 构建</strong><br />
+Red Hat 发布了其 RISC-V 开发预览版的软件刷新，将代码库升级至 RHEL 10.2 级别。此次更新包含了更多针对 SiFive HiFive Premier P550 平台的上游代码，并增强了对 RISC-V 指令集架构的支持。Red Hat 持续推动 RISC-V 进入主流企业级操作系统，为未来异构计算架构奠定基础。<br />
+原文：<a href="https://www.redhat.com/en/blog/red-hat-has-updated-risc-v-developer-preview">Red Hat has updated the RISC-V Developer Preview</a></p>
+<p><strong>Microsoft 发现新型轻量级后门，专门针对加密货币窃取</strong><br />
+微软安全团队监测到一种新型的自传播恶意软件，该后门通过 USB 设备传播并利用 Tor 网络进行匿名通信。该软件的主要目标是监控剪贴板并替换加密货币钱包地址，从而窃取用户的数字资产。微软已发布预警，建议企业加强对可移动存储设备的管控和终端安全监测。<br />
+原文：<a href="https://arstechnica.com/security/2026/06/microsoft-spots-new-self-propagating-malware-for-stealing-cryptocurrency/">Microsoft discovers new lightweight backdoor that steals cryptocurrency</a></p>
+<hr />
+<h2>云原生领域</h2>
+<p><strong>Kubernetes v1.36 发布：工作负载感知调度与 PodGroup API 演进</strong><br />
+Kubernetes v1.36 引入了重大的架构演进，通过 PodGroup API 实现了对 AI/ML 和批处理任务的原子化调度支持。新版本将 Workload API 作为静态模板，而 PodGroup API 负责处理运行时状态，有效解决了复杂任务的“全有或全无”调度难题。这一改进显著提升了 Kubernetes 在处理高性能计算任务时的效率和灵活性。<br />
+原文：<a href="https://kubernetes.io/blog/2026/05/13/kubernetes-v1-36-advancing-workload-aware-scheduling/">Kubernetes v1.36: Advancing Workload-Aware Scheduling</a></p>
+<p><strong>PSI 指标在 Kubernetes v1.36 中正式达 GA 阶段，精准识别资源压力</strong><br />
+压力停顿信息（PSI）指标在 Kubernetes v1.36 中正式毕业为稳定版（GA），为用户提供监控 CPU、内存和 I/O 饱和度的高保真信号。相比传统的利用率指标，PSI 能更准确地反映任务因资源竞争而停滞的时间比例，帮助运维人员在故障发生前识别瓶颈。目前该功能已在节点、Pod 和容器级别全面可用。<br />
+原文：<a href="https://kubernetes.io/blog/2026/05/12/kubernetes-v1-36-psi-metrics-ga/">Kubernetes v1.36: PSI Metrics for Kubernetes Graduates to GA</a></p>
+<p><strong>动态资源分配（DRA）持续成熟，Kubernetes v1.36 增强硬件加速器管理</strong><br />
+Kubernetes v1.36 进一步完善了动态资源分配（DRA）框架，使其能够更好地处理 GPU 等硬件加速器。新版本不仅增加了更多的驱动支持，还将 DRA 的灵活性扩展到了内存和 CPU 等原生资源，并支持 PodGroup 中的资源声明。这标志着 Kubernetes 正在向更加硬件无关且灵活的资源管理模式迈进。<br />
+原文：<a href="https://kubernetes.io/blog/2026/05/07/kubernetes-v1-36-dra-136-updates/">Kubernetes v1.36: More Drivers, New Features, and the Next Era of DRA</a></p>
+<p><strong>KubeCon + CloudNativeCon 将在上海举办，聚焦云原生与 AI 的深度融合</strong><br />
+CNCF 宣布 KubeCon + CloudNativeCon 将与 OpenInfra 峰会及 PyTorch 会议在中国上海联合举办。此次盛会旨在汇聚全球社区力量，探讨如何利用云原生基础设施支撑大规模 AI 算力需求。会议议程将重点关注 AI 栈与云原生技术的桥接，推动开源生态在智能计算时代的演进。<br />
+原文：<a href="https://www.cncf.io/announcements/2026/06/18/kubecon-cloudnativecon-openinfra-summit-and-pytorch-conference-unite-in-china-to-scale-ai/">KubeCon + CloudNativeCon, OpenInfra Summit and PyTorch Conference Unite in China to Scale AI</a></p>
+<p><strong>CNCF 推出 CARE 计划，简化云原生认证的续期与晋升流程</strong><br />
+为了帮助云原生专业人士保持技能的先进性，CNCF 推出了认证晋升与再认证体验（CARE）计划。现在，通过 CKS（认证 Kubernetes 安全专家）考试可以自动延长 CKA（认证 Kubernetes 管理员）证书的有效期。此外，CNCF 还与 Udemy 合作，提供统一的培训与认证购买路径，降低了开发者的学习门槛。<br />
+原文：<a href="https://www.cncf.io/blog/2026/06/17/expanding-care-passing-cks-can-now-extend-your-cka-certification/">Expanding CARE: Passing CKS can now extend your CKA certification</a></p>
+<hr />
+<h2>AI 领域</h2>
+<p><strong>SFC 发布针对开源贡献者的生成式 AI 使用建议</strong><br />
+软件自由保护协会（SFC）发布了一份关于在开源贡献中使用大语言模型（LLM）的指南，旨在平衡开发效率与开源伦理。指南针对拒绝使用 AI、被迫使用 AI 以及自愿使用 AI 的开发者提供了不同的实践建议，重点在于最小化专有 AI 系统对开源社区的潜在损害。这反映了开源界在面对 AI 浪潮时对版权和代码透明度的深刻忧虑。<br />
+原文：<a href="https://lwn.net/Articles/1078521/">The Software Freedom Conservancy's LLM-backed generative AI recommendations</a></p>
+<p><strong>SLARouter：基于用户满意度保证的成本优化 LLM 路由算法</strong><br />
+随着 LLM 推理成本飙升，如何在保证服务等级协议（SLA）的同时降低开销成为关键。SLARouter 是一种新型在线路由算法，它能从生产系统中稀疏的用户反馈中学习，动态地将请求分发给不同规格的模型。该算法在满足用户质量预期的前提下，实现了推理成本的最优化，解决了商业应用中的核心痛点。<br />
+原文：<a href="https://arxiv.org/abs/2606.19376">Cost-Optimal LLM Routing with Limited User Feedback under User Satisfaction Guarantees</a></p>
+<p><strong>MCP 协议引入企业级授权层，连接 AI 代理与业务工具</strong><br />
+模型上下文协议（MCP）正成为企业连接 AI 代理与内部工具的标准，但其安全性一直备受关注。最新进展为 MCP 引入了缺失的授权层，允许企业精细化控制 AI 代理对敏感数据的访问权限。这一改进解决了 AI 代理在企业环境落地时的合规与安全瓶颈，推动了 Agentic AI 的工业化应用。<br />
+原文：<a href="https://thenewstack.io/mcp-gets-its-missing-enterprise-authorization-layer/">MCP gets its missing enterprise authorization layer</a></p>
+<p><strong>研究揭示 LLM 在临床任务中的“认知盲点”：自信度与准确性脱节</strong><br />
+一项针对临床结构化数据的研究发现，LLM 往往无法识别自己知识的边界，表现出严重的“认知盲点”。实验显示，无论预测准确率是 49% 还是 75%，模型的口头自信度始终保持在高位，且容易受到提示词格式的影响。研究建议通过跨模型归因差异分析来检测这种不确定性，以防止 AI 在医疗等高风险领域误导决策。<br />
+原文：<a href="https://arxiv.org/abs/2606.19509">LLM Doesn't Know What It Doesn't Know: Detecting Epistemic Blind Spots via Cross-Model Attribution Divergence on Clinical Tabular Data</a></p>
+<p><strong>SPSD 框架：利用边缘端小模型进行提示词压缩，降低云端推理能耗</strong><br />
+为了缩小人类交流中的“社交语义间隙”，研究者提出了 SPSD 框架，在边缘端使用 4 位量化的轻量级模型压缩用户提示词。该方法能有效去除提示词中的礼貌用语和重复信息，同时保留核心语义和情感，再传输至云端 LLM。实验证明，这种方法在不损失推理质量的前提下，显著降低了云端预填充阶段的计算成本和能耗。<br />
+原文：<a href="https://arxiv.org/abs/2606.19364">Closing the Social-Semantic Gap: SPSD for Edge-Based Prompt Compression in Cloud LLM Inference</a></p>
+<hr />
+<h2>工业界最新动向</h2>
+<p><strong>SteamOS 3.8.10 稳定版发布，默认启用 Wayland 桌面并支持新硬件</strong><br />
+Valve 正式发布了 SteamOS 3.8.10 稳定版，该版本基于更新的 Arch Linux 底座，并为即将推出的 Steam Machine 硬件做好了准备。最显著的变化是默认启用了 Wayland 桌面环境，提升了系统的显示性能和现代感。此外，该版本还包含了针对 Steam Deck 的大量优化，进一步巩固了其在掌上游戏设备市场的领先地位。<br />
+原文：<a href="https://www.phoronix.com/news/SteamOS-3.8.10-Stable">SteamOS 3.8.10 Stable Released With Updated Arch, Steam Machine Support &amp; Wayland Desktop Default</a></p>
+<p><strong>Mastodon 4.6 版本发布，引入“合集”功能提升内容发现体验</strong><br />
+去中心化社交平台 Mastodon 发布了 4.6 版本，核心特性是引入了“合集（Collections）”功能，允许用户创建和分享精心挑选的个人资料列表。该功能旨在帮助新用户更轻松地发现感兴趣的内容，同时在设计上注重信任与安全，防止类似功能在其他平台出现的滥用问题。此外，新版本还增加了邮件订阅帖子和年度回顾等实用功能。<br />
+原文：<a href="https://lwn.net/Articles/1078466/">Mastodon 4.6 released</a></p>
+<p><strong>Godot 4.7 游戏引擎发布，正式支持 HDR 输出</strong><br />
+领先的开源跨平台游戏引擎 Godot 发布了 4.7 版本，带来了备受期待的 HDR 输出支持。这一更新使得开发者能够利用现代显示器的高动态范围特性，创造视觉效果更震撼的游戏。Godot 持续通过快速迭代缩小与商业引擎的差距，吸引了越来越多的独立开发者和小型工作室。<br />
+原文：<a href="https://www.phoronix.com/news/Godot-4.7-Released">Godot 4.7 Released With HDR Output Support</a></p>
+<p><strong>Gusto 推出 AI 协同创始人，实现人力资源与薪酬管理的自动化</strong><br />
+初创公司 Gusto 推出了一款名为“AI 协同创始人”的代理系统，能够主动处理薪酬发放、人力资源管理和员工福利等事务。与传统的被动响应式 AI 不同，该代理能够根据业务规则自动触发任务，无需人工时刻干预。这标志着 AI 正在从简单的对话工具演变为能够独立承担业务流程的数字员工。<br />
+原文：<a href="https://thenewstack.io/gusto-cofounder-small-business-ai/">Gusto Cofounder: An AI agent that runs payroll, HR, and benefits without waiting to be asked</a></p>
+<p><strong>开源 PNG 解码库 image-png 性能再突破，惠及 Chrome 与 GNOME</strong><br />
+Rust 编写的 PNG 图像编解码库 <code>image-png</code> 发布了最新优化版本，进一步提升了其作为“全球最快 PNG 解码器”的领先地位。该库的性能改进将直接提升使用它的 Chrome 浏览器、GNOME 桌面环境等软件的图像加载速度。这再次证明了 Rust 语言在构建高性能、内存安全的基础库方面的卓越能力。<br />
+原文：<a href="https://www.phoronix.com/news/Rust-PNG-Image-Faster">Rust PNG Image Decoder Now Even Faster: Benefiting Chrome, GNOME, Etc</a></p>
+<hr />
+<h2>学术界最新研究</h2>
+<p><strong>3D 生成式扩散模型在不同 GPU 架构上的性能分析与优化</strong><br />
+研究人员针对医疗影像合成模型 Med-DDPM 在 NVIDIA 三代 GPU 架构上的表现进行了深入剖析。研究揭示了训练过程主要受 cuDNN 卷积和隐式 GEMM 算子主导，并指出内存访问模式和张量布局是导致效率低下的关键因素。该论文为优化高分辨率 3D 扩散模型的部署提供了重要的底层性能数据参考。<br />
+原文：<a href="https://arxiv.org/abs/2606.19365">Performance Analysis and Optimization of 3D Generative Diffusion Models across GPU Architectures</a></p>
+<p><strong>Emyx：基于条件流匹配的高效全原子蛋白质生成模型</strong><br />
+蛋白质设计需要兼顾几何精度与结构多样性，但现有模型往往计算成本极高。Emyx 提出了一种 1.4 亿参数的条件流匹配模型，通过轻量级条件表示和稀疏连接取代了沉重的嵌入堆栈。实验表明，Emyx 在保持高结构质量的同时，显著提升了蛋白质生成的采样速度和多样性。<br />
+原文：<a href="https://arxiv.org/abs/2606.19377">Emyx: Fast and efficient all-atom protein generation</a></p>
+<p><strong>通过自我博弈与少量人类数据涌现出类人自主驾驶能力</strong><br />
+该研究探讨了如何在不依赖大规模昂贵人类驾驶数据的情况下训练自动驾驶策略。研究发现，通过自我博弈强化学习并辅以极少量的“人类数据调味”，模型可以避免纯自我博弈产生的“外星人”驾驶行为，从而学习到符合人类习惯的驾驶规范。这种方法在保证安全性的同时，大幅降低了对高质量人类演示数据的依赖。<br />
+原文：<a href="https://arxiv.org/abs/2606.19370">Human-like autonomy emerges from self-play and a pinch of human data</a></p>
+<p><strong>ITNet：统一卷积、注意力和递归的 learnable 积分变换网络</strong><br />
+长期以来，卷积、递归和注意力机制被视为数学上截然不同的信号处理方式。ITNet 提出了一种统一的架构，证明这些机制实际上是一个底层数学对象——可学习积分变换的不同视图。通过一个小型的 MLP 来建模位置与特征相关的核函数，ITNet 能够自适应地模拟上述三种机制，为构建更通用的神经网络架构提供了理论基础。<br />
+原文：<a href="https://arxiv.org/abs/2606.19538">ITNet: A Learnable Integral Transform That Subsumes Convolution, Attention, and Recurrence</a></p>
+<p><strong>多智能体 LLM 研讨中的“隐藏锚点”模型研究</strong><br />
+多智能体协作能提升推理准确性，但其内在机制尚不明确。该研究将多智能体研讨建模为一个闭环动力系统，发现每个智能体都携带一个“隐藏锚点”（内部信念），持续影响其观点演变。研究证明这种锚点可以仅从研讨过程中恢复，并解释了智能体在面对群体压力时表现出的复杂行为模式。<br />
+原文：<a href="https://arxiv.org/abs/2606.19494">Hidden Anchors in Multi-Agent LLM Deliberation</a></p>
+<hr /></div>
+  </main>
+</body>
+</html>
