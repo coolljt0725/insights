@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OS 领域每日洞察 - 2026-06-24</title>
+  <style>
+    :root {
+      --bg: #f6f4f0;
+      --bg-bar: #ebe8e3;
+      --bg-card: #fffefb;
+      --bg-card-hover: #f5f3ef;
+      --text: #2d2a26;
+      --text-muted: #5c5852;
+      --text-dim: #7a756e;
+      --accent: #5a7a9e;
+      --border: #ddd9d2;
+      --radius: 10px;
+      --font: "Segoe UI", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      font-size: 15px;
+    }
+
+    /* 门户顶栏 */
+    .masthead {
+      background: var(--bg-bar);
+      border-bottom: 1px solid var(--border);
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 0;
+    }
+    .masthead-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .masthead h1 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin: 0;
+      letter-spacing: -0.02em;
+      color: var(--text);
+    }
+    .masthead .meta {
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+    }
+
+    /* 主内容区：多栏门户布局 */
+    .main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 3rem;
+    }
+
+    /* 板块：每个 h2 为一个频道块 */
+    .content .section {
+      margin-bottom: 2.5rem;
+    }
+    .content h2 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+      margin: 0 0 1rem;
+      padding: 0.6rem 1rem;
+      background: var(--bg-bar);
+      border-radius: var(--radius);
+      border-left: 4px solid var(--accent);
+    }
+    .content h2:first-child { margin-top: 0; }
+
+    .content h2:has(+ h3) {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      border-left-color: var(--text-dim);
+    }
+
+    /* 板块内卡片网格（每个 h2 后的 ul） */
+    .content h2 + ul {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1rem;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .content h2 + ul li {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.15rem 1.2rem;
+      transition: background .15s, border-color .15s;
+    }
+    .content h2 + ul li:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--text-dim);
+    }
+    .content h2 + ul li strong {
+      display: block;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+      line-height: 1.4;
+    }
+    .content h2 + ul li p {
+      margin: 0 0 0.5rem;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.58;
+    }
+    .content h2 + ul li p:last-of-type { margin-bottom: 0; }
+    .content h2 + ul li a[href^="http"] {
+      font-size: 0.8125rem;
+      color: var(--accent);
+    }
+    .content h2 + ul li a[href^="http"]:hover { text-decoration: underline; }
+
+    .content .ref-section {
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+    .content h2 + h3 { margin-top: 1.25rem; }
+    .content h3 {
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--text-dim);
+      margin: 1rem 0 0.4rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .content h3 + ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 0.25rem;
+    }
+    .content h3 + ul li {
+      background: transparent;
+      border: none;
+      padding: 0.2rem 0;
+      font-size: 0.8125rem;
+    }
+    .content h3 + ul li strong { font-size: inherit; margin-bottom: 0; }
+    .content h3 + ul li a { color: var(--accent); }
+    .content h3 + ul li a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <header class="masthead">
+    <div class="masthead-inner">
+      <h1>OS 领域每日洞察 - 2026-06-24</h1>
+      <span class="meta">2026-06-24 04:01 UTC</span>
+    </div>
+  </header>
+  <main class="main">
+    <div class="content"><h2>Linux 内核社区热点与趋势</h2>
+<p><strong>Linus Torvalds 批评 sched_ext 代码结构并促其重构</strong><br />
+在 Linux 7.2 的合并窗口中，可扩展调度器框架 sched_ext 提交了关于子调度器支持的更新。然而，Linus Torvalds 对新 C 源文件的布局表示强烈不满，直言其文件层级设计“令人反感”，并讽刺开发者应利用好自 1965 年以来就存在的层级文件系统。目前，相关代码已根据建议进行了重构，以符合内核的组织规范。<br />
+原文：<a href="https://www.phoronix.com/news/Linux-Sched-Ext-Restructured">"Disgusting" Linux sched_ext Source Code Restructured Following Complaint By Linus Torvalds</a></p>
+<p><strong>Linux 7.2 在 AMD EPYC 平台上展现出意外的性能提升</strong><br />
+早期的基准测试显示，即将发布的 Linux 7.2 内核在 AMD EPYC "Sorano" 处理器上表现优异。除了已知的缓存感知调度等新特性外，测试还发现其在本地网络和套接字性能方面有显著改进。这些优化进一步提升了 Linux 在现代高性能服务器硬件上的运行效率。<br />
+原文：<a href="https://www.phoronix.com/news/Linux-7.2--EPYC-Sorano-Network">Linux 7.2 Showing Some Unexpected &amp; Nice Performance Gains On AMD EPYC Sorano</a></p>
+<p><strong>KASAN 内存检测工具引入对 JIT 编译 BPF 代码的支持</strong><br />
+开发者 Alexis Lothoré 正在推动将内核内存访问检查器 KASAN 扩展到即时编译（JIT）的 BPF 代码中。这一改进旨在帮助捕获 BPF JIT 编译器中的内存管理漏洞，提高内核扩展机制的安全性。该工作在 2026 年 Linux 存储、文件系统、内存管理与 BPF 峰会上引起了广泛关注。<br />
+原文：<a href="https://lwn.net/Articles/1077740/">KASAN for JIT-compiled BPF code</a></p>
+<p><strong>高通 Snapdragon 笔记本引入 DeviceTree-ACPI 混合模式以优化 Linux 支持</strong><br />
+为了改善高通 Snapdragon X 系列笔记本在 Linux 下的兼容性，开发者提出了一种新的混合引导模式。该方案结合了 DeviceTree 的灵活性和 ACPI 的标准化，旨在解决 ARM 笔记本在 Linux 上的驱动适配难题。这一举措标志着高通在推动其芯片进入主流 Linux 笔记本市场方面迈出了重要一步。<br />
+原文：<a href="https://www.phoronix.com/news/DT-ACPI-Hybrid-Mode-Linux">DeviceTree-ACPI Hybrid Mode Proposed For Improving Linux Support On Snapdragon Laptops</a></p>
+<p><strong>EROFS 文件系统优化对大型稀疏 AI 数据集的处理</strong><br />
+在 Linux 7.2 中，只读文件系统 EROFS 引入了多项增强功能，特别针对 AI 训练中常见的超大规模稀疏数据集进行了优化。通过提高 I/O 效率和减少存储占用，EROFS 能够更好地服务于容器镜像和模型权重的快速加载。这使得 Linux 内核在处理 AI 基础设施需求时更具竞争力。<br />
+原文：<a href="https://www.phoronix.com/news/EROFS-Sparse-AI-Datasets">EROFS With Linux 7.2 Better Handles Large Sparse AI Datasets, More Efficient I/O</a></p>
+<p><strong>Linux 7.2 显著降低 RISC-V 架构内核启动开销</strong><br />
+针对 RISC-V 架构，Linux 7.2 合并了多项优化，重点减少了内核启动时的系统开销。此外，新版本还默认增加了对 Eswin SoC 等国产芯片的支持，进一步完善了 RISC-V 在 Linux 生态中的硬件适配。这些改进对于嵌入式和数据中心领域的 RISC-V 应用具有重要意义。<br />
+原文：<a href="https://www.phoronix.com/news/Linux-7.2-RISC-V">Linux 7.2 RISC-V Reduces Kernel Startup Overhead, Eswin SoC Support By Default</a></p>
+<hr />
+<h2>业界大厂动向</h2>
+<p><strong>甲骨文通过裁员节省资金以加大 AI 基础设施投入</strong><br />
+甲骨文（Oracle）近期裁减了约 21,000 名员工，旨在通过削减人力成本来支撑其庞大的 AI 投资计划。该公司正投入数十亿美元建设数据中心，以满足市场对 AI 算力和云服务的激增需求。这一战略调整反映了传统 IT 巨头在 AI 浪潮下激进的转型决心。<br />
+原文：<a href="https://arstechnica.com/ai/2026/06/oracles-21000-layoffs-help-drive-its-debt-fueled-ai-investments/">Oracle’s 21,000 layoffs help drive its debt-fueled AI investments</a></p>
+<p><strong>Anthropic 将 Claude 机器人深度集成至 Slack 频道</strong><br />
+Anthropic 宣布推出 Claude Tag 功能，允许用户将 Claude AI 作为一个持久化的“团队成员”添加进 Slack 频道。与传统的对话框不同，Claude 现在可以参与团队讨论并实时提供建议，增强了协作效率。这一动作标志着大模型正从独立的工具演变为企业协作流程中的核心组件。<br />
+原文：<a href="https://thenewstack.io/anthropic-claude-tag-slack/">Anthropic gives @Claude a permanent seat in your Slack channels</a></p>
+<p><strong>红帽与施耐德电气合作推动工业边缘 OT 现代化</strong><br />
+红帽公司正与施耐德电气联手，利用开源技术重新定义工业边缘计算。通过将 IT 领域的容器化和自动化技术引入操作技术（OT）领域，双方旨在实现开放式自动化，打破工厂底层的封闭生态。这一合作展示了 Linux 和云原生技术在制造业数字化转型中的关键作用。<br />
+原文：<a href="https://www.redhat.com/en/blog/reinventing-industrial-edge-how-red-hat-and-schneider-electric-are-modernizing-ot">Reinventing the industrial edge: How Red Hat and Schneider Electric are modernizing OT</a></p>
+<hr />
+<h2>云原生领域</h2>
+<p><strong>Kubernetes v1.36 引入服务端分片 List 和 Watch 功能</strong><br />
+为了应对超大规模集群中 API Server 的性能瓶颈，Kubernetes v1.36 推出了服务端分片（Server-Side Sharding）特性。该功能允许 API Server 在源头过滤事件，使每个控制器副本仅接收其负责的数据切片，从而大幅降低 CPU 和带宽消耗。这一改进解决了高基数资源（如 Pod）在水平扩展时的性能倍增问题。<br />
+原文：<a href="https://kubernetes.io/blog/2026/05/06/kubernetes-v1-36-server-side-sharded-list-and-watch/">Kubernetes v1.36: Server-Side Sharded List and Watch</a></p>
+<p><strong>Jaeger 推出 ClickHouse 后端实现极高的数据压缩率</strong><br />
+分布式追踪系统 Jaeger 在 v2.18.0 版本中正式支持 ClickHouse 作为存储后端。测试显示，在处理 1000 万个 Span 时，ClickHouse 实现了高达 8.6 倍的压缩率，显著降低了可观测性数据的存储成本。这一更新满足了云原生用户对高性能、低成本追踪存储的长期需求。<br />
+原文：<a href="https://www.cncf.io/blog/2026/06/23/building-jaegers-clickhouse-backend-8-6x-compression-on-10-million-spans/">Building Jaeger’s ClickHouse backend: 8.6× compression on 10 million spans</a></p>
+<p><strong>CNCF 报告显示印度已成为全球最大的云原生社区之一</strong><br />
+根据 CNCF 与 SlashData 的最新报告，印度的云原生开发者数量已达到 225 万，成为全球增长最快的市场之一。报告指出，混合云采用率的上升和平台工程的成熟是推动这一增长的核心动力。印度在云原生 AI 开发领域的投入也呈现出显著的领先趋势。<br />
+原文：<a href="https://www.cncf.io/announcements/2026/06/17/cncf-and-slashdata-report-confirms-india-as-one-of-the-largest-cloud-native-communities-with-2-25-million-developers/">CNCF and SlashData Report Confirms India as One of the Largest Cloud Native Communities with 2.25 Million Developers</a></p>
+<p><strong>WebAssembly 运行时在 2026 年的性能表现评测</strong><br />
+最新的性能基准测试对 2026 年主流的 WebAssembly (Wasm) 运行时进行了全面对比。研究发现，随着编译器优化和硬件加速技术的进步，Wasm 在近原生的执行效率上取得了长足进步。这为 Wasm 在边缘计算和无服务器架构中的广泛应用奠定了坚实基础。<br />
+原文：<a href="https://00f.net/2026/06/23/webassembly-runtimes-2026/">Performance of WebAssembly runtimes in 2026</a></p>
+<hr />
+<h2>AI 领域</h2>
+<p><strong>Linux 基金会拟推出代理名称服务（ANS）确立 AI 代理身份标准</strong><br />
+Linux 基金会宣布计划启动“代理名称服务”（Agent Name Service），旨在为 AI 代理建立可信的身份基础设施。该标准类似于互联网的 DNS，将为自主 AI 代理提供唯一的标识和验证机制，解决代理间通信的安全与信任问题。这是 AI 迈向大规模自主协作生态的重要一步。<br />
+原文：<a href="https://www.linuxfoundation.org/press/linux-foundation-announces-intent-to-launch-agent-name-service-to-establish-trusted-identity-infrastructure-for-ai-agents">Linux Foundation Is Pursuing Trusted Identity Infrastructure for AI Agents</a></p>
+<p><strong>GitLab 调查揭示 AI 辅助开发带来的代码治理挑战</strong><br />
+GitLab 对 1,500 名开发者进行的调查显示，虽然 AI 显著提升了编码速度，但也带来了严重的治理问题。开发者现在经常需要验证自己并未编写且可能无法完全理解的代码，这增加了技术债务和安全风险。报告呼吁企业建立更严格的 AI 代码审核流程和自动化治理体系。<br />
+原文：<a href="https://thenewstack.io/agentic-infrastructure-ai-governance/">GitLab just surveyed 1,500 developers. Here’s why it matters for your codebase.</a></p>
+<p><strong>Nx 推出 Polygraph 服务解决 AI 编码代理的瓶颈</strong><br />
+开源单体仓库构建系统 Nx 推出了名为 Polygraph 的新服务，旨在提升 AI 编码代理的准确性。通过提供更清晰的代码结构上下文和依赖关系图，Polygraph 能够帮助 AI 更好地理解大型代码库，减少生成错误代码的概率。这一工具针对当前 AI 代理在复杂工程项目中“迷失”的问题提供了解决方案。<br />
+原文：<a href="https://thenewstack.io/nx-polygraph-synthetic-monorepo-agents/">Nx debuts Polygraph, taking aim at what’s stalling AI coding agents</a></p>
+<p><strong>主权 AI 成为电信运营商的新业务增长点</strong><br />
+红帽公司指出，电信行业正从单纯的合规性主权转向“主权 AI”业务模式。运营商通过在本地基础设施上部署可控的 AI 模型，可以为对数据隐私敏感的客户提供差异化服务。这种模式将数据驻留权转化为商业竞争力，帮助运营商在 AI 竞赛中占据一席之地。<br />
+原文：<a href="https://www.redhat.com/en/blog/cost-currency-sovereign-ai/">From cost to currency with sovereign AI</a></p>
+<hr />
+<h2>工业界最新动向</h2>
+<p><strong>白宫大幅提前放弃易受量子攻击加密算法的截止日期</strong><br />
+美国白宫发布行政命令，显著缩短了联邦机构迁移至后量子加密（PQC）算法的期限。该命令警告称，如果不能及时采用抗量子攻击的加密技术，国家安全将面临巨大风险。这一政策变动将迫使整个科技产业链加速安全协议的升级迭代。<br />
+原文：<a href="https://arstechnica.com/information-technology/2026/06/executive-order-bumps-up-deadline-to-move-off-quantum-vulnerable-crypto/">White House drastically shortens deadline for dropping quantum-vulnerable crypto</a></p>
+<p><strong>Fwupd 2.0.21 发布，修复由 AI 发现的 250 多个安全漏洞</strong><br />
+开源固件更新工具 Fwupd 发布了 2.0.21 版本，重点修复了近期通过 AI 审计手段发现的 250 多个潜在安全漏洞。这些漏洞大多存在于旧代码库中，通过 AI 的深度扫描才得以暴露。这一案例展示了 AI 在提升开源软件供应链安全性方面的巨大潜力。<br />
+原文：<a href="https://www.phoronix.com/news/Fwupd-2.0.21-Released">Fwupd 2.0.21 Brings Fixes For More Than 250 Potential Security Issues Found Via AI</a></p>
+<p><strong>Ultra 操作系统致力于实现与 Linux 用户态的全 ABI 兼容</strong><br />
+一个新的开源操作系统项目 Ultra 引起了关注，其目标是实现与 Linux 用户态的完全 ABI 兼容。这意味着开发者可以在不修改代码的情况下，直接在 Ultra 上运行现有的 Linux 应用程序。该项目旨在提供一个更轻量或具有特定特性的内核替代方案，同时保留丰富的 Linux 生态。<br />
+原文：<a href="https://github.com/UltraOS/Ultra">Ultra: An OS that aims for full ABI compatibility with Linux userland</a></p>
+<p><strong>海光 Model 8 "苏州" x86 处理器获得 GCC 编译器支持</strong><br />
+GNU 编译器集合（GCC）近日增加了对海光（Hygon）新一代 x86 处理器 Model 8 "苏州"（c86-4g-m8）的支持。这标志着国产高性能处理器在主流开源工具链中的集成度进一步提高，有助于优化相关硬件上的软件运行效率。<br />
+原文：<a href="https://www.phoronix.com/news/Hygon-c86-4g-m8-Suzhou-GCC">New Hygon Model 8 "Suzhou" x86 CPU Support Appears In The GCC Compiler</a></p>
+<p><strong>COSMIC 桌面环境发布 Epoch 1.1 更新</strong><br />
+System76 发布了 COSMIC Epoch 1.1，这是其基于 Rust 开发的新一代桌面环境的首个次要版本更新。新版本引入了 COSMIC-Monitor 监控工具，并对合成器性能进行了多项改进。COSMIC 桌面以其现代化的架构和高度的可定制性，正逐渐成为 Linux 桌面领域的重要竞争者。<br />
+原文：<a href="https://www.phoronix.com/news/COSMIC-Epoch-1.1">COSMIC Epoch 1.1 Released With COSMIC-Monitor, Compositor Improvements</a></p>
+<hr />
+<h2>学术界最新研究</h2>
+<p><strong>通过自动化管道搜索系统性探索 4 专家异构混合专家模型（MoE4）</strong><br />
+研究人员提出了一种自动化的大规模搜索管道，用于在 LEMUR 神经网络生态系统中寻找最优的异构 4 专家 MoE 架构。该研究利用 NVIDIA RTX 4090 进行了为期 28 天的实验，评估了超过 1,000 个候选模型。研究发现，通过确定性的代码组装生成器，可以系统性地提升 MoE 模型的性能和效率。<br />
+原文：<a href="https://arxiv.org/abs/2606.23739">Systematic Exploration of 4-Expert Heterogeneous Mixture-of-Experts via Automated Pipeline Search</a></p>
+<p><strong>离线推理训练的权重空间几何特性研究</strong><br />
+该论文分析了多种离线强化学习损失函数（如 DPO、Offline GRPO 等）在将推理能力从大模型蒸馏到小模型时的表现。通过对 Qwen3-4B 模型进行实验，研究者发现 SFT、RFT 和 RIFT 等方法的权重更新方向具有极高的余弦相似度（&gt;= 0.97）。这表明不同的训练方法在机制上可能趋于一致，为优化推理模型训练提供了理论依据。<br />
+原文：<a href="https://arxiv.org/abs/2606.23740">Weight-Space Geometry of Offline Reasoning Training</a></p>
+<p><strong>Neuro-Symbolic Drive：为视觉语言动作模型（VLA）提供规则约束的推理</strong><br />
+针对自动驾驶中的 VLA 模型，研究者提出了 Neuro-Symbolic Drive 框架，将传统的基于规则的规划器与深度学习模型相结合。该方法利用规则规划器生成的推理轨迹来监督 VLA，确保其决策过程符合安全约束且具备因果解释性。这种神经符号结合的路径显著提升了自动驾驶系统在复杂场景下的可靠性。<br />
+原文：<a href="https://arxiv.org/abs/2606.23938">Neuro-Symbolic Drive: Rule-Grounded Faithful Reasoning for Driving VLAs</a></p>
+<p><strong>通过约束流形控制实现安全且可泛化的分层多智能体强化学习</strong><br />
+该研究针对安全关键应用中的多智能体协作问题，提出了一种基于约束流形控制的分层强化学习框架。该框架在底层通过约束流形强制执行硬安全约束，在高层进行策略学习以实现高效协作。实验证明，该方法在保证理论安全性的同时，克服了传统控制方法过于保守的缺点。<br />
+原文：<a href="https://arxiv.org/abs/2606.24010">Safe and Generalizable Hierarchical Multi-Agent RL via Constraint Manifold Control</a></p>
+<hr /></div>
+  </main>
+</body>
+</html>
