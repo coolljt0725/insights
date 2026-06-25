@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OS 领域每日洞察 - 2026-06-25</title>
+  <style>
+    :root {
+      --bg: #f6f4f0;
+      --bg-bar: #ebe8e3;
+      --bg-card: #fffefb;
+      --bg-card-hover: #f5f3ef;
+      --text: #2d2a26;
+      --text-muted: #5c5852;
+      --text-dim: #7a756e;
+      --accent: #5a7a9e;
+      --border: #ddd9d2;
+      --radius: 10px;
+      --font: "Segoe UI", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      font-size: 15px;
+    }
+
+    /* 门户顶栏 */
+    .masthead {
+      background: var(--bg-bar);
+      border-bottom: 1px solid var(--border);
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 0;
+    }
+    .masthead-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .masthead h1 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin: 0;
+      letter-spacing: -0.02em;
+      color: var(--text);
+    }
+    .masthead .meta {
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+    }
+
+    /* 主内容区：多栏门户布局 */
+    .main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 3rem;
+    }
+
+    /* 板块：每个 h2 为一个频道块 */
+    .content .section {
+      margin-bottom: 2.5rem;
+    }
+    .content h2 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+      margin: 0 0 1rem;
+      padding: 0.6rem 1rem;
+      background: var(--bg-bar);
+      border-radius: var(--radius);
+      border-left: 4px solid var(--accent);
+    }
+    .content h2:first-child { margin-top: 0; }
+
+    .content h2:has(+ h3) {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      border-left-color: var(--text-dim);
+    }
+
+    /* 板块内卡片网格（每个 h2 后的 ul） */
+    .content h2 + ul {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1rem;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .content h2 + ul li {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.15rem 1.2rem;
+      transition: background .15s, border-color .15s;
+    }
+    .content h2 + ul li:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--text-dim);
+    }
+    .content h2 + ul li strong {
+      display: block;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+      line-height: 1.4;
+    }
+    .content h2 + ul li p {
+      margin: 0 0 0.5rem;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.58;
+    }
+    .content h2 + ul li p:last-of-type { margin-bottom: 0; }
+    .content h2 + ul li a[href^="http"] {
+      font-size: 0.8125rem;
+      color: var(--accent);
+    }
+    .content h2 + ul li a[href^="http"]:hover { text-decoration: underline; }
+
+    .content .ref-section {
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+    .content h2 + h3 { margin-top: 1.25rem; }
+    .content h3 {
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--text-dim);
+      margin: 1rem 0 0.4rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .content h3 + ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 0.25rem;
+    }
+    .content h3 + ul li {
+      background: transparent;
+      border: none;
+      padding: 0.2rem 0;
+      font-size: 0.8125rem;
+    }
+    .content h3 + ul li strong { font-size: inherit; margin-bottom: 0; }
+    .content h3 + ul li a { color: var(--accent); }
+    .content h3 + ul li a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <header class="masthead">
+    <div class="masthead-inner">
+      <h1>OS 领域每日洞察 - 2026-06-25</h1>
+      <span class="meta">2026-06-25 04:01 UTC</span>
+    </div>
+  </header>
+  <main class="main">
+    <div class="content"><h2>Linux 内核社区热点与趋势</h2>
+<p><strong>Linux 7.2 合并窗口开启，多项内存与文件系统优化落地</strong><br />
+Linux 7.2 内核合并窗口近期非常活跃，其中内存管理（MM）领域的改进尤为显著。多代 LRU（MGLRU）的进一步优化为 MongoDB 等数据库应用带来了 30% 到 100% 的吞吐量提升。此外，NTFS3、F2FS 等文件系统也提交了大量修复与性能改进，旨在减少内存占用并增强错误报告能力。<br />
+原文：<a href="https://www.phoronix.com/news/Linux-7.2-MM">MGLRU Improvement Yielding Nice Gains On Linux 7.2</a><br />
+原文：<a href="https://www.phoronix.com/news/Linux-7.2-F2FS">F2FS Integrates FSERROR Reporting, Reduces Memory Footprint In Linux 7.2</a></p>
+<p><strong>BPF Arena 辅助库 libarena 亮相，简化内核数据结构构建</strong><br />
+在 2026 年 Linux 存储、文件系统、内存管理与 BPF 峰会上，开发者介绍了 libarena 库。该库旨在为 BPF Arena 提供通用的工具函数，允许 BPF 程序在不受验证器边界检查限制的内存区域中自由构建复杂数据结构。虽然该库已集成到内核中，但仍处于早期阶段，未来将支持更多跨程序共享的数据结构。<br />
+原文：<a href="https://lwn.net/Articles/1078526/">A helper library for BPF arenas</a></p>
+<p><strong>AI 辅助修复涌现，Linux 7.2 增强 Perf 工具安全性</strong><br />
+Linux 7.2 内核引入了针对 perf 工具的防护机制，以防止恶意构造或损坏的性能数据导致系统崩溃。值得关注的是，这些安全补丁是在 AI 模型 Claude Opus 4.6 的辅助下完成的。然而，AI 相关的修复工作也占用了大量精力，导致本周期 ARM64 架构下的 KVM 虚拟化功能未能引入新特性。<br />
+原文：<a href="https://www.phoronix.com/news/Linux-7.2-Perf-Tools">Linux 7.2 Protects Against Crafted Perf Data From Going Rogue</a><br />
+原文：<a href="https://www.phoronix.com/news/Linux-7.2-KVM">"So Many AI-Fueled Fixes" Means No New ARM64 KVM Features For Linux 7.2</a></p>
+<p><strong>内核引入后量子加密签名支持与 x86 性能微调</strong><br />
+Linux 7.2 的完整性子系统（IMA/EVM）现在正式支持后量子加密算法 ML-DSA 签名，为应对未来量子计算威胁迈出重要一步。同时，GCC 编译器针对 x86 通用微调的一行代码变更，为现代 Intel 和 AMD 处理器带来了约 12% 的基准测试性能提升。<br />
+原文：<a href="https://www.phoronix.com/news/Linux-7.2-Integrity">Linux 7.2 Ready With IMA and EVM Post-Quantum ML-DSA Signature Support</a><br />
+原文：<a href="https://www.phoronix.com/news/GCC-x86-Generic-Mispredict">One Line x86 Change To GCC Compiler Nets +12% Benchmark Win For Modern Intel/AMD CPUs</a></p>
+<hr />
+<h2>业界大厂动向</h2>
+<p><strong>OpenAI 联手博通发布首款定制 AI 推理芯片 Jalapeño</strong><br />
+OpenAI 正式宣布与博通（Broadcom）合作开发其首款定制推理加速器芯片，代号为 Jalapeño。该芯片由加拿大电子制造商 Celestica 提供支持，旨在解决大规模语言模型推理中的能效与成本挑战。此举标志着 OpenAI 正在通过垂直整合硬件栈，减少对第三方芯片供应商的依赖。<br />
+原文：<a href="https://arstechnica.com/gadgets/2026/06/openai-and-broadcom-announce-chip-designed-for-llm-inference-at-scale/">OpenAI and Broadcom announce chip designed for LLM inference at scale</a></p>
+<p><strong>Red Hat 推动 AI 边缘化：RamaLama 助力 NASA 深空任务</strong><br />
+红帽（Red Hat）宣布其 RamaLama 项目正由 NASA 约翰逊航天中心进行测试，用于支持未来的月球和火星深空任务。RamaLama 能够实现本地 AI 推理，为宇航员提供临床决策支持系统（CMO-DA），在无法实时联系地球医生的情况下提供医疗辅助。此外，红帽还在探讨如何通过 OpenShift 虚拟化技术在硬件成本上升的背景下提升虚拟机资产的利用率。<br />
+原文：<a href="https://www.redhat.com/en/blog/moon-and-beyond-ramalama-being-tested-nasa-potentially-support-medical-ai-assistant-future-deep-space-missions">To the moon and beyond: RamaLama being tested by NASA</a><br />
+原文：<a href="https://www.redhat.com/en/blog/increasing-hardware-costs-get-more-your-vm-estate-red-hat-openshift-virtualization">Increasing hardware costs? Get more from your VM estate with Red Hat OpenShift Virtualization</a></p>
+<p><strong>Fedora 社区强制推行 2FA 以应对 AI 代理引发的安全风险</strong><br />
+受近期一起疑似账号被盗并导致 AI 代理在项目中引发混乱的事件影响，Fedora 社区正在讨论强制推行多因素身份验证（MFA/2FA）。初步计划要求“provenpackager”组的成员在三个月内启用 2FA。此举反映了开源供应链对账号安全的高度重视，尤其是在 AI 自动化工具日益普及的今天。<br />
+原文：<a href="https://lwn.net/Articles/1078964/">Fedora: 2FA, or not 2FA, that is the question</a></p>
+<hr />
+<h2>云原生领域</h2>
+<p><strong>Kubernetes v1.36 发布：工作负载感知调度与 PSI 指标达 GA</strong><br />
+Kubernetes v1.36 版本引入了重大架构演进，重点增强了对 AI/ML 和批处理任务的支持。新版本将 Workload API 与 PodGroup API 分离，实现了更精细的原子化工作负载处理。同时，压力停滞信息（PSI）指标正式达到稳定版（GA），为用户提供高精度的资源饱和度信号，帮助识别 CPU、内存和 I/O 争用。<br />
+原文：<a href="https://kubernetes.io/blog/2026/05/13/kubernetes-v1-36-advancing-workload-aware-scheduling/">Kubernetes v1.36: Advancing Workload-Aware Scheduling</a><br />
+原文：<a href="https://kubernetes.io/blog/2026/05/12/kubernetes-v1-36-psi-metrics-ga/">Kubernetes v1.36: PSI Metrics for Kubernetes Graduates to GA</a></p>
+<p><strong>动态资源分配（DRA）持续演进，支持更多硬件类型</strong><br />
+Kubernetes 的动态资源分配（DRA）框架在 v1.36 中继续成熟，不仅支持 GPU 和 TPU 等加速器，还扩展到了内存、CPU 以及网络接口等原生资源。DRA 的 GA 标志着 Kubernetes 处理硬件密集型工作负载的方式发生了根本性转变。社区目前正通过设备管理工作小组（WG Device Management）推动更灵活的资源回退和共享机制。<br />
+原文：<a href="https://kubernetes.io/blog/2026/06/24/wg-device-management-spotlight-2026/">Spotlight on WG Device Management</a><br />
+原文：<a href="https://kubernetes.io/blog/2026/05/07/kubernetes-v1-36-dra-136-updates/">Kubernetes v1.36: More Drivers, New Features, and the Next Era of DRA</a></p>
+<p><strong>CNCF 开发者认证计划升级，CKS 可延长 CKA 有效期</strong><br />
+为了简化云原生专业人士的证书维护流程，CNCF 推出了 CARE 计划。现在，通过 Kubernetes 安全专家认证（CKS）将自动延长已持有的 Kubernetes 管理员认证（CKA）的有效期。此外，CNCF 还与 Udemy 达成合作，提供统一的培训与考试购买流程，降低开发者的学习门槛。<br />
+原文：<a href="https://www.cncf.io/blog/2026/06/17/expanding-care-passing-cks-can-now-extend-your-cka-certification/">Expanding CARE: Passing CKS can now extend your CKA certification</a></p>
+<hr />
+<h2>AI 领域</h2>
+<p><strong>智能体 AI 指南发布：从底层架构到生产部署的全栈参考</strong><br />
+新发布的《智能体 AI 漫游指南》（The Hitchhiker's Guide to Agentic AI）为构建自主 AI 系统提供了全面的技术参考。该书涵盖了从 Transformer 架构、GPU 优化到 RLHF、DPO 等对齐技术的全过程，强调构建优秀的智能体系统需要理解从模型底座到推理层的每一个环节。<br />
+原文：<a href="https://arxiv.org/abs/2606.24937">The Hitchhiker's Guide to Agentic AI: From Foundations to Systems</a></p>
+<p><strong>DesktopMCP：让 AI 能够视觉感知并操作 Linux 桌面</strong><br />
+开源项目 DesktopMCP 引起了广泛关注，它允许 AI 模型“看到”并直接操作 Linux 桌面环境。通过集成模型上下文协议（MCP），该工具为 AI 智能体提供了与操作系统交互的能力，使其能够像人类用户一样执行复杂的桌面任务。<br />
+原文：<a href="https://github.com/varbhat/desktopmcp">DesktopMCP – Let AI See and Operate your Linux desktop</a></p>
+<p><strong>AWS 推出 MCP 网关与注册表，规范企业 AI 资产治理</strong><br />
+随着企业内部 AI 智能体和 MCP 服务数量的激增，AWS 提出了通过 MCP 网关和注册表进行大规模治理的方案。该方案允许 IT 部门维护批准的服务列表，同时支持各业务部门发布自己的 AI 技能和工作流。这种机制在促进创新的同时，确保了 AI 资产的可发现性与合规性。<br />
+原文：<a href="https://aws.amazon.com/blogs/opensource/governing-ai-assets-at-scale-with-mcp-gateway-and-registry/">Governing AI Assets at Scale with MCP Gateway and Registry</a></p>
+<hr />
+<h2>工业界最新动向</h2>
+<p><strong>QSOE v0.1 发布：受 QNX 启发的 RISC-V 开源操作系统</strong><br />
+QSOE 0.1 正式亮相，这是一个采用双内核架构、深受 QNX 启发的新型开源操作系统。该系统目前专门针对 RISC-V 架构进行开发，旨在为嵌入式和实时应用提供高性能、高可靠性的系统底座。<br />
+原文：<a href="https://www.phoronix.com/news/QSOE-0.1-Released">QSOE v0.1 Released As A QNX-Inspired RISC-V OS</a></p>
+<p><strong>Java 安全防御升级：Azul 与 Chainguard 针对 JVM 漏洞推出新方案</strong><br />
+针对企业中大量未打补丁的 Java 运行时环境，Azul Systems 推出了免费的 JVM 漏洞风险评估工具，旨在 AI 攻击者利用漏洞前发现风险。与此同时，Chainguard 提供了可直接替换的修复库，专门解决 Spring Boot 等框架中的历史遗留漏洞，帮助企业清理安全欠账。<br />
+原文：<a href="https://thenewstack.io/azul-java-security-jvm-mythos/">Azul wants to find your unpatched JVMs before AI does</a><br />
+原文：<a href="https://thenewstack.io/chainguard-java-libraries-spring-boot-cves/">Chainguard targets Java’s unpatched vulnerability backlog</a></p>
+<p><strong>Project Cherub：TempleOS 的现代化分支版本</strong><br />
+开发者发布了 Project Cherub 的早期构建版本，这是对 Terry A. Davis 创作的 TempleOS 的现代化重构。该项目旨在保留原系统的极简主义风格，同时通过修改内核将帧率从 30FPS 提升至 120FPS，并计划增加更多安全特性，使其成为一个对程序员和艺术家友好的现代操作系统。<br />
+原文：<a href="https://news.ycombinator.com/item?id=48656758">Project Cherub – New TempleOS Fork</a></p>
+<hr />
+<h2>学术界最新研究</h2>
+<p><strong>循环语言模型的“读取盲点”：密集监督并非万能</strong><br />
+arXiv 的一项新研究指出，循环语言模型（Looped LMs）在将隐藏状态转化为运行时状态时存在监督难题。研究表明，即使是密集的交叉熵损失也只能控制读取器暴露的变量，而无法有效控制递归转换中的径向尺度等隐藏变量。这一发现解释了为什么某些模型在早期退出时表现良好，但在长期递归中会出现尺度漂移。<br />
+原文：<a href="https://arxiv.org/abs/2606.24898">Dense Supervision Is Not Enough: The Readout Blind Spot in Looped Language Models</a></p>
+<p><strong>设备端神经架构搜索（NAS）：面向近传感器计算的新范式</strong><br />
+研究人员提出了一种在部署设备上直接进行轻量级 NAS 的新方法。该方法允许设备根据传感器获取的实时数据（如生物识别信号），动态重新设计最适合当前用户的微型神经架构。在意大利手语数据集上的验证显示，这种方法能有效应对个体间的生理差异，提升识别准确率。<br />
+原文：<a href="https://arxiv.org/abs/2606.24900">On-Device Neural Architecture Search</a></p>
+<p><strong>物理世界模型的守恒定律验证：如何确保证明界限？</strong><br />
+两篇相关论文探讨了学习型世界模型中的守恒定律与信任水平问题。研究者提出了“壳层水平证书”（shell-horizon certificates），通过测量模型缺陷来预先界定预测路径在物理不变性集合上的停留步数。此外，通过引入等变性（Equivariance），研究者成功将校准后的信任水平曲线推广到整个对称轨道上，增强了模型的可解释性与安全性。<br />
+原文：<a href="https://arxiv.org/abs/2606.24945">When Do Conservation Laws Survive Learned Representations?</a><br />
+原文：<a href="https://arxiv.org/abs/2606.24946">Conformal Orbit-Valid Trust Horizons for Equivariant World Models</a></p>
+<hr /></div>
+  </main>
+</body>
+</html>
