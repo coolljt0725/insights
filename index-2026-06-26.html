@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OS 领域每日洞察 - 2026-06-26</title>
+  <style>
+    :root {
+      --bg: #f6f4f0;
+      --bg-bar: #ebe8e3;
+      --bg-card: #fffefb;
+      --bg-card-hover: #f5f3ef;
+      --text: #2d2a26;
+      --text-muted: #5c5852;
+      --text-dim: #7a756e;
+      --accent: #5a7a9e;
+      --border: #ddd9d2;
+      --radius: 10px;
+      --font: "Segoe UI", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      font-size: 15px;
+    }
+
+    /* 门户顶栏 */
+    .masthead {
+      background: var(--bg-bar);
+      border-bottom: 1px solid var(--border);
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 0;
+    }
+    .masthead-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .masthead h1 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin: 0;
+      letter-spacing: -0.02em;
+      color: var(--text);
+    }
+    .masthead .meta {
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+    }
+
+    /* 主内容区：多栏门户布局 */
+    .main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 3rem;
+    }
+
+    /* 板块：每个 h2 为一个频道块 */
+    .content .section {
+      margin-bottom: 2.5rem;
+    }
+    .content h2 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+      margin: 0 0 1rem;
+      padding: 0.6rem 1rem;
+      background: var(--bg-bar);
+      border-radius: var(--radius);
+      border-left: 4px solid var(--accent);
+    }
+    .content h2:first-child { margin-top: 0; }
+
+    .content h2:has(+ h3) {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      border-left-color: var(--text-dim);
+    }
+
+    /* 板块内卡片网格（每个 h2 后的 ul） */
+    .content h2 + ul {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1rem;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .content h2 + ul li {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.15rem 1.2rem;
+      transition: background .15s, border-color .15s;
+    }
+    .content h2 + ul li:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--text-dim);
+    }
+    .content h2 + ul li strong {
+      display: block;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+      line-height: 1.4;
+    }
+    .content h2 + ul li p {
+      margin: 0 0 0.5rem;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.58;
+    }
+    .content h2 + ul li p:last-of-type { margin-bottom: 0; }
+    .content h2 + ul li a[href^="http"] {
+      font-size: 0.8125rem;
+      color: var(--accent);
+    }
+    .content h2 + ul li a[href^="http"]:hover { text-decoration: underline; }
+
+    .content .ref-section {
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+    .content h2 + h3 { margin-top: 1.25rem; }
+    .content h3 {
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--text-dim);
+      margin: 1rem 0 0.4rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .content h3 + ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 0.25rem;
+    }
+    .content h3 + ul li {
+      background: transparent;
+      border: none;
+      padding: 0.2rem 0;
+      font-size: 0.8125rem;
+    }
+    .content h3 + ul li strong { font-size: inherit; margin-bottom: 0; }
+    .content h3 + ul li a { color: var(--accent); }
+    .content h3 + ul li a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <header class="masthead">
+    <div class="masthead-inner">
+      <h1>OS 领域每日洞察 - 2026-06-26</h1>
+      <span class="meta">2026-06-26 04:01 UTC</span>
+    </div>
+  </header>
+  <main class="main">
+    <div class="content"><h2>Linux 内核社区热点与趋势</h2>
+<p><strong>Linux 扩展缓存感知调度显著提升 MySQL 性能</strong><br />
+Linux 内核近期引入的“缓存感知调度”（Cache Aware Scheduling）在最新补丁集中得到了进一步扩展。该技术通过优化 CPU 缓存利用率，在 MySQL 等数据库负载下表现出惊人的性能提升，测试数据显示其吞吐量增幅最高可达 360%。这一改进标志着 Linux 内核在处理高并发、内存密集型应用时的调度策略迈上了新台阶。<br />
+原文：<a href="https://www.phoronix.com/news/Extended-Cache-Aware-Sched">Linux Cache Aware Scheduling Extended For Even Better Performance: Up To 360% In MySQL</a></p>
+<p><strong>Linux 7.2 内核引入分配令牌与 bootpatch-SLR 增强安全性</strong><br />
+即将发布的 Linux 7.2 内核将集成多项硬化技术，旨在使内核漏洞更难被利用。其中，“分配令牌”（allocation tokens）改变了动态分配结构的内存布局以防止覆盖，而 “bootpatch-SLR” 项目则致力于在启动时随机化结构布局。这些底层改动反映了社区从单纯修复漏洞转向系统级防御的长期趋势。<br />
+原文：<a href="https://lwn.net/Articles/1078699/">Hardening the kernel with allocation tokens and bootpatch-SLR</a></p>
+<p><strong>Linux 7.2 清理陈旧驱动：移除 1998 年移植的 PROFIBUS 支持</strong><br />
+Linux 7.2 继续执行移除过时硬件驱动的策略，本次被清理的是已多年无人维护且无活跃用户的 PROFIBUS 驱动。该驱动最初于 1998 年从 SCO Unix 移植而来，其移除有助于精简内核源码树并降低维护负担。此外，Realtek RTL8723BS 等长期处于暂存区（Staging）的驱动也正在经历大规模的代码清理。<br />
+原文：<a href="https://www.phoronix.com/news/Linux-7.2-Char-Misc">Linux 7.2 Drops Ancient PROFIBUS Driver</a></p>
+<p><strong>KSMBD 在 Linux 7.2 中新增 SMB2 压缩支持</strong><br />
+作为内核集成的 SMB3 文件服务器，KSMBD 在 Linux 7.2 中引入了对 SMB2 协议压缩的支持。这一特性能够显著减少网络传输中的数据量，提升文件共享的效率，尤其是在带宽受限的存储网络环境中。<br />
+原文：<a href="https://www.phoronix.com/news/Linux-7.2-KSMBD">KSMBD Adds SMB2 Compression Support In Linux 7.2</a></p>
+<hr />
+<h2>业界大厂动向</h2>
+<p><strong>Linux 基金会联合多家巨头启动 Akrites 项目对抗 AI 驱动的漏洞利用</strong><br />
+Linux 基金会联合亚马逊、微软、英伟达、红帽及 OpenAI、Anthropic 等公司共同推出了 Akrites 项目。该项目旨在应对 AI/大模型快速发现开源软件漏洞带来的安全挑战，通过协调修复和披露流程，确保漏洞在被恶意利用前得到解决。这是业界首次大规模联合利用 AI 防御手段来保护关键开源基础设施。<br />
+原文：<a href="https://akrites.org/">Linux Foundation Launches Akrites to Defend FOSS from AI-Enabled Exploits</a></p>
+<p><strong>Oracle 宣布 MySQL 转向社区治理模式</strong><br />
+Oracle 近日宣布为 MySQL 引入全新的社区治理模型，旨在为更广泛的社区参与项目开发和决策创造路径。AWS 等云厂商对此表示支持，认为这一举措将增强 MySQL 生态的透明度和协作性。这标志着这款全球最流行的开源数据库进入了由社区驱动的新阶段。<br />
+原文：<a href="https://aws.amazon.com/blogs/opensource/open-governance-for-mysql-a-step-forward-for-the-community/">Open Governance for MySQL: A Step Forward for the Community</a></p>
+<p><strong>IBM 宣称实现全球首个亚 1 纳米（Sub-1nm）芯片技术</strong><br />
+IBM 展示了其最新的纳米堆叠晶体管技术，声称已突破 1 纳米工艺节点。这项技术有望大幅提升未来芯片的计算性能或能效比，为后摩尔定律时代的半导体发展提供了新的路径。<br />
+原文：<a href="https://arstechnica.com/gadgets/2026/06/ibm-claims-worlds-first-sub-1-nanometer-chip-technology/">IBM claims world’s first sub-1 nanometer chip technology</a></p>
+<p><strong>红帽与 IBM 扩展 Project Lightwell 以应对 AI 时代的安全威胁</strong><br />
+红帽、IBM 与 Palo Alto Networks 宣布扩展 Project Lightwell 协作项目，重点打击 AI 驱动的网络威胁。该项目提供网络级的虚拟补丁和开源软件修复方案，旨在帮助企业在 AI 自动发现漏洞的速度超过人工响应速度的背景下，实现快速的安全防御。<br />
+原文：<a href="https://www.redhat.com/en/blog/friday-five-june-26-2026-red-hat">Friday Five — June 26, 2026</a></p>
+<p><strong>Rust 基金会推出官方培训与认证计划</strong><br />
+为了应对 Rust 语言陡峭的学习曲线，Rust 基金会正式推出了“受信任培训”（RFTT）计划。该计划提供官方认证的培训课程，旨在规范市场上的 Rust 教学质量，帮助更多开发者和企业安全地采用 Rust 进行系统级开发。<br />
+原文：<a href="https://thenewstack.io/rust-foundation-training-certification/">Trust in Rust: Foundation debuts official training to tackle steep learning curve</a></p>
+<hr />
+<h2>云原生领域</h2>
+<p><strong>Podman 6.0 正式发布：增强网络隔离与 Docker 兼容性</strong><br />
+容器管理工具 Podman 发布了 6.0 大版本，引入了为容器设置多个静态 IP 地址的能力。新版本重写了配置文件处理逻辑，并改进了网络隔离机制，使其与 Docker 的行为更加一致。此外，Quadlet 命令的功能也得到了增强，进一步提升了系统级容器管理的灵活性。<br />
+原文：<a href="https://lwn.net/Articles/1079600/">Podman 6.0 released</a></p>
+<p><strong>Kubernetes 社区动态：Dashboard 归档与 etcd 3.7 预览</strong><br />
+Kubernetes 官方宣布 Dashboard 项目正式归档，推荐用户转向功能更现代的 Headlamp 界面。同时，核心组件 etcd 发布了 3.7.0-beta.0 版本，引入了期待已久的 RangeStream 特性，旨在优化大规模结果集的处理性能。此外，v1.36 版本将正式移除 Service 的 ExternalIPs 字段以修复长期的安全隐患。<br />
+原文：<a href="https://kubernetes.io/blog/2026/06/01/dashboard-to-headlamp/">From Kubernetes Dashboard to Headlamp: Understanding the Transition</a></p>
+<p><strong>MinIO 归档后的替代方案讨论：Ceph 与 Garage 备受关注</strong><br />
+自 MinIO 宣布进入维护模式并归档后，开源社区一直在寻找可靠的对象存储替代品。LWN 近期对比了 Ceph 和 Garage 两个项目，认为 Ceph 适合大规模企业级需求，而 Garage 则以轻量级和易于部署见长。两者都提供了良好的 S3 API 兼容性，成为 MinIO 用户的首选迁移目标。<br />
+原文：<a href="https://lwn.net/Articles/1077739/">A look at MinIO alternatives: Ceph and Garage</a></p>
+<p><strong>Cloudflare 为其工作流引擎引入 Saga 模式回滚机制</strong><br />
+Cloudflare Workflows 现在支持 Saga 风格的回滚功能，允许开发者为多步骤应用中的每个步骤指定补偿操作。这一改进增强了分布式任务执行的容错能力，确保在复杂业务流程中发生错误时，系统能够自动恢复到一致状态。<br />
+原文：<a href="https://blog.cloudflare.com/rollbacks-for-workflows/">How we built saga rollbacks for Cloudflare Workflows</a></p>
+<p><strong>CNCF 探索：在 Kubernetes 中构建集群感知的 AI 代理</strong><br />
+CNCF 博客分享了利用 Kubernetes、Argo CD 和 GitOps 构建自托管 AI 代理的实践。该方案强调数据不出集群，通过集群感知能力实现 AI 对基础设施的自动化管理。这种“AI 原生”的基础设施管理模式正在成为云原生演进的新方向。<br />
+原文：<a href="https://www.cncf.io/blog/2026/06/25/building-a-cluster-aware-ai-agent-with-kubernetes-argo-cd-and-gitops/">Building a Cluster-Aware AI Agent with Kubernetes, Argo CD, and GitOps</a></p>
+<hr />
+<h2>AI 领域</h2>
+<p><strong>Anthropic 指控阿里巴巴大规模克隆 Claude 模型能力</strong><br />
+Anthropic 声称阿里巴巴利用约 2.5 万个账号对 Claude 模型进行了超过 2800 万次交互，旨在通过“模型蒸馏”手段窃取其模型能力。Anthropic 呼吁对此类行为进行惩罚，认为这违反了服务条款并损害了 AI 行业的公平竞争。这一事件凸显了当前大模型厂商在知识产权保护与数据安全方面的激烈博弈。<br />
+原文：<a href="https://arstechnica.com/tech-policy/2026/06/anthropic-claims-alibaba-defied-trump-to-attack-claude-and-steal-capabilities/">Anthropic says Alibaba must be punished for largest Claude cloning attack</a></p>
+<p><strong>NVIDIA NeMo AutoModel 加速 Transformer 模型微调</strong><br />
+英伟达推出了 NeMo AutoModel，旨在简化并加速 Transformer 架构模型的微调过程。该工具能够自动选择最佳的超参数和优化策略，降低了开发者在高性能计算环境下训练大模型的门槛。<br />
+原文：<a href="https://huggingface.co/blog/nvidia/accelerating-fine-tuning-nvidia-nemo-automodel">Accelerating Transformers Fine-Tuning with NVIDIA NeMo AutoModel</a></p>
+<p><strong>AWS 发布 Trusted Remote Execution (Rex) 开源脚本运行时</strong><br />
+亚马逊发布了名为 Rex 的开源项目，这是一个专为 AI 代理和人类设计的受策略保护的脚本运行时。Rex 使用轻量级的 Rhai 语言，所有系统操作都必须经过 Cedar 策略授权，从而解决了 AI 代理在执行自主任务时的安全管控难题。<br />
+原文：<a href="https://aws.amazon.com/blogs/opensource/introducing-trusted-remote-execution-policy-enforced-scripts-for-ai-agents-and-humans/">Introducing Trusted Remote Execution: Policy-Enforced Scripts for AI Agents and Humans</a></p>
+<p><strong>FFmpeg 通过 AMD 贡献引入 ONNX Runtime 后端支持</strong><br />
+AMD 工程师为 FFmpeg 的 DNN 过滤器贡献了 ONNX Runtime 后端，使得 AI 模型可以直接在视频处理流水线中运行。这一改进扩展了 FFmpeg 利用 GPU 和 NPU 进行超分辨率、目标检测和背景分割的能力，极大提升了多媒体处理的智能化水平。<br />
+原文：<a href="https://www.phoronix.com/news/FFmpeg-DNN-ONNX-Runtime">AMD Contributes ONNX Runtime Backend To FFmpeg DNN Filter</a></p>
+<p><strong>Notion 关停邮件应用，全面转向 AI 代理管理收件箱</strong><br />
+Notion 宣布停止开发其受 Skiff 启发的电子邮件应用，理由是大多数用户现在更倾向于使用 AI 代理来处理邮件。该公司表示将全力投入到“代理驱动”的收件箱体验中，反映了办公软件从工具向自动化代理转变的趋势。<br />
+原文：<a href="https://arstechnica.com/gadgets/2026/06/notion-killing-skiff-influenced-email-app-since-most-users-use-ai-agents-instead/">Notion killing Skiff-influenced email app since most users use AI agents instead</a></p>
+<hr />
+<h2>工业界最新动向</h2>
+<p><strong>Coreboot 26.06 发布：支持 Intel Nova Lake 与 AMD Strix Halo</strong><br />
+开源固件项目 Coreboot 发布了 26.06 季度更新，新增了对 Intel Nova Lake 和 AMD Strix Halo 等下一代硬件平台的支持。本次更新还涵盖了 31 款新主板，进一步扩大了开源固件在服务器和嵌入式领域的应用范围。<br />
+原文：<a href="https://www.phoronix.com/news/Coreboot-26.06-Released">Coreboot 26.06 Brings Support For Intel Nova Lake, AMD Strix Halo &amp; 31 New Boards</a></p>
+<p><strong>DXVK 3.0 发布：默认启用描述符堆并优化着色器编译</strong><br />
+将 Direct3D 转换为 Vulkan 的关键层 DXVK 发布了 3.0 版本。该版本引入了 DXBC-SPIRV 用于着色器编译，并默认启用了描述符堆（Descriptor Heaps），显著提升了 Linux 下运行 Windows 游戏的性能和兼容性，是 Wine 和 Steam Proton 生态的重要里程碑。<br />
+原文：<a href="https://www.phoronix.com/news/DXVK-3.0-Release">DXVK 3.0 Released With DXBC-SPIRV For Shader Compilation</a></p>
+<p><strong>Ubuntu 26.10 发布第二个每月快照版本</strong><br />
+代号为 "Stonking Stingray" 的 Ubuntu 26.10 发布了第二个每月测试快照。虽然每日构建版一直在更新，但快照版本为希望参与测试的用户提供了更稳定的阶段性镜像，标志着下一个短期支持版本的开发进入稳步推进阶段。<br />
+原文：<a href="https://www.phoronix.com/news/Ubuntu-26.10-Snapshot-2">Ubuntu 26.10 Snapshot 2 Released For Monthly Testing</a></p>
+<p><strong>Servo 0.3 浏览器引擎发布：演示浏览器功能大幅增强</strong><br />
+使用 Rust 编写的现代浏览器引擎 Servo 发布了 0.3 版本。新版本增强了其演示浏览器 servoshell 的实用性，支持更多现代 Web 特性。Servo 被视为嵌入式场景下 Chromium 嵌入式框架（CEF）的有力竞争者。<br />
+原文：<a href="https://www.phoronix.com/news/Servo-0.3-Released">Servo 0.3 Released With The Demo Browser Becoming More Useful</a></p>
+<p><strong>Academy Software Foundation 成立“艺术家 Wayland 工作组”</strong><br />
+负责推动影视行业开源技术的 Academy Software Foundation 宣布成立新工作组，旨在帮助视觉特效（VFX）艺术家和电影行业更顺畅地迁移到 Wayland 显示协议。这表明 Wayland 在专业图形领域的普及正在加速。<br />
+原文：<a href="https://www.phoronix.com/news/Wayland-For-Artists">Academy Software Foundation Announces The "Wayland For Artists Working Group"</a></p>
+<hr />
+<h2>学术界最新研究</h2>
+<p><strong>LtRAM 与应用只读内存：解决数据中心内存瓶颈的新路径</strong><br />
+arXiv 论文探讨了长期 RAM（LtRAM）技术在数据中心的应用。研究者提出了一种“应用只读内存”模型，旨在绕过 LtRAM 读写不对称和寿命有限的缺陷，通过内核级的优化让软件直接利用 LtRAM 的高密度和低成本特性，而无需昂贵的硬件转换层。<br />
+原文：<a href="https://arxiv.org/abs/2606.26138">The Kernel's Write: Application Read-Only Memory</a></p>
+<p><strong>Revelator：基于硬件-OS 协作的推测性地址转换</strong><br />
+地址转换是现代计算系统的性能瓶颈，论文提出了 Revelator 技术。该技术通过硬件与操作系统的协作，利用哈希算法实现准确的虚拟地址到物理地址的推测，从而在不依赖大页内存的情况下显著降低内存访问延迟。<br />
+原文：<a href="https://arxiv.org/abs/2508.02007">Revelator: Rapid Data Fetching via System-Software-Guided Hash-based Speculative Address Translation</a></p>
+<p><strong>LLM-as-Judge 安全评估的局限性：温度设为 0 并非万能</strong><br />
+研究发现，在 LLM 安全评估中，即使将采样温度设为 0，评分结果仍可能不具有确定性。论文指出，底层供应商的默认设置和模型内部的随机性会导致同一题目在多次运行中出现不同的判定结果，这对建立可靠的 AI 安全评估标准提出了挑战。<br />
+原文：<a href="https://arxiv.org/abs/2606.26185">Necessary but Not Sufficient: Temperature Control and Reproducibility in LLM-as-Judge Safety Evaluations</a></p>
+<p><strong>验证地平线：编码代理奖励机制中不存在“银弹”</strong><br />
+传统观点认为验证解法比生成解法容易，但在 AI 编码领域这一逻辑正在反转。论文指出，随着模型推理能力的增强，生成复杂代码已不再困难，但如何可靠地验证这些代码是否符合人类意图（即验证问题）已成为核心挑战，且优化过程往往会扩大验证代理与真实意图之间的差距。<br />
+原文：<a href="https://arxiv.org/abs/2606.26300">The Verification Horizon: No Silver Bullet for Coding Agent Rewards</a></p>
+<p><strong>AlgoEvolve：利用 LLM 驱动交易程序的元进化</strong><br />
+该研究展示了如何利用大语言模型作为语义变异算子，在噪声大且非平稳的金融市场中进化交易策略。AlgoEvolve 框架能够自动生成、评估并迭代改进 Python 编写的交易代码，并表现出能够根据市场环境自主调整策略逻辑的涌现特性。<br />
+原文：<a href="https://arxiv.org/abs/2606.26173">AlgoEvolve: LLM-driven Meta-evolution of Algorithmic Trading Programs</a></p>
+<hr /></div>
+  </main>
+</body>
+</html>
