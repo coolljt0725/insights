@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OS 领域每日洞察 - 2026-06-30</title>
+  <style>
+    :root {
+      --bg: #f6f4f0;
+      --bg-bar: #ebe8e3;
+      --bg-card: #fffefb;
+      --bg-card-hover: #f5f3ef;
+      --text: #2d2a26;
+      --text-muted: #5c5852;
+      --text-dim: #7a756e;
+      --accent: #5a7a9e;
+      --border: #ddd9d2;
+      --radius: 10px;
+      --font: "Segoe UI", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      font-size: 15px;
+    }
+
+    /* 门户顶栏 */
+    .masthead {
+      background: var(--bg-bar);
+      border-bottom: 1px solid var(--border);
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 0;
+    }
+    .masthead-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .masthead h1 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin: 0;
+      letter-spacing: -0.02em;
+      color: var(--text);
+    }
+    .masthead .meta {
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+    }
+
+    /* 主内容区：多栏门户布局 */
+    .main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 3rem;
+    }
+
+    /* 板块：每个 h2 为一个频道块 */
+    .content .section {
+      margin-bottom: 2.5rem;
+    }
+    .content h2 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+      margin: 0 0 1rem;
+      padding: 0.6rem 1rem;
+      background: var(--bg-bar);
+      border-radius: var(--radius);
+      border-left: 4px solid var(--accent);
+    }
+    .content h2:first-child { margin-top: 0; }
+
+    .content h2:has(+ h3) {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      border-left-color: var(--text-dim);
+    }
+
+    /* 板块内卡片网格（每个 h2 后的 ul） */
+    .content h2 + ul {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1rem;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .content h2 + ul li {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.15rem 1.2rem;
+      transition: background .15s, border-color .15s;
+    }
+    .content h2 + ul li:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--text-dim);
+    }
+    .content h2 + ul li strong {
+      display: block;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+      line-height: 1.4;
+    }
+    .content h2 + ul li p {
+      margin: 0 0 0.5rem;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.58;
+    }
+    .content h2 + ul li p:last-of-type { margin-bottom: 0; }
+    .content h2 + ul li a[href^="http"] {
+      font-size: 0.8125rem;
+      color: var(--accent);
+    }
+    .content h2 + ul li a[href^="http"]:hover { text-decoration: underline; }
+
+    .content .ref-section {
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+    .content h2 + h3 { margin-top: 1.25rem; }
+    .content h3 {
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--text-dim);
+      margin: 1rem 0 0.4rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .content h3 + ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 0.25rem;
+    }
+    .content h3 + ul li {
+      background: transparent;
+      border: none;
+      padding: 0.2rem 0;
+      font-size: 0.8125rem;
+    }
+    .content h3 + ul li strong { font-size: inherit; margin-bottom: 0; }
+    .content h3 + ul li a { color: var(--accent); }
+    .content h3 + ul li a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <header class="masthead">
+    <div class="masthead-inner">
+      <h1>OS 领域每日洞察 - 2026-06-30</h1>
+      <span class="meta">2026-06-30 04:00 UTC</span>
+    </div>
+  </header>
+  <main class="main">
+    <div class="content"><h2>Linux 内核社区热点与趋势</h2>
+<p><strong>Linux 7.2 合并窗口关闭，发布首个候选版本 7.2-rc1</strong><br />
+Linus Torvalds 正式发布了 Linux 7.2-rc1，标志着 7.2 开发周期的合并窗口结束。本次合并窗口非常繁忙，共计并入了 13,412 个非合并提交，是自 2024 年 6.7 版本以来最活跃的一次。尽管后期提交主要集中在错误修复，但仍引入了大量新特性，涵盖了驱动更新、架构优化及文件系统改进。<br />
+原文：<a href="https://lwn.net/Articles/1078539/">The rest of the 7.2 merge window</a></p>
+<p><strong>Bcachefs 文件系统计划在内核模块中引入 Rust 代码</strong><br />
+Bcachefs 文件系统开发者计划在即将发布的 v1.38.7 版本中，开始在内核驱动部分引入 Rust 语言编写的代码。此前 Bcachefs 仅在用户态工具中使用 Rust，这一转变标志着该现代文件系统正深度拥抱 Rust 以提升内存安全性。如果成功并入主线，这将是继基础架构之后，Linux 内核中 Rust 应用的又一重要里程碑。<br />
+原文：<a href="https://www.phoronix.com/news/Bcachefs-1.38.7-Rust-Kernel">Next Bcachefs Release Aims To Include Rust Code In The Kernel Module</a></p>
+<p><strong>AMD 提交新补丁，为 Linux 内核引入“低功耗”核心类型支持</strong><br />
+AMD 向 Linux 内核邮件列表提交了一系列补丁，旨在为其异构处理器架构引入全新的“低功耗（Low Power）”核心类型。目前的内核拓扑代码仅区分“性能”和“效率”核心，AMD 的这一举动将帮助调度器更精准地识别硬件特性。这将显著优化笔记本电脑等移动设备的电源管理，平衡高性能需求与超长续航。<br />
+原文：<a href="https://www.phoronix.com/news/AMD-Low-Power-CPU-Core-Linux">AMD Linux Patches Introduce New "Low Power" CPU Core Type</a></p>
+<p><strong>Infinity Scheduler：一种旨在改进 Linux 调度行为的新尝试</strong><br />
+Infinity Scheduler 是由 scx_flow 开发者提出的新型调度方案，它不依赖于 sched_ext 框架，而是直接通过补丁修改内核的 CFS 和实时（RT）调度逻辑。该项目旨在解决现有调度器在特定负载下的性能瓶颈，提供更优的 CPU 资源分配。目前该项目仍处于实验阶段，正寻求社区的反馈与测试。<br />
+原文：<a href="https://www.phoronix.com/news/Infinity-Scheduler">Infinity Scheduler Aims To Be A Better Linux Scheduler</a></p>
+<hr />
+<h2>业界大厂动向</h2>
+<p><strong>微软发布 WSL 容器（WSLC）公开预览版，增强 Windows 上的 Linux 体验</strong><br />
+微软推出了 Windows Subsystem for Linux (WSL) 的最新扩展——WSL 容器（WSLC）的公开预览版。该功能允许用户在 Windows 11 上更无缝地运行 Linux 容器，进一步模糊了 Windows 与 Linux 开发环境的界限。这一举措旨在吸引更多云原生开发者，使 Windows 成为更强大的容器开发工作站。<br />
+原文：<a href="https://www.phoronix.com/news/Microsoft-Preview-WSL-WSLC">Microsoft Announces Public Preview For Linux Containers On WSL</a></p>
+<p><strong>红帽发布 goose AI 智能体，助力 RHEL 系统故障排查</strong><br />
+红帽宣布在 RHEL 扩展仓库中推出名为 goose 的开源 AI 智能体，支持 RHEL 9.8 和 10.2。goose 能够通过自然语言与系统管理员交互，提供实时的故障诊断建议和操作指导。这是红帽将生成式 AI 引入企业级操作系统运维的重要一步，旨在降低复杂系统的管理门槛。<br />
+原文：<a href="https://www.redhat.com/en/blog/supercharge-rhel-troubleshooting-agentic-ai-introducing-goose">Supercharge RHEL troubleshooting with agentic AI: Introducing goose</a></p>
+<p><strong>红帽资深工程师放弃 AArch64 桌面，回归 AMD Ryzen 平台</strong><br />
+红帽 ARM 团队的高级软件工程师 Marcin Juszkiewicz 在尝试将 AArch64 Linux 作为主要个人桌面系统近一年后，宣布回归 AMD Ryzen 平台。他指出，尽管 ARM 服务器端表现优异，但在桌面端仍面临驱动兼容性、软件生态及硬件稳定性等诸多挑战。这一反馈反映出 ARM 架构在通用 Linux 桌面领域仍有很长的路要走。<br />
+原文：<a href="https://www.phoronix.com/news/Red-Hat-ARM-Engineer-Back-Ryzen">Red Hat ARM Engineer Abandons ARM64 Linux Personal Desktop, Goes Back To AMD Ryzen System</a></p>
+<p><strong>Google 警告欧盟反垄断计划可能暴露用户隐私数据</strong><br />
+针对欧盟要求 Google 分享搜索数据并开放 Android AI 接口的计划，Google 发出警告称这可能带来严重的隐私风险。Google 认为，强制与竞争对手共享数据会削弱其现有的安全保护机制，导致用户敏感信息外泄。这一表态凸显了科技巨头在合规压力与数据保护之间的激烈博弈。<br />
+原文：<a href="https://arstechnica.com/gadgets/2026/06/google-warns-eus-plans-to-weaken-its-monopoly-could-expose-user-data/">Google warns EU's plans to weaken its monopoly could expose user data</a></p>
+<hr />
+<h2>云原生领域</h2>
+<p><strong>Kubernetes 社区发布 AI 使用政策，规范 AI 辅助编程行为</strong><br />
+Kubernetes 项目正式发布了针对 AI 辅助编程的政策，强调虽然 AI 能加速代码生成，但无法替代代码维护。政策要求贡献者必须披露是否使用了 AI 工具，并严禁将 AI 列为代码作者。此举旨在确保代码库的可维护性和法律合规性，防止低质量 AI 生成代码泛滥。<br />
+原文：<a href="https://lwn.net/Articles/1080144/">Open source maintainership in the age of AI (Kubernetes blog)</a></p>
+<p><strong>Jaeger v2.18.0 引入 ClickHouse 后端，存储压缩率提升 8.6 倍</strong><br />
+分布式追踪系统 Jaeger 宣布正式支持 ClickHouse 作为存储后端，并在 1000 万个 Span 的测试中实现了 8.6 倍的惊人压缩率。ClickHouse 的引入解决了长期以来用户对高性能、低成本追踪数据存储的需求。这一更新将显著降低大规模微服务架构下的可观测性成本。<br />
+原文：<a href="https://www.cncf.io/blog/2026/06/23/building-jaegers-clickhouse-backend-8-6x-compression-on-10-million-spans/">Building Jaeger’s ClickHouse backend: 8.6× compression on 10 million spans</a></p>
+<p><strong>etcd-operator 加入 Cozystack 项目并发布 v1alpha2 API</strong><br />
+用于在 Kubernetes 上部署和维护 etcd 集群的 etcd-operator 项目已捐赠给 Cozystack 项目。随之发布的是从零编写的全新实现版本，引入了 v1alpha2 API，旨在提供更稳定的集群生命周期管理。这一变动有望整合社区力量，解决 etcd 在 K8s 运维中的复杂性问题。<br />
+原文：<a href="https://www.cncf.io/blog/2026/06/29/etcd-operator-joins-cozystack-with-a-new-v1alpha2-api/">etcd-operator joins Cozystack with a new v1alpha2 API</a></p>
+<hr />
+<h2>AI 领域</h2>
+<p><strong>Agent libOS：为自进化 LLM 智能体设计的库操作系统</strong><br />
+研究人员提出了 Agent libOS，这是一种专为具备自进化能力的 LLM 智能体设计的运行时底座。该系统通过能力控制（Capability-controlled）机制，确保智能体在积累记忆、合成工具和派生子进程时，其权限变更必须经过审计。这解决了 AI 智能体在长期运行中可能出现的权限提升和系统安全风险。<br />
+原文：<a href="https://arxiv.org/abs/2606.03895">Agent libOS: A Runtime Substrate for Capability-Controlled Self-Evolving LLM Agents</a></p>
+<p><strong>ZLUDA v6 发布：支持 AMD GPU 运行 PhysX，但面临资金断裂</strong><br />
+开源项目 ZLUDA 发布了 v6 版本，实现了在 AMD GPU 上流畅运行 PhysX 物理加速，并增强了 Windows 支持。然而，开发者透露该项目再次失去了匿名资助者的支持，目前处于资金匮乏状态。ZLUDA 最初旨在让 Intel 和 AMD 硬件无缝运行 CUDA 应用，其坎坷的命运反映了非 NVIDIA 硬件生态构建的艰难。<br />
+原文：<a href="https://www.phoronix.com/news/ZLUDA-6-Released">ZLUDA v6 Gets PhysX Running Well On AMD GPUs But Loses Commercial Funding</a></p>
+<p><strong>NIVA：用于地球系统智能的多模态基础模型</strong><br />
+NIVA 是一个旨在学习地球系统各组件（如大气、海洋、冰层、陆地）统一表示的多模态基础模型。目前该模型已在海洋与大气的耦合动力学模拟中证明了其有效性，能够超越传统数值预报的 2 周预测极限。这一研究展示了 AI 在应对气候变化和复杂系统建模方面的巨大潜力。<br />
+原文：<a href="https://arxiv.org/abs/2606.28546">NIVA: A Multimodal Foundation Model for Actionable Earth System Intelligence</a></p>
+<p><strong>Palantir 与 Nvidia 合作推动“主权 AI”发展</strong><br />
+Palantir 与 Nvidia 宣布合作，旨在改变政府机构拥有和使用 AI 的方式，推动“主权 AI”概念落地。双方将结合高性能计算硬件与安全的数据处理平台，帮助政府在不依赖外部通用 API 的情况下构建私有 AI 能力。这一动向反映了全球范围内对 AI 基础设施自主可控的重视。<br />
+原文：<a href="https://thenewstack.io/palantir-nvidia-sovereign-ai/">Palantir and Nvidia want to change who owns government AI</a></p>
+<hr />
+<h2>工业界最新动向</h2>
+<p><strong>Git 2.55.0 正式发布，默认启用 Rust 支持</strong><br />
+分布式版本控制系统 Git 发布了 2.55.0 版本，最引人注目的变化是默认启用了 Rust 支持。新版本还引入了实验性的 <code>git history</code> 命令增强功能，并为 Linux 系统增加了 fsmonitor 守护进程以提升大型仓库的性能。本次更新共有 100 位贡献者参与，其中 33 位是首次贡献，显示了 Git 社区的持续活力。<br />
+原文：<a href="https://www.phoronix.com/news/Git-2.55-Released">Git 2.55 Released With Rust Support Enabled By Default</a></p>
+<p><strong>韩国计划投入 1 万亿美元发展存储芯片与人形机器人</strong><br />
+韩国政府宣布了一项宏大的投资计划，拟投入 1 万亿美元以巩固其在存储芯片领域的领先地位，并加速人形机器人的商业化。该计划目标是在 2028 年前实现人形机器人的大规模应用，将物理 AI 与先进硬件制造相结合。这一战略旨在应对全球半导体竞争及劳动力短缺问题。<br />
+原文：<a href="https://arstechnica.com/ai/2026/06/south-korea-to-spend-1t-on-more-memory-chip-production-and-humanoid-robots/">South Korea to spend $1T on more memory chip production and humanoid robots</a></p>
+<p><strong>Wine 11.12 发布，支持 Wayland 分数缩放</strong><br />
+Wine 11.12 开发版正式发布，为 Wayland 驱动带来了分数缩放（Fractional Scaling）支持。此外，该版本还包含多项 Wayland 驱动增强和错误修复，进一步提升了在 Linux 上运行 Windows 应用程序的视觉效果和兼容性。随着 Wayland 逐渐成为主流，Wine 的这一更新对桌面 Linux 用户至关重要。<br />
+原文：<a href="https://www.phoronix.com/news/Wine-11.12-Released">Wine 11.12 Released With Wayland Fractional Scaling &amp; Other Wayland Enhancements</a></p>
+<p><strong>TLAC：旨在替代内核级反作弊系统的开源方案</strong><br />
+TLAC 是一个新的开源项目，旨在提供一种尊重隐私的方案，以替代 Denuvo 等侵入性强的内核级反作弊系统。该系统试图在不牺牲用户系统权限和隐私的前提下，有效识别游戏中的作弊行为。虽然目前尚未有大型游戏正式采用，但它为解决游戏安全与用户隐私冲突提供了新思路。<br />
+原文：<a href="https://www.phoronix.com/news/TLAC-Open-Source-Anti-Cheat">TLAC Aims To Be An Open-Source Alternative To Kernel-Level Anti-Cheat Systems</a></p>
+<hr />
+<h2>学术界最新研究</h2>
+<p><strong>Xkernel：实现操作系统内核性能参数的原则性可调优性</strong><br />
+来自 arXiv 的研究论文介绍了 Xkernel 系统，它为运行中的内核提供了一个安全、高效且可编程的接口，用于实时调整性能常量（perf-consts）。通过创新的“作用域间接执行（SIE）”技术，Xkernel 能将硬编码的魔数转换为按需可调的旋钮。这解决了部署后的内核难以根据特定硬件或负载进行原位调优的长期痛点。<br />
+原文：<a href="https://arxiv.org/abs/2512.12530">Xkernel: Principled Performance Tunability of Operating System Kernels</a></p>
+<p><strong>神经证明嵌入中选择公理的几何测量</strong><br />
+研究者利用 Lean 4 形式化证明框架，研究了“选择公理（Axiom of Choice）”在数学证明空间中的几何关联。通过对 Mathlib 中超过 47 万个声明的分析，发现依赖选择公理的证明在向量空间中具有可测量的几何特征。这一研究为神经定理证明器提供了操作层面的指导，展示了逻辑属性如何转化为几何表示。<br />
+原文：<a href="https://arxiv.org/abs/2606.28572">Geometric Measurements of the Axiom of Choice in Neural Proof Embeddings</a></p>
+<p><strong>KL-DNN：一种可分部训练的算子学习框架，助力大规模 PDE 建模</strong><br />
+针对大规模偏微分方程（PDE）建模中的维度灾难和内存限制，研究者提出了基于 Karhunen-Loeve 展开的深度神经网络框架 KL-DNN。该框架通过构建低秩奇异值的潜空间，实现了对拥有 170 万个单元和 50 个时间步的大规模 3D 模拟数据的有效处理。实验证明，该方法在地下流体建模等科学工程应用中具有极高的扩展性。<br />
+原文：<a href="https://arxiv.org/abs/2606.28519">A Trainable-by-Parts Operator Learning Framework: Bridging DeepONet and Karhunen-Loeve Expansions</a></p>
+<hr /></div>
+  </main>
+</body>
+</html>
