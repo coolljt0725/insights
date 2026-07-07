@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OS 领域每日洞察 - 2026-07-07</title>
+  <style>
+    :root {
+      --bg: #f6f4f0;
+      --bg-bar: #ebe8e3;
+      --bg-card: #fffefb;
+      --bg-card-hover: #f5f3ef;
+      --text: #2d2a26;
+      --text-muted: #5c5852;
+      --text-dim: #7a756e;
+      --accent: #5a7a9e;
+      --border: #ddd9d2;
+      --radius: 10px;
+      --font: "Segoe UI", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      font-size: 15px;
+    }
+
+    /* 门户顶栏 */
+    .masthead {
+      background: var(--bg-bar);
+      border-bottom: 1px solid var(--border);
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 0;
+    }
+    .masthead-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .masthead h1 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin: 0;
+      letter-spacing: -0.02em;
+      color: var(--text);
+    }
+    .masthead .meta {
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+    }
+
+    /* 主内容区：多栏门户布局 */
+    .main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 3rem;
+    }
+
+    /* 板块：每个 h2 为一个频道块 */
+    .content .section {
+      margin-bottom: 2.5rem;
+    }
+    .content h2 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+      margin: 0 0 1rem;
+      padding: 0.6rem 1rem;
+      background: var(--bg-bar);
+      border-radius: var(--radius);
+      border-left: 4px solid var(--accent);
+    }
+    .content h2:first-child { margin-top: 0; }
+
+    .content h2:has(+ h3) {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      border-left-color: var(--text-dim);
+    }
+
+    /* 板块内卡片网格（每个 h2 后的 ul） */
+    .content h2 + ul {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1rem;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .content h2 + ul li {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.15rem 1.2rem;
+      transition: background .15s, border-color .15s;
+    }
+    .content h2 + ul li:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--text-dim);
+    }
+    .content h2 + ul li strong {
+      display: block;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+      line-height: 1.4;
+    }
+    .content h2 + ul li p {
+      margin: 0 0 0.5rem;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.58;
+    }
+    .content h2 + ul li p:last-of-type { margin-bottom: 0; }
+    .content h2 + ul li a[href^="http"] {
+      font-size: 0.8125rem;
+      color: var(--accent);
+    }
+    .content h2 + ul li a[href^="http"]:hover { text-decoration: underline; }
+
+    .content .ref-section {
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+    .content h2 + h3 { margin-top: 1.25rem; }
+    .content h3 {
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--text-dim);
+      margin: 1rem 0 0.4rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .content h3 + ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 0.25rem;
+    }
+    .content h3 + ul li {
+      background: transparent;
+      border: none;
+      padding: 0.2rem 0;
+      font-size: 0.8125rem;
+    }
+    .content h3 + ul li strong { font-size: inherit; margin-bottom: 0; }
+    .content h3 + ul li a { color: var(--accent); }
+    .content h3 + ul li a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <header class="masthead">
+    <div class="masthead-inner">
+      <h1>OS 领域每日洞察 - 2026-07-07</h1>
+      <span class="meta">2026-07-07 04:01 UTC</span>
+    </div>
+  </header>
+  <main class="main">
+    <div class="content"><h2>Linux 内核社区热点与趋势</h2>
+<p><strong>Linux 内核 iomap 层深度解析：简化文件系统与存储映射</strong><br />
+iomap 是 Linux 内核中负责处理文件系统空间（文件偏移量）与存储空间（内存位置或磁盘块）之间映射的关键层。它通过统一的接口处理了大量通用的文件系统任务，允许开发者移除各文件系统实现中的冗余样板代码。这一层的完善对于提升内核文件系统的可维护性和性能具有重要意义。<br />
+原文：<a href="https://lwn.net/Articles/1079415/">The kernel's iomap layer</a></p>
+<p><strong>Linux 7.3 将引入“摊平选择”补丁，显著提升老旧硬件游戏性能</strong><br />
+开发者提交了一组名为“摊平选择”（Flatten the pick）的调度器优化补丁，旨在改进 cgroup 调度逻辑。该优化特别针对性能较低的“土豆电脑”硬件，通过减少调度开销来提升游戏运行的平滑度。该系列补丁预计将在 Linux 7.3 合并窗口期间正式进入主线内核。<br />
+原文：<a href="https://www.phoronix.com/news/Linux-7.3-Flattens-The-Pick">Linux 7.3 Expected To "Flatten The Pick" For Better Scheduling While Gaming &amp; More</a></p>
+<p><strong>严重 Epoll 漏洞暴露，攻击者或可获取 Linux 与 Android 根权限</strong><br />
+安全研究人员发现了一个存在于 Linux 内核 epoll 机制中的高危漏洞，该漏洞可能导致本地权限提升。由于 epoll 是 Linux 处理大规模并发 I/O 的核心组件，该漏洞广泛影响包括服务器和 Android 设备在内的多种系统。目前社区正紧急推动补丁分发，建议用户及时关注发行版内核更新。<br />
+原文：<a href="https://securityaffairs.com/194795/hacking/bad-epoll-flaw-gives-attackers-root-access-on-linux-and-android.html">Bad Epoll Flaw Gives Attackers Root Access on Linux and Android</a></p>
+<p><strong>Intel i915 驱动接近实现对实时 (RT) 内核的全面支持</strong><br />
+Intel 工程师正在努力让 i915 显卡驱动与 PREEMPT_RT 实时内核补丁集更好地协同工作。长期以来，由于显示驱动的复杂中断处理，i915 在实时环境下存在兼容性挑战。最新的补丁进展意味着在不启用显示输出的情况下，Intel 显卡驱动已几乎可以在实时内核中稳定运行。<br />
+原文：<a href="https://www.phoronix.com/news/Intel-i915-RT-Linux-Kernel">Intel i915 Driver Nearly Ready To "Work Well" With RT Linux Kernel Sans Display Support</a></p>
+<hr />
+<h2>业界大厂动向</h2>
+<p><strong>AMD 发布基于 Debian 的“Rex”操作系统，打造 Ryzen AI 开发平台</strong><br />
+AMD 推出了名为“AMD Ryzen AI Developer Platform 1”的定制 Linux 发行版，代号为“Rex”。该系统基于 Debian 构建，预装了 ROCm 堆栈及相关 AI 开发工具，旨在为其最新的 Ryzen AI Max+ (Strix Halo) 硬件提供开箱即用的开发环境。这标志着 AMD 在 AI 硬件生态系统软件支持方面迈出了重要一步。<br />
+原文：<a href="https://www.phoronix.com/review/ryzen-ai-linux-os">Ryzen AI Developer Platform: AMD's Own Linux Distribution Built Atop Debian</a></p>
+<p><strong>OpenSSH 10.4 发布：引入实验性后量子加密支持</strong><br />
+OpenSSH 官方发布了 10.4 版本，最显著的变化是增加了对后量子签名方案（ML-DSA 44 与 Ed25519 组合）的实验性支持。此外，新版本加强了 Linux 下的沙箱安全性，如果系统未启用 SECCOMP 或 NO_NEW_PRIVS，编译了沙箱支持的 sshd 将直接拒绝运行。这一更新反映了业界对未来量子计算威胁的提前布局。<br />
+原文：<a href="https://lwn.net/Articles/1081536/">OpenSSH 10.4 released</a></p>
+<p><strong>Microsoft 为 Mesa 贡献 AV1 硬件编码支持，结合 DX12 与 Windows 技术</strong><br />
+微软工程师向开源图形库 Mesa 提交了新代码，通过 DirectX 12 和 Windows 媒体基金会层（HMFT）的结合，实现了 GPU 加速的 AV1 视频编码。这一举动较为罕见，展示了微软在跨平台图形驱动及视频编码标准方面的持续投入。该功能预计将集成在 Mesa 26.2 版本中。<br />
+原文：<a href="https://www.phoronix.com/news/Microsoft-AV1-Encode-DX12-HMFT">Microsoft Lands Initial AV1 Encoding Using DirectX 12 + HMFT Within Mesa 26.2</a></p>
+<p><strong>Canonical 致力于将 Ubuntu ARM64 打造为“一等公民”架构</strong><br />
+Canonical 官方更新了 Ubuntu 对 ARM64 架构的支持进展，目标是使其在性能、稳定性和软件生态上与传统的 x86_64 架构完全对等。随着 ARM 架构在服务器和桌面领域的普及，Ubuntu 正在加大对相关底层工具链和内核优化的投入。这一战略调整将直接受益于云服务商和嵌入式开发者。<br />
+原文：<a href="https://www.phoronix.com/news/Ubuntu-ARM64-2026">Canonical On Making Ubuntu For ARM64 "Truly A First-Class Architecture"</a></p>
+<hr />
+<h2>云原生领域</h2>
+<p><strong>Kubernetes v1.36 增强工作负载感知调度，引入 PodGroup API</strong><br />
+Kubernetes v1.36 版本在调度架构上实现了重大进化，通过引入 PodGroup API 实现了对原子工作负载的处理。该版本将 API 关注点进行了分离：Workload API 负责静态模板，而 PodGroup API 负责管理运行时的批处理状态。这一改进为 AI/ML 等需要“全有或全无”调度策略的复杂任务提供了更稳定的原生支持。<br />
+原文：<a href="https://kubernetes.io/blog/2026/05/13/kubernetes-v1-36-advancing-workload-aware-scheduling/">Kubernetes v1.36: Advancing Workload-Aware Scheduling</a></p>
+<p><strong>PSI 指标在 Kubernetes v1.36 中正式达至稳定版 (GA)</strong><br />
+压力停顿信息（PSI）指标在最新的 Kubernetes 版本中已正式毕业为 GA 状态，为用户提供监控资源饱和度的高保真信号。PSI 能够量化任务因等待 CPU、内存或 I/O 而停顿的时间比例，比传统的利用率指标更能反映系统真实的性能瓶颈。这使得 SRE 团队能够更精准地识别节点和容器级别的资源竞争问题。<br />
+原文：<a href="https://kubernetes.io/blog/2026/05/12/kubernetes-v1-36-psi-metrics-ga/">Kubernetes v1.36: PSI Metrics for Kubernetes Graduates to GA</a></p>
+<p><strong>CNCF Kepler 项目架构重构：提升数据中心能效测量精度</strong><br />
+用于测量 Kubernetes 工作负载能耗的开源项目 Kepler 完成了架构重构，显著提高了功率估算的准确性。随着全球对数据中心碳足迹的关注增加，Kepler 通过结合 eBPF 和机器学习模型，为云原生应用提供了细粒度的能效视图。社区目前正呼吁更多开发者参与，以完善不同硬件环境下的能耗基准数据。<br />
+原文：<a href="https://www.cncf.io/blog/2026/06/30/kepler-re-architected-improved-power-accuracy-and-a-community-call-to-action/">Kepler, re-architected: Improved power accuracy and a community call to action!</a></p>
+<p><strong>Dragonfly v2.5.0 发布，支持从 Hugging Face 直接下载模型</strong><br />
+CNCF 托管的分发加速项目 Dragonfly 发布了 v2.5.0 版本，重点增强了对 AI 模型分发的支持。新版本允许客户端直接从 Hugging Face 和 ModelScope 下载模型仓库，极大地简化了 AI 工作负载在分布式环境下的部署流程。这一更新体现了云原生基础设施正加速向“AI 原生”方向演进。<br />
+原文：<a href="https://www.cncf.io/blog/2026/06/30/dragonfly-v2-5-0-is-released/">Dragonfly v2.5.0 is released</a></p>
+<hr />
+<h2>AI 领域</h2>
+<p><strong>讯飞发布 iFLYTEK-Embodied-Omni 技术报告，统一视觉-语言-动作模型</strong><br />
+讯飞提出了一种名为 Omni 的统一多模态基础模型，旨在解决具身智能体在理解指令、预测环境演变和生成精确动作方面的挑战。该模型在一个框架内共同建模视觉、语言和动作，避免了传统级联管道带来的接口瓶颈和预测误差累积。实验表明，这种端到端的架构在长程任务执行中具有显著优势。<br />
+原文：<a href="https://arxiv.org/abs/2607.02542">iFLYTEK-Embodied-Omni Technical Report</a></p>
+<p><strong>Palantir 与 Mistral CEO 警告：企业 AI 领域即将出现供应商锁定</strong><br />
+在最近的行业讨论中，Palantir CEO Alex Karp 和 Mistral CEO Arthur Mensch 达成共识，认为企业在部署 AI 时正面临严重的供应商锁定风险。随着企业将核心业务逻辑深度集成到特定的大模型 API 中，迁移成本将变得异常高昂。他们建议企业在构建 AI 基础设施时应优先考虑开源模型和多模型协作策略。<br />
+原文：<a href="https://thenewstack.io/karp-mensch-ai-lockin/">Palantir’s Alex Karp and Mistral’s Arthur Mensch agree: AI lock-in is coming for enterprises</a></p>
+<p><strong>Markdown 成为 AI 代理记忆管理的新共识</strong><br />
+Andrej Karpathy、Google 和 Garry Tan 等行业大咖近期均表示，Markdown 格式是解决 AI 代理长短期记忆存储的最佳方案。由于 Markdown 兼具人类可读性和机器易解析性，它正成为构建“LLM 维基”和代理知识库的标准。然而，不同厂商在如何利用 Markdown 构建竞争壁垒（护城河）方面仍存在分歧。<br />
+原文：<a href="https://thenewstack.io/markdown-agent-memory-moat/">Andrej Karpathy, Google and Garry Tan agree Markdown is the answer, but they’re not solving the same problem</a></p>
+<p><strong>Anthropic 因秘密追踪中国用户行为引发争议</strong><br />
+安全研究人员发现 Anthropic 的 Claude 模型中包含一个秘密追踪器，专门监控中国用户的使用行为，这与其一贯宣称的隐私保护立场相悖。Anthropic 工程师随后回应称这仅是一个已结束的“实验”，但此举已引发用户对 AI 公司数据采集透明度的广泛质疑。该事件再次凸显了 AI 治理中安全与隐私之间的紧张关系。<br />
+原文：<a href="https://arstechnica.com/tech-policy/2026/07/anthropic-outed-for-claude-tracker-that-secretly-monitored-chinese-users/">Secret Claude tracker shocks users after Anthropic’s anti-surveillance stance</a></p>
+<hr />
+<h2>工业界最新动向</h2>
+<p><strong>Radicle：基于 P2P 协议的去中心化 Git 协作平台</strong><br />
+Radicle 项目展示了其基于点对点（P2P）技术的 Git 复制机制，支持原生的问题追踪（Issues）和补丁（Patches）管理。与 GitHub 等中心化平台不同，Radicle 不依赖中心服务器，确保了代码协作的自主权和抗审查性。这对于追求极致开源精神和数据主权的开发者团队具有很强的吸引力。<br />
+原文：<a href="https://radicle.dev/">Radicle: P2P Git Replication with Git Native Issues and Patches</a></p>
+<p><strong>微软 Xbox 部门开启大规模裁员，涉及 3200 名员工及五个工作室</strong><br />
+微软游戏业务近期发生剧烈震荡，宣布裁撤约 20% 的员工，并关闭或缩减五个游戏工作室。此次调整旨在应对游戏市场增长放缓的压力，并将资源重新聚焦于核心大作和高利润项目。这一变动反映了科技巨头在宏观经济不确定下对非核心业务的战略收缩。<br />
+原文：<a href="https://arstechnica.com/gaming/2026/07/the-incredible-shrinking-xbox-five-studios-3200-employees-let-go/">The incredible shrinking Xbox: Five studios, 3,200 employees let go</a></p>
+<p><strong>英国监管机构警告金融服务领域 AI 应用引发“军备竞赛”</strong><br />
+英国金融行为监管局（FCA）官员指出，金融机构正加速采用 AI 进行个人财务决策，这可能导致监管难度呈指数级上升。监管机构呼吁获得更大的权力，以应对 AI 算法可能带来的市场操纵、偏见和系统性风险。这种“军备竞赛”态势要求金融监管框架必须进行根本性的技术升级。<br />
+原文：<a href="https://arstechnica.com/ai/2026/07/uk-regulator-warns-of-arms-race-to-keep-up-with-ai-use-in-financial-services/">UK regulator warns of "arms race" to keep up with AI use in financial services</a></p>
+<hr />
+<h2>学术界最新研究</h2>
+<p><strong>bpfix：弥合 eBPF 验证器拒绝诊断的鸿沟</strong><br />
+研究人员对 235 个 eBPF 程序被验证器拒绝的案例进行了实证研究，发现近一半的错误仅返回模糊的 EINVAL 代码，导致开发者难以定位根因。为此，他们开发了 bpfix 工具，能够重建验证失败时的逻辑证明路径，帮助开发者精准识别程序失去验证器信任的位置。该研究显著提升了 eBPF 开发的可观测性和调试效率。<br />
+原文：<a href="https://arxiv.org/abs/2607.02748">Characterizing and Bridging the Diagnostic Gap in eBPF Verifier Rejections</a></p>
+<p><strong>Elastic Gang：针对 OS 进程共存的 LLM 推理弹性调度机制</strong><br />
+在移动端或边缘设备上运行 LLM 推理时，计算密集型的 SIMD 任务常与 OS 其他进程争抢核心。论文提出了 Elastic Gang 机制，并在基于 Rust 的 Anima OS 中实现，允许推理任务的成员核心在每生成一个 Token 之间动态变化。通过一种基于 Epoch 的锁定协议，该系统在不导致死锁或数据损坏的前提下，实现了推理任务与系统任务的高效并发。<br />
+原文：<a href="https://arxiv.org/abs/2607.04668">Elastic Gang: Per-Token Membership Change for a Hard-Barriered LLM Inference Gang Co-Scheduled with OS Processes</a></p>
+<p><strong>kAgent：利用执行引导的 AI 代理自动修复 Linux 内核崩溃</strong><br />
+针对 syzkaller 等工具发现的大量内核崩溃问题，研究者开发了 kAgent 代理。不同于通用的代码修复模型，kAgent 专门针对内核代码的底层特性进行了优化，能够利用执行反馈来验证修复方案的有效性。在实验中，该代理展现了处理缺乏自然语言描述、高度专业化的内核崩溃日志的强大能力。<br />
+原文：<a href="https://arxiv.org/abs/2504.20412">kAgent: An execution-guided crash resolution agent for the Linux kernel</a></p>
+<p><strong>ProbeLogits：AI 原生操作系统中的内核级 LLM 推理原语</strong><br />
+该研究提出在操作系统内核中直接运行 LLM 推理，利用模型自身的 Logit 分布作为治理原语。通过 ProbeLogits 操作，内核可以在文本生成前读取特定 Token 的概率，从而以极低的成本判断智能体的行为是否安全。这种“内核驻留”的安全检查机制避免了用户态脚本被绕过的风险，为 AI 原生系统提供了坚实的安全底座。<br />
+原文：<a href="https://arxiv.org/abs/2604.11943">ProbeLogits: Kernel-Level LLM Inference Primitives for AI-Native Operating Systems</a></p>
+<hr /></div>
+  </main>
+</body>
+</html>
