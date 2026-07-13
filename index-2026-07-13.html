@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OS 领域每日洞察 - 2026-07-13</title>
+  <style>
+    :root {
+      --bg: #f6f4f0;
+      --bg-bar: #ebe8e3;
+      --bg-card: #fffefb;
+      --bg-card-hover: #f5f3ef;
+      --text: #2d2a26;
+      --text-muted: #5c5852;
+      --text-dim: #7a756e;
+      --accent: #5a7a9e;
+      --border: #ddd9d2;
+      --radius: 10px;
+      --font: "Segoe UI", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      font-size: 15px;
+    }
+
+    /* 门户顶栏 */
+    .masthead {
+      background: var(--bg-bar);
+      border-bottom: 1px solid var(--border);
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 0;
+    }
+    .masthead-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .masthead h1 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin: 0;
+      letter-spacing: -0.02em;
+      color: var(--text);
+    }
+    .masthead .meta {
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+    }
+
+    /* 主内容区：多栏门户布局 */
+    .main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 3rem;
+    }
+
+    /* 板块：每个 h2 为一个频道块 */
+    .content .section {
+      margin-bottom: 2.5rem;
+    }
+    .content h2 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+      margin: 0 0 1rem;
+      padding: 0.6rem 1rem;
+      background: var(--bg-bar);
+      border-radius: var(--radius);
+      border-left: 4px solid var(--accent);
+    }
+    .content h2:first-child { margin-top: 0; }
+
+    .content h2:has(+ h3) {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      border-left-color: var(--text-dim);
+    }
+
+    /* 板块内卡片网格（每个 h2 后的 ul） */
+    .content h2 + ul {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1rem;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .content h2 + ul li {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.15rem 1.2rem;
+      transition: background .15s, border-color .15s;
+    }
+    .content h2 + ul li:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--text-dim);
+    }
+    .content h2 + ul li strong {
+      display: block;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+      line-height: 1.4;
+    }
+    .content h2 + ul li p {
+      margin: 0 0 0.5rem;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.58;
+    }
+    .content h2 + ul li p:last-of-type { margin-bottom: 0; }
+    .content h2 + ul li a[href^="http"] {
+      font-size: 0.8125rem;
+      color: var(--accent);
+    }
+    .content h2 + ul li a[href^="http"]:hover { text-decoration: underline; }
+
+    .content .ref-section {
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+    .content h2 + h3 { margin-top: 1.25rem; }
+    .content h3 {
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--text-dim);
+      margin: 1rem 0 0.4rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .content h3 + ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 0.25rem;
+    }
+    .content h3 + ul li {
+      background: transparent;
+      border: none;
+      padding: 0.2rem 0;
+      font-size: 0.8125rem;
+    }
+    .content h3 + ul li strong { font-size: inherit; margin-bottom: 0; }
+    .content h3 + ul li a { color: var(--accent); }
+    .content h3 + ul li a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <header class="masthead">
+    <div class="masthead-inner">
+      <h1>OS 领域每日洞察 - 2026-07-13</h1>
+      <span class="meta">2026-07-13 04:00 UTC</span>
+    </div>
+  </header>
+  <main class="main">
+    <div class="content"><h2>Linux 内核社区热点与趋势</h2>
+<p><strong>Linux 7.2-rc3 发布：开发节奏进入“新常态”</strong><br />
+Linus Torvalds 发布了 Linux 7.2 的第三个候选版本，标志着该版本向 8 月份的稳定版迈进。Linus 指出，目前的提交率略高，但整体处于一种“新常态”，部分原因可能是夏季假期导致的工作节奏波动。此版本包含了大量针对驱动程序和架构的常规修复。<br />
+原文：<a href="https://www.phoronix.com/news/Linux-7.2-rc3-Released">Linux 7.2-rc3 Released: Close To The "New Normal"</a></p>
+<p><strong>Linux 7.2 默认支持 UltraRISC RISC-V 架构</strong><br />
+继支持 Eswin SoC 之后，Linux 7.2 内核现在将 UltraRISC 架构的支持纳入了 RISC-V 的默认构建配置（defconfig）。这意味着开发者和用户在构建标准 RISC-V 内核时，将直接获得该国产 RISC-V 芯片的兼容性。这一举措进一步扩大了 Linux 对新兴 RISC-V 硬件生态的覆盖范围。<br />
+原文：<a href="https://www.phoronix.com/news/Linux-7.2-UltraRISC-RISC-V">Linux 7.2 Enabling UltraRISC RISC-V Support In The Default Kernel Build</a></p>
+<p><strong>Realtek RTL8723BS WiFi 驱动加固，防御恶意接入点攻击</strong><br />
+在 Linux 7.2-rc3 中，开发者针对 Realtek RTL8723BS WiFi 驱动进行了安全加固，修复了多个潜在的越界访问漏洞。这些漏洞可能在连接到“恶意”WiFi 主机时被触发，导致系统崩溃或被利用。此次更新体现了内核社区对老旧硬件驱动在现代网络环境下安全性持续维护的重视。<br />
+原文：<a href="https://www.phoronix.com/news/Realtek-RTL8723BS-WiFi-Bad-APs">Realtek RTL8723BS WiFi Linux Driver Hardened Against Malicious WiFi Access Points</a></p>
+<p><strong>OpenSSH 10.4 发布，强化 Linux 沙盒安全要求</strong><br />
+OpenSSH 10.4 正式发布，引入了实验性的后量子加密签名方案（ML-DSA 44 与 Ed25519 结合）。在 Linux 系统上，如果编译时启用了沙盒支持，新版本将强制要求系统开启 SECCOMP 或 NO_NEW_PRIVS，否则 sshd 将无法运行。这一变化显著提升了 SSH 服务在 Linux 环境下的安全隔离强度。<br />
+原文：<a href="https://lwn.net/Articles/1081536/">OpenSSH 10.4 released</a></p>
+<hr />
+<h2>业界大厂动向</h2>
+<p><strong>微软揭秘“Azure Brain”：利用 AI 监控与决策云平台健康状态</strong><br />
+微软公开了其内部名为“Brain”的 AI 系统，该系统负责实时监控 Azure 云基础设施的健康状况。它不仅能自动识别服务中断，还能在某些情况下自主采取行动以恢复服务。这标志着超大规模云厂商正从传统的人工运维向由 AI 驱动的自动化自愈架构转型。<br />
+原文：<a href="https://thenewstack.io/inside-azure-brain/">Meet Brain, the AI that decides when Azure is officially down</a></p>
+<p><strong>Anthropic 拓展企业级合作伙伴，加速 Claude 模型在大规模组织中的落地</strong><br />
+Anthropic 宣布了其第二个全球顶级合作伙伴，计划为超过 20,000 名员工提供 Claude 模型的专业培训。这一动作反映了企业级 AI 市场的重心正从基础模型研发转向实际的业务集成与人才培养。大厂之间的竞争已延伸至如何帮助传统企业构建完整的 AI 技术栈。<br />
+原文：<a href="https://thenewstack.io/ust-anthropic-enterprise-ai-stack/">Anthropic’s newest enterprise partner is training 20,000 people on Claude — here’s the shift it signals</a></p>
+<hr />
+<h2>云原生领域</h2>
+<p><strong>Kubernetes v1.36 推进“工作负载感知”调度架构</strong><br />
+Kubernetes v1.36 引入了重大的调度架构演进，通过 PodGroup API 实现了对批处理和 AI/ML 工作负载的原子化处理。新版本将 API 关注点进行了分离：Workload API 负责静态模板，而 PodGroup API 负责运行时状态。这为未来更复杂的 Gang Scheduling（帮调度）和资源抢占机制奠定了基础。<br />
+原文：<a href="https://kubernetes.io/blog/2026/05/13/kubernetes-v1-36-advancing-workload-aware-scheduling/">Kubernetes v1.36: Advancing Workload-Aware Scheduling</a></p>
+<p><strong>K8s 动态资源分配（DRA）毕业至 GA，优化 GPU/TPU 管理</strong><br />
+Kubernetes 设备管理工作组宣布，动态资源分配（DRA）功能已正式毕业并达到稳定版（GA）。DRA 解决了传统设备插件模型的局限性，支持更灵活的硬件规格定义和跨 Pod 的资源共享。这对于在 Kubernetes 上运行高性能计算和 AI 训练任务的平台工程师来说是一个重要的里程碑。<br />
+原文：<a href="https://kubernetes.io/blog/2026/06/24/wg-device-management-spotlight-2026/">Spotlight on WG Device Management</a></p>
+<p><strong>PSI 指标在 Kubernetes v1.36 中达到稳定版（GA）</strong><br />
+压力停顿信息（PSI）指标现在在 Kubernetes 中正式 GA，为用户提供识别 CPU、内存和 I/O 资源饱和度的高精度信号。PSI 能够揭示任务因资源竞争而停顿的时间比例，比传统的利用率指标更能反映系统的真实负载压力。这显著增强了云原生应用的可观测性和故障排查能力。<br />
+原文：<a href="https://kubernetes.io/blog/2026/05/12/kubernetes-v1-36-psi-metrics-ga/">Kubernetes v1.36: PSI Metrics for Kubernetes Graduates to GA</a></p>
+<hr />
+<h2>AI 领域</h2>
+<p><strong>“Linux of AI”开源项目：旨在减少 AI 供应商锁定</strong><br />
+GitHub 上出现了一个名为“Linux of AI”的开源工具集，旨在通过标准化接口和工具降低开发者对特定 AI 厂商的依赖。该项目模仿了 Linux 在操作系统领域的开源精神，试图构建一个中立的 AI 基础设施层。这反映了业界对于当前大模型 API 市场高度碎片化和闭源化的担忧。<br />
+原文：<a href="https://github.com/sekacorn/Linux-of-Ai">Linux of AI open-source tools for reducing AI vendor lock-in</a></p>
+<p><strong>神经代理控制框架：结合 LLM 与时间序列模型实现工业安全防御</strong><br />
+研究人员提出了一种新型的“神经代理控制”架构，将 Gemini 等大语言模型的语义推理能力与专门的时间序列基础模型（TimesFM）相结合。该框架引入了“反事实物理注入”机制，能够模拟攻击对工业 IoT 环境的影响并进行自主防御。这种设计有效缓解了 LLM 在闭环控制任务中的幻觉问题，提升了物理系统的安全性。<br />
+原文：<a href="https://arxiv.org/abs/2607.09076">Neuro-Agentic Control: A Deep Learning-based LLM-Powered Agentic AI Framework for Controlling Security Controls</a></p>
+<hr />
+<h2>工业界最新动向</h2>
+<p><strong>FrostDB：为 Windows 原生运行设计的 Go 语言版 Redis 替代品</strong><br />
+针对在 Windows 环境下运行 Redis 需依赖 Docker 或 WSL 的痛点，开发者推出了 FrostDB。这是一个使用 Go 语言编写的高性能内存数据库，能够原生运行在 Windows 上，并兼容 Redis 协议。它为后端开发者在本地开发和 Windows 服务器部署场景下提供了一个轻量级的选择。<br />
+原文：<a href="https://github.com/Suleman-Elahi/frostdb">Show HN: I created Redis alternative in Go that even runs natively on Windows</a></p>
+<p><strong>nfs-crust：基于 Rust 的异步 NFS 客户端库，无需系统挂载点</strong><br />
+nfs-crust 是一个为 Rust 编写的异步 NFS 客户端，它允许应用程序直接与 NFS 服务器通信，而无需在操作系统层面创建挂载点。基准测试显示，在某些场景下其性能优于传统的 Linux 内核挂载。这种“用户态驱动”的设计为构建高性能、可移植的分布式存储应用提供了新思路。<br />
+原文：<a href="https://github.com/s2-streamstore/nfs-crust">Show HN: Async NFS client library for Rust, without an OS mount point</a></p>
+<p><strong>HFI 倡议：为 RISC-V 硬件提供标准化的 BIOS 启动体验</strong><br />
+谐波固件倡议（HFI）旨在为 RISC-V 开发板提供类似 x86 世界的标准化启动体验，包括图形化的 POST 界面和 BIOS 设置工具。目前 RISC-V 设备的启动流程高度碎片化，HFI 的努力将有助于提升 RISC-V 硬件的易用性和工业标准化水平。<br />
+原文：<a href="https://www.phoronix.com/news/Harmonic-Firmware-Initiative">HFI BIOS Aims To Provide A POST-Like Power On Screen &amp; BIOS Setup Utility For RISC-V</a></p>
+<hr />
+<h2>学术界最新研究</h2>
+<p><strong>StickyMoE：通过路由一致性损失实现内存高效的 MoE 推理</strong><br />
+针对混合专家模型（MoE）在边缘设备上频繁切换专家导致的权重交换开销，研究者提出了 StickyMoE。该方法在预训练中引入可微的路由一致性损失，惩罚相邻 Token 之间的专家切换，鼓励模型在语义连贯的片段内保持专家分配。实验表明，这种方法在不改变架构的情况下显著降低了推理时的内存带宽压力。<br />
+原文：<a href="https://arxiv.org/abs/2607.08780">Sticky Routing: Training MoE Models for Memory-Efficient Inference</a></p>
+<p><strong>Director：通过在线主动专家放置加速分布式 MoE 服务</strong><br />
+由于 MoE 模型的专家激活模式随请求动态变化，传统的静态放置策略难以维持最优性能。Director 框架提出了一种在线、主动的专家放置算法，能够根据实时流量预测和迁移成本优化 GPU 间的专家分布。该研究解决了专家并行模式下的通信瓶颈，显著提升了分布式推理的吞吐量。<br />
+原文：<a href="https://arxiv.org/abs/2607.08782">Director: Accelerating Distributed MoE Serving via Online Proactive Expert Placement</a></p>
+<p><strong>KV-PRM：利用 KV 缓存转移实现高效的过程奖励模型</strong><br />
+过程奖励模型（PRM）在引导多代理系统推理时效果显著，但传统的文本重编码方式计算成本极高。KV-PRM 通过直接读取 LLM 生成阶段产生的 KV 缓存来消除重复编码，将评分成本从序列长度的平方级降低。这一改进使得 PRM 能够应用于长上下文场景，大幅提升了多代理系统的测试时扩展效率。<br />
+原文：<a href="https://arxiv.org/abs/2607.09153">KV-PRM: Efficient Process Reward Modeling via KV-Cache Transfer for Multi-Agent Test-Time Scaling</a></p>
+<p><strong>MedRealMM：基于真实中文在线问诊场景的多模态医疗基准</strong><br />
+现有的医疗 AI 基准多依赖合成数据，缺乏对真实临床实践的模拟。MedRealMM 利用来自中国互联网医院的脱敏医患互动数据，构建了一个包含图像和多轮对话的大规模多模态基准。该研究引入了“多模态临床挑战点”提取框架，旨在更真实地评估 AI 在处理复杂医疗咨询时的能力。<br />
+原文：<a href="https://arxiv.org/abs/2607.09142">MedRealMM: A Real-World Multimodal Benchmark for Chinese Online Medical Consultation</a></p>
+<hr /></div>
+  </main>
+</body>
+</html>
