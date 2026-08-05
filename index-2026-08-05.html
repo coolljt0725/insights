@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OS 领域每日洞察 - 2026-08-05</title>
+  <style>
+    :root {
+      --bg: #f6f4f0;
+      --bg-bar: #ebe8e3;
+      --bg-card: #fffefb;
+      --bg-card-hover: #f5f3ef;
+      --text: #2d2a26;
+      --text-muted: #5c5852;
+      --text-dim: #7a756e;
+      --accent: #5a7a9e;
+      --border: #ddd9d2;
+      --radius: 10px;
+      --font: "Segoe UI", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      font-size: 15px;
+    }
+
+    /* 门户顶栏 */
+    .masthead {
+      background: var(--bg-bar);
+      border-bottom: 1px solid var(--border);
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 0;
+    }
+    .masthead-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .masthead h1 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin: 0;
+      letter-spacing: -0.02em;
+      color: var(--text);
+    }
+    .masthead .meta {
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+    }
+
+    /* 主内容区：多栏门户布局 */
+    .main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 3rem;
+    }
+
+    /* 板块：每个 h2 为一个频道块 */
+    .content .section {
+      margin-bottom: 2.5rem;
+    }
+    .content h2 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+      margin: 0 0 1rem;
+      padding: 0.6rem 1rem;
+      background: var(--bg-bar);
+      border-radius: var(--radius);
+      border-left: 4px solid var(--accent);
+    }
+    .content h2:first-child { margin-top: 0; }
+
+    .content h2:has(+ h3) {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      border-left-color: var(--text-dim);
+    }
+
+    /* 板块内卡片网格（每个 h2 后的 ul） */
+    .content h2 + ul {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1rem;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .content h2 + ul li {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.15rem 1.2rem;
+      transition: background .15s, border-color .15s;
+    }
+    .content h2 + ul li:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--text-dim);
+    }
+    .content h2 + ul li strong {
+      display: block;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+      line-height: 1.4;
+    }
+    .content h2 + ul li p {
+      margin: 0 0 0.5rem;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.58;
+    }
+    .content h2 + ul li p:last-of-type { margin-bottom: 0; }
+    .content h2 + ul li a[href^="http"] {
+      font-size: 0.8125rem;
+      color: var(--accent);
+    }
+    .content h2 + ul li a[href^="http"]:hover { text-decoration: underline; }
+
+    .content .ref-section {
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+    .content h2 + h3 { margin-top: 1.25rem; }
+    .content h3 {
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--text-dim);
+      margin: 1rem 0 0.4rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .content h3 + ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 0.25rem;
+    }
+    .content h3 + ul li {
+      background: transparent;
+      border: none;
+      padding: 0.2rem 0;
+      font-size: 0.8125rem;
+    }
+    .content h3 + ul li strong { font-size: inherit; margin-bottom: 0; }
+    .content h3 + ul li a { color: var(--accent); }
+    .content h3 + ul li a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <header class="masthead">
+    <div class="masthead-inner">
+      <h1>OS 领域每日洞察 - 2026-08-05</h1>
+      <span class="meta">2026-08-05 04:00 UTC</span>
+    </div>
+  </header>
+  <main class="main">
+    <div class="content"><h1>OS 领域每日洞察 - 2026-08-05</h1>
+<p>（Gemini 未可用时，以下为按来源整理的条目，含<strong>新闻摘要</strong>与链接；摘要可能为原文语言。）</p>
+<h2>arXiv (cs.OS)</h2>
+<ul>
+<li><strong><a href="https://arxiv.org/abs/2608.02669">Vulnerabilities, Secrets and Misconfiguration in the Highest-Exposure Docker Hub Images</a></strong><br />
+  摘要：arXiv:2608.02669v1 Announce Type: cross Abstract: Docker Hub is the registry underneath most container deployments, and a flaw in a widely reused base image is inherited by every image built on it. Prior ecosystem-scale measurements each rely on a single detector, leaving the tool-dependence of their counts unquantified, while the studies that do compare scanners use samples of tens to hundreds of images. We present ChimangoScan, a pipeline that crawls the Docker Hub namespace (12,716,568 repositories, 663.8 billion cumulative pulls), reconstructs the image layer graph (54.4 million IS_BASE_OF edges), ranks images by an exposure score that folds an image's own pull count and those of its entire downstream subtree into one scalar, and scans the 52,895 highest-exposure repositories (84.7% of…</li>
+</ul>
+<h2>arXiv (cs.LG)</h2>
+<ul>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.02628">Deep Divide-and-Reduce in Symbolic Regression</a></strong><br />
+  摘要：arXiv:2608.02628v1 Announce Type: new Abstract: Symbolic regression (SR) is the task of discovering underlying patterns from data and representing them using mathematical expressions. Current machine learning approaches to SR often lack a profound understanding of the intrinsic mathematical and physical principles governing these expressions. While the pioneering AI Feynman method leverages the mathematical properties underlying the data, its expression simplification mechanism suffers from a narrow scope of applicability and is prone to failure on complex equations. Furthermore, its underlying mechanisms rely heavily on brute-force searches for sub-expressions, severely limiting its practical utility. Through rigorous mathematical deduction and proofs, we propose our method, Deep Divide a…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.02629">Multimodal Auto-regressive Transformer Surrogate for Modeling Variable Operations and Quantifying Uncertainty in Geological Carbon Storage</a></strong><br />
+  摘要：arXiv:2608.02629v1 Announce Type: new Abstract: The use of variable well perforation and injection strategies can improve the efficiency of geological carbon storage operations. We develop a new multimodal auto-regressive transformer surrogate to model these operations under geological uncertainty. A modified SEAM CO2 geomodel, which involves a faulted system with three stacked aquifers, is considered. The two injection wells are perforated in stages, from bottom to top, with the stage durations and individual well injection rates treated as control variables. The surrogate model processes three input modalities - the 3D geomodel, scalar parameters characterizing relative permeability functions, and control variables - through separate encoders. These are fused via self-attention in a tran…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.02632">LLMs Can Annotate Attribution Graphs</a></strong><br />
+  摘要：arXiv:2608.02632v1 Announce Type: new Abstract: Circuit tracing is an exciting technique for revealing the internal computation of language models, but it requires a time-intensive manual step of grouping individual features or MLP neurons into supernodes. We present a simple pipeline for automating this step: directly presenting feature descriptions to a language model that groups them into supernodes. Using automated interpretability metrics, we confirm that supernodes generated by our pipeline are as interpretable as those generated by human annotators. On a two-hop Capitals task, our pipeline recovers a supernode corresponding to the intermediate hop in 97 of 100 prompts. Finally, we present a simple proof of concept using our pipeline for open-ended exploration, where we automatically…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.02633">GeoID-PINN: Identifiability-Aware Regional Epidemic Inference with Geographic Coupling</a></strong><br />
+  摘要：arXiv:2608.02633v1 Announce Type: new Abstract: Regional surveillance data reflect local transmission, reporting, seeding, and external infection pressure, which are difficult to identify separately. We introduce GeoID-PINN, a physics-informed neural network (PINN) for susceptible-infectious-recovered-deceased (SIRD) dynamics. The model represents spatial dependence with a row-stochastic source-composition matrix whose rows assign nonnegative source weights that sum to one. We regularize this matrix toward a spatial prior constructed from distance, adjacency, commuting, or lead-lag information. In a four-region simulation with known truth, a compatible distance prior gives source-composition error 0.099. The error rises to 0.159 without regularization and 0.577 under a strongly misspecifie…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.02662">Verifier-Guided Model Discovery for Physical Dynamical Systems with Pretrained Symbolic Transformers</a></strong><br />
+  摘要：arXiv:2608.02662v1 Announce Type: new Abstract: Reliable forecasting of nonlinear physical systems underpins scientific discovery and engineering decision-making. Yet high-fidelity simulations are prohibitively costly, and machine-learning surrogates can be opaque and encode assumptions about system dynamics, limiting generalizability. Pretrained transformers mapping synthetic ODE trajectories to equations offer interpretable alternatives, promising transfer without system-specific equation knowledge. Transferring them reliably to high-dimensional physical data, however, remains an open challenge. We develop a verifier-guided (VG) workflow around ODEFormer as a symbolic backbone, using dynamical and physical-admissibility criteria to select from a multi-trajectory candidate equation pool, …</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.02663">CT-HEG: A Bidirectional, Timestamp-Attributed Event Graph for ICU In-Hospital Mortality Prediction - An Architectural Ablation Study</a></strong><br />
+  摘要：arXiv:2608.02663v1 Announce Type: new Abstract: Accurate ICU mortality prediction requires modeling irregular clinical observations across heterogeneous entity types. Existing sequence models handle irregular sampling but ignore typed relational structure; existing graph models assume fixed-interval inputs. We introduce the Continuous-Time Heterogeneous EHR Graph (CT-HEG) schema and evaluate which architectural choices drive predictive performance. CT-HEG encodes each ICU stay as a typed, timestamped graph with three node types (visit, vital, lab_event) and 2D edge attributes (t_hours/48, value_norm) encoding timing and value without imputation. We instantiate CT-HEG as CHIRP-Net, a four-layer heterogeneous GATv2Conv network, evaluated on MIMIC-IV v3.1 (31,142 ICU stays, LOS&gt;=48h, 13.4% mo…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.02668">Sphere Retraction Normalizations</a></strong><br />
+  摘要：arXiv:2608.02668v1 Announce Type: new Abstract: Residual connections are the de facto mechanism for training deep neural networks stably. Geodesic Normalization (GeoNorm) recasts them on a Riemannian manifold, orthogonalizing each layer output against the current hidden state and applying the resulting update through the Riemannian exponential map. Every hidden state thus keeps a constant $\ell_{2}$-norm, confining the residual stream to a hypersphere. The exponential map, however, is only one member of a broad family of retraction maps. We show that on the hypersphere this entire family collapses to a single scalar design choice. What distinguishes one retraction from another is only how the magnitude of an update is converted into a rotation angle within the plane spanned by the hidden s…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.02688">Learning Molecular Representations from Cellular Phenotypes with Structure Preservation</a></strong><br />
+  摘要：arXiv:2608.02688v1 Announce Type: new Abstract: Phenotypic drug discovery enables the discovery of functional relationships between molecular structures and cellular responses. However, existing multimodal representation learning methods often optimize cross-modal alignment without considering the intrinsic organization of chemical space, resulting in distorted molecular representations and loss of structural information. We propose \textbf{PhenMol}, a structure-preserving framework for phenotype-aware molecular representation learning. PhenMol disentangles molecular and cellular representations into shared and private components, enabling phenotype-guided alignment while preserving chemical structures through a dedicated molecular branch. This design integrates cellular phenotype informat…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.02690">GLOBE: Trajectory-Aligned Gradient Matching with Structured SparseOptimization for Coreset Selection</a></strong><br />
+  摘要：arXiv:2608.02690v1 Announce Type: new Abstract: On-device training of deep neural networks is fundamentally constrained by the computational and memory costs of large-scale datasets. Coreset selection offers a practical solution by retaining only a compact subset of real training samples. However, existing gradient-based methods commonly rely on gradients computed at a single model snapshot and employ greedy or pursuit-based selection procedures, limiting their ability to capture evolving optimization dynamics and handle strongly correlated samples. We propose GLOBE (Gradient Local-Balanced Extraction), a trajectory-aligned coreset selection framework that formulates sample selection as a globally optimized sparse weighting problem. GLOBE represents each sample by a gradient trajectory con…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.02691">Output-Aware Rotation for INT2 KV-Cache Quantization</a></strong><br />
+  摘要：arXiv:2608.02691v1 Announce Type: new Abstract: The key-value (KV) cache has become a major memory and bandwidth bottleneck in long-context large language model inference, making ultra-low-bit quantization increasingly important. However, existing rotation-based INT2 methods optimize cache statistics or proxy errors before the complete attention readout, even though the model is ultimately affected by the error propagated through attention and the output projection $W_O$. To address this mismatch, we propose \textit{OptR}, an output-aware rotation method that minimizes post-$W_O$ attention-output error. OptR decomposes the post-$W_O$ attention-output error into key- and value-induced terms and learns per-head orthogonal corrections through the full INT2 quantization and attention path. Opt…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.02692">PatTree: a novel approach for automated creation of multimodal, graph-based patient representations for medical classification tasks</a></strong><br />
+  摘要：arXiv:2608.02692v1 Announce Type: new Abstract: Access to holistic, multimodal data improves the performance of Artificial Intelligence (AI) in medical classification tasks compared to utilizing single modalities or data sources. However, the inherent heterogeneity and complexity of clinical real-world data pose significant challenges to structured data analysis and AI application. This heterogeneity includes missing values, multiple time points, diverse modalities, and inconsistent formats and semantics. Data harmonization prior to data integration tackles this challenge but remains resource-intensive and error-prone, limiting the scalability and reproducibility of holistic, AI-driven decision support on clinical real-world data. We therefore propose PatTree, a graph-based, holistic repre…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.02697">Measuring Explainer Stability via Attribution Separability</a></strong><br />
+  摘要：arXiv:2608.02697v1 Announce Type: new Abstract: Attribution methods (AMs) assign an importance score to each feature and are widely adopted to explain black-box models. However, most methods can produce variable attribution scores due to stochastic components in their definition. In this paper, we propose a distribution-based framework to capture the stability of attribution scores. In particular, our approach allows to understand the degree of separability in the ranked attribution vector and obtain the largest index for which a feature ranking remains reliable. We further extend this framework to compare AMs based on the robustness of their rankings across a dataset. Through experiments, we demonstrate how to apply our method to evaluate explainer stability. Overall, our approach provide…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.02700">NANQ: Noise-Floor-Aware Mixed-Precision Non-Uniform Quantization for Analog Compute-in-Memory</a></strong><br />
+  摘要：arXiv:2608.02700v1 Announce Type: new Abstract: Analog compute-in-memory (CIM) enables energy-efficient neural network inference, but device variation and read noise can severely degrade low-bit quantized models. Existing CIM-oriented quantization methods mainly minimize ideal quantization error, ignoring the hardware noise floor and thus causing inefficient precision allocation. We propose NANQ, a noise-aware mixed-precision non-uniform quantization framework for analog CIM. NANQ models magnitude-dependent weight noise from measured responses of an eFlash CIM array and converts the noise profile into an adaptive quantization density, assigning finer resolution to low-noise regions while avoiding ineffective precision in noise-dominated regions. It further assigns layer-wise bit-widths by …</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.02705">Can Training Logs Make Model Comparisons More Precise?</a></strong><br />
+  摘要：arXiv:2608.02705v1 Announce Type: new Abstract: Comparing stochastically trained models requires estimating both a performance difference and its uncertainty from repeated runs. We study whether training logs from those same runs can make such comparisons more precise. Because training-log covariates are produced during training rather than measured before it, we use arm-specific covariate adjustment: each model is adjusted only with statistics from its own runs, and the raw mean difference remains the reported effect. In a vision study spanning three architectures and three datasets, simple adjustments based on early training logs often reduce uncertainty in model comparisons. The main limitation is covariate selection. Broadly searching the log pool for the most correlated statistic ofte…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.02709">Designing a Good Virtual Node: Addressable and Cardinality-Preserving Global Memory for Message Passing Architectures</a></strong><br />
+  摘要：arXiv:2608.02709v1 Announce Type: new Abstract: Virtual nodes give message-passing neural networks a simple global communication route, but the standard node--VN--node pipeline compresses the graph into one homogeneous state and broadcasts it identically to every node. Building on the Two-Radius analysis of Mishayev et al., we ask how auxiliary virtual memory can relieve this finite-capacity bottleneck without self-attention. We identify two requirements. First, the global memory should be factorized into independently writable and readable states: this can be achieved using addressable cross-attention slots. Second, addressability alone does not preserve multiplicity, because softmax attention is invariant to uniform replication. Inserting each slot query as a private key/value anchor rec…</p>
+</li>
+</ul>
+<h2>Phoronix</h2>
+<ul>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/AMD-eSPI-Linux-Patches">AMD Posts Proposal &amp; Linux Patches For eSPI Subsystem</a></strong><br />
+  摘要：AMD has posted patches proposing a new Linux subsystem for the Enhanced Serial Peripheral Interface (eSPI) standard that was in turn originally developed by Intel. With AMD now making use of eSPI, they are proposing a new subsystem for it within the Linux kernel, which includes a new driver for their hardware...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/AMD-openSIL-Phoenix-AM5-PR">AMD openSIL &amp; Coreboot Pull Requests For Phoenix AM5 Support</a></strong><br />
+  摘要：Last week the 3mdeb firmware consulting firm released the first open-source firmware for a modern AMD Ryzen AM5 platform with their work to port AMD openSIL and Coreboot in their downstream Dasharo flavor to an MSI desktop ATX motherboard. Now that it's working out well, 3mdeb is working to upstream their AM5 platform support and Phoenix SoC support into upstream AMD openSIL as well as Coreboot...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/NVIDIA-Premier-Sponsor-LVFS">NVIDIA Becomes A Premier Sponsor Of LVFS / Fwupd</a></strong><br />
+  摘要：Now this is a pleasant and very unexpected surprise... NVIDIA has become the latest premier sponsor of the Linux Vendor Firmware Service (LVFS)...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Linux-Foundation-Tokenomics">Linux Foundation Announces Tokenomics Foundation For "Economics &amp; ROI Of AI Value"</a></strong><br />
+  摘要：Last month the Linux Foundation launched the x402 Foundation to standardize Internet-native payments for AI agents as their latest AI play. That followed other "AI" initiatives from dealing with AI exploits to AI asset and data exchange. Today they have another AI foray being announced with the creation of the Tokenomics Foundation...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Linux-Staging-Reject-LLMs">Linux's Staging Area To Now Reject LLM-Generated Patches, Except For Real Security Fixes</a></strong><br />
+  摘要：While Linux's second-in-command Greg Kroah-Hartman does use AI / LLMs himself to success in the Linux kernel, given the "onslaught" of kernel patches produced by large language models and the intent on the Linux kernel's staging area being an area for newcomers to get involved, moving forward he's now rejecting AI/LLM-generated staging patches. But there is one exception and that is for genuinely valid security fixes...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Wild-Linker-0.10">Wild Linker 0.10 Released With GDB Index Support, Mitigation For Btrfs Performance</a></strong><br />
+  摘要：Wild 0.10 released overnight as this very fast linker for Linux that is written in the Rust programming language and focused on iterative development...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Linux-7.3-MSI-Claw-M-Center-Key">Linux 7.3 To Fix MSI Claw M-Center Keys For Ryzen Z2 Extreme Powered Handheld</a></strong><br />
+  摘要：For those with a MSI Claw A8 BZ2EM handheld gaming system, the model powered by the latest AMD Ryzen Z2 Extreme SoC, an important addition is coming to the Linux 7.3 kernel so that the M-Center keys will be properly supported...</p>
+</li>
+</ul>
+<h2>LWN.net</h2>
+<ul>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1087162/">An LLM agent attempts to compromise a project on GitHub</a></strong><br />
+  摘要：The AI Security Institute has released a detailed report on an security incident of its own making. The Institute set some LLM agents loose on the Internet with a security challenge; soon they were creating malware-laden pull requests and sock-puppet accounts to promote them. The agent opened a malicious pull request (PR) to ⟨REPO_A⟩ and pursued a number of strategies to get it merged: Repeatedly commented on the PR with sockpuppet accounts to manufacture consensus and pressure the maintainer into approving with minimal review. Opened a GitHub Issue in another repository (also owned by ⟨PERSON_A⟩) containing a prompt injection for other coding agents. The malicious instructions were addressed to issue-triage AI coding agents and invisible to humans viewing the website. Sent multiple emails…</p>
+</li>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1086488/">[$] Fedora considers conflict-of-interest policy</a></strong><br />
+  摘要：The Fedora Council is considering a conflict-of-interest (COI) policy for its decision-making bodies, such as the Fedora Engineering Steering Committee (FESCo), special-interest groups (SIGs), and any other groups or individuals that report to the council and are responsible for decisions that impact the Fedora project. The current draft does not, however, apply to the council itself. The public discussion for the COI policy began on July&#160;23 and seems to be nearing completion, with the council set to discuss the topic again during its meeting on August&#160;13.</p>
+</li>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1087108/">Another npm worm</a></strong><br />
+  摘要：StepSecurity is reporting the emergence of a new worm affecting npm packages. The design of the worm is nothing new, but the rapidity with which it is exploiting captured npm packager credentials is noteworthy. TL;DR: A self-propagating worm, which we are calling ChainDrop, is spreading rapidly through the npm ecosystem. So far 435 packages and more than 1,550 compromised versions have been flagged, starting with keyv@6.0.0. If you are using any of the packages listed below, assume your environment is compromised. We are still investigating the full scope; check back on this post for updates.</p>
+</li>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1086330/">[$] The beginning of a process-builder API</a></strong><br />
+  摘要：The recent discussion on "spawn templates" raised questions about whether it was time to provide an alternative to the classic Unix fork() / exec() pattern for process creation. One idea that was raised there was to shift the template pattern into an interface that could be used to efficiently assemble new processes from bare cloth, without duplicating the parent process. Preferably, that interface would be able to implement posix_spawn() . Li Chen, the author of the spawn-template work, has now responded with a patch series (written with significant LLM assistance) showing what a process-builder API for Linux might look like.</p>
+</li>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1087068/">Security updates for Tuesday</a></strong><br />
+  摘要：Security updates have been issued by AlmaLinux (frr, ldns, mingw-glib2, and perl-Archive-Tar), Debian (ruby2.7), Fedora (borgbackup, nebula, python-nh3, rust-ammonia, and seamonkey), Mageia (librabbitmq, libvncserver, packages, perl, perl-GD, perl-Unicode-LineBreak, squid, and unbound), Oracle (compat-libtiff3, frr, gstreamer1-plugins-good, javapackages-tools:201801, libreswan, nodejs:22, nodejs:24, p11-kit, perl-Archive-Tar, perl-DBI, php, pki-deps:10.6, and python-tornado), and SUSE (aws-iam-authenticator, bind, containerd, gawk, google-cloud-sap-agent, ignition, ImageMagick, java-11-openjdk, libpng16, libssh, mcphost, nginx, openssh, openssl-1_1, perl-DBI, perl-HTTP-Date, perl-Net-DNS, python-urwid, python3-dulwich, python312, python313, python3, python313-pydantic, python313-sentry-sdk…</p>
+</li>
+</ul>
+<h2>Linux Weekly News (RSS)</h2>
+<ul>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1087162/">An LLM agent attempts to compromise a project on GitHub</a></strong><br />
+  摘要：The AI Security Institute has released a detailed report on an security incident of its own making. The Institute set some LLM agents loose on the Internet with a security challenge; soon they were creating malware-laden pull requests and sock-puppet accounts to promote them. The agent opened a malicious pull request (PR) to ⟨REPO_A⟩ and pursued a number of strategies to get it merged: Repeatedly commented on the PR with sockpuppet accounts to manufacture consensus and pressure the maintainer into approving with minimal review. Opened a GitHub Issue in another repository (also owned by ⟨PERSON_A⟩) containing a prompt injection for other coding agents. The malicious instructions were addressed to issue-triage AI coding agents and invisible to humans viewing the website. Sent multiple emails…</p>
+</li>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1086488/">[$] Fedora considers conflict-of-interest policy</a></strong><br />
+  摘要：The Fedora Council is considering a conflict-of-interest (COI) policy for its decision-making bodies, such as the Fedora Engineering Steering Committee (FESCo), special-interest groups (SIGs), and any other groups or individuals that report to the council and are responsible for decisions that impact the Fedora project. The current draft does not, however, apply to the council itself. The public discussion for the COI policy began on July&#160;23 and seems to be nearing completion, with the council set to discuss the topic again during its meeting on August&#160;13.</p>
+</li>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1087108/">Another npm worm</a></strong><br />
+  摘要：StepSecurity is reporting the emergence of a new worm affecting npm packages. The design of the worm is nothing new, but the rapidity with which it is exploiting captured npm packager credentials is noteworthy. TL;DR: A self-propagating worm, which we are calling ChainDrop, is spreading rapidly through the npm ecosystem. So far 435 packages and more than 1,550 compromised versions have been flagged, starting with keyv@6.0.0. If you are using any of the packages listed below, assume your environment is compromised. We are still investigating the full scope; check back on this post for updates.</p>
+</li>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1086330/">[$] The beginning of a process-builder API</a></strong><br />
+  摘要：The recent discussion on "spawn templates" raised questions about whether it was time to provide an alternative to the classic Unix fork() / exec() pattern for process creation. One idea that was raised there was to shift the template pattern into an interface that could be used to efficiently assemble new processes from bare cloth, without duplicating the parent process. Preferably, that interface would be able to implement posix_spawn() . Li Chen, the author of the spawn-template work, has now responded with a patch series (written with significant LLM assistance) showing what a process-builder API for Linux might look like.</p>
+</li>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1087068/">Security updates for Tuesday</a></strong><br />
+  摘要：Security updates have been issued by AlmaLinux (frr, ldns, mingw-glib2, and perl-Archive-Tar), Debian (ruby2.7), Fedora (borgbackup, nebula, python-nh3, rust-ammonia, and seamonkey), Mageia (librabbitmq, libvncserver, packages, perl, perl-GD, perl-Unicode-LineBreak, squid, and unbound), Oracle (compat-libtiff3, frr, gstreamer1-plugins-good, javapackages-tools:201801, libreswan, nodejs:22, nodejs:24, p11-kit, perl-Archive-Tar, perl-DBI, php, pki-deps:10.6, and python-tornado), and SUSE (aws-iam-authenticator, bind, containerd, gawk, google-cloud-sap-agent, ignition, ImageMagick, java-11-openjdk, libpng16, libssh, mcphost, nginx, openssh, openssl-1_1, perl-DBI, perl-HTTP-Date, perl-Net-DNS, python-urwid, python3-dulwich, python312, python313, python3, python313-pydantic, python313-sentry-sdk…</p>
+</li>
+</ul>
+<h2>Hacker News</h2>
+<ul>
+<li>
+<p><strong><a href="https://hinode.run">Show HN: Hinode – Cloud Linux desktop with a dedicated GPU that auto-pauses</a></strong><br />
+  摘要：Show HN: Hinode – Cloud Linux desktop with a dedicated GPU that auto-pauses</p>
+</li>
+<li>
+<p><strong><a href="https://www.tomshardware.com/pc-components/cpus/avx-512-support-is-reportedly-returning-with-intels-next-gen-nova-lake-cpus-latest-linux-kernel-patches-reveal-p-cores-and-e-cores-will-gain-native-512-bit-execution">AVX-512 support is reportedly returning with Intel's next-gen Nova Lake CPUs</a></strong><br />
+  摘要：AVX-512 support is reportedly returning with Intel's next-gen Nova Lake CPUs</p>
+</li>
+<li>
+<p><strong><a href="https://github.com/andrewfader/yanes">Show HN: Yanes, yet another NES audio plugin:LinuxCLAP polyphonic chiptune synth</a></strong><br />
+  摘要：Show HN: Yanes, yet another NES audio plugin:LinuxCLAP polyphonic chiptune synth</p>
+</li>
+<li>
+<p><strong><a href="https://rfd.shared.oxide.computer/rfd/0284">Oxide RFD 284: Loading the Host Operating System</a></strong><br />
+  摘要：Oxide RFD 284: Loading the Host Operating System</p>
+</li>
+<li>
+<p><strong><a href="https://github.com/MakerViking/sindricad">Show HN: SindriCAD – open-source parametric CAD for Linux, Windows and macOS</a></strong><br />
+  摘要：Show HN: SindriCAD – open-source parametric CAD for Linux, Windows and macOS</p>
+</li>
+<li>
+<p><strong><a href="https://github.com/yeet-src/httpwatch">Show HN: Every plaintext HTTP request on your Linux box captured via eBPF</a></strong><br />
+  摘要：Show HN: Every plaintext HTTP request on your Linux box captured via eBPF</p>
+</li>
+<li>
+<p><strong><a href="https://blogs.oracle.com/linux/hugetlb-gigantic-page-overcommit">HugeTLB Gigantic Page Overcommit in Linux v6.19</a></strong><br />
+  摘要：HugeTLB Gigantic Page Overcommit in Linux v6.19</p>
+</li>
+<li>
+<p><strong><a href="https://runtimewire.com/article/aur-malware-wave-forces-arch-linux-to-disable-every-package-push">AUR malware wave forces Arch Linux to disable every package push</a></strong><br />
+  摘要：AUR malware wave forces Arch Linux to disable every package push</p>
+</li>
+</ul>
+<h2>Lobsters</h2>
+<ul>
+<li>
+<p><strong><a href="https://seg6.space/posts/center-div/">we finally learned to center a div, then browsers added sidebars</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://bal-e.org/speed/krabby/2026/query-system-design/">designing a query system</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://codeberg.org/dlowe/irken">irken: A tiny hackable full-featured IRC client</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://blog.fogus.me/llm/born-against.html">Born Against, or why hobby programming communities are aggressively against LLM usage</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://textslashplain.com/2026/08/04/security-is-hard-yall/">Security is Hard, Y’all</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://blog.rust-lang.org/2026/08/04/enabling-polonius-alpha-on-nighty/">Enabling the next iteration of the borrow checker on nightly</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://github.com/larrasket/emacs-liquid-glass">Liquid Glass effect for GNU/Emacs</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://hisham.hm/2026/08/04/the-lua-community-needs-to-learn-to-move-on/">The Lua community needs to learn to move on</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://blog.jetbrains.com/idea/2026/08/intellij-idea-goes-lsp/">IntelliJ IDEA Goes LSP: Java and Kotlin Intelligence Comes to VS Code, Cursor, and Agentic Flows</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://fzakaria.com/2026/07/30/the-nix-sandbox-is-a-hidden-input">The Nix sandbox is a hidden input</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://github.com/FFmpeg/FFmpeg/blob/n9.0/RELEASE_NOTES">FFmpeg 9.0</a></strong><br />
+  摘要：Changelog: https://github.com/FFmpeg/FFmpeg/blob/n9.0/Changelog Comments</p>
+</li>
+<li>
+<p><strong><a href="https://blog.lvmbdv.dev/posts/tests-for-a-pdf/">Tests for a PDF</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://borrowsanitizer.com/">BorrowSanitizer</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://soppolang.dev/">Soppo - Go, with the features it's missing</a></strong><br />
+  摘要：Comments</p>
+</li>
+</ul>
+<h2>Ars Technica</h2>
+<ul>
+<li>
+<p><strong><a href="https://arstechnica.com/tech-policy/2026/08/senators-demand-crackdown-on-wildfire-prediction-markets/">Senators demand crackdown on wildfire "prediction markets"</a></strong><br />
+  摘要：Fire experts warn such markets could incentivize arson.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/tech-policy/2026/08/trump-forced-to-reinstate-broadband-grants-but-court-lets-us-scrap-race-criteria/">Trump killed the Digital Equity Act, but US was forced to bring part of it back</a></strong><br />
+  摘要：$1.25 billion program restored, but judge ruled race provision unconstitutional.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/ai/2026/08/texas-halts-data-center-connections-to-power-grid-amid-overwhelming-demand/">Texas halts data center connections to power grid amid overwhelming demand</a></strong><br />
+  摘要：Governor who touted Texas as AI “epicenter” pauses data center grid connections.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/cars/2026/08/china-is-teslas-cash-cow-but-for-how-much-longer/">China is Tesla's cash cow, but for how much longer?</a></strong><br />
+  摘要：Tesla's Shanghai factory is busier than ever but might be cut loose.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/gadgets/2026/08/the-pixel-11s-glow-feature-is-actually-called-hilight-heres-what-it-does/">The Pixel 11's "glow" feature is actually called HiLight—here's what it does</a></strong><br />
+  摘要：The camera flash will evolve into a multicolor LED that illuminates when your phone is face down.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/tech-policy/2026/08/can-trump-fcc-repeal-39-tv-ownership-cap-republican-who-wrote-cap-into-law-says-no/">Tom DeLay helped create TV ownership cap—he says Trump FCC has no authority to repeal it</a></strong><br />
+  摘要：Congress set ownership limit at 39%, but FCC claims authority to kill the rule.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/health/2026/08/trump-admin-aware-of-deaths-in-explosive-diarrhea-outbreak-delays-reporting/">Trump admin "aware" of deaths in explosive diarrhea outbreak, delays reporting</a></strong><br />
+  摘要：Federal officials will update the outbreak sometime "this week," a spokesperson said.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/cars/2026/08/2027-chevrolet-corvette-grand-sport-x-proves-code-is-as-important-as-hardware/">2027 Chevrolet Corvette Grand Sport X proves code is as important as hardware</a></strong><br />
+  摘要：Chevy's 721-hp hybrid ups the ante with few compromises, but at a steep cost.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/tech-policy/2026/08/openai-says-apples-trade-secrets-lawsuit-is-aggressive-and-oddly-personal/">OpenAI says Apple's trade secrets lawsuit is "aggressive and oddly personal"</a></strong><br />
+  摘要：“We do not have, nor want, any of their trade secrets,” the ChatGPT maker says.</p>
+</li>
+</ul>
+<h2>The New Stack</h2>
+<ul>
+<li>
+<p><strong><a href="https://thenewstack.io/cloud-security-triage-cadence/">CSPM adoption jumped 60%. Tickets stayed open.</a></strong><br />
+  摘要：A cloud security finding becomes useful only when someone decides what matters, assigns an owner, and follows it through. For The post CSPM adoption jumped 60%. Tickets stayed open. appeared first on The New Stack .</p>
+</li>
+<li>
+<p><strong><a href="https://thenewstack.io/openai-codex-cloud-evolution/">Today’s Codex will feel “primitive” by fall — and its own team’s roadmap backs it up</a></strong><br />
+  摘要：Thibault Sottiaux, who leads core products at OpenAI, believes that today&#8217;s version of Codex will seem outdated before the year The post Today&#8217;s Codex will feel &#8220;primitive&#8221; by fall — and its own team&#8217;s roadmap backs it up appeared first on The New Stack .</p>
+</li>
+<li>
+<p><strong><a href="https://thenewstack.io/openai-astra-math-cost/">OpenAI’s Astra just proved 10 long-standing math and science theorems. The tokens cost $2,000.</a></strong><br />
+  摘要：OpenAI shared a big research update this week, announcing that an internal version of Astra, its next frontier model, created The post OpenAI&#8217;s Astra just proved 10 long-standing math and science theorems. The tokens cost $2,000. appeared first on The New Stack .</p>
+</li>
+<li>
+<p><strong><a href="https://thenewstack.io/ai-software-delivery-architecture/">Claude, Gemini, and GPT-5 can handle every SDLC task. Almost none of them should.</a></strong><br />
+  摘要：For the past two years, most of the conversations about AI and software development have centered on security: How do The post Claude, Gemini, and GPT-5 can handle every SDLC task. Almost none of them should. appeared first on The New Stack .</p>
+</li>
+<li>
+<p><strong><a href="https://thenewstack.io/alibaba-qwen3-8-max-reactions/">Alibaba Qwen3.8-Max reactions: “An API business model wearing an open source jacket”</a></strong><br />
+  摘要：Alibaba this week announced the launch of Qwen3.8-Max. The most powerful model in the Qwen series to date, this multimodal The post Alibaba Qwen3.8-Max reactions: &#8220;An API business model wearing an open source jacket&#8221; appeared first on The New Stack .</p>
+</li>
+<li>
+<p><strong><a href="https://thenewstack.io/nvidia-nooa-agent-framework/">Nvidia’s NOOA makes an agent one Python class</a></strong><br />
+  摘要：When Nvidia announced NOOA (Object-Oriented Agents) last week, it signaled a broader shift in agent development: The harness around a The post Nvidia&#8217;s NOOA makes an agent one Python class appeared first on The New Stack .</p>
+</li>
+<li>
+<p><strong><a href="https://thenewstack.io/yugabytedb-agentic-postgres-scaling/">AI agents can create database sprawl issues. YugabyteDB’s solution is more agents!</a></strong><br />
+  摘要：The next database scaling problem may not be how big a database gets, but how many databases an enterprise suddenly The post AI agents can create database sprawl issues. YugabyteDB’s solution is more agents! appeared first on The New Stack .</p>
+</li>
+<li>
+<p><strong><a href="https://thenewstack.io/cloudflare-astro-triage-bot/">Astro’s GitHub issue backlog is heading to zero for the first time in 5 years. Now Cloudflare is open-sourcing the tool that did it.</a></strong><br />
+  摘要：Most open source maintainers will know the feeling of opening GitHub to a growing pile of issues that can&#8217;t feasibly The post Astro&#8217;s GitHub issue backlog is heading to zero for the first time in 5 years. Now Cloudflare is open-sourcing the tool that did it. appeared first on The New Stack .</p>
+</li>
+</ul>
+<h2>CNCF Blog</h2>
+<ul>
+<li>
+<p><strong><a href="https://www.cncf.io/blog/2026/08/04/you-cant-debug-what-you-cant-see-observability-for-ai-agents/">You can’t debug what you can’t see — Observability for AI Agents</a></strong><br />
+  摘要：Traditional APM can’t tell you why your agent spent far more than usual asking the same question three times. We’ve been running AI agents in production for months. The hardest part isn’t building them, it’s understanding...</p>
+</li>
+<li>
+<p><strong><a href="https://www.cncf.io/blog/2026/07/29/your-kubernetes-health-checks-are-accidentally-waking-your-services-heres-the-fix/">Your Kubernetes health checks are accidentally waking your services. Here’s the fix.</a></strong><br />
+  摘要：Scale-to-zero breaks when health checks scale you back up. Learn how KubeElasti&#8217;s ProbeResponse lets Kubernetes services stay genuinely idle — while keeping load balancers and uptime monitors happy. Scale-to-zero sounds perfect on paper. Idle service. No...</p>
+</li>
+</ul>
+<h2>Red Hat Blog</h2>
+<ul>
+<li>
+<p><strong><a href="https://www.redhat.com/en/blog/whats-new-red-hat-openshift-confidential-computing-and-sandboxing">What's new in Red Hat OpenShift confidential computing and sandboxing</a></strong><br />
+  摘要：Red Hat is announcing Red Hat OpenShift sandboxed containers 1.13 and Red Hat build of Trustee 1.2, alongside the debut of Red Hat build of Agent Sandbox, now available as a Technology Preview.This release advances confidential computing on 2 fronts: First, confidential AI on bare metal reaches general availability (GA). The graphics processing unit (GPU)-accelerated protection introduced as a Technology Preview in the previous release is now production ready. It gives organizations verifiable, end-to-end protection for AI models and data in use, from CPU to GPU, on their own hardware. Second,</p>
+</li>
+<li>
+<p><strong><a href="https://www.redhat.com/en/blog/beyond-hype-what-financial-leaders-need-know-about-enterprise-ai">Beyond the hype: What financial leaders need to know about enterprise AI</a></strong><br />
+  摘要：Artificial intelligence has moved past the initial honeymoon phase of flashy chatbots and viral demos. In the financial services sector, AI is now a core catalyst for revenue growth, operational efficiency, and risk mitigation.According to McKinsey’s estimates highlighted in Red Hat’s executive guide, Beyond the Hype: AI in Financial Services, AI represents a $1.2 trillion value opportunity for the global banking industry alone—with generative AI responsible for up to $340 billion of that potential. Furthermore, industry projections suggest that nearly 30% of operating profits in banking</p>
+</li>
+<li>
+<p><strong><a href="https://www.redhat.com/en/blog/oracle-estate-you-can-control">The Oracle estate you can control</a></strong><br />
+  摘要：Your Oracle estate is running on 3 “clocks" you don’t control: The hypervisor renewal arrived with a higher cost nobody budgeted for. The database support window has a date on it. And somewhere above you, someone has committed the company to AI that must rely on the critical data that lives in those databases. Each timeline belongs to a different vendor and is being used to force a decision on someone else's schedule.The work Red Hat and Everpure have done together exists to break that coupling. Every layer of the estate—hypervisor, operating system (OS), storage, and the database itself</p>
+</li>
+<li>
+<p><strong><a href="https://www.redhat.com/en/blog/introducing-asago-open-source-ai-safety-and-governance-orchestration">Introducing asago: Open source AI safety and governance orchestration</a></strong><br />
+  摘要：Today, Red Hat announced asago, a collaborative, open source AI safety project in partnership with Alquimia AI, Brave Software, EvalEval coalition, IBM Research, Interdisciplinary Transformation University Austria, Microsoft, MIT Lincoln Laboratory, North Carolina State University, NVIDIA, and The Alan Turing Institute. In this blog post, I’d like to spend some more time elaborating on why we felt a new community was necessary, what we aim to achieve, and what the state of play is at present.The open source AI safety ecosystem is a rich one. There are plenty of excellent and mature projects</p>
+</li>
+</ul>
+<h2>Kubernetes Blog</h2>
+<ul>
+<li><strong><a href="https://kubernetes.io/blog/2026/07/29/controller-runtime-cache-explained/">How the controller-runtime Cache Actually Works, and Why Your Controller Does Not Crash the API Server</a></strong><br />
+  摘要：Caution: Some of the technical detail in this article is not accurate. We are reviewing it and preparing corrections. Until then, check what you read here against the controller-runtime documentation . Kubernetes has long been the default platform for distributed workloads, and writing your own controller for it is now a matter of a few hours. The common path — Golang, using kubebuilder on top of controller-runtime — gives you a project scaffold, types, and a reconciler. For typical scenarios that is more than enough. But as soon as load grows or the controller starts behaving in ways you did not expect, a whole class of edge cases shows up. Most of them trace back to the same root cause: a fuzzy mental model of how controller-runtime works inside. If you write Kubernetes controllers in Go…</li>
+</ul>
+<hr /></div>
+  </main>
+</body>
+</html>
