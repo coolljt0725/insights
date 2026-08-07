@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OS 领域每日洞察 - 2026-08-07</title>
+  <style>
+    :root {
+      --bg: #f6f4f0;
+      --bg-bar: #ebe8e3;
+      --bg-card: #fffefb;
+      --bg-card-hover: #f5f3ef;
+      --text: #2d2a26;
+      --text-muted: #5c5852;
+      --text-dim: #7a756e;
+      --accent: #5a7a9e;
+      --border: #ddd9d2;
+      --radius: 10px;
+      --font: "Segoe UI", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      font-size: 15px;
+    }
+
+    /* 门户顶栏 */
+    .masthead {
+      background: var(--bg-bar);
+      border-bottom: 1px solid var(--border);
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 0;
+    }
+    .masthead-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .masthead h1 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin: 0;
+      letter-spacing: -0.02em;
+      color: var(--text);
+    }
+    .masthead .meta {
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+    }
+
+    /* 主内容区：多栏门户布局 */
+    .main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 3rem;
+    }
+
+    /* 板块：每个 h2 为一个频道块 */
+    .content .section {
+      margin-bottom: 2.5rem;
+    }
+    .content h2 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+      margin: 0 0 1rem;
+      padding: 0.6rem 1rem;
+      background: var(--bg-bar);
+      border-radius: var(--radius);
+      border-left: 4px solid var(--accent);
+    }
+    .content h2:first-child { margin-top: 0; }
+
+    .content h2:has(+ h3) {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      border-left-color: var(--text-dim);
+    }
+
+    /* 板块内卡片网格（每个 h2 后的 ul） */
+    .content h2 + ul {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1rem;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .content h2 + ul li {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.15rem 1.2rem;
+      transition: background .15s, border-color .15s;
+    }
+    .content h2 + ul li:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--text-dim);
+    }
+    .content h2 + ul li strong {
+      display: block;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+      line-height: 1.4;
+    }
+    .content h2 + ul li p {
+      margin: 0 0 0.5rem;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.58;
+    }
+    .content h2 + ul li p:last-of-type { margin-bottom: 0; }
+    .content h2 + ul li a[href^="http"] {
+      font-size: 0.8125rem;
+      color: var(--accent);
+    }
+    .content h2 + ul li a[href^="http"]:hover { text-decoration: underline; }
+
+    .content .ref-section {
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+    .content h2 + h3 { margin-top: 1.25rem; }
+    .content h3 {
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--text-dim);
+      margin: 1rem 0 0.4rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .content h3 + ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 0.25rem;
+    }
+    .content h3 + ul li {
+      background: transparent;
+      border: none;
+      padding: 0.2rem 0;
+      font-size: 0.8125rem;
+    }
+    .content h3 + ul li strong { font-size: inherit; margin-bottom: 0; }
+    .content h3 + ul li a { color: var(--accent); }
+    .content h3 + ul li a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <header class="masthead">
+    <div class="masthead-inner">
+      <h1>OS 领域每日洞察 - 2026-08-07</h1>
+      <span class="meta">2026-08-07 04:00 UTC</span>
+    </div>
+  </header>
+  <main class="main">
+    <div class="content"><h1>OS 领域每日洞察 - 2026-08-07</h1>
+<p>（Gemini 未可用时，以下为按来源整理的条目，含<strong>新闻摘要</strong>与链接；摘要可能为原文语言。）</p>
+<h2>arXiv (cs.OS)</h2>
+<ul>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.05300">eMicro: Real-Time Multi-Hop Access Control for Microservices with eBPF</a></strong><br />
+  摘要：arXiv:2608.05300v1 Announce Type: cross Abstract: Modern cloud applications often comprise thousands of microservices whose interactions form complex request paths. Traditional inter-service access control restricts individual service-to-service requests, but fails to prevent multi-hop attacks, where each hop appears legitimate yet the overall path violates security intent. This gap leaves systems exposed to unauthorized access and data exfiltration. In this paper, we present eMicro, a path-aware defense system for microservices that prevents such attacks while remaining efficient and deployable. eMicro enforces real-time multi-hop access control through three key techniques: (1) history-based access control extended to capture service invocation sequences; (2) security policies encoded as…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.06241">Timestep-Conditioned Transformers for Global Weather Forecasting</a></strong><br />
+  摘要：arXiv:2608.06241v1 Announce Type: cross Abstract: Existing machine-learning weather forecasting models rely on predetermined and fixed autoregressive timesteps. The choice of model timestep involves a fundamental trade-off: shorter timesteps (e.g. 1 to 6 hours) finely resolve atmospheric dynamics within the diurnal cycle but increase error accumulation for a given forecast horizon, while longer timesteps (e.g. 24 hours) reduce error accumulation but limit the usability of short-range forecasts where sub-daily predictability is high. In this work, we present GEM-3, a probabilistic global weather model that addresses this trade-off through explicit multi-timestep inference. With a single set of trained weights, the model timestep can be configured at inference time to balance predictability …</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2603.00378">OBASE: Object-Based Address-Space Engineering to Improve Memory Tiering</a></strong><br />
+  摘要：arXiv:2603.00378v2 Announce Type: replace Abstract: Hardware and OS mechanisms for memory tiering are widely deployed, yet datacenters still overprovision DRAM. The root cause is hotness fragmentation: allocators place objects by size rather than access pattern, so hot and cold objects become interleaved within the same pages. A single hot object marks its page as active, trapping surrounding cold data in expensive DRAM. Our analysis of Google production workloads shows that up to 97% of the bytes in active pages are cold and unreclaimable. We propose address-space engineering: dynamically reorganizing virtual memory so that hot objects cluster into uniformly hot pages and cold objects into uniformly cold pages. We present OBASE, a compiler-runtime system for unmanaged languages that serve…</p>
+</li>
+</ul>
+<h2>arXiv (cs.LG)</h2>
+<ul>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.05196">MS-MLB: An Open Machine Learning Benchmark for Blood-Based MS Classification</a></strong><br />
+  摘要：arXiv:2608.05196v1 Announce Type: new Abstract: Multiple sclerosis (MS) is diagnosed through clinical assessment, magnetic resonance imaging, laboratory evidence when appropriate, and exclusion of better explanations. Blood RNA expression data may contain disease associated immune signal, but a blood RNA classifier cannot be treated as a replacement for clinical diagnosis. This paper presents MS-MLB (Multiple Sclerosis Machine Learning Benchmark), a reproducible open benchmark for machine learning based MS research classification from whole blood RNA expression data. MS-MLB uses the public GSE17048 cohort, converts it into an MS versus healthy control task, and evaluates multiple algorithms under a shared, leakage controlled pipeline that a researcher can rerun without reconfiguring the ev…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.05207">When Do Corrective Features Help? An Agent for Corrective Feature Discovery on Black-Box Forecasters</a></strong><br />
+  摘要：arXiv:2608.05207v1 Announce Type: new Abstract: Frozen pretrained forecasters often fail in structured, recurring ways that are costly to repair through fine-tuning. We study corrective feature discovery: mining interpretable features of a frozen forecaster's residual to drive a lightweight post-hoc corrector. Prior automated feature engineering models the data-generating process; corrective features instead model the model-failure process. We present CRAFTER (Corrective Residual Agent with Feature-based Temporal Exploration and Reasoning), which keeps the backbone frozen and mines its residual with two complementary generators: a compositional search over the raw input channels, and a large language model (LLM) that proposes named feature combinations, binary flags, and short executable c…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.05234">PPDL: LLM-Based Flows as Probabilistic Programs</a></strong><br />
+  摘要：arXiv:2608.05234v1 Announce Type: new Abstract: Building reliable applications that leverage large language models (LLMs) remains a significant challenge. While LLMs offer impressive capabilities across diverse tasks, their outputs often lack accuracy and provide no clear measure of confidence. This uncertainty compounds in flows of multiple calls to LLMs and other tools, making it difficult for developers and end-users to trust the results. This paper introduces a probabilistic language for programming LLM-based flows. It enables developers to quantify and propagate uncertainty throughout the application's flow, and experiment with different inference scaling techniques without adding a single line of code beyond the flow's logic. We present an experimental study to demonstrate this capab…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.05238">Decoupling Perception from Description: Computation-Grounded Representation Alignment between Multivariate Time Series and Language</a></strong><br />
+  摘要：arXiv:2608.05238v1 Announce Type: new Abstract: Training multimodal models to align time series with language runs into a self-supervision trap. The usual recipe asks an LLM to read a series and write a description, so label quality is capped by the perceptual skill the model is supposed to learn. The data can never teach more than the labeler already knows. A second gap makes this worse: most datasets use a single variable, but the patterns that matter (cross-channel correlation, lead-lag structure, co-occurring anomalies) appear only with several variables, right where the labeling LLM's limits are most exposed. These two problems create a trilemma: existing methods are reliable, realistic, or scalable, but none achieves all three. We resolve this by decoupling perception from descriptio…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.05242">Disentangling 3D Modeling from Spatial Reasoning</a></strong><br />
+  摘要：arXiv:2608.05242v1 Announce Type: new Abstract: In this work, we explore an alternative paradigm for spatial reasoning by explicitly disentangling 3D perception from reasoning, rather than jointly acquiring implicit 3D perception and reasoning through large-scale training. Our key observation is that modern perception models excel at estimating continuous 3D geometry, whereas large language models (LLMs) are particularly effective at compositional and symbolic reasoning. Motivated by these complementary strengths, we propose the Disentangled Spatial Reasoner (DiSR), a simple yet effective framework that reconstructs the physical world into structured 3D evidence using off-the-shelf expert perception models and fine-tunes an LLM with LoRA to perform reasoning solely over this explicit geome…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.05243">Marginal Matching Does Not License Factorized Sampling: Auditing Conditional Style Leakage in Factorized Generative Models</a></strong><br />
+  摘要：arXiv:2608.05243v1 Announce Type: new Abstract: Factorized generative models commonly regularize a latent style variable z_s by matching its marginal distribution to a fixed Gaussian prior and interpret this as evidence that the style representation is independent of class information. We show that this interpretation is incorrect. Matching only the marginal distribution places no constraint on the class-conditional distributions, allowing the latent style to remain highly predictive of the label despite appearing perfectly Gaussian in aggregate. We derive an exact decomposition showing that this mismatch is one of four conditions required for factorized sampling, and demonstrate that eliminating it is necessary but not sufficient to obtain the intended factorization. Empirically, our case…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.05249">PRISM: Priority-aware Rubric Internalization via Structured Multimodal Data Synthesis</a></strong><br />
+  摘要：arXiv:2608.05249v1 Announce Type: new Abstract: Real-world multimodal instructions often bundle multiple requirements with unequal importance, yet most multimodal training data still reduce instruction following to answering one self-contained question. We study this gap through \textbf{rubric comprehension}, which casts the model not as a generator measured against rubrics but as an \textbf{executor} that follows them: given an image and a typed, prioritized rubric, the model must verify each rule before producing an overall judgment. To support this setting, we propose \textbf{PRISM}, a four-stage data synthesis framework that produces persona--task pairs, prefix-guided rule sets, quality-filtered rubrics, and structured verification traces. We further introduce \textbf{PRISM-Eval}, whos…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.05250">Beyond Full-Model Rollback: AuroSFT for Adapter-State Multi-Task Fine-Tuning</a></strong><br />
+  摘要：arXiv:2608.05250v1 Announce Type: new Abstract: Multi-task supervised fine-tuning (SFT) often casts a heterogeneous data mixture as a single optimization problem, even though different tasks may reach their best generalization at different times. msft exposes this mismatch through task-wise roll-out, exclusion, and rollback, but its original formulation materializes the scheduler state as full-model checkpoints, making stage transitions costly to store, restore, and deploy. This paper introduces AuroSFT, a parameter-efficient framework that recasts the carried state of overfitting-aware multi-task SFT as a compact, mergeable adapter state. AuroSFT freezes the pretrained backbone, trains only injected adapters, rolls back adapter checkpoints at task-wise peaks, and continues on the remainin…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.05253">Beyond Rotations: AuroOFT for Expressive Quantized Orthogonal Fine-Tuning</a></strong><br />
+  摘要：arXiv:2608.05253v1 Announce Type: new Abstract: Quantized orthogonal fine-tuning (qoft) enables parameter-efficient adaptation of low-bit language models by learning structured activation rotations before frozen quantized weights. However, its task-specific updates remain constrained to linear orthogonal transformations, limiting input-dependent nonlinear corrections. We introduce AuroOFT, which keeps qoft as a stable quantization-compatible branch while attaching a zero-start gated low-rank nonlinear residual to each adapted linear layer. AuroOFT maps activations into an RMS-normalized compact latent space and uses adaptive nonlinear bases with bounded or token-dependent gating. The zero-initialized up projection makes AuroOFT functionally identical to qoft at initialization, while orthog…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.05255">An Emerging Retail Portfolio Management Application: Personalized, Tax-Aware Reinforcement Learning with Natural Language Goals</a></strong><br />
+  摘要：arXiv:2608.05255v1 Announce Type: new Abstract: Retail investors lack access to the kind of personalized, tax-aware portfolio management that institutional clients take for granted -- existing robo-advisors use static, rule-based allocation, and institutional-grade systems require account minimums and technology stacks unavailable to individual investors. We present a fully built, integration-tested application that closes this gap: a FastAPI backend and web dashboard that let a user describe an investment goal in plain language (e.g. "I want steady growth but need to sell some shares next month for a down payment"), routes that goal to one of six investment mandates, and produces a live, broker-integrated portfolio recommendation from athree-phase reinforcement learning system -- a self-s…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.05265">Evaluating Machine Learning Models for Post-Wildfire Debris-Flow Prediction</a></strong><br />
+  摘要：arXiv:2608.05265v1 Announce Type: new Abstract: Prediction of post-wildfire debris flows is critical for mitigating hazards to communities, infrastructure, and resources during intense rainfall in recently burned areas. However, identifying reliable machine learning models is complicated by overlapping debris-flow and non-debris-flow events in feature space, the need for model interpretability, and limited training data. This paper addresses these challenges through a systematic evaluation of machine learning models in terms of predictive performance, feature importance, and synthetic data augmentation. Using basin-scale observations of post-wildfire debris-flow events across the western United States, we compare 15 models, including the Tabular Prior-Data Fitted Network (TabPFN). Repeated…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.05315">Rectifying Geometric Misalignment: Online Source-Free Adaptation for Class-Imbalanced EEG</a></strong><br />
+  摘要：arXiv:2608.05315v1 Announce Type: new Abstract: Electroencephalography (EEG) based Brain-Computer Interfaces (BCIs) often require unsupervised domain adaptation (UDA) to generalize across subjects and sessions. While Riemannian alignment methods like the Riemannian Centering Transformation (RCT) are effective for handling covariate shifts, they implicitly assume balanced class priors. However, in realistic online BCI scenarios, the label distributions vary dynamically (label shift), causing standard alignment techniques to geometrically misalign the target data distributions. In this work, we propose OSPDIM (Online SPD manifold information maximization), a source-free online UDA framework designed to address label shifts on the Riemannian manifold. OSPDIM introduces a manifold-constrained …</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.05326">QEvict: Recoverable Quantized KV Eviction for Attention-Drift-Robust Long-Context Decoding</a></strong><br />
+  摘要：arXiv:2608.05326v1 Announce Type: new Abstract: Autoregressive large language model inference is increasingly constrained by the memory footprint of the Key-Value (KV) cache. A dominant line of work reduces this footprint by evicting tokens that appear unimportant under attention-derived scores. However, such policies make an implicit irreversible decision: once a token is evicted, it cannot become useful again. We show that this assumption is brittle during decoding. Token and window importance drift as generated queries evolve, causing standard eviction policies to permanently discard states that later receive substantial attention under the full-cache model. To characterize this behaviour, we introduce Future Missed Mass and Global LIR, two diagnostics that measure future attention assi…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.05358">DG-FedReuse: Proxy-Gradient-Gated Cached-Update Reuse with Matched Sparse Uplink Accounting</a></strong><br />
+  摘要：arXiv:2608.05358v1 Announce Type: new Abstract: Federated learning repeatedly incurs local optimization and model-update transmission. We study DG-FedReuse, a simulator-level mechanism that allows selected clients to contribute age-decayed cached updates when a stochastic head-gradient discrepancy proxy remains below a round-dependent threshold. A hard cache-age limit and minimum fresh-client quota constrain reuse, while fresh updates use an adaptive per-tensor Top-K numerical-field representation. Experiments cover six image-classification datasets, 50 virtual clients, Dirichlet label heterogeneity ({\alpha}=0.5), and three seeds. At a common 90-round budget, DG-FedReuse yields 83.36-85.42% modeled update-data-field uplink saving, compared with 76.88% for matched Top-K FedAvg; the seed-al…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.05371">Quantum-Structured World Models (QSWMs) for Predictive Latent Dynamics</a></strong><br />
+  摘要：arXiv:2608.05371v1 Announce Type: new Abstract: World models learn latent states that summarize interaction histories, evolve over time, and support prediction, simulation, or planning. Most existing world models represent these states using classical vectors, probability distributions, recurrent hidden states, or transformer activations. In this paper, we introduce Quantum-Structured World Models (QSWMs), a quantum-inspired framework for predictive world modeling with structured latent states, latent transition operators, and measurement-inspired decoding maps. We study whether mathematical structures inspired by quantum theory, such as complex-valued representations and density-matrix-like latents, provide useful inductive biases for world modeling. We establish three foundational proper…</p>
+</li>
+</ul>
+<h2>arXiv (cs.AI)</h2>
+<ul>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.05159">Agentic Nesting: A New Methodology for Existing Enterprise Application Integration and Services</a></strong><br />
+  摘要：arXiv:2608.05159v1 Announce Type: new Abstract: Enterprise operations extensively rely on multiple heterogeneous business systems and information applications, which also result in severe data silos and process fragmentation. Enterprises have invested considerable financial and material resources in building these applications, however, effectively leveraging and orchestrating them remains a formidable challenge. Conventional approaches to enterprise application integration, encompassing middleware architectures such as Enterprise Service Bus (ESB), API gateway infrastructures, and Robotic Process Automation (RPA), suffer from inherent limitations like high architectural coupling, escalating operation and maintenance costs, and limited intelligence capabilities. This paper proposes Agentic…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.05160">The Ignition Index: Measuring Global Workspace Dynamics in Language Models</a></strong><br />
+  摘要：arXiv:2608.05160v1 Announce Type: new Abstract: We introduce the Ignition Index (I), a validated scalar metric that operationalizes Global Workspace Theory's (GWT) all-or-none ignition prediction in transformer language models. The metric fits a four-parameter sigmoid to per-layer linear probe accuracy as a function of input signal strength, extracting steepness parameter beta-hat: high values indicate abrupt, ignition-like transitions; low values indicate graded build-up. Across 11 models spanning five architecture families, shuffled-label controls demonstrate 9.6-fold selectivity for genuine linguistic structure over spurious probe capacity (p &lt; 0.001, Mann-Whitney U-test). We find: (1) Feedforward transformers exceed SSMs by 89% in aggregate beta-hat (p &lt; 1e-13, Cohen's d = 0.52), with …</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.05168">Woodpecker Distillation: Weak Models Diagnose Reasoning Bugs in Strong Models</a></strong><br />
+  摘要：arXiv:2608.05168v1 Announce Type: new Abstract: Large language models often fail on reasoning tasks despite possessing the capability to solve them. We argue that many such failures arise from localized reasoning bugs in intermediate steps rather than from global incompetence. We show that these bugs are frequently repairable: inserting a short patch generated by a weak probe model after the same strong-model reasoning prefix can redirect the trajectory toward a correct solution. However, this corrective effect is not reliably internalized by directly fine-tuning on weak patches or repaired trajectories, suggesting that the useful signal lies not in the intervention text itself, but in how it reshapes the model's future reasoning distribution. We therefore propose Woodpecker Distillation, …</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.05203">From Continuous Predictors to Clinical Thresholds: Early Evidence on Performance Trade-offs of Guideline-Based Categorisation for Ischaemic Stroke Outcome Prediction</a></strong><br />
+  摘要：arXiv:2608.05203v1 Announce Type: new Abstract: Machine learning models achieve strong predictive accuracy for 90-day outcome prediction in acute ischaemic stroke, yet clinical adoption is limited by the misalignment of model explanations with clinicians' reasoning. Motivated by a clinician user study calling for clinical guideline-aligned cut-offs, we ask whether continuous predictors can be replaced by clinically informed categorical encodings without sacrificing performance. On a multi-centre European registry stratified into three treatment cohorts, we compare standard and fully categorised gradient-boosted models, the latter using stroke guideline-aligned, treatment-specific thresholds. The fully categorised models are statistically indistinguishable from their continuous counterparts…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.05204">SkillTrace: Multi-Trace Provenance Auditing for LLM-Agent Skill Reuse</a></strong><br />
+  摘要：arXiv:2608.05204v1 Announce Type: new Abstract: LLM-agent ecosystems are rapidly growing around reusable skills: mixed-modality packages of metadata, natural-language instructions, code, tools, references, and operational workflows. As skills become marketplace artifacts, auditing their reuse is no longer the same problem as ordinary code clone detection. Existing detectors target single-modality source code or whole-package similarity, yet skill reuse evidence is distributed across authored text, implementation fragments, and operational structure. As a result, they can miss reuse that preserves only one part of a skill. We present SKILLTRACE, a multi-trace provenance auditing framework for LLM-agent skill reuse. SKILLTRACE extracts three provenance traces: Expression, Implementation, and…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.05205">Abstract Event Causal Rules: Induction and Application</a></strong><br />
+  摘要：arXiv:2608.05205v1 Announce Type: new Abstract: Event-centric intelligent analytical systems heavily depend on explicit causal event knowledge for risk early warning, decision-making support and narrative comprehension. Nevertheless, existing instance-level causal pairs suffer severe generalization deficits on low-frequency long-tail and unseen event combinations. To address this limitation, this work proposes Abstract Event Causal Rule (AECR), a novel relation-level causal abstraction paradigm that transforms concrete cause-effect pairs into generalized abstract causal logic while retaining their intrinsic causal relationships. We design a multi-agent Concrete-to-Abstract Causal Induction (CACI) system coupled with similarity-constrained clustering to distill trustworthy AECRs from noisy …</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.05206">Otter: A Time-Aware, History-Conditioned Human Chess AI</a></strong><br />
+  摘要：arXiv:2608.05206v1 Announce Type: new Abstract: Otter is a 15.3M-parameter human chess AI that predicts human move selection by modeling play as a time-aware, sequential process rather than treating each position in isolation. It combines two conditioning signals: (1) a move history encoder that conditions predictions on the last 20 moves, capturing opening preferences, positional drift, and intra-game behavioral tendencies; and (2) a time control module that modulates predictions based on clock pressure. Otter is trained on 6.1 billion positions from 117 million Lichess rapid games over 30 days on a single T4 GPU. Otter achieves 55.23% top-1 and 90.95% top-5 move-prediction accuracy, surpassing the prior state-of-the-art human chess model, Maia 2, with far fewer parameters and less traini…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.05212">SearchAuditor: Auditing and Attributing Failures in Long-Horizon Search Agents</a></strong><br />
+  摘要：arXiv:2608.05212v1 Announce Type: new Abstract: Deep search agents tackle challenging questions through long-horizon web interactions, a process that is both complex and fragile: small reasoning errors may propagate through long, noisy trajectories into fluent but incorrect answers. Diagnosing such failures is difficult, requiring the manual inspection of extremely long execution traces, which could be beyond human capacity. We therefore introduce SearchAuditBench, a benchmark that evaluates whether LLM auditors can localize, attribute, and repair these failures, thereby reducing the human burden. SearchAuditBench comprises 1,243 failed trajectories, averaging 73.1 messages and 65.1K tokens, collected from eight open-weight models on five deep-search benchmarks, each expert-annotated with …</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.05218">PD-GS: Phoneme-Driven 3DGS for Audio-Driven Talking Heads</a></strong><br />
+  摘要：arXiv:2608.05218v1 Announce Type: new Abstract: 3D Gaussian Splatting (3DGS) enables fast, photorealistic talking-head rendering, yet accurate lip articulation remains elusive: mouth motion is often over-smoothed and may violate hard articulatory constraints such as bilabial closures, producing the notorious ``leaky mouth'' artifact. A key difficulty is that brief, discrete articulatory events are inferred from a continuous acoustic embedding under a regression objective, which biases predictions toward averaged mouth configurations. While modern self-supervised speech encoders provide rich prosodic and phonetic cues, they do not provide an explicit, frame-aligned linguistic target that reliably disambiguates closure-level events. We propose \textbf{Phoneme-Driven Gaussian Splatting (PD-GS…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.05219">When Privileged Guidance Misaligns: State-Matched Routing and Contextualized Self-Distillation for Multi-Turn Agents</a></strong><br />
+  摘要：arXiv:2608.05219v1 Announce Type: new Abstract: Privileged on-policy distillation provides dense supervision for multi-turn agents by allowing a synchronized teacher to re-score the student's response at every turn with access to training-only references, such as successful trajectories. In interactive environments, however, the student's preceding actions continually change the execution state. As the student takes different actions or completes subgoals in a different order, its rollout may reach states not covered by the reference, making the reference an unreliable source of guidance for the state actually reached. Applying privileged distillation indiscriminately therefore creates state--reference mismatch. This mismatch motivates a central objective: providing privileged reference gu…</p>
+</li>
+</ul>
+<h2>Phoronix</h2>
+<ul>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/AMDGPU-Linux-7.3-Last-Round">AMD Squeezes In A Few More Graphics Driver Updates For Linux 7.3</a></strong><br />
+  摘要：AMD today submitted their last planned feature updates ahead of the Linux 7.3 merge window opening later this month...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Linux-Zapscape-Vulnerability">Zapscape Is The Latest Linux Vulnerability For KVM Guest-To-Host Escape, LPE</a></strong><br />
+  摘要：Made public earlier today is Zapscape as a guest-to-host escape vulnerability affecting the Linux KVM x86 code for the past six years. This 2020 kernel change to KVM x86 can also be used as a local privilege escalation (LPE) exploit too where /dev/kvm is world-writable on some Linux distributions like RHEL...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Btrfs-Restores-Fixup-Worker">Linux 7.2-rc7 Restoring Btrfs Fixup Worker Infrastructure To Address Silent Data Loss</a></strong><br />
+  摘要：Back during the Linux 7.2 merge window the Btrfs file-system dropped its COW fixup mechanism, which was used to detect dirty pages without an ordered extent. This code was removed as it was believed the kernel's memory management layer had solved the underlying conditions but in reality it ended up leading to silent data loss. That Btrfs fixup worker infrastructure is now restored in time for Linux 7.2-rc7 this weekend and the stable v7.2 kernel later this month...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Linux-Net-Bombarded-AI-Patches">Linux Networking Continues Being Bombarded With AI Patches</a></strong><br />
+  摘要：While the Linux WiFi/wireless maintainer just announced taking a stand against AI/LLM generated slop patches with a new "three second review" rule, the broader Linux networking subsystem continues to be bombarded with AI-generated patches...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/IceWM-4.1-Released">IceWM 4.1 Window Manager Fixes Rare Video Performance Problems</a></strong><br />
+  摘要：As the first new release since IceWM 4.0 released back on New Year's Day for this X11 window manager, IceWM 4.1 is now available...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Linux-Safe-RET-Interrupt-Vuln">Linux Patched For Safe RET Interrupt Vulnerability</a></strong><br />
+  摘要：Made public minutes ago is the Safe RET Interrupt Vulnerability which is now patched in the newest Linux kernel Git code. The Safe RET Interrupt Vulnerability stems from improper handling within Linux's Speculative Return Stack Overflow (SRSO) mitigation affecting AMD Zen 1 through Zen 4 processors...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Apple-NVMe-Linux-Fixes-Firmware">Apple NVMe Linux Driver Sees Fixes After Being Bitten By New Firmware</a></strong><br />
+  摘要：A set of patches providing fixes for the Apple Silicon NVMe driver for the Linux kernel were sent out today due to new issues cropping up when running newer Apple firmware. Firmware shipped by macOS 15+ is causing issues with the current Apple NVMe open-source Linux driver developed by the Asahi Linux crew...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/review/mesa-263-xe3">The Performance Benefits To Upgrading Mesa With Intel Arc B390 On Ubuntu Linux</a></strong><br />
+  摘要：If you are an early customer of the Framework Laptop 13 Pro or other Intel Core Ultra Series 3 Panther Lake laptop and using Ubuntu 26.04 LTS, there can be real benefit from upgrading your Mesa stack for the newer Iris Gallium3D and ANV Vulkan drivers. In this article are some benchmarks of the Framework Laptop 13 Pro with Core Ultra X9 388H with Arc B390 Xe3 integrated graphics for looking at the performance impact of using Mesa Git on Ubuntu Linux.</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Linux-Lockdown-Legacy-IO-Mem">Linux Accidentally Left Legacy I/O &amp; Memory Handlers Open In Kernel Lockdown Mode</a></strong><br />
+  摘要：For nearly the past decade has been the kernel lockdown mode for tightening up kernel access from user-space such as when UEFI Secure Boot is enabled. The kernel lockdown mode restricts PCI BAR access, no writing to /dev/mem, and other restrictions so user-space can't can't modify the running kernel or access sensitive kernel memory. An oversight has allowed legacy I/O and memory interfaces via sysfs to remain open in lockdown mode, but a fix is on the way...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Linux-WiFi-Strict-AI-Slop-Patch">Linux Wireless Maintainer Takes Firm Stance Against AI/LLM Generated Slop Patches</a></strong><br />
+  摘要：In addition to the Linux kernel staging area now rejecting AI/LLM-generated patches except for real security fixes, the Linux wireless networking code is also seeing some shifts around how it will deal with AI/LLM generated patches...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Page-Alloc-Hogger">Page Alloc Hogger Lets You Better Stress Memory Behavior On Linux For Testing/Debugging</a></strong><br />
+  摘要：A new kernel feature proposed by a Google engineer is Page Alloc Hogger to allow for fine control over where memory pages are allocated in order to more easily reproduce low-memory conditions, make it simpler to exert memory pressure, and enable other stressful memory conditions for testing/debugging how Linux copes...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/AMD-GFX1171-Mesa-26.3">AMD GFX1171 Support Merged For Mesa 26.3</a></strong><br />
+  摘要：Earlier this year we began seeing patches for AMD GFX1170 graphics IP labeled as "RDNA 4m" and that was then completed with also adding GFX1171 and GFX1172 as additional targets for the AMDGPU LLVM compiler back-end and AMDGPU kernel driver. Merged today for Mesa 26.3 is now adding the GFX1171 target to Mesa 26.3 for the RADV and RadeonSI drivers...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Synx">Qualcomm Proposes Synx For The Linux Kernel With "Significant" Power + Performance Benefits</a></strong><br />
+  摘要：Qualcomm engineers have initiated a discussion over upstreaming Synx to the Linux kernel, which is a global synchronization framework across different parts of SoCs. Qualcomm is already using Synx internally and is reported to provide "significant" power and performance benefits...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/SteelSeries-Nova-7-5X-2026">SteelSeries' Latest Arctis Nova 5X &amp; Nova 7 Headsets To Be Supported By Linux 7.3</a></strong><br />
+  摘要：If you happen to have a gaming headset from the latest SteelSeries Nova 5X or Nova 7 series, the upcoming Linux 7.3 kernel will begin properly supporting those headsets...</p>
+</li>
+</ul>
+<h2>Lobsters</h2>
+<ul>
+<li>
+<p><strong><a href="https://trevmex.com/post/824245295374303232/my-son-found-a-world-atlas-in-a-thrift-store-so-i">I got a 1998 CD-ROM world atlas running on Windows 11</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://fzakaria.com/2026/08/05/super-mario-derivations">Super Mario Derivations</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://celld.dev/">celld — Durable Objects, self-hosted</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://w.on-t.work/web-deployment-model">the web server deployment model breaks at hobby scale</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://matklad.github.io/2026/08/06/neat-io-threaded.html">Zig's Io.Threaded is Neat</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://github.com/gmpalter/cl-forth">cl-forth: Forth 2012 Standard in CL</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://github.com/xoreaxeaxeax/schrodingers-toctou">schrodingers-toctou: The binary you run is not the program you wrote</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://phoboslab.org/log/2026/08/xibalba64-making-of">How to Make a Nintendo 64 Game in 2026</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://notashelf.dev/posts/taste-is-all-thats-left">Taste Is All That's Left</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://bozo.httpd.rocks/">Setup a simple web server with bozohttpd on NetBSD</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://oldbytes.space/@gloriouscow/117045701876951834">The following is a valid DOS COM executable</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://bobdahacker.com/blog/tldv-hack">tl;dv (Too Lazy; Didn't Validate): 181,874 Meetings Left Wide Open</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://github.com/jj-vcs/jj/releases/tag/v0.44.0">jujutsu 0.44.0</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://oldbytes.space/@gloriouscow/117044736309312697">i wonder if you could make a useful DOS executable with just emoji</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://sebsite.pw/w/20260806-pystrings.html">python string literals are kinda funny</a></strong><br />
+  摘要：Comments</p>
+</li>
+</ul>
+<h2>Hacker News</h2>
+<ul>
+<li>
+<p><strong><a href="https://www.fsf.org/resources/hw/">Hardware Devices That Support GNU/Linux</a></strong><br />
+  摘要：Hardware Devices That Support GNU/Linux</p>
+</li>
+<li>
+<p><strong><a href="https://www.bleepingcomputer.com/news/security/new-tontou-cpu-attack-bypasses-spectre-v2-fixes-leaks-linux-password-hashes/">New TONTOU CPU attack bypasses Spectre v2 fixes, leaks Linux password hashes</a></strong><br />
+  摘要：New TONTOU CPU attack bypasses Spectre v2 fixes, leaks Linux password hashes</p>
+</li>
+<li>
+<p><strong><a href="https://github.com/GunduLabs/gaze">Show HN: Gaze – Facial Authentication for Linux</a></strong><br />
+  摘要：Facial authentication for Linux with on-device face recognition, PAM integration, and tools for login, lock screen, sudo, and desktop management.</p>
+</li>
+<li>
+<p><strong><a href="https://github.com/pkoscik/baochip-linux">Running Linux on Baochip-1x</a></strong><br />
+  摘要：Running Linux on Baochip-1x</p>
+</li>
+<li>
+<p><strong><a href="https://fixpoint.co/axioms">Axioms for a new operating system for AI agents</a></strong><br />
+  摘要：Axioms for a new operating system for AI agents</p>
+</li>
+<li>
+<p><strong><a href="https://provenmetal.com">Launch HN: ProvenMetal (YC S26) delivers circuit boards in days instead of weeks</a></strong><br />
+  摘要：Hey HN, we’re Will &amp; Johnny from ProvenMetal ( https:&#x2F;&#x2F;provenmetal.com ). You send us design files or specs and we give you assembled boards domestically in days. The US produced 30% of PCBs globally in 2000, now they produce 4%. Chinese manufacturers have completely dominated this space at 55% of global production. Now, the need for a domestic PCB supply chain is higher than ever before, yet the infrastructure has been dissolving over the last 2 decades. What is left is mostly small family run manufacturers (CMs) that have been operating in largely the same, labor intensive way since the early 2000’s. When you place an order through a CM it typically takes several days to receive a quote and complete design for manufacture review, and then you have to source all of the compo…</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Linux-Lockdown-Legacy-IO-Mem">Linux Left Legacy I/O and Memory Handlers Open in Kernel Lockdown Mode</a></strong><br />
+  摘要：Linux Left Legacy I/O and Memory Handlers Open in Kernel Lockdown Mode</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Linux-WiFi-Strict-AI-Slop-Patch">Linux Wireless Maintainer Takes Firm Stance Against AI Generated Slop Patches</a></strong><br />
+  摘要：Linux Wireless Maintainer Takes Firm Stance Against AI Generated Slop Patches</p>
+</li>
+</ul>
+<h2>Red Hat Blog</h2>
+<ul>
+<li>
+<p><strong><a href="https://www.redhat.com/en/blog/friday-five-august-7-2026-red-hat">Friday Five — August 7, 2026</a></strong><br />
+  摘要：Red Hat Recognized as a Leader for Third Consecutive Year in 2026 Gartner® Magic Quadrant™ for Cloud-Native Application PlatformsRed Hat OpenShift is recognized as a Leader in the 2026 Magic Quadrant for Cloud-Native Application Platforms. We believe this recognition reinforces OpenShift’s ability to manage containers, VMs and AI workloads with the same operational and security rigor across any infrastructure footprint, from on-premises datacenters to public clouds and edge environments. Learn more The migration catalyst: turning virtualization disruption into application innovationA cent</p>
+</li>
+<li>
+<p><strong><a href="https://www.redhat.com/en/blog/inside-operation-jailbreak-red-hats-participation-us-armys-open-integration-sprint">Inside Operation Jailbreak: Red Hat’s participation in the US Army’s open integration sprint</a></strong><br />
+  摘要：In May 2026 an important, unprecedented event took place in Fort Carson, Colorado: US Army Operation Jailbreak. For the first time, roughly 600 participants from more than 50 companies came together in person to integrate their sensors and systems into a common Command and Control (C2) platform, exposing and documenting APIs across more than 70 Army capabilities, including the Integrated Battle Command System Maneuver (IBCS-M) program.This ambitious effort was created to address the urgent and growing need for US and allied forces to communicate with greater ease, share information at speed, a</p>
+</li>
+<li>
+<p><strong><a href="https://www.redhat.com/en/blog/why-it-securitys-future-more-just-ai-models">Why IT security’s future is more than just AI models</a></strong><br />
+  摘要：Much of the public discussion around AI and its impact on cybersecurity focuses almost exclusively on models, with some arguments calling for a central authority to manage the latest models behind closed doors. There have even been discussions around strictly regulating or outright banning open weights models in the interest of security. But as global regulators mull the future of open AI models, a core question falls by the wayside: How do we actually secure AI systems?AI security is a software challenge, not just a model issueAn AI agent isn't just a model but rather a complete software stac</p>
+</li>
+<li>
+<p><strong><a href="https://www.redhat.com/en/blog/migration-catalyst-turning-virtualization-disruption-application-innovation">The migration catalyst: turning virtualization disruption into application innovation</a></strong><br />
+  摘要：Starting nearly three decades ago, the cost efficiencies of server virtualization drove the first waves of IT transformation, wringing new efficiency out of the x86 servers that had already shaped the data center. Today, a new era featuring rapidly growing data volumes and emerging AI workflows is testing the limits of traditional architectures and forcing organizations to adapt. But these aren’t the only pressures enterprises are facing. At the business level, they’re experiencing a virtualization cost crisis. Broadcom's acquisition of VMware introduced changes to product packaging and li</p>
+</li>
+<li>
+<p><strong><a href="https://www.redhat.com/en/blog/cpu-back-rethinking-cpu-gpu-split-llm-inference">The CPU is back: Rethinking the CPU-GPU split for LLM inference</a></strong><br />
+  摘要：For the past 3 years, graphics processing units (GPUs) have dominated the large language model (LLM) conversation. In traditional chatbot applications, central processing units (CPUs) provide a fraction of the total compute per request, while GPUs do the heavy lifting. However, inference isn't a single model answering a single question. A growing reliance on tool calls, multistep reasoning, and orchestration across small, specialized models changes the math on where compute should live. Intel has called out this shift noting that the CPU-to-GPU ratio is moving from 1:8 in training workloads to</p>
+</li>
+<li>
+<p><strong><a href="https://www.redhat.com/en/blog/curing-alert-fatigue-how-embedded-ai-redefining-red-hat-openshift-cluster-troubleshooting">Curing alert fatigue: How embedded AI is redefining Red Hat OpenShift cluster troubleshooting</a></strong><br />
+  摘要：Between virtual machines, microservices, and AI pipelines, hybrid clouds can be incredibly complex and can bring an unwelcome partner: alert fatigue. SREs and IT OPs teams face a constant flood of disconnected alerts, forced to manually stitch together metrics from completely different monitoring tools. Sifting through raw logs and writing complex PromQL queries just to build static dashboards isn't sustainable.Something has to change. It's time to move away from fragmented tools and toward natural language and visualizations where the platform actually shows you the issues and helps you get t</p>
+</li>
+</ul>
+<h2>Ars Technica</h2>
+<ul>
+<li>
+<p><strong><a href="https://arstechnica.com/health/2026/08/us-to-shutter-organ-donation-group-accused-of-trying-to-take-living-mans-organs/">Organ donation group accused of trying to take living man's organs faces shutdown</a></strong><br />
+  摘要：The organization, Network for Hope, "strongly disagrees" with Trump admin's decision.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/gadgets/2026/08/germany-disarms-explosive-drone-found-at-airport-hunts-possible-second-drone/">Explosive drone found hovering near Ukrainian cargo aircraft at German airport</a></strong><br />
+  摘要：Russian attack? Explosive drone targeted parked aircraft at Leipzig airport.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/tech-policy/2026/08/elon-musks-x-isnt-done-suing-advertisers-asks-court-to-revive-boycott-case/">X wants to keep suing advertisers, asks 5th Circuit to overrule district judge</a></strong><br />
+  摘要：Musk continues appeal despite court loss and settlement with advertiser group.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/ai/2026/08/suno-hopes-to-go-legit-with-watermarks-for-ai-generated-music/">Suno hopes to go legit with watermarks for AI-generated music</a></strong><br />
+  摘要：Suno plans watermarks and download limits to stop "large-scale abuse."</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/ai/2026/08/anthropic-confirms-plans-to-build-an-in-house-silicon-team/">Anthropic will design its own hardware to power Claude</a></strong><br />
+  摘要：Anthropic and OpenAI are racing to scale up while reducing dependence on Nvidia.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/science/2026/08/large-genome-models-used-to-design-new-viruses/">Large genome models used to design new viruses</a></strong><br />
+  摘要：The AI system makes genetically distant versions of a bacteria-killing virus.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/space/2026/08/blue-origin-narrowing-in-on-root-cause-of-catastrophic-rocket-accident/">Blue Origin narrowing in on root cause of catastrophic rocket accident</a></strong><br />
+  摘要："The anomaly originated at the main oxygen valve on one of the BE-4 engines."</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/science/2026/08/parasitic-zombie-fungus-thrives-in-mosses-too/">Parasitic zombie-ant fungus thrives in mosses, too</a></strong><br />
+  摘要：This may help fungi survive host scarcity and explains why infected hosts prefer the mosses as death sites.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/tech-policy/2026/08/trump-fcc-kills-tv-ownership-cap-claiming-authority-over-limit-set-by-congress/">Trump FCC kills TV ownership cap, claiming authority over limit set by Congress</a></strong><br />
+  摘要：Change will let "Trump-aligned billionaires" buy more stations, advocacy group says.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/health/2026/08/modernas-mrna-flu-shot-earns-fda-approval-after-rollercoaster-review/">Moderna's mRNA flu shot earns FDA approval after rollercoaster review</a></strong><br />
+  摘要：Moderna's new flu vaccine, mFLUSIVA, is approved for all adults ages 50 and up.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/ai/2026/08/cloudflare-open-sources-vibe-coding-platform-for-people-who-arent-coders/">Cloudflare open-sources vibe-coding platform for people who aren't coders</a></strong><br />
+  摘要：Cloudflare built an AI agent workspace for its employees. Now it’s open source.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/cars/2026/08/ford-picks-fathom-for-its-affordable-truck-name-starts-at-28350/">Ford picks "Fathom" for its affordable truck name, starts at $28,350</a></strong><br />
+  摘要：Deliveries of the new electric pickup are slated for later next year.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/gadgets/2026/08/ai-isnt-enough-to-protect-social-media-communities-from-ai/">AI isn’t enough to protect social media communities from AI</a></strong><br />
+  摘要：Why humans need to moderate humans.</p>
+</li>
+</ul>
+<h2>The New Stack</h2>
+<ul>
+<li>
+<p><strong><a href="https://thenewstack.io/gpt-sol-chatgpt-split/">GPT-5.6 Sol just got better in one place and stayed the same everywhere else</a></strong><br />
+  摘要：Teams testing prompts in ChatGPT before moving them to Codex or Work may notice the difference on longer tasks. OpenAI The post GPT-5.6 Sol just got better in one place and stayed the same everywhere else appeared first on The New Stack .</p>
+</li>
+<li>
+<p><strong><a href="https://thenewstack.io/cloudflare-os-agentic-workspace-security/">Why AI tools know nothing about your company — until now</a></strong><br />
+  摘要：Cloudflare launched its CloudflareOS open-source AI workspace platform this week, promising every employee a secure workspace equipped with AI tools The post Why AI tools know nothing about your company — until now appeared first on The New Stack .</p>
+</li>
+<li>
+<p><strong><a href="https://thenewstack.io/aws-dogwood-agent-policies/">Your AI agent’s next tool call may be valid but wrong. AWS’s Dogwood promises to fix that.</a></strong><br />
+  摘要：AWS on Thursday launched Dogwood, an open-source policy language and reference interpreter that lets developers govern sequences of AI agent The post Your AI agent’s next tool call may be valid but wrong. AWS&#8217;s Dogwood promises to fix that. appeared first on The New Stack .</p>
+</li>
+<li>
+<p><strong><a href="https://thenewstack.io/kiro-agent-client-protocol/">Free agents: How AWS Kiro could untie agents from editors</a></strong><br />
+  摘要：Choosing a coding agent may soon no longer mean having to pick a new editor or terminal, too. That scenario The post Free agents: How AWS Kiro could untie agents from editors appeared first on The New Stack .</p>
+</li>
+<li>
+<p><strong><a href="https://thenewstack.io/microsoft-copilot-token-budgets/">The blank-check AI coding era is dead. Here’s what comes next.</a></strong><br />
+  摘要：Microsoft spent the first phase of the AI coding boom pushing its engineers to use the tools. Now it wants The post The blank-check AI coding era is dead. Here&#8217;s what comes next. appeared first on The New Stack .</p>
+</li>
+<li>
+<p><strong><a href="https://thenewstack.io/doist-ai-automation-code/">Why Todoist says less AI can deliver more</a></strong><br />
+  摘要：Doist CTO Gon&#231;alo Silva doesn&#8217;t pretend to know where AI is headed. The pace of change has made it harder The post Why Todoist says less AI can deliver more appeared first on The New Stack .</p>
+</li>
+<li>
+<p><strong><a href="https://thenewstack.io/nutanix-dual-native-architecture/">“Just rewrite it”: What platform teams really think about modernization</a></strong><br />
+  摘要：Mergers, acquisitions, and the steady churn of business and technology initiatives are creating something nobody asked for: Duplicate infrastructure and The post &#8220;Just rewrite it&#8221;: What platform teams really think about modernization appeared first on The New Stack .</p>
+</li>
+<li>
+<p><strong><a href="https://thenewstack.io/kubernetes-dra-gpu-scheduling/">Say goodbye to K8s GPU pain: How DRA changes everything</a></strong><br />
+  摘要：Consider a platform team managing a shared GPU cluster with a mix of B200s, H100s, and recently added B300s. Every The post Say goodbye to K8s GPU pain: How DRA changes everything appeared first on The New Stack .</p>
+</li>
+<li>
+<p><strong><a href="https://thenewstack.io/agent-native-runtime-branching/">Anthropic recommends a git worktree per agent. Your runtime infra makes that a problem.</a></strong><br />
+  摘要：A developer supervising four coding agents has four changes in flight at once, each in its own git worktree. That The post Anthropic recommends a git worktree per agent. Your runtime infra makes that a problem. appeared first on The New Stack .</p>
+</li>
+</ul>
+<h2>LWN.net</h2>
+<ul>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1087567/">Six stable kernels with a security fix</a></strong><br />
+  摘要：Greg Kroah-Hartman has announced the release of the 7.1.7 , 6.18.43 , 6.6.149 , 6.1.181 , 5.15.214 , and 5.10.263 stable kernels. These kernels fix a single security vulnerability ( CVE-2026-68480 ) that could allow data leakage through speculative execution. Users of those kernels are advised to upgrade.</p>
+</li>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1086947/">[$] Bringing BPF to binfmt_misc</a></strong><br />
+  摘要：The kernel is able to run a few types of executable files, including native binaries in the ELF format and interpreted programs that begin with the #! marker. It also, however, has a mechanism, called binfmt_misc , that can be configured from user space to enable the transparent execution of programs in just about any format. This feature has been relatively static for years, but it seems likely to receive some significant updates in the near future, including the ability to load BPF programs that can decide how to run a given program.</p>
+</li>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1087490/">Rust Coreutils 0.10 released</a></strong><br />
+  摘要：Version 0.10 of the uutils project's Rust Coreutils has been released. This release focused on compatibility with the GNU Core Utilities suite, with Rust Coreutils now passing 645 of 690 tests, up from 625 with version&#160;0.9.0 . Notable changes in this release include addition of the mv&#160;--exchange option, an OpenSSL backend for checksum utilities, applying SELinux labels at creation when using mkdir , mkfifo , and mknod , as well as a number of performance and security improvements. The project has an online playground that runs the Rust Coreutils directly in the browser via WebAssembly for those who would like to try the utilities without installing them. LWN covered the uutils project in February 2025.</p>
+</li>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1087489/">Security updates for Thursday</a></strong><br />
+  摘要：Security updates have been issued by Debian (7zip, kernel, libde265, and p7zip), Mageia (tomcat), Oracle (fence-agents, frr10, kernel, ldns, libgcrypt, mingw-glib2, nodejs24, osbuild-composer, p11-kit, php8.4, sg3_utils, and thunderbird), Red Hat (libXfont2), and SUSE (containerd, evince, libXfont2, nginx, openssl-3, pcp, php7, php8, python-Django, python-httplib2, python-nltk, rrdtool, vifm, and wireshark).</p>
+</li>
+</ul>
+<h2>Linux Weekly News (RSS)</h2>
+<ul>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1087567/">Six stable kernels with a security fix</a></strong><br />
+  摘要：Greg Kroah-Hartman has announced the release of the 7.1.7 , 6.18.43 , 6.6.149 , 6.1.181 , 5.15.214 , and 5.10.263 stable kernels. These kernels fix a single security vulnerability ( CVE-2026-68480 ) that could allow data leakage through speculative execution. Users of those kernels are advised to upgrade.</p>
+</li>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1086947/">[$] Bringing BPF to binfmt_misc</a></strong><br />
+  摘要：The kernel is able to run a few types of executable files, including native binaries in the ELF format and interpreted programs that begin with the #! marker. It also, however, has a mechanism, called binfmt_misc , that can be configured from user space to enable the transparent execution of programs in just about any format. This feature has been relatively static for years, but it seems likely to receive some significant updates in the near future, including the ability to load BPF programs that can decide how to run a given program.</p>
+</li>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1087490/">Rust Coreutils 0.10 released</a></strong><br />
+  摘要：Version 0.10 of the uutils project's Rust Coreutils has been released. This release focused on compatibility with the GNU Core Utilities suite, with Rust Coreutils now passing 645 of 690 tests, up from 625 with version&#160;0.9.0 . Notable changes in this release include addition of the mv&#160;--exchange option, an OpenSSL backend for checksum utilities, applying SELinux labels at creation when using mkdir , mkfifo , and mknod , as well as a number of performance and security improvements. The project has an online playground that runs the Rust Coreutils directly in the browser via WebAssembly for those who would like to try the utilities without installing them. LWN covered the uutils project in February 2025.</p>
+</li>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1087489/">Security updates for Thursday</a></strong><br />
+  摘要：Security updates have been issued by Debian (7zip, kernel, libde265, and p7zip), Mageia (tomcat), Oracle (fence-agents, frr10, kernel, ldns, libgcrypt, mingw-glib2, nodejs24, osbuild-composer, p11-kit, php8.4, sg3_utils, and thunderbird), Red Hat (libXfont2), and SUSE (containerd, evince, libXfont2, nginx, openssl-3, pcp, php7, php8, python-Django, python-httplib2, python-nltk, rrdtool, vifm, and wireshark).</p>
+</li>
+</ul>
+<h2>CNCF Blog</h2>
+<ul>
+<li>
+<p><strong><a href="https://www.cncf.io/blog/2026/08/06/litmuschaos-q1-q2-2026-update-community-contributions-and-project-progress/">LitmusChaos Q1-Q2 2026 update: community, contributions, and project progress</a></strong><br />
+  摘要：About LitmusChaos LitmusChaos is an open source chaos engineering platform that helps teams identify weaknesses and potential outages in their infrastructure by running controlled chaos experiments. Built on cloud native principles, LitmusChaos enables teams to validate...</p>
+</li>
+<li>
+<p><strong><a href="https://www.cncf.io/blog/2026/07/31/scaling-kubernetes-pods-with-keda-based-on-amazon-sqs-queue-depth/">Scaling Kubernetes pods with KEDA based on Amazon SQS queue depth</a></strong><br />
+  摘要：In event-driven Kubernetes architectures, CPU and memory utilization often fail to reflect real system pressure. A worker pod may sit idle from a CPU perspective while thousands of messages pile up in an Amazon SQS queue....</p>
+</li>
+</ul>
+<h2>Kubernetes Blog</h2>
+<ul>
+<li>
+<p><strong><a href="https://kubernetes.io/blog/2026/07/31/kubernetes-v1-37-sneak-peek/">Kubernetes v1.37 Sneak Peek</a></strong><br />
+  摘要：As we get closer to the release date for Kubernetes v1.37, the project develops and matures, features may be deprecated, removed, or replaced with better ones for the project's overall health. This blog outlines some of the planned changes for the Kubernetes v1.37 release that the release team feels you should be aware of for the continued maintenance of your Kubernetes environment and keeping up to date with the latest changes. The information below reflects the current status of the v1.37 release and may change before the actual release date. Deprecations and removals for Kubernetes v1.37 Kubectl: kubectl run --filename/-f to be deprecated The --filename (or -f ) flag for kubectl run is being deprecated as the generated pod is always built purely from CLI arguments like NAME and --image …</p>
+</li>
+<li>
+<p><strong><a href="https://kubernetes.io/blog/2026/07/13/introducing-headlamp-plugin-for-kubeflow/">Operating AI/ML Workloads on Kubernetes: A Headlamp Plugin for Kubeflow</a></strong><br />
+  摘要：Kubernetes has quietly become the default platform for AI and machine learning. Whether you run notebook servers for data scientists, schedule distributed training jobs, tune hyperparameters, or orchestrate multi-step ML pipelines, those workloads increasingly land on a Kubernetes cluster. Kubeflow is one of the most popular ways to assemble that stack, and it does so the Kubernetes-native way: every capability is exposed as a Custom Resource Definition (CRD). That design is a gift to cluster operators, because it means ML workloads can be observed and managed with the same primitives as everything else in the cluster. But in practice the specialized ML dashboards that ship with these platforms hide the Kubernetes layer underneath. When a notebook is stuck or a training run fails, the oper…</p>
+</li>
+<li>
+<p><strong><a href="https://kubernetes.io/blog/2026/07/13/kubernetes-dashboard-to-headlamp/">Kubernetes Dashboard to Headlamp: A Step-by-Step Guide</a></strong><br />
+  摘要：1. Before you start: know what is changing Kubernetes Dashboard and Headlamp both show what is running in a cluster, but they work differently. When Headlamp runs on the desktop, it uses your existing kubeconfig to connect to one or more clusters and can be extended with plugins. When Headlamp runs inside a cluster, it uses a Kubernetes ServiceAccount to access the API and follow RBAC rules. Kubernetes Dashboard, in contrast, only runs in-cluster and always relies on service account tokens. Understanding these models early helps you choose the right setup and permissions. 1.1 How Kubernetes Dashboard works Dashboard is a web app that runs inside your cluster. You install it in the cluster, often with Helm. You usually run one Dashboard per cluster. You often reach it with kubectl port-forw…</p>
+</li>
+<li>
+<p><strong><a href="https://kubernetes.io/blog/2026/06/01/dashboard-to-headlamp/">From Kubernetes Dashboard to Headlamp: Understanding the Transition</a></strong><br />
+  摘要：For many people, Kubernetes Dashboard was their first window into Kubernetes. It offered a simple visual way to see what was running in a cluster, inspect resources, and build confidence without relying on the command line. For years, it helped developers, students, and operators make sense of Kubernetes, and it served as an important onramp into the ecosystem. The Kubernetes Dashboard project has now been archived. We deeply respect the work the team did and the role Dashboard played in making Kubernetes more approachable for so many users. Headlamp builds on that foundation and carries it forward. It keeps the clarity of a visual interface while adding capabilities that match how Kubernetes is used today. This includes multi-cluster visibility, application-centric views, extensibility th…</p>
+</li>
+<li>
+<p><strong><a href="https://kubernetes.io/blog/2026/05/26/reconciling-unfixed-kubernetes-cves/">Reconciling the Past: Correcting Records for Unfixed Kubernetes CVEs</a></strong><br />
+  摘要：The Kubernetes project relies on transparency to empower cluster administrators and security researchers. One important way we do that is by publishing CVE records into the Common Vulnerabilities and Exposures database. As part of our ongoing effort to mature the official Kubernetes CVE Feed , we have identified some discrepancies. CVE records for a few older, unfixed issues incorrectly include a fixed version field. The Kubernetes Security Response Committee (SRC) will correct the affected CVE records on June 1, 2026. This may result in vulnerability scanners identifying these vulnerabilities in places where they were previously not detected. To help reduce confusion, this post provides a technical update on three vulnerabilities that were disclosed in previous years but remain unfixed: C…</p>
+</li>
+</ul>
+<hr /></div>
+  </main>
+</body>
+</html>
