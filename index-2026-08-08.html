@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OS 领域每日洞察 - 2026-08-08</title>
+  <style>
+    :root {
+      --bg: #f6f4f0;
+      --bg-bar: #ebe8e3;
+      --bg-card: #fffefb;
+      --bg-card-hover: #f5f3ef;
+      --text: #2d2a26;
+      --text-muted: #5c5852;
+      --text-dim: #7a756e;
+      --accent: #5a7a9e;
+      --border: #ddd9d2;
+      --radius: 10px;
+      --font: "Segoe UI", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      font-size: 15px;
+    }
+
+    /* 门户顶栏 */
+    .masthead {
+      background: var(--bg-bar);
+      border-bottom: 1px solid var(--border);
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 0;
+    }
+    .masthead-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .masthead h1 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin: 0;
+      letter-spacing: -0.02em;
+      color: var(--text);
+    }
+    .masthead .meta {
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+    }
+
+    /* 主内容区：多栏门户布局 */
+    .main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 3rem;
+    }
+
+    /* 板块：每个 h2 为一个频道块 */
+    .content .section {
+      margin-bottom: 2.5rem;
+    }
+    .content h2 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+      margin: 0 0 1rem;
+      padding: 0.6rem 1rem;
+      background: var(--bg-bar);
+      border-radius: var(--radius);
+      border-left: 4px solid var(--accent);
+    }
+    .content h2:first-child { margin-top: 0; }
+
+    .content h2:has(+ h3) {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      border-left-color: var(--text-dim);
+    }
+
+    /* 板块内卡片网格（每个 h2 后的 ul） */
+    .content h2 + ul {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1rem;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .content h2 + ul li {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.15rem 1.2rem;
+      transition: background .15s, border-color .15s;
+    }
+    .content h2 + ul li:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--text-dim);
+    }
+    .content h2 + ul li strong {
+      display: block;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+      line-height: 1.4;
+    }
+    .content h2 + ul li p {
+      margin: 0 0 0.5rem;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.58;
+    }
+    .content h2 + ul li p:last-of-type { margin-bottom: 0; }
+    .content h2 + ul li a[href^="http"] {
+      font-size: 0.8125rem;
+      color: var(--accent);
+    }
+    .content h2 + ul li a[href^="http"]:hover { text-decoration: underline; }
+
+    .content .ref-section {
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+    .content h2 + h3 { margin-top: 1.25rem; }
+    .content h3 {
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--text-dim);
+      margin: 1rem 0 0.4rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .content h3 + ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 0.25rem;
+    }
+    .content h3 + ul li {
+      background: transparent;
+      border: none;
+      padding: 0.2rem 0;
+      font-size: 0.8125rem;
+    }
+    .content h3 + ul li strong { font-size: inherit; margin-bottom: 0; }
+    .content h3 + ul li a { color: var(--accent); }
+    .content h3 + ul li a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <header class="masthead">
+    <div class="masthead-inner">
+      <h1>OS 领域每日洞察 - 2026-08-08</h1>
+      <span class="meta">2026-08-08 04:00 UTC</span>
+    </div>
+  </header>
+  <main class="main">
+    <div class="content"><h1>OS 领域每日洞察 - 2026-08-08</h1>
+<p>（Gemini 未可用时，以下为按来源整理的条目，含<strong>新闻摘要</strong>与链接；摘要可能为原文语言。）</p>
+<h2>Lobsters</h2>
+<ul>
+<li>
+<p><strong><a href="https://discourse.nixos.org/t/the-nixpkgs-core-team-has-disbanded/79413">The Nixpkgs core team has disbanded</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://notes.hella.cheap/twitter-isnt-a-town-square-its-a-high-school-cafeteria.html">social media rabbit holes, clusters, and the relative mixing times of random walks</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://github.com/xoreaxeaxeax/asm-hall-of-shame">Assembly Hall of Shame: Racing to the bottom of CPU performance</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://c.mov/lymphosat/">Domain-specific hyperspecialization (for SAT)</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://www.macchaffee.com/blog/2026/am-i-the-problem/">Am I the problem? Interviewing another team to find out</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://www.youtube.com/watch?v=-aI_XEwmKFk">PS3 emulation is fast on ARM now</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://lobste.rs/s/rn8uva/software_understanding_sciences_is">Software Understanding in the Sciences is Really Uneven</a></strong><br />
+  摘要：My day job, such as it is, involves optimizing simulations and scientific tooling. Right now I'm working on an astrophysical simulation with a group at CUNY. One of the grad students has spent the last few months working on a tool to process the output of a simulation. The output is pretty big, about 200GB for a local test run, probably going into the tens of terabytes once we do a big run on the actual cluster. The tool, which needs to walk the output tables to construct a tree of black hole mergers (and other events, but that's the focus), takes about an hour to run. I answered a request to take a look and see what can be done to speed it up. The first thing I discover is that the data is split across tens of thousands of .txt files, with every simulation timestep producing several indiv…</p>
+</li>
+<li>
+<p><strong><a href="https://blog.dundns.eu/posts/ddr-encrypted-dns-discovery/">How a device finds encrypted DNS by itself</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://zayenz.se/blog/post/constraint-generated-puzzle-games/">From constraint models to playable puzzle games</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://lobste.rs/s/ucaatd/what_are_you_doing_this_weekend">What are you doing this weekend?</a></strong><br />
+  摘要：Feel free to tell what you plan on doing this weekend and even ask for help or feedback. Please keep in mind it’s more than OK to do nothing at all too!</p>
+</li>
+<li>
+<p><strong><a href="https://utcc.utoronto.ca/~cks/space/blog/programming/EmacsGitBlameOverTime">Some ways to navigate through 'git blame' over time in GNU Emacs</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://taylor.town/leaving-openai">I'm leaving OpenAI to build Jurassic Park</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://refp.se/articles/your-shell-and-the-lazy-exclamation-mark">A shell exclamation mark is not for yelling. Be lazy</a></strong><br />
+  摘要：Comments</p>
+</li>
+</ul>
+<h2>Phoronix</h2>
+<ul>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/KDE-Plasma-6.8-Remote-Desktop">KDE Plasma 6.8 Improvements For UI, Built-In Remote Desktop Server</a></strong><br />
+  摘要：It's been another busy summertime week of KDE developers working toward a great Plasma 6.8 desktop release in October...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Linux-7.3-HIDPP-Reprogrammable">Linux 7.3 To Support Logitech HID++ 2.0 Reprogrammable Button Support</a></strong><br />
+  摘要：For those with newer, high-end Logitech input devices, coming with Linux 7.3 is support for the re-programmable button support of the HID++ 2.0 protocol...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/M3-Pro-Max-Ultra-Linux-7.3">Initial Apple M3 Pro / Max / Ultra Support Being Upstreamed For Linux 7.3</a></strong><br />
+  摘要：Upstreamed for the Linux 7.2 kernel was the Device Tree (DT) support for booting the mainline Linux kernel on the base Apple M3 SoC. Though it's not yet useful for end-users with many features remaining to be supported and upstreamed. Now for the upcoming Linux 7.3 kernel, the M3 Pro, Max, and Ultra variants will also have initial support for booting on the mainline kernel...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Intel-QATlib-26.08-Released">Intel QATlib 26.08 Released With Gen6 Device Support, 2MB Hugepages</a></strong><br />
+  摘要：Intel today released an updated version of their QuickAssist Technology library (QATlib) as the user-space component for making use of QuickAssist accelerators under Linux...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/More-Aggressive-TTM-Linux-7.3">TTM Memory Management For Graphics To Be More Aggresive With Linux 7.3</a></strong><br />
+  摘要：This week a final batch of DRM-Misc-Next feature material was submitted for DRM-Next to queue ahead of the Linux 7.3 merge window opening later in the month. Most notable is the TTM memory management code is now being more agressive when allocating below protection limits. This is an improvement coming thanks to Valve's open-source Linux graphics team...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Intel-HDMI-2.1-FRL-Linux-2026">Intel Makes Progress On HDMI 2.1 FRL With Their Linux Driver For Meteor Lake &amp; Newer</a></strong><br />
+  摘要：Following AMD making progress with HDMI Fixed Rate Link (FRL) and other HDMI 2.1 functionality for their open-source Linux kernel graphics driver, Intel is out today with a big set of 44 patches working on HDMI 2.1 FRL support for their kernel graphics driver with Meteor Lake hardware and newer...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/PoCL-7.2-RC1">PoCL 7.2-RC1 Brings Official OpenCL 3.0 Conformance On RISC-V &amp; x86_64 CPUs</a></strong><br />
+  摘要：The release candidate of PoCL 7.2 is now available for testing of this Portable Computing Language implementation of OpenCL that allows for CPU-based execution or via alternative LLVM back-ends allows for OpenCL on Level Zero, NVIDIA GPUs, and even remote devices/hardware...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/HID-HyperX-QuadCast-2-Linux-7.3">HyperX Driver Coming For Linux 7.3 Just To Report A Microphone's Mute Status</a></strong><br />
+  摘要：A new driver coming for the Linux 7.3 kernel is HID-HyperX. It's not some new driver to support fancy hardware and some nifty features but rather mundane in nature due to the poor behavior of a high-end HyperX USB gaming microphone...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/NetworkManager-AI-Coding-Policy">NetworkManager Adopts Policy For AI Coding Assistants</a></strong><br />
+  摘要：The latest high profile open-source project to commit to an AI coding policy is NetworkManager, the widely-used software for Linux network configuration...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/AMD-ROCm-Spur">AMD ROCm Spur: Providing AI-Native, Rust-Based Job Scheduling</a></strong><br />
+  摘要：The newest ROCm component for AMD's open-source GPU compute stack is Spur as an AI-native, Rust-written job scheduler for scaling up GPU workloads to multi-thousand GPU clusters...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Linux-7.2-rc7-UAF-PTDUMP">Linux 7.2-rc7 Addresses A "Nasty" Race Condition Leading To Use-After-Free After 8 Years</a></strong><br />
+  摘要：The Linux kernel Git activity continues being quite heavy this week on fixes. It's looking like the Linux 7.2-rc7 kernel release on Sunday will be another big one with the changes continuing to flow in from both developers and AI bots...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/AMD-HDMI-VRR-ALLM-v2">AMD Updates HDMI 2.1 VRR &amp; ALLM Patches But Will Miss Out On Linux 7.3</a></strong><br />
+  摘要：Complementing the HDMI 2.1 Fixed Rate Link (FRL) support that AMD already upstreamed to the Linux kernel, AMD engineers have been further ironing out their HDMI 2.1 implementation for the open-source AMDGPU Linux kernel driver. The latest quest has been getting HDMI 2.1 variable rate refresh (VRR) support upstreamed along with HDMI Auto Low-Latency Mode (ALLM)...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Vulkan-1.4.359">Vulkan 1.4.359 Expands Cooperative Matrix Capabilities</a></strong><br />
+  摘要：Vulkan 1.4.359 released today and this one week update to the Vulkan API specification brings a new extension for enhancing the cooperative matrix capabilities...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/GCC-16.2-Released">GCC 16.2 Released With More Than 100 Fixes</a></strong><br />
+  摘要：Following the GCC 16.1 compiler release from the end of April as the first stable version of GCC 16, GCC 16.2 is now available with dozens of bug fixes collected since then for further stabilizing this year's GNU compiler feature release...</p>
+</li>
+</ul>
+<h2>Ars Technica</h2>
+<ul>
+<li>
+<p><strong><a href="https://arstechnica.com/gadgets/2026/08/europes-free-satellite-service-just-made-it-easier-to-track-wildfires/">Europe's free satellite service just made it easier to track wildfires</a></strong><br />
+  摘要：Copernicus Browser adds wildfire visualization amid record wildfire season.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/health/2026/08/flesh-eating-screwworms-feast-on-humans-in-mexico-human-cases-top-500/">Flesh-eating screwworms feast on humans in Mexico; human cases top 500</a></strong><br />
+  摘要：Six deaths reported among screwworm cases, one directly attributed to the flies.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/tech-policy/2026/08/meta-ordered-to-pay-567m-to-treat-youth-mental-health-problems-it-helped-create/">Judge rules Meta caused "public nuisance" and must fund mental health treatment</a></strong><br />
+  摘要：New Mexico judge orders $567M fund to help address youth mental health crisis.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/science/2026/08/the-ultimate-eclipse-chase-a-concorde-raced-against-the-moons-shadow/">The ultimate eclipse chase: A Concorde raced against the Moon's shadow</a></strong><br />
+  摘要：Fitted with telescopes, the plane did our longest imaging of the Sun's corona.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/gaming/2026/08/new-official-30th-anniversary-quake-mission-pack-adds-new-maps-and-mechanics/">New official 30th anniversary Quake mission pack adds new maps and mechanics</a></strong><br />
+  摘要：19 new maps continue the story from MachineGames' other campaign additions.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/tech-policy/2026/08/doges-inflated-wall-of-receipts-96-of-grant-savings-unverifiable-gao-says/">DOGE's wild, unverifiable savings claims discredited in US government report</a></strong><br />
+  摘要：DOGE's inflated "Wall of Receipts": 96% of grant savings unverifiable, GAO says.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/gadgets/2026/08/openais-expensive-smart-speaker-will-use-moving-parts-to-seem-more-alive/">OpenAI’s expensive smart speaker will use moving parts to seem “more alive”</a></strong><br />
+  摘要：Gurman report claims OpenAI confirmed the speaker is not an Apple ripoff.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/science/2026/08/how-snails-engineer-their-slime/">How snails engineer their slime</a></strong><br />
+  摘要：Collagen and calcium work in tandem to achieve varying mechanical properties of different kinds of mucus.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/cars/2026/08/volkswagen-plans-to-win-america-back-with-a-pickup-report-says/">Volkswagen plans to win America back with a pickup, report says</a></strong><br />
+  摘要：There's no evidence the truck will be a cheap EV truck, but what if it were?</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/health/2026/08/report-white-house-drafting-executive-order-linking-vaccines-and-autism/">Report: White House drafting executive order linking vaccines and autism</a></strong><br />
+  摘要：Trump determined to link life-saving shots to autism, despite science and political risk.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/ai/2026/08/ai-chatbots-have-failed-people-in-crisis-can-that-be-fixed/">AI chatbots have failed people in crisis. Can that be fixed?</a></strong><br />
+  摘要：Clinicians and researchers say AI companies need to open up their safety data.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/ai/2026/08/bytedance-trains-massive-ai-model-in-bid-to-rival-anthropic/">ByteDance trains massive AI model in bid to rival Anthropic</a></strong><br />
+  摘要：TikTok owner training a model with 10 trillion parameters.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/science/2026/08/the-worlds-biggest-solar-telescope-caught-vortexes-on-the-suns-surface/">The world's biggest solar telescope caught vortexes on the Sun's surface</a></strong><br />
+  摘要：We expected them to be there, but they had previously been too small to see.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/science/2026/08/trump-is-losing-his-war-on-wind-power/">Trump is losing his war on wind power</a></strong><br />
+  摘要：A court rules that a hold on all wind projects clearly violates the law.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/gadgets/2026/08/remembering-the-pre-google-web-when-search-was-an-experiment/">Remembering the pre-Google web, when search was an experiment</a></strong><br />
+  摘要："Most people have completely forgotten how chaotic it really was."</p>
+</li>
+</ul>
+<h2>The New Stack</h2>
+<ul>
+<li>
+<p><strong><a href="https://thenewstack.io/claude-code-auto-mode/">Auto Mode will soon be the default in Claude Code — because humans can’t be trusted</a></strong><br />
+  摘要：In the early days of Claude Code, it felt like you either had to approve everything the coding agent did The post Auto Mode will soon be the default in Claude Code — because humans can&#8217;t be trusted appeared first on The New Stack .</p>
+</li>
+<li>
+<p><strong><a href="https://thenewstack.io/openai-astra-cybersecurity-delay/">The AI model OpenAI won’t release yet — and what it found in testing</a></strong><br />
+  摘要：OpenAI is reducing&#160;work on Astra after internal testing indicated the upcoming model may have reached a cybersecurity limit that no The post The AI model OpenAI won&#8217;t release yet — and what it found in testing appeared first on The New Stack .</p>
+</li>
+<li>
+<p><strong><a href="https://thenewstack.io/npm-supply-chain-worm-attack/">The npm attack that turned provenance attestations into camouflage</a></strong><br />
+  摘要：&#8288;Security researchers this week disclosed an npm supply-chain attack affecting more than 400 packages, including projects connected to Keyv and The post The npm attack that turned provenance attestations into camouflage appeared first on The New Stack .</p>
+</li>
+<li>
+<p><strong><a href="https://thenewstack.io/meta-muse-code/">Meta’s new coding agent is cheap (but it’ll cost you your data).</a></strong><br />
+  摘要：Meta this week announced Muse Code, its first coding agent designed to tackle complex software engineering tasks, like planning changes, The post Meta’s new coding agent is cheap (but it’ll cost you your data). appeared first on The New Stack .</p>
+</li>
+<li>
+<p><strong><a href="https://thenewstack.io/enterprise-ai-agent-harness/">Coinbase, Shopify and Ramp all built their own coding agents. All three still pay Anthropic.</a></strong><br />
+  摘要：Enterprise engineering teams are converging on a common architecture for AI-assisted software development. Coinbase, Shopify, and Ramp have each built The post Coinbase, Shopify and Ramp all built their own coding agents. All three still pay Anthropic. appeared first on The New Stack .</p>
+</li>
+<li>
+<p><strong><a href="https://thenewstack.io/ai-kill-switch-infrastructure/">The “AI kill switch” assumes you know what you are trying to shut down</a></strong><br />
+  摘要：&#8220;AI kill switch&#8221; entered the public conversation because it gives people a simple way to talk about a complex fear.&#160; The post The “AI kill switch” assumes you know what you are trying to shut down appeared first on The New Stack .</p>
+</li>
+</ul>
+<h2>Hacker News</h2>
+<ul>
+<li>
+<p><strong><a href="https://news.ycombinator.com/item?id=49212455">Ask HN: Why aren't there more Operating System startups?</a></strong><br />
+  摘要：It seems like no one would even dare to imagine an alternative to even Linux.</p>
+</li>
+<li>
+<p><strong><a href="https://github.com/yikerman/tamron-lens-control">Show HN: Tamron Lens Utility Alternative on Linux</a></strong><br />
+  摘要：Show HN: Tamron Lens Utility Alternative on Linux</p>
+</li>
+<li>
+<p><strong><a href="https://github.com/wrobelda/goodix-fp-spi-linux">Show HN: reverse-engineer secure-enclave fingerprint scanner to work on Linux</a></strong><br />
+  摘要：I own a Xiaomi Mi Pad 5 Pro 5G Android tablet, which is also pretty-much a perfect Linux tablet: has 5G support, great screen, nice folio keyboard, 8 speakers, a pen, is lightweight and relatively powerful. All of its hardware is supported at this point, although not all has been mainlined yet. It also features a Goodix SPI fingerprint scanner, except it is implemented using an app living in Qualcomm&#x27;s QSEE secure enclave which handles the scanner, and which Android communicates with using a HAL and a protocol that are not documented. This 2021 article explains the problem in details: https:&#x2F;&#x2F;emainline.gitlab.io&#x2F;2021&#x2F;12&#x2F;12&#x2F;fingerprint_P1.html It took me about a week of intense work of reverse-engineering it with Opus 5 and Kimi K3, and further 5 days on p…</p>
+</li>
+<li>
+<p><strong><a href="https://os.cloudflare.app">Cloudflare OS – Build the AI operating system for your company</a></strong><br />
+  摘要：Cloudflare OS – Build the AI operating system for your company</p>
+</li>
+<li>
+<p><strong><a href="https://labs.iximiuz.com/tutorials/linux-processes-threads-concurrency-3302b677">Linux Processes: Threads and Concurrency</a></strong><br />
+  摘要：Linux Processes: Threads and Concurrency</p>
+</li>
+</ul>
+<h2>LWN.net</h2>
+<ul>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1086949/">[$] Changes in shadow-utils password-expiration features</a></strong><br />
+  摘要：The shadow-utils project provides the tools that handle /etc/shadow , /etc/passwd , and other related databases; in general, manages users and groups on many Linux systems. While most software releases are notable for what is added, the recent shadow-utils&#160;4.20.0 release is most noteworthy for what has been removed. Specifically, several utilities and functionality related to periodic password expiry, which were deprecated in the December 2025 4.19.0 release, have been removed as planned. It is still possible to manage some aspects of password aging with shadow-utils, but organizations that depend on such features should start planning for their complete removal within a few years.</p>
+</li>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1087812/">The Software Stewardship Lab launches</a></strong><br />
+  摘要：The Software Stewardship Lab , a nonprofit organization based in Scotland, has announced its existence . Our current research focuses are: Software supply chain security — We're working on an observatory that allows users to identify and monitor the world's critical Open Source packages in real time, including previously hidden parts of the dependency graph. Maintainer burnout — Our report on burnout in Open Source has been well-received. We're working on yearly follow-ups, plus a companion report on how AI is affecting maintainer burnout. Moving forward, the Lab's experts will direct funding to and supervise Open Source sustainability researchers doing critical work. We are already working with universities to teach the next generations of software supply chain experts.</p>
+</li>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1087759/">LightDM lives: version 1.33.0 released</a></strong><br />
+  摘要：Version 1.33.0 of the LightDM display manager has been released. This is the first release in four years : the project had been sponsored by Canonical but was effectively unmaintained in recent years. It has been transferred to a new community repository and is now maintained by Joshua Peisach and Neal Gompa. The new release includes Qt6 support, code optimizations, and a list of other fixes that had been in limbo pending a new release.</p>
+</li>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1087743/">Stable kernel releases for Friday with a single bug fix</a></strong><br />
+  摘要：Greg Kroah-Hartman has announced the release of the 6.12.102 , 6.6.150 , 6.1.182 , 5.15.215 , 5.10.264 stable kernels. This round of stable kernel releases contains a fix for a single bug, found by Thomas Lamprecht , that affected several of the kernels released yesterday in response to a security vulnerability ( CVE-2026-68480 ) that could allow data leakage through speculative execution. The 6.12.102 release adds the backported security fix for CVE-2026-68480 to the 6.12 series. As always, users are advised to upgrade.</p>
+</li>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1087742/">Security updates for Friday</a></strong><br />
+  摘要：Security updates have been issued by AlmaLinux (compat-libtiff3, fence-agents, firefox, freerdp, frr, gimp, gstreamer1-plugins-bad-free, java-25-openjdk, kernel, kernel-rt, ldns, libgcrypt, libXfont2, nodejs:22, nodejs:24, p11-kit, pipewire, resource-agents, sg3_utils, thunderbird, and yelp), Debian (async-http-client, jq, kernel, linux-6.1, linux-6.12, redis, and udisks2), Fedora (abrt, chromium, coreutils, curl, freeipa, gst-devtools, gst-editing-services, gstreamer1, gstreamer1-doc, gstreamer1-plugin-libav, gstreamer1-plugins-bad-free, gstreamer1-plugins-base, gstreamer1-plugins-good, gstreamer1-plugins-ugly-free, gstreamer1-rtsp-server, ImageMagick, kernel, libXfont2, php, python-gstreamer1, samba, tcpreplay, and trafficserver), Mageia (firefox, nss, rootcerts, python-django, and thund…</p>
+</li>
+</ul>
+<h2>Linux Weekly News (RSS)</h2>
+<ul>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1086949/">[$] Changes in shadow-utils password-expiration features</a></strong><br />
+  摘要：The shadow-utils project provides the tools that handle /etc/shadow , /etc/passwd , and other related databases; in general, manages users and groups on many Linux systems. While most software releases are notable for what is added, the recent shadow-utils&#160;4.20.0 release is most noteworthy for what has been removed. Specifically, several utilities and functionality related to periodic password expiry, which were deprecated in the December 2025 4.19.0 release, have been removed as planned. It is still possible to manage some aspects of password aging with shadow-utils, but organizations that depend on such features should start planning for their complete removal within a few years.</p>
+</li>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1087812/">The Software Stewardship Lab launches</a></strong><br />
+  摘要：The Software Stewardship Lab , a nonprofit organization based in Scotland, has announced its existence . Our current research focuses are: Software supply chain security — We're working on an observatory that allows users to identify and monitor the world's critical Open Source packages in real time, including previously hidden parts of the dependency graph. Maintainer burnout — Our report on burnout in Open Source has been well-received. We're working on yearly follow-ups, plus a companion report on how AI is affecting maintainer burnout. Moving forward, the Lab's experts will direct funding to and supervise Open Source sustainability researchers doing critical work. We are already working with universities to teach the next generations of software supply chain experts.</p>
+</li>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1087759/">LightDM lives: version 1.33.0 released</a></strong><br />
+  摘要：Version 1.33.0 of the LightDM display manager has been released. This is the first release in four years : the project had been sponsored by Canonical but was effectively unmaintained in recent years. It has been transferred to a new community repository and is now maintained by Joshua Peisach and Neal Gompa. The new release includes Qt6 support, code optimizations, and a list of other fixes that had been in limbo pending a new release.</p>
+</li>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1087743/">Stable kernel releases for Friday with a single bug fix</a></strong><br />
+  摘要：Greg Kroah-Hartman has announced the release of the 6.12.102 , 6.6.150 , 6.1.182 , 5.15.215 , 5.10.264 stable kernels. This round of stable kernel releases contains a fix for a single bug, found by Thomas Lamprecht , that affected several of the kernels released yesterday in response to a security vulnerability ( CVE-2026-68480 ) that could allow data leakage through speculative execution. The 6.12.102 release adds the backported security fix for CVE-2026-68480 to the 6.12 series. As always, users are advised to upgrade.</p>
+</li>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1087742/">Security updates for Friday</a></strong><br />
+  摘要：Security updates have been issued by AlmaLinux (compat-libtiff3, fence-agents, firefox, freerdp, frr, gimp, gstreamer1-plugins-bad-free, java-25-openjdk, kernel, kernel-rt, ldns, libgcrypt, libXfont2, nodejs:22, nodejs:24, p11-kit, pipewire, resource-agents, sg3_utils, thunderbird, and yelp), Debian (async-http-client, jq, kernel, linux-6.1, linux-6.12, redis, and udisks2), Fedora (abrt, chromium, coreutils, curl, freeipa, gst-devtools, gst-editing-services, gstreamer1, gstreamer1-doc, gstreamer1-plugin-libav, gstreamer1-plugins-bad-free, gstreamer1-plugins-base, gstreamer1-plugins-good, gstreamer1-plugins-ugly-free, gstreamer1-rtsp-server, ImageMagick, kernel, libXfont2, php, python-gstreamer1, samba, tcpreplay, and trafficserver), Mageia (firefox, nss, rootcerts, python-django, and thund…</p>
+</li>
+</ul>
+<h2>CNCF Blog</h2>
+<ul>
+<li>
+<p><strong><a href="https://www.cncf.io/blog/2026/08/07/does-kubernetes-dra-replace-hami/">Does Kubernetes DRA Replace HAMi?</a></strong><br />
+  摘要：Projects that want to share a GPU on Kubernetes have to work around an API instead of with it. The device plugin interface could count devices, and that was the whole vocabulary:&#160;nvidia.com/gpu: 1. It meant one...</p>
+</li>
+<li>
+<p><strong><a href="https://www.cncf.io/blog/2026/08/07/shadow-ai-in-ci-cd-threat-modeling-the-path-from-developer-laptop-to-kubernetes/">Shadow AI in CI/CD: Threat-modeling the path from developer laptop to Kubernetes</a></strong><br />
+  摘要：Artificial intelligence is becoming part of daily software delivery, often before it becomes part of the security architecture. That gap has a name: Shadow AI. It is any AI tool, model, agent, extension, or integration used...</p>
+</li>
+</ul>
+<h2>Red Hat Blog</h2>
+<ul>
+<li>
+<p><strong><a href="https://www.redhat.com/en/blog/stop-burning-your-ai-budget-optimize-gpu-usage-and-model-deployment-workflow-navigator">Stop burning your AI budget: Optimize GPU usage and model deployment with workflow navigator</a></strong><br />
+  摘要：Uber burned through its entire 2026 AI tools budget by April. Microsoft faced a similar crisis, pulling Claude Code licenses because the tool worked too well and people used it too much. Even OpenAI's chief executive officer (CEO), Sam Altman, has called token costs "a huge issue" for the company and its customers. "Tokenmaxxing," the tendency to burn through tokens without a clear link to business outcomes, has gone from an internal joke to a boardroom problem.Companies are responding by capping external AI budgets and pulling licenses. Fair enough. But when teams try to escape these escalati</p>
+</li>
+<li>
+<p><strong><a href="https://www.redhat.com/en/blog/managing-virtual-machines-red-hat-openshift-service-mesh">Managing virtual machines on Red Hat OpenShift with Service Mesh</a></strong><br />
+  摘要：Managing virtualized workloads alongside containerized applications remains a persistent challenge for IT operations, often creating siloed management environments. At Red Hat Summit 2026, I had the opportunity to take the stage during the OpenShift Spotlight session and demonstrate how Red Hat OpenShift is bridging this divide, by allowing organizations to treat a virtual machine (VM) and a container as first-class citizens on a single platform. Alan Cowles presents during the OpenShift Spotlight at Red Hat Summit 2026.Bridging the virtual-container gapMy demonstration focused on a fictional</p>
+</li>
+<li>
+<p><strong><a href="https://www.redhat.com/en/blog/deploying-red-hat-ai-nvidia-dsxtm-platform-scalable-ai-clouds">Deploying Red Hat AI with the NVIDIA DSX™ Platform for scalable AI clouds</a></strong><br />
+  摘要：AI clouds have advanced beyond initial pilot testing, and the challenge now isn’t simply configuring the physical hardware. Organizations must focus on operating an efficient shared platform that provides predictable operating costs, access to the latest computer chips, and ongoing platform updates without relying on fragile custom code or complex software adjustments.By integrating NVIDIA DSX OS™ software, part of the DSX platform, with Red Hat AI, we are co-engineering a deployment framework for AI clouds that accelerates innovation while delivering the reliability, scalability, and oper</p>
+</li>
+</ul>
+<h2>Kubernetes Blog</h2>
+<ul>
+<li>
+<p><strong><a href="https://kubernetes.io/blog/2026/07/14/custom-metrics-exporter-kubernetes/">Building a Custom Metrics Exporter for Kubernetes</a></strong><br />
+  摘要：Kubernetes ships with built-in awareness of CPU and memory, but most real-world scaling decisions depend on signals that live entirely outside that narrow window: how many messages are waiting in a queue, how long the last batch job took, how many active WebSocket connections a pod is holding. When the built-in metrics are not enough, a metrics exporter bridges that gap. This post walks through writing one from scratch, packaging it as a container, and wiring it into a cluster so that Prometheus — and ultimately the HorizontalPodAutoscaler — can consume it. What a metrics exporter actually does An exporter is a small HTTP server with a single responsibility: expose application state as text on a /metrics endpoint. Prometheus scrapes that endpoint on a regular interval, stores the time-seri…</p>
+</li>
+<li>
+<p><strong><a href="https://kubernetes.io/blog/2026/07/08/announcing-etcd-3.7/">Announcing etcd v3.7.0</a></strong><br />
+  摘要：This article is a mirror of the original announcement Today, SIG etcd is releasing etcd v3.7.0 , the latest minor release of the popular distributed key-value store and core Kubernetes component. v3.7 ships the long-requested RangeStream feature, delivers several other performance improvements, removes the last remnants of the legacy v2store, and completes a major protobuf overhaul. You can download etcd v3.7.0 here: Source code Binaries Official container images This release also includes new versions of the two core etcd dependencies, bbolt v1.5.0 and raft v3.7.0 . For instructions on installing etcd, see the install documentation . For the full list of changes, see the etcd v3.7 changelog . A heartfelt thank you to all the contributors who made this release possible! Major features The …</p>
+</li>
+<li>
+<p><strong><a href="https://kubernetes.io/blog/2026/06/26/open-source-maintainership-in-the-age-of-ai/">Open source maintainership in the age of AI</a></strong><br />
+  摘要：AI has really changed the game around software development. More people are leveraging AI than ever to contribute patches to projects they use. To me, this is a good thing as more folks will contribute patches rather than fork or not fix them. The main problem is that AI has made generating code fast but there has been very little improvement in maintaining code bases. In this post, we will highlight the ways the Kubernetes community is adapting to the world of AI assisted coding. The first step of this journey was to develop an AI policy. This seems mundane and bureaucratic but there were many PRs that derailed into discussions around AI usage. The AI policy helps steer the conversation around the project's stance on AI and provides a clear signal to contributors on how to use these tools…</p>
+</li>
+<li>
+<p><strong><a href="https://kubernetes.io/blog/2026/06/25/headlamp-cluster-api-plugin/">Introducing the Cluster API plugin for Headlamp</a></strong><br />
+  摘要：Headlamp is an open-source, extensible Kubernetes SIG UI project designed to let you explore, manage, and debug cluster resources directly from a browser. Cluster API (CAPI) is a Kubernetes sub-project that brings declarative, Kubernetes-style APIs to cluster lifecycle management. It lets platform teams provision, upgrade, and manage the lifecycle of Kubernetes clusters using standard Kubernetes objects stored and reconciled in a management cluster. Managing Cluster API resources has historically required raw kubectl commands and deep familiarity with ownership hierarchies. The Headlamp Cluster API plugin brings visual clarity, faster debugging, and simplified operations for platform teams, directly inside Headlamp. What this plugin provides The Cluster API plugin adds a dedicated Cluster …</p>
+</li>
+<li>
+<p><strong><a href="https://kubernetes.io/blog/2026/06/25/visual-context-volcano-headlamp-plugin/">Inspect Volcano workloads faster with Headlamp</a></strong><br />
+  摘要：Volcano is a cloud native batch scheduler for Kubernetes, built for high-performance computing, AI/ML, and other batch workloads. Headlamp is an extensible Kubernetes web UI. With its plugin system, Headlamp can surface APIs and workflows beyond the built-in Kubernetes resources. The Volcano plugin brings core Volcano resources into Headlamp so you can inspect workload state, queue behavior, and gang scheduling details in one place. Kubernetes was originally designed around long-running services, where applications are expected to start and remain available over time. Batch, AI/ML, and HPC workloads often behave differently: jobs arrive dynamically, compete for limited resources, and may need multiple workers to start together before useful work can begin. Volcano extends Kubernetes with c…</p>
+</li>
+<li>
+<p><strong><a href="https://kubernetes.io/blog/2026/06/25/headlamp-knative-plugin/">See your serverless: introducing the Headlamp plugin for Knative</a></strong><br />
+  摘要：Headlamp is an open-source, extensible Kubernetes SIG UI project designed to let you explore, manage, and debug cluster resources. Knative brings serverless workloads to Kubernetes, handling traffic routing, autoscaling, and revision management so teams can deploy and iterate without fighting infrastructure. But operating Knative workloads day-to-day can be difficult, there's still a lot of jumping between the kn CLI, kubectl , and the Kubernetes UI to get a full picture of what's running. We built the Headlamp Knative plugin to bridge that very gap, allowing operators to inspect, understand and act on their workloads all from a single place. This plugin was built as part of the LFX mentorship. Here's a tour of what we shipped. Here is a short walkthrough of the Knative plugin for Headlamp…</p>
+</li>
+</ul>
+<hr /></div>
+  </main>
+</body>
+</html>
