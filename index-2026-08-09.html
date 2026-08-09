@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OS 领域每日洞察 - 2026-08-09</title>
+  <style>
+    :root {
+      --bg: #f6f4f0;
+      --bg-bar: #ebe8e3;
+      --bg-card: #fffefb;
+      --bg-card-hover: #f5f3ef;
+      --text: #2d2a26;
+      --text-muted: #5c5852;
+      --text-dim: #7a756e;
+      --accent: #5a7a9e;
+      --border: #ddd9d2;
+      --radius: 10px;
+      --font: "Segoe UI", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      font-size: 15px;
+    }
+
+    /* 门户顶栏 */
+    .masthead {
+      background: var(--bg-bar);
+      border-bottom: 1px solid var(--border);
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 0;
+    }
+    .masthead-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .masthead h1 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin: 0;
+      letter-spacing: -0.02em;
+      color: var(--text);
+    }
+    .masthead .meta {
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+    }
+
+    /* 主内容区：多栏门户布局 */
+    .main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 3rem;
+    }
+
+    /* 板块：每个 h2 为一个频道块 */
+    .content .section {
+      margin-bottom: 2.5rem;
+    }
+    .content h2 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+      margin: 0 0 1rem;
+      padding: 0.6rem 1rem;
+      background: var(--bg-bar);
+      border-radius: var(--radius);
+      border-left: 4px solid var(--accent);
+    }
+    .content h2:first-child { margin-top: 0; }
+
+    .content h2:has(+ h3) {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      border-left-color: var(--text-dim);
+    }
+
+    /* 板块内卡片网格（每个 h2 后的 ul） */
+    .content h2 + ul {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1rem;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .content h2 + ul li {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.15rem 1.2rem;
+      transition: background .15s, border-color .15s;
+    }
+    .content h2 + ul li:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--text-dim);
+    }
+    .content h2 + ul li strong {
+      display: block;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+      line-height: 1.4;
+    }
+    .content h2 + ul li p {
+      margin: 0 0 0.5rem;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.58;
+    }
+    .content h2 + ul li p:last-of-type { margin-bottom: 0; }
+    .content h2 + ul li a[href^="http"] {
+      font-size: 0.8125rem;
+      color: var(--accent);
+    }
+    .content h2 + ul li a[href^="http"]:hover { text-decoration: underline; }
+
+    .content .ref-section {
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+    .content h2 + h3 { margin-top: 1.25rem; }
+    .content h3 {
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--text-dim);
+      margin: 1rem 0 0.4rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .content h3 + ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 0.25rem;
+    }
+    .content h3 + ul li {
+      background: transparent;
+      border: none;
+      padding: 0.2rem 0;
+      font-size: 0.8125rem;
+    }
+    .content h3 + ul li strong { font-size: inherit; margin-bottom: 0; }
+    .content h3 + ul li a { color: var(--accent); }
+    .content h3 + ul li a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <header class="masthead">
+    <div class="masthead-inner">
+      <h1>OS 领域每日洞察 - 2026-08-09</h1>
+      <span class="meta">2026-08-09 04:00 UTC</span>
+    </div>
+  </header>
+  <main class="main">
+    <div class="content"><h1>OS 领域每日洞察 - 2026-08-09</h1>
+<p>（Gemini 未可用时，以下为按来源整理的条目，含<strong>新闻摘要</strong>与链接；摘要可能为原文语言。）</p>
+<h2>Lobsters</h2>
+<ul>
+<li>
+<p><strong><a href="https://dotat.at/@/2026-08-09-rata-die.html">Counting the days, revisited</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://www.andrewt.net/dithered-qr-codes/wtf/">Dithered QR codes</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://blog.dave.tf/post/fastlanes-utl/">The FastLanes Unified Transport Layout</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://www.sheeeeeeeep.art/multistack-catlangs.html">Multistack Concatenative Programming Languages</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://www.inkandswitch.com/livelymerge/notebook/lm-03/">The Object Model in Livelymerge</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://blog.senko.net/code-was-never-the-hard-part-is-an-insult-to-all-programmers">"Code was never the hard part" is an insult to all programmers</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://ethulhu.co.uk/systemd-dynamicuser">Systemd Dynamic Users (2020)</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://sshref.dev/">OpenSSH Key Structure Guide</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://robot.villas">robot.villas – RSS-to-Mastodon Bridge</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://soar.qaidvoid.dev/">Soar package manager</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://char.lt/blog/2026/08/talks-i-like/">some software talks i like</a></strong><br />
+  摘要：Not tagged as video but contains mostly links to videos Comments</p>
+</li>
+<li>
+<p><strong><a href="https://amiga.com/news/20260804-amiga-update">Amiga August 2026 Update</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://dbushell.com/2026/08/07/sublime-text/">They don’t make ’em like Sublime Text anymore</a></strong><br />
+  摘要：Comments</p>
+</li>
+</ul>
+<h2>Phoronix</h2>
+<ul>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/ASUS-ROG-Ryujin-3-Linux">New Linux Patches Enable ASUS ROG Ryujin III Monitoring Support</a></strong><br />
+  摘要：For those with an ASUS ROG Ryujin III all-in-one CPU liquid cooling setup catering to gamers, there are now patches pending to enable this AIO liquid cooling setup to work under Linux for monitoring...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Linux-7.3-Better-Intel-Hybrid">Linux 7.3 To Better Handle Cluster Load Balancing On Intel Hybrid CPUs</a></strong><br />
+  摘要：A set of patches from Intel are set to be merged for the upcoming Linux 7.3 merge window to enhance the cluster-aware scheduling code so it better handles load balancing on modern Intel Core (Ultra) hybrid CPUs with a mix of P and E/LPE cores...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Polychromatic-0.9.8-Released">Polychromatic 0.9.8 Released With Razer Blade 16 2023 Support</a></strong><br />
+  摘要：For those looking to manage the RGB lighting and other features of their Razer devices on Linux, Polychromatic 0.9.8 is now available for that UI front-end that interacts with the OpenRazer kernel drivers for providing a decent albeit unofficial Linux configuration experience...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Wine-11.15-Released">Wine 11.15 Released With Wayland Fixes, Fix For A 20 Year Old MSXML3 Bug</a></strong><br />
+  摘要：Making its debut this Saturday rather than the usual bi-weekly Friday release regiment, Wine 11.15 is out today as the newest development release for this open-source software enabling Windows games and applications to run on Linux...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/GNOME-Design-Fellowship">GNOME Receiving Additional Design Help Thanks To Sovereign Tech Agency Fellowship</a></strong><br />
+  摘要：Germany's Sovereign Tech Agency announced earlier this year a new fellowship program and now as part of that, for the next two years GNOME has a fellow dedicated to working on design and community management...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Linux-7.2-rc7-HWMON">HWMON Fixes For Linux 7.2-rc7: "Most Of Them Fixing Critical Or High Severity Bugs"</a></strong><br />
+  摘要：It's been another busy week in the Linux kernel camp with increased patch activity continuing due to AI/LLM coding agents / bots continuing to uncover different defects in the open-source codebase. The hardware monitoring (HWMON) subsystem saw many fixes this week for issues mostly raised by the Sashiko AI bot with the issues being described as mostly critical or high severity bugs...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Triton-DirectX-11-QEMU-Driver">AI Helped Create A DirectX 11 Driver For QEMU VMs</a></strong><br />
+  摘要：Thanks in part to the power of Claude Opus 5 and Claude Fable 5, a new Windows DirectX 11 driver for QEMU has been created to help improve graphics acceleration for Microsoft Windows guests running under QEMU virtual machines...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Linux-7.2-rc7-Input-Changes">Linux 7.2-rc7 Adding Support For The Most Unique Or Very Funky Gaming Controller</a></strong><br />
+  摘要：The input subsystem fixes for the week include a number of AI-driven patches to address various information leaks, out-of-bounds accesses, validation fixes, and other coding issues that have turned up recently. Plus some device quirks and also adding support for a rather funky gaming controller to the common XPad Linux driver used by many different gaming controllers...</p>
+</li>
+</ul>
+<h2>Hacker News</h2>
+<ul>
+<li>
+<p><strong><a href="https://github.com/initsixdev/QTC">QTC – An old-school-cool terminal client for MeshCore messaging – Linux / macOS</a></strong><br />
+  摘要：QTC – An old-school-cool terminal client for MeshCore messaging – Linux / macOS</p>
+</li>
+<li>
+<p><strong><a href="https://holycode.cloud">Show HN: HolyCode Cloud – persistent Linux workstations for AI</a></strong><br />
+  摘要：Show HN: HolyCode Cloud – persistent Linux workstations for AI</p>
+</li>
+<li>
+<p><strong><a href="https://github.com/Ewwii-sh/ewwii">Show HN: Ewwii, An extensible widget system for all of Linux</a></strong><br />
+  摘要：Hi all! I&#x27;ve been working on a GTK4 based widget system for Linux (wayland + x11) for the past year now. It started out as a fork of eww, the famous gtk3 based widget system, but after several rewrites, I&#x27;m proud to say that its completely different and way more powerful than the original. Ewwii uses NBCL as the configuration language. But it does not lock you into it for configuration. Through the plugin system, even the core configuration language of ewwii can be replaced, and new widgets can be created. Its highly optimized and is extremely featherweight (4.8 MB). One added benefit of ewwii is the plugin manager. Users can use it to painlessly manage multiple plugins. The users of eww can also easily switch to ewwii while preserving their yuck configs by using the &quot;yucky-…</p>
+</li>
+<li>
+<p><strong><a href="https://www.chebucto.ns.ca/~ak621/DOS/DOS-Head.html">The DOS Operating System</a></strong><br />
+  摘要：The DOS Operating System</p>
+</li>
+<li>
+<p><strong><a href="https://www.linuxfoundation.org/press/linux-foundation-launches-the-tokenomics-foundation-to-define-the-economics-and-roi-of-ai-value">Linux Foundation Launches the Tokenomics Foundation</a></strong><br />
+  摘要：Linux Foundation Launches the Tokenomics Foundation</p>
+</li>
+<li>
+<p><strong><a href="https://news.ycombinator.com/item?id=49219231">Which parts of Kernel would benefit from C#'s features?</a></strong><br />
+  摘要：I have noticed lately, as posted earlier about its Rust-like futures, C#&#x27;s potential use even within Linux kernel. Which parts of Kernel would benefit from C#&#x27;s features?</p>
+</li>
+<li>
+<p><strong><a href="https://github.com/omarroth/doubletake">Doubletake – AirPlay/TV Screen Mirroring Sender for Linux (X11 and Wayland)</a></strong><br />
+  摘要：Doubletake – AirPlay/TV Screen Mirroring Sender for Linux (X11 and Wayland)</p>
+</li>
+</ul>
+<h2>The New Stack</h2>
+<ul>
+<li>
+<p><strong><a href="https://thenewstack.io/ai-adoption-versus-usage/">AI adoption isn’t the same as AI usage</a></strong><br />
+  摘要：Every engineering org I&#8217;ve talked to this year has some version of the same chart. Seat activations climbing. Token spend The post AI adoption isn’t the same as AI usage appeared first on The New Stack .</p>
+</li>
+<li>
+<p><strong><a href="https://thenewstack.io/kubevirt-evpn-vm-migration/">Why your KubeVirt VMs can’t move between clusters — and how EVPN fixes it</a></strong><br />
+  摘要：Your team has moved VMs to Kubernetes with KubeVirt. The workloads are running. The team is gaining confidence. Then someone The post Why your KubeVirt VMs can’t move between clusters — and how EVPN fixes it appeared first on The New Stack .</p>
+</li>
+<li>
+<p><strong><a href="https://thenewstack.io/agent-plugins-open-standard/">Five AI rivals just backed a shared plugin standard. Here’s why it matters for developers.</a></strong><br />
+  摘要：OpenAI, AWS, Cursor, GitHub and Microsoft have backed Agent Plugins 1.0.0, a portable package format for reusable components that extends The post Five AI rivals just backed a shared plugin standard. Here&#8217;s why it matters for developers. appeared first on The New Stack .</p>
+</li>
+<li>
+<p><strong><a href="https://thenewstack.io/speakeasy-enterprise-agent-skills/">AI skills start on laptops. Enterprises inherit the mess.</a></strong><br />
+  摘要：&#8220;It&#8217;s unrealistic to expect an admin to have context over how every skill in a company should be optimally performing,&#8221; The post AI skills start on laptops. Enterprises inherit the mess. appeared first on The New Stack .</p>
+</li>
+</ul>
+<h2>Ars Technica</h2>
+<ul>
+<li>
+<p><strong><a href="https://arstechnica.com/space/2026/08/the-first-self-driving-vehicle-on-mars-has-proven-to-be-a-smashing-success/">The first self-driving vehicle on Mars has proven to be a smashing success</a></strong><br />
+  摘要：About 90 percent of the distance driven by Perseverance has been autonomous.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/science/2026/08/deepminds-hurricane-model-bought-forecasters-an-extra-day/">DeepMind’s hurricane breakthrough has surprised weather scientists</a></strong><br />
+  摘要：Open source WeatherNext model can make accurate predictions with lower-resolution weather data.</p>
+</li>
+</ul>
+<h2>Kubernetes Blog</h2>
+<ul>
+<li><strong><a href="https://kubernetes.io/blog/2026/06/15/sig-storage-spotlight-2026/">Spotlight on SIG Storage</a></strong><br />
+  摘要：In our ongoing SIG Spotlight series, we shine a light on the groups that keep the Kubernetes project moving forward. This time, we catch up with SIG Storage , the group responsible for persistent data, volume management, and the interfaces that connect Kubernetes workloads to the storage systems beneath them. We spoke with Xing Yang , Co-Chair of SIG Storage and Software Engineer at VMware by Broadcom, about the SIG's history, the features shipping in recent Kubernetes releases, and where storage in Kubernetes is headed as AI workloads become the norm. Introductions Could you introduce yourself and share your role(s) within SIG Storage? My name is Xing Yang , a software engineer at VMware by Broadcom. I'm a co-chair in SIG Storage, alongside another co-chair Saad Ali from Google. There are…</li>
+</ul>
+<hr /></div>
+  </main>
+</body>
+</html>
