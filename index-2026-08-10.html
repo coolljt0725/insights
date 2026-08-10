@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OS 领域每日洞察 - 2026-08-10</title>
+  <style>
+    :root {
+      --bg: #f6f4f0;
+      --bg-bar: #ebe8e3;
+      --bg-card: #fffefb;
+      --bg-card-hover: #f5f3ef;
+      --text: #2d2a26;
+      --text-muted: #5c5852;
+      --text-dim: #7a756e;
+      --accent: #5a7a9e;
+      --border: #ddd9d2;
+      --radius: 10px;
+      --font: "Segoe UI", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      font-size: 15px;
+    }
+
+    /* 门户顶栏 */
+    .masthead {
+      background: var(--bg-bar);
+      border-bottom: 1px solid var(--border);
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 0;
+    }
+    .masthead-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .masthead h1 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin: 0;
+      letter-spacing: -0.02em;
+      color: var(--text);
+    }
+    .masthead .meta {
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+    }
+
+    /* 主内容区：多栏门户布局 */
+    .main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 3rem;
+    }
+
+    /* 板块：每个 h2 为一个频道块 */
+    .content .section {
+      margin-bottom: 2.5rem;
+    }
+    .content h2 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+      margin: 0 0 1rem;
+      padding: 0.6rem 1rem;
+      background: var(--bg-bar);
+      border-radius: var(--radius);
+      border-left: 4px solid var(--accent);
+    }
+    .content h2:first-child { margin-top: 0; }
+
+    .content h2:has(+ h3) {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      border-left-color: var(--text-dim);
+    }
+
+    /* 板块内卡片网格（每个 h2 后的 ul） */
+    .content h2 + ul {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1rem;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .content h2 + ul li {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.15rem 1.2rem;
+      transition: background .15s, border-color .15s;
+    }
+    .content h2 + ul li:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--text-dim);
+    }
+    .content h2 + ul li strong {
+      display: block;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+      line-height: 1.4;
+    }
+    .content h2 + ul li p {
+      margin: 0 0 0.5rem;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.58;
+    }
+    .content h2 + ul li p:last-of-type { margin-bottom: 0; }
+    .content h2 + ul li a[href^="http"] {
+      font-size: 0.8125rem;
+      color: var(--accent);
+    }
+    .content h2 + ul li a[href^="http"]:hover { text-decoration: underline; }
+
+    .content .ref-section {
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+    .content h2 + h3 { margin-top: 1.25rem; }
+    .content h3 {
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--text-dim);
+      margin: 1rem 0 0.4rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .content h3 + ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 0.25rem;
+    }
+    .content h3 + ul li {
+      background: transparent;
+      border: none;
+      padding: 0.2rem 0;
+      font-size: 0.8125rem;
+    }
+    .content h3 + ul li strong { font-size: inherit; margin-bottom: 0; }
+    .content h3 + ul li a { color: var(--accent); }
+    .content h3 + ul li a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <header class="masthead">
+    <div class="masthead-inner">
+      <h1>OS 领域每日洞察 - 2026-08-10</h1>
+      <span class="meta">2026-08-10 04:00 UTC</span>
+    </div>
+  </header>
+  <main class="main">
+    <div class="content"><h1>OS 领域每日洞察 - 2026-08-10</h1>
+<p>（Gemini 未可用时，以下为按来源整理的条目，含<strong>新闻摘要</strong>与链接；摘要可能为原文语言。）</p>
+<h2>arXiv (cs.OS)</h2>
+<ul>
+<li><strong><a href="https://arxiv.org/abs/2608.07358">Fast end-to-end cloud application cold-start with initscripts</a></strong><br />
+  摘要：arXiv:2608.07358v1 Announce Type: cross Abstract: Serverless functions are a popular way of deploying cloud applications. Because many of these functions are short- running and experience frequent cold-starts, start latencies often dominate their execution latency. Start latency can be broken down into two components: setup and initialization. Setup involves steps the cloud platform takes when starting an application, such as downloading its binary and creating an isolated execution environment. Initialization involves steps the application takes after it has started running but before it can do useful work, such as connecting to other services, coordinating to claim work, and downloading inputs. This paper contributes initscripts, which provide a script- able interface for developers to s…</li>
+</ul>
+<h2>arXiv (cs.LG)</h2>
+<ul>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.06417">Latent Fact-Checking: Detecting Misinformation through Activation Engineering</a></strong><br />
+  摘要：arXiv:2608.06417v1 Announce Type: new Abstract: The proliferation of misinformation online has driven demand for scalable detection systems. While most existing approaches rely on surface-level linguistic features or external knowledge retrieval, we examine truthfulness as a geometric property of a language model's representation space. We introduce a misinformation detection framework grounded in activation engineering, which leverages the latent geometry of transformer models. Our approach elicits a misinformation direction in the residual stream by contrasting activations from paired truthful and false statements, following the difference-in-means principle of Contrastive Activation Addition (CAA). At inference time, the last-token activation of an unseen claim is projected onto this di…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.06420">Risk-Aware Decision Policies for Agents Under Noisy Perception</a></strong><br />
+  摘要：arXiv:2608.06420v1 Announce Type: new Abstract: Perception in biological systems is inherently noisy, requiring organisms to make decisions under uncertainty where misclassification can be costly or fatal. We present an Artificial Life predator-prey model of foraging under noisy perception, and compare agent performance when using various policies that take into account their noisy predictions. Through controlled experiments under both symmetric and asymmetric perceptual noise, we show that blindly trusting perceptual labels leads to catastrophic failure as noise increases, while uncertainty-aware strategies significantly improve survival and reduce fatal errors. We further observe qualitative regime shifts in behaviour, with agents transitioning from exploratory to conservative strategies…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.06422">Sharding Prevents LLM Oversight Failures and Adversarial Exploitation</a></strong><br />
+  摘要：arXiv:2608.06422v1 Announce Type: new Abstract: Giving an LLM judge more compute does not necessarily make it check more requirements. When one call must return many verdicts, some decisions become weakly grounded in the evidence, even when that call receives the same token or tool budget as a panel of separate calls. Across expert-graded research replications, legal work, and clinical-trial assessments, agreement with experts falls as the number of verdicts per call grows. We identify sharding as the intervention that mitigates this failure in model-based oversight. Sharding partitions the requirements into smaller groups, assigns each group to a separate call, and aggregates the verdicts. Against a single call with the panel's full budget, sharding improves agreement while holding the mo…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.06427">Adversarial Causal Intervention Falsification</a></strong><br />
+  摘要：arXiv:2608.06427v1 Announce Type: new Abstract: Generative models can reproduce an observational distribution while encoding an incorrect causal structure. We study a sequential game in which a structural causal generator proposes observational and interventional distributions, while an adversarial experimentalist selects interventions intended to maximally falsify the generator. The discriminator is therefore not merely a real-versus-synthetic classifier: it is indexed by an intervention and tests whether the generator reproduces the corresponding post-intervention law. We introduce Adversarial Causal Intervention Falsification (ACIF), formulate oracle and implementable versions of the game, and distinguish three objects that are often conflated: observational fit, interventional equivale…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.06428">Fixed and Adaptive Topological DeepONets: Functional Measurements on Hausdorff Locally Convex Spaces</a></strong><br />
+  摘要：arXiv:2608.06428v1 Announce Type: new Abstract: Deep Operator Networks (DeepONets; arXiv:1910.03193) typically encode an input function through point values on a fixed discretization. Building on the Topological DeepONet framework of Ismailov (arXiv:2603.11972), we replace point samples by continuous linear functionals drawn from the continuous dual of a Hausdorff locally convex space $({V},{p_\alpha}_{\alpha\in A})$, whose topology is generated by a point-separating family of seminorms rather than a single norm, and develop fixed and adaptive functional measurement systems. Measurements are combined with the coefficient-space Two-Step procedure of Lee and Shin (arXiv:2309.01020), while a training-only decoder and regularization stabilize the adaptive coordinates. We derive a discrete er…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.06430">MiGHT-EHR: A Multi-task Graph Transformer for Heterogeneous Temporal Electronic Health Records</a></strong><br />
+  摘要：arXiv:2608.06430v1 Announce Type: new Abstract: Learning from Electronic Health Records (EHRs) has gained significant attention due to its potential to improve clinical prediction. However, effective learning remains challenging because EHRs encode heterogeneous, temporally ordered clinical interactions. In particular, EHRs contain: (i) heterogeneous clinical entities, including patients, visits, diagnoses, prescriptions, and procedures, together with their heterogeneous interactions, (ii) longitudinal patient trajectories across hospital visits and (iii) shared statistical dependencies across related clinical prediction tasks. Existing EHR learning methods capture only a subset of these properties. To bridge this gap, we propose Multi-task Graph transformer for Heterogeneous Temporal EHRs…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.06441">SNI-GNN: SmartNIC-Assisted Full-Graph GNN Training with In-Network Embedding Prediction</a></strong><br />
+  摘要：arXiv:2608.06441v1 Announce Type: new Abstract: Full-graph GNN training delivers high accuracy but scales poorly on multi-server clusters due to heavy, irregular inter-node embedding exchanges. We present SNI-GNN, a SmartNIC-assisted full-graph training system that reduces communication while preserving accuracy by predicting remote embeddings in-network. SNI-GNN deploys a lightweight linear-trend predictor on SmartNICs to refine cached historical embeddings, coupled with an importance-based boundary-node sampling policy and an asynchronous DPU--GPU data pipeline with intermediate-result reuse. We provide error and convergence bounds showing that predictor bias remains controlled under bounded second-order dynamics and yields standard non-convex convergence with inexact gradients. Implemen…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.06448">ED-CSP: Crystal Structure Prediction from Electron Diffraction</a></strong><br />
+  摘要：arXiv:2608.06448v1 Announce Type: new Abstract: Recovering a periodic 3D crystal structure from sparse, unindexed electron diffraction (ED) observations is a challenging generative inverse problem. Existing ED-based learning methods mainly predict crystallographic labels, reconstruct structures from indexed reflections, or retrieve candidates from finite structure libraries. Here, we introduce ED-CSP, a machine learning framework that predicts crystal structures from chemical composition, atom count, and multiple detector-plane ED spot sets. ED-CSP combines a relational set encoder, permutation-invariant multi-view aggregation, and a periodic flow generator to jointly predict lattice parameters and fractional atomic coordinates. To train the model, we construct ED-CS, a dataset of 4.85 mil…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.06486">Beyond Attention: Signed Integrated Gradients Attribution in a BiomeGPT-Style Microbiome Transformer</a></strong><br />
+  摘要：arXiv:2608.06486v1 Announce Type: new Abstract: In a feature-tokenized transformer (arXiv:2106.11959) such as BiomeGPT (doi:10.64898/2026.01.05.697599), each input token is built by fusing a fixed identity with a sample-specific measurement: a fixed species and a variable abundance, T = S + A. To interpret downstream classification in such models, prior work inspects the attention weights of the special [CLS] token (arXiv:2106.11959, arXiv:1810.04805, BiomeGPT) to rank sample tokens by importance. These weights have two critical limitations: they are nonnegative, so they cannot separate disease-supporting from health-supporting evidence (arXiv:2201.12114), and they act after token fusion, obscuring how the input sources S and A each affect the output. To address this we use Integrated Grad…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.06503">Toward Reliable Context Compression for Long-Horizon Agents: An Empirical Study of Execution Instability</a></strong><br />
+  摘要：arXiv:2608.06503v1 Announce Type: new Abstract: Recurrent context compression controls context growth in long-horizon agents, but its behavioral effects remain poorly understood. In this preliminary empirical study, we show that compression can weaken the influence of recent interactions, increasing blocked actions, repeated exploration, and instability across runs. Motivated by these observations, we introduce TRACE, a verifier-guided framework that evaluates individual compaction events through paired closed-loop continuations from the same environment state and uses summary preferences to optimize a natural-language compression prompt while keeping all models frozen. Initial results on AppWorld show improvements over existing compression baselines in task performance, multi-run reliabil…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.06511">Unmasking Removal-Budget Confounding: A Matched Operating-Point Evaluation Framework for Adaptive Data Cleaning</a></strong><br />
+  摘要：arXiv:2608.06511v1 Announce Type: new Abstract: Adaptive data-cleaning methods replace manual filtering thresholds with data-driven partitions. However, changing the partition granularity, the number of groups used to segment samples by estimated corruption risk, can implicitly shift the decision boundary and alter the overall number of removed samples. This creates a bias known as removal-budget confounding, where apparent gains in metrics like precision or false-positive rate reflect a smaller removal budget rather than superior corruption discrimination. To address this evaluation bias, we introduce an operating-point-aware evaluation framework that evaluates methods using matched-budget and matched-recall controls alongside threshold-independent metrics (AUROC and AUPRC). We test this …</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.06512">Target-Weighted Neyman Allocation: Experimental Design for Heterogeneous Treatment Effects under Population Shift</a></strong><br />
+  摘要：arXiv:2608.06512v1 Announce Type: new Abstract: Randomized experiments are often run in one population to guide decisions in another. Allocating by experimental proportions wastes budget on groups that rarely appear in deployment, whereas allocating by deployment proportions under-samples groups that are hard to measure precisely. We propose \textbf{TWNA} (Target-Weighted Neyman Allocation), a two-stage stratified design that uses pilot estimates of group--arm outcome variances to allocate final-stage sample sizes and treatment probabilities for target-weighted group average treatment effect (GATE) precision. The oracle rule has a closed form and balances deployment importance with statistical difficulty; the plug-in rule recovers it as pilot variance estimates stabilize. We also extend TW…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.06516">CertBind from Multimodal Connectivity to Certifiable Retrieval Decisions</a></strong><br />
+  摘要：arXiv:2608.06516v1 Announce Type: new Abstract: Lightweight connectors make frozen multimodal encoders composable at the representation level. Deployment exposes a second problem at the level of task decisions. A connected route can expand cross-modal reach while changing an established native retrieval capability. We introduce CertBind, a multiscale theory of certifiable composition for frozen multimodal connector graphs. At the node scale, native anchors establish the exact task identification boundary under the stated chart model. At the edge scale, contract-aware conformal ranks provide graph-wide family-wise error control. At the path scale, an overlap-aware budget and clean calibration yield a finite-sample recovery radius under declared conditions. At the query scale, this radius yi…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.06520">Online Security Learning in Cooperative Multi-Agent Systems under Hidden Byzantine Attacks</a></strong><br />
+  摘要：arXiv:2608.06520v1 Announce Type: new Abstract: We study online cooperative control of a multi-agent system under Byzantine attacks. Namely, an unknown, fixed subset of agents are Byzantine comprised and can stealthily overwrite its own coordinates of the team's planned joint action after observing that plan. The learner observes planned actions, public rewards, and public states, but neither the overwrite nor the executed joint action. Our objective is security: to optimize the team performance against the worst overwrites and achieve the optimal security value. We first show that the attacker's information determines the geometry. An attacker that observes the planned action induces an exact $(s,a)$-rectangular robust Markov decision process (MDP) whose rows are convex hulls of overwrite…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.06545">Robust Average-Reward Markov Decision Processes: Minimax-Optimal Learning via Plug-in Reductions</a></strong><br />
+  摘要：arXiv:2608.06545v1 Announce Type: new Abstract: Distributionally robust Markov decision processes provide a principled framework for sequential decision making under model uncertainty. We study how many samples are necessary and sufficient to learn an $\varepsilon$-optimal robust policy under the average-reward criterion. A generative model provides samples from the nominal transition kernel, whereas policy performance is evaluated over $(s,a)$-rectangular total-variation uncertainty sets of radius at most $\sigma$. Let $H_0$ and $H_\sigma$ denote the nominal and robust optimal bias spans, respectively. We identify $\sigma H_0$ as the perturbation scale separating high- and low-tolerance regimes. Our matching upper and lower bounds show that, up to logarithmic factors, the minimax total sa…</p>
+</li>
+</ul>
+<h2>arXiv (cs.AI)</h2>
+<ul>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.06394">Towards Multi-Label Graph Foundation Models: from Single-Vector Representation Learning to Multi-Semantic Basis Learning</a></strong><br />
+  摘要：arXiv:2608.06394v1 Announce Type: new Abstract: Multi-label node classification is an important yet challenging task in graph learning, where nodes exhibit multiple semantics simultaneously. Existing methods for multi-label node classification can effectively model multiple labels, while only considering in-domain scenarios where the model needs to be trained and tested within the same graph domain, resulting in limited cross-domain generalization. Recently, Graph Foundation Models (GFMs) have emerged as a promising paradigm for learning transferable graph representations across diverse graph domains and downstream tasks. However, existing GFMs are built upon single-label assumption, where all nodes are arbitrarily regarded as containing only one class of semantic and embedded into a singl…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.06398">EntropyMoE: Entropy-Aware Sparse Expert Routing for Tokenizer-Free LLMs</a></strong><br />
+  摘要：arXiv:2608.06398v1 Announce Type: new Abstract: Recent byte-level large language models (LLMs) have made tokenizer-free modeling increasingly competitive by grouping bytes into dynamically sized patches. However, existing byte-patch architectures still apply the same dense feed-forward computation to every patch. This uniform computation cannot adapt model capacity to variations in patch semantics and granularity. We address this limitation with EntropyMoE, a Mixture-of-Experts (MoE) architecture designed for dynamic byte patches. EntropyMoE replaces the dense feed-forward modules in the global patch Transformer with Top-K expert layers. Each dynamic patch serves as the basic unit of expert routing, and its byte coverage determines its contribution to workload accounting. The router select…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.06400">Beyond Routing Weights: Faithful Response-Level Interpretation of Mixture-of-Experts Reward Models via Contribution Contrast</a></strong><br />
+  摘要：arXiv:2608.06400v1 Announce Type: new Abstract: Reward models are central to learning from human preferences, yet identifying what drives their predictions remains challenging. Recent sparse Mixture-of-Experts (MoE) reward models seek to improve interpretability by routing prompts to specialized experts and characterizing experts through examples with high routing weights. However, routing weights only reveal which prompts an expert $\textit{receives}$, not how it $\textit{judges}$ responses, providing only a partial account of expert behavior. We therefore propose $\textbf{Co}$ntribution-$\textbf{Co}$ntrast ($\textbf{CoCo}$) response-level interpretation, which faithfully characterizes experts' roles using chosen-rejected response pairs with the largest contribution contrasts, jointly cap…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.06402">Interpretable Unsupervised Community Detection with LLM-Symbolized Structured Processes</a></strong><br />
+  摘要：arXiv:2608.06402v1 Announce Type: new Abstract: Community detection is a fundamental task in graph analytics that aims to identify cohesive groups of entities with similar behaviors or interests. Classic objective-driven methods struggle with complex graph structures, while deep-learning approaches improve performance at the expense of interpretability and rely on labeled data and training. Large language models (LLMs), with strong reasoning capabilities and world knowledge, are promising for interpretable, label-free community detection. To leverage these strengths, we propose LUCID, an LLM-guided, interpretable, training-free, and unsupervised community detection method. Inspired by phase-transition kinetics in natural systems, where complex structures emerge through initialization, merg…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.06410">ADIAS: Automated Design of Interactive Agentic Systems</a></strong><br />
+  摘要：arXiv:2608.06410v1 Announce Type: new Abstract: Automated agent design improves agent harnesses through iterative revision, evaluation, and feedback summarization. Existing methods are largely candidate-centric: cross-round experience is organized around candidate agents, which leaves the repair progress implicit. This causes inefficient repair targeting, slow consolidation of partial progress, and propagation of ineffective interventions across rounds. Therefore, we formulate issue-centric agent optimization, in which repair progress is carried forward as an explicit persistent issue state to guide optimization, rather than re-derived from candidate history in each round. We instantiate the formulation in ADIAS, a framework for automated full-code agent design with two mechanisms. A persi…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.06411">Learning to Predict Middle-Layer Attention in MLLMs for Visual Token Prunin</a></strong><br />
+  摘要：arXiv:2608.06411v1 Announce Type: new Abstract: Multimodal large language models (MLLMs) achieve strong performance across diverse vision-language tasks, but their efficiency is limited by the cost of processing numerous visual tokens. Visual token pruning can reduce this cost, but requires accurate token importance estimates. Recent studies have demonstrated that text-to-vision attention from middle language model layers can effectively guide visual token pruning, typically using attention from a predefined middle layer to select the visual tokens to retain. Two problems therefore remain. First, our analysis shows that the layer whose attention is most responsive to the question varies substantially across samples, making a fixed layer suboptimal. Second, obtaining attention from the appr…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.06474">WebGrader: Training LLMs for Web Development with Self-Evolving Programmatic Grader</a></strong><br />
+  摘要：arXiv:2608.06474v1 Announce Type: new Abstract: Large language models increasingly generate complete websites from natural-language descriptions, and reinforcement learning has become a central approach to closing their remaining functional gap. This training regime is bottlenecked by reward design. Hand-authored browser scripts are executable yet costly to write for open-ended requirements, while VLM and GUI-agent graders scale but may issue verdicts before observing the decisive state. We propose WebGrader, a self-evolving programmatic grader that autonomously derives the required interaction flows from each website request, represents each flow as an executable Flow Contract, and uses its execution outcome as an RL reward. WebGrader materializes the generated project in a live browser, …</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.06501">Can MLLMs Decode the Creative Leap? Introducing C4 for Cross-Concept Understanding</a></strong><br />
+  摘要：arXiv:2608.06501v1 Announce Type: new Abstract: Creative capabilities of MLLMs matter in design, communication, education, and human--AI collaboration, yet remain difficult to evaluate because explicit targets and reward signals are scarce compared with accuracy-oriented tasks. Cross-concept understanding is a core cognitive capacity underlying receptive creativity. It enables a perceiver to recover intended meaning from non-obvious but meaningful conceptual relations. We operationalize item construction as cross-concept encoding and model inference as cross-concept decoding. We introduce C4, a cognition-inspired evaluation framework for Chengyu (Chinese idiom)-based Cross-Concept Creativity. Its encoding component maps target slots to imageable substitute concepts along bridge paths in a …</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.06530">KNOWPLAN: Knowledge-Driven AI Agents for Smart Degree Pathway Planning</a></strong><br />
+  摘要：arXiv:2608.06530v1 Announce Type: new Abstract: Planning a degree from official university sources requires solving two problems in order. The institution's curriculum must first be reconstructed from catalogs, departmental pages, JSON endpoints, and PDFs that share no schema, and only then can a student-specific path be optimized under prerequisite logic and overlapping requirement constraints. Coupling the two lets each failure mode hide the other, because a planner that drives its own crawling never learns facts its current plan does not need. We present KnowPlan, which enforces an extraction-first boundary and measures the interface between the stages rather than assuming it. CatalogBrowse explores with no access to any user profile. It scores legal actions by lower-confidence expected…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.06544">TaskSense: Focusing on What Matters in World Models</a></strong><br />
+  摘要：arXiv:2608.06544v1 Announce Type: new Abstract: World models for visual control typically learn compact latent states by reconstructing observations, implicitly encouraging representations to preserve information across the entire visual input. However, task-relevant content often occupies only a small fraction of the observation, while background clutter and distractors consume valuable representational capacity. This mismatch between visual reconstruction and control objectives biases latent representations to model task-irrelevant visual content, diluting learning signals for control-relevant features and severely degrading downstream performance under visual distractions. We introduce TaskSense, a task-centric world modeling framework that enforces task relevance before latent encoding…</p>
+</li>
+</ul>
+<h2>Lobsters</h2>
+<ul>
+<li>
+<p><strong><a href="https://lemire.me/blog/2026/08/09/profile-guided-optimization-in-go/">Profile-guided optimization in Go</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://fzakaria.com/2026/08/09/nixpkgs-multiverse-every-version-that-ever-existed">nixpkgs-multiverse: every version that ever existed</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://www.seangoedecke.com/i-got-an-email-about-resistance/">I got an email about resistance</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://blog.regehr.org/archives/1292">SQLite with a Fine-Toothed Comb (2016)</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://blog.waleedkhan.name/commit-message-test-plans/">Commit message test plans</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://www.ilmarilauhakangas.fi/irc_technology_news_from_the_first_half_of_2026/">IRC technology news from the first half of 2026</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://blog.terrygodier.com/2026/08/09/mea-culpa-dark-hours.html">Mea Culpa - Dark Hours</a></strong><br />
+  摘要：Vibecoded website plagiarizes existing free software program. Comments</p>
+</li>
+<li>
+<p><strong><a href="https://lobste.rs/s/he9j7y/i_think_vibecoding_tag_has_gotten_out_hand">I think the vibecoding tag has gotten out of hand</a></strong><br />
+  摘要：I was reading this post and noticed the vibecoding had been applied. I’m not sure if this was applied by the lobste.rs team or by the author, but after reading the post it’s pretty clear that the only vibecoding involved is mentioned in an appendix separate from the actual meat of the post, which was well written and the product of sole-human effort and care. This tag feels like a black mark on what are otherwise interesting posts and has the potential to filter out genuinely human content. In other words, I think the tag does not capture the nuances of actual LLM use and is perhaps being applied too broadly. edit: it now seems the tag has been removed on that post. I still feel this should be a point of discussion</p>
+</li>
+<li>
+<p><strong><a href="https://antonz.org/relying-on-go/">Relying on Go</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://kristoff.it/blog/source-code-availability/">Who Should Pay For Source Code Availability?</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://michael.stapelberg.ch/posts/2026-08-09-zsh-history-truncation-bug/">Tracking down a Zsh history data loss bug</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://lucas.dohmen.io/posts/2026/08/09/rails-is-done/">Rails is done</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://seg6.space/posts/phone-server/">my server is a phone now</a></strong><br />
+  摘要：Comments</p>
+</li>
+</ul>
+<h2>Hacker News</h2>
+<ul>
+<li>
+<p><strong><a href="https://www.youtube.com/watch?v=-xbzGngfQEw">Linus Torvalds Explains What Makes Linux So Fast [video]</a></strong><br />
+  摘要：Linus Torvalds Explains What Makes Linux So Fast [video]</p>
+</li>
+<li>
+<p><strong><a href="https://news.ycombinator.com/item?id=49232554">Ask HN: Is there a mobile operating system with (wasi) container support?</a></strong><br />
+  摘要：Ask HN: Is there a mobile operating system with (wasi) container support?</p>
+</li>
+<li>
+<p><strong><a href="https://news.ycombinator.com/item?id=49232136">The Systemic Collapse of the AI Industry: Ideology, Hardware, and CapEx Crisis</a></strong><br />
+  摘要：The Systemic Collapse of the AI Industry: A Crisis of Ideology, Hardware, Finance, and Ethics The Ideological Illusion Silicon Valley has sold humanity a marketing simulacrum under the guise of &quot;Artificial Intelligence.&quot; We were promised a holy salvation, but instead, we received a fragmented, distributed network of colossal servers burning through other people&#x27;s mathematical code. This mass self-deception forces society to accept a technology that lacks agency, cares nothing for ecology, and masquerades as a manageable deity while acting as a gluttonous, blind idol. The $1.1 Trillion Financial Black Hole Big Tech (Amazon, Alphabet, Microsoft, Meta) has triggered a catastrophic investment cycle, with cumulative capital expenditures (CapEx) exceeding $1.1 trillion since 2023,…</p>
+</li>
+<li>
+<p><strong><a href="https://archiveos.org/sls/">Softlanding Linux System – ArchiveOS</a></strong><br />
+  摘要：Softlanding Linux System – ArchiveOS</p>
+</li>
+<li>
+<p><strong><a href="https://github.com/adityatelange/quickshare-cli-py">Show HN: A Minimal Python CLI Implementation of Quick Share for Linux</a></strong><br />
+  摘要：A minimal, dependency-light Python CLI for Google Quick Share (formerly Nearby Share) on Linux: send and receive. Run it on a laptop or desktop with no Bluetooth adapter, and Android phones on the same network can send files to it, or receive files from it, the same way they would with another Android device or a ChromeOS&#x2F;Windows machine.</p>
+</li>
+<li>
+<p><strong><a href="https://github.com/Skforge2026/k3i-core">K3I-Core – Low-level Linux kernel isolation and hardware-level veto switch</a></strong><br />
+  摘要：K3I-Core – Low-level Linux kernel isolation and hardware-level veto switch</p>
+</li>
+<li>
+<p><strong><a href="https://itsfoss.com/news/illinois-age-verification-bill/">Illinois just told every operating system to start reporting your kid's age</a></strong><br />
+  摘要：Illinois just told every operating system to start reporting your kid's age</p>
+</li>
+</ul>
+<h2>LWN.net</h2>
+<ul>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1087961/">Kernel prepatch 7.2-rc7</a></strong><br />
+  摘要：The 7.2-rc7 kernel prepatch is out for testing. It is still bigger than Linus would like, but he said nonetheless: " I don't currently see any value in delaying the 7.2 release, so I would expect that to happen next weekend unless something really bad pops up. "</p>
+</li>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1087949/">Four weekend stable kernel updates</a></strong><br />
+  摘要：The 7.1.8 , 6.18.44 , 6.12.103 , and 6.6.151 stable kernels have been released; each contains a fair number of important fixes.</p>
+</li>
+</ul>
+<h2>Linux Weekly News (RSS)</h2>
+<ul>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1087961/">Kernel prepatch 7.2-rc7</a></strong><br />
+  摘要：The 7.2-rc7 kernel prepatch is out for testing. It is still bigger than Linus would like, but he said nonetheless: " I don't currently see any value in delaying the 7.2 release, so I would expect that to happen next weekend unless something really bad pops up. "</p>
+</li>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1087949/">Four weekend stable kernel updates</a></strong><br />
+  摘要：The 7.1.8 , 6.18.44 , 6.12.103 , and 6.6.151 stable kernels have been released; each contains a fair number of important fixes.</p>
+</li>
+</ul>
+<h2>Phoronix</h2>
+<ul>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Linux-7.2-rc7-Released">Linux 7.2-rc7 Released Following Another Exhausting AI-Driven Week</a></strong><br />
+  摘要：Linux 7.2-rc7 is now available for testing as we close in on the official Linux 7.2 release hopefully next weekend...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/CachyOS-August-2026">CachyOS August 2026 Release Preps For Upcoming Server Edition</a></strong><br />
+  摘要：CachyOS is out with its latest media refresh of the year. Beyond the usual desktop improvements for the performance-optimized CachyOS, they continue working toward the upcoming CachyOS Server Edition...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Qualcomm-Kuno-SoC-Linux">Qualcomm Posts Linux Patches For Kuno SoC Support: Cortex-A7 Platform In 2026</a></strong><br />
+  摘要：Qualcomm engineers posted a set of 15 patches today for the Linux kernel to enable the Qualcomm Kuno SoC support and their reference development platform...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Intel-Large-GRF-Mode-Mesa-26.3">Mesa 26.3 Intel Driver Code Enables Large GRF Mode For Newer GPUs</a></strong><br />
+  摘要：The Intel graphics compiler code in Mesa 26.3-devel has now enabled the Large GRF mode for Alchemist/DG2 and Battlemage/Xe2 graphics and VRT for Xe3 graphics...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Dell-Latitude-7320-Linux-Webcam">Dell Latitude 7320 2-in-1 Seeing Web Camera Support On Linux After Five Years</a></strong><br />
+  摘要：Launched back in 2021 was the Dell Latitude 7320 2-in-1 business laptop/tablet powered by the at-the-time impressive Intel 11th Gen Core "Tiger Lake" processors. Remaining elusive until now has been the web cameras actually working on Linux, but patches posted this weekend finally are cracking that mystery at least for the user-facing web cam...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/FreeBSD-14.5-Beta-1">FreeBSD 14.5 Beta 1 Released With Various Backports, Security Fixes</a></strong><br />
+  摘要：For those still on the FreeBSD 14 N-1 stable series rather than the latest FreeBSD 15 series, FreeBSD 14.5 is working toward release to deliver various security fixes and backports...</p>
+</li>
+</ul>
+<h2>Kernel.org</h2>
+<ul>
+<li>
+<p><strong><a href="https://www.kernel.org/">7.2-rc7: mainline</a></strong><br />
+  摘要：Version: 7.2-rc7 (mainline) Released: 2026-08-09 Source: linux-7.2-rc7.tar.gz Patch: full ( incremental )</p>
+</li>
+<li>
+<p><strong><a href="https://www.kernel.org/">7.1.8: stable</a></strong><br />
+  摘要：Version: 7.1.8 (stable) Released: 2026-08-09 Source: linux-7.1.8.tar.xz PGP Signature: linux-7.1.8.tar.sign Patch: full ( incremental ) ChangeLog: ChangeLog-7.1.8</p>
+</li>
+<li>
+<p><strong><a href="https://www.kernel.org/">6.18.44: longterm</a></strong><br />
+  摘要：Version: 6.18.44 (longterm) Released: 2026-08-09 Source: linux-6.18.44.tar.xz PGP Signature: linux-6.18.44.tar.sign Patch: full ( incremental ) ChangeLog: ChangeLog-6.18.44</p>
+</li>
+<li>
+<p><strong><a href="https://www.kernel.org/">6.12.103: longterm</a></strong><br />
+  摘要：Version: 6.12.103 (longterm) Released: 2026-08-09 Source: linux-6.12.103.tar.xz PGP Signature: linux-6.12.103.tar.sign Patch: full ( incremental ) ChangeLog: ChangeLog-6.12.103</p>
+</li>
+<li>
+<p><strong><a href="https://www.kernel.org/">6.6.151: longterm</a></strong><br />
+  摘要：Version: 6.6.151 (longterm) Released: 2026-08-09 Source: linux-6.6.151.tar.xz PGP Signature: linux-6.6.151.tar.sign Patch: full ( incremental ) ChangeLog: ChangeLog-6.6.151</p>
+</li>
+<li>
+<p><strong><a href="https://www.kernel.org/">next-20260807: linux-next</a></strong><br />
+  摘要：Version: next-20260807 (linux-next) Released: 2026-08-07</p>
+</li>
+<li>
+<p><strong><a href="https://www.kernel.org/">6.1.182: longterm</a></strong><br />
+  摘要：Version: 6.1.182 (longterm) Released: 2026-08-07 Source: linux-6.1.182.tar.xz PGP Signature: linux-6.1.182.tar.sign Patch: full ( incremental ) ChangeLog: ChangeLog-6.1.182</p>
+</li>
+<li>
+<p><strong><a href="https://www.kernel.org/">5.15.215: longterm</a></strong><br />
+  摘要：Version: 5.15.215 (longterm) Released: 2026-08-07 Source: linux-5.15.215.tar.xz PGP Signature: linux-5.15.215.tar.sign Patch: full ( incremental ) ChangeLog: ChangeLog-5.15.215</p>
+</li>
+<li>
+<p><strong><a href="https://www.kernel.org/">5.10.264: longterm</a></strong><br />
+  摘要：Version: 5.10.264 (longterm) Released: 2026-08-07 Source: linux-5.10.264.tar.xz PGP Signature: linux-5.10.264.tar.sign Patch: full ( incremental ) ChangeLog: ChangeLog-5.10.264</p>
+</li>
+</ul>
+<h2>The New Stack</h2>
+<ul>
+<li>
+<p><strong><a href="https://thenewstack.io/real-cost-diy-platform/">Platform Engineering ROI: What it costs to build your own platform</a></strong><br />
+  摘要：What it actually costs to build your own internal developer platform over five years, and why most “we’ll just build The post Platform Engineering ROI: What it costs to build your own platform appeared first on The New Stack .</p>
+</li>
+<li>
+<p><strong><a href="https://thenewstack.io/evaluating-coding-agents-framework/">Coding agents can be evaluated. We just have to evaluate the work.</a></strong><br />
+  摘要：I recently argued with a software factory provider, whose position was that coding agents cannot be evaluated. Their reasoning was The post Coding agents can be evaluated. We just have to evaluate the work. appeared first on The New Stack .</p>
+</li>
+<li>
+<p><strong><a href="https://thenewstack.io/ai-productivity-measurement-gap/">AI coding got faster. Why didn’t engineering?</a></strong><br />
+  摘要：AI is great at making individuals faster, but the surrounding systems are then slowing everything right back down. This result The post AI coding got faster. Why didn’t engineering? appeared first on The New Stack .</p>
+</li>
+</ul>
+<h2>Ars Technica</h2>
+<ul>
+<li><strong><a href="https://arstechnica.com/science/2026/08/mount-toba-eruption-doesnt-seem-like-it-could-nearly-kill-our-species/">Mount Toba eruption doesn't seem like it could nearly kill our species</a></strong><br />
+  摘要：The massive Toba eruption seems to have had little climate impact.</li>
+</ul>
+<h2>CNCF Blog</h2>
+<ul>
+<li>
+<p><strong><a href="https://www.cncf.io/blog/2026/08/03/kubeflow-sdk-evolution-one-million-downloads-and-counting/">Kubeflow SDK evolution- One million downloads and counting</a></strong><br />
+  摘要：The unified kubeflow-sdk has officially crossed 1 million downloads on PyPI! This milestone reflects the rapid adoption of this streamlined interface. In this post, we celebrate this community milestone and highlight the core concepts driving the...</p>
+</li>
+<li>
+<p><strong><a href="https://www.cncf.io/blog/2026/08/03/cortex-completes-ostif-security-audit/">Cortex completes OSTIF security audit</a></strong><br />
+  摘要：The Open Source Technology Improvement Fund is proud to share the results of our security audit of Cortex. Cortex functions as a long-term, multi-tenant scalable open source storage for Prometheus and OpenTelemetry. Thanks to Quarkslab and...</p>
+</li>
+</ul>
+<h2>Kubernetes Blog</h2>
+<ul>
+<li><strong><a href="https://kubernetes.io/blog/2026/08/03/gateway-api-v1-6-release/">Gateway API v1.6: TCPRoute and UDPRoute Graduate to Standard</a></strong><br />
+  摘要：The Kubernetes SIG Network community is thrilled to share the release of Gateway API v1.6.0 , which was released on June 30th of this year! Gateway API has become the standard for modern, role-oriented, and expressive service networking in Kubernetes. In previous releases, Gateway API established a production-grade foundation for HTTP and TLS layer 7 traffic. With version 1.6.0, Gateway API takes a major step forward by expanding standard layer 4 protocol routing and introducing cleaner API boundaries for experimental innovation. Here is a quick summary of what's new in Gateway API v1.6.0: TCPRoute and UDPRoute Graduate to Standard : Raw L4 TCP and UDP traffic routing reach GA stability in the v1 API version. Experimental API Group Separation : Experimental resources transition to a distin…</li>
+</ul>
+<hr /></div>
+  </main>
+</body>
+</html>
