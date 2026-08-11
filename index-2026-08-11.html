@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OS 领域每日洞察 - 2026-08-11</title>
+  <style>
+    :root {
+      --bg: #f6f4f0;
+      --bg-bar: #ebe8e3;
+      --bg-card: #fffefb;
+      --bg-card-hover: #f5f3ef;
+      --text: #2d2a26;
+      --text-muted: #5c5852;
+      --text-dim: #7a756e;
+      --accent: #5a7a9e;
+      --border: #ddd9d2;
+      --radius: 10px;
+      --font: "Segoe UI", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      font-size: 15px;
+    }
+
+    /* 门户顶栏 */
+    .masthead {
+      background: var(--bg-bar);
+      border-bottom: 1px solid var(--border);
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 0;
+    }
+    .masthead-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .masthead h1 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin: 0;
+      letter-spacing: -0.02em;
+      color: var(--text);
+    }
+    .masthead .meta {
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+    }
+
+    /* 主内容区：多栏门户布局 */
+    .main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 3rem;
+    }
+
+    /* 板块：每个 h2 为一个频道块 */
+    .content .section {
+      margin-bottom: 2.5rem;
+    }
+    .content h2 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+      margin: 0 0 1rem;
+      padding: 0.6rem 1rem;
+      background: var(--bg-bar);
+      border-radius: var(--radius);
+      border-left: 4px solid var(--accent);
+    }
+    .content h2:first-child { margin-top: 0; }
+
+    .content h2:has(+ h3) {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      border-left-color: var(--text-dim);
+    }
+
+    /* 板块内卡片网格（每个 h2 后的 ul） */
+    .content h2 + ul {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1rem;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .content h2 + ul li {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.15rem 1.2rem;
+      transition: background .15s, border-color .15s;
+    }
+    .content h2 + ul li:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--text-dim);
+    }
+    .content h2 + ul li strong {
+      display: block;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+      line-height: 1.4;
+    }
+    .content h2 + ul li p {
+      margin: 0 0 0.5rem;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.58;
+    }
+    .content h2 + ul li p:last-of-type { margin-bottom: 0; }
+    .content h2 + ul li a[href^="http"] {
+      font-size: 0.8125rem;
+      color: var(--accent);
+    }
+    .content h2 + ul li a[href^="http"]:hover { text-decoration: underline; }
+
+    .content .ref-section {
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+    .content h2 + h3 { margin-top: 1.25rem; }
+    .content h3 {
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--text-dim);
+      margin: 1rem 0 0.4rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .content h3 + ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 0.25rem;
+    }
+    .content h3 + ul li {
+      background: transparent;
+      border: none;
+      padding: 0.2rem 0;
+      font-size: 0.8125rem;
+    }
+    .content h3 + ul li strong { font-size: inherit; margin-bottom: 0; }
+    .content h3 + ul li a { color: var(--accent); }
+    .content h3 + ul li a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <header class="masthead">
+    <div class="masthead-inner">
+      <h1>OS 领域每日洞察 - 2026-08-11</h1>
+      <span class="meta">2026-08-11 04:00 UTC</span>
+    </div>
+  </header>
+  <main class="main">
+    <div class="content"><h1>OS 领域每日洞察 - 2026-08-11</h1>
+<p>（Gemini 未可用时，以下为按来源整理的条目，含<strong>新闻摘要</strong>与链接；摘要可能为原文语言。）</p>
+<h2>arXiv (cs.OS)</h2>
+<ul>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.07966">Velosiraptor: Code Synthesis for Memory Translation</a></strong><br />
+  摘要：arXiv:2608.07966v1 Announce Type: new Abstract: Security is among the top concerns of operating system (OS) developers. A secure runtime environment relies on the OS to correctly configure the memory hardware on which it runs. This is mission-critical as it provides essential security-relevant features and abstractions that ensure the integrity and isolation of untrusted applications running alongside each other. Configuring a platform's memory hardware is not a one-off effort as designers constantly develop new mechanisms for translation and protection with different features and means of configuration. Adapting the OS code to the new hardware is not only a manual, repetitive and time consuming task, it may also introduce subtle, but security critical bugs that break security and isolatio…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2607.02501">Embodied.cpp: A Portable Inference Runtime of Embodied AI Models on Heterogeneous Robots</a></strong><br />
+  摘要：arXiv:2607.02501v3 Announce Type: replace-cross Abstract: Embodied AI models now span vision-language-action (VLA) models and world-action models (WAMs), but practical deployment remains fragmented across model-specific Python stacks, backend assumptions, and robot-side glue code, especially on heterogeneous edge devices. Existing inference runtimes are designed mainly for request-response serving and therefore do not satisfy the runtime contract of embodied deployment: multi-rate execution inside closed-loop control, latency-first batch-1 inference on heterogeneous hardware, and extensible embodied interfaces beyond fixed token I/O. We present Embodied$.$cpp, a portable C++ inference runtime for embodied models. Based on an architectural analysis of representative VLA models and WAMs, Emb…</p>
+</li>
+</ul>
+<h2>arXiv (cs.LG)</h2>
+<ul>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.07471">Application of Artificial Intelligence for Fraudulent Banking Operations Recognition</a></strong><br />
+  摘要：arXiv:2608.07471v1 Announce Type: new Abstract: This study considers the task of applying artificial intelligence to recognize bank fraud. In recent years, due to the COVID19 pandemic, bank fraud has become even more common due to the massive transition of many operations to online platforms and the creation of many charitable funds that criminals can use to deceive users. The present work focuses on machine learning algorithms as a tool well suited for analyzing and recognizing online banking transactions. The study`s scientific novelty is the development of machine learning models for identifying fraudulent banking transactions and techniques for preprocessing bank data for further comparison and selection of the best results. This paper also details various methods for improving detecti…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.07472">Data-Driven Fire-Zone Segmentation for Improved Short-Term Wildfire Prediction</a></strong><br />
+  摘要：arXiv:2608.07472v1 Announce Type: new Abstract: Wildfire prediction models typically discretize study areas into uniform grids, ignoring the heterogeneous spatial distribution of ignitions. We challenge this paradigm by showing that how data is discretized matters more than which model is used. We propose an unsupervised fire-zone segmentation algorithm combining watershed detection with K-means clustering to define prediction units directly from historical fire patterns. Experiments across six French departments and six forecasting models show that fire-zone segmentation consistently outperforms grid-based approaches, with mean IoU improvements of +3--6% depending on spatial scale. The method is computationally lightweight (&lt;10s per configuration) and fully parallelizable. Our results dem…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.07535">Evolving Safety Landscape of Multi-modal Large Language Models: A Survey of Emerging Threats and Safeguards</a></strong><br />
+  摘要：arXiv:2608.07535v1 Announce Type: new Abstract: Multi-modal large language models (MLLMs) integrate heterogeneous modalities through modality alignment and fusion, enabling stronger understanding and reasoning. However, this architectural shift reshapes the safety landscape of machine learning. Increased model complexity and cross-modal interactions give rise to novel threats, including compromised modality integration, modality misalignment, and fused safety risks, reflecting shifts in threat modeling beyond uni-modal assumptions. These shifts, in turn, impose new constraints on safety solutions not captured by existing frameworks rooted in uni-modal learning. Motivated by these challenges, this survey provides a systematic analysis of the evolving safety landscape of MLLMs. We first prop…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.07630">Tracing sources of epistemic uncertainty in deep learning predictions: homo- and hetero-scedastic linearized estimators</a></strong><br />
+  摘要：arXiv:2608.07630v1 Announce Type: new Abstract: We adapt two classical statistical estimators for quantifying uncertainty to modern deep learning, in order to provide clearer insights into uncertainty attributable to two sources : aleatoric uncertainty, or locally scarce data. Our approach leverages recent advances in approximate Fisher Information Matrices, to enable scaling to actual architectures. Experimental results demonstrate how each test points is differentially impacted by both sources, highlighting the practical utility of our estimators in improving the robustness of real-world applications.</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.07639">SkillConsist: Detecting Inconsistencies in Agent Skills via Bidirectional Graph Alignment</a></strong><br />
+  摘要：arXiv:2608.07639v1 Announce Type: new Abstract: Agent Skills provide reusable capabilities to LLM agents. Agent Skill inconsistencies can expose undisclosed dangerous behavior or cause wrong Skill selection. Recent Agent Skill research has increasingly examined Agent Skill consistency detection. Existing methods evaluate behaviors or security-property graphs against predefined categories or declared scopes. More recently, PL-HCL uses an LLM-based model to learn consistency across metadata, instructions, and resources. However, declaration and implementation behavior can be mixed across text and code, and a concise declaration can correspond to multiple connected implementation steps. We present SkillConsist to address both challenges. An LLM separates declaration and implementation content…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.07681">PhysAttNet: Enhancing Predictive Performance in Industrial and Astrophysical Time Series via Physics-Informed Attention</a></strong><br />
+  摘要：arXiv:2608.07681v1 Announce Type: new Abstract: Accurate and robust time series forecasting is essential in many applications involving physical processes, such as manufacturing monitoring and astrophysical event detection. In these settings, predictive models must remain reliable under noise, variability, and measurement uncertainty while capturing temporally localized structures corresponding to physically meaningful events. Convolutional neural networks (CNNs) are widely used for such tasks due to their computational efficiency and strong representational capacity. However, their learned temporal representations often exhibit unstable or physically inconsistent attention patterns, reducing robustness, generalization, and interpretability. This paper introduces PhysAttNet, a physics-info…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.07719">CODS: Iterative Bellman-Residual Data Selection for Reusable Offline Reinforcement Learning</a></strong><br />
+  摘要：arXiv:2608.07719v1 Announce Type: new Abstract: Offline reinforcement learning repeatedly trains policies from a fixed transition pool, making redundant data costly across seeds and hyperparameters, while naive subsampling can remove rare transitions needed for long-horizon credit assignment. We introduce CODS, a critic-guided selector that alternates between fitting an algorithm-matched critic and acquiring high-residual transitions before freezing a reusable subset. Unlike prioritized replay, CODS produces a static artifact; unlike one-shot residual selection, it refreshes scores as the critic changes. At a 10\% budget, CODS retains 96.6\% of eligible-pool performance across 20 valid D4RL task--algorithm cells. It exceeds ReDOR and OPER on 19/20 cells and every other subset baseline on 2…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.07722">Neural Operators for Immersed-Boundary Soft Swimmers Locomotion</a></strong><br />
+  摘要：arXiv:2608.07722v1 Announce Type: new Abstract: High-fidelity immersed-boundary simulation resolves the coupled motion of a deforming swimmer and its surrounding flow, but the resulting cost limits repeated evaluations for engineering design, parameter studies, and control. We develop neural-operator surrogates for temporal prediction of the hydrodynamic fields generated by planar and volumetric eel swimmers. The surrogates are trained on regular-grid fields exported from adaptive fluid--structure simulations and are conditioned on swimmer geometry and Reynolds number. The planar model jointly predicts two velocity components, scalar vorticity, and pressure. On five held-out high-Reynolds-number trajectories, its full-domain global relative L^2 error is 3.51 %. The volumetric formulation u…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.07725">Finite Constant Frontiers and Auditable Regret Certificates for Average-Reward Reinforcement Learning</a></strong><br />
+  摘要：arXiv:2608.07725v1 Announce Type: new Abstract: Average-reward reinforcement-learning regret is known up to logarithmic factors, but the numerical content of published guarantees is difficult to compare because probability mode, structural parameter, logarithmic normalization, prior information, and planning assumptions differ. We introduce a constant-aware comparison protocol and derive an explicit finite lower certificate for communicating MDPs. The construction is a binary tree of two-state blocks; its proof uses exact trajectory-level Bernoulli KL divergence and keeps action budget, diameter, occupancy, navigation cost, and terminal bias explicit. A common closed-form envelope improves the published coefficient $0.015$ across a finite frontier: $0.0200$ in a moderate regime and up to $…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.07746">LUCID: Latent-Skill Unified Control via Imagined Dynamics for Long-Horizon Humanoid Loco-Manipulation</a></strong><br />
+  摘要：arXiv:2608.07746v1 Announce Type: new Abstract: Long-horizon humanoid loco-manipulation requires composing versatile whole-body skills and reliable high-level decision making. Existing methods often coordinate pretrained skills with scripted planners, finite-state machines or task-specific model-free policies, restricting their ability to handle complex task sequences. To address this limitation, we propose \textbf{LUCID}, a hierarchical model-based reinforcement learning framework that plans over reusable skills through imagined rollouts of a learned dynamics model. LUCID first trains a structured latent-conditioned low-level policy via adversarial imitation and then freezes it while jointly learning a high-level policy and macro-dynamics world model. The world model predicts the temporal…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.07770">From Benchmark Performance to Tool Deployment: Human-in-the-Loop Anomaly Detection</a></strong><br />
+  摘要：arXiv:2608.07770v1 Announce Type: new Abstract: Automated anomaly detection methods often report strong performance on curated academic benchmarks, but their behavior under real-world industrial conditions is less clear. In this work, we evaluate 19 unsupervised anomaly detection models on the BowTie dataset, a challenging manufacturing dataset with reflective surfaces, subtle defects, and profile-specific variation. In contrast to benchmark results, we observe that model performance is less stable than typically reported on standard benchmarks such as MVTec AD, highly sensitive to preprocessing, and inconsistent across conditions, with no single approach emerging as uniformly robust; a consensus audit further indicates that nominal-data quality affects deployment. Motivated by these findi…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.07772">The Sample Complexity of Policy Learning with Mu-Resets</a></strong><br />
+  摘要：arXiv:2608.07772v1 Announce Type: new Abstract: We study policy-based reinforcement learning under the $\mu$-resets interaction protocol of Kakade and Langford [KL02]. This interaction protocol enables the learner to sample trajectories from a given exploratory reset distribution $\mu$, in addition to the starting distribution. We resolve the question raised by [KLS25] on the role of policy realizability for the sample complexity of this problem. Critically, the dependence on horizon $H$ is governed by the notion of coverage assumed of the reset distribution. Under bounded all-policy concentrability, we show a $\exp(\Omega(H))$ sample complexity lower bound; with bounded pushforward concentrability, we show the dependence on horizon is tightly characterized as $\exp(\Theta(\sqrt H))$.</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.07814">Shape Mutating Expert Compression:LorExperts and BTExperts</a></strong><br />
+  摘要：arXiv:2608.07814v1 Announce Type: new Abstract: Mixture-of-Experts (MoE) language models deliver high capacity at low per-token compute, but deploying them cheaply requires compressing their many expert weight matrices. Expert pruning (e.g., REAP) and merging reduce cost but sacrifice accuracy and require retraining the router; low-rank delta decomposition of experts (e.g., D^2-MoE) preserves all experts and the router, but degrades sharply as the expert count grows because a single shared component cannot approximate many near-orthogonal experts. Because MoE expert weights are near-orthogonal, a single shared component (as in prior delta decomposition) scales poorly with the expert count; we show that experts nonetheless organize into functional co-activation communities that are decouple…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.07827">From token probabilities to calibrated confidence: An empirical study of mathematical question answering</a></strong><br />
+  摘要：arXiv:2608.07827v1 Announce Type: new Abstract: Confidence estimation for large language models (LLMs) aims to estimate the probability that a generated answer is correct, while calibration aligns these estimates with empirical accuracy. Prior work has shown that token probabilities are often overconfident, we investigate whether these readily available signals can nevertheless provide well-calibrated confidence estimation for mathematical question answering. We compare single-pass estimators, which reuse token probabilities from the original generation, with multi-pass estimators, which obtain additional confidence signals through verification or stochastic forward passes. While individual token probabilities can be highly saturated, we find that aggregating token probabilities over the f…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.07851">TEMPER: Tensorized Efficient Manifold-constrained Parameterization for Expressive Residual Routing</a></strong><br />
+  摘要：arXiv:2608.07851v1 Announce Type: new Abstract: Residual connections rely on a static residual pathway, and are essential for training deep neural networks. Hyper-connections (HC) increase the expressivity of residual routing by incorporating multiple residual streams and learning dynamic information flow, while manifold-constrained (mHC) variants stabilize training through doubly stochastic residual mixing. However, a generator-level bottleneck remains in existing methods: they use dense, unstructured generators for pre-branch aggregation, residual mixing, and post-branch redistribution, which results in parameter count growing rapidly with the number of streams. To address this issue, we propose \underline{\textbf{T}}ensorized \underline{\textbf{E}}fficient \underline{\textbf{M}}anifold-…</p>
+</li>
+</ul>
+<h2>arXiv (cs.AI)</h2>
+<ul>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.07473">Towards an Argumentative Foundation for Evaluative AI</a></strong><br />
+  摘要：arXiv:2608.07473v1 Announce Type: new Abstract: Evaluative AI (EAI) has been recently proposed as a way to support human decision-making, not by producing a single recommendation, but by presenting competing hypotheses together with evidence for and against each. In this position paper, we advocate (computational) argumentation as a particularly suitable paradigm to provide a formal, computable foundation for forms of EAI that are explainable and contestable, setting the ground for a long-term research agenda towards distributed and human-centred EAI systems.</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.07474">Flow-by-Flow:Content-Judgment Bypass for Governing AI Output in High-Loss Domains</a></strong><br />
+  摘要：arXiv:2608.07474v1 Announce Type: new Abstract: Prior work showed that human-in-the-loop oversight becomes structurally untenable in high-loss domains when AI output velocity V exceeds human cognitive capacity C_max. The operative constraint, however, is not V alone but V x L, where L denotes per-item cognitive load. L consists of triage, judgment, and response, which respond asymmetrically to AI capability improvement. Triage cost does not decline as models become more capable, because semantic indeterminacy is inherent in general-purpose design. Response cost is invariant to accuracy improvements. Only judgment cost faces downward pressure, and this pressure often operates by inducing omission rather than genuine reduction. Capability improvement therefore restructures L rather than redu…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.07476">Determinization in Structure Theories: A Unified Framework via Closure, Comparability, and Joint Admissibility</a></strong><br />
+  摘要：arXiv:2608.07476v1 Announce Type: new Abstract: We develop a formal framework for constructing canonical interpretations from plural structure theories. A structure theory is a triple T = ({\Sigma}, A, I) consisting of a signature, axioms, and an inference policy, whose admissible interpretation family collects all globally consistent assignments of structural conclusions. We distinguish three levels of canonicalization: closure stabilization (per-seed convergence), global completion (seed-independent convergence), and determinization (a unique admissible interpretation). Non-determinism is classified into epistemic plurality (Type E) and structural plurality (Type S), with a refined Type S-strong subclass characterized by the absence of common upper bounds. Two canonicalization mechanisms…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.07480">Emotion in an active inference model of human driving</a></strong><br />
+  摘要：arXiv:2608.07480v1 Announce Type: new Abstract: Active inference has emerged as a principled framework for modeling adaptive behavior by balancing goal-directed action with uncertainty reduction. It has been successfully applied across biological and artificial systems, including recent work on human driving. However, existing active inference models of driving have yet to address an important determinant of behavior in traffic: affective state, which significantly influences decision-making. Prior work in non-traffic domains has explored active inference agents in which emotions are represented along the axes of valence and arousal in the circumplex model. However, this work has been limited to simplified settings with discrete state spaces. In this work, we propose an expanded formulatio…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.07524">Training Variable Long Sequences with Data-Centric Parallel</a></strong><br />
+  摘要：arXiv:2608.07524v1 Announce Type: new Abstract: Training deep learning models on variable long sequences poses significant computational challenges. Existing methods force a difficult trade-off between efficiency and ease-of-use. Simple approaches use static configurations that cause workload imbalance low efficiency, while complex methods introduces significant complexity and code change for new models. To break this trade-off, we introduce Data-Centric Parallel (DCP). Its core principle is to let the data itself drive the runtime. It achieves this by dynamically adjusting direct runtime settings (e.g., parallel size, gradient accumulation, recomputation) based on each batch's sequence length. Empirical results demonstrate that our method achieves up to a 2.88$\times$ speedup on 32 H200 G…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.07528">The Knowing-Saying Gap: When Probes See Errors that Confidence Misses</a></strong><br />
+  摘要：arXiv:2608.07528v1 Announce Type: new Abstract: Linear probes detect corrupted context in language models with near-perfect accuracy, yet this does not translate into reliable failure prediction. The result is a dissociation with direct implications for deployment monitoring. Across multi-hop arithmetic chains, probes that detect corruption turn out to be uninformative about final answer correctness; models forced into structured confidence formats collapse to two values with indistinguishable error rates; and probe persistence across hops fails to separate correct from incorrect outcomes, refuting our pre-registered "persistence beats peak" hypothesis. This pattern of knowing but not saying generalises across model families including reasoning models. As a real-time monitor, probe-based i…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.07530">NL2SHACL-Bench: A Benchmark Suite for Natural Language to SHACL Translation</a></strong><br />
+  摘要：arXiv:2608.07530v1 Announce Type: new Abstract: SHACL is a core technology for validating the conformance of RDF knowledge graphs (KGs). Yet, authoring SHACL shapes requires technical expertise that most domain experts lack. Translating natural language requirements into SHACL (NL2SHACL) would lower this barrier. However, there is no dedicated benchmark for NL2SHACL, and evaluating generated shapes requires methods beyond string comparison, as semantically equivalent shapes can differ in serialisation and structure. To tackle these challenges, we present NL2SHACL-Bench, a benchmark suite for natural language to SHACL translation. Using NL2SHACL-Bench, we evaluate four state-of-the-art large language models (LLMs) for this task. Our results show that current LLMs are highly capable of gener…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.07532">Dynamic Coalition Formation and Communication Pricing in Skill-Based Agentic AI Systems</a></strong><br />
+  摘要：arXiv:2608.07532v1 Announce Type: new Abstract: Modern agentic AI systems combine multiple large language model agents with heterogeneous skills, yet most architectures either fix communication in advance or allow full broadcast. Both can be inefficient because token cost, latency, redundancy, and error propagation increase with the number of active agents and communication links. We model agent selection and communication as a cooperative game with task-conditioned net utility $U(C\mid x)=V(C\mid x)-\sum_{i\in C}c_i$, separating coalition-level costs from agent activation costs. We propose a marginal-value activation rule and greedy router, extend the model to optimize communication edges with per-edge costs, and use estimated Shapley values to predict which agents are worth contacting be…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.07533">MetaSpace: Metamorphic Testing for Spatial Cognition in Embodied Agents</a></strong><br />
+  摘要：arXiv:2608.07533v1 Announce Type: new Abstract: An embodied agent is an intelligent entity that interacts with its environment through a physical body. Currently, the evaluation of embodied agents primarily relies on two paradigms: (1) manually annotated Visual Question Answering (VQA) pairs and (2) high-level task completion metrics, such as success in navigation or manipulation. The former is labor-intensive and subject to variability in annotation quality. The latter may obscure critical vulnerabilities, allowing agents to complete tasks through suboptimal means or safety violations, thereby concealing safety risks and inefficiencies. Given that spatial cognition is the cornerstone for executing embodied tasks, there is a pressing need to assess whether embodied agents possess robust sp…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.07538">When LLM Agents Negotiate: Private Information and Dynamic Bargaining in Supply Chains</a></strong><br />
+  摘要：arXiv:2608.07538v1 Announce Type: new Abstract: As LLM agents move from decision support to autonomous procurement, firms need to know whether delegated negotiators create value, divide it predictably, and avoid money-losing contracts. We study this in a canonical supply chain bargaining problem: a buyer with private demand information negotiates a quantity-payment contract with an uninformed seller. We benchmark nine LLMs from OpenAI, Google, and Alibaba against a validated Perfect Bayesian Equilibrium across 9,840 LLM-to-LLM negotiations. First, capability governs value creation. Agents agree in 98.9% of negotiations and capture 95.4% of first-best surplus undiscounted, but average 2.98 rounds against the benchmark's 1.25, and this delay erodes 21-34% of surplus. Capability also governs …</p>
+</li>
+</ul>
+<h2>Phoronix</h2>
+<ul>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/NVIDIA-Nova-Rust-Linux-7.3">Open-Source NVIDIA "Nova" Driver Sees More Functionality For Linux 7.3</a></strong><br />
+  摘要：Sent to DRM-Next this week was the DRM Rust core and driver changes targeting the upcoming Linux 7.3 merge window. There continues to be a lot of DRM core infrastructure work happening for Rust integration plus two leading Rust DRM drivers of Nova for open-source NVIDIA GPU support as the successor to Nouveau and then Tyr as the in-development Arm Mali driver...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Fedora-CoreOS-OOMD-zRAM-Swap">Fedora CoreOS To Enable systemd-oomd &amp; zRAM Swap By Default</a></strong><br />
+  摘要：Fedora's CoreOS as their container-optimized operating system will be moving to enable systemd-oomd by default with Fedora CoreOS 45. Additionally, swap on zRAM will be enabled by default too...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Linux-7.3-Yogafan-Driver">Five More Lenovo Laptops To Report Fan Sensors With Linux 7.3</a></strong><br />
+  摘要：In addition to more ASUS motherboards having working sensors with Linux 7.3, this next kernel version will also get several more Lenovo laptop models to be reporting their fan sensor information under Linux...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Linux-7.3-KCFI-Optimization">Linux 7.3 Bringing A KCFI Optimization To Benefit Older Intel CPUs</a></strong><br />
+  摘要：Expected to be merged during the upcoming Linux 7.3 merge window is a Kernel Control Flow Integrity (KCFI) improvement intended to benefit older Intel processors...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Qt-Edge-AI-Module-Coming">Qt Toolkit To Introduce Edge AI Submodule, Initially For Vision AI With Qt</a></strong><br />
+  摘要：The Qt Group has been working on various AI integrations for the Qt toolkit in recent times like a QML profiler skill for agentic development to help with performance profiling. They have also worked on Qt AI coding assistants and AI agents in the Qt Creator integrated development environment. Their latest AI use is now preparing to introduce a new module in the Qt toolkit itself for edge AI inferencing...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/review/intel-xeon-678x-windows-linux">Intel Xeon 678X Windows 11 vs. Ubuntu 26.04 Performance With The HP Z4 G6i</a></strong><br />
+  摘要：HP recently launched their Z4 G6i workstation that I have been testing out the past few weeks. The HP Z4 G6i is powered by Granite Rapids WS with the review unit specifically being powered by the Intel Xeon 678X. As the unit shipped with Microsoft Windows 11 Pro and this being the first time I've had my hands on Granite Rapids WS, I took the opportunity to run some Windows 11 vs. Ubuntu 26.04 LTS performance benchmarks to see how the operating system performance compares for this 48 core / 96 thread workstation processor.</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Linux-Mint-July-2026">Linux Mint Improves Kernel Management &amp; Setting System-Wide Environment Variables</a></strong><br />
+  摘要：Linux Mint is out today with their July 2026 status update that highlights all the improvements made to their distribution over the past month...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Meta-Muse-Glimmer">Meta Publishes Muse Glimmer As 30B Open Agentic Model</a></strong><br />
+  摘要：The Meta Superintelligence Labs announced this morning they have released Muse Glimmer as their next large language model featuring 30 billion parameters for always-on local agent workflows. Muse Glimmer features open-source model weights under an Apache 2.0 license...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Linux-WMB-SSE-Optimization">Minor Optimization Coming For AMD Athlon XP Era Systems Running Linux</a></strong><br />
+  摘要：A minor performance optimization is on the way to the Linux kernel for roughly two decade old CPUs that have SSE but lack SSE2. Among those CPUs to benefit are the AMD Athlon XP series, some early Sempron models, and some Intel Celeron and Pentium III models...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Apple-M1-Power-Savings-Linux-73">Apple M1 Series SoCs To See ~1 Watt Power Savings With Linux 7.3</a></strong><br />
+  摘要：In addition to Linux 7.3 slated to receive initial Apple M3 Pro / Max / Ultra SoC support, this next version of the Linux kernel is also set to bring some minor power savings for the Apple M1 series that remains the best supported Apple Silicon on Linux...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/SGI-GRU-Being-Removed">Old SGI Drivers Being Removed In Linux 7.3 Over Security Concerns</a></strong><br />
+  摘要：On top of various other Linux drivers for old hardware being removed due to noise generated by AI/LLM coding agents, there are more examples coming with Linux 7.3 as some old Silicon Graphics (SGI) drivers are being removed from the mainline Linux kernel over security concerns...</p>
+</li>
+</ul>
+<h2>Lobsters</h2>
+<ul>
+<li>
+<p><strong><a href="https://code.call-cc.org/releases/6.0.0/NEWS">Chicken Scheme 6.0 released</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://martinalderson.com/posts/watch-out-for-cache-read-costs/">Watch out for cache read costs</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://linebender.org/blog/hyperbezier/">The mathematical beauty of hyperbezier curves</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://claytonwramsey.com/blog/mvt/">We're not done with point clouds</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://lea.verou.me/blog/2026/dark-mode-toggles/">Dark mode toggles: two states are enough</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/security/2026/08/a-researcher-bought-noreply-net-companies-started-sending-him-secrets/">A researcher bought noreply.net. Companies started sending him secrets</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://github.com/jackyzha0/sunlit">a pure css implementation of some sunlight streaming in through the window</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://blog.yossarian.net/2026/08/10/github-actions-needs-oidc-audience-constraints">GitHub Actions needs OIDC audience constraints</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://www.djangoproject.com/weblog/2026/aug/10/annual-release-cycle/">Django is moving to an annual release cycle</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://lobste.rs/s/3qwloh/what_are_you_doing_this_week">What are you doing this week?</a></strong><br />
+  摘要：What are you doing this week? Feel free to share! Keep in mind it’s OK to do nothing at all, too.</p>
+</li>
+<li>
+<p><strong><a href="https://abhinavsarkar.net/posts/fast-haskell-scripts-on-github-actions/">Fast Haskell Scripts on GitHub Actions</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://blog.mozilla.org/en/firefox/firefox-containers-preview/">Firefox Containers Preview</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://ignorethecode.net/blog/2026/08/09/toggles_considered_harmful/">Toggles Considered Harmful</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://sebsite.pw/w/20260810-c89ambiguity.html">an ambiguity in c89 which will never be fixed</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://danluu.com/pl-tokens/">How do programming languages impact token efficiency and correctness?</a></strong><br />
+  摘要：Comments</p>
+</li>
+</ul>
+<h2>CNCF Blog</h2>
+<ul>
+<li>
+<p><strong><a href="https://www.cncf.io/blog/2026/08/10/learning-cloud-native-engineering-beyond-tutorials-through-lfx/">Learning Cloud-Native Engineering Beyond Tutorials Through LFX</a></strong><br />
+  摘要：I joined the LFX mentorship expecting to spend three months writing documentation. A few weeks later, I was deploying OpenTelemetry Collectors across AWS EC2 instances, debugging networking problems between machines, and trying to understand why a...</p>
+</li>
+<li>
+<p><strong><a href="https://www.cncf.io/announcements/2026/08/10/cncf-reveals-kubecon-cloudnativecon-north-america-2026-schedule-adds-new-ai-inference-agentic-track/">CNCF Reveals KubeCon + CloudNativeCon North America 2026 Schedule, Adds New AI Inference + Agentic Track</a></strong><br />
+  摘要：Flagship event returns November 9–12 with sessions on production AI, platform engineering and cloud native security Key Highlights SAN FRANCISCO, Aug. 7, 2026 – The Cloud Native Computing Foundation® (CNCF®), which builds sustainable ecosystems for cloud...</p>
+</li>
+<li>
+<p><strong><a href="https://www.cncf.io/blog/2026/08/04/you-cant-debug-what-you-cant-see-observability-for-ai-agents/">You can’t debug what you can’t see — Observability for AI Agents</a></strong><br />
+  摘要：This article reflects practical experience building and operating production AI agent systems. Traditional APM can’t tell you why your agent spent far more than usual asking the same question three times. We’ve been running AI agents...</p>
+</li>
+</ul>
+<h2>Ars Technica</h2>
+<ul>
+<li>
+<p><strong><a href="https://arstechnica.com/gaming/2026/08/ars-live-ross-scott-discusses-the-stop-killing-games-movement/">Ars Live: Ross Scott discusses the Stop Killing Games movement</a></strong><br />
+  摘要：Our discussion takes place live on August 11 at 3 pm ET.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/ai/2026/08/with-new-open-models-meta-pitches-another-reboot-of-its-struggling-ai-strategy/">With new open models, Meta pitches another reboot of its struggling AI strategy</a></strong><br />
+  摘要：Meta has been trailing competitors. Zuckerberg thinks he's found a way forward.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/health/2026/08/trump-signs-bonkers-order-that-cuts-vaccines-promotes-ones-that-dont-exist/">Trump signs bonkers order that cuts vaccines, promotes ones that don't exist</a></strong><br />
+  摘要：Trump falsely claimed the MMR vaccine is "quite lethal" and linked shots to autism.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/gadgets/2026/08/players-lose-access-to-aliens-fireteam-elite-on-nintendo-switch-without-refunds/">Developer Cold Iron Studios shuts down cloud version of $60 game with no refunds</a></strong><br />
+  摘要：A reminder of the perils of digital ownership.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/tech-policy/2026/08/amazon-funds-biggest-gas-power-plant-in-us-despite-climate-pledge/">Amazon backs power plant that may become top source of US climate pollution</a></strong><br />
+  摘要：Amazon announces first off-the-grid data center in race to reap AI profits.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/gadgets/2026/08/zuckerbergs-super-yacht-stood-by-while-stranded-boaters-looked-for-help/">Zuckerberg’s superyacht ignored emergency channel, failed to aid stranded boat</a></strong><br />
+  摘要：Zuckerberg’s superyacht and support ship were slow to heed Coast Guard call.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/cars/2026/08/has-ford-got-cheap-car-fever-allegedly-a-25k-crossover-is-on-the-way/">Has Ford got cheap car fever? A $25K crossover is supposedly on the way.</a></strong><br />
+  摘要：Ford dealers were told about the new Escape-sized model; one of them spilled the beans.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/health/2026/08/taylor-farms-recalls-jalapeno-products-for-salmonella-amid-cyclospora-outbreak/">Taylor Farms recalls jalapeño products for Salmonella amid Cyclospora outbreak</a></strong><br />
+  摘要：Recall of jalapeño products spans 26 states, major retailers, a variety of foods.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/gaming/2026/08/valve-slowly-expands-steamos-support-on-non-valve-hardware/">Valve slowly expands SteamOS support on non-Valve hardware</a></strong><br />
+  摘要：New update includes improvements for the Intel-based MSI Claw 8 EX AI+ among others.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/gadgets/2026/08/third-party-app-stores-are-rolling-out-in-google-play-but-theres-only-one-right-now/">Following Epic loss, Google has started hosting rival app stores in the Play Store</a></strong><br />
+  摘要：Aptoide has become the first app store distributed inside Google Play under a judge's order.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/space/2026/08/one-of-chinas-workhorse-rockets-just-exploded-in-flight/">One of China's workhorse rockets just exploded in flight</a></strong><br />
+  摘要：If the failure involved the YF-100 engine, there are broader concerns for China's space program.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/science/2026/08/dogs-can-tell-if-youre-scared-or-sad/">Dogs can tell if you're scared or sad</a></strong><br />
+  摘要：fMRI scans show happiness, fear, anger, and sadness have distinct brain activity patterns in doggy brains.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/cars/2026/08/2026-subaru-outback-limited-review-boxy-outside-almost-premium-inside/">2026 Subaru Outback review: Great interior, refined drive, divisive looks</a></strong><br />
+  摘要：The newest Outback sticks to the script; that's no bad thing if you like Outbacks.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/security/2026/08/a-researcher-bought-noreply-net-companies-started-sending-him-secrets/">A researcher bought noreply.net. Companies started sending him secrets.</a></strong><br />
+  摘要：Companies treat some email domains as digital trash cans, despite the risks.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/science/2026/08/peer-review-is-overwhelmed-can-it-survive-in-the-ai-era/">Peer review is overwhelmed—can it survive in the AI era?</a></strong><br />
+  摘要：As research and AI-assisted papers surge, volunteer reviewers struggle to keep up.</p>
+</li>
+</ul>
+<h2>Hacker News</h2>
+<ul>
+<li>
+<p><strong><a href="https://himmelblau-idm.org/">Himmelblau 4.0 release landing soon (Linux Entra ID and OIDC)</a></strong><br />
+  摘要：Himmelblau 4.0 release landing soon (Linux Entra ID and OIDC)</p>
+</li>
+<li>
+<p><strong><a href="https://huxleybarbee.substack.com/p/defense-in-depth-isnt-lego">Defense-in-Depth Isn't Lego: A Study in Linux Capabilities and Seccomps Filters</a></strong><br />
+  摘要：Defense-in-Depth Isn't Lego: A Study in Linux Capabilities and Seccomps Filters</p>
+</li>
+<li>
+<p><strong><a href="https://linuxstans.com/illinois-hb5511-operating-system-age-verification/">Illinois just passed a law that puts Linux on the hook for age verification</a></strong><br />
+  摘要：Illinois just passed a law that puts Linux on the hook for age verification</p>
+</li>
+<li>
+<p><strong><a href="https://techstrong.ai/articles/the-linux-foundation-has-formally-launched-the-tokenomics-foundation/">The Linux Foundation Has Formally Launched the Tokenomics Foundation</a></strong><br />
+  摘要：The Linux Foundation Has Formally Launched the Tokenomics Foundation</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Apple-M1-Power-Savings-Linux-73">Apple M1 Series SoCs to See ~1 Watt Power Savings with Linux 7.3</a></strong><br />
+  摘要：Apple M1 Series SoCs to See ~1 Watt Power Savings with Linux 7.3</p>
+</li>
+<li>
+<p><strong><a href="https://www.theregister.com/os-platforms/2026/08/10/linus-torvalds-says-ai-has-made-huge-linux-kernel-updates-the-new-normal/5285268">Linus Torvalds says AI has made Linux kernel updates the new normal</a></strong><br />
+  摘要：Linus Torvalds says AI has made Linux kernel updates the new normal</p>
+</li>
+<li>
+<p><strong><a href="https://opentelemetry.io/blog/2026/packaging-first-repo/">One-command OpenTelemetry setup on Linux hosts</a></strong><br />
+  摘要：One-command OpenTelemetry setup on Linux hosts</p>
+</li>
+<li>
+<p><strong><a href="https://github.com/erikwb/blueferry">Show HN: Blueferry, iMessage on Linux</a></strong><br />
+  摘要：Hey; Blueferry is an app that connects to your iPhone via Bluetooth to expose an iMessage bridge to your Linux desktop. It supports receiving and sending text-based messages, either 1:1 or in group threads. It requires no phone-side software or jailbreak - just Bluetooth pairing. It accomplishes this by using an undocumented? behavior where enabling ANCS via Bluetooth LE (via https:&#x2F;&#x2F;github.com&#x2F;pzmarzly&#x2F;ancs4linux &#x27;s technique) causes the phone to accept message capability requests over standard Bluetooth. ancs4linux indicate that they&#x27;ve had mixed success with different BT chipsets on the Linux side, though all of the machines I&#x27;ve been able to test it on have been able to negotiate the connection.</p>
+</li>
+</ul>
+<h2>The New Stack</h2>
+<ul>
+<li>
+<p><strong><a href="https://thenewstack.io/openai-gpt56-cyber-daybreak/">OpenAI built a model it doesn’t want most people to use</a></strong><br />
+  摘要：OpenAI on Monday released GPT-5.6 Cyber, a model trained for security work that general-purpose models routinely block. It&#8217;s now available The post OpenAI built a model it doesn&#8217;t want most people to use appeared first on The New Stack .</p>
+</li>
+<li>
+<p><strong><a href="https://thenewstack.io/meta-glimmer-distillation-agents/">Meta’s Muse Glimmer fits on a laptop</a></strong><br />
+  摘要：Meta released Muse Glimmer on Monday, a 30-billion-parameter open-weight model designed to run agentic workflows on local hardware. It&#8217;s available The post Meta&#8217;s Muse Glimmer fits on a laptop appeared first on The New Stack .</p>
+</li>
+<li>
+<p><strong><a href="https://thenewstack.io/accelerating-eks-image-pulls/">Pulling multi-gigabyte container images in seconds on Amazon EKS</a></strong><br />
+  摘要：When the image is the bottleneck: Machine learning changed what a container image looks like. A typical application ships in The post Pulling multi-gigabyte container images in seconds on Amazon EKS appeared first on The New Stack .</p>
+</li>
+<li>
+<p><strong><a href="https://thenewstack.io/meta-muse-claude-code/">Meta Muse Code vs. Fable 5: Meta Muse is cheaper, but at what cost?</a></strong><br />
+  摘要：Meta released Muse Code on August 5, its first AI coding agent, built on the new Muse Spark 1.2 model. The post Meta Muse Code vs. Fable 5: Meta Muse is cheaper, but at what cost? appeared first on The New Stack .</p>
+</li>
+<li>
+<p><strong><a href="https://thenewstack.io/developers-review-gpt-56-sol/">“It blows my mind”-“It has a tendency to overengineer things a little”: Developers react to road-testing OpenAI GPT‑5.6 Sol</a></strong><br />
+  摘要：OpenAI made its family of GPT-5.6 models available to its app and API users globally at the start of July.&#160; The post &#8220;It blows my mind”-“It has a tendency to overengineer things a little”: Developers react to road-testing OpenAI GPT‑5.6 Sol appeared first on The New Stack .</p>
+</li>
+<li>
+<p><strong><a href="https://thenewstack.io/deepseek-flash-pro-benchmark/">V4-Flash vs. V4-Pro: DeepSeek promised better and cheaper. It’s true,  but not how I expected.</a></strong><br />
+  摘要：DeepSeek, the Chinese AI lab that’s been undercutting OpenAI and Anthropic on price since it arrived, recently refreshed V4-Flash, moving The post V4-Flash vs. V4-Pro: DeepSeek promised better and cheaper. It&#8217;s true, but not how I expected. appeared first on The New Stack .</p>
+</li>
+</ul>
+<h2>LWN.net</h2>
+<ul>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1087069/">[$] Even more formal verification for BPF</a></strong><br />
+  摘要：BPF offers useful safety guarantees, but Kumar Kartikeya Dwivedi wants BPF programs to be even safer. At the 2026 Linux Storage, Filesystem, Memory-Management, and BPF Summit , he led a session ( slides ) discussing the possibility of adding domain-specific invariants to BPF programs. It was not a discussion intended to lead to the implementation of any particular kernel feature, but rather an overview of why additional formal verification might be needed, and how it could work with the existing BPF ecosystem.</p>
+</li>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1088059/">Django moves to an annual release cycle</a></strong><br />
+  摘要：The Django Python web-framework project has announced that it has accepted an annual release cycle proposal . This means that the project is moving from a somewhat complicated schedule that interspersed short-lived feature releases and long-term-support (LTS) releases to a simpler annual cycle where each release is supported for three years. Every feature release gets three years of support: one year of mainstream bugfixes, then two years of security and data-loss fixes. The "LTS" label is retired — every feature release now carries that same, unique commitment. No more LTS gap: no racing a deadline to jump two years of changes at once. Upgrade one year at a time, whenever suits you within the support window. Three versions are supported at any time, giving third-party packages a clear, ro…</p>
+</li>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1088057/">Security updates for Monday</a></strong><br />
+  摘要：Security updates have been issued by AlmaLinux (firefox, gpsd-minimal, kernel, libarchive, libgcrypt, and LibRaw), Debian (bind9, ca-certificates, chromium, dnsdist, icinga2, kitty, libheif, openjdk-21, pdns, pdns-recursor, thunderbird, and xen), Fedora (bird, erlang, kernel, mingw-glib2, nghttp2, p11-kit, perl, perl-Devel-Cover, perl-PAR-Packer, pgadmin4, polymake, python-nh3, python-wsgidav, python3.12, rabbitmq-server, rust-ammonia, seamonkey, and udisks2), Mageia (python-starlette), Oracle (gnutls, kernel, and LibRaw), Red Hat (container-tools:rhel8), Slackware (wpa_supplicant), and SUSE (azure-storage-azcopy, bouncycastle, ffmpeg-4, fuse-overlayfs, gleam, gstreamer-plugins-bad, libssh2-1, libssh2_org, libwireshark19, libXfont2-2, perl-Mojo-JWT, perl-Mojolicious, podman, python310, pyt…</p>
+</li>
+</ul>
+<h2>Linux Weekly News (RSS)</h2>
+<ul>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1087069/">[$] Even more formal verification for BPF</a></strong><br />
+  摘要：BPF offers useful safety guarantees, but Kumar Kartikeya Dwivedi wants BPF programs to be even safer. At the 2026 Linux Storage, Filesystem, Memory-Management, and BPF Summit , he led a session ( slides ) discussing the possibility of adding domain-specific invariants to BPF programs. It was not a discussion intended to lead to the implementation of any particular kernel feature, but rather an overview of why additional formal verification might be needed, and how it could work with the existing BPF ecosystem.</p>
+</li>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1088059/">Django moves to an annual release cycle</a></strong><br />
+  摘要：The Django Python web-framework project has announced that it has accepted an annual release cycle proposal . This means that the project is moving from a somewhat complicated schedule that interspersed short-lived feature releases and long-term-support (LTS) releases to a simpler annual cycle where each release is supported for three years. Every feature release gets three years of support: one year of mainstream bugfixes, then two years of security and data-loss fixes. The "LTS" label is retired — every feature release now carries that same, unique commitment. No more LTS gap: no racing a deadline to jump two years of changes at once. Upgrade one year at a time, whenever suits you within the support window. Three versions are supported at any time, giving third-party packages a clear, ro…</p>
+</li>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1088057/">Security updates for Monday</a></strong><br />
+  摘要：Security updates have been issued by AlmaLinux (firefox, gpsd-minimal, kernel, libarchive, libgcrypt, and LibRaw), Debian (bind9, ca-certificates, chromium, dnsdist, icinga2, kitty, libheif, openjdk-21, pdns, pdns-recursor, thunderbird, and xen), Fedora (bird, erlang, kernel, mingw-glib2, nghttp2, p11-kit, perl, perl-Devel-Cover, perl-PAR-Packer, pgadmin4, polymake, python-nh3, python-wsgidav, python3.12, rabbitmq-server, rust-ammonia, seamonkey, and udisks2), Mageia (python-starlette), Oracle (gnutls, kernel, and LibRaw), Red Hat (container-tools:rhel8), Slackware (wpa_supplicant), and SUSE (azure-storage-azcopy, bouncycastle, ffmpeg-4, fuse-overlayfs, gleam, gstreamer-plugins-bad, libssh2-1, libssh2_org, libwireshark19, libXfont2-2, perl-Mojo-JWT, perl-Mojolicious, podman, python310, pyt…</p>
+</li>
+</ul>
+<h2>Red Hat Blog</h2>
+<ul>
+<li>
+<p><strong><a href="https://www.redhat.com/en/blog/hidden-complexity-ai-inference-systems">The hidden complexity of AI inference systems</a></strong><br />
+  摘要：When people think about AI infrastructure, most attention naturally gravitates toward model training. Training large models requires massive datasets, distributed compute, and specialized hardware accelerators. The engineering involved in orchestrating training jobs across clusters of graphics processing units (GPUs) or tensor processing units (TPUs) is significant, and it's often the most visible part of the AI lifecycle.Inference, by contrast, appears deceptively simple. Once a model's been trained, the assumption is serving predictions should be straightforward: load the model, send request</p>
+</li>
+<li>
+<p><strong><a href="https://www.redhat.com/en/blog/beyond-hypervisor-how-service-provider-migrated-thousands-workloads-unified-hybrid-cloud-platform">Beyond the hypervisor: How a service provider migrated thousands of workloads to a unified application platform</a></strong><br />
+  摘要：The managed services market is navigating an unprecedented inflection point: For many service providers, recent changes in virtualization licensing and vendor partner tiers have elevated costs from a standard operational challenge into an existential threat to business continuity. For highly regulated industries like financial services and healthcare, this shift is even more complex. Security, continuous uptime, and compliance mandates mean that infrastructure changes cannot risk operational stability. At Red Hat Summit 2026 Community Day in Atlanta, Georgia, Paul Ponzeka, Chief Technology Off</p>
+</li>
+</ul>
+<h2>Kubernetes Blog</h2>
+<ul>
+<li><strong><a href="https://kubernetes.io/blog/2026/07/29/controller-runtime-cache-explained/">How the controller-runtime Cache Actually Works, and Why Your Controller Does Not Crash the API Server</a></strong><br />
+  摘要：This article has been revised since it was first published, to correct several significant technical inaccuracies in the original text. Kubernetes has long been the default platform for distributed workloads, and writing your own controller for it is now a matter of a few hours. The common path — Golang, using kubebuilder on top of controller-runtime — gives you a project scaffold, types, and a reconciler. For typical scenarios that is more than enough. But as soon as load grows or the controller starts behaving in ways you did not expect, a whole class of edge cases shows up. Most of them trace back to the same root cause: a fuzzy mental model of how controller-runtime works inside. If you write Kubernetes controllers in Go, this article should help you build a coherent picture and avoid …</li>
+</ul>
+<hr /></div>
+  </main>
+</body>
+</html>
