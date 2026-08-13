@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OS 领域每日洞察 - 2026-08-13</title>
+  <style>
+    :root {
+      --bg: #f6f4f0;
+      --bg-bar: #ebe8e3;
+      --bg-card: #fffefb;
+      --bg-card-hover: #f5f3ef;
+      --text: #2d2a26;
+      --text-muted: #5c5852;
+      --text-dim: #7a756e;
+      --accent: #5a7a9e;
+      --border: #ddd9d2;
+      --radius: 10px;
+      --font: "Segoe UI", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      font-size: 15px;
+    }
+
+    /* 门户顶栏 */
+    .masthead {
+      background: var(--bg-bar);
+      border-bottom: 1px solid var(--border);
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 0;
+    }
+    .masthead-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .masthead h1 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin: 0;
+      letter-spacing: -0.02em;
+      color: var(--text);
+    }
+    .masthead .meta {
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+    }
+
+    /* 主内容区：多栏门户布局 */
+    .main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 3rem;
+    }
+
+    /* 板块：每个 h2 为一个频道块 */
+    .content .section {
+      margin-bottom: 2.5rem;
+    }
+    .content h2 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+      margin: 0 0 1rem;
+      padding: 0.6rem 1rem;
+      background: var(--bg-bar);
+      border-radius: var(--radius);
+      border-left: 4px solid var(--accent);
+    }
+    .content h2:first-child { margin-top: 0; }
+
+    .content h2:has(+ h3) {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      border-left-color: var(--text-dim);
+    }
+
+    /* 板块内卡片网格（每个 h2 后的 ul） */
+    .content h2 + ul {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1rem;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .content h2 + ul li {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.15rem 1.2rem;
+      transition: background .15s, border-color .15s;
+    }
+    .content h2 + ul li:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--text-dim);
+    }
+    .content h2 + ul li strong {
+      display: block;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+      line-height: 1.4;
+    }
+    .content h2 + ul li p {
+      margin: 0 0 0.5rem;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.58;
+    }
+    .content h2 + ul li p:last-of-type { margin-bottom: 0; }
+    .content h2 + ul li a[href^="http"] {
+      font-size: 0.8125rem;
+      color: var(--accent);
+    }
+    .content h2 + ul li a[href^="http"]:hover { text-decoration: underline; }
+
+    .content .ref-section {
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+    .content h2 + h3 { margin-top: 1.25rem; }
+    .content h3 {
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--text-dim);
+      margin: 1rem 0 0.4rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .content h3 + ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 0.25rem;
+    }
+    .content h3 + ul li {
+      background: transparent;
+      border: none;
+      padding: 0.2rem 0;
+      font-size: 0.8125rem;
+    }
+    .content h3 + ul li strong { font-size: inherit; margin-bottom: 0; }
+    .content h3 + ul li a { color: var(--accent); }
+    .content h3 + ul li a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <header class="masthead">
+    <div class="masthead-inner">
+      <h1>OS 领域每日洞察 - 2026-08-13</h1>
+      <span class="meta">2026-08-13 04:00 UTC</span>
+    </div>
+  </header>
+  <main class="main">
+    <div class="content"><h1>OS 领域每日洞察 - 2026-08-13</h1>
+<p>（Gemini 未可用时，以下为按来源整理的条目，含<strong>新闻摘要</strong>与链接；摘要可能为原文语言。）</p>
+<h2>arXiv (cs.OS)</h2>
+<ul>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.12103">Who Should Own the Expert Cache? Kernel-Managed Tiering for Trillion-Parameter MoE Inference</a></strong><br />
+  摘要：arXiv:2608.12103v1 Announce Type: new Abstract: Mixture-of-experts models whose expert pools dwarf DRAM force every serving system to contain a cache, yet existing systems typically implement this cache in user space using expert-granular, frequency-ranked, explicitly pinned tiers. We characterize the alternative already provided by the OS: the page cache as the expert tier. We use router traces from three MoE models spanning 128 to 896 experts per layer, including a production trillion-parameter model with a 1.45 TB expert pool, and replay them natively against the full pool on GH200 nodes with capacity enforced by three independent mechanisms. We find four main results. First, iteration time and device traffic are smooth, reproducible functions of cache capacity, making DRAM a practical …</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.12114">The Ingestion Tax: Adopting File-Backed Weights in Tensor Frameworks</a></strong><br />
+  摘要：arXiv:2608.12114v1 Announce Type: new Abstract: Open-weight models can occupy a middle capacity regime: active weights fit in DRAM as cached file pages, but a second framework-owned representation does not fit or must be refilled as layers run, so low-batch decode rereads the weights every token. On integrated and coherent-memory systems the checkpoint's file pages already occupy a GPU-readable domain, yet accelerator-loading paths still copy them into framework-owned allocations. We call this the ingestion tax: the OS holds the bytes as clean, evictable file pages, the architecture makes them GPU-readable, and only the framework's ownership model stands between the two. We present file-backed weight adoption: a framework-independent producer maps each tensor with MAP_SHARED, wraps the pag…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.11234">InfraBench: Evaluating Infrastructure Agents Across Layers, Lifecycle, and Risk</a></strong><br />
+  摘要：arXiv:2608.11234v1 Announce Type: cross Abstract: Managing modern computing infrastructure has become a steadily harder problem due to the ever-increasing complexity. Recent advances in AI agents create a timely opportunity to automate infrastructure management tasks, but it remains unclear how well such agents can handle real-world infrastructure complexity. We present InfraBench, a benchmark suite for evaluating AI agents on realistic infrastructure tasks across the full system stack and full operational lifecycle with fine-grained risk assessment. Experiments with 15 agent-model configurations show that even the strongest agent cannot secure a full score across all tasks. Mean effective scores range from roughly 40% to 88% (with per-configuration standard errors of 6-12 points), repeati…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.12123">Ready Cohorts: Bounding GPU Opportunity and Avoiding Host Round Trips in LLM-Agent Control</a></strong><br />
+  摘要：arXiv:2608.12123v1 Announce Type: cross Abstract: LLM-agent services repeatedly execute small deterministic transitions between model and tool calls: route an outcome, update state, and emit the next effect. We ask when this control path exposes enough concurrent work for GPU execution, and what changes when a GPU-computed route decision remains on device. We formalize the ready-cohort boundary using fixed-partition share F, exact offline share P<em>, local upper bound U, and online achieved share A. Under zero service time, unlimited capacity, and equal relative launch deadlines, a specialized dynamic program computes P</em> exactly. In a stationary Poisson replay of one pinned 851-session public trace panel, the primary condition at 100,000 target active sessions, K=256, and a 50 ms launch dead…</p>
+</li>
+</ul>
+<h2>arXiv (cs.LG)</h2>
+<ul>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.11254">FarSky: Task-Aware Latent-Space Coupling for Generative Intra-Hour Solar Forecasting</a></strong><br />
+  摘要：arXiv:2608.11254v1 Announce Type: new Abstract: Accurate solar irradiance forecasting is essential for the reliable integration of photovoltaic power into modern electricity grids. All-sky imagers (ASI) provide high-resolution observations of clouds, making them well suited for intra-hour forecasting. Recent deep learning approaches have substantially improved forecast accuracy but are often limited by deterministic predictions and a reduced capability to anticipate ramp events. This work proposes FarSky, a generative forecasting framework that leverages latent-space coupling to learn task-aware representations of sky images. A multi-task autoencoder first learns a shared latent representation for image reconstruction and irradiance estimation. A latent diffusion model then generates futur…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.11256">Why AI Detection Fails for Academic Integrity</a></strong><br />
+  摘要：arXiv:2608.11256v1 Announce Type: new Abstract: Institutions use commercial AI detectors for academic integrity, yet detectors cannot distinguish AI editing from full LLM drafts and may treat both as misconduct. In a controlled study of published English abstracts (four domains; 2013 to 2015 vs. 2023 to 2025), we quantify this policy failure under proxy human/AI labels at tau=0.50. Light "refine abstract only" edits, a proxy for guideline-compliant AI assistance, are flagged at 64 to 80% (Pangram/GPTZero). Unmodified 2023 to 2025 originals are flagged at 9 to 15%, with non-STEM rates far above STEM (p 96%). Honest AI-editing results in a higher sanction risk than humanizer-assisted evasion. Therefore, detector scores should not serve as standalone misconduct evidence.</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.11279">Basin: Efficient and Extensible Numerical Optimization in Rust</a></strong><br />
+  摘要：arXiv:2608.11279v1 Announce Type: new Abstract: Basin is a numerical optimization library for the Rust programming language. Numerical optimization is the task of finding the inputs that minimize a function, and it is a fundamental element across the sciences: fitting a model to data, calibrating a simulation, training a machine learning model, or choosing engineering parameters that minimize cost. Basin gives users a single, consistent way to both state and solve such problems, with a broad catalog of solvers and first-class support for constraints.</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.11281">Federated Learning for Distributed CNC Tool Wear Prediction</a></strong><br />
+  摘要：arXiv:2608.11281v1 Announce Type: new Abstract: Tool wear prediction is an important task in CNC machining, where accurate monitoring of tool condition supports product quality and process reliability. Machine learning methods have shown potential for this task, but their use in industrial environments is limited by the distributed nature of machining data and by restrictions on data sharing between machines, sites, or organizations. Federated learning offers a suitable framework for this setting by enabling collaborative model training without transferring raw operational data. This paper investigates federated learning for CNC tool wear prediction. Tool trajectories are distributed across simulated clients to represent a federated learning scenario. The federated models are compared agai…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.11318">Terminal Symmetry as a Decision Resource: Statewise Refinement for Anytime Verified Construction</a></strong><br />
+  摘要：arXiv:2608.11318v1 Announce Type: new Abstract: Many sequential construction tasks exhibit exact symmetry at completion while their execution remains directed and history-dependent. We develop a decision-resource view of terminal symmetry: process evidence supplies directionality, terminal correspondence transports that structure across equivalent outcomes, realized-state evidence refines its current decision relevance after transitions, and a fixed verifier certifies execution. This decomposition yields transport--refine--certify. \method{} instantiates the principle with an episode-fixed transported process structure, its state-restricted process rank, a state-dependent residual rank refreshed after accepted transitions, and an ordinal rank meet whose top-$k$ set is exactly the union of …</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.11324">Contextual Quality-Diversity Evolutionary Reinforcement Learning for HVAC Control in Tropical Commercial Buildings</a></strong><br />
+  摘要：arXiv:2608.11324v1 Announce Type: new Abstract: This paper proposes a contextual quality-diversity evolutionary reinforcement-learning controller, CQD-ERL, for the supervisory control of a tropical, water-cooled chiller plant and its associated air side. Rather than converging to a single scalarised policy, the controller maintains a product archive of specialised policies indexed jointly by a data- driven operating context, a cluster of daily weather and load regime, and a context-invariant behaviour descriptor, filled by a gradient-free evolutionary operator and a soft-actor-critic policy-gradient operator that share one replay buffer. Every action is filtered through a deterministic safety shield before execution. The controller is trained on a two-tier reduced-order environment represe…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.11327">Long-Horizon Forecasting of Complete Financial Statements with Forma</a></strong><br />
+  摘要：arXiv:2608.11327v1 Announce Type: new Abstract: Specialist training beats generalist scale when forecasting financial statements. To our knowledge, no prior work jointly forecasts complete financial statements beyond one year, yet in a discounted-cash-flow valuation most firm value sits past that window. We release ProForma-20Q, a reproducible benchmark for forecasting 78 statement line items 1-20 quarters ahead, for anonymized firms, from past statements and an industry code, scored by change-space $R^2$. On it, Forma, a transformer that reads statements as sets of (account, quarter, value) tuples and maximizes a masked-tuple Gaussian likelihood, beats every competitor we field: classical machine learning, chained gradient boosting, a zero-shot time-series foundation model, and frontier l…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.11342">Weightless Fine-Tuning: Personalizing LLMs via Logit-Space Transport</a></strong><br />
+  摘要：arXiv:2608.11342v1 Announce Type: new Abstract: Supervised fine-tuning (SFT) is a standard approach for adapting LLMs to a target distribution, but in settings such as personalization, where each author requires separate weight access, optimization, storage, and retraining, its costs become prohibitive. We propose Weightless Fine-Tuning (WFT), a training-free decoding-time method that approximates the distributional effect of SFT without weight updates. WFT computes supervised residuals on an author's training sequence and transports them to the current prompt through a cross-prefix transport operator estimated from dropout-induced cross-covariance. The operator captures how a perturbation at one context propagates to predictions at another, replacing gradient-based parameter updates with …</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.11349">Dynamics Models for Offline Hyperparameter Selection in Real-World RL</a></strong><br />
+  摘要：arXiv:2608.11349v1 Announce Type: new Abstract: A key obstacle to deploying reinforcement learning in real-world systems is hyperparameter selection, particularly when simulators are unavailable and online experimentation is costly. Prior work has proposed calibration models trained on offline data to approximate environment dynamics and enable offline hyperparameter selection, but these methods have so far been evaluated only in simple simulated settings. In this paper, we present the first application of calibration models in a real-world industrial setting: a municipal water treatment plant. We evaluate several calibration model approaches, including a k-nearest neighbors model with a Laplacian distance metric, on high-dimensional, non-stationary sensor data for nexting prediction tasks…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.11359">Market-Information-Aware Gated-LoRA of Foundation Models for Transferable Day-Ahead Electricity Price Forecasting</a></strong><br />
+  摘要：arXiv:2608.11359v1 Announce Type: new Abstract: Electricity price forecasting is crucial for market participants but remains difficult because prices are volatile, market-specific, and closely tied to anticipated system conditions. Existing supervised methods depend largely on market-specific historical data, limiting their use in newly established or data-scarce markets. This paper proposes a market-information-aware adaptation framework that transfers the Chronos-2 time-series foundation model to day-ahead electricity price forecasting. It first constructs a multi-source market information (MSMI) interface aligning 7-day price context with pre-clearing supply--demand, reserve, maintenance, generator-capacity, and intertie variables, and then trains a source-domain gated low-rank adapter …</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.11361">Lifecycle-Optimal Tokenization: Vocabulary Size as a Deployment-Regime-Dependent Infrastructure Parameter</a></strong><br />
+  摘要：arXiv:2608.11361v1 Announce Type: new Abstract: Tokenizer vocabulary size is a foundational design choice in large language model (LLM) infrastructure, yet it is typically fixed at training time based on convention rather than deployment analysis. We show that the cost-optimal vocabulary is not a constant but a function of the serving regime. We formalize total deployment cost as $C_{lifecycle}(V) = C_{train}(V) + \lambda \cdot C_{infer}(V, B)$, where $\lambda$ is inference volume and $B$ is the serving batch size. Through controlled experiments on two GPU families spanning the memory-bound to compute-bound regimes (A10G, ridge $\approx$ 117 FLOP/byte; A100, ridge $\approx$ 183 FLOP/byte), we demonstrate: (1) the inference-optimal vocabulary shifts 16x with serving batch, from 32k at $B=1$…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.11368">PAIR: Pairwise-Aware Inclusion Reweighting for Adaptive Rollout Allocation in RLVR</a></strong><br />
+  摘要：arXiv:2608.11368v1 Announce Type: new Abstract: Reinforcement learning with verifiable rewards (RLVR) spends most of its compute generating groups of long reasoning trajectories. Recent allocators reduce this cost by assigning budgets to prompts, rollouts, or tokens according to a pointwise notion of difficulty or utility. We identify a statistical mismatch: the unclipped leave-one-out group-relative score gradient is not a sum of independent point contributions, but a second-order U-statistic over pairs of rollouts. Completing one rollout therefore reveals contrast with every other completed rollout, and adaptive endpoint selection changes which pair terms are observable. We introduce PAIR (Pairwise-Aware Inclusion Reweighting), which treats short rollout prefixes as vertices and pair-gra…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.11375">Towards an approach to multivariate outlier detection for District Heating System data</a></strong><br />
+  摘要：arXiv:2608.11375v1 Announce Type: new Abstract: In this paper, we test different methods for multivariate detection of outliers in the data of transmitted heat energy in the selected substation of local District Heating System, by also considering outside ambient temperature, namely Z-score (univariate, as a benchmark), Mahalanobis distances, Principal Component Analysis (PCA), Isolation Forest and Hotelling's T-squared test. The overall research aims at uncovering irregular plant operation, with a wider objective of identifying the opportunities for reducing the consumption of gas in central heating plants as well as the CO2 emission. The proposed approach considers specific domain circumstances, such as irrelevance of zero transmit-ted energy timepoints as indication of off-grid plant. T…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.11383">Reoptimization Algorithms for Contextual Bandits with Knapsack Constraints</a></strong><br />
+  摘要：arXiv:2608.11383v1 Announce Type: new Abstract: We study new algorithms for Contextual Bandits with Knapsack. In these problems, there are finitely many types of customers, products, and resources. Each product is made from a fixed combination of resources, and resources have finite capacity. A decision maker must assign each arriving customer one out of a set of multiple possible products. Every assignment of a customer to a product will generate a random reward, which equals an unknown linear function of customer and product features, plus a noise term. The objective is to jointly learn the mean reward function, and to make online assignments to minimize the expected revenue loss relative to an optimal policy that knows the reward function. We propose a natural and simple extension of th…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.11390">Mechanism Design for Generative Engines: From Exploitation toward Win-Win Outcomes</a></strong><br />
+  摘要：arXiv:2608.11390v1 Announce Type: new Abstract: Generative engines are reshaping the web ecosystem by making citations a key mechanism for allocating attention, attribution, and downstream value. This creates a strategic tension: content providers are incentivized to optimize for model citation, while platforms must preserve answer quality and trustworthy attribution. We show that this tension can escalate into citation wars. In repeated simulations, state-of-the-art generative engine optimization (GEO) attacks adapt to conventional defenses by producing citation-seeking rewrites that degrade document quality and introduce unsupported claims. To study this problem, we formulate the supplier--platform interaction as a repeated Stackelberg game with partial monitoring. A local best-response …</p>
+</li>
+</ul>
+<h2>arXiv (cs.AI)</h2>
+<ul>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.11207">Dynamic Governance of Multi-LLM Agent Systems for Collaborative Conversational Outcomes</a></strong><br />
+  摘要：arXiv:2608.11207v1 Announce Type: new Abstract: When two LLM agents with structurally opposed objectives interact across multiple turns, the absence of a shared goal function produces not competition but collapse: the visitor capitulates, the site agent stops varying its approach, and the conversation terminates without achieving either agent's stated objective. This paper asks whether a control-theoretic governance layer can substitute for that missing goal function. The Experience Orchestrator (EO) addresses this in a simulated financial services environment where a site agent guides a visitor toward advisor contact while the visitor maintains psychologically realistic resistance. EO governs the joint trajectory through three mechanisms: a Contextual Bandit (CB) that selects content arms…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.11210">Distribird: Literature-Informed Prior Distribution Design for Bayesian Model Calibration</a></strong><br />
+  摘要：arXiv:2608.11210v1 Announce Type: new Abstract: Bayesian calibration of process-based models requires a prior distribution for each model parameter. Despite decades of methodological work, researchers almost always fall back on uniform priors. The main reason is that building informative priors from scientific literature is slow and needs both domain and statistical expertise. We present \textbf{Distribird}, an agentic web application that automates this process. Given a parameter name, physical description, and domain context, Distribird deploys a multi-agent pipeline that searches the literature, extracts and weights reported values by domain relevance, and fits a probability distribution via AIC model selection. When no literature is available, the system falls back to sensible uninform…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.11211">A Forced-Structure Reduction and Verifiable Bounds for Conway's 99-Graph</a></strong><br />
+  摘要：arXiv:2608.11211v1 Announce Type: new Abstract: Conway's 99-graph problem asks whether a strongly regular graph with parameters $\mathrm{srg}(99,14,1,2)$ exists. We report a systematic, fully reproducible attack by an autonomous AI research agent, scored under the track's partial-credit metric. Our verifiable contributions are: (1) an exhaustive proof that no circulant graph on $\mathbb{Z}/99$ satisfies more than $3366/4950=68.0\%$ of the constraints ($33$ of $49$ difference-classes), with the same ceiling for the other abelian group of order $99$; (2) a forced-structure reduction: $\lambda=1$ makes each neighbourhood a perfect matching and $\mu=2$ puts the outer vertices in bijection with non-matched neighbour-pairs, collapsing existence to a $12$-regular graph on $84$ vertices, encoded f…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.11212">Detecting a Route Flip Is Easier Than Knowing Whether to Fix It: Causal Route-Mediated Damage in Quantized Mixture-of-Experts</a></strong><br />
+  摘要：arXiv:2608.11212v1 Announce Type: new Abstract: Top-k Mixture-of-Experts (MoE) routing is discontinuous, so a deployment-motivated numerical disturbance -- simulated 4-bit KV-cache quantization read by a protected BF16 gate -- pushes tokens across decision boundaries and flips which experts fire. This paper proposes no new mitigation; it supplies a causal apparatus, empirical findings, and a detection-limit result. A four-run apparatus prices the route-mediated fraction (RMF) of quantization damage, a token-level attribution decomposes it by mechanism, and pre-registered probes carry the findings across three architectures. On OLMoE-1B-7B at 4-bit KV (pilot), about a third of the damage is routing-mediated: RMF ~ 0.31 (discovery 0.31 [0.20, 0.41]; process-replicated mean 0.313 +/- 0.020; p…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.11215">Poor Man's Agentic Modeling: Simulating Large LLM-Agent Societies on a Laptop</a></strong><br />
+  摘要：arXiv:2608.11215v1 Announce Type: new Abstract: Simulating societies of many large language model (LLM) agents is expensive, yet the questions asked of such simulations are usually macroscopic: phase behaviour, stylised facts, and scaling with the number of agents $N$, not the cognition of any single agent. We turn a statistical-physics observation into a method: replace each LLM agent by a low-parameter model fitted from a few hundred to a few thousand cheap queries, then run the society at any $N$ on a laptop. Whether this works is decided before the simulation runs, chiefly by what each agent perceives. We introduce an [interaction order x memory] taxonomy that maps perception and memory to an effective theory and a predicted $N$-trend of the surrogate error. We validate it on a faithfu…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.11216">AutoWorldModel-Bench: A State-Centric Benchmark for Automated World-Model Research</a></strong><br />
+  摘要：arXiv:2608.11216v1 Announce Type: new Abstract: World modeling is an unsettled field: architectures, training objectives, and state representations interact in complex ways, and no single recipe dominates across environments. This makes it an ideal testbed for AI coding agents acting as autonomous researchers--a setting in which the improvement direction is not specified in advance, unlike the engineering-to-spec tasks that dominate current agent benchmarks. We introduce AutoWorldModel-Bench, a closed-loop benchmark in which frontier coding agents autonomously improve a provided world-model starter under a fixed compute budget. The benchmark spans eight game environments under a unified structured-state representation--ground-truth entity state extracted from each game and consumed through…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.11218">MaSRead: Content-Addressed Reading of Replicated Latent Stores</a></strong><br />
+  摘要：arXiv:2608.11218v1 Announce Type: new Abstract: Independent agents that reason in latent space can share computed state as key-value cache fragments rather than text. Merged by a conflict-free replicated data type, these fragments form a store that converges under any delivery order or duplication. Yet a later query, unknown at encode time, cannot reliably read the merged cache: colocated fragments interfere, so colocation is not addressability. MaSRead addresses the read to content. It routes through opaque keyed tag sets derived from fragment words and decodes each selected fragment under a hard attention mask that hides the rest. Under lexical connectivity, a graph walk reaches the fragments required by a multi-hop query. Across chain, pipeline, symmetric, hub, and natural-language stor…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.11219">From Monolithic to Modular: Segment-level Automatic Prompt Optimization</a></strong><br />
+  摘要：arXiv:2608.11219v1 Announce Type: new Abstract: Automatic Prompt Optimization (APO) often rewrites prompts monolithically, which can improve one behavior while degrading others. We present SAPO, a segment-level APO method that decomposes prompts into role, context, tasks, and output format, then applies targeted improvements based on top-5 and bottom-5 examples. The optimization loop uses one LLM with static meta-prompts and structured outputs for segmentation, weakness analysis, and candidate generation. We describe a train/validation protocol and a two-stage generation process: (1) segment-level diagnosis and recommendation extraction, (2) candidate synthesis constrained by weak/strong segment signals. Using the evaluation setup across SQuADv2, TweetEval, XSUM, CommonGen, and GSM8K on GP…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.11220">LLMs in Process Diagram Engineering: From Optimal PFDs to Validated P&amp;IDs</a></strong><br />
+  摘要：arXiv:2608.11220v1 Announce Type: new Abstract: Nowadays, the creation of a process flow diagram (PFD) and its subsequent transformation into a piping and instrumentation diagram (P&amp;ID) is predominantly performed manually. Applying artificial intelligence in the task could potentially lead not only to process automation and time savings, but also to financial gains by exploring numerous diagram's topology options and reducing manual labor. This research presents P&amp;ID Pilot - a practical end-to-end AI pipeline capable of handling flowsheet developing for both stages. The first stage focuses on PFD synthesis, whereas the second is directed toward modifying the generated PFD into P&amp;ID. After comparing four different methods, the hybrid approach combining genetic algorithms (GA) an…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.11221">A Conceptual Framework for Refining Influence Knowledge from Simulation Evidence in Cyber-Physical Systems</a></strong><br />
+  摘要：arXiv:2608.11221v1 Announce Type: new Abstract: Cyber-physical systems (CPS) are typically developed by multiple stakeholders who produce artefacts tailored to their specific domains of expertise. The behaviour of these systems emerges from the interaction between those artefacts and their operational environment. Simulation and co-simulation have become essential approaches for analysing CPS behaviour and, through simulation campaigns, developers can explore system responses under changing conditions, including interactions with the environment. However, the lack of details and understanding of some environmentmediated interactions (typically the ones beyond direct sensing and actuation), which remain unmodelled due to their complexity, a lack of time, or a lack of domain experience, hind…</p>
+</li>
+</ul>
+<h2>Phoronix</h2>
+<ul>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Rsync-3.5">Rsync 3.5 Released As "Extraordinary" Update To Fix 33 Security Issues</a></strong><br />
+  摘要：Rsync as the widely-used, open-source remote sync software for synchronizing files and directories across networks is out today with a very important update...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Comma.ai-PCIe-Gen4-USB4-Dock">Comma.ai Launches A PCIe Gen4 x4 To USB4 Dock With Open-Source Firmware</a></strong><br />
+  摘要：George Hotz of Comma.ai and Tinygrad today announced the Tiny Chestnut eGPU Dock and the "Chestnut" Dock complete with an AMD Radeon RX 9060 8GB GPU too. Making this Chestnut / Tiny Chestnut Dock interesting is that it runs on open-source firmware...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Tenstorrent-Ascalon-XG-GCC">Tenstrorrent Posts GCC Compiler Patches For Ascalon XG Core</a></strong><br />
+  摘要：While the Tenstorrent Ascalon X is known as their high performance out-of-order RISC-V RVA23 CPU core for extreme performance over the H and S models, a new GNU Compiler Collection (GCC) patch today from Tenstorrent makes known a new Ascalon XG core...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/GCC-Git-m128bit-atomic">GCC 17 Compiler Adding "-m128bit-atomic" For 128-bit Atomic Memory Operations</a></strong><br />
+  摘要：Merged today to the GNU Compiler Collection Git code is the new -m128bit-atomic option for next year's GCC 17 feature release...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Manjaro-Linux-26.1">Manjaro Linux 26.1 Released With GNOME 50 &amp; KDE Plasma 6.7 Desktops</a></strong><br />
+  摘要：Manjaro 26.1 Bian-May is now available as the newest feature release to this desktop Linux distribution built atop an Arch Linux base...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/review/intel-amx-xeon-678x">Intel AMX Performance With The Xeon 678X Workstation CPU</a></strong><br />
+  摘要：One of the most compelling features for Intel Xeon 6 Granite Rapids alongside MRDIMMs is Advanced Matrix Extensions (AMX) for helping accelerate AI workloads and more. AMX is also found with the new Granite Rapids WS processors and in currently having my hands on an Intel Xeon 678X in the HP Z4 G6i workstation, I ran some benchmarks looking at the AMX performance and power impact for this high-end workstation.</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Linux-2026-Patches-For-2018-MBP">Linux Finally Seeing Patches For Better Hybrid Graphics On 2018~2019 Era MacBook Pros</a></strong><br />
+  摘要：Patches posted today to the Linux kernel mailing list provide support for Apple GMUX hybrid graphics support on 2018~2019 Apple MacBook Pros. This allows for better power savings on these nearly decade old MacBook Pro laptops by allowing the discrete GPU to power down and be properly restored as needed...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Intel-DG2-Vulkan-Video-AV1">Intel ANV Driver Enables Vulkan Video AV1 Encoding For DG2/Alchemist GPUs</a></strong><br />
+  摘要：Hyunjun Ko of Igalia continues working on Vulkan Video support for Intel graphics hardware on Linux with the ANV driver. Merged now for Mesa 26.3-devel is enabling AV1 video encoding via Vulkan Video on DG2/Alchemist hardware...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Linux-7.2-Reverting-DRM-Fair">Linux 7.2 To Revert Back To The FIFO DRM Scheduler Policy Due To "Fair" Regressions</a></strong><br />
+  摘要：One of the Direct Rendering Manager changes made for Linux 7.2 was switching to "fair" as the DRM scheduler default in place of the existing FIFO policy. The intent was on making the DRM scheduler policy more fair with this being used by AMDGPU and various other DRM kernel graphics drivers. But due to a last minute regression report, the fair policy is being reverted for Linux 7.2...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Mold-2.42-Released">Mold 2.42 Delivering Greater Performance For This High Speed Linker</a></strong><br />
+  摘要：It's been quiet since the Mold 2.41 release back in April while today it's now been succeeded by Mold 2.42 for deliver even greater performance out of this high speed linker...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Intel-LLM-Scaler-Muse-Glimmer">Intel LLM-Scaler Ready With Muse Glimmer Support, Other LLMs &amp; Features</a></strong><br />
+  摘要：Intel's LLM-Scaler project that was born out of their Project Battlematrix initiative aims to make it easier to run generative AI on Arc (Pro) B-Series graphics cards with the likes of vLLM, ComfyUI, SGLang, and other popular AI software in this Docker-based pre-configured AI stack. This week new LLM-Scaler releases brought same-day support for new models and other enhancements...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/LACT-0.10-Released">LACT 0.10 Released With New NVIDIA Overclocking Controls, Blackwell Hotspot Sensor</a></strong><br />
+  摘要：LACT is one of the popular third-party Linux GPU configuration and monitoring utilities that works across NVIDIA, AMD, and Intel graphics. This GUI provides GPU overclocking controls plus a wealth of information reporting, which is especially great considering the lack of any official GUI control panel for AMD Radeon and Intel Arc graphics on Linux. With today's LACT 0.10 release, there are yet more features in tow...</p>
+</li>
+</ul>
+<h2>Lobsters</h2>
+<ul>
+<li>
+<p><strong><a href="https://alan.norbauer.com/articles/github-stacks-with-jujutsu/">GitHub Stacks in Jujutsu</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://hackmd.io/@s_haMSbyTAOWfoXc1aYNUg/Hka74gCwZg">A critical review of Xilem in 2026</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://newsletter.powderworks.dev/p/tabs-spaces-hand-tools-and-seat-belts">Tabs, Spaces, Hand Tools, and Seat Belts</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://guillaumetech.github.io/posts/jpg-scaling-chrome/">Why tiny JPEGs look different in Chrome</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://phunky.cafe/my-homelab-got-hacked/">My Homelab Got Hacked - A Postmortem</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://tailscale.com/blog/sqlite-wal-reset-bug">How Tailscale helped find the SQLite WAL-Reset bug</a></strong><br />
+  摘要：Previously, the SQLite release fixing this bug . Comments</p>
+</li>
+<li>
+<p><strong><a href="https://linebender.org/blog/fearless-simd-0-7/">fearless_simd v0.7: 64-bit integers, improved generics, SSE2, and upcoming v1.0</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://brettcodes.com/im-done-using-ai/">I'm done using AI</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://var0.xyz/posts/mindful-coding-purpose-and-intention.html">Mindful coding: Purpose and intention</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://getfresh.dev/docs/blog/packaging-for-linux/">I hate packaging my software for Linux</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://infosec.exchange/@rebane2001/117078420917152774">Guide to (not) fucking up QR codes</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://abhinavsarkar.net/notes/2026-lobsters-submissions/">Analyzing My Lobsters Submissions</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://calnewport.com/on-ai-coding-and-its-discontents/">On AI Coding and Its Discontents</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://signal.org/blog/automatic-key-verification/">Introducing Automatic Key Verification</a></strong><br />
+  摘要：Comments</p>
+</li>
+</ul>
+<h2>LWN.net</h2>
+<ul>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1087432/">[$] LWN.net Weekly Edition for August 13, 2026</a></strong><br />
+  摘要：Inside this week's LWN.net Weekly Edition: Front : BPF and binfmt_misc; CrossPoint ebook firmware; KVM planes; BPF formal verification; shadow-utils; new storage-code testing features. Briefs : Django releases; GNOME shell; LightDM 1.33.0; QEMU 11.1; uutils 0.10; Software Stewardship Lab; Quotes; ... Announcements : Newsletters, conferences, security updates, patches, and more.</p>
+</li>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1086344/">[$] Block-layer error injection</a></strong><br />
+  摘要：Storage code has to cope with hardware that fails in inconvenient ways, but coaxing a healthy disk into producing those failures on demand, for testing, is usually not possible. The kernel provides several ways to inject block-layer I/O errors, but none of those can select the operation to fail, pick the status code to return, or target a disk directly without employing a stacked device on top. Use of a stacked device means the test runs against the mapper device, not the disk it was meant to exercise. A patch series from Christoph Hellwig adds a configurable error-injection interface that does all three things that the current error-injection code lacks, controlled by a per-disk debugfs file.</p>
+</li>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1087635/">[$] A look at CrossPoint e-reader firmware</a></strong><br />
+  摘要：There are a number of small, inexpensive, low-powered e-reader or e-paper devices that have promise as ebook readers with one minor problem: the firmware they ship with does not realize their full potential. To solve that problem, the CrossPoint Reader project looks to provide replacement firmware that offers necessary features, better performance, and a more pleasant reading experience. On August&#160;7, the project released version 1.5.0 , which opens large EPUBs more quickly, provides offline dictionary lookups, and has reworked settings for changing layout and font options. The release also improves support for right-to-left text as well as Chinese, Japanese, and Korean (CJK) text rendering.</p>
+</li>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1088490/">QEMU 11.1 released</a></strong><br />
+  摘要：Version 11.1 of the QEMU emulator has been released. The release contains more than 3,200 commits from 285 authors and includes a long list of improvements; see the announcement and changelog for the details.</p>
+</li>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1088476/">Security updates for Wednesday</a></strong><br />
+  摘要：Security updates have been issued by AlmaLinux (fence-agents, firefox, frr10, gstreamer1-plugins-good, iscsi-initiator-utils, isns-utils, kernel, kernel-rt, perl-DBI:1.641, postgresql, postgresql:12, and resource-agents), Debian (libgd2, openjdk-25, php7.4, php8.2, and postfix), Fedora (clamav, domoticz, and libidn), Red Hat (delve, edk2, firefox, go-fdo-client, go-fdo-server, grafana, host-metering, ignition, kernel, kernel package, kernel-rt, ldns, libarchive, mariadb10.11, mariadb:10.11, multiple packages, rhc, rhc-worker-playbook, rhc-worker-script, sssd, thunderbird, yggdrasil, and yggdrasil-worker-package-manager), Slackware (expat and openssh), and SUSE (avahi, chromedriver, erlang26, gawk, glib2, go-sendxmpp, google-guest-agent, google-osconfig-agent, gpg2, gstreamer-plugins-bad, g…</p>
+</li>
+</ul>
+<h2>Linux Weekly News (RSS)</h2>
+<ul>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1087432/">[$] LWN.net Weekly Edition for August 13, 2026</a></strong><br />
+  摘要：Inside this week's LWN.net Weekly Edition: Front : BPF and binfmt_misc; CrossPoint ebook firmware; KVM planes; BPF formal verification; shadow-utils; new storage-code testing features. Briefs : Django releases; GNOME shell; LightDM 1.33.0; QEMU 11.1; uutils 0.10; Software Stewardship Lab; Quotes; ... Announcements : Newsletters, conferences, security updates, patches, and more.</p>
+</li>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1086344/">[$] Block-layer error injection</a></strong><br />
+  摘要：Storage code has to cope with hardware that fails in inconvenient ways, but coaxing a healthy disk into producing those failures on demand, for testing, is usually not possible. The kernel provides several ways to inject block-layer I/O errors, but none of those can select the operation to fail, pick the status code to return, or target a disk directly without employing a stacked device on top. Use of a stacked device means the test runs against the mapper device, not the disk it was meant to exercise. A patch series from Christoph Hellwig adds a configurable error-injection interface that does all three things that the current error-injection code lacks, controlled by a per-disk debugfs file.</p>
+</li>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1087635/">[$] A look at CrossPoint e-reader firmware</a></strong><br />
+  摘要：There are a number of small, inexpensive, low-powered e-reader or e-paper devices that have promise as ebook readers with one minor problem: the firmware they ship with does not realize their full potential. To solve that problem, the CrossPoint Reader project looks to provide replacement firmware that offers necessary features, better performance, and a more pleasant reading experience. On August&#160;7, the project released version 1.5.0 , which opens large EPUBs more quickly, provides offline dictionary lookups, and has reworked settings for changing layout and font options. The release also improves support for right-to-left text as well as Chinese, Japanese, and Korean (CJK) text rendering.</p>
+</li>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1088490/">QEMU 11.1 released</a></strong><br />
+  摘要：Version 11.1 of the QEMU emulator has been released. The release contains more than 3,200 commits from 285 authors and includes a long list of improvements; see the announcement and changelog for the details.</p>
+</li>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1088476/">Security updates for Wednesday</a></strong><br />
+  摘要：Security updates have been issued by AlmaLinux (fence-agents, firefox, frr10, gstreamer1-plugins-good, iscsi-initiator-utils, isns-utils, kernel, kernel-rt, perl-DBI:1.641, postgresql, postgresql:12, and resource-agents), Debian (libgd2, openjdk-25, php7.4, php8.2, and postfix), Fedora (clamav, domoticz, and libidn), Red Hat (delve, edk2, firefox, go-fdo-client, go-fdo-server, grafana, host-metering, ignition, kernel, kernel package, kernel-rt, ldns, libarchive, mariadb10.11, mariadb:10.11, multiple packages, rhc, rhc-worker-playbook, rhc-worker-script, sssd, thunderbird, yggdrasil, and yggdrasil-worker-package-manager), Slackware (expat and openssh), and SUSE (avahi, chromedriver, erlang26, gawk, glib2, go-sendxmpp, google-guest-agent, google-osconfig-agent, gpg2, gstreamer-plugins-bad, g…</p>
+</li>
+</ul>
+<h2>Ars Technica</h2>
+<ul>
+<li>
+<p><strong><a href="https://arstechnica.com/health/2026/08/an-ultra-rare-amoeba-was-destroying-a-toddlers-brain-doctors-missed-it/">Toddler's tragic death from brain-destroying amoeba offers lessons for doctors</a></strong><br />
+  摘要：Boy's unusual symptoms could help identify the next case sooner.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/ai/2026/08/new-font-turns-ordinary-webpages-into-nonsense-for-ai-scrapers/">The web’s newest weapon against AI scrapers is a font</a></strong><br />
+  摘要：“ShieldFont” aims to poison AI training data without making pages unreadable for people.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/security/2026/08/terabytes-of-credentials-leaked-in-massive-supply-chain-attack/">Terabytes of credentials leaked in massive supply-chain attack</a></strong><br />
+  摘要：The data was scraped and exfiltrated from 2,500 users of a compromised AI package.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/science/2026/08/have-physicists-finally-discovered-glueballs-new-evidence-points-to-yes/">Have physicists finally discovered glueballs? New evidence points to yes.</a></strong><br />
+  摘要：“It’s the strongest evidence yet that particles dominated by a glueball component can exist in nature.”</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/ai/2026/08/twitch-content-has-trained-amazon-ai-for-years-but-users-can-opt-out-now/">Twitch content has trained Amazon AI for years, but users can opt out now</a></strong><br />
+  摘要：Streaming platform says user-generated content "may be used for future Gen AI model improvements."</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/tech-policy/2026/08/trump-sued-over-brazen-scheme-to-sell-truth-social-api-access-for-100k-a-month/">Trump sued over "brazen" scheme to sell Truth Social API access for $100K a month</a></strong><br />
+  摘要：With Truth API, Trump is "selling priority access to news he himself generates."</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/gadgets/2026/08/us-boosts-drone-surveillance-as-flesh-eating-screwworms-spread-in-texas/">US boosts drone surveillance as flesh-eating screwworms spread in Texas</a></strong><br />
+  摘要：Hundreds of Homeland Security drones retasked to survey wildlife and livestock.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/cars/2026/08/jcb-sets-a-new-406-mph-speed-record-for-hydrogen-powered-cars/">Two hydrogen-burning engines powered this car to a new land speed record</a></strong><br />
+  摘要：JCB has invested heavily in hydrogen to power its diggers and other machinery.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/tech-policy/2026/08/us-tries-to-override-new-york-gambling-laws-orders-kalshi-to-keep-operating/">US tries to override New York gambling laws, orders Kalshi to keep operating</a></strong><br />
+  摘要：Trump admin claims New York suing Kalshi created "market emergency."</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/tech-policy/2026/08/heres-a-balm-if-the-idea-of-destroying-books-to-train-ai-breaks-your-heart/">Booksellers suspect AI firms are buying and then destroying rare books</a></strong><br />
+  摘要：AI firms quietly bulk buying rare books face resistance from booksellers.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/gadgets/2026/08/google-reveals-2026-hardware-lineup-pixel-11-pixel-watch-5-and-pixel-tag/">Google reveals 2026 hardware lineup: Pixel 11, Pixel Watch 5, and Pixel Tag</a></strong><br />
+  摘要：Google focuses more on AI and curated experiences than spec upgrades in 2026.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/security/2026/08/researchers-found-a-way-to-hijack-devices-through-zoom-screen-sharing/">Researchers found a way to hijack devices through Zoom screen sharing</a></strong><br />
+  摘要：A public AI tool found the dangerous Zoom flaw in under 20 prompts.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/cars/2026/08/formula-e-finds-a-new-home-on-disney-espn/">Formula E finds a new home on Disney+, ESPN+</a></strong><br />
+  摘要：The deal starts with the arrival of the GEN4 car and 2026-27 season this December.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/science/2026/08/feces-fueled-a-flurry-of-evolution-during-the-cambrian-study-suggests/">Did poop enable the evolution of complex animals?</a></strong><br />
+  摘要：In a recent study, evolution gets even messier than usual.</p>
+</li>
+</ul>
+<h2>The New Stack</h2>
+<ul>
+<li>
+<p><strong><a href="https://thenewstack.io/coderabbit-agentic-change-management-review/">“Issue tracking is dead”; How the pull request became the last chokepoint in the SDLC bottleneck</a></strong><br />
+  摘要：AI code review specialist CodeRabbit announced its Agentic Change Management control layer on Wednesday. The service is intended to help The post &#8220;Issue tracking is dead&#8221;; How the pull request became the last chokepoint in the SDLC bottleneck appeared first on The New Stack .</p>
+</li>
+<li>
+<p><strong><a href="https://thenewstack.io/claude-chrome-cowork-sessions/">Anthropic’s Chrome extension is now a Cowork session</a></strong><br />
+  摘要：Anthropic announced a major update to its Chrome extension on Wednesday that turns Claude in Chrome from a useful but The post Anthropic&#8217;s Chrome extension is now a Cowork session appeared first on The New Stack .</p>
+</li>
+<li>
+<p><strong><a href="https://thenewstack.io/spacex-and-nvidias-orbital-ai-datacenter-fantasy/">Why space is actually a terrible place to cool a data center</a></strong><br />
+  摘要：AI data centers in space sound great, but practically speaking, they may be next to impossible. For tech bros, it The post Why space is actually a terrible place to cool a data center appeared first on The New Stack .</p>
+</li>
+<li>
+<p><strong><a href="https://thenewstack.io/grok-4-6-agent-training/">SpaceXAI trained Grok 4.6 on something most AI labs throw away</a></strong><br />
+  摘要：SpaceXAI released Grok 4.6 on Wednesday, less than a month after Grok 4.5. The company says Grok 4.6 can research The post SpaceXAI trained Grok 4.6 on something most AI labs throw away appeared first on The New Stack .</p>
+</li>
+<li>
+<p><strong><a href="https://thenewstack.io/go-language-ai-agents/">Code that passes every test can still break the next AI agent that touches it</a></strong><br />
+  摘要：Originally designed to make software predictable for humans, Google Go is now positioning itself as a language tailored for machine The post Code that passes every test can still break the next AI agent that touches it appeared first on The New Stack .</p>
+</li>
+<li>
+<p><strong><a href="https://thenewstack.io/anthropic-agent-memory-dreaming/">Anthropic gave agents the ability to dream. Then developers woke up.</a></strong><br />
+  摘要：During AI DevCon in London this summer, Lamis Mukta, member of technical staff at Anthropic, hosted a stage presentation session The post Anthropic gave agents the ability to dream. Then developers woke up. appeared first on The New Stack .</p>
+</li>
+<li>
+<p><strong><a href="https://thenewstack.io/meta-glimmer-distillation-enterprise/">Meta stopped worrying about distillation and just shipped the pipeline</a></strong><br />
+  摘要：Meta released Muse Glimmer on Monday, a 30-billion-parameter open-weight model distilled from Muse Spark and licensed under Apache 2.0. The The post Meta stopped worrying about distillation and just shipped the pipeline appeared first on The New Stack .</p>
+</li>
+<li>
+<p><strong><a href="https://thenewstack.io/coding-agents-ignore-guidelines/">Coding agents ignore open source contribution guidelines, researchers find.</a></strong><br />
+  摘要：Autonomous coding agents ignore contribution rules in open source communities, finds a new study from researchers at Peking University.&#160; That&#8217;s The post Coding agents ignore open source contribution guidelines, researchers find. appeared first on The New Stack .</p>
+</li>
+</ul>
+<h2>Hacker News</h2>
+<ul>
+<li>
+<p><strong><a href="https://federaide.rocklab.in">Show HN: FEDERaiDE, a TUI harness with P2P multi-agent routing and built in IDE</a></strong><br />
+  摘要：Hi! Federaide is a general purpose multi-agent harness that runs in your terminal. It is meant for recreational programming and automating your scripts. The agents are just named instances of language models which have their own memories, backstories et cetera, and can coordinate with each other as they require. It has its own IDE (complete with interactive structure parsing and jump to def). I am building Federaide as a solo project. Why do I build this? Some reasons: - I reached out to some people to try my other IDE, many of them did not have suitable computers (or at all). - During this time I observed almost every normal person has interacted with AI via their phones (usually the Gemini&#x2F;ChatGPT app). - I felt I could bring the joy of coding to a lot more people if I could make an…</p>
+</li>
+<li>
+<p><strong><a href="https://distrosea.com/">Distrosea – Test drive Linux distros online</a></strong><br />
+  摘要：Distrosea – Test drive Linux distros online</p>
+</li>
+<li>
+<p><strong><a href="https://github.com/faheel/msmd">Show HN: Monkey see, monkey do – reproduce text via native OCR on macOS</a></strong><br />
+  摘要：&quot;Monkey see, monkey do&quot; (msmd) lets you draw a rectangle over text on a macOS screen, recognizes that region with Apple&#x27;s built-in Vision framework, and emits the recognized characters as keyboard events. An amber border remains around the capture region while OCR and typing are active. It&#x27;s a simple utility script to explore native vision and OCR functionality on macOS, and will soon expand this to other operating systems as well.</p>
+</li>
+<li>
+<p><strong><a href="https://getfresh.dev/docs/blog/packaging-for-linux/">I hate packaging my software for Linux</a></strong><br />
+  摘要：I hate packaging my software for Linux</p>
+</li>
+</ul>
+<h2>CNCF Blog</h2>
+<ul>
+<li>
+<p><strong><a href="https://www.cncf.io/blog/2026/08/12/good-apps-arent-born-theyre-guided-building-observable-policy-as-code/">Good apps aren’t born, they’re guided: Building observable policy as code</a></strong><br />
+  摘要：As parents in tech, we&#8217;ve learned that neither children nor applications thrive without clear boundaries. There are no &#8220;good&#8221; or &#8220;bad&#8221; kids, just as there are no inherently &#8220;good&#8221; or &#8220;bad&#8221; applications, only behaviors shaped by...</p>
+</li>
+<li>
+<p><strong><a href="https://www.cncf.io/blog/2026/08/12/advancing-ai-model-interoperability-with-docker-and-modelpack/">Advancing AI model interoperability with Docker and ModelPack</a></strong><br />
+  摘要：The rise in the number of tools available for creating and running AI content has lowered the barrier of entry and offered the flexibility of choice when choosing the appropriate solution for a given use case....</p>
+</li>
+<li>
+<p><strong><a href="https://www.cncf.io/blog/2026/08/06/litmuschaos-q1-q2-2026-update-community-contributions-and-project-progress/">LitmusChaos Q1-Q2 2026 update: community, contributions, and project progress</a></strong><br />
+  摘要：About LitmusChaos LitmusChaos is an open source chaos engineering platform that helps teams identify weaknesses and potential outages in their infrastructure by running controlled chaos experiments. Built on cloud native principles, LitmusChaos enables teams to validate...</p>
+</li>
+</ul>
+<h2>Red Hat Blog</h2>
+<ul>
+<li>
+<p><strong><a href="https://www.redhat.com/en/blog/operationalizing-agentic-ai-day-0-2-blueprint-enterprise-infrastructure">Operationalizing agentic AI: The Day 0-2 blueprint for enterprise infrastructure</a></strong><br />
+  摘要：Your agent works. It reasons, calls tools, and returns answers in the demo that impress everyone. But between that notebook and a production deployment sits a gap having nothing to do with your model or your framework. Three failures hit a single AI agent deployment overnight—43 duplicate tickets, $4,000 charged to the wrong account, and a hallucinated refund policy leading to a $280 return the company had to honor. The agent ran on LangChain. It worked perfectly in staging. Every failure was an infrastructure failure, not an intelligence failure.I've watched teams spend months closing that</p>
+</li>
+<li>
+<p><strong><a href="https://www.redhat.com/en/blog/friday-five-august-7-2026-red-hat">Friday Five — August 7, 2026</a></strong><br />
+  摘要：Red Hat Recognized as a Leader for Third Consecutive Year in 2026 Gartner® Magic Quadrant™ for Cloud-Native Application PlatformsRed Hat OpenShift is recognized as a Leader in the 2026 Magic Quadrant for Cloud-Native Application Platforms. We believe this recognition reinforces OpenShift’s ability to manage containers, VMs and AI workloads with the same operational and security rigor across any infrastructure footprint, from on-premises datacenters to public clouds and edge environments. Learn more The migration catalyst: turning virtualization disruption into application innovationA cent</p>
+</li>
+</ul>
+<h2>Kubernetes Blog</h2>
+<ul>
+<li>
+<p><strong><a href="https://kubernetes.io/blog/2026/07/31/kubernetes-v1-37-sneak-peek/">Kubernetes v1.37 Sneak Peek</a></strong><br />
+  摘要：As we get closer to the release date for Kubernetes v1.37, the project develops and matures, features may be deprecated, removed, or replaced with better ones for the project's overall health. This blog outlines some of the planned changes for the Kubernetes v1.37 release that the release team feels you should be aware of for the continued maintenance of your Kubernetes environment and keeping up to date with the latest changes. The information below reflects the current status of the v1.37 release and may change before the actual release date. Deprecations and removals for Kubernetes v1.37 Kubectl: kubectl run --filename/-f to be deprecated The --filename (or -f ) flag for kubectl run is being deprecated as the generated pod is always built purely from CLI arguments like NAME and --image …</p>
+</li>
+<li>
+<p><strong><a href="https://kubernetes.io/blog/2026/07/13/introducing-headlamp-plugin-for-kubeflow/">Operating AI/ML Workloads on Kubernetes: A Headlamp Plugin for Kubeflow</a></strong><br />
+  摘要：Kubernetes has quietly become the default platform for AI and machine learning. Whether you run notebook servers for data scientists, schedule distributed training jobs, tune hyperparameters, or orchestrate multi-step ML pipelines, those workloads increasingly land on a Kubernetes cluster. Kubeflow is one of the most popular ways to assemble that stack, and it does so the Kubernetes-native way: every capability is exposed as a Custom Resource Definition (CRD). That design is a gift to cluster operators, because it means ML workloads can be observed and managed with the same primitives as everything else in the cluster. But in practice the specialized ML dashboards that ship with these platforms hide the Kubernetes layer underneath. When a notebook is stuck or a training run fails, the oper…</p>
+</li>
+<li>
+<p><strong><a href="https://kubernetes.io/blog/2026/07/13/kubernetes-dashboard-to-headlamp/">Kubernetes Dashboard to Headlamp: A Step-by-Step Guide</a></strong><br />
+  摘要：1. Before you start: know what is changing Kubernetes Dashboard and Headlamp both show what is running in a cluster, but they work differently. When Headlamp runs on the desktop, it uses your existing kubeconfig to connect to one or more clusters and can be extended with plugins. When Headlamp runs inside a cluster, it uses a Kubernetes ServiceAccount to access the API and follow RBAC rules. Kubernetes Dashboard, in contrast, only runs in-cluster and always relies on service account tokens. Understanding these models early helps you choose the right setup and permissions. 1.1 How Kubernetes Dashboard works Dashboard is a web app that runs inside your cluster. You install it in the cluster, often with Helm. You usually run one Dashboard per cluster. You often reach it with kubectl port-forw…</p>
+</li>
+<li>
+<p><strong><a href="https://kubernetes.io/blog/2026/06/01/dashboard-to-headlamp/">From Kubernetes Dashboard to Headlamp: Understanding the Transition</a></strong><br />
+  摘要：For many people, Kubernetes Dashboard was their first window into Kubernetes. It offered a simple visual way to see what was running in a cluster, inspect resources, and build confidence without relying on the command line. For years, it helped developers, students, and operators make sense of Kubernetes, and it served as an important onramp into the ecosystem. The Kubernetes Dashboard project has now been archived. We deeply respect the work the team did and the role Dashboard played in making Kubernetes more approachable for so many users. Headlamp builds on that foundation and carries it forward. It keeps the clarity of a visual interface while adding capabilities that match how Kubernetes is used today. This includes multi-cluster visibility, application-centric views, extensibility th…</p>
+</li>
+</ul>
+<hr /></div>
+  </main>
+</body>
+</html>
