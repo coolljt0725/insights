@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OS 领域每日洞察 - 2026-08-14</title>
+  <style>
+    :root {
+      --bg: #f6f4f0;
+      --bg-bar: #ebe8e3;
+      --bg-card: #fffefb;
+      --bg-card-hover: #f5f3ef;
+      --text: #2d2a26;
+      --text-muted: #5c5852;
+      --text-dim: #7a756e;
+      --accent: #5a7a9e;
+      --border: #ddd9d2;
+      --radius: 10px;
+      --font: "Segoe UI", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      font-size: 15px;
+    }
+
+    /* 门户顶栏 */
+    .masthead {
+      background: var(--bg-bar);
+      border-bottom: 1px solid var(--border);
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 0;
+    }
+    .masthead-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .masthead h1 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin: 0;
+      letter-spacing: -0.02em;
+      color: var(--text);
+    }
+    .masthead .meta {
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+    }
+
+    /* 主内容区：多栏门户布局 */
+    .main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 3rem;
+    }
+
+    /* 板块：每个 h2 为一个频道块 */
+    .content .section {
+      margin-bottom: 2.5rem;
+    }
+    .content h2 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+      margin: 0 0 1rem;
+      padding: 0.6rem 1rem;
+      background: var(--bg-bar);
+      border-radius: var(--radius);
+      border-left: 4px solid var(--accent);
+    }
+    .content h2:first-child { margin-top: 0; }
+
+    .content h2:has(+ h3) {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      border-left-color: var(--text-dim);
+    }
+
+    /* 板块内卡片网格（每个 h2 后的 ul） */
+    .content h2 + ul {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1rem;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .content h2 + ul li {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.15rem 1.2rem;
+      transition: background .15s, border-color .15s;
+    }
+    .content h2 + ul li:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--text-dim);
+    }
+    .content h2 + ul li strong {
+      display: block;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+      line-height: 1.4;
+    }
+    .content h2 + ul li p {
+      margin: 0 0 0.5rem;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.58;
+    }
+    .content h2 + ul li p:last-of-type { margin-bottom: 0; }
+    .content h2 + ul li a[href^="http"] {
+      font-size: 0.8125rem;
+      color: var(--accent);
+    }
+    .content h2 + ul li a[href^="http"]:hover { text-decoration: underline; }
+
+    .content .ref-section {
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+    .content h2 + h3 { margin-top: 1.25rem; }
+    .content h3 {
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--text-dim);
+      margin: 1rem 0 0.4rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .content h3 + ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 0.25rem;
+    }
+    .content h3 + ul li {
+      background: transparent;
+      border: none;
+      padding: 0.2rem 0;
+      font-size: 0.8125rem;
+    }
+    .content h3 + ul li strong { font-size: inherit; margin-bottom: 0; }
+    .content h3 + ul li a { color: var(--accent); }
+    .content h3 + ul li a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <header class="masthead">
+    <div class="masthead-inner">
+      <h1>OS 领域每日洞察 - 2026-08-14</h1>
+      <span class="meta">2026-08-14 04:00 UTC</span>
+    </div>
+  </header>
+  <main class="main">
+    <div class="content"><h1>OS 领域每日洞察 - 2026-08-14</h1>
+<p>（Gemini 未可用时，以下为按来源整理的条目，含<strong>新闻摘要</strong>与链接；摘要可能为原文语言。）</p>
+<h2>arXiv (cs.OS)</h2>
+<ul>
+<li><strong><a href="https://arxiv.org/abs/2608.13263">vToken: Token-Level Virtualization for Reclaimable KV Caches</a></strong><br />
+  摘要：arXiv:2608.13263v1 Announce Type: cross Abstract: Large language model serving faces a critical memory bottleneck: the KV cache grows with sequence length and batch size. PagedAttention uses fixed-size memory blocks to reduce allocator-level fragmentation, but recent KV eviction algorithms operate at a token granularity finer than block-level management. This mismatch causes intra-block fragmentation, leaving a large fraction of allocated KV memory unreclaimable. We present vToken, a lightweight token-level virtualization layer that decouples logical token liveness from physical block placement. vToken maintains a stable logical token view through token-table indirection and realizes physical reclamation by repacking live tokens asynchronously. The design preserves PagedAttention kernels a…</li>
+</ul>
+<h2>arXiv (cs.LG)</h2>
+<ul>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.12419">LoKiFormer: Locality-aware Attention with Decoupled Knowledge Memory for Efficient Large Language Model Pretraining</a></strong><br />
+  摘要：arXiv:2608.12419v1 Announce Type: new Abstract: Large language models (LLMs) have achieved remarkable breakthroughs across various applications. However, their architectures remain inefficient in pretraining due to two main limitations: (i) self-attention lacks an explicit inductive bias for locality, leading to redundant modeling of sequence-internal local information; (ii) mixture-of-experts (MoE) implicitly couples knowledge storage with computational pathways, hindering flexible access to sequence-external global knowledge. To overcome these limitations, we propose LoKiFormer, a novel LLM architecture that augments the standard decoder with two dedicated modules: 1) Local Fusion Attention (LFA), which incorporates a convolutional fusion to attention, explicitly capturing local patterns…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.12422">Which Site, and When: A Free-Satellite-Data Test of Himalayan Glacial Lake Bursts, Landslides, and Ice Floods</a></strong><br />
+  摘要：arXiv:2608.12422v1 Announce Type: new Abstract: Two free satellite signals carry real information about glacial-lake outburst risk in the Nepal Himalaya: radar interferometry sees a moraine dam slowly sagging, and satellite weather marks the weeks when a primed lake is under stress. A companion feasibility study found that deformation indicates which lake is destabilizing and weather indicates when it is at risk, but proposed no predictive model. To address this gap, we propose and evaluate models that predict which site is susceptible and when a trigger arrives. We test three related hazards on free data alone: large moraine- and ice-dammed bursts, rainfall-triggered landslides, and smaller floods from ponds on and around a glacier. Each hazard gets two questions, never blended. Using 589…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.12435">MARCH: Scaling Recurrent Memory with Content-Routed State Anchors</a></strong><br />
+  摘要：arXiv:2608.12435v1 Announce Type: new Abstract: Transformers owe much of their strong long-context retrieval capability to a token-level memory that grows with context length. This flexibility, however, incurs a quadratic computation complexity during training and a key--value cache that grows linearly during autoregressive inference. Recurrent alternatives offer efficient decoding by compressing the entire history into a fixed-size state, but often underperform on recall-intensive tasks since earlier associations usually get overwritten by subsequent updates, and only the most recent contextual information is retained. In this paper, we introduce Memory-Anchor Routing across Context History (MARCH), a network architecture that effectively scales state-space models beyond a fixed-size dime…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.12436">Multi-AUV Ad-hoc network-based Target Tracking: A Value Gradient Guidance Multi-Agent Diffusion Reinforcement Learning Approach</a></strong><br />
+  摘要：arXiv:2608.12436v1 Announce Type: new Abstract: Multi-AUV ad-hoc network-based target tracking requires networked autonomous underwater vehicles (AUVs) to cooperatively track maneuvering targets under constrained acoustic communication, dynamic topology, and uncertain ocean disturbances. Although multi-agent reinforcement learning (MARL) enables decentralized coordination through centralized training, existing methods suffer from high-dimensional joint state-action modeling, noise-sensitive policy generation, leading to unstable training and degraded tracking. To address these issues, we propose VGG-MADiffRL, a value-gradient-guided multi-agent diffusion RL algorithm, and MDCA, a diffusion?based hierarchical control architecture. Leveraging underwater mission characteristics, we model sona…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.12438">Unifying Generative Models with Path Integrals</a></strong><br />
+  摘要：arXiv:2608.12438v1 Announce Type: new Abstract: We formulate generative modeling as a path integral in which flow-based, diffusion-based, variational, and adversarial models arise as different evaluation principles for a single master action. Its Martin-Siggia-Rose-Janssen-de~Dominicis (MSRJD) form separates free from interacting probability flows and opens them to diagrammatic perturbation theory. The expansion yields a one-loop correction to deterministic samplers at no stochastic-sampling cost, which we validate on solvable and nonlinear drifts, where it reduces a 53 % tree-level error to 1.6 %. Imperfect learned scores enter as insertions and yield a response-weighted score-matching objective, and symmetry-equivariant drift design becomes an operator expansion with EFT power counting.</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.12441">Dual Spatial-Temporal Attribution: Architecture-Aligned Post-Hoc Explainability for Recurrent Graph Anomaly Detection</a></strong><br />
+  摘要：arXiv:2608.12441v1 Announce Type: new Abstract: Deep learning detectors for anomalies in dynamic graphs have reached strong accuracy, yet they remain opaque: when an edge is flagged, the analyst receives a score but no reason. This opacity is untenable in the cooperative, regulated information systems where such detectors are deployed, where automated decisions must be auditable and trustworthy. We address this gap for AddGraph, the foundational GCN+GRU framework for edge-level anomaly detection in dynamic graphs, which to our knowledge has never been equipped with any form of explainability. We present a strictly post-hoc explainability framework, X-AddGraph, built on a Dual Spatial-Temporal Attribution (DSTA) mechanism whose three components are each aligned with one of AddGraph's archit…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.12446">Personalized Scorer Modeling: A Learning-Based Framework for Deriving Robust Sleep Stage Labels from Multiple Experts</a></strong><br />
+  摘要：arXiv:2608.12446v1 Announce Type: new Abstract: Sleep stage classification is important for the diagnosis and management of sleep disorders, yet most automatic staging studies evaluate models against a single reference hypnogram despite known inter-scorer variability. This study investigates whether multi-scored datasets can be used to construct more reliable reference labels from the collective behavior of multiple experts. We use the publicly available DOD-H and DOD-O datasets. EEG (C3-M2) and chin EMG signals were segmented into 30-s epochs, and 30 features were extracted from each modality, yielding 60 features for EEG+EMG. We propose a learning-based hypnogram (LBH) that models the stage-specific behavior of each scorer using confusion matrices derived from machine-learning models. Af…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.12447">Geometric and Behavioral Stratification in Transformer Residual Streams</a></strong><br />
+  摘要：arXiv:2608.12447v1 Announce Type: new Abstract: Trained transformer models develop privileged bases: coordinate axes whose statistics differ from the rest of the residual stream. But what kind of direction does such a basis select? We investigate the prediction direction, the unembedding direction of the token a model currently predicts, and find that it functions as a content-defined privileged anchor. Measured with respect to this anchor, residual-stream variation is geometrically and behaviorally stratified by proximity to the prediction. The stratification holds in all eighteen models tested (dense and mixture-of-experts, 7B-120B, base and instruction-tuned). A narrow, scale-invariant prediction interface concentrates readout-relevant structure, while the vast prediction-distal complem…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.12448">Exemplar-based objective classification of gust-induced loads across multiple flight conditions</a></strong><br />
+  摘要：arXiv:2608.12448v1 Announce Type: new Abstract: Is it possible to find an objective classification criterion that organizes the complexity of gust-induced loads across many flight conditions? And one that remains as interpretable as a labelling based on coarse parameters, such as the flight attitude? Our approach encodes a large number of experimental observations through a machine-learned representation and applies a summarization procedure to select a minimal subset of highly significant exemplars. The exemplars provide a similarity-based objective classification criterion of all the observations, they can be more conveniently inspected by experts and can become subject of more refined experiments. We demonstrate the approach on a database of 3480 pressure-load measurements induced by ra…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.12477">Learning Under Treatment-Induced Label Indeterminacy with Expert Annotations of Counterfactual Outcomes: A Case Study in Neurological Prognostication</a></strong><br />
+  摘要：arXiv:2608.12477v1 Announce Type: new Abstract: Clinical prediction models are often developed as if the outcome of interest were cleanly observed for every patient. This assumption fails when treatment decisions make the clinically relevant outcome permanently unobservable. As a case study of this problem, we consider post-cardiac-arrest neurological prognostication using a cohort of 2,497 patients, including 1,429 patients whose outcomes were rendered indeterminate by treatment decisions. These patients with indeterminate outcomes were reviewed by independent clinical experts, who provided their guesses of counterfactual outcomes about what would have happened to the patients. We refer to these patients as uncertain cases. We also have patients for whom we observe their clinically releva…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.12489">When Can You Trust Offline Evaluation of Equal-Cost Top-k Allocation? A Controlled, Reproducible Benchmark and Practitioner's Guide</a></strong><br />
+  摘要：arXiv:2608.12489v1 Announce Type: new Abstract: Organizations decide whom to treat under a budget and want to know what a targeting rule would have earned before deploying it. Off-policy evaluation promises this from logged data, but the deployable rule is a deterministic top-k policy: it removes all averaging over actions, so weak overlap hits the estimate directly. We benchmark six estimators across five datasets and two known-effect sweeps, and validate the mechanisms against a non-simulated paired reference. First, weak overlap is governed by logger-target action alignment, not by logging sharpness alone: what governs support is the logger's probability of the target's actions. Sharpening a logger built from the target's own score barely moves overlap over the tested range; action-leve…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.12514">Exploring Oversmoothing with Householder Matrices</a></strong><br />
+  摘要：arXiv:2608.12514v1 Announce Type: new Abstract: Deep graph neural networks(GNNs) suffer from oversmoothing- a progressive collapse of node representation towards a low information subspace as network depth increases because the normalized graph propagation operator is repeatedly applied directly to the hidden representations. In this work we study Householder Graph Neural Network (HouseGNN). Rather than updating the hidden state like standard GCN, HouseGNN uses the aggregated neighbourhood message solely to estimate a reflection direction; the node embedding is then updated by a Householder reflector followed by GroupSort, yielding a piecewise orthogonal layer that preserves Euclidean norm at every node and at every depth. We prove three core properties: (i) every internal layer preserves …</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.12535">GENADA: efficient generative time series adversarial attack framework</a></strong><br />
+  摘要：arXiv:2608.12535v1 Announce Type: new Abstract: Deep learning models are widely used for time series analysis in domains such as healthcare, finance, energy systems, and environmental monitoring. However, these models remain vulnerable to adversarial attacks, where small input perturbations cause severe degradation in predictive performance. Commonly used gradient-based attacks, iterative first-order methods, are computationally burdensome, as they repeatedly backpropagate through the victim model to compute input gradients during a number of iterative refinement steps. We propose a GENerative ADversarial Attack (GENADA) that learns a generative model to produce deceptive perturbations directly in a single forward pass and a procedure to train it. Variants include single-step and iterative…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.12564">Scaling Automatic Research Agents via World Models</a></strong><br />
+  摘要：arXiv:2608.12564v1 Announce Type: new Abstract: Automating empirical research is a long-standing direction of AI. Recent automatic research (AutoResearch) agents bring this goal within reach, as modern LLMs show the capability to independently implement solutions and learn from the execution outcomes. Behind these gains, post-training (especially RL) plays a central role. In this paper, we identify a fundamental tension when scaling RL for these agents: the two components of every AutoResearch trajectory (agent generation and environment execution) scale in very different manners, since all generation shares compute through batching, while each execution occupies its exclusive sandbox and real machine time. As a result, the environment execution dominates the training cost and becomes the …</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.12573">Prof-K: Probabilistic One-Pass Filtering for Efficient Top-k Selection</a></strong><br />
+  摘要：arXiv:2608.12573v1 Announce Type: new Abstract: Top-k selection is a fundamental computational primitive with applications spanning databases, information retrieval, signal processing, and modern machine learning workloads, including sparse activations and attention pruning. As data sizes grow, existing approaches become inefficient: exact methods incur high memory and compute overhead, while approximate methods often rely on brittle heuristics that degrade under adversarial or heavy-tailed inputs. In this paper, we introduce Prof-K, a fast, scalable, and distribution-agnostic top-k algorithm with probabilistic correctness guarantees. Prof-K performs a single-pass filtering procedure: a small random sample estimates an adaptive threshold, the N input elements are streamed once into a compa…</p>
+</li>
+</ul>
+<h2>Hacker News</h2>
+<ul>
+<li>
+<p><strong><a href="https://taskfleetai.github.io/fieldfleet/">FieldFleet – open-source field operations system</a></strong><br />
+  摘要：FieldFleet – open-source field operations system</p>
+</li>
+<li>
+<p><strong><a href="https://github.com/MSKazemi/yazses">Show HN: YazSes – offline hold-to-talk voice dictation for Linux/macOS/Windows</a></strong><br />
+  摘要：Show HN: YazSes – offline hold-to-talk voice dictation for Linux/macOS/Windows</p>
+</li>
+<li>
+<p><strong><a href="https://github.com/tsirysndr/bsdkrun">Show HN: Bsdkrun – Instant MicroVMs/Unikernels for macOS and Linux</a></strong><br />
+  摘要：Show HN: Bsdkrun – Instant MicroVMs/Unikernels for macOS and Linux</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/GeForce-NOW-Linux-Exits-Beta">GeForce Now on Linux Native App Exits Beta</a></strong><br />
+  摘要：GeForce Now on Linux Native App Exits Beta</p>
+</li>
+<li>
+<p><strong><a href="https://news.ycombinator.com/item?id=49286299">Show HN: ProbeDeck an iOS app for ClickHouse incident triage</a></strong><br />
+  摘要：As a backend developer dealing with heavy applications, I run a ClickHouse node with 3.42 TB compressed and 19.10 TB uncompressed amongst its active components. I built ProbeDeck to run some operations on a cluster, inspect a cluster, and read some system logs on my iPhone or iPad with no laptop. The application presents some system tables as screens for running a query, replica state, storage pressure, and mutations. It pulls some stats from the system.metric_log table and shows 0 when that table is not active. One can inspect the system and decide if they want to execute KILL QUERY or KILL MUTATION. Those screens have a confirmation screen. While working with destructive SQL in the editor, a confirmation is needed and is type-safe. The app sends ClickHouse requests via HTTP or HTTPS to t…</p>
+</li>
+<li>
+<p><strong><a href="https://news.ycombinator.com/item?id=49286271">Show HN: Orca – Instant cross-platform in-app purchase orchestration</a></strong><br />
+  摘要：Hi HN, Founder of Maxint here, we just launched Orca ( https:&#x2F;&#x2F;orca.maxint.com&#x2F; ) One major hurdle for us, following the deployment across iOS, Android, Linux, MacOS, Windows and Web, was monetization. There was no standardized store, schema or architecture to define, integrate and track subscriptions, consumables and non-consumables across platforms. We tried RevenueCat and Adapty, however both were limited to mobile and web, while we still had to manually set up all products and entitlements in each of the stores - Google PlayStore, Apple AppStore and Stripe. Both providers had no support for MacOS, Linux and Windows, and raising GitHub issues left us hanging for months, while our users were limited to use their subscription on a single platform only. This forced us to bui…</p>
+</li>
+<li>
+<p><strong><a href="https://manualdousuario.net/en/another-week-linux/">Another Week on Linux</a></strong><br />
+  摘要：Another Week on Linux</p>
+</li>
+<li>
+<p><strong><a href="https://community.openai.com/t/codex-in-chatgpt-desktop-app-for-linux-is-now-in-preview/1390027">Codex in ChatGPT desktop app for Linux is now in preview</a></strong><br />
+  摘要：Codex in ChatGPT desktop app for Linux is now in preview</p>
+</li>
+<li>
+<p><strong><a href="https://github.com/peppe200175/ds4_RTX_5080_cuda">Running DeepSeek V4 Flash on an RTX 5080 with 16GB VRAM Under Linux/WSL2 via DS4</a></strong><br />
+  摘要：Running DeepSeek V4 Flash on an RTX 5080 with 16GB VRAM Under Linux/WSL2 via DS4</p>
+</li>
+<li>
+<p><strong><a href="https://news.ycombinator.com/item?id=49268218">ChatGPT and Codex desktop apps now support Linux</a></strong><br />
+  摘要：OpenAI has officially launched the Linux version of the ChatGPT and Codex desktop applications.</p>
+</li>
+</ul>
+<h2>Phoronix</h2>
+<ul>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/AMD-GAIA-0.23">AMD GAIA 0.23 Delivers Ability To Install/Run AI Agents From The Terminal</a></strong><br />
+  摘要：AMD's GAIA open-source AI software built atop Lemonade for serving as an AI companion for emails, a Bash coding agent, and other AI agent skills is out with a new version today with more features while also improving security and making other improvements...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/KDE-Bullet-Proof-Software">KDE, Techpaladin &amp; Kubuntu Focus Announce The Bullet-Proof KDE Software Initiative</a></strong><br />
+  摘要：KDE e.V. along with Linux PC vendor Kubuntu Focus and KDE-aligned consulting firm Techpaladin Software have announced a collaboration of the "bullet-proof KDE Software initiative" for providing at least three years of bug fixes and security updates to KDE Plasma 6.6 LTS and related software...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Linux-7.2-Best-Features">The Best Linux 7.2 Features: Cache Aware Scheduling, AMD Zen 6, AMDGPU HDMI 2.1 FRL</a></strong><br />
+  摘要：With the Linux 7.2 kernel expected to be released on Sunday, 16 August, here is a look at some of the most interesting new features and changes to find with this next kernel version to be used by Ubuntu 26.10 and other upcoming Linux distribution releases...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/New-Dasharo-2026-MSI-Intel-Z">Updated Coreboot/Dasharo For MSI PRO Z690-A / Z790-P Motherboards, Adds Overclocking</a></strong><br />
+  摘要：In addition to 3mdeb providing their Coreboot-based Dasharo built atop AMD openSIL on a Gigabyte EPYC server motherboard and recently making their first Dasharo release for an AMD Ryzen AM5 platform with the MSI PRO B850-P WIFI, the firmware consulting firm today released updated versions of their MSI PRO Z690-A and MSI PRO Z790-P Dasharo ports to those Intel Core motherboards...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/review/framework-13-pro-linux-71-72">The Beneficial Performance Gains Running The Framework Laptop Pro 13 / Core Ultra X9 388H With Linux 7.1+</a></strong><br />
+  摘要：The recently launched Framework Laptop 13 Pro powered by Intel Core Ultra Series 3 "Panther Lake" runs well on Ubuntu 26.04 LTS and other modern Linux distributions. In the case of Ubuntu 26.04 with Linux 7.0, while everything works, if upgrading to Linux 7.1 or the upcoming Linux 7.2 kernel is even better performance. Here are benchmarks of the Framework Laptop 13 Pro with Core Ultra X9 388H across the Linux 7.0, 7.1, and 7.2 kernels.</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/GeForce-NOW-Linux-Exits-Beta">GeForce NOW On Linux Native App Exits Beta</a></strong><br />
+  摘要：At the beginning of the year NVIDIA released a native build of GeForce NOW for Linux using Flatpaks. Today their native Linux build has exited beta to reach official production status for this cloud gaming solution from NVIDIA...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/MSI-Claw-Gamepad-Linux-7.3">MSI Claw Gamepad Driver Set To Be Merged For Linux 7.3</a></strong><br />
+  摘要：The MSI Claw Gamepad driver is set to be merged for the upcoming Linux 7.3 kernel for enabling RGB lighting and controller configuration support with the mainline kernel...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Linux-Apple-M4-NVMe-Patches">Linux Patches Enable Apple M4 NVMe Support</a></strong><br />
+  摘要：While the Apple M4 SoCs aren't yet supported by the mainline Linux kernel and the Apple M3 series hardware isn't yet ready for end-users, there are some early elements of the Apple M4 support beginning to come together by open-source developers working on the Apple Silicon support. Sent out to the Linux kernel mailing list were patches for enabling NVMe solid state drive support with the M4...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Azure-Linux-3.0.20260809">Microsoft's Azure Linux 3.0.20260809 Ships With 233+ CVE Fixes</a></strong><br />
+  摘要：While Microsoft continues working on Azure Linux 4.0 as its overhauled Linux distribution built atop Fedora, Azure Linux 3.0 remains the current stable production series. Released overnight was Azure Linux 3.0.20260809 and it comes with more than 233 security patches for recent CVEs in the AI era...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Intel-XPU-Manager-2.1">Intel XPU Manager 2.1 Released For Monitoring Arc Pro Graphics On Windows/Linux</a></strong><br />
+  摘要：Intel XPU Manager 2.1 is now available as the latest version of this open-source tool for Linux and Windows systems for the monitoring and management of Arc Pro graphics cards. The Intel XPU Manager helps in keeping an eye on device utilization and other metrics via the xpu-smi command and other components...</p>
+</li>
+</ul>
+<h2>Red Hat Blog</h2>
+<ul>
+<li>
+<p><strong><a href="https://www.redhat.com/en/blog/friday-five-august-14-2026-red-hat">Friday Five — August 14, 2026</a></strong><br />
+  摘要：TechZine: Red Hat tames the open source AI chaosThe AI ecosystem is still in its infancy. This is evident from the regular releases of immature, yet highly imaginative, open source solutions. It’s up to companies like Red Hat to anticipate these developments and help such tools mature into enterprise-ready products. Learn more InfoWorld: Three AI security mistakes that will haunt enterprisesRed Hat's Scott McCarty explains why the enterprise AI nightmare is not a killer robot, but an erosion of our ability to see and control what’s running in our own environments. Learn more Beyond the</p>
+</li>
+<li>
+<p><strong><a href="https://www.redhat.com/en/blog/what-metal-agents-navigating-architecture-enterprise-ai">What is metal to agents? Navigating the architecture of enterprise AI</a></strong><br />
+  摘要：Enterprise AI has reached a critical turning point as organizations move from isolated, chat-based experimentation to complex reasoning models and autonomous agents. While the productivity gains are real, underlying infrastructure costs are escalating rapidly, with token consumption predicted to increase 24x by 2030. Relying entirely on external clouds and proprietary APIs means your expenses scale directly with business growth, introducing major predictability and cost issues. When technology moves this fast, treating it as a series of disconnected software tools creates unnecessary technical</p>
+</li>
+<li>
+<p><strong><a href="https://www.redhat.com/en/blog/manage-bare-metal-cloud-red-hat-bare-metal-service-openshift">Manage bare metal like a cloud with Red Hat Bare-Metal-as-a-Service for OpenShift</a></strong><br />
+  摘要：Red Hat OpenShift 4.22 includes general availability support for Red Hat Bare-Metal-as-a-Service (BMaas) for OpenShift, enabling organizations to manage bare metal, virtual machines (VMs), and application containers using the same consistent platform.What is Red Hat Bare-Metal-as-a-Service for OpenShift?Before OpenShift 4.22, Cluster Baremetal Operator in OpenShift provided centralized management for servers with Redfish support with containerized and virtualized workloads. With this new add-on, Red Hat OpenShift Container Platform now extends its orchestration capabilities to physical hardwar</p>
+</li>
+</ul>
+<h2>Lobsters</h2>
+<ul>
+<li>
+<p><strong><a href="https://www.simplermachines.com/lets-not-call-it-tech-debt-its-just-mess/">Let's not call it "tech debt," it's just "mess"</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://youtu.be/a7qEOtkkDb8">A preview of Roc 0.1.0</a></strong><br />
+  摘要：Starts at 4:21 Comments</p>
+</li>
+<li>
+<p><strong><a href="https://c3-lang.org/blog/c3_0_8_3_feature_flags/">C3 0.8.3 Feature flags</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://domenkozar.com/2026/08/13/i-want-extern-fil-c/">I want extern "fil-c"</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="http://eurozig.eu/">EuroZig</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://github.com/xoreaxeaxeax/skitter-creek-bath-salts">Unlocking <em>everything</em> on the CPU with DRAM scrambling</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://blog.florianherrengt.com/ai-removing-middle-class-software-engineering.html">AI is removing the middle class of software engineering</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://www.youtube.com/watch?v=ZSKLA81tBis">SQLite: How it works, by Richard Hipp (2024)</a></strong><br />
+  摘要：https://sqlite.org/talks/howitworks-20240624.pdf Comments</p>
+</li>
+<li>
+<p><strong><a href="https://ohadravid.github.io/posts/2026-08-let-them-write-rfcs/">Let Them Write RFCs</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://flutter.dev/blog/whats-new-in-flutter-3-47">What’s new in Flutter 3.47</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://sebsite.pw/w/20260801-pythonconstants.html">python's pre-declared constants are kinda weird</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://brandur.org/fragments/postgres-without-pgbouncer">Does anyone run Postgres without PgBouncer?</a></strong><br />
+  摘要：Comments</p>
+</li>
+</ul>
+<h2>Ars Technica</h2>
+<ul>
+<li>
+<p><strong><a href="https://arstechnica.com/health/2026/08/us-wait-times-for-cancer-surgeries-are-getting-longer-and-longer/">US wait times for cancer surgeries are getting longer and longer</a></strong><br />
+  摘要：Study finds wait times for cancer surgeries hit 10-year high.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/security/2026/08/white-house-recruits-security-firms-to-hack-overseas-cybercriminals/">Private security firms will soon be allowed to hack overseas cybercriminals</a></strong><br />
+  摘要：Trump memo is first time gov't has authorized private sector to perform cyberattacks.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/space/2026/08/virgin-galactic-wants-your-help-naming-its-new-delta-class-spaceship/">Virgin Galactic wants your help naming its new Delta class spaceship</a></strong><br />
+  摘要：Will it be the VSS... Horizon , Explorer , Ascend or Apeiron ?</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/gadgets/2026/08/ukrainian-drones-wipe-out-entire-us-tank-brigade-in-live-war-game/">Ukrainian drones wipe out entire US tank brigade in live war game</a></strong><br />
+  摘要：Ukrainian drone pilots teach the US military and NATO hard battlefield lessons.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/tech-policy/2026/08/flock-cant-tech-its-way-out-of-the-stalker-cop-problem-experts-say/">Flock “can’t tech its way out” of the stalker cop problem, experts say</a></strong><br />
+  摘要：Flock to lock out cops who stalk exes, but agencies can still hide abuse.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/gadgets/2026/08/pet-owners-say-smart-pet-feeder-outage-led-to-furry-ones-going-unfed/">Pet owners say smart pet feeder outage led to furry ones going unfed</a></strong><br />
+  摘要："I've lost trust ..."</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/ai/2026/08/the-new-instagram-logo-is-the-perfect-embodiment-of-ai-slop/">The new Instagram logo is the perfect embodiment of AI slop</a></strong><br />
+  摘要：Opinion: Some remarks about the new wordmark accidentally being perfectly awful.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/ai/2026/08/google-announces-gemini-3-7-flash-just-three-weeks-after-previous-release/">Google announces Gemini 3.7 Flash just three weeks after previous release</a></strong><br />
+  摘要：Gemini 3.6 Flash debuted just 3 weeks ago, but Google says 3.7 has "substantial improvements."</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/cars/2026/08/rivian-tweaks-its-r1-range-for-model-year-2027/">Rivian's 2027 changes include its No. 1 most-requested feature</a></strong><br />
+  摘要：Pricing hasn't changed, and now you can get captain's chairs for the R1S.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/ai/2026/08/anthropic-could-be-worth-2-trillion-when-it-goes-public/">Anthropic could be worth $2 trillion when it goes public</a></strong><br />
+  摘要：Rapid revenue growth fuels hope Claude maker's IPO is the biggest listing in history</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/science/2026/08/weve-flown-a-radiation-blocking-vest-to-the-moon-and-back-and-it-worked/">We've flown a radiation-blocking vest to the Moon and back, and it worked</a></strong><br />
+  摘要：Let's shield the astronauts instead of the spacecraft.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/tech-policy/2026/08/claudes-new-scarlet-letter-watermark-is-invisible-for-now/">Claude's new Scarlet Letter watermark is invisible—for now</a></strong><br />
+  摘要：The mark flags anything Claude processed, even human writing it only edited.</p>
+</li>
+</ul>
+<h2>The New Stack</h2>
+<ul>
+<li>
+<p><strong><a href="https://thenewstack.io/gemini-3-7-flash-agents/">The AI model that just scored 65% on DeepSWE isn’t the one Google promised.</a></strong><br />
+  摘要：Google has a new Gemini model, and no, it is not Gemini 3.5 Pro. Gemini 3.7 Flash launched Thursday as The post The AI model that just scored 65% on DeepSWE isn&#8217;t the one Google promised. appeared first on The New Stack .</p>
+</li>
+<li>
+<p><strong><a href="https://thenewstack.io/openai-chatgpt-computer-history/">ChatGPT can now remember what you did on your Mac — without screenshots</a></strong><br />
+  摘要：OpenAI is launching a new feature for ChatGPT Work and Codex on macOS that sounds quite useful but may also The post ChatGPT can now remember what you did on your Mac — without screenshots appeared first on The New Stack .</p>
+</li>
+<li>
+<p><strong><a href="https://thenewstack.io/rubrik-mythos-learnings/">Rubrik’s lessons from one month with Mythos Preview</a></strong><br />
+  摘要：After it joined Project Glasswing and gained access to experiment with Mythos Preview, security and AI company Rubrik learned it The post Rubrik’s lessons from one month with Mythos Preview appeared first on The New Stack .</p>
+</li>
+<li>
+<p><strong><a href="https://thenewstack.io/deepseek-harness-open-source-plugins/">DeepSeek open sources an agent harness where everything is a plugin</a></strong><br />
+  摘要：DeepSeek on Thursday open sourced the DeepSeek Harness, a new agent runtime for developers. The Node.js-based harness is now available The post DeepSeek open sources an agent harness where everything is a plugin appeared first on The New Stack .</p>
+</li>
+<li>
+<p><strong><a href="https://thenewstack.io/ai-pipeline-token-optimization/">Why your AI pipeline costs 10x more after the demo</a></strong><br />
+  摘要：Every token has a price. The problem is that most AI systems don’t reveal the bill until they reach production. The post Why your AI pipeline costs 10x more after the demo appeared first on The New Stack .</p>
+</li>
+<li>
+<p><strong><a href="https://thenewstack.io/code-review-taste-problem/">Code review is a taste problem</a></strong><br />
+  摘要：Code review is becoming the most important decision-making surface in software engineering, and it&#8217;s outgrowing the diff. The assumption was The post Code review is a taste problem appeared first on The New Stack .</p>
+</li>
+<li>
+<p><strong><a href="https://thenewstack.io/mistral-third-party-open-models/">Five European companies just agreed to buy AI compute that doesn’t exist yet</a></strong><br />
+  摘要：Mistral AI, the French AI company that built its reputation releasing open-weight models, wants companies to use its infrastructure even The post Five European companies just agreed to buy AI compute that doesn&#8217;t exist yet appeared first on The New Stack .</p>
+</li>
+</ul>
+<h2>LWN.net</h2>
+<ul>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1088778/">Domas: Bypassing memory protection with AMD's memory controllers</a></strong><br />
+  摘要：Christopher Domas has published a proof of concept with a description showing how to use AMD memory controllers' bank swizzle mode to bypass memory protection and read or write arbitrary data, including CPU microcode definitions and memory belonging to the platform security processor . Among other things, this allows code running at the kernel level to directly manipulate the meaning of processor instructions, potentially bypassing other security measures such as memory encryption and virtual machine isolation. This is not, strictly, unexpected behavior: it is documented in AMD's manual (on page 113 of that PDF). But the fact that it can be used to access arbitrary memory and thereby rewrite supposedly immutable parts of the computer's firmware without crashing the host machine seems like …</p>
+</li>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1088759/">rsync 3.5.0 released</a></strong><br />
+  摘要：Version 3.5.0 of rsync has been released with a huge number of security fixes : This release fixes 33 security issues found during a focused audit of rsync's path handling and daemon protocol, a companion daemon-protocol fuzzing pass, and reports from external researchers -⁠-⁠ plus several robustness hardenings. CVE IDs were assigned by VulnCheck (CNA); the precise "introduced in" version ranges accompany each advisory, and many are much narrower than "everything before 3.5.0". Every fix ships with a regression test in the test suite that fails on the unfixed tree.</p>
+</li>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1088125/">[$] 128-Bit page tables for Arm</a></strong><br />
+  摘要：The size of a processor's page-table entries directly limits how much physical memory that processor is able to access. Back in the 32-bit days, that limit was 4GB, an amount of memory that once seemed nearly infinite, but which would now struggle to hold a basic AI-enabled "hello world" app. The expansion to 64&#160;bits on most popular architectures would seem to have removed those limits now; some Arm systems, for example, can use 56&#160;of those bits to access up to 72PB of memory. So it might be surprising that the Arm architecture is evolving to support even larger page-table entries (PTEs). This patch set from Anshuman Khandual adds support for 128-bit PTEs, but who will benefit from this capability is not entirely clear.</p>
+</li>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1088715/">Security updates for Thursday</a></strong><br />
+  摘要：Security updates have been issued by AlmaLinux (abrt, dhcpcd, edk2, freerdp, gegl04, grafana, gstreamer1-plugins-good, iscsi-initiator-utils, isns-utils, kernel, kernel-rt, keylime, libarchive, libyang, nodejs-nodemon, opencryptoki, osbuild-composer, pacemaker, postgresql-jdbc, postgresql18, python-idna, python3.9, udisks2, valkey, vim, xorg-x11-server-Xwayland, and yggdrasil-worker-package-manager), Debian (flatpak, lemonldap-ng, neutron, python-django, spip, xdg-dbus-proxy, and xorg-server), Fedora (apr-util, cri-o1.34, libcupsfilters, linux-firmware, sqlite, and vaultwarden), Gentoo (FreeType), Oracle (dovecot, evince, fence-agents, gnutls, gstreamer1-plugins-bad-free, gstreamer1-plugins-good, isns-utils, java-1.8.0-openjdk, kernel, libarchive, osbuild-composer, pipewire, postgresql, ru…</p>
+</li>
+</ul>
+<h2>Linux Weekly News (RSS)</h2>
+<ul>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1088778/">Domas: Bypassing memory protection with AMD's memory controllers</a></strong><br />
+  摘要：Christopher Domas has published a proof of concept with a description showing how to use AMD memory controllers' bank swizzle mode to bypass memory protection and read or write arbitrary data, including CPU microcode definitions and memory belonging to the platform security processor . Among other things, this allows code running at the kernel level to directly manipulate the meaning of processor instructions, potentially bypassing other security measures such as memory encryption and virtual machine isolation. This is not, strictly, unexpected behavior: it is documented in AMD's manual (on page 113 of that PDF). But the fact that it can be used to access arbitrary memory and thereby rewrite supposedly immutable parts of the computer's firmware without crashing the host machine seems like …</p>
+</li>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1088759/">rsync 3.5.0 released</a></strong><br />
+  摘要：Version 3.5.0 of rsync has been released with a huge number of security fixes : This release fixes 33 security issues found during a focused audit of rsync's path handling and daemon protocol, a companion daemon-protocol fuzzing pass, and reports from external researchers -⁠-⁠ plus several robustness hardenings. CVE IDs were assigned by VulnCheck (CNA); the precise "introduced in" version ranges accompany each advisory, and many are much narrower than "everything before 3.5.0". Every fix ships with a regression test in the test suite that fails on the unfixed tree.</p>
+</li>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1088125/">[$] 128-Bit page tables for Arm</a></strong><br />
+  摘要：The size of a processor's page-table entries directly limits how much physical memory that processor is able to access. Back in the 32-bit days, that limit was 4GB, an amount of memory that once seemed nearly infinite, but which would now struggle to hold a basic AI-enabled "hello world" app. The expansion to 64&#160;bits on most popular architectures would seem to have removed those limits now; some Arm systems, for example, can use 56&#160;of those bits to access up to 72PB of memory. So it might be surprising that the Arm architecture is evolving to support even larger page-table entries (PTEs). This patch set from Anshuman Khandual adds support for 128-bit PTEs, but who will benefit from this capability is not entirely clear.</p>
+</li>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1088715/">Security updates for Thursday</a></strong><br />
+  摘要：Security updates have been issued by AlmaLinux (abrt, dhcpcd, edk2, freerdp, gegl04, grafana, gstreamer1-plugins-good, iscsi-initiator-utils, isns-utils, kernel, kernel-rt, keylime, libarchive, libyang, nodejs-nodemon, opencryptoki, osbuild-composer, pacemaker, postgresql-jdbc, postgresql18, python-idna, python3.9, udisks2, valkey, vim, xorg-x11-server-Xwayland, and yggdrasil-worker-package-manager), Debian (flatpak, lemonldap-ng, neutron, python-django, spip, xdg-dbus-proxy, and xorg-server), Fedora (apr-util, cri-o1.34, libcupsfilters, linux-firmware, sqlite, and vaultwarden), Gentoo (FreeType), Oracle (dovecot, evince, fence-agents, gnutls, gstreamer1-plugins-bad-free, gstreamer1-plugins-good, isns-utils, java-1.8.0-openjdk, kernel, libarchive, osbuild-composer, pipewire, postgresql, ru…</p>
+</li>
+</ul>
+<h2>CNCF Blog</h2>
+<ul>
+<li>
+<p><strong><a href="https://www.cncf.io/blog/2026/08/13/lightweight-dragonfly-deployment-p2p-distribution-without-the-database-stack/">Lightweight Dragonfly Deployment: P2P Distribution Without the Database Stack</a></strong><br />
+  摘要：Dragonfly speeds up file and container image distribution using peer-to-peer (P2P) technology, but a standard installation deploys several components and dependencies. Beyond the Scheduler, Seed Client, and Client that move data, a traditional setup requires a...</p>
+</li>
+<li>
+<p><strong><a href="https://www.cncf.io/blog/2026/08/13/llmops-and-platform-engineering-who-should-own-the-ai-pipeline/">LLMOps and platform engineering: Who should own the AI pipeline?</a></strong><br />
+  摘要：A few years ago, getting a model into production meant a data scientist, a DevOps engineer, and a narrow set of tools: train it, test it, ship it, watch the dashboards. Large language models broke that...</p>
+</li>
+<li>
+<p><strong><a href="https://www.cncf.io/blog/2026/08/07/does-kubernetes-dra-replace-hami/">Does Kubernetes DRA Replace HAMi?</a></strong><br />
+  摘要：Projects that want to share a GPU on Kubernetes have to work around an API instead of with it. The device plugin interface could count devices, and that was the whole vocabulary:&#160;nvidia.com/gpu: 1. It meant one...</p>
+</li>
+<li>
+<p><strong><a href="https://www.cncf.io/blog/2026/08/07/shadow-ai-in-ci-cd-threat-modeling-the-path-from-developer-laptop-to-kubernetes/">Shadow AI in CI/CD: Threat-modeling the path from developer laptop to Kubernetes</a></strong><br />
+  摘要：Artificial intelligence is becoming part of daily software delivery, often before it becomes part of the security architecture. That gap has a name: Shadow AI. It is any AI tool, model, agent, extension, or integration used...</p>
+</li>
+</ul>
+<h2>Kubernetes Blog</h2>
+<ul>
+<li>
+<p><strong><a href="https://kubernetes.io/blog/2026/07/14/custom-metrics-exporter-kubernetes/">Building a Custom Metrics Exporter for Kubernetes</a></strong><br />
+  摘要：Kubernetes ships with built-in awareness of CPU and memory, but most real-world scaling decisions depend on signals that live entirely outside that narrow window: how many messages are waiting in a queue, how long the last batch job took, how many active WebSocket connections a pod is holding. When the built-in metrics are not enough, a metrics exporter bridges that gap. This post walks through writing one from scratch, packaging it as a container, and wiring it into a cluster so that Prometheus — and ultimately the HorizontalPodAutoscaler — can consume it. What a metrics exporter actually does An exporter is a small HTTP server with a single responsibility: expose application state as text on a /metrics endpoint. Prometheus scrapes that endpoint on a regular interval, stores the time-seri…</p>
+</li>
+<li>
+<p><strong><a href="https://kubernetes.io/blog/2026/07/08/announcing-etcd-3.7/">Announcing etcd v3.7.0</a></strong><br />
+  摘要：This article is a mirror of the original announcement Today, SIG etcd is releasing etcd v3.7.0 , the latest minor release of the popular distributed key-value store and core Kubernetes component. v3.7 ships the long-requested RangeStream feature, delivers several other performance improvements, removes the last remnants of the legacy v2store, and completes a major protobuf overhaul. You can download etcd v3.7.0 here: Source code Binaries Official container images This release also includes new versions of the two core etcd dependencies, bbolt v1.5.0 and raft v3.7.0 . For instructions on installing etcd, see the install documentation . For the full list of changes, see the etcd v3.7 changelog . A heartfelt thank you to all the contributors who made this release possible! Major features The …</p>
+</li>
+<li>
+<p><strong><a href="https://kubernetes.io/blog/2026/06/26/open-source-maintainership-in-the-age-of-ai/">Open source maintainership in the age of AI</a></strong><br />
+  摘要：AI has really changed the game around software development. More people are leveraging AI than ever to contribute patches to projects they use. To me, this is a good thing as more folks will contribute patches rather than fork or not fix them. The main problem is that AI has made generating code fast but there has been very little improvement in maintaining code bases. In this post, we will highlight the ways the Kubernetes community is adapting to the world of AI assisted coding. The first step of this journey was to develop an AI policy. This seems mundane and bureaucratic but there were many PRs that derailed into discussions around AI usage. The AI policy helps steer the conversation around the project's stance on AI and provides a clear signal to contributors on how to use these tools…</p>
+</li>
+<li>
+<p><strong><a href="https://kubernetes.io/blog/2026/06/25/headlamp-cluster-api-plugin/">Introducing the Cluster API plugin for Headlamp</a></strong><br />
+  摘要：Headlamp is an open-source, extensible Kubernetes SIG UI project designed to let you explore, manage, and debug cluster resources directly from a browser. Cluster API (CAPI) is a Kubernetes sub-project that brings declarative, Kubernetes-style APIs to cluster lifecycle management. It lets platform teams provision, upgrade, and manage the lifecycle of Kubernetes clusters using standard Kubernetes objects stored and reconciled in a management cluster. Managing Cluster API resources has historically required raw kubectl commands and deep familiarity with ownership hierarchies. The Headlamp Cluster API plugin brings visual clarity, faster debugging, and simplified operations for platform teams, directly inside Headlamp. What this plugin provides The Cluster API plugin adds a dedicated Cluster …</p>
+</li>
+<li>
+<p><strong><a href="https://kubernetes.io/blog/2026/06/25/visual-context-volcano-headlamp-plugin/">Inspect Volcano workloads faster with Headlamp</a></strong><br />
+  摘要：Volcano is a cloud native batch scheduler for Kubernetes, built for high-performance computing, AI/ML, and other batch workloads. Headlamp is an extensible Kubernetes web UI. With its plugin system, Headlamp can surface APIs and workflows beyond the built-in Kubernetes resources. The Volcano plugin brings core Volcano resources into Headlamp so you can inspect workload state, queue behavior, and gang scheduling details in one place. Kubernetes was originally designed around long-running services, where applications are expected to start and remain available over time. Batch, AI/ML, and HPC workloads often behave differently: jobs arrive dynamically, compete for limited resources, and may need multiple workers to start together before useful work can begin. Volcano extends Kubernetes with c…</p>
+</li>
+<li>
+<p><strong><a href="https://kubernetes.io/blog/2026/06/25/headlamp-knative-plugin/">See your serverless: introducing the Headlamp plugin for Knative</a></strong><br />
+  摘要：Headlamp is an open-source, extensible Kubernetes SIG UI project designed to let you explore, manage, and debug cluster resources. Knative brings serverless workloads to Kubernetes, handling traffic routing, autoscaling, and revision management so teams can deploy and iterate without fighting infrastructure. But operating Knative workloads day-to-day can be difficult, there's still a lot of jumping between the kn CLI, kubectl , and the Kubernetes UI to get a full picture of what's running. We built the Headlamp Knative plugin to bridge that very gap, allowing operators to inspect, understand and act on their workloads all from a single place. This plugin was built as part of the LFX mentorship. Here's a tour of what we shipped. Here is a short walkthrough of the Knative plugin for Headlamp…</p>
+</li>
+</ul>
+<hr /></div>
+  </main>
+</body>
+</html>
