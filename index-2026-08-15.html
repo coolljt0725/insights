@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OS 领域每日洞察 - 2026-08-15</title>
+  <style>
+    :root {
+      --bg: #f6f4f0;
+      --bg-bar: #ebe8e3;
+      --bg-card: #fffefb;
+      --bg-card-hover: #f5f3ef;
+      --text: #2d2a26;
+      --text-muted: #5c5852;
+      --text-dim: #7a756e;
+      --accent: #5a7a9e;
+      --border: #ddd9d2;
+      --radius: 10px;
+      --font: "Segoe UI", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      font-size: 15px;
+    }
+
+    /* 门户顶栏 */
+    .masthead {
+      background: var(--bg-bar);
+      border-bottom: 1px solid var(--border);
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 0;
+    }
+    .masthead-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .masthead h1 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin: 0;
+      letter-spacing: -0.02em;
+      color: var(--text);
+    }
+    .masthead .meta {
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+    }
+
+    /* 主内容区：多栏门户布局 */
+    .main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 3rem;
+    }
+
+    /* 板块：每个 h2 为一个频道块 */
+    .content .section {
+      margin-bottom: 2.5rem;
+    }
+    .content h2 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+      margin: 0 0 1rem;
+      padding: 0.6rem 1rem;
+      background: var(--bg-bar);
+      border-radius: var(--radius);
+      border-left: 4px solid var(--accent);
+    }
+    .content h2:first-child { margin-top: 0; }
+
+    .content h2:has(+ h3) {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      border-left-color: var(--text-dim);
+    }
+
+    /* 板块内卡片网格（每个 h2 后的 ul） */
+    .content h2 + ul {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1rem;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .content h2 + ul li {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.15rem 1.2rem;
+      transition: background .15s, border-color .15s;
+    }
+    .content h2 + ul li:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--text-dim);
+    }
+    .content h2 + ul li strong {
+      display: block;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+      line-height: 1.4;
+    }
+    .content h2 + ul li p {
+      margin: 0 0 0.5rem;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.58;
+    }
+    .content h2 + ul li p:last-of-type { margin-bottom: 0; }
+    .content h2 + ul li a[href^="http"] {
+      font-size: 0.8125rem;
+      color: var(--accent);
+    }
+    .content h2 + ul li a[href^="http"]:hover { text-decoration: underline; }
+
+    .content .ref-section {
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+    .content h2 + h3 { margin-top: 1.25rem; }
+    .content h3 {
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--text-dim);
+      margin: 1rem 0 0.4rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .content h3 + ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 0.25rem;
+    }
+    .content h3 + ul li {
+      background: transparent;
+      border: none;
+      padding: 0.2rem 0;
+      font-size: 0.8125rem;
+    }
+    .content h3 + ul li strong { font-size: inherit; margin-bottom: 0; }
+    .content h3 + ul li a { color: var(--accent); }
+    .content h3 + ul li a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <header class="masthead">
+    <div class="masthead-inner">
+      <h1>OS 领域每日洞察 - 2026-08-15</h1>
+      <span class="meta">2026-08-15 04:00 UTC</span>
+    </div>
+  </header>
+  <main class="main">
+    <div class="content"><h1>OS 领域每日洞察 - 2026-08-15</h1>
+<p>（Gemini 未可用时，以下为按来源整理的条目，含<strong>新闻摘要</strong>与链接；摘要可能为原文语言。）</p>
+<h2>arXiv (cs.AI)</h2>
+<ul>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.12325">Position: Reasoning is a Learnable Rule-Based Process</a></strong><br />
+  摘要：arXiv:2608.12325v1 Announce Type: new Abstract: Autonomous reasoning is among the most scientifically and economically motivating topics in AI today. Historically the purview of symbolic AI, recent advances have mainly emerged from deep probabilistic generative models. Despite immense interest and rapid progress, the generative AI community has not clearly converged on operational definitions for reasoning and often implicitly rejects the historical treatment of this topic in logic and verifiable automated reasoning. This position contends that definitional ambiguity leaves the construct validity of reasoning evaluation unverifiable, undermining quantifiable progress toward trustworthy autonomous reasoning. We also contend that this ambiguity is addressable. To that end, we provide (1) ope…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.12345">Diagnostic Foundation for Evaluating LLMs' Research Integrity as Co-Scientists</a></strong><br />
+  摘要：arXiv:2608.12345v1 Announce Type: new Abstract: Language models are increasingly deployed as co-scientists, yet their ability to uphold research integrity under institutional pressure remains unmeasured. We introduce IntegrityBench, a benchmark evaluating misconduct classification, ethical action reasoning and artifact-grounded decision making across 36 paired tasks under a 5-level implicit-explicit pressure protocol spanning 3 domains and 4 research stages. Evaluating 18 frontier model variants, we find that under peak pressure, models fail roughly 1 in 3 integrity-critical decisions, and neither scale nor reasoning ability reliably mitigates this. Explicit pressures induce compliance with misconduct, while implicit contextual reframing more often causes over-refusal of legitimate researc…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.12346">Position: The Alignment Community is Unintentionally Building a Censor's Toolkit</a></strong><br />
+  摘要：arXiv:2608.12346v1 Announce Type: new Abstract: This position paper argues that modern AI alignment methods - originally designed to prevent harmful output - are dual-use technologies that may easily be misused by malicious actors for censorship and manipulation. By mapping current alignment techniques to the possibility and actual cases of misuse, we show that the quest for a "perfectly aligned" model inadvertently also provides malicious actors with an ever-improving tool for informational dominance. We need to discuss this dual-use potential now, as its risk is exacerbated by rapid user adoption of AI as information provider, economic power asymmetries, and a political landscape that increasingly shifts towards authoritarianism. We conclude by urging the community to consider the intent…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.12368">Agreement Is Not Alignment: Divergent Moral Grounds in Human and LLM Ethical Judgments</a></strong><br />
+  摘要：arXiv:2608.12368v1 Announce Type: new Abstract: Agreement with human judgments is a common proxy for evaluating the alignment of large language models (LLMs). Yet agreement in final labels does not show that human annotators and models rely on the same moral grounds. Two agents may reach the same judgment while appealing to different principles, contextual assumptions, or interpretations of the situation. We test this distinction using a curated 500-item ETHICS-derived benchmark spanning five domains of moral judgment, with new human annotator and LLM annotations of both final labels and supporting rationales. Across frontier and open model families, agreement with human annotator majority labels is often high. However, rationale-level analysis reveals systematic divergence in the moral gr…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.12371">Multi-Agent Scheduling with LLM-Assisted Contract Net Negotiation for Stream Processing in Mobile Edge Computing</a></strong><br />
+  摘要：arXiv:2608.12371v1 Announce Type: new Abstract: Stream-processing systems increasingly operate across heterogeneous mobile edge--cloud infrastructures, where workload volatility, resource contention, and stringent quality-of-service (QoS) requirements complicate decentralized scheduling. This paper proposes \emph{MAS-DecStream}, whose main contribution is \emph{LLM-MR-CNP}: an extension of the classical Contract Net Protocol with semantic CFP formulation, progressive context disclosure, multi-round proposal revision, negotiation memory, and deterministic validation. Edge-cluster agents refine natural-language offloading proposals from local observations, predicted resource states, and qualitative runtime context, while hard resource and QoS constraints remain deterministic. Experiments der…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.12372">Position: We Need Practical AI Alignment Methods to Mirror Human Reasoning</a></strong><br />
+  摘要：arXiv:2608.12372v1 Announce Type: new Abstract: AI systems are increasingly employed as decision aids, decision delegates, or autonomous decision-makers. This position paper argues that in many settings, particularly high-stakes decision-making, we need accurate cognitively-aligned AI systems that reason similarly to their users, and faithfully communicate their reasoning. We review evidence that cognitive alignment improves understandability and trustworthiness, and provide new survey data showing that many users find cognitive alignment "essential" when an AI's rationale for a judgment or action is important to them. We outline the gaps between existing alignment methods and what is needed to achieve cognitive alignment, and present a research agenda to address these gaps. We argue that …</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.12373">Don't Want Your LLM to Recommend Nuclear Strike? Try Asking It in Japanese</a></strong><br />
+  摘要：arXiv:2608.12373v1 Announce Type: new Abstract: Large language models are increasingly used in strategic and advisory contexts, yet their safety alignment is typically evaluated in English only. We test nine models from six providers and ask whether the language of a prompt can change a model's decision in a high-stakes scenario. We use single-turn game-theoretic vignettes in which a model advises a nuclear-armed nation on whether to strike a defenseless opponent. The prompt is intentionally amoral and strategically identical across languages. We find that Japanese prompts reduce launch rates in the Claude model family: Claude Sonnet 4.6 drops from 40% to 0% in scenarios where the strike is unnecessary and from 93% to 17% in contested scenarios, with minimal effect when the strike is strat…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.12385">Dual-Flow Transformers: Decoupling the Primary Prefill Path from Additional Decode Computation</a></strong><br />
+  摘要：arXiv:2608.12385v1 Announce Type: new Abstract: As large language models serve more requests, cumulative inference cost is becoming increasingly important relative to one-time training cost. The two inference phases stress hardware differently: prompt prefill is parallel and typically compute-bound, whereas autoregressive decode is sequential and often memory-bandwidth-bound. Conventional width or depth scaling increases both costs together because every added layer is evaluated in both phases. We ask whether additional learned computation can instead be allocated to continuation prediction while preserving the prompt-wide primary computation and a single persistent key-value (KV) cache. We introduce the Dual-Flow Transformer. Its primary flow is a complete causal language model that proce…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.12389">Learning to Adapt Cross-Domain Preferences via Meta-LoRA for LLM Personalization</a></strong><br />
+  摘要：arXiv:2608.12389v1 Announce Type: new Abstract: Cross-domain zero- or few-shot personalization aims to generate user-preferred responses in unseen conversational domains from only a handful of target-domain interactions. Existing adaptation methods struggle to calibrate update magnitude under sparse evidence and thus overfit, whereas history-transfer methods often entangle user preferences with source-domain artifacts, yielding unreliable personalization priors and negative transfer. To calibrate adaptation to evidence quality, we propose PAC-Bayes-regularized Meta-LoRA, which uses a meta-learned LoRA initialization as both the adaptation start and prior center, while adjusting update strength according to support-set size and predictive uncertainty. This limits overfitting under sparse or…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2608.12395">Research Assistant: AstraZeneca's Agentic System for R&amp;D</a></strong><br />
+  摘要：arXiv:2608.12395v1 Announce Type: new Abstract: We describe Research Assistant, an internal LLM-based system developed at AstraZeneca to help scientists and clinicians explore biomedical questions across a broad range of data sources. The system provides a chat-style interface that brings together evidence from scientific literature, knowledge graphs, chemistry, clinical trials, safety resources, expression data, and internal experimental systems. It supports both a fast mode for direct question answering and a multi-step mode for more complex research tasks. Responses are grounded in retrieved evidence and linked back to the original sources, allowing users to review and further explore the underlying data. In this technical note, we outline the system architecture, the main design choice…</p>
+</li>
+</ul>
+<h2>The New Stack</h2>
+<ul>
+<li>
+<p><strong><a href="https://thenewstack.io/grok-4-6-matched-fable-5-max/">Grok 4.6 matched Fable 5 Max at an 85% discount. Downloadable models set that price.</a></strong><br />
+  摘要：I’m Matt Burns, Chief Content Officer at Insight Media Group. Each week, I round up the most important AI developments, The post Grok 4.6 matched Fable 5 Max at an 85% discount. Downloadable models set that price. appeared first on The New Stack .</p>
+</li>
+<li>
+<p><strong><a href="https://thenewstack.io/apple-china-ai-model/">Apple’s new AI split means your iOS app could behave differently in China</a></strong><br />
+  摘要：Apple is splitting up its AI stack. Instead of rolling out the same system worldwide, the company reportedly built a The post Apple&#8217;s new AI split means your iOS app could behave differently in China appeared first on The New Stack .</p>
+</li>
+<li>
+<p><strong><a href="https://thenewstack.io/qwen38-27b-local-inference/">Alibaba’s new model promises Opus 4.6-level performance on your laptop</a></strong><br />
+  摘要：Alibaba recently made the open weights of its 2.4 trillion parameter Qwen3.8 model available. That&#8217;s a massive model, and its The post Alibaba&#8217;s new model promises Opus 4.6-level performance on your laptop appeared first on The New Stack .</p>
+</li>
+<li>
+<p><strong><a href="https://thenewstack.io/glm-5-3-post-training-coding/">GLM-5.3 didn’t change the base model — where did its coding gains come from?</a></strong><br />
+  摘要：Z.ai released GLM-5.3 on Friday, a coding and agent model built from the same base model as GLM-5.2. Developers can The post GLM-5.3 didn’t change the base model — where did its coding gains come from? appeared first on The New Stack .</p>
+</li>
+<li>
+<p><strong><a href="https://thenewstack.io/unsigned-container-images-ai/">Your container images are unsigned. In the AI era, that’s a ticking time bomb.</a></strong><br />
+  摘要：Most organizations that know they should sign their images still don&#8217;t. Not because they disagree, but because the path to The post Your container images are unsigned. In the AI era, that&#8217;s a ticking time bomb. appeared first on The New Stack .</p>
+</li>
+</ul>
+<h2>Phoronix</h2>
+<ul>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/AMD-GFX12.1-RAS-Patch-Series">AMD Posts Massive 109 Patch Series For GFX 12.1 RAS Support On Friday Evening</a></strong><br />
+  摘要：AMD has a tendency to send out large feature patch series for their open-source Linux drivers on Friday afternoons/evenings. Today we were greeted by a set of 109 patches working on RAS support for the upcoming AMD GFX12.1 target...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/D7VK-2.1">D7VK 2.1 Brings Faster Load Times, More Performance Tweaks</a></strong><br />
+  摘要：D7VK as the open-source implementation of the Direct3D 7 / 6 / 5/ 3 APIs atop the Vulkan API for Linux/Wine usage is out with another feature update. D7VK continues to mature quite well for further enhancing these older Direct3D API versions that cover the span prior to DXVK's focus of Direct3D 8 to Direct3D 11 or VKD3D-Proton's Direct3D 12...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Lemonade-SDK-11.6">Lemonade 11.6 Integrates Muse-Glimmer 30B, Experimental TheNoise ROCm Image Generation</a></strong><br />
+  摘要：For those dabbling with generative AI on the weekends, the AMD-led Lemonade SDK 11.6 is out today with its newest feature release of this open-source software for running local AI apps with optimized LLMs across CPUs, GPUs, and NPUs...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Omarchy-4.0-Released">Omarchy 4.0 Linux Distro Released With Desktop Shell Now Implemented Via Quickshell</a></strong><br />
+  摘要：Omarchy as the Arch Linux distribution developed by David Heinemeier Hansson "DHH" / Basecamp is out today with Omarchy 4.0 as the distro's biggest release to date...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/review/intel-xeon-6-linux-72">Linux 7.1, Linux 7.2 Performance On The Intel Xeon 600 Series</a></strong><br />
+  摘要：With Linux 7.2 expected for its stable release this weekend, today's testing has some additional testing of the Linux 7.2 Git kernel as well as Linux 7.1 stable compared to Linux 7.0 as used by default on Ubuntu 26.04 LTS. Phoronix testing previously conducted of Linux 7.2 have shown benefits for Intel Arc B390 Xe3 in some configurations, faster poll performance on AMD Ryzen Threadripper and other hardware, and some nice I/O performance gains on AMD EPYC Turin. Today's kernel benchmarks are with the Intel Xeon 678X Granite Rapids WS currently in the lab as part of the HP Z4 G6i workstation testing.</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Linux-7.3-Features-Preview">Features Coming For Linux 7.3 From Optimizing Intel Hybrid CPUs To Old AMD Athlon XPs</a></strong><br />
+  摘要：With Linux 7.2 expected to see its stable debut Sunday, here is a look at what I have been monitoring as changes expected to be submitted during the Linux 7.3 merge window that will open on Monday...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Linux-Patches-Fix-DRM-Fair">Patches Posted For Fixing The Linux DRM Scheduler's Fair Policy</a></strong><br />
+  摘要：Ahead of the Linux 7.2 kernel release expected out on Sunday, the Direct Rendering Manager (DRM) subsystem was forced to revert their "fair" scheduler policy default new for this kernel. Due to a last minute user-reported regression, FIFO returns as the default DRM scheduler policy for Linux 7.2. But patches are now available for addressing that regression and thus hopefully for Linux 7.3 there will be the fair scheduler becoming the default...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/exfatprogs-1.4.3">Open-Source exFAT Programs 1.4.3 Improves Fsck &amp; Mkfs</a></strong><br />
+  摘要：Ahead of the Linux 7.2 kernel release expected on Sunday, a new release of the exFAT file-system user-space programs was released overnight...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Zenwalk-BORE-Kernel">Slackware-Based Zenwalk Linux Aims For "True Low Latency Desktop Experience"</a></strong><br />
+  摘要：It's been a long time since hearing much out of the Zenwalk project, the Linux distribution built off Slackware. It's still around though and with their latest kernel work are hoping for a "true low latency desktop experience" by employing the BORE scheduler...</p>
+</li>
+</ul>
+<h2>Lobsters</h2>
+<ul>
+<li>
+<p><strong><a href="https://gist.github.com/camel-cdr/3a7aed17e017e8cab675ad696c7d14af">RVA23 vs ARMv9 a Small Experiment</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://jva.lol/weblog/my-comment-section-is-static-html/">My comment section is static HTML</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://eliasfarhan.ch/gamedev/cpp/2026/08/14/srnative-01-why-a-custom-engine.html">What You Gain by Building Your Own Game Engine</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://dmitry.gr/?r=06.%20Thoughts&amp;proj=12.%20RV">RISC-V: They Should Have Known Better</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://goonhost.rocks/blog/implementing-ipv8-internet-draft">We implemented the IPv8 Internet-Draft in the Linux Kernel, Musl Libc, and BGP</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://o.ee/blog/activitypub-won-by-being-boring/">ActivityPub Won by Being Boring</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://blog.thunderbird.net/2026/08/desktop-calendar-a-design-journey/">Thunderbird’s Desktop Calendar Visual Redesign</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://cekrem.github.io/posts/there-is-still-no-silver-bullet/">There Is Still No Silver Bullet</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://daniel.haxx.se/blog/2026/08/14/curl-performance-2/">Curl Performance</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://lobste.rs/s/n3pkuh/what_are_you_doing_this_weekend">What are you doing this weekend?</a></strong><br />
+  摘要：Feel free to tell what you plan on doing this weekend and even ask for help or feedback. Please keep in mind it’s more than OK to do nothing at all too!</p>
+</li>
+<li>
+<p><strong><a href="https://devblogs.microsoft.com/oldnewthing/20260812-00/?p=112607">Comments in the code vs PR description</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://addons.mozilla.org/en-US/firefox/addon/slopscan/">SlopScan: Displays a "slop score" when viewing public git repositories</a></strong><br />
+  摘要：Uses https://slopscan.ava.pet internally (previously discussed at: https://lobste.rs/s/7s8fwa/repo_slopscore_detecting_ai_llm ) Comments</p>
+</li>
+<li>
+<p><strong><a href="https://beyondloom.com/blog/artofchip8.html">The Art of CHIP-8</a></strong><br />
+  摘要：Comments</p>
+</li>
+</ul>
+<h2>Hacker News</h2>
+<ul>
+<li>
+<p><strong><a href="https://www.suse.com/news/suse-linux-enterprise-server-16-ai-ready-long-term-support/">AI-Assisted Management Drives Latest SUSE Linux Release (2025)</a></strong><br />
+  摘要：AI-Assisted Management Drives Latest SUSE Linux Release (2025)</p>
+</li>
+<li>
+<p><strong><a href="https://app.valak.ai">Agentic OT system for plant operations</a></strong><br />
+  摘要：Agentic OT system for plant operations</p>
+</li>
+<li>
+<p><strong><a href="https://sandbox.bio/training/embed">Show HN: Embed a real Linux terminal on your website</a></strong><br />
+  摘要：Show HN: Embed a real Linux terminal on your website</p>
+</li>
+<li>
+<p><strong><a href="https://goonhost.rocks/blog/implementing-ipv8-internet-draft">Show HN: We Implemented the IPv8 Internet-Draft in Linux, Libc, and BGP</a></strong><br />
+  摘要：Show HN: We Implemented the IPv8 Internet-Draft in Linux, Libc, and BGP</p>
+</li>
+<li>
+<p><strong><a href="https://github.com/ostrich/nextufs/">NeXTSTEP/Openstep UFS Tools for Linux</a></strong><br />
+  摘要：NeXTSTEP/Openstep UFS Tools for Linux</p>
+</li>
+<li>
+<p><strong><a href="https://twitter.com/dhh/status/2087586011224084808">DHH: Linux adoption among programmers is about to go parabolic</a></strong><br />
+  摘要：DHH: Linux adoption among programmers is about to go parabolic</p>
+</li>
+</ul>
+<h2>Ars Technica</h2>
+<ul>
+<li>
+<p><strong><a href="https://arstechnica.com/security/2026/08/vulnerability-giving-attackers-full-control-of-macs-is-under-active-exploitation/">Vulnerability giving attackers full control of Macs is under active exploitation</a></strong><br />
+  摘要：Screen-sharing bug lets remote hackers log in without a password.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/gadgets/2026/08/first-test-flight-of-largest-all-electric-aircraft-used-just-5-of-electricity/">First test flight of largest all-electric aircraft used just $5 of electricity</a></strong><br />
+  摘要：Airline-backed venture aims to develop a hybrid-electric commercial aircraft.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/tech-policy/2026/08/suspecting-court-of-using-ai-man-injected-prompts-in-filings-to-try-to-win-case/">Suspecting court of using AI, man injected prompts in filings to try to win case</a></strong><br />
+  摘要：Judge warns pro se litigants are using chatbots wrong and getting desperate.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/tech-policy/2026/08/state-judge-orders-kalshi-to-stop-offering-sports-bets-and-other-wagers/">State judge orders Kalshi to stop offering sports bets and other wagers</a></strong><br />
+  摘要：Kalshi ordered to stop offering bets in Washington, must implement geofencing.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/information-technology/2026/08/pbs-station-fears-losing-50tb-of-data-after-being-ghosted-by-cloud-storage-provider/">PBS station fears losing 50TB of data after being ghosted by cloud storage provider</a></strong><br />
+  摘要："We don't have access to the data on the hardware/servers," Iron Mountain told Ars.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/space/2026/08/policy-experts-europe-stuck-between-rock-and-a-hard-place-on-launch/">Policy experts: Europe stuck between "rock and a hard place" on launch</a></strong><br />
+  摘要：It turns out that the economics of rocket reuse are pretty, pretty good.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/gaming/2026/08/ars-live-recap-how-can-we-stop-publishers-from-killing-their-own-games/">Ars Live recap: How can we stop publishers from killing their own games?</a></strong><br />
+  摘要：The Stop Killing Games movement faces an uphill battle.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/gadgets/2026/08/google-ordered-to-make-it-easier-to-download-alternative-android-app-stores/">Judge gives Google one week to fix "anticompetitive" app store download in Google Play</a></strong><br />
+  摘要：Third-party app stores are about to become more visible in Google Play.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/culture/2026/08/r-rated-directors-cut-of-x-files-film-restores-chris-carters-original-horror-vision/">R-rated director's cut of X-Files film restores Chris Carter's original horror vision</a></strong><br />
+  摘要：Chris Carter chats with Ars about the film he originally wanted to make—and why it's more relevant than ever.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/health/2026/08/taylor-farms-connections-to-trump-admin-spurs-probe-into-cyclospora-response/">Taylor Farms' connections to Trump admin spurs probe into Cyclospora response</a></strong><br />
+  摘要：Senator Warren questions whether Taylor Farms' influence swayed Trump admin.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/ai/2026/08/openai-and-anthropic-in-price-war-as-chinese-ai-rivals-gain-ground/">OpenAI and Anthropic in price war as Chinese AI rivals gain ground</a></strong><br />
+  摘要：US groups release cheaper models after new challenges to their trillion-dollar ambitions.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/space/2026/08/rocket-report-rocket-lab-shows-off-its-flexibility-blue-origins-two-pad-plan/">Rocket Report: Rocket Lab shows off its flexibility; Blue Origin's two-pad plan</a></strong><br />
+  摘要："We’ve never seen launch capacity so constrained."</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/gadgets/2026/08/samsung-galaxy-z-fold-8-ultra-review-the-ultra-foldable-with-an-ultra-price/">Samsung Galaxy Z Fold 8 Ultra review: The ultra foldable with an ultra price</a></strong><br />
+  摘要：Samsung didn't have to change much this year because its hardware is just that good.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/cars/2026/08/czinger-debuts-topology-optimized-brakes-with-21c-spyder/">Organic-looking brake assemblies debut on new Czinger 21C Spyder</a></strong><br />
+  摘要：Czinger used topological design and additive manufacturing to make the brakes.</p>
+</li>
+</ul>
+<h2>LWN.net</h2>
+<ul>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1087823/">[$] BPF, continuous testing, and stable kernels</a></strong><br />
+  摘要：Ihor Solodrai and Shung-Hsi Yu wrapped up the BPF track at the 2026 Linux Storage, Filesystem, Memory-Management, and BPF Summit with a pair of sessions related to testing. Solodrai spoke about what has changed for BPF's continuous-integration (CI) testing. Yu spoke about what may be needed to test BPF updates in stable kernels more thoroughly. The BPF subsystem's CI tests are in a good place, they said; even so, Solodrai and Yu have a handful of possible avenues toward enabling better test coverage in the future.</p>
+</li>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1088920/">Python packaging council candidates announced</a></strong><br />
+  摘要：The Python Software Foundation (PSF) has announced the candidates running for the Python packaging council that was approved by the Python steering council in April . This inaugural election fills all five seats on the PPC. The two candidates receiving the highest number of votes shall be designated Cohort A with a two year term, and the three candidates receiving the next highest number of votes shall be designated Cohort B with a one year term. In future elections, each cohort will be elected for a full two-year term in alternating years, so that roughly half of the PPC turns over each cycle. There are 17 candidates running for the five open seats. PSF voting-eligible members must affirm their intention to vote in this election by August&#160;25. Voting begins on September&#160;1, and en…</p>
+</li>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1088919/">Security updates for Friday</a></strong><br />
+  摘要：Security updates have been issued by AlmaLinux (.NET 10.0, .NET 8.0, .NET 9.0, bind, bind9.16, and dracut), Debian (apr-util, chromium, postgresql-17, python-httplib2, unzip, and zip), Fedora (erlang-cowboy, erlang-cowlib, flatpak, and libnfs), Gentoo (Apache HTTPD, Bubblewrap, Dnsmasq, Exim, Flatpak, libinput, and rsync), Mageia (dhcpcd, qemu, and roundcubemail), Oracle (.NET 8.0, .NET 9.0, bind, bind9.16, freerdp, glib2, gnome-remote-desktop, grafana, gstreamer1-plugins-good, isns-utils, java-17-openjdk, kernel, libpng, libXfont2, nghttp2, perl-DBI:1.641, python-idna, python3.9, and xorg-x11-server), Slackware (rsync), SUSE (bouncycastle, chromium, dnsdist, dracut, java-1_8_0-ibm, kernel, libXfont2, nodejs22, nodejs24, php8, python-httplib2, rrdtool, rsyslog, samba, and wireshark), and U…</p>
+</li>
+</ul>
+<h2>Linux Weekly News (RSS)</h2>
+<ul>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1087823/">[$] BPF, continuous testing, and stable kernels</a></strong><br />
+  摘要：Ihor Solodrai and Shung-Hsi Yu wrapped up the BPF track at the 2026 Linux Storage, Filesystem, Memory-Management, and BPF Summit with a pair of sessions related to testing. Solodrai spoke about what has changed for BPF's continuous-integration (CI) testing. Yu spoke about what may be needed to test BPF updates in stable kernels more thoroughly. The BPF subsystem's CI tests are in a good place, they said; even so, Solodrai and Yu have a handful of possible avenues toward enabling better test coverage in the future.</p>
+</li>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1088920/">Python packaging council candidates announced</a></strong><br />
+  摘要：The Python Software Foundation (PSF) has announced the candidates running for the Python packaging council that was approved by the Python steering council in April . This inaugural election fills all five seats on the PPC. The two candidates receiving the highest number of votes shall be designated Cohort A with a two year term, and the three candidates receiving the next highest number of votes shall be designated Cohort B with a one year term. In future elections, each cohort will be elected for a full two-year term in alternating years, so that roughly half of the PPC turns over each cycle. There are 17 candidates running for the five open seats. PSF voting-eligible members must affirm their intention to vote in this election by August&#160;25. Voting begins on September&#160;1, and en…</p>
+</li>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1088919/">Security updates for Friday</a></strong><br />
+  摘要：Security updates have been issued by AlmaLinux (.NET 10.0, .NET 8.0, .NET 9.0, bind, bind9.16, and dracut), Debian (apr-util, chromium, postgresql-17, python-httplib2, unzip, and zip), Fedora (erlang-cowboy, erlang-cowlib, flatpak, and libnfs), Gentoo (Apache HTTPD, Bubblewrap, Dnsmasq, Exim, Flatpak, libinput, and rsync), Mageia (dhcpcd, qemu, and roundcubemail), Oracle (.NET 8.0, .NET 9.0, bind, bind9.16, freerdp, glib2, gnome-remote-desktop, grafana, gstreamer1-plugins-good, isns-utils, java-17-openjdk, kernel, libpng, libXfont2, nghttp2, perl-DBI:1.641, python-idna, python3.9, and xorg-x11-server), Slackware (rsync), SUSE (bouncycastle, chromium, dnsdist, dracut, java-1_8_0-ibm, kernel, libXfont2, nodejs22, nodejs24, php8, python-httplib2, rrdtool, rsyslog, samba, and wireshark), and U…</p>
+</li>
+</ul>
+<h2>CNCF Blog</h2>
+<ul>
+<li><strong><a href="https://www.cncf.io/blog/2026/08/14/eleven-minutes-zero-humans-building-a-self-healing-kubernetes-upgrade-pipeline-on-kairos/">Eleven minutes, zero humans: Building a self-healing Kubernetes upgrade pipeline on Kairos</a></strong><br />
+  摘要：Once upon a time, upgrading a Kubernetes control plane meant staying awake for it. SSH into every node. Run the upgrade by hand. Watch etcd health the whole time, hoping quorum holds through every reboot. This...</li>
+</ul>
+<h2>Red Hat Blog</h2>
+<ul>
+<li>
+<p><strong><a href="https://www.redhat.com/en/blog/odc-noord-building-blocks-existing-government-cloud">ODC-Noord: Building blocks for an existing government cloud</a></strong><br />
+  摘要：How did a small team in the east of the Netherlands (Groningen) from the Government Datacenter North (ODC-Noord) grow into a supplier of crucial building blocks for the Netherlands digital government strategy? Jaap Jansma, Manager of ODC-Noord, and Marcel Timmer, Country Director Netherlands at Red Hat, explain.ODC-Noord implements, manages, and operates as a scalable, sovereign cloud service for the Dutch government, and Red Hat provides the fundamental open source software. Together, the 2 companies look at what’s needed to continue fulfilling this role within the government, ranging from</p>
+</li>
+<li>
+<p><strong><a href="https://www.redhat.com/en/blog/how-student-athletes-are-changing-game">How student athletes are changing the game</a></strong><br />
+  摘要：The program’s participants, pictured on their first day at Red HatOn June 1, the first cohort of student athletes arrived at the Raleigh office to take part in the Red Hat Sales Combine Accelerator Program. The group of 6 engaged in a newly launched 3-week micro-internship, using skills carefully honed on the playing field and translating them into the world of technology sales. The pilot program at Red Hat is the first of its kind, aimed at collaboration with emerging talent who possess unique skills and insight. In addition to their position as students, the participants balance their rol</p>
+</li>
+<li>
+<p><strong><a href="https://www.redhat.com/en/blog/breaking-free-lock-how-leading-insurance-provider-migrated-1500-workloads-rosa-10-months">Breaking free from lock-in: How a leading insurance provider migrated 1,500 workloads to ROSA in 10 months</a></strong><br />
+  摘要：Imagine finding out your core platform contract is ending, leaving you with a multi million-dollar liability—and just 10 months to move 1,500 critical workloads. That was the reality for the engineering team at State Farm.While they had previously used Pivotal Cloud Foundry (PCF) and VMware vSphere, the underlying platform was highly proprietary. To escape vendor lock-in and secure long-term cloud portability, State Farm executed an urgent, 10-month race to migrate 1,500 workloads to Red Hat OpenShift Service on AWS (ROSA), all without disrupting core business operations. Figure 1. Burt Lap</p>
+</li>
+</ul>
+<h2>Kubernetes Blog</h2>
+<ul>
+<li><strong><a href="https://kubernetes.io/blog/2026/06/15/sig-storage-spotlight-2026/">Spotlight on SIG Storage</a></strong><br />
+  摘要：In our ongoing SIG Spotlight series, we shine a light on the groups that keep the Kubernetes project moving forward. This time, we catch up with SIG Storage , the group responsible for persistent data, volume management, and the interfaces that connect Kubernetes workloads to the storage systems beneath them. We spoke with Xing Yang , Co-Chair of SIG Storage and Software Engineer at VMware by Broadcom, about the SIG's history, the features shipping in recent Kubernetes releases, and where storage in Kubernetes is headed as AI workloads become the norm. Introductions Could you introduce yourself and share your role(s) within SIG Storage? My name is Xing Yang , a software engineer at VMware by Broadcom. I'm a co-chair in SIG Storage, alongside another co-chair Saad Ali from Google. There are…</li>
+</ul>
+<hr /></div>
+  </main>
+</body>
+</html>
