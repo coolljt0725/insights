@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OS 领域每日洞察 - 2026-08-16</title>
+  <style>
+    :root {
+      --bg: #f6f4f0;
+      --bg-bar: #ebe8e3;
+      --bg-card: #fffefb;
+      --bg-card-hover: #f5f3ef;
+      --text: #2d2a26;
+      --text-muted: #5c5852;
+      --text-dim: #7a756e;
+      --accent: #5a7a9e;
+      --border: #ddd9d2;
+      --radius: 10px;
+      --font: "Segoe UI", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      font-size: 15px;
+    }
+
+    /* 门户顶栏 */
+    .masthead {
+      background: var(--bg-bar);
+      border-bottom: 1px solid var(--border);
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 0;
+    }
+    .masthead-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .masthead h1 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin: 0;
+      letter-spacing: -0.02em;
+      color: var(--text);
+    }
+    .masthead .meta {
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+    }
+
+    /* 主内容区：多栏门户布局 */
+    .main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 3rem;
+    }
+
+    /* 板块：每个 h2 为一个频道块 */
+    .content .section {
+      margin-bottom: 2.5rem;
+    }
+    .content h2 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+      margin: 0 0 1rem;
+      padding: 0.6rem 1rem;
+      background: var(--bg-bar);
+      border-radius: var(--radius);
+      border-left: 4px solid var(--accent);
+    }
+    .content h2:first-child { margin-top: 0; }
+
+    .content h2:has(+ h3) {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      border-left-color: var(--text-dim);
+    }
+
+    /* 板块内卡片网格（每个 h2 后的 ul） */
+    .content h2 + ul {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1rem;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .content h2 + ul li {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.15rem 1.2rem;
+      transition: background .15s, border-color .15s;
+    }
+    .content h2 + ul li:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--text-dim);
+    }
+    .content h2 + ul li strong {
+      display: block;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+      line-height: 1.4;
+    }
+    .content h2 + ul li p {
+      margin: 0 0 0.5rem;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.58;
+    }
+    .content h2 + ul li p:last-of-type { margin-bottom: 0; }
+    .content h2 + ul li a[href^="http"] {
+      font-size: 0.8125rem;
+      color: var(--accent);
+    }
+    .content h2 + ul li a[href^="http"]:hover { text-decoration: underline; }
+
+    .content .ref-section {
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+    .content h2 + h3 { margin-top: 1.25rem; }
+    .content h3 {
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--text-dim);
+      margin: 1rem 0 0.4rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .content h3 + ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 0.25rem;
+    }
+    .content h3 + ul li {
+      background: transparent;
+      border: none;
+      padding: 0.2rem 0;
+      font-size: 0.8125rem;
+    }
+    .content h3 + ul li strong { font-size: inherit; margin-bottom: 0; }
+    .content h3 + ul li a { color: var(--accent); }
+    .content h3 + ul li a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <header class="masthead">
+    <div class="masthead-inner">
+      <h1>OS 领域每日洞察 - 2026-08-16</h1>
+      <span class="meta">2026-08-16 04:00 UTC</span>
+    </div>
+  </header>
+  <main class="main">
+    <div class="content"><h1>OS 领域每日洞察 - 2026-08-16</h1>
+<p>（Gemini 未可用时，以下为按来源整理的条目，含<strong>新闻摘要</strong>与链接；摘要可能为原文语言。）</p>
+<h2>Lobsters</h2>
+<ul>
+<li>
+<p><strong><a href="https://snarky.ca/whats-missing-to-have-reproducible-builds-on-pypi/">What's missing to have reproducible builds on PyPI</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://decuser.github.io/posts/aiki-alpha-mileston26-update/">Aiki: Alpha Milestone 26 Update</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://github.com/cordiverse/paper/blob/main/paper.pdf">A Programming Paradigm for Spatiotemporal Composability</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://zig.day/usa/seattle/3/">Zig Day Seattle, WA #3</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://bencornia.com/blog/recap-software-should-work-2026">Recap: Software Should Work 2026</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://corbinsimpson.com/words/power-relations.html">Power Relations</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://blog.jsbarretto.com/post/i-remain-a-skeptic">Why I remain a skeptic</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://lukefleed.xyz/posts/compression/">How Is Compression Prediction?</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://blog.cryptographyengineering.com/2026/08/14/everything-is-about-to-go-dark/">Everything is about to “go dark”</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://blog.buenzli.dev/flirt-github-and-mailing-list/">Flirt: GitHub and Mailing List backends</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://serokell.io/blog/serokell-s-work-on-ghc-dependent-types-part-5">Serokell’s Work on GHC: Dependent Types, Part 5</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="http://www.gotw.ca/publications/concurrency-ddj.htm">The Free Lunch Is Over: A Fundamental Turn Toward Concurrency in Software (2005)</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://www.pcworld.com/article/3212428/firefox-is-now-the-last-major-browser-that-still-supports-ublock-origin.html">Firefox is now the last major browser that still supports uBlock Origin</a></strong><br />
+  摘要：Comments</p>
+</li>
+</ul>
+<h2>Hacker News</h2>
+<ul>
+<li>
+<p><strong><a href="https://www.youtube.com/watch?v=U-xqxMQD2QE">Destroying My Homelab with Kubernetes – Linux Society UNSW 2026 [video]</a></strong><br />
+  摘要：Destroying My Homelab with Kubernetes – Linux Society UNSW 2026 [video]</p>
+</li>
+<li>
+<p><strong><a href="https://www.xda-developers.com/25-year-old-brazilian-video-patent-expired-legal-headache-linux/">A 25-year-old video patent just expired, ending a legal headache for Linux</a></strong><br />
+  摘要：A 25-year-old video patent just expired, ending a legal headache for Linux</p>
+</li>
+<li>
+<p><strong><a href="https://news.ycombinator.com/item?id=49308990">Wayland, Pipewire, Open Source Slowly Closing?</a></strong><br />
+  摘要：I am kinda depressed over these factors. I have used linux since 2015 and really never ran into problems until the past five years. I am a composer with a prolithic output; and had a steady workflow for most of the years until musegroup bought out audacity and musescore. (which i have been able to get musescore 2 in a few distros; as i prefer this over any of the post-musegroup alterations.) the same goes for audacity; prior to their changes it worked... everything flowed beautifully; and boom so many issues occured. (they still do...) since then i started using Tenacity&#x27;s appimage and have some similar workflow issues due to it being a copy of post changes instead of pre-changes... (2.4.2) I went from debian to mint; due to the fact that debian wouldn&#x27;t install on a new nvidia l…</p>
+</li>
+<li>
+<p><strong><a href="https://aifcc.franzai.com/">Show HN: AI First Virtual Linux Desktop as a Mac App</a></strong><br />
+  摘要：Show HN: AI First Virtual Linux Desktop as a Mac App</p>
+</li>
+<li>
+<p><strong><a href="https://github.com/tempesta-tech/xFW">Open-source XDP/TC DDoS filtering for 100G+ Linux networks</a></strong><br />
+  摘要：Open-source XDP/TC DDoS filtering for 100G+ Linux networks</p>
+</li>
+<li>
+<p><strong><a href="https://www.techpowerup.com/351585/nvidia-geforce-now-for-linux-officially-arrives">Nvidia GeForce Now for Linux Officially Arrives</a></strong><br />
+  摘要：Nvidia GeForce Now for Linux Officially Arrives</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/gadgets/2021/08/not-a-linux-distro-review-serenityos-is-a-unix-y-love-letter-to-the-90s/">Not-a-Linux distro review: SerenityOS is a Unix-y love letter to the '90s (2021)</a></strong><br />
+  摘要：Not-a-Linux distro review: SerenityOS is a Unix-y love letter to the '90s (2021)</p>
+</li>
+<li>
+<p><strong><a href="https://superluminal.eu/applications/linux/">Superluminal Profiler is now available for Linux</a></strong><br />
+  摘要：Superluminal Profiler is now available for Linux</p>
+</li>
+</ul>
+<h2>Phoronix</h2>
+<ul>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/RADV-ACO-19-More-Patches-Valve">Marek Olšák's 19 Latest Patches Further Optimizing RADV &amp; ACO</a></strong><br />
+  摘要：Legendary Mesa Radeon Gallium3D driver developer Marek Olšák who was a longtime AMD employee and then joined Valve's Linux graphics driver team earlier this year has continued his focus now on perfecting his art around the RADV Vulkan driver and ACO shader compiler...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/GNOME-51-Beta">GNOME 51 Beta Released With Many Minor Improvements</a></strong><br />
+  摘要：The beta release of GNOME 51 is now available for testing. This cycle for the beta milestone is mostly a wide collection of minor improvements throughout the vast package set...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Intel-Jay-Compiler-Xe2-Xe3-CTS">Intel's Jay Graphics Shader Compiler Now Passing Vulkan CTS With Xe2/Xe3 Hardware</a></strong><br />
+  摘要：Last year Alyssa Rosenzweig joined Intel to work on their Linux graphics drivers after previously serving as a contractor for Valve on their graphics stack and also previously leading the Mesa driver work for the Asahi Linux Apple Silicon graphics support. Since joining Intel, she has been leading the development of Jay as a new SSA-based shader compiler for Intel graphics hardware to be used by the Mesa Iris Gallium3D and ANV Vulkan drivers...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/RustConn-0.20-Released">RustConn 0.20 Continues Further Polishing This GTK4/libadwaita-Based Connection Manager</a></strong><br />
+  摘要：RustConn has been in development for a while now as a modern GTK4 connection manager supporting a variety of protocols like SSH, RDP, VNC, Telnet, and more. RustConn 0.20 was released this week as the latest major step forward to this Rust-based connection manager leveraging the GTK4 toolkit and libadwaita...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Last-Sound-Fixes-Linux-7.2">Late Sound Fixes For Linux 7.2 Bring More Device Quirks, Intel Nova Lake HDMI-In Capture</a></strong><br />
+  摘要：Ahead of the presumed Linux 7.2 stable kernel release tomorrow, some last minute sound fixes/quirks have been merged for this next kernel version...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Plasma-6.8-Tune-Mouse-Speeds">KDE Plasma 6.8 To Allow Fine-Tuning Mouse/Touchpad Speeds</a></strong><br />
+  摘要：KDE developers continue to be quite busy this summer baking improvements for the upcoming Plasma 6.8 desktop release. This Week in Plasma is out with its newest issue to outline all of these interesting enhancements...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Debian-Votes-On-LLM-Usage">Debian Developers Begin Voting Over LLM Usage Within The Project</a></strong><br />
+  摘要：Debian developers have been considering a general resolution over LLM usage within the project. After collecting a variety of proposals, voting has now commenced for Debian developers to decide how comfortable they are with AI / Large Language Model contributions in the project or not...</p>
+</li>
+</ul>
+<h2>Ars Technica</h2>
+<ul>
+<li>
+<p><strong><a href="https://arstechnica.com/culture/2026/08/visionquest-trailer-kicks-off-disneys-d23-fan-event/">VisionQuest trailer kicks off Disney's D23 fan event</a></strong><br />
+  摘要：Also: Ahsoka S2 teaser, Doomsday trailer, news about MCU's X-Men and Star Wars: Starfighter</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/space/2026/08/ukraine-strikes-major-russian-rocket-factory-with-cruise-missiles/">Ukraine strikes major Russian rocket factory with cruise missiles</a></strong><br />
+  摘要："Flamingo missiles were used. A good achievement."</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/science/2026/08/so-much-solar-digging-into-the-list-of-every-us-power-plant-that-went-online-this-year/">So much solar: Digging into the list of every US power plant that went online this year</a></strong><br />
+  摘要：Utility-scale solar leads by a mile, followed by batteries. Fossil fuels, not so much.</p>
+</li>
+</ul>
+<h2>The New Stack</h2>
+<ul>
+<li><strong><a href="https://thenewstack.io/new-tenant-is-change/">Per-developer environments were the goal. Agents moved the goalposts.</a></strong><br />
+  摘要：Multi-tenancy has moved in one direction for 60 years: the tenant keeps getting smaller. Mainframe time-sharing carved a single machine The post Per-developer environments were the goal. Agents moved the goalposts. appeared first on The New Stack .</li>
+</ul>
+<h2>Kernel.org</h2>
+<ul>
+<li>
+<p><strong><a href="https://www.kernel.org/">next-20260814: linux-next</a></strong><br />
+  摘要：Version: next-20260814 (linux-next) Released: 2026-08-14</p>
+</li>
+<li>
+<p><strong><a href="https://www.kernel.org/">7.2-rc7: mainline</a></strong><br />
+  摘要：Version: 7.2-rc7 (mainline) Released: 2026-08-09 Source: linux-7.2-rc7.tar.gz Patch: full ( incremental )</p>
+</li>
+<li>
+<p><strong><a href="https://www.kernel.org/">7.1.8: stable</a></strong><br />
+  摘要：Version: 7.1.8 (stable) Released: 2026-08-09 Source: linux-7.1.8.tar.xz PGP Signature: linux-7.1.8.tar.sign Patch: full ( incremental ) ChangeLog: ChangeLog-7.1.8</p>
+</li>
+<li>
+<p><strong><a href="https://www.kernel.org/">6.18.44: longterm</a></strong><br />
+  摘要：Version: 6.18.44 (longterm) Released: 2026-08-09 Source: linux-6.18.44.tar.xz PGP Signature: linux-6.18.44.tar.sign Patch: full ( incremental ) ChangeLog: ChangeLog-6.18.44</p>
+</li>
+<li>
+<p><strong><a href="https://www.kernel.org/">6.12.103: longterm</a></strong><br />
+  摘要：Version: 6.12.103 (longterm) Released: 2026-08-09 Source: linux-6.12.103.tar.xz PGP Signature: linux-6.12.103.tar.sign Patch: full ( incremental ) ChangeLog: ChangeLog-6.12.103</p>
+</li>
+<li>
+<p><strong><a href="https://www.kernel.org/">6.6.151: longterm</a></strong><br />
+  摘要：Version: 6.6.151 (longterm) Released: 2026-08-09 Source: linux-6.6.151.tar.xz PGP Signature: linux-6.6.151.tar.sign Patch: full ( incremental ) ChangeLog: ChangeLog-6.6.151</p>
+</li>
+<li>
+<p><strong><a href="https://www.kernel.org/">6.1.182: longterm</a></strong><br />
+  摘要：Version: 6.1.182 (longterm) Released: 2026-08-07 Source: linux-6.1.182.tar.xz PGP Signature: linux-6.1.182.tar.sign Patch: full ( incremental ) ChangeLog: ChangeLog-6.1.182</p>
+</li>
+<li>
+<p><strong><a href="https://www.kernel.org/">5.15.215: longterm</a></strong><br />
+  摘要：Version: 5.15.215 (longterm) Released: 2026-08-07 Source: linux-5.15.215.tar.xz PGP Signature: linux-5.15.215.tar.sign Patch: full ( incremental ) ChangeLog: ChangeLog-5.15.215</p>
+</li>
+<li>
+<p><strong><a href="https://www.kernel.org/">5.10.264: longterm</a></strong><br />
+  摘要：Version: 5.10.264 (longterm) Released: 2026-08-07 Source: linux-5.10.264.tar.xz PGP Signature: linux-5.10.264.tar.sign Patch: full ( incremental ) ChangeLog: ChangeLog-5.10.264</p>
+</li>
+</ul>
+<h2>Kubernetes Blog</h2>
+<ul>
+<li><strong><a href="https://kubernetes.io/blog/2026/08/03/gateway-api-v1-6-release/">Gateway API v1.6: TCPRoute and UDPRoute Graduate to Standard</a></strong><br />
+  摘要：The Kubernetes SIG Network community is thrilled to share the release of Gateway API v1.6.0 , which was released on June 30th of this year! Gateway API has become the standard for modern, role-oriented, and expressive service networking in Kubernetes. In previous releases, Gateway API established a production-grade foundation for HTTP and TLS layer 7 traffic. With version 1.6.0, Gateway API takes a major step forward by expanding standard layer 4 protocol routing and introducing cleaner API boundaries for experimental innovation. Here is a quick summary of what's new in Gateway API v1.6.0: TCPRoute and UDPRoute Graduate to Standard : Raw L4 TCP and UDP traffic routing reach GA stability in the v1 API version. Experimental API Group Separation : Experimental resources transition to a distin…</li>
+</ul>
+<hr /></div>
+  </main>
+</body>
+</html>
