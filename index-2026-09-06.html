@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OS 领域每日洞察 - 2026-09-06</title>
+  <style>
+    :root {
+      --bg: #f6f4f0;
+      --bg-bar: #ebe8e3;
+      --bg-card: #fffefb;
+      --bg-card-hover: #f5f3ef;
+      --text: #2d2a26;
+      --text-muted: #5c5852;
+      --text-dim: #7a756e;
+      --accent: #5a7a9e;
+      --border: #ddd9d2;
+      --radius: 10px;
+      --font: "Segoe UI", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      font-size: 15px;
+    }
+
+    /* 门户顶栏 */
+    .masthead {
+      background: var(--bg-bar);
+      border-bottom: 1px solid var(--border);
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 0;
+    }
+    .masthead-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .masthead h1 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin: 0;
+      letter-spacing: -0.02em;
+      color: var(--text);
+    }
+    .masthead .meta {
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+    }
+
+    /* 主内容区：多栏门户布局 */
+    .main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 3rem;
+    }
+
+    /* 板块：每个 h2 为一个频道块 */
+    .content .section {
+      margin-bottom: 2.5rem;
+    }
+    .content h2 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+      margin: 0 0 1rem;
+      padding: 0.6rem 1rem;
+      background: var(--bg-bar);
+      border-radius: var(--radius);
+      border-left: 4px solid var(--accent);
+    }
+    .content h2:first-child { margin-top: 0; }
+
+    .content h2:has(+ h3) {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      border-left-color: var(--text-dim);
+    }
+
+    /* 板块内卡片网格（每个 h2 后的 ul） */
+    .content h2 + ul {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1rem;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .content h2 + ul li {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.15rem 1.2rem;
+      transition: background .15s, border-color .15s;
+    }
+    .content h2 + ul li:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--text-dim);
+    }
+    .content h2 + ul li strong {
+      display: block;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+      line-height: 1.4;
+    }
+    .content h2 + ul li p {
+      margin: 0 0 0.5rem;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.58;
+    }
+    .content h2 + ul li p:last-of-type { margin-bottom: 0; }
+    .content h2 + ul li a[href^="http"] {
+      font-size: 0.8125rem;
+      color: var(--accent);
+    }
+    .content h2 + ul li a[href^="http"]:hover { text-decoration: underline; }
+
+    .content .ref-section {
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+    .content h2 + h3 { margin-top: 1.25rem; }
+    .content h3 {
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--text-dim);
+      margin: 1rem 0 0.4rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .content h3 + ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 0.25rem;
+    }
+    .content h3 + ul li {
+      background: transparent;
+      border: none;
+      padding: 0.2rem 0;
+      font-size: 0.8125rem;
+    }
+    .content h3 + ul li strong { font-size: inherit; margin-bottom: 0; }
+    .content h3 + ul li a { color: var(--accent); }
+    .content h3 + ul li a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <header class="masthead">
+    <div class="masthead-inner">
+      <h1>OS 领域每日洞察 - 2026-09-06</h1>
+      <span class="meta">2026-09-06 04:01 UTC</span>
+    </div>
+  </header>
+  <main class="main">
+    <div class="content"><h2>Linux 内核社区热点与趋势</h2>
+<p><strong>NVIDIA 为开源 Nova 驱动发布 vGPU 管理器与 VFIO 变体驱动补丁</strong><br />
+NVIDIA 正在持续完善其在 Linux 内核中的开源 Nova 图形驱动功能。本周六，NVIDIA 向邮件列表提交了一组包含 13 个补丁的系列，旨在引入 NVIDIA vGPU 管理器和 VFIO 变体驱动程序。这一举措标志着 NVIDIA 在支持 Linux 内核上游驱动方面迈出了重要一步，将有助于提升虚拟机环境下的图形硬件虚拟化性能与兼容性。<br />
+原文：<a href="https://www.phoronix.com/news/NVIDIA-Nova-vGPU-Manager">NVIDIA Posts vGPU Manager &amp; VFIO Variant Driver For Open-Source Nova</a></p>
+<p><strong>Apple A18 Pro 芯片与 MacBook Neo 获得初步 Linux 内核支持</strong><br />
+Linux 开发者已提交补丁，为新款 MacBook Neo 笔记本所搭载的 Apple A18 Pro 芯片提供初步支持。目前的补丁主要集中在 SoC 的基础启用和设备树（Device Tree）配置上，虽然迈出了关键一步，但现阶段的 Linux 支持仍然非常有限。这反映了 Linux 社区在适配苹果最新硬件架构方面的持续努力，尽管完全兼容尚需时日。<br />
+原文：<a href="https://www.phoronix.com/news/Apple-A18-Pro-MacBook-Neo-Patch">Linux Patches Posted For Initial Enablement Of The Apple A18 Pro + MacBook Neo</a></p>
+<p><strong>Asahi Linux 宣布支持苹果 M3 系列芯片</strong><br />
+Asahi Linux 项目正式宣布其对苹果 M3 系列芯片的支持进入新阶段。通过对 M3 架构的深入逆向工程和驱动开发，开发者已经克服了多项硬件适配难题，使得 Linux 能够在最新的苹果硬件上运行。这一进展对于希望在高性能 ARM 架构上使用 Linux 的用户来说是一个重大里程碑。<br />
+原文：<a href="https://asahilinux.org/2026/09/m2-episode-1/">Asahi Linux Supports M3</a></p>
+<p><strong>Nouveau 驱动修复 NVIDIA Blackwell GPU 显示问题并推进 HDMI 2.1 支持</strong><br />
+在 Linux 7.3-rc2 发布前夕，Direct Rendering Manager (DRM) 合并了一系列针对开源 Nouveau 驱动的修复补丁。这些修复主要解决了当前一代 NVIDIA Blackwell GPU 的显示支持问题，并为实现 HDMI 2.1 功能奠定基础。这表明开源社区在没有官方完全文档支持的情况下，依然在快速跟进最新显卡硬件的驱动完善。<br />
+原文：<a href="https://www.phoronix.com/news/Nouveau-Blackwell-Display-Fixes">Nouveau Lands Display Fixes For NVIDIA Blackwell GPUs As It Works Toward HDMI 2.1</a></p>
+<p><strong>深入解析 Linux 中 malloc() 的底层运作机制</strong><br />
+一篇技术文章详细探讨了当程序员在 Linux 环境下调用 <code>malloc()</code> 时，操作系统内核究竟执行了哪些操作。文章涵盖了虚拟内存分配、页表映射以及内核如何延迟分配物理内存（写时复制）等核心概念。这对于理解 Linux 内存管理子系统以及优化应用程序性能具有重要的参考价值。<br />
+原文：<a href="https://medium.com/@ankitadhiman650/what-linux-actually-does-when-you-malloc-162caa460052">What Linux does when you malloc()?</a></p>
+<p><strong>社区讨论：NAS 与备份场景下的文件系统选择</strong><br />
+Lobsters 社区发起了一场关于 NAS 和备份系统应使用何种文件系统的深度讨论。参与者分享了关于 ZFS、Btrfs 以及 mdadm 等方案在多盘管理和 RAID 实现上的优劣。讨论重点在于数据完整性、快照功能以及在硬件故障时的恢复能力，为构建可靠存储系统的开发者提供了实践经验。<br />
+原文：<a href="https://lobste.rs/s/wk38d2/what_filesystem_are_you_running_on_your">What filesystem are you running on your NAS/Backups, and why?</a></p>
+<h2>业界大厂动向</h2>
+<p><strong>AMD 计划将 Rust 编程语言深度引入 GPU 软件栈</strong><br />
+AMD 正在组建一支“精英”开发团队，旨在将 Rust 语言深度集成到其 GPU 软件栈中，包括固件、驱动程序和着色器编译器。此举旨在利用 Rust 的内存安全特性来减少底层软件中的漏洞，并提高整体系统的稳定性。这标志着继 Linux 内核之后，主流硬件厂商开始在关键图形基础设施中大规模采用 Rust。<br />
+原文：<a href="https://www.phoronix.com/news/AMD-Rust-Deep-Into-GPU-Stack">AMD Working To "Push Rust Deep Into The GPU Stack"</a></p>
+<p><strong>GNOME 利益相关者讨论建立正式的 RFC 流程以应对重大技术变革</strong><br />
+GNOME 社区正在讨论建立一套正式的征求意见（RFC）流程，以便在未来处理重大的技术决策和架构变更。目前已经起草了一份 RFC 草案，旨在通过更透明、更结构化的方式解决社区内的技术争议。这一举措有助于提升 GNOME 开发生态的协作效率，确保重大改动经过充分的论证。<br />
+原文：<a href="https://www.phoronix.com/news/GNOME-RFC-Process-Discussion">GNOME Stakeholders Discussing RFC Process For Solving Major Technical Changes</a></p>
+<h2>云原生领域</h2>
+<p><strong>Kubernetes v1.37 版本新特性与弃用项预览</strong><br />
+Kubernetes 官方博客发布了 v1.37 版本的预览，重点介绍了即将到来的功能变化和弃用项。其中，<code>kubectl run</code> 命令的 <code>--filename/-f</code> 参数将被弃用，因为生成的 Pod 始终纯粹基于 CLI 参数构建。该版本继续致力于提升集群的健康度，建议运维人员提前关注这些变化以维护环境的稳定性。<br />
+原文：<a href="https://kubernetes.io/blog/2026/07/31/kubernetes-v1-37-sneak-peek/">Kubernetes v1.37 Sneak Peek</a></p>
+<p><strong>Kubeflow 推出 Headlamp 插件，优化 Kubernetes 上的 AI/ML 工作负载管理</strong><br />
+Kubernetes 已成为 AI/ML 任务的事实标准平台，而 Kubeflow 是其中最流行的工具栈之一。为了解决 ML 仪表板往往隐藏底层 K8s 资源的问题，社区推出了 Headlamp 插件，允许操作员直接观察和管理作为 CRD 暴露的 ML 工作负载。这增强了 AI 任务的可观测性，使开发者能更轻松地调试卡住的 Notebook 或失败的训练任务。<br />
+原文：<a href="https://kubernetes.io/blog/2026/07/13/introducing-headlamp-plugin-for-kubeflow/">Operating AI/ML Workloads on Kubernetes: A Headlamp Plugin for Kubeflow</a></p>
+<p><strong>从 Kubernetes Dashboard 迁移至 Headlamp 的实操指南</strong><br />
+随着云原生生态的发展，许多团队开始从传统的 Kubernetes Dashboard 转向更具扩展性的 Headlamp。官方博客发布了详细的迁移指南，对比了两者在身份验证、RBAC 规则处理以及插件系统方面的差异。Headlamp 支持桌面端使用 kubeconfig 连接多集群，为开发者提供了更灵活的集群管理体验。<br />
+原文：<a href="https://kubernetes.io/blog/2026/07/13/kubernetes-dashboard-to-headlamp/">Kubernetes Dashboard to Headlamp: A Step-by-Step Guide</a></p>
+<h2>AI 领域</h2>
+<p><strong>Anthropic 发布 Claude Fable 5.1，显著提升编程与知识工作能力</strong><br />
+Anthropic 本周推出了 Claude Fable 5.1，称其为目前最先进的编程和知识工作模型。尽管在某些实际任务中用户反映其与前代 5.0 版本的差异感不明显，但官方强调其在逻辑推理和代码生成质量上有了进一步优化。该模型的发布反映了 AI 辅助编程领域竞争的持续白热化。<br />
+原文：<a href="https://thenewstack.io/claude-fable-upgrade-tested/">Claude Fable 5.1 vs. Fable 5: On real work, I couldn’t tell them apart.</a></p>
+<p><strong>特斯拉 Cybercab 部署后立即面临美国政府安全调查</strong><br />
+特斯拉的无人驾驶出租车 Cybercab 刚刚部署便引起了监管部门的关注，美国政府正在调查其是否符合车辆安全标准。此次调查的重点在于其自动驾驶系统的可靠性以及在复杂城市环境下的安全性表现。这凸显了 AI 驱动的自动驾驶技术在商业化落地过程中面临的严峻法律与监管挑战。<br />
+原文：<a href="https://arstechnica.com/cars/2026/09/teslas-cybercab-has-been-deployed-and-its-already-under-investigation/">Tesla’s Cybercab has been deployed, and it’s already under investigation</a></p>
+<p><strong>构建 Agentic RAG 系统信任：证据与透明度的重要性</strong><br />
+随着检索增强生成（RAG）向代理化（Agentic）演进，如何建立用户对 AI 决策的信任成为关键。文章指出，系统必须提供明确的证据链，展示 AI 是如何从海量数据中检索并得出结论的。通过增强过程的透明度，可以有效减少 AI 幻觉带来的负面影响，提升企业级 AI 应用的可靠性。<br />
+原文：<a href="https://thenewstack.io/building-trust-agentic-rag/">Building trust in agentic RAG starts with evidence</a></p>
+<p><strong>DHH 谈编程、AI 与“氛围编码”（Vibe Coding）</strong><br />
+Ruby on Rails 创始人 DHH 在 Lex Fridman 的播客中探讨了 AI 对编程文化的影响，并提出了“氛围编码”（Vibe Coding）的概念。他讨论了在 AI 辅助下，编程范式如何从严谨的逻辑构建转向更高维度的意图表达。同时，他也分享了对 Linux 生态和未来开发工具演进的独特见解。<br />
+原文：<a href="https://lexfridman.com/dhh-2-transcript/">DHH: Programming, AI, Vibe Coding and Linux (Lex Fridman Podcast)</a></p>
+<p><strong>开发者是否应使用 AI 审查手写代码？社区引发争议</strong><br />
+Lobsters 社区正在讨论开发者是否应该被要求使用 AI 来审查他们精心手写的代码。支持者认为 AI 可以作为一种高级 Linter，识别出人类容易忽略的内存泄漏和安全漏洞；反对者则担心过度依赖 AI 会破坏编程的艺术性。这一讨论反映了 AI 工具在传统软件工程流程中渗透时引发的角色冲突。<br />
+原文：<a href="https://lobste.rs/s/fxccx9/is_it_too_much_ask_devs_use_ai_review_their">Is it too much to ask devs to use AI to review their hand-crafted code?</a></p>
+<p><strong>Kovavue 推出面向 AI 代理的远程 Linux 租用服务</strong><br />
+Kovavue 展示了一种新型服务，为 AI 代理提供像人类一样操作的远程 Linux 环境。这种“租用的 Linux 盒子”旨在让 AI 代理能够执行复杂的系统级任务，而不仅仅局限于文本交互。这种基础设施的出现预示着 AI 代理将拥有更强的实际操作能力和系统权限。<br />
+原文：<a href="https://kovavue.kovanex.dev">Show HN: Kovavue – a rented Linux box where your AI agent works like a human</a></p>
+<p><strong>MoltyBeeAI：利用 AI 代理审计业务收入与效率</strong><br />
+开发者展示了一个名为 MoltyBeeAI 的系统，它利用 7 个 AI 代理来审计企业的业务运行情况。该工具能够识别收入漏洞并生成详细的 PDF 报告，甚至在作者自己的初创公司中发现了过度授信的问题。这展示了 AI 在企业运营智能层（Operating Intelligence Layer）中的应用潜力。<br />
+原文：<a href="https://www.moltybeeai.com/#pricing">Show HN: I built an AI that audits businesses. It's first job was to catch me</a></p>
+<h2>工业界最新动向</h2>
+<p><strong>Ikey Doherty 回归发行版领域，计划展示现代 Linux 构建之道</strong><br />
+曾创办 Solus 和 Serpent OS 的知名开发者 Ikey Doherty 宣布回归，并计划展示如何“正确地”构建一个现代 Linux 发行版。他凭借在 Intel Clear Linux 团队的经验，试图在性能优化和系统架构上提出新的见解。这一动态引起了 Linux 爱好者对新一代高性能发行版的期待。<br />
+原文：<a href="https://www.phoronix.com/news/Ikey-Doherty-Plans-Linux-Build">Ikey Doherty Plans To Show How To "Properly" Build A Modern Linux Distro</a></p>
+<p><strong>基于 Slackware 的 Zenwalk 发行版更新，集成 Linux 7.1 与 Xfce 4.20</strong><br />
+历史悠久的 Zenwalk Linux 发布了新的里程碑快照，基于 Slackware 并集成了最新的 Linux 7.1 内核。此次更新还引入了 Flatpak 原生支持和 Xfce 4.20 桌面环境，旨在为用户提供一个既传统又现代的轻量级桌面体验。这是该项目在时隔四年后的又一次重大更新。<br />
+原文：<a href="https://www.phoronix.com/news/Zenwalk-2026-Current">Slackware-Based Zenwalk ISOs Updated With Linux 7.1, Flatpak Integrated + Xfce 4.20</a></p>
+<p><strong>Rust 版 coreutils (uutils) 引入编译器级别的错误诊断信息</strong><br />
+uutils 项目（用 Rust 重写的 GNU coreutils）最近引入了类似编译器的错误诊断功能。当用户输入错误的命令参数时，工具会精确指向错误位置并提供改进建议，极大地提升了命令行工具的用户体验。这种改进展示了 Rust 语言生态在重塑经典 Unix 工具时的创新性。<br />
+原文：<a href="https://uutils.org/blog/2026-08-error-diagnostics/">Pointing at the error: compiler-style diagnostics in uutils coreutils</a></p>
+<p><strong>SMOKE 项目：在 iOS 上通过虚拟机运行 Windows 和 Linux</strong><br />
+开发者发布了 SMOKE 项目，实现在 iOS 设备上通过虚拟机运行完整的 Windows 和 Linux 系统。该项目利用了 macOS 上的虚拟化技术并将其移植到移动端，打破了移动操作系统与桌面操作系统之间的界限。这对于希望在 iPad 或 iPhone 上进行生产力任务的用户具有很强的吸引力。<br />
+原文：<a href="https://github.com/theghostshinobi/SMOKE">I wrote a VM for Mac to run Windows and Linux, both on iOS</a></p>
+<p><strong>Rust 虚函数表（Vtables）内存布局可视化</strong><br />
+一篇技术博客通过可视化的方式深入讲解了 Rust 中 <code>dyn Trait</code> 在内存中的工作原理。文章详细展示了虚函数表（Vtable）的结构以及对象指针如何与这些表交互以实现动态分派。这对于想要深入理解 Rust 运行时行为和内存模型的开发者来说是极佳的学习资源。<br />
+原文：<a href="https://sofiabelen.github.io/projects/visualizing-rusts-vtables-how-dyn-trait-works-in-memory/">Visualizing Rust's Vtables: How dyn Trait Works In Memory</a></p>
+<p><strong>Zig 语言低开销命令行解析库 zopt 发布</strong><br />
+zopt 是一个专为 Zig 语言设计的命令行解析库，强调“低仪式感”和易用性。它旨在简化 CLI 工具的开发流程，让开发者能够以最少的代码量实现功能完备的参数解析。随着 Zig 语言在系统编程领域的兴起，这类高质量的基础库将进一步完善其生态。<br />
+原文：<a href="https://codeberg.org/hgrsd/zopt">zopt: low-ceremony command line parsing for Zig</a></p>
+<h2>学术界最新研究</h2>
+<p><strong>针对 Linux 发行版的“信任信任”攻击：通过 strip 工具植入后门</strong><br />
+一项发表在 arXiv 上的研究展示了如何通过 <code>strip</code> 工具对整个 Linux 发行版实施“信任信任”（Trusting-Trust）攻击。研究表明，这种攻击不仅限于编译器，像 <code>strip</code> 这样处理二进制文件的工具同样可以被用来植入持久且难以检测的后门。这一发现提醒安全社区，供应链攻击的防御范围需要进一步扩大到所有构建链工具。<br />
+原文：<a href="https://arxiv.org/abs/2607.24888">Trusting-Trust Attack against an Entire Linux Distribution (via strip utility)</a></p>
+<p><strong>Google Research：利用生成式 AI 量化天气预报的不确定性</strong><br />
+Google 研究人员开发了一种生成式 AI 模型，用于量化天气预报中的不确定性。相比传统模型，该方法能更准确地预测极端天气发生的概率，为防灾减灾提供更科学的决策依据。这项研究展示了生成式 AI 在处理复杂物理系统模拟方面的巨大潜力。<br />
+原文：<a href="http://blog.research.google/2024/03/generative-ai-to-quantify-uncertainty.html">Generative AI to quantify uncertainty in weather forecasting</a></p>
+<p><strong>AutoBNN：基于组合贝叶斯神经网络的概率时间序列预测</strong><br />
+Google 提出了一种名为 AutoBNN 的新型架构，用于处理复杂的时间序列预测问题。该模型结合了贝叶斯神经网络的解释性和深度学习的强大拟合能力，能够自动选择合适的模型组件。在处理如二氧化碳浓度预测等任务时，它表现出了优于传统高斯过程（GPs）的效率和准确性。<br />
+原文：<a href="http://blog.research.google/2024/03/autobnn-probabilistic-time-series.html">AutoBNN: Probabilistic time series forecasting with compositional bayesian neural networks</a></p>
+<p><strong>ScreenAI：用于理解 UI 和信息图表的视觉语言模型</strong><br />
+Google 发布了 ScreenAI 模型，旨在统一对用户界面（UI）和各类信息图表（如统计图、流程图）的理解。该模型改进了 PaLI 架构，能够识别图标、布局并进行复杂的视觉推理。这为开发能够自动操作 App 或理解复杂文档的 AI 助手提供了核心技术支撑。<br />
+原文：<a href="http://blog.research.google/2024/03/screenai-visual-language-model-for-ui.html">ScreenAI: A visual language model for UI and visually-situated language understanding</a></p>
+<p><strong>利用 AI 扩大全球可靠洪水预报的覆盖范围</strong><br />
+Google 研究团队分享了其在洪水预报领域的最新进展，通过 AI 技术将预报精度提升到了前所未有的水平。该系统目前已覆盖全球多个高风险地区，旨在通过及时的早期预警减少气候变化带来的灾害损失。这项研究体现了 AI 在应对全球气候危机中的社会价值。<br />
+原文：<a href="http://blog.research.google/2024/03/using-ai-to-expand-global-access-to.html">Using AI to expand global access to reliable flood forecasts</a></p>
+<p><strong>计算机辅助诊断在肺癌筛查中的应用研究</strong><br />
+Google Research 探讨了如何利用 AI 辅助 CT 影像分析，以提高肺癌早期筛查的准确率。研究指出，AI 能够识别微小的结节病变，显著降低漏诊率，并有助于缓解放射科医生的工作压力。这一技术在全球肺癌死亡率居高不下的背景下，具有极高的临床应用前景。<br />
+原文：<a href="http://blog.research.google/2024/03/computer-aided-diagnosis-for-lung.html">Computer-aided diagnosis for lung cancer screening</a></p>
+<hr /></div>
+  </main>
+</body>
+</html>
