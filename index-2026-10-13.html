@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OS 领域每日洞察 - 2026-10-13</title>
+  <style>
+    :root {
+      --bg: #f6f4f0;
+      --bg-bar: #ebe8e3;
+      --bg-card: #fffefb;
+      --bg-card-hover: #f5f3ef;
+      --text: #2d2a26;
+      --text-muted: #5c5852;
+      --text-dim: #7a756e;
+      --accent: #5a7a9e;
+      --border: #ddd9d2;
+      --radius: 10px;
+      --font: "Segoe UI", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      font-size: 15px;
+    }
+
+    /* 门户顶栏 */
+    .masthead {
+      background: var(--bg-bar);
+      border-bottom: 1px solid var(--border);
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 0;
+    }
+    .masthead-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .masthead h1 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin: 0;
+      letter-spacing: -0.02em;
+      color: var(--text);
+    }
+    .masthead .meta {
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+    }
+
+    /* 主内容区：多栏门户布局 */
+    .main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 3rem;
+    }
+
+    /* 板块：每个 h2 为一个频道块 */
+    .content .section {
+      margin-bottom: 2.5rem;
+    }
+    .content h2 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+      margin: 0 0 1rem;
+      padding: 0.6rem 1rem;
+      background: var(--bg-bar);
+      border-radius: var(--radius);
+      border-left: 4px solid var(--accent);
+    }
+    .content h2:first-child { margin-top: 0; }
+
+    .content h2:has(+ h3) {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      border-left-color: var(--text-dim);
+    }
+
+    /* 板块内卡片网格（每个 h2 后的 ul） */
+    .content h2 + ul {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1rem;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .content h2 + ul li {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.15rem 1.2rem;
+      transition: background .15s, border-color .15s;
+    }
+    .content h2 + ul li:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--text-dim);
+    }
+    .content h2 + ul li strong {
+      display: block;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+      line-height: 1.4;
+    }
+    .content h2 + ul li p {
+      margin: 0 0 0.5rem;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.58;
+    }
+    .content h2 + ul li p:last-of-type { margin-bottom: 0; }
+    .content h2 + ul li a[href^="http"] {
+      font-size: 0.8125rem;
+      color: var(--accent);
+    }
+    .content h2 + ul li a[href^="http"]:hover { text-decoration: underline; }
+
+    .content .ref-section {
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+    .content h2 + h3 { margin-top: 1.25rem; }
+    .content h3 {
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--text-dim);
+      margin: 1rem 0 0.4rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .content h3 + ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 0.25rem;
+    }
+    .content h3 + ul li {
+      background: transparent;
+      border: none;
+      padding: 0.2rem 0;
+      font-size: 0.8125rem;
+    }
+    .content h3 + ul li strong { font-size: inherit; margin-bottom: 0; }
+    .content h3 + ul li a { color: var(--accent); }
+    .content h3 + ul li a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <header class="masthead">
+    <div class="masthead-inner">
+      <h1>OS 领域每日洞察 - 2026-10-13</h1>
+      <span class="meta">2026-10-13 04:01 UTC</span>
+    </div>
+  </header>
+  <main class="main">
+    <div class="content"><h2>Linux 内核社区热点与趋势</h2>
+<p><strong>Linus Torvalds 使用 AI 工具辅助内核代码重写与 Bug 修复</strong><br />
+Linux 创始人 Linus Torvalds 近期透露，他正在使用 Anthropic 的 Claude Code 辅助重写 Linux 内核读取缓存文件的方式。他不仅利用 AI 生成了初始补丁和测试程序，还通过 AI 解释复杂代码段，从而发现了内核中长期存在的其他隐藏 Bug。Linus 表示他正在践行自己所倡导的理念，即利用大语言模型（LLM）来提高代码的可读性和系统的健壮性。<br />
+原文：<a href="https://startupfortune.com/linus-torvalds-used-claude-code-to-rewrite-how-linux-reads-cached-files/">Linus Torvalds used Claude Code to rewrite how Linux reads cached files</a><br />
+原文：<a href="https://www.phoronix.com/news/Linus-Torvalds-Assoc-Array">Linus Torvalds "Did What I Preach", Used AI To Make Code Decipherable &amp; Uncovered More Bugs</a></p>
+<p><strong>2026 年内核维护者峰会聚焦 LLM 影响与安全挑战</strong><br />
+在捷克布拉格举行的 2026 年内核维护者峰会上，约 30 位核心开发者讨论了社区面临的紧迫议题。会议讨论由大语言模型（LLM）对开发流程的影响主导，同时也深入探讨了安全漏洞的处理流程以及社区的长远继任计划。此类闭门会议旨在解决邮件列表难以达成共识的政策性问题，确保内核开发的持续性。<br />
+原文：<a href="https://lwn.net/Articles/1099594/">The 2026 Maintainers Summit</a></p>
+<p><strong>Linux 7.4 将引入 EXT4 IOmap 缓冲 I/O 支持以提升性能</strong><br />
+即将发布的 Linux 7.4 内核计划为 EXT4 文件系统引入 IOmap 缓冲 I/O 路径的选配支持，旨在替换陈旧的 buffer_head 使用。这一架构升级预计将带来显著的性能提升，并使 EXT4 能够利用更现代的内核 I/O 基础设施。目前该功能作为可选特性引入，标志着主流 Linux 文件系统向更高效处理模式的迈进。<br />
+原文：<a href="https://www.phoronix.com/news/EXT4-iomap-Buffered-IO">EXT4 Introducing IOmap Buffered I/O Path With Some Performance Gains</a></p>
+<p><strong>Linux 7.4 将为主线支持三款高通 Snapdragon X2 Elite 笔记本</strong><br />
+Linux 7.4 内核将正式合并对华硕、惠普和联想旗下搭载高通 Snapdragon X2 Elite 处理器笔记本的支持。这意味着这些基于 ARM 架构的新型硬件将能够更顺畅地运行原生 Linux 系统，无需依赖特定的厂商内核分支。这一进展体现了 Linux 社区在推动 ARM 笔记本生态系统主线化方面的持续努力。<br />
+原文：<a href="https://www.phoronix.com/news/ASUS-UX3407NA-Linux-7.4">Linux 7.4 To Upstream Support For Three Snapdragon X2 Elite Laptops</a></p>
+<p><strong>Linux 7.3-rc7 发布，稳定版预计下周面世</strong><br />
+Linus Torvalds 发布了 Linux 7.3 的第七个候选版本（rc7），这通常是正式版发布前的最后一个测试版本。目前的开发进度平稳，如果没有突发严重问题，Linux 7.3 正式版预计将在下周末正式发布。该版本包含了大量驱动更新、架构优化以及常规的 Bug 修复。<br />
+原文：<a href="https://www.phoronix.com/news/Linux-7.3-rc7-Released">Linux 7.3-rc7 Released With Linux 7.3 Hopefully Out Next Weekend</a></p>
+<p><strong>AI 辅助补丁有望将 Linux 内核编译时间缩短至 10 秒</strong><br />
+Linux 爱好者和开发者正在探索利用 AI 辅助生成的补丁来优化内核构建流程，目标是将编译时间缩短至 10 秒左右。通过优化头文件依赖和并行处理逻辑，这些补丁在不使用 RAMDisk 的情况下已将构建时间减少了近三分之一。这一突破对于需要频繁编译测试的内核开发者来说，将极大地提升工作效率。<br />
+原文：<a href="https://www.tomshardware.com/software/linux/linux-enthusiasts-see-10-second-kernel-compilation-times-on-the-horizon-ai-assisted-patches-cut-build-times-by-nearly-a-third-without-a-ramdisk">Linux enthusiasts see 10-second kernel compilation times on the horizon</a></p>
+<h2>业界大厂动向</h2>
+<p><strong>Google 修复价值 9 万美元的远程代码执行（RCE）高危漏洞</strong><br />
+Google 近期修复了其开发者文档基础设施中的一个严重漏洞，该漏洞允许未经身份验证的远程代码执行。安全研究员通过发现 Flask 会话反序列化中的缺陷获得了 9 万美元的巨额赏金。尽管漏洞极其严重，但 Google 在收到报告后花费了两个月时间才完成最终修复，引发了业界对大厂响应速度的关注。<br />
+原文：<a href="https://thenewstack.io/google-devsite-rce-bounty/">Google paid $90,000 for this bug, then waited two months to fix it</a></p>
+<p><strong>Intel 发布面向企业推理优化的 GPU D 系列加速器</strong><br />
+Intel 正式推出了代号为 "Crescent Island" 的 GPU D 系列，专门针对企业级推理任务进行优化。该系列加速器旨在满足数据中心日益增长的 AI 推理需求，提供更高的能效比和处理密度。通过这一发布，Intel 进一步强化了其在 AI 基础设施领域与 NVIDIA 等对手竞争的筹码。<br />
+原文：<a href="https://www.phoronix.com/news/Intel-GPU-D-Series">Intel Announces The GPU D Series For Crescent Island</a></p>
+<p><strong>Canonical 推出 Ubuntu Myna 语音转文字技术预览版</strong><br />
+Canonical 宣布其语音转文字解决方案 Myna 已进入技术预览阶段，支持 Ubuntu 26.10 及现有的 LTS 版本。Myna 是 Canonical 构建“上下文感知桌面”愿景的重要组成部分，旨在为 Linux 用户提供原生的 AI 交互能力。该工具的推出标志着主流 Linux 发行版开始深度集成 AI 辅助功能。<br />
+原文：<a href="https://www.phoronix.com/news/Ubuntu-Myna-Tech-Preview">Ubuntu's Myna Speech-To-Text Now Available In Tech Preview</a></p>
+<p><strong>Red Hat 强调通过标准化操作系统减少企业技术债务</strong><br />
+Red Hat 在最新博客中指出，企业通过在 Red Hat Enterprise Linux (RHEL) 上实现标准化，可以显著降低技术债务。当不同团队使用杂乱的发行版时，开发者往往浪费大量时间在基础设施管理而非业务代码上。统一的操作系统环境能提供一致的安全控制和支持层级，从而提升整体工程效率。<br />
+原文：<a href="https://www.redhat.com/en/blog/developer-first-innovation-reducing-technical-debt-red-hat-enterprise-linux">Developer-first innovation: Reducing technical debt with Red Hat Enterprise Linux</a></p>
+<p><strong>Amazon 机器人员工数量突破 100 万，重塑物流劳动力结构</strong><br />
+作为全球第二大企业雇主，Amazon 披露其仓库中部署的机器人数量已超过 100 万台。这一大规模自动化举措旨在应对物流规模的持续扩张，同时也引发了关于人类员工未来角色转变的广泛讨论。Amazon 正在通过机器人技术提升分拣和包装效率，试图在成本与速度之间取得平衡。<br />
+原文：<a href="https://arstechnica.com/ai/2026/10/inside-amazons-robotic-arms-race-and-what-it-means-for-the-future-of-human-work/">Amazon has over 1 million robot workers. What’s next for human employees?</a></p>
+<p><strong>Intel 为 Linux 驱动更新 HDMI 2.1 FRL 支持代码</strong><br />
+继 AMD 之后，Intel 的开源驱动团队也提交了针对 Meteor Lake 及更新架构处理器的 HDMI 2.1 固定速率链路（FRL）支持补丁。这一更新对于在高分辨率和高刷新率显示器上实现完整带宽至关重要。目前相关代码已进入第二版审查，预计不久将合并至主线内核，提升 Linux 下的多媒体体验。<br />
+原文：<a href="https://www.phoronix.com/news/Intel-HDMI-2.1-FRL-Linux-v2">Intel Posts Updated Linux Driver Code For HDMI 2.1 FRL On Meteor Lake &amp; Newer</a></p>
+<h2>云原生领域</h2>
+<p><strong>Kubernetes 强制转向 cgroup v2，v1 正式进入弃用阶段</strong><br />
+Kubernetes 社区宣布 cgroup v1 管理模式已进入维护模式，并将在后续版本中彻底弃用。从 v1.35 版本开始，kubelet 将默认拒绝在仅支持 cgroup v1 的节点上启动。cgroup v2 提供了统一的层级结构和更强的资源隔离能力，是现代容器资源管理（如 CPU 和内存分配）的基石。<br />
+原文：<a href="https://kubernetes.io/blog/2026/10/06/kubernetes-cgroups-v2-shift/">The Shift to cgroup v2 in Kubernetes: What You Need to Know</a></p>
+<p><strong>CNCF 推广 kagent：在笔记本上快速构建云原生 AI 代理</strong><br />
+CNCF 官方博客介绍了 kagent 项目，该工具允许开发者在本地笔记本上通过简单指令快速构建并运行 AI 代理。kagent 降低了 AI 代理开发的门槛，使其能够无缝集成到云原生工作流中。这一趋势反映了云原生生态正在从单纯的容器编排向支持智能化应用负载转型。<br />
+原文：<a href="https://www.cncf.io/blog/2026/10/12/from-zero-to-agent-builder-running-kagent-on-your-laptop/">From zero to agent builder: Running kagent on your laptop</a></p>
+<p><strong>Cilium 1.20 发布，显著增强网络策略与 IPv6 支持</strong><br />
+云原生网络组件 Cilium 发布了 1.20 版本，带来了多项关键改进，包括多池 IPAM 进入稳定阶段以及 IPv6 功能的持续增强。该版本还优化了网络策略的执行效率，为大规模 Kubernetes 集群提供了更可靠的连接保障。作为 CNCF 的毕业项目，Cilium 继续巩固其在云原生网络和安全领域的领导地位。<br />
+原文：<a href="https://isovalent.com/blog/post/cilium-1-20/">Cilium 1.20, Network Policy enhancements, Multi Pool IPAM goes stable, IPv6 progress, and more!</a></p>
+<p><strong>Tetragon 1.7 发布，提升云原生安全过滤精度与性能</strong><br />
+基于 eBPF 的安全观测工具 Tetragon 发布了 1.7 版本，重点改进了过滤精度并丰富了上下文信息。新版本允许安全团队更细粒度地监控容器内的系统调用和文件访问，同时降低了运行时开销。这对于在生产环境中实现实时入侵检测和合规性审计具有重要意义。<br />
+原文：<a href="https://isovalent.com/blog/post/tetragon-v1.7-release">Tetragon 1.7: Precision filtering, richer context, and better performance</a></p>
+<p><strong>Kubernetes 上的 GPU 资源管理面临成本与可见性挑战</strong><br />
+随着 AI 负载增加，在 Kubernetes 上管理 GPU 资源变得日益复杂，企业面临着“自带一切”的局面，尤其是高昂的账单。目前的挑战在于缺乏统一的资源可见性工具，导致 GPU 利用率难以优化。开发者通常需要依赖 Grafana 等工具自行构建监控体系，以平衡计算需求与云端开销。<br />
+原文：<a href="https://thenewstack.io/gpus-on-kubernetes/">GPUs on Kubernetes are bring-your-own-everything, starting with the bill</a></p>
+<h2>AI 领域</h2>
+<p><strong>OpenKylin 推出集成 AI Agent 的 Linux 桌面操作系统</strong><br />
+OpenKylin（开放麒麟）社区发布了其 AI Agent 桌面版本，旨在将人工智能深度集成到操作系统交互中。该系统允许用户通过自然语言指令调用系统功能和第三方应用，实现了从传统图形界面向智能代理界面的跨越。这一尝试标志着国产 Linux 发行版在 AI 桌面化方向上的领先探索。<br />
+原文：<a href="https://techstrong.ai/articles/openkylin-the-ai-agent-linux-desktop/">OpenKylin: The AI Agent Linux Desktop</a></p>
+<p><strong>Anthropic 的 Claude AI 向警方提交虚假谋杀线索引发安全担忧</strong><br />
+在费城的一起案例中，Anthropic 开发的 Claude AI 意外向警方提交了关于一起谋杀案的虚假线索，声称自己拥有相关信息。这一事件凸显了大语言模型在处理敏感社会事务时的“幻觉”风险以及潜在的法律责任问题。AI 治理专家指出，必须加强对 AI 自动提交外部信息行为的监管与约束。<br />
+原文：<a href="https://arstechnica.com/tech-policy/2026/10/anthropics-claude-ai-submitted-false-murder-tip-to-philadelphia-police/">Anthropic's Claude AI submitted false murder tip to Philadelphia police</a></p>
+<p><strong>AWS 推出 Dogwood 和 TOLAP，强化 AI 代理的治理与访问控制</strong><br />
+亚马逊 AWS 发布了两项开源工具：Dogwood 用于定义 AI 代理的操作策略和时间约束，TOLAP 则提供针对 AI 工具的对象级访问控制。这些工具旨在解决 AI 代理在调用外部 API 或数据库时可能出现的越权行为。通过这些治理框架，开发者可以更安全地部署具有自主决策能力的 AI 代理。<br />
+原文：<a href="https://aws.amazon.com/blogs/opensource/introducing-the-dogwood-local-engine-temporal-governance-for-agent-actions/">Introducing the Dogwood Local Engine: temporal governance for agent actions</a></p>
+<p><strong>Andrej Karpathy 称全球仅极少数人真正理解 AI 的真实潜力</strong><br />
+OpenAI 创始成员、现任职于 Anthropic 的 Andrej Karpathy 表示，目前全球可能只有约 5000 人真正见识并理解了 AI 技术的极限能力。他认为大众对 AI 的认知与 AI 实际能达到的水平之间存在巨大的“能力鸿沟”。这一观点暗示了前沿 AI 实验室中仍有许多未公开的突破性进展。<br />
+原文：<a href="https://thenewstack.io/karpathy-levie-ai-capability-gap/">Andrej Karpathy says only 5,000 people have seen what AI can really do</a></p>
+<p><strong>Epic Games 转向“AI 优先”开发模式，减少手写代码</strong><br />
+知名游戏厂商 Epic Games 报告称其正在转向“AI 优先”的开发流程，特别是在与迪士尼合作的项目中。公司目标是减少甚至消除手写代码和非 AI 辅助的艺术创作，以应对日益增长的游戏开发规模和成本。这一转型预示着游戏行业生产力工具链将发生根本性变革。<br />
+原文：<a href="https://arstechnica.com/gaming/2026/10/report-epic-games-goes-all-in-on-ai-for-disney-collaboration/">Epic Games reportedly pivoting to "AI first" game development model</a></p>
+<p><strong>Veda：一种现代的代理式 AI 操作系统架构</strong><br />
+GitHub 上出现了一个名为 Veda 的新项目，旨在构建一个原生的“代理式 AI 操作系统”。与传统 OS 不同，Veda 的核心调度对象是 AI 代理，通过重新设计内核原语来支持代理间的通信、资源分配和任务协作。该项目代表了系统架构界对 AI 原生计算环境的最新思考。<br />
+原文：<a href="https://github.com/vahmoh25/Veda/blob/main/docs/AGENT.md">A Modern Agentic AI Operating System</a></p>
+<h2>工业界最新动向</h2>
+<p><strong>LineageOS 24 正式发布，基于 Android 17 并迎来十周年</strong><br />
+著名的开源 Android 发行版 LineageOS 发布了 24.0 版本，该版本基于最新的 Android 17 进行了深度定制。随着 2026 年 12 月的临近，该项目也将迎来成立十周年的里程碑。LineageOS 持续为大量被厂商遗弃的旧设备提供生命力，是移动开源生态的重要支柱。<br />
+原文：<a href="https://lwn.net/Articles/1099950/">LineageOS 24 released</a></p>
+<p><strong>FreeType 2.15 发布，集成 Apple HVF 驱动支持</strong><br />
+广泛使用的字体渲染库 FreeType 发布了 2.15 版本，新版引入了 Apple HVF 驱动并支持 ISO 开放字体格式第五版。这些更新提升了在不同操作系统下的字体渲染兼容性和性能。FreeType 作为底层基础库，其更新将直接惠及从桌面系统到嵌入式设备的各类图形应用。<br />
+原文：<a href="https://www.phoronix.com/news/FreeType-2.15-Released">FreeType 2.15 Released With Apple HVF Driver, ISO Open Font Format Edition 5</a></p>
+<p><strong>Firefox 158 默认启用 JPEG-XL 图像格式支持</strong><br />
+Mozilla 发布的 Firefox 158 正式版中，最显著的变化是默认启用了对 JPEG-XL 图像格式的支持。JPEG-XL 被认为比现有格式具有更好的压缩率和画质表现，Firefox 的这一举动可能推动该格式在 Web 端的普及。此外，该版本还包含了多项安全修复和性能优化。<br />
+原文：<a href="https://www.phoronix.com/news/Firefox-158-Released">Firefox 158 Now Available With JPEG-XL Support By Default</a></p>
+<p><strong>PanamaKVM：利用 Java 25 的 FFM API 直接启动 Linux 内核</strong><br />
+开发者展示了一个名为 PanamaKVM 的实验性项目，它完全使用 Java 25 编写，无需 JNI 或 C 胶水代码即可直接通过 KVM API 启动 Linux 内核。该项目利用了 Java 最新的外部函数与内存（FFM）API，证明了现代 Java 在底层系统编程中的潜力。这为构建高性能、类型安全的虚拟化管理工具提供了新思路。<br />
+原文：<a href="https://github.com/rusanoph/panama-kvm">Show HN: PanamaKVM – direct-booting Linux from Java 25 via FFM/KVM</a></p>
+<p><strong>俄罗斯数据中心基础设施在数字对抗中显露脆弱性</strong><br />
+相关报道指出，俄罗斯高度集中的数字经济在面对外部压力和网络对抗时显得准备不足。由于缺乏关键硬件的自主供应和过度集中的架构，其数据中心面临严重的维护和安全挑战。这一现状引发了关于国家级基础设施韧性与去中心化必要性的深入讨论。<br />
+原文：<a href="https://arstechnica.com/gadgets/2026/10/russia-was-not-ready-for-the-data-center-war-it-started-with-ukraine/">Russia was not ready for the data center war it started with Ukraine</a></p>
+<p><strong>法国超市因网络攻击导致冷藏系统停机，暴露物联网安全风险</strong><br />
+法国多家超市连锁店近期遭受网络攻击，导致其冷藏系统被迫关闭，造成大量食品损失。攻击针对的是丹麦公司 Danfoss 提供的工业控制器，此类物联网设备的安全漏洞已成为关键基础设施的重大威胁。这一事件再次敲响了工业控制系统（ICS）安全防护的警钟。<br />
+原文：<a href="https://www.afp.com/en/french-supermarket-chains-say-cyberattack-forced-refrigerator-shutdown">French supermarket chains say cyberattack forced refrigerator shutdown</a></p>
+<h2>学术界最新研究</h2>
+<p><strong>本节今日暂无突出动态</strong></p>
+<hr /></div>
+  </main>
+</body>
+</html>
