@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OS 领域每日洞察 - 2026-10-24</title>
+  <style>
+    :root {
+      --bg: #f6f4f0;
+      --bg-bar: #ebe8e3;
+      --bg-card: #fffefb;
+      --bg-card-hover: #f5f3ef;
+      --text: #2d2a26;
+      --text-muted: #5c5852;
+      --text-dim: #7a756e;
+      --accent: #5a7a9e;
+      --border: #ddd9d2;
+      --radius: 10px;
+      --font: "Segoe UI", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      font-size: 15px;
+    }
+
+    /* 门户顶栏 */
+    .masthead {
+      background: var(--bg-bar);
+      border-bottom: 1px solid var(--border);
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 0;
+    }
+    .masthead-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .masthead h1 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin: 0;
+      letter-spacing: -0.02em;
+      color: var(--text);
+    }
+    .masthead .meta {
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+    }
+
+    /* 主内容区：多栏门户布局 */
+    .main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 3rem;
+    }
+
+    /* 板块：每个 h2 为一个频道块 */
+    .content .section {
+      margin-bottom: 2.5rem;
+    }
+    .content h2 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+      margin: 0 0 1rem;
+      padding: 0.6rem 1rem;
+      background: var(--bg-bar);
+      border-radius: var(--radius);
+      border-left: 4px solid var(--accent);
+    }
+    .content h2:first-child { margin-top: 0; }
+
+    .content h2:has(+ h3) {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      border-left-color: var(--text-dim);
+    }
+
+    /* 板块内卡片网格（每个 h2 后的 ul） */
+    .content h2 + ul {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1rem;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .content h2 + ul li {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.15rem 1.2rem;
+      transition: background .15s, border-color .15s;
+    }
+    .content h2 + ul li:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--text-dim);
+    }
+    .content h2 + ul li strong {
+      display: block;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+      line-height: 1.4;
+    }
+    .content h2 + ul li p {
+      margin: 0 0 0.5rem;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.58;
+    }
+    .content h2 + ul li p:last-of-type { margin-bottom: 0; }
+    .content h2 + ul li a[href^="http"] {
+      font-size: 0.8125rem;
+      color: var(--accent);
+    }
+    .content h2 + ul li a[href^="http"]:hover { text-decoration: underline; }
+
+    .content .ref-section {
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+    .content h2 + h3 { margin-top: 1.25rem; }
+    .content h3 {
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--text-dim);
+      margin: 1rem 0 0.4rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .content h3 + ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 0.25rem;
+    }
+    .content h3 + ul li {
+      background: transparent;
+      border: none;
+      padding: 0.2rem 0;
+      font-size: 0.8125rem;
+    }
+    .content h3 + ul li strong { font-size: inherit; margin-bottom: 0; }
+    .content h3 + ul li a { color: var(--accent); }
+    .content h3 + ul li a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <header class="masthead">
+    <div class="masthead-inner">
+      <h1>OS 领域每日洞察 - 2026-10-24</h1>
+      <span class="meta">2026-10-24 04:01 UTC</span>
+    </div>
+  </header>
+  <main class="main">
+    <div class="content"><h2>Linux 内核社区热点与趋势</h2>
+<p><strong>Linux 7.4 合并窗口开启，首批已合入超过 6700 个变更集</strong><br />
+Linux 7.4 的合并窗口现已开启，首批已合入 6,753 个非合并变更集，涵盖了大量新特性、代码清理和安全修复。由于本次合并窗口可能延长至三周，预计后续还会有更多重要更新进入主线。这一阶段的变动为下一代内核的稳定性与功能奠定了基础。<br />
+原文：<a href="https://lwn.net/Articles/1101211/">The first part of the 7.4 merge window</a></p>
+<p><strong>Linux 7.4 合入 Slab 更新，内存管理性能提升 24%</strong><br />
+在最新的 Linux 7.4 合并中，Slab 分配器迎来了重要更新。虽然对普通用户而言改动较为底层，但在针对内核内存管理子系统的基准测试中，该更新带来了高达 24% 的吞吐量提升。这将显著优化高负载场景下的系统响应速度和资源分配效率。<br />
+原文：<a href="https://www.phoronix.com/news/Linux-7.4-Slab-Updates">Linux 7.4 Merges Slab Updates With A Nice Performance Improvement</a></p>
+<p><strong>Linux 开发者寻求减小内核栈以应对内存短缺</strong><br />
+在 2026 年 Linux Plumbers 大会上，开发者 Will Deacon 探讨了减小内核栈（Kernel Stacks）占用内存的必要性。随着全球内存芯片短缺以及系统负载密度的增加，重新审视内核栈这一长期存在的内存消耗者变得至关重要。该研究旨在通过优化栈空间分配，提升嵌入式和云端系统的资源利用率。<br />
+原文：<a href="https://lwn.net/Articles/1100271/">Seeking smaller kernel stacks</a></p>
+<p><strong>Linux 7.4 引入任天堂 Switch 2 控制器驱动</strong><br />
+得益于 Valve 的贡献，Linux 7.4 内核的 HID 子系统现在包含了对任天堂 Switch 2 控制器的驱动支持。这不仅体现了 Valve 在 Linux 游戏生态中的持续投入，也预示着新一代硬件在 Linux 平台上的兼容性将得到提前保障。<br />
+原文：<a href="https://www.phoronix.com/news/Linux-7.4-HID">Linux 7.4 Introduces New Driver For The Nintendo Switch 2 Controllers - Thanks To Valve</a></p>
+<p><strong>Linux 7.4 修复 AMD Zen 5 处理器 TLB 大小报告错误</strong><br />
+Linux 7.4 合入了一个关键补丁，修复了 AMD Zen 5 及更新架构处理器中 TLB（转换后备缓冲区）大小报告不足的问题。此前内核报告的数值低于实际硬件规格，修复后将确保内核能够更准确地进行内存寻址优化。<br />
+原文：<a href="https://www.phoronix.com/news/Linux-7.4-Fix-Zen-5-TLB-Size">Linux 7.4 Fixes AMD CPU TLB Size Reporting For Zen 5 &amp; Newer</a></p>
+<p><strong>IBM 与微软开发的 HPFS 文件系统面临从 Linux 内核移除</strong><br />
+HPFS（高性能文件系统）最初由 IBM 和微软为 OS/2 操作系统开发，目前正面临从 Linux 内核中移除的可能。由于该文件系统已极少使用且维护活跃度低，内核社区正在清理此类过时的驱动程序以减轻维护负担。<br />
+原文：<a href="https://www.phoronix.com/news/HPFS-For-Linux-Removal">HPFS Is The Latest File-System Facing Possible Removal On Linux</a></p>
+<hr />
+<h2>业界大厂动向</h2>
+<p><strong>Google 更新隐私政策，Gmail 数据或被用于广告投放</strong><br />
+Google 最新的隐私政策调整显示，如果用户开启“个人智能”功能，其 Gmail 数据可能会被公司用于广告定位。这一变动旨在通过获取更多用户数据来提升广告投放的精准度，但也引发了用户对隐私边界的广泛讨论。<br />
+原文：<a href="https://arstechnica.com/gadgets/2026/10/updated-google-privacy-policy-says-your-gmail-might-be-used-for-advertising/">Updated Google privacy policy says your Gmail might be used for advertising</a></p>
+<p><strong>Intel 因芯片生产需求获准豁免使用外国制造机器人</strong><br />
+尽管美国对外国制造的机器人车辆有严格限制，但 Intel 成功获得了豁免权。Intel 表示，这些外国制造的自动化设备对于其美国晶圆厂的芯片生产至关重要。这一事件凸显了半导体供应链在全球化背景下的复杂依赖关系。<br />
+原文：<a href="https://arstechnica.com/ai/2026/10/intel-gets-waiver-after-worries-fuzzy-us-ban-on-foreign-made-robots-may-hit-fabs/">Intel gets waiver after worries fuzzy US ban on foreign-made robots may hit fabs</a></p>
+<p><strong>OpenSSL 4.1 发布，大幅优化 AVX-512 性能</strong><br />
+OpenSSL 4.1 稳定版正式发布，重点引入了针对 AVX-512 指令集的优化，显著提升了现代 CPU 上的加解密性能。此外，该版本正式停止了对 Windows Itanium 和 Windows CE 等过时平台的支持，进一步精简了代码库。<br />
+原文：<a href="https://www.phoronix.com/news/OpenSSL-4.1-Released">OpenSSL 4.1 Released With More AVX-512 Optimizations</a></p>
+<p><strong>KDE Plasma 6.9 稳定了 Wayland 下的画中画支持</strong><br />
+在 Plasma 6.8 发布仅一周后，KDE 开发者已开始为 6.9 版本引入新特性，其中最受关注的是 KWin 窗口管理器在 Wayland 协议下的画中画（PiP）功能趋于稳定。这将为 Linux 桌面用户提供更流畅的多任务视频观看体验。<br />
+原文：<a href="https://www.phoronix.com/news/KDE-Plasma-6.9-Wayland-PiP">KDE Plasma 6.9 Stabilizes KWin's Wayland Picture-In-Picture Support</a></p>
+<p><strong>Red Hat 探讨企业如何从开源中获取更多价值</strong><br />
+Red Hat 官方博客发文指出，企业对开源的参与不应仅停留在“使用”层面，更应深入社区贡献。通过参与上游开发，企业可以影响技术走向、建立行业联系并共同解决难题，从而在依赖的技术生态中获得更大的话语权。<br />
+原文：<a href="https://www.redhat.com/en/blog/how-organizations-can-get-more-value-open-source">How organizations can get more value from open source</a></p>
+<hr />
+<h2>云原生领域</h2>
+<p><strong>Kubernetes 节点 Swap 支持正式商用（GA）</strong><br />
+Kubernetes v1.34 宣布正式支持在启用 Swap 的节点上运行负载。通过利用高速 NVMe SSD 作为 Swap 空间，节点可以换出闲置的内存页面，从而在运行 AI 推理等大内存占用任务时显著提高 Pod 的部署密度，降低硬件成本。<br />
+原文：<a href="https://kubernetes.io/blog/2026/10/05/scaling-kubernetes-workloads-with-node-swap/">Scaling Kubernetes Workloads with Node Swap</a></p>
+<p><strong>Kubernetes v1.37 原生直方图功能晋升 Beta 阶段</strong><br />
+Kubernetes v1.37 默认启用了原生直方图（Native Histograms）支持。相比传统的直方图，该功能通过 Prometheus 原生技术提供了更高分辨率、低基数的观测数据，在提升 API 服务器请求延迟等指标精确度的同时，大幅减少了存储和采集的开销。<br />
+原文：<a href="https://kubernetes.io/blog/2026/09/11/kubernetes-v1-37-native-histograms-beta/">Kubernetes v1.37: Native Histograms Graduates to Beta</a></p>
+<p><strong>CNCF 博客：利用 Kamaji 和 HAMi 实现多租户 GPU 调度</strong><br />
+针对 GPU 资源在多租户环境下的隔离与成本平衡难题，CNCF 介绍了结合 Kamaji 和 HAMi 的新方案。该方案允许在模拟硬件上实现高效的 GPU 切分与调度，解决了每个团队独立集群成本过高或共享集群隔离不足的痛点。<br />
+原文：<a href="https://www.cncf.io/blog/2026/10/23/multi-tenant-gpu-kubernetes-on-simulated-hardware-with-kamaji-and-hami/">Multi-tenant GPU Kubernetes on simulated hardware with Kamaji and HAMi</a></p>
+<p><strong>Vercel 推动废除静态凭证，开发者发现其自身部署令牌问题</strong><br />
+Vercel 计划在 2027 年前从其生态系统中彻底清除长效 API 密钥，转而采用更安全的 OIDC 机制。然而，开发者在这一过程中发现了 Vercel 自身部署令牌存在的逻辑矛盾，引发了关于云平台安全实践一致性的讨论。<br />
+原文：<a href="https://thenewstack.io/vercel-oidc-static-credentials/">Vercel moved to kill static credentials. Then developers spotted its own deployment token.</a></p>
+<p><strong>L4ES：基于 seL4 形式化验证内核的 Linux 微型虚拟机</strong><br />
+L4ES 项目展示了如何在 seL4 微内核之上运行经过验证的 Linux 微型虚拟机（microVM）。这种架构结合了 Linux 的生态能力与 seL4 的极高安全性，为云原生环境下的强隔离需求提供了新的技术路径。<br />
+原文：<a href="https://l4es.dev/">Show HN: L4ES – verifiable Linux microVMs powered by seL4</a></p>
+<hr />
+<h2>AI 领域</h2>
+<p><strong>Kubernetes 制定新计划以解决 AI 任务排队与 GPU 闲置矛盾</strong><br />
+随着 Agentic AI（智能体 AI）推理任务的激增，Kubernetes 社区正致力于开发新的调度策略。该计划旨在优化 GPU 资源的实时分配，确保在 AI 任务等待处理时，昂贵的显卡资源不会因为调度延迟而处于闲置状态。<br />
+原文：<a href="https://thenewstack.io/kubernetes-agentic-ai-inference/">AI jobs are waiting while GPUs sit idle. Kubernetes has a new plan.</a></p>
+<p><strong>Microsoft 发布流式语音 AI 模型，实现意图预判</strong><br />
+微软推出了全新的语音 AI 模型，该模型能够在用户尚未完成说话时就开始解析其意图。这种“边听边想”的能力极大地缩短了人机交互的延迟，使 AI 助手在处理复杂请求时表现得更加自然和高效。<br />
+原文：<a href="https://thenewstack.io/microsoft-streaming-speech-models/">Microsoft’s new voice AI can start working out what you want before you finish speaking</a></p>
+<p><strong>oneDNN 3.14 发布，引入 AMD Zen 架构深度优化</strong><br />
+作为 UXL 基金会旗下的重要库，oneDNN 3.14 版本正式发布。虽然该项目起源于 Intel，但新版本显著增强了对 AMD Zen 系列 CPU 的优化支持，这将提升 PyTorch 和 TensorFlow 等框架在 AMD 硬件上的深度学习运算性能。<br />
+原文：<a href="https://www.phoronix.com/news/oneDNN-3.14-Released">oneDNN 3.14 Released With ACE Support, Initial AMD Zen Optimizations</a></p>
+<p><strong>AI 加速漏洞修补竞赛，PHP2Shell 漏洞引发关注</strong><br />
+本周欧洲多个政府网站因 PHP 漏洞下线，专家指出 AI 正在加速漏洞发现与修补之间的“竞赛”。AI 工具不仅能帮助黑客快速生成攻击载荷，也能辅助安全团队更快地识别和修复代码缺陷，改变了传统的网络安全博弈节奏。<br />
+原文：<a href="https://thenewstack.io/php2shell-ai-patch-race/">PHP2Shell was only the beginning: AI is accelerating the patch race</a></p>
+<p><strong>Red Hat 发布企业级 AI 智能体五大应用场景</strong><br />
+Red Hat 报告显示，超过 54% 的组织正在核心系统中部署 AI 智能体。报告详细列举了 AI 智能体在自动化业务流程、提升决策效率等方面的五个关键用例，强调了 AI 从实验阶段向实际商业运营转化的趋势。<br />
+原文：<a href="https://www.redhat.com/en/blog/top-5-enterprise-use-cases-ai-agents">Top 5 enterprise use cases for AI agents</a></p>
+<hr />
+<h2>工业界最新动向</h2>
+<p><strong>Linux 在企业 AI 开发桌面端普及，装机量迅速增长</strong><br />
+随着 AI 开发需求的爆发，越来越多的工程师要求在工作站上使用 Linux。在某些企业内部，Linux 机器的数量已从最初的几台迅速扩展到数百台，Nvidia 的 DGX Spark 等硬件的推出进一步巩固了 Linux 作为 AI 开发首选系统的地位。<br />
+原文：<a href="https://thenewstack.io/linux-developer-device-management/">A few engineers asked IT for Linux. Then it spread to 200 machines.</a></p>
+<p><strong>NASA 更新月球着陆器计划，解决 Orion 飞船长期问题</strong><br />
+NASA 宣布已获得资源和支持，将更新其月球着陆器方案，并最终解决了困扰 Orion 飞船已久的某些技术难题。这一进展为未来的阿耳忒弥斯登月计划扫清了障碍，标志着美国深空探测能力的进一步提升。<br />
+原文：<a href="https://arstechnica.com/space/2026/10/nasa-updates-lander-plans-for-moon-landings-finally-solves-long-festering-orion-issue/">NASA updates lander plans for Moon landings, finally solves long-festering Orion issue</a></p>
+<p><strong>Spotify 加强家庭方案审查，或需扫描二维码验证地址</strong><br />
+为了打击违规共享账号的行为，Spotify 正在加强对其家庭计划政策的执行。用户可能需要通过扫描二维码等方式证明所有家庭成员居住在同一地址，这反映了流媒体巨头在增长放缓背景下对利润保护的重视。<br />
+原文：<a href="https://arstechnica.com/gadgets/2026/10/spotify-ramps-up-policy-enforcement-on-family-plans/">Spotify ramps up policy enforcement on family plans</a></p>
+<p><strong>distrust：一款用于屏蔽不信任 CA 证书的 Go 语言工具</strong><br />
+针对近期发生的 eMudhra CA 安全事件，开发者发布了名为 distrust 的工具。该工具允许用户基于策略管理系统中的根证书库，屏蔽掉大多数用户并不需要的、潜在风险较高的长尾 CA 证书，从而提升系统的整体安全性。<br />
+原文：<a href="https://news.ycombinator.com/item?id=50215473">Show HN: distrust, a Go CLI tool for blocking unwanted CA certificates</a></p>
+<hr />
+<h2>学术界最新研究</h2>
+<p><strong>研究发现乌鸦处理视觉信息的速度是哺乳动物的两倍</strong><br />
+一项最新的生物神经科学研究表明，乌鸦能够以两倍于哺乳动物的速度评估视觉信息。研究人员认为，鸟类紧凑的神经系统结构使其在处理复杂视觉任务时具有极高的效率，这一发现对仿生视觉算法的设计具有启发意义。<br />
+原文：<a href="https://arstechnica.com/science/2026/10/crows-can-evaluate-visual-info-twice-as-fast-as-mammals/">Crows can evaluate visual info twice as fast as mammals</a></p>
+<p><strong>增量计算图（Incremental Computation Graphs）研究</strong><br />
+该研究探讨了增量计算图在现代软件架构中的应用，旨在通过仅重新计算受影响的部分来提升大规模数据处理的效率。这对于实时流处理和动态系统建模等领域具有重要的理论支持作用。<br />
+原文：<a href="https://dziban.net/posts/incremental-computation-graph/">Incremental Computation Graphs</a></p>
+<p><strong>物理内存复用的巧妙技巧</strong><br />
+一篇技术文章分享了在系统底层开发中复用物理内存的独特方法。通过对写时复制（COW）机制的深入利用，开发者可以在资源受限的环境下实现更高效的内存管理，该方法在嵌入式系统优化中具有参考价值。<br />
+原文：<a href="https://sebsite.pw/w/20260728-cow.html">a neat trick i found for reusing physical memory</a></p>
+<p><strong>软件运行缓慢的主因是设计不当而非语言性能</strong><br />
+一项针对软件性能的深度分析指出，现代软件运行缓慢的核心原因在于糟糕的架构设计，而非编程语言本身的执行效率。研究强调，过度抽象和不合理的资源调度对性能的影响远超 C 语言与高级语言之间的差异。<br />
+原文：<a href="https://www.seangoedecke.com/software-is-slow-because-of-bad-design-not-slow-languages/">Software is slow because of bad design, not slow languages</a></p>
+<hr /></div>
+  </main>
+</body>
+</html>
