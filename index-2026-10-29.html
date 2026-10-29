@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OS 领域每日洞察 - 2026-10-29</title>
+  <style>
+    :root {
+      --bg: #f6f4f0;
+      --bg-bar: #ebe8e3;
+      --bg-card: #fffefb;
+      --bg-card-hover: #f5f3ef;
+      --text: #2d2a26;
+      --text-muted: #5c5852;
+      --text-dim: #7a756e;
+      --accent: #5a7a9e;
+      --border: #ddd9d2;
+      --radius: 10px;
+      --font: "Segoe UI", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      font-size: 15px;
+    }
+
+    /* 门户顶栏 */
+    .masthead {
+      background: var(--bg-bar);
+      border-bottom: 1px solid var(--border);
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 0;
+    }
+    .masthead-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .masthead h1 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin: 0;
+      letter-spacing: -0.02em;
+      color: var(--text);
+    }
+    .masthead .meta {
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+    }
+
+    /* 主内容区：多栏门户布局 */
+    .main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 3rem;
+    }
+
+    /* 板块：每个 h2 为一个频道块 */
+    .content .section {
+      margin-bottom: 2.5rem;
+    }
+    .content h2 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+      margin: 0 0 1rem;
+      padding: 0.6rem 1rem;
+      background: var(--bg-bar);
+      border-radius: var(--radius);
+      border-left: 4px solid var(--accent);
+    }
+    .content h2:first-child { margin-top: 0; }
+
+    .content h2:has(+ h3) {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      border-left-color: var(--text-dim);
+    }
+
+    /* 板块内卡片网格（每个 h2 后的 ul） */
+    .content h2 + ul {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1rem;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .content h2 + ul li {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.15rem 1.2rem;
+      transition: background .15s, border-color .15s;
+    }
+    .content h2 + ul li:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--text-dim);
+    }
+    .content h2 + ul li strong {
+      display: block;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+      line-height: 1.4;
+    }
+    .content h2 + ul li p {
+      margin: 0 0 0.5rem;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.58;
+    }
+    .content h2 + ul li p:last-of-type { margin-bottom: 0; }
+    .content h2 + ul li a[href^="http"] {
+      font-size: 0.8125rem;
+      color: var(--accent);
+    }
+    .content h2 + ul li a[href^="http"]:hover { text-decoration: underline; }
+
+    .content .ref-section {
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+    .content h2 + h3 { margin-top: 1.25rem; }
+    .content h3 {
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--text-dim);
+      margin: 1rem 0 0.4rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .content h3 + ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 0.25rem;
+    }
+    .content h3 + ul li {
+      background: transparent;
+      border: none;
+      padding: 0.2rem 0;
+      font-size: 0.8125rem;
+    }
+    .content h3 + ul li strong { font-size: inherit; margin-bottom: 0; }
+    .content h3 + ul li a { color: var(--accent); }
+    .content h3 + ul li a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <header class="masthead">
+    <div class="masthead-inner">
+      <h1>OS 领域每日洞察 - 2026-10-29</h1>
+      <span class="meta">2026-10-29 04:01 UTC</span>
+    </div>
+  </header>
+  <main class="main">
+    <div class="content"><h2>Linux 内核社区热点与趋势</h2>
+<p><strong>LPC 会议深入探讨 sched_ext 调度器框架的未来发展</strong><br />
+在布拉格举行的 Linux Plumbers Conference (LPC) 上，开发者们重点讨论了基于 BPF 的调度器框架 <code>sched_ext</code>。会议涵盖了优先级反转的处理方案、半虚拟化调度（允许宿主机与虚拟机调度器协同）以及感知硬件拓扑的调度策略。这些讨论旨在利用 BPF 的灵活性，解决复杂硬件环境下的任务放置和性能优化问题。<br />
+原文：<a href="https://lwn.net/Articles/1103426/">A report from the LPC sched_ext microconference</a></p>
+<p><strong>Linux 内核考虑移除历史悠久的 KGDB 调试功能</strong><br />
+KGDB 自 2008 年并入内核以来，一直作为内核级调试工具存在，但其需要串口或网线连接第二台计算机的特性在现代开发中已不再流行。由于近年来维护活跃度低且使用率下降，开发者已提交补丁提议将其从内核中移除。这一举动反映了内核社区在清理陈旧、低效代码方面的持续努力。<br />
+原文：<a href="https://www.phoronix.com/news/Linux-Considers-Dropping--KGDB">Linux Kernel Developers Considering Removal Of KGDB Debugging Functionality</a></p>
+<p><strong>Linux 7.4 将强化 NTFS3 驱动以抵御恶意卷攻击</strong><br />
+Paragon Software 提交的 NTFS3 驱动更新已并入 Linux 7.4 合并窗口，重点在于增强驱动的健壮性。新版本增加了对损坏或恶意构造的 NTFS 卷的校验和防御机制，防止通过挂载特制磁盘镜像触发内核崩溃或安全漏洞。这对于经常需要挂载外部存储设备的 Linux 用户来说是一项重要的安全提升。<br />
+原文：<a href="https://www.phoronix.com/news/Linux-7.4-NTFS3">NTFS3 Hardened In Linux 7.4 Against Corrupted Or Maliciously-Crafted NTFS Volumes</a></p>
+<p><strong>内核社区提议引入“来源时间”（ptime）文件时间戳</strong><br />
+除了现有的文件创建时间（birth time），开发者提议在 Linux 内核中引入一种名为 <code>ptime</code> 的新时间戳。该属性旨在记录文件内容的原始生成时间，以便在文件被跨系统复制或移动时保留其最初的“来源”信息。这一提议若被采纳，将为文件系统元数据管理提供更细粒度的追踪能力。<br />
+原文：<a href="https://www.phoronix.com/news/Linux-Provenance-Time-PTIME">Provenance Time Proposed As A New Timestamp For Linux</a></p>
+<hr />
+<h2>业界大厂动向</h2>
+<p><strong>Google 开放 Android 开发工具权限以支持第三方 AI 编码助手</strong><br />
+Google 宣布将 Android 开发工具的深度访问权限授予 Anthropic 的 Claude Code 和 OpenAI 的 Codex 等竞争对手。此举旨在让这些 AI 智能体能够更高效地进行代码构建、调试和优化，提升开发者的生产力。这标志着 Google 在移动开发生态中采取了更加开放的策略，以应对 AI 驱动的编程变革。<br />
+原文：<a href="https://thenewstack.io/android-agents-build-debug/">Google just handed its rivals the keys to Android</a></p>
+<p><strong>Apple 发布配备触摸屏和 OLED 显示屏的 MacBook Pro</strong><br />
+Apple 正式推出了备受期待的触摸屏版 MacBook Pro，并首次在 Mac 产品线中引入了 OLED 显示技术。虽然外观变化不大，但 OLED 屏幕带来的高对比度和色彩表现显著提升了视觉体验，而触摸功能的加入则打破了 Mac 长期以来的交互传统。这一更新旨在应对高端笔记本市场日益激烈的竞争压力。<br />
+原文：<a href="https://arstechnica.com/apple/2026/10/apple-announces-touchscreen-macbook-pro-with-oled-display/">Apple announces touchscreen MacBook Pro with OLED display</a></p>
+<p><strong>Red Hat 与 NVIDIA 扩展合作，加速主权 AI 与智能体安全</strong><br />
+Red Hat 宣布深化与 NVIDIA 的合作，利用 Red Hat AI 平台帮助企业构建小型化、专业化的“主权 AI”模型。双方将重点放在 OpenShift 平台上的 AI 智能体安全、模型微调以及对 NVIDIA 最新基础设施的零日支持上。这一合作旨在解决企业在部署 AI 时对数据控制权和基础设施安全性的核心担忧。<br />
+原文：<a href="https://www.redhat.com/en/blog/how-atos-uses-red-hat-ai-build-smaller-specialized-models-sovereign-ai">How Atos uses Red Hat AI to build smaller, specialized models for sovereign AI</a></p>
+<p><strong>GitHub 推出 Copilot Fusion 系统，优化模型选择与编排</strong><br />
+GitHub 发布了名为 Copilot Fusion 的新系统，能够根据编码任务的复杂程度自动选择和编排最合适的 AI 模型。官方声称该系统在性能上超越了 Claude Code，且 API 调用成本仅为后者的一半。随着 GitHub 托管的代码提交量激增，该系统将帮助开发者在保证质量的同时降低 AI 辅助开发的门槛。<br />
+原文：<a href="https://thenewstack.io/github-copilot-fusion/">GitHub debuts Copilot Fusion, a new model selection &amp; orchestration system</a></p>
+<hr />
+<h2>云原生领域</h2>
+<p><strong>Kubernetes v1.37 发布：强化存储安全与 Pod 动态调整能力</strong><br />
+新版本 Kubernetes 引入了多项关键特性，包括对 <code>emptyDir</code> 权限模式的精细控制和绑定挂载选项的增强，有效提升了容器存储的安全性。此外，Pod 原地扩容（In-Place Resize）的抢占机制进入 Alpha 阶段，解决了当节点资源不足时扩容请求被无限期延迟的问题。Rootless 模式也正式进入 Beta 阶段，允许所有节点组件在非 root 用户下运行。<br />
+原文：<a href="https://kubernetes.io/blog/2026/09/16/kubernetes-v1-37-hardening-container-storage/">Kubernetes v1.37: Hardening Container Storage</a></p>
+<p><strong>云原生调度器 Volcano v1.16 发布，引入分层队列管理</strong><br />
+CNCF 孵化项目 Volcano 发布了 v1.16 版本，核心改进包括引入了 <code>NamespaceQueue</code> 和公平调度（fairshare）插件。租户现在可以在其命名空间内建立分层队列，以便在管理员授权的资源池中更灵活地组织配额。这些特性进一步增强了 Volcano 在处理 AI、大数据等高性能计算负载时的多租户资源隔离和调度公平性。<br />
+原文：<a href="https://www.cncf.io/blog/2026/10/28/volcano-v1-16-released-namespacequeue-fairshare-and-a-broader-hypernode-ecosystem/">Volcano v1.16 Released: NamespaceQueue, fairshare, and a broader HyperNode ecosystem</a></p>
+<p><strong>利用 OpenTelemetry Collector 优化 AI 智能体遥测数据</strong><br />
+随着 AI 编码智能体的大规模应用，其产生的海量遥测数据给存储和分析带来了巨大挑战。CNCF 博客介绍了如何利用 OpenTelemetry Collector 对这些数据进行过滤和缩减，从而在保留关键诊断信息的同时降低成本。这种方法利用了 OpenTelemetry 的原生特性，为 AI 应用的可观测性提供了标准化的解决方案。<br />
+原文：<a href="https://www.cncf.io/blog/2026/10/22/filtering-and-reducing-ai-agent-telemetry-with-the-opentelemetry-collector/">Filtering and reducing AI agent telemetry with the OpenTelemetry Collector</a></p>
+<hr />
+<h2>AI 领域</h2>
+<p><strong>Rocky Linux 创始人利用 AI 在 11 天内构建全新非 Linux 内核</strong><br />
+Rocky Linux 的创建者展示了一个名为 Ginux 的实验性项目，该内核完全不基于 Linux 代码，而是利用 AI 辅助在短短 11 天内编写完成。这一尝试证明了 AI 在底层系统软件开发中的巨大潜力，尽管其成熟度尚待验证，但为快速原型化操作系统提供了新思路。该项目引发了社区关于 AI 生成代码在系统级软件中可靠性的广泛讨论。<br />
+原文：<a href="https://itsfoss.com/news/ginux/">Rocky Linux Creator Built a New "Not Linux" Kernel in 11 Days Using AI</a></p>
+<p><strong>Google 研究提出“睡眠框架”解决 LLM 持续学习中的知识遗忘问题</strong><br />
+Google Research 介绍了一种名为“睡眠框架”（Sleep Framework）的新技术，旨在模拟生物睡眠过程来帮助大语言模型在持续学习中保留旧知识。该框架通过在模型训练的间隙进行特定的优化处理，有效缓解了新旧知识冲突导致的性能下降。这一研究对于构建能够长期进化且不丢失历史能力的 AI 系统具有重要意义。<br />
+原文：<a href="https://research.google/blog/the-sleep-framework-a-new-way-for-llms-to-retain-knowledge-in-continual-learning/">The sleep framework: A new way for LLMs to retain knowledge in continual learning</a></p>
+<p><strong>Veda：一个基于 Rust 编写的“智能体优先”爱好者操作系统</strong><br />
+Veda 是一个新兴的开源操作系统项目，采用 Rust 语言编写，其核心设计理念是“智能体优先”（Agentic First）。该系统旨在为 AI 智能体提供原生的运行环境和权限管理机制，使其能够更安全、高效地与底层硬件和系统服务交互。这种将 AI 智能体作为一等公民的 OS 设计，预示了未来人机交互界面的演进方向。<br />
+原文：<a href="https://github.com/vahmoh/Veda/blob/main/README.md">An Agentic First Hobby Operating System in Rust</a></p>
+<hr />
+<h2>工业界最新动向</h2>
+<p><strong>Canonical 重启不可变桌面操作系统 Ubuntu Core Desktop 的开发</strong><br />
+在沉寂一段时间后，Canonical 宣布重新投入 Ubuntu Core Desktop 的研发，目标是打造一个全沙箱化、不可变的 Linux 桌面系统。该系统基于 Snap 包管理，旨在提供极高的安全性和更新可靠性，适用于对稳定性要求极高的企业和工业场景。官方表示，这一项目将成为未来 Ubuntu 桌面生态的重要组成部分。<br />
+原文：<a href="https://www.phoronix.com/news/Ubuntu-Core-Desktop-2026">Canonical Reviving Their Immutable Ubuntu Core Desktop</a></p>
+<p><strong>Northstar 浏览器试图进入 Linux 发行版引发安全争议</strong><br />
+一款名为 Northstar 的新型 Web 浏览器引擎近期积极寻求进入 Debian 和 Arch Linux 等主流发行版，但其开发过程引发了质疑。由于该项目大量使用 LLM（大语言模型）编写代码，社区对其安全审计流程和代码质量表示担忧。这一事件凸显了开源社区在接纳 AI 生成的大型复杂项目时面临的治理挑战。<br />
+原文：<a href="https://lwn.net/Articles/1102738/">The campaign to push Northstar into Linux distributions</a></p>
+<p><strong>Redox OS 实现类 io_uring 环形缓冲区，提升微内核 I/O 性能</strong><br />
+采用 Rust 编写的微内核操作系统 Redox OS 发布报告，宣布已完成类似 Linux <code>io_uring</code> 的环形缓冲区机制。该技术允许应用程序与系统服务、驱动程序之间通过共享内存进行高效的异步通信，显著降低了微内核架构中的上下文切换开销。这一进展标志着 Redox OS 在向高性能生产级系统迈进的过程中取得了关键突破。<br />
+原文：<a href="https://lwn.net/Articles/1103359/">Redox OS ring buffers project summary</a></p>
+<p><strong>GXVK 项目发布：在 Vulkan 之上实现 3Dfx Glide API</strong><br />
+开源项目 D7VK 在其 2.4 版本中带来了一个惊喜：实现了在现代 Vulkan API 之上运行经典的 3Dfx Glide API。这意味着许多 90 年代的经典游戏现在可以在现代显卡和 Linux 系统上获得更原生的性能支持。这一进展对于复古游戏爱好者和 Linux 游戏生态的兼容性具有重要价值。<br />
+原文：<a href="https://www.phoronix.com/news/GXVK-3Dfx-Glide-Vulkan">GXVK: 3Dfx Glide API Implemented Atop Vulkan For Modern Usage</a></p>
+<hr />
+<h2>学术界最新研究</h2>
+<p><strong>C++ 实现每秒十亿次查询的高性能查找表技术</strong><br />
+计算机科学家 Daniel Lemire 展示了如何在现代 C++ 中构建每秒可处理十亿次查询的查找表。该研究通过优化内存对齐、利用 CPU 缓存特性以及减少分支预测失败，将查找性能推向了硬件极限。这项技术对于需要处理海量数据的实时系统、网络协议栈和高性能数据库具有极高的参考价值。<br />
+原文：<a href="https://lemire.me/blog/2026/10/26/billion-query-per-second-lookup-tables-in-c/">Billion-query-per-second lookup tables in C++</a></p>
+<p><strong>安全研究揭示 Microsoft Edge 全链攻击中的逻辑漏洞利用</strong><br />
+安全专家 Orange Tsai 发布了关于 Microsoft Edge 浏览器的深度分析，展示了如何仅通过一系列逻辑漏洞（而非传统的内存破坏漏洞）构建完整的攻击链。研究指出，随着现代浏览器内存防护技术的增强，逻辑层面的设计缺陷正成为攻击者的新宠。这一发现促使浏览器厂商重新审视复杂功能模块之间的交互逻辑安全性。<br />
+原文：<a href="https://blog.orange.tw/posts/2026-10-the-last-proof-of-human-craft-browser-full-chain/">Forging a Microsoft Edge Full Chain with Logic Bugs Only</a></p>
+<p><strong>指纹识别脚本与生物武器：一种新型隐私威胁分析</strong><br />
+一项最新的安全研究探讨了某些高级浏览器指纹识别脚本如何被潜在地用于极端的恶意目的。研究分析了脚本如何通过收集细微的硬件响应特征来构建唯一的设备标识，并讨论了这种技术在极端场景下的社会工程学风险。该研究呼吁浏览器厂商进一步限制敏感 API 的访问权限，以保护用户隐私。<br />
+原文：<a href="https://nullpt.rs/fingerprinting-bioweapons">Why Is This Fingerprinting Script Creating Bioweapons?</a></p>
+<hr /></div>
+  </main>
+</body>
+</html>
