@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OS 领域每日洞察 - 2026-11-04</title>
+  <style>
+    :root {
+      --bg: #f6f4f0;
+      --bg-bar: #ebe8e3;
+      --bg-card: #fffefb;
+      --bg-card-hover: #f5f3ef;
+      --text: #2d2a26;
+      --text-muted: #5c5852;
+      --text-dim: #7a756e;
+      --accent: #5a7a9e;
+      --border: #ddd9d2;
+      --radius: 10px;
+      --font: "Segoe UI", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      font-size: 15px;
+    }
+
+    /* 门户顶栏 */
+    .masthead {
+      background: var(--bg-bar);
+      border-bottom: 1px solid var(--border);
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 0;
+    }
+    .masthead-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .masthead h1 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin: 0;
+      letter-spacing: -0.02em;
+      color: var(--text);
+    }
+    .masthead .meta {
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+    }
+
+    /* 主内容区：多栏门户布局 */
+    .main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 3rem;
+    }
+
+    /* 板块：每个 h2 为一个频道块 */
+    .content .section {
+      margin-bottom: 2.5rem;
+    }
+    .content h2 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+      margin: 0 0 1rem;
+      padding: 0.6rem 1rem;
+      background: var(--bg-bar);
+      border-radius: var(--radius);
+      border-left: 4px solid var(--accent);
+    }
+    .content h2:first-child { margin-top: 0; }
+
+    .content h2:has(+ h3) {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      border-left-color: var(--text-dim);
+    }
+
+    /* 板块内卡片网格（每个 h2 后的 ul） */
+    .content h2 + ul {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1rem;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .content h2 + ul li {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.15rem 1.2rem;
+      transition: background .15s, border-color .15s;
+    }
+    .content h2 + ul li:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--text-dim);
+    }
+    .content h2 + ul li strong {
+      display: block;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+      line-height: 1.4;
+    }
+    .content h2 + ul li p {
+      margin: 0 0 0.5rem;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.58;
+    }
+    .content h2 + ul li p:last-of-type { margin-bottom: 0; }
+    .content h2 + ul li a[href^="http"] {
+      font-size: 0.8125rem;
+      color: var(--accent);
+    }
+    .content h2 + ul li a[href^="http"]:hover { text-decoration: underline; }
+
+    .content .ref-section {
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+    .content h2 + h3 { margin-top: 1.25rem; }
+    .content h3 {
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--text-dim);
+      margin: 1rem 0 0.4rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .content h3 + ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 0.25rem;
+    }
+    .content h3 + ul li {
+      background: transparent;
+      border: none;
+      padding: 0.2rem 0;
+      font-size: 0.8125rem;
+    }
+    .content h3 + ul li strong { font-size: inherit; margin-bottom: 0; }
+    .content h3 + ul li a { color: var(--accent); }
+    .content h3 + ul li a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <header class="masthead">
+    <div class="masthead-inner">
+      <h1>OS 领域每日洞察 - 2026-11-04</h1>
+      <span class="meta">2026-11-04 05:01 UTC</span>
+    </div>
+  </header>
+  <main class="main">
+    <div class="content"><h2>Linux 内核社区热点与趋势</h2>
+<p><strong>Linux 7.4 将引入多项硬件支持，包括 Steam VR 头显与 Apple M4 芯片</strong><br />
+Linux 7.4 内核预计将成为今年的长期支持（LTS）版本，目前已集成大量新特性。该版本将支持 Steam Frame VR 头显、进一步完善 AMD Zen 6 架构的启用，并初步实现了对 Apple M4 和 A18 Pro 芯片的引导支持。这些更新标志着 Linux 在前沿消费级硬件和高性能架构适配方面迈出了重要一步。<br />
+原文：<a href="https://www.phoronix.com/review/linux-74-features">Linux 7.4 Features Steam Frame VR Headset, More AMD Zen 6 Enablement &amp; Initial Apple M4 / A18 Pro Bring-Up</a></p>
+<p><strong>Linux 计划在 2027 年大幅提升 FAT32 文件系统性能</strong><br />
+开发者正在为 Linux 内核中的 FAT32 文件系统开发重大优化，预计在 2027 年发布的内核版本中落地。测试显示，通过改进元数据处理和缓存机制，FAT32 的性能最高可提升 4.06 倍。尽管 FAT32 是过时的文件系统，但在嵌入式设备和跨平台存储介质中仍广泛使用，此举将显著改善相关场景的效率。<br />
+原文：<a href="https://www.phoronix.com/news/Faster-FAT32-Linux-In-2027">Linux Preparing Faster FAT32 Performance In 2027 With Up To 4.06x Improvement</a></p>
+<p><strong>Linux 内核准备彻底移除最后的 MMX 优化代码</strong><br />
+主线内核计划在 Linux 7.5 中移除最后一段针对过时 MMX 指令集的优化代码。这主要影响 Intel Pentium MMX 和 Pentium II 等极老旧的处理器，现代软件和内核已转向更高效的 SSE 和 AVX 指令集。此举旨在简化内核代码库，减少维护负担，反映了内核社区对过时硬件支持的逐步清理。<br />
+原文：<a href="https://www.phoronix.com/news/Linux-Dropping-Last-MMX-Opt">The Linux Kernel Preparing To Remove The Last Of Its MMX Optimized Code</a></p>
+<p><strong>Linux 7.3 进展：色彩格式控制与 Tyr 驱动优化</strong><br />
+Collabora 报告了 Linux 7.3 内核在图形显示方面的进展，重点包括增强的色彩格式控制功能。此外，针对 Tyr 驱动程序的开发也取得了显著进展，旨在提升特定硬件环境下的显示性能。这些改进对于需要精确色彩管理和高性能图形输出的 Linux 工作站用户至关重要。<br />
+原文：<a href="https://www.collabora.com/news-and-blog/news-and-events/linux-73-color-format-control-tyr-progress-and-more.html">Linux 7.3: Color format control, Tyr progress, and more</a></p>
+<p><strong>AMD GFX8 架构显卡在 Linux 上获得 D16 支持优化</strong><br />
+来自 Valve 的工程师为 AMD GFX8 架构（包括 Volcanic Islands 和 Polaris 系列）的显卡提交了新代码，启用了 D16 深度格式支持。这一改进同时惠及 RadeonSI OpenGL 和 RADV Vulkan 驱动程序，能够提升老旧显卡在现代图形应用中的渲染效率。这体现了开源社区对长生命周期硬件持续优化的承诺。<br />
+原文：<a href="https://www.phoronix.com/news/RadeonSI-RADV-GFX8-D16">RadeonSI &amp; RADV Now Enabling D16 Support For GFX8 Era GPUs</a></p>
+<h2>业界大厂动向</h2>
+<p><strong>Fedora Linux 45 正式发布，强化安全性与存储支持</strong><br />
+Fedora 项目宣布 Fedora Linux 45 正式可用，涵盖工作站、服务器、云和 IoT 等所有版本。新版本默认强制执行 RPM 软件包签名检查，显著增强了系统安全性，并新增了对 Stratis 存储的安装支持。此外，该版本更新了桌面环境和开发工具链，继续保持其作为 Linux 创新试验场的领先地位。<br />
+原文：<a href="https://www.phoronix.com/news/Fedora-45-Released">Fedora 45 Released With Many Leading-Edge Linux Innovations</a></p>
+<p><strong>openSUSE Leap 16.1 发布，引入不可变镜像支持</strong><br />
+openSUSE Leap 16.1 正式发布，该版本与 SUSE Linux Enterprise 16.1 共享源代码，保证了企业级的稳定性。最显著的变化是全面引入了不可变镜像（Immutable Images）和事务性更新，支持从服务器到桌面的所有平台。这使得用户可以在传统安装模式和更安全的不可变系统模式之间自由选择，提升了系统的可靠性。<br />
+原文：<a href="https://www.phoronix.com/news/openSUSE-Leap-16.1">openSUSE Leap 16.1 Released With Immutable Sever Integration</a></p>
+<p><strong>Intel 更新计算运行时，支持 Nova Lake P 与新 GPU 系列</strong><br />
+Intel 发布了最新的开源 GPU 计算堆栈（Intel Compute Runtime 26.40），为即将推出的 Nova Lake P 平台提供 OpenCL LEO 支持。同时，该更新继续为 GPU D 系列进行适配准备，确保 Linux 和 Windows 系统能充分发挥 Intel 下一代显卡的计算能力。这对于云端 AI 推理和高性能计算任务具有重要意义。<br />
+原文：<a href="https://www.phoronix.com/news/Intel-Compute-26.40.40196.8">Intel Compute Runtime Continues Prepping For GPU D Series, OpenCL LEO for Nova Lake P</a></p>
+<p><strong>GCC 17 编译器合并 AVX10 辅助指令集支持</strong><br />
+GCC 17 编译器代码库已合并对 AVX10V1AUX 的初步支持，这是 AMD 与 Intel 联合发起的“ACE”AI 计算扩展倡议的一部分。该指令集旨在优化跨厂商的 AI 计算任务，提供更统一的向量处理能力。开发者现在可以利用这些新指令为未来的处理器编写高性能的 AI 和科学计算应用。<br />
+原文：<a href="https://www.phoronix.com/news/GCC-17-Merges-AVX10V1AUX">GCC 17 Compiler Merges Support For AVX10V1AUX</a></p>
+<p><strong>Ubuntu 26.04 采用 Rust 编写的 sudo，但存在兼容性挑战</strong><br />
+Ubuntu 26.04 计划引入由 Rust 语言重写的 sudo 工具，以提升系统核心组件的内存安全性。然而，初步测试发现 Rust 版本的 sudo 与传统的 C 语言版本在某些高级配置和参数上并不完全兼容。这引发了社区关于安全重写与向后兼容性权衡的广泛讨论，可能影响企业级用户的迁移计划。<br />
+原文：<a href="https://utcc.utoronto.ca/~cks/space/blog/linux/Ubuntu2604RustSudoNotCompatible">The Ubuntu 26.04 Rust sudo is not compatible with standard sudo</a></p>
+<h2>云原生领域</h2>
+<p><strong>Kubernetes v1.37 强化容器存储安全与权限管理</strong><br />
+即将发布的 Kubernetes v1.37 引入了重要的存储安全特性，包括 emptyDir 权限模式和绑定挂载选项。这些功能允许安全专家直接在 K8s 中实施严格策略，例如禁止在可写卷上执行二进制文件或跨容器删除文件。通过利用 Linux 底层的 VFS 标志，该版本显著提升了容器化应用在存储层面的防御能力。<br />
+原文：<a href="https://kubernetes.io/blog/2026/09/16/kubernetes-v1-37-hardening-container-storage/">Kubernetes v1.37: Hardening Container Storage with Bind Mount Options and EmptyDir Permissions</a></p>
+<p><strong>Kubernetes v1.37 引入原地 Pod 调整的调度器抢占机制</strong><br />
+在 v1.37 版本中，Kubernetes 为“原地 Pod 调整（In-Place Pod Resize）”功能增加了调度器抢占（Alpha 阶段）支持。此前，如果运行中的 Pod 请求扩容资源超过节点剩余容量，请求会被无限期延迟；新机制允许调度器通过抢占低优先级 Pod 来腾出空间。这一改进解决了动态资源调整中的调度僵局，提高了集群资源的利用率和应用灵活性。<br />
+原文：<a href="https://kubernetes.io/blog/2026/09/10/kubernetes-v1-37-scheduler-preemption-for-in-place-pod-resize-alpha/">Kubernetes v1.37: Scheduler Preemption for In-Place Pod Resize (Alpha)</a></p>
+<p><strong>OpenKruise Agents v0.6.0 发布，提升 Agent 沙箱安全与自动化</strong><br />
+CNCF 项目 OpenKruise 的子项目 OpenKruise Agents 发布了 v0.6.0 版本，专注于 Kubernetes 环境下 Agent 沙箱的全生命周期管理。新版本在安全隔离和自动化编排方面取得了长足进步，能够更高效地处理大规模 Agent 部署。这为在云原生环境中运行不可信或复杂的 AI Agent 提供了更坚实的基础设施支持。<br />
+原文：<a href="https://www.cncf.io/blog/2026/11/03/openkruise-agents-v0-6-0-leaping-ahead-in-agent-sandbox-security-and-automation/">OpenKruise Agents v0.6.0: Leaping ahead in agent Sandbox security and automation</a></p>
+<p><strong>Volcano v1.16 发布，引入分层队列与公平共享插件</strong><br />
+云原生批处理调度器 Volcano 发布 v1.16 版本，新增了 NamespaceQueue 和公平共享（fairshare）插件。租户现在可以在其命名空间内使用分层队列来组织配额，而公平共享插件则根据历史资源消耗实现更合理的调度。这些特性增强了多租户环境下大规模 AI 和大数据作业的资源管控能力。<br />
+原文：<a href="https://www.cncf.io/blog/2026/10/28/volcano-v1-16-released-namespacequeue-fairshare-and-a-broader-hypernode-ecosystem/">Volcano v1.16 Released: NamespaceQueue, fairshare, and a broader HyperNode ecosystem</a></p>
+<p><strong>使用 OpenTelemetry Collector 过滤与缩减 AI Agent 遥测数据</strong><br />
+随着 AI Agent 在云原生环境的普及，其产生的海量遥测数据带来了巨大的存储成本和分析难度。CNCF 博客介绍了如何利用 OpenTelemetry Collector 对 AI Agent 的日志和追踪数据进行实时过滤与缩减。通过在边缘侧处理冗余信息，企业可以在保留关键可观测性的同时，显著降低监控系统的运维负担。<br />
+原文：<a href="https://www.cncf.io/blog/2026/10/22/filtering-and-reducing-ai-agent-telemetry-with-the-opentelemetry-collector/">Filtering and reducing AI agent telemetry with the OpenTelemetry Collector</a></p>
+<h2>AI 领域</h2>
+<p><strong>Debian 社区就使用 LLM 进行软件包审核引发争议</strong><br />
+Debian 项目在通过“负责任使用生成式 AI”决议后，其 DFSG 团队开始尝试使用大语言模型（LLM）对新进入队列的软件包进行初步审核。这一做法在社区内引发了激烈辩论，反对者担心 LLM 输出的准确性以及对人工审核流程的潜在破坏。该事件凸显了开源社区在拥抱 AI 工具时，在信任、责任和自动化边界方面的深层矛盾。<br />
+原文：<a href="https://lwn.net/Articles/1103674/">LLM reviews for Debian's new queue spark debate</a></p>
+<p><strong>Anthropic 推出 Claude Code 消息线程功能以提升开发速度</strong><br />
+Anthropic 为其 AI 编程工具 Claude Code 引入了消息线程功能，旨在加速长时间运行的开发会话。该功能通过优化上下文管理减少了处理延迟，但用户需要注意的是，其 Token 计费方式并未因此改变。这一更新反映了 AI 编程助手正从简单的代码生成向更复杂的、长周期的工程协作方向演进。<br />
+原文：<a href="https://thenewstack.io/anthropic-claude-message-threads/">Anthropic speeds up Claude Code with message threads. But your token bill stays the same.</a></p>
+<p><strong>Red Hat 强调可信 AI 始于社区治理</strong><br />
+Red Hat 在其官方博客中指出，随着 AI 生成代码速度的加快，开源社区面临着前所未有的审核瓶颈。文章强调，单纯依靠 AI 工具无法建立信任，必须通过完善的社区治理架构来确保 AI 生成内容的质量与安全。Red Hat 呼吁建立更透明的 AI 协作标准，以保护开源生态的长期健康。<br />
+原文：<a href="https://www.redhat.com/en/blog/trustworthy-ai-starts-community-governance">Trustworthy AI starts with community governance</a></p>
+<p><strong>Postman 桌面应用被指未经许可安装 AI 编程插件</strong><br />
+有开发者反映，Postman 桌面应用在未获得明确授权的情况下，向 Claude Code 和 OpenAI Codex 自动安装了插件。这一行为引发了关于隐私和工具权限边界的广泛关注，尤其是在企业安全环境日益严峻的背景下。该事件提醒开发者和企业，AI 辅助工具的集成过程需要更透明的权限管控机制。<br />
+原文：<a href="https://thenewstack.io/postman-plugin-coding-agents/">A developer opened Postman. Then two AI coding agents changed without their permission.</a></p>
+<p><strong>Linux 基金会成立 Agentic AI 基金会以推动标准制定</strong><br />
+Linux 基金会宣布成立 Agentic AI 基金会（AAIF），由前 Google 高管 Mazin Gilbert 领导。该组织旨在为快速发展的 AI Agent 领域制定开放标准，解决不同厂商 Agent 之间的互操作性和安全问题。随着 AI Agent 逐渐深入企业业务流程，建立统一的工业标准已成为行业共识。<br />
+原文：<a href="https://thenewstack.io/mazin-gilbert-aaif-interview/">Can agent standards keep up with the companies building them?</a></p>
+<h2>工业界最新动向</h2>
+<p><strong>SUSE 宣布全球裁员 10%，归因于 AI 与自动化转型</strong><br />
+总部位于德国的 Linux 巨头 SUSE 宣布将裁减全球 10% 的员工。公司管理层表示，这一决定是受到 AI 技术和自动化流程普及的影响，旨在优化组织结构以应对市场变化。这反映了传统开源企业在 AI 浪潮下，正经历从人力密集型服务向技术驱动型增长的痛苦转型。<br />
+原文：<a href="https://www.phoronix.com/news/SUSE-Layoffs-10p-AI">SUSE Laying Off 10% Of Its Workforce Due To AI &amp; Automation</a></p>
+<p><strong>Domicile Desktop：利用 Web 技术构建 Wayland 桌面环境</strong><br />
+Domicile 是一个新兴的 Wayland 合成器项目，它巧妙地利用 Chromium 内核，允许开发者使用 HTML、CSS 和 JavaScript/TypeScript 来构建自定义的 Linux 桌面。这种方法极大地降低了桌面环境开发的门槛，使得 Web 开发者能够轻松打造高度个性化的用户界面。该项目为 Linux 桌面生态的多样化提供了新的可能性。<br />
+原文：<a href="https://www.phoronix.com/news/Domicile-Desktop-Wayland">Domicile Desktop Brings Web Technologies To Building Wayland Desktops</a></p>
+<p><strong>纽约时报要求 Brave 停止绕过付费墙并终止与 AI 公司的交易</strong><br />
+《纽约时报》向 Brave 浏览器发出法律警告，要求其关闭内置的付费墙拦截功能，并停止将其新闻内容提供给 AI 公司进行训练。诉讼指控 Brave 是“被盗新闻内容”的供应商和分销商。这一冲突标志着传统媒体与新兴浏览器及 AI 技术公司在版权保护与内容变现方面的矛盾进一步升级。<br />
+原文：<a href="https://arstechnica.com/tech-policy/2026/11/nyt-demands-brave-shut-down-its-paywall-blocker-and-end-deals-with-ai-firms/">NYT demands Brave shut down its paywall blocker and end deals with AI firms</a></p>
+<p><strong>俄罗斯因乌克兰无人机威胁计划建设地下数据中心</strong><br />
+受乌克兰无人机频繁袭击的影响，俄罗斯正紧急制定计划，将其关键的数字基础设施（如数据中心）迁移至地下。此前，暴露在地面上的数据中心在冲突中多次受损，导致服务中断。这一动向显示了现代战争中，物理安全已成为数据中心选址和建设的首要考量因素之一。<br />
+原文：<a href="https://arstechnica.com/ai/2026/11/russia-looks-to-hide-data-centers-underground-as-ukrainian-drones-strike-back/">Ukraine’s drone strikes spur hasty Russian plans for underground data centers</a></p>
+<p><strong>梅赛德斯-奔驰展示全息抬头显示技术，超越传统屏幕</strong><br />
+梅赛德斯-奔驰展示了其最新的全息抬头显示（HUD）技术，旨在将挡风玻璃转化为交互式显示屏。该技术利用全息投影在驾驶员视野中呈现导航和车辆信息，减少了对车内传统物理屏幕的依赖。这代表了汽车工业在人机交互界面（HMI）领域的最新探索方向，强调了驾驶时的沉浸感与安全性。<br />
+原文：<a href="https://arstechnica.com/cars/2026/11/beyond-screens-mercedes-benzs-new-holographic-heads-up-display/">Beyond screens: Mercedes-Benz's new holographic heads-up display</a></p>
+<h2>学术界最新研究</h2>
+<p><strong>子空间节点剪枝：通过基变换实现无损模型压缩</strong><br />
+arXiv 论文提出了一种名为“子空间节点剪枝”的新方法，展示了从激活到 Fisher 信息等多种重要性度量都共享一个通用的二次型。通过下三角基变换，该方法可以在移除整个神经元或层时，利用线性最小二乘法同步恢复损失的信息。这种解耦且可加的度量方式允许在层内进行多节点剪枝而互不干扰，显著降低了推理延迟。<br />
+原文：<a href="https://arxiv.org/abs/2405.17506">Subspace Node Pruning</a></p>
+<p><strong>大语言模型中的早停机制：效率与可靠性的实证审计</strong><br />
+一项针对大型推理模型（LRM）的研究调查了“早停”方法在数学、科学推理和代码生成任务中的表现。研究引入了 TITE 指标来衡量相对于理想状态的效率，发现虽然长推理路径能提高准确率，但部分计算是冗余的。该研究为如何在保证答案可靠性的前提下，通过提前终止推理来降低计算成本提供了理论依据。<br />
+原文：<a href="https://arxiv.org/abs/2611.00166">Early Stopping in Large Reasoning Models: A Survey and Empirical Audit of Efficiency and Reliability</a></p>
+<p><strong>Neurons Are All You Need：受神经生物学启发的 AI 模型间记忆转移</strong><br />
+受神经生物学关于记忆可在生物体间独立于突触转移的研究启发，本文提出了一种“以神经元为中心”的记忆机制。研究人员成功演示了在 AI 模型实例之间进行持久记忆的转移，而无需依赖传统的自适应突触参数。这一突破可能解决 AI 模型在部署过程中的“灾难性遗忘”问题，并降低昂贵的重新训练成本。<br />
+原文：<a href="https://arxiv.org/abs/2611.00186">Neurons Are All You Need</a></p>
+<p><strong>AuroraWorld：用于机器人操作视频生成的结构化 4D 世界模型</strong><br />
+针对机器人学习中第一人称视角数据稀缺的问题，研究者提出了 AuroraWorld 模型。该模型能够从大规模的第三人称操作视频中合成物理一致且具有策略相关性的第一人称视频。通过构建结构化的 4D 世界模型，它克服了视角变换剧烈、遮挡严重等挑战，为机器人视觉动力学策略训练提供了低成本的数据增强方案。<br />
+原文：<a href="https://arxiv.org/abs/2611.00177">AuroraWorld: Structured 4D World Modeling for Exo-to-Ego Video Generation in Robot Manipulation</a></p>
+<p><strong>相关性正在破坏你的梯度下降：优化器与网络结构的重新思考</strong><br />
+该论文指出，自然梯度下降及其变体通过估计曲率来修正梯度，其中一个关键因素是层输入数据的相关性。研究表明，这一因素可以被视为基变换而非曲率变化，因此可以完全从优化器中移除，转而内置于网络结构本身。通过修正前向权重，这种方法能显著提升深度神经网络的训练效率和收敛稳定性。<br />
+原文：<a href="https://arxiv.org/abs/2407.10780">Correlations Are Ruining Your Gradient Descent</a></p>
+<hr /></div>
+  </main>
+</body>
+</html>
