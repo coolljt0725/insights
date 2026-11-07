@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OS 领域每日洞察 - 2026-11-07</title>
+  <style>
+    :root {
+      --bg: #f6f4f0;
+      --bg-bar: #ebe8e3;
+      --bg-card: #fffefb;
+      --bg-card-hover: #f5f3ef;
+      --text: #2d2a26;
+      --text-muted: #5c5852;
+      --text-dim: #7a756e;
+      --accent: #5a7a9e;
+      --border: #ddd9d2;
+      --radius: 10px;
+      --font: "Segoe UI", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      font-size: 15px;
+    }
+
+    /* 门户顶栏 */
+    .masthead {
+      background: var(--bg-bar);
+      border-bottom: 1px solid var(--border);
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 0;
+    }
+    .masthead-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .masthead h1 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin: 0;
+      letter-spacing: -0.02em;
+      color: var(--text);
+    }
+    .masthead .meta {
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+    }
+
+    /* 主内容区：多栏门户布局 */
+    .main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 3rem;
+    }
+
+    /* 板块：每个 h2 为一个频道块 */
+    .content .section {
+      margin-bottom: 2.5rem;
+    }
+    .content h2 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+      margin: 0 0 1rem;
+      padding: 0.6rem 1rem;
+      background: var(--bg-bar);
+      border-radius: var(--radius);
+      border-left: 4px solid var(--accent);
+    }
+    .content h2:first-child { margin-top: 0; }
+
+    .content h2:has(+ h3) {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      border-left-color: var(--text-dim);
+    }
+
+    /* 板块内卡片网格（每个 h2 后的 ul） */
+    .content h2 + ul {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1rem;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .content h2 + ul li {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.15rem 1.2rem;
+      transition: background .15s, border-color .15s;
+    }
+    .content h2 + ul li:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--text-dim);
+    }
+    .content h2 + ul li strong {
+      display: block;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+      line-height: 1.4;
+    }
+    .content h2 + ul li p {
+      margin: 0 0 0.5rem;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.58;
+    }
+    .content h2 + ul li p:last-of-type { margin-bottom: 0; }
+    .content h2 + ul li a[href^="http"] {
+      font-size: 0.8125rem;
+      color: var(--accent);
+    }
+    .content h2 + ul li a[href^="http"]:hover { text-decoration: underline; }
+
+    .content .ref-section {
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+    .content h2 + h3 { margin-top: 1.25rem; }
+    .content h3 {
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--text-dim);
+      margin: 1rem 0 0.4rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .content h3 + ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 0.25rem;
+    }
+    .content h3 + ul li {
+      background: transparent;
+      border: none;
+      padding: 0.2rem 0;
+      font-size: 0.8125rem;
+    }
+    .content h3 + ul li strong { font-size: inherit; margin-bottom: 0; }
+    .content h3 + ul li a { color: var(--accent); }
+    .content h3 + ul li a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <header class="masthead">
+    <div class="masthead-inner">
+      <h1>OS 领域每日洞察 - 2026-11-07</h1>
+      <span class="meta">2026-11-07 05:00 UTC</span>
+    </div>
+  </header>
+  <main class="main">
+    <div class="content"><h1>OS 领域每日洞察 - 2026-11-07</h1>
+<p>（Gemini 未可用时，以下为按来源整理的条目，含<strong>新闻摘要</strong>与链接；摘要可能为原文语言。）</p>
+<h2>Lobsters</h2>
+<ul>
+<li>
+<p><strong><a href="https://joturk.net/posts/dtls">How hard could implementing DTLS 1.3 possibly be?</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://mitchellh.com/writing/libghostty-1-0">Libghostty 1.0</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://acid.vegas/blog/the-port-that-does-not-exist/">The Port That Does Not Exist</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://p0pcycle.com/2026/11/06/hacking-the-meta-ray-ban-smartglasses/">Hacking the meta ray-ban smartglasses</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://futhark-lang.org/blog/2026-11-04-nondeterminism.html">Nondeterminism in Futhark</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://github.blog/engineering/architecture-optimization/inside-githubs-new-git-storage-architecture/">Inside GitHub's new Git storage architecture</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://mtlynch.io/notes/go-must-create-pattern/">The MustCreate Pattern for Go Tests</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://www.dwarmstrong.org/netbsd-upgrade/">Upgrading NetBSD from 11.0 to 11.1</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://acid.vegas/blog/pushing-the-limits-with-getaddrinfo/">Pushing the Limits with getaddrinfo</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://chimera-linux.org/news/2026/11/musl-nvidia.html">Making musl and proprietary NVIDIA drivers work together</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://lobste.rs/s/jmdchp/what_are_you_doing_this_weekend">What are you doing this weekend?</a></strong><br />
+  摘要：Feel free to tell what you plan on doing this weekend and even ask for help or feedback. Please keep in mind it’s more than OK to do nothing at all too!</p>
+</li>
+</ul>
+<h2>Phoronix</h2>
+<ul>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/FreeBSD-15.2-Beta-1">FreeBSD 15.2 Beta 1 Allows Experimental Cross-Building Of Base Packages On Linux/macOS</a></strong><br />
+  摘要：FreeBSD 15.2 Beta 1 is out today as the release dance kicks off in working toward the next installment of FreeBSD 15...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/ReactOS-Initial-USB-3.0">ReactOS Lands Initial USB3 Driver Support</a></strong><br />
+  摘要：After years of work, ReactOS as the "open-source Windows" operating system striving for Windows program and driver compatibility now has an initial USB 3.0 driver stack in place...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/AMD-Zen-6-TEE-RISC-V-Based">A RISC-V Based TEE With AMD Zen 6 CPUs</a></strong><br />
+  摘要：An interesting technical detail I noticed today from the latest AMD Linux activity is that Zen 6 processors apparently are featuring a RISC-V based Trusted Execution Environment (TEE) where in the past it was an ARM-based core...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Linux-7.4-rc2-FAT32">Linux 7.4-rc2 Change Yields As Much As 162x Improvement For FAT32</a></strong><br />
+  摘要：In addition to a FAT32 optimization yielding as much as a 265x improvement that was merged for the Linux 7.4 cycle and separately another big FAT32 improvement expected for Linux 7.5, merged this week as part of the non-MM fixes for Linux 7.4-rc2 was another big FAT32 performance optimization...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/review/cachyos-omarchy-benchmarks">Arch Linux vs. CachyOS vs. Omarchy 4.5 Performance Benchmarks</a></strong><br />
+  摘要：With CachyOS recently having rolled out its Linux 7.3 based kernel and various other improvements plus with Omarchy 4.5 having been released this week, this article provides a look at how CachyOS and Omarchy are competing on the performance front relative to upstream Arch Linux.</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Linux-2026-x86-32-bit-Cleanup">Linux x86 32-bit Patches Clean Old Kernel Code After Recently Removing Vintage CPUs</a></strong><br />
+  摘要：With the Linux kernel having phased out i486 CPU support and dropping old AMD Elan SoC code along with removing other obsolete and stagnate 32-bit x86 hardware support, some x86 32-bit clean-ups are proceeding along with being able to make the kernel depend unconditionally now on some features...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/FEX-2611-Released">FEX Awaits The Linux Kernel To Align With Windows &amp; macOS On ARM Register Usage</a></strong><br />
+  摘要：FEX 2611 is out for running Linux (and Wine) x86/x86_64 games/applications on AArch64 Linux. FEX 2611 brings JIT improvements while also waiting for the Linux kernel to align with the AArch64 specification and Windows on ARM and macOS Apple Silicon behavior around a particular register's usage...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Ubuntu-Going-With-Firmware-HWE">Ubuntu Moving Ahead With Plans For Splitting Up Linux-Firmware, HWE Option</a></strong><br />
+  摘要：A few months back were discussions of a Linux firmware HWE package for Ubuntu to carry updated firmware blobs under the hardware enablement (HWE) umbrella. Plus also splitting up the monolithic linux-firmware package for easing of firmware updates. Those plans didn't materialize in time for the official Ubuntu 26.10 release but are now being pursued for Ubuntu 27.04 and may then be SRU'ed into Ubuntu 26.10 and potentially Ubuntu 26.04 LTS...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Linux-Drop-RT_GROUP_SCHED">Linux Developers Look To Drop RT_GROUP_SCHED As It's "Broken Beyond Repair"</a></strong><br />
+  摘要：Linux kernel developers are looking at dropping the RT_GROUP_SCHED feature that is used for group scheduling of real-time tasks using cgroups...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Linux-7.4-rc2-Sound">Sound Subsystem Seeing Lots Of Fixes &amp; Laptop/Device Quirks For Linux 7.4-rc2</a></strong><br />
+  摘要：The sound subsystem is seeing a "unsurprisingly high amount" fixes and device workarounds/quirks for this weekend's Linux 7.4-rc2 kernel release...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/OpenCV-5.1-Released">OpenCV 5.1 Brings More AVX-512 Optimizations, Other Improvements</a></strong><br />
+  摘要：OpenCV 5.0 debuted back in June with a rewritten DNN engine and many other exciting improvements for this widely-used computer vision (CV) library. Out today is OpenCV 5.1 with tons of fixes and other incremental improvements to this important code...</p>
+</li>
+</ul>
+<h2>Ars Technica</h2>
+<ul>
+<li>
+<p><strong><a href="https://arstechnica.com/health/2026/11/man-unexpectedly-recovers-from-a-knife-wound-through-his-eye-and-brain/">Doctors pull knife from man's eye that went through his brain—and he's fine now</a></strong><br />
+  摘要：It's the exact path, not the apparent severity that matters most, doctors say.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/gadgets/2026/11/ships-loiter-near-subsea-cables-amid-irans-warnings-to-trump/">Ships loiter near subsea cables amid Iran's warnings to Trump</a></strong><br />
+  摘要：Iran threatened to attack subsea cables if US escalates military strikes again.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/gaming/2026/11/ea-producer-tells-the-inside-story-behind-new-wing-commander-remasters/">Re-releases of Wing Commander, Ultima titles hit Steam and GOG</a></strong><br />
+  摘要：It's mostly bad news from EA lately, but preservation efforts are nice to see.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/security/2026/11/chainalysis-says-hackers-stole-credentials-and-tokens-for-all-of-its-customers/">Chainalysis says hackers stole credentials and tokens for all of its customers</a></strong><br />
+  摘要：Company said a "multifront cyberattack" included AI agents and an on-path data snatch.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/science/2026/11/earths-churning-mantle-may-have-created-the-great-unconformity/">Earth's churning mantle may have created the Great Unconformity</a></strong><br />
+  摘要：Explaining the Great Unconformity, where Cambrian deposits sit on top of older rocks.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/gadgets/2026/11/nvidia-hardware-worth-11-4m-vanished-between-oakland-and-texas/">Nvidia hardware worth $11.4M vanished between Oakland and Texas</a></strong><br />
+  摘要：6 pallets of hardware vanished en route to Texas, with no arrests 2 months later.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/gadgets/2026/11/artist-pulls-popular-screensaver-from-roku-os-because-of-fox-acquisition/">Developer ends lucrative screensaver deal with Roku because Fox bought it</a></strong><br />
+  摘要：Developer: “I can’t be part of the Fox world.”</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/tech-policy/2026/11/faa-to-finally-ditch-floppy-disks-in-what-it-calls-historic-tech-upgrade/">FAA to finally ditch floppy disks in what it calls "historic" tech upgrade</a></strong><br />
+  摘要：FAA information display systems to be floppy-free at 435 sites by end of 2028.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/culture/2026/11/the-folks-behind-john-wick-are-back-with-karoshi-trailer/">The folks behind John Wick are back with Karōshi trailer</a></strong><br />
+  摘要：Stuntman/director Chad Stahelski and 87Eleven bring us an action-packed dystopian, futuristic thriller.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/space/2026/11/ast-spacemobile-is-so-desperate-for-launch-theyre-building-their-own-rocket/">You know the launch market is tough when satellite companies start building rockets</a></strong><br />
+  摘要："The Blacklift rocket is the springboard to significantly expand our total addressable market."</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/tech-policy/2026/11/does-meta-think-we-cant-read-meta-abandons-sketchy-commercial-terms-update/">“Does Meta think we can’t read?” Meta abandons sketchy commercial terms update.</a></strong><br />
+  摘要：Meta won't force Facebook page owners to allow AI training on linked content.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/health/2026/11/wisconsin-reports-measles-death-of-a-baby-first-death-in-over-35-years/">Wisconsin reports measles death of a baby, first death in over 35 years</a></strong><br />
+  摘要：Next week, experts will determine if the US has lost its measles elimination status.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/gaming/2026/11/could-potential-ai-clones-of-gta-vi-force-a-quicker-official-port/">Could potential AI clones of GTA VI force a quicker official port?</a></strong><br />
+  摘要：A former Rockstar tech director thinks the developer is facing new time pressures.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/apple/2026/11/its-a-weird-time-to-buy-a-laptop-but-the-new-macbook-pro-doesnt-skimp-on-quality/">It's a weird time to buy a laptop, but the new MacBook Pro doesn't skimp on quality</a></strong><br />
+  摘要：It has the best laptop screen we've used, but there may be reasons to wait.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/tech-policy/2026/11/nvidia-ceo-jensen-huang-summoned-by-congress-over-chinese-espionage-concerns/">Nvidia CEO Jensen Huang summoned by Congress over Chinese espionage concerns</a></strong><br />
+  摘要：Lawmakers want answers about Jensen Huang’s ties to an alleged Chinese intelligence asset.</p>
+</li>
+</ul>
+<h2>LWN.net</h2>
+<ul>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1105913/">Videos from XDC 2026 are available</a></strong><br />
+  摘要：Videos from the 2026 X.Org Developers Conference (XDC) are now available on YouTube . XDC was held in Toronto, Ontario, Canada September 28-30.</p>
+</li>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1103190/">[$] Locking down hibernation for the winter</a></strong><br />
+  摘要：When a computer hibernates, the kernel writes the contents of memory to disk and then shuts the system down. Resuming from hibernation involves reading that data back into memory, and then having the kernel pick up where it left off. Unfortunately, the kernel does not have any way to know that the data it is reading back has not been tampered with, which is why lockdown , an optional kernel feature that attempts to prevent modifications to the running kernel, disables hibernation. Matthew Garrett, who has been working on lockdown for many years, has shared a patch set that aims to fix this problem. His solution must also protect against downgrade attacks (where an attacker reboots the computer with an older kernel version to bypass new protections), which complicates the implementation.</p>
+</li>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1105902/">Seven stable kernels with fixes for three Xen vulnerabilities</a></strong><br />
+  摘要：Hot on the heels of the previous two stable kernels , Greg Kroah-Hartman has announced the release of the 7.3.3 , 6.18.62 , 6.12.116 , 6.6.162 , 6.1.192 , 5.15.225 , and 5.10.274 stable kernels. Each one only contains fixes for three use-after-free vulnerabilities announced today by the Xen security team. Two of the vulnerabilities could allow an attacker to cause a denial of service (DoS) for the entire Xen host machine with possible information leakage ( CVE-2026-100080 , CVE-2026-100082 ), and one may allow privilege escalation as well as a DoS of the host machine ( CVE-2026-100081 ). Users should, of course, upgrade if they are using Xen.</p>
+</li>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1105899/">Two stable kernels for Friday</a></strong><br />
+  摘要：Greg Kroah-Hartman has released the 7.3.2 and 6.18.61 stable kernels. Each contains quite a few changes throughout the tree; users are advised to upgrade.</p>
+</li>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1105881/">Security updates for Friday</a></strong><br />
+  摘要：Security updates have been issued by AlmaLinux (cockpit-files, container-tools:rhel8, delve, gcc-toolset-12-binutils, gimp:2.8, glibc, go-toolset:rhel8, kernel, libfastjson, mariadb:10.3, mod_auth_openidc:2.3, mysql:8.0, php:8.0, pki-core:10.6 and pki-deps:10.6, squid:4, tang, tesseract, thunderbird, and virt:rhel and virt-devel:rhel), Debian (chromium, ntfs-3g, puppet-agent, and trapperkeeper-authorization-clojure), Fedora (freerdp, goose, gpsd, hatch, perl-HTTP-Headers-ActionPack, perl-MIME-tools, perl-Plack, perl-Starman, proftpd, python-mistune, ruby-build, rust-crypto-bigint, rust-ctutils, rust-elliptic-curve, rust-num-bigint, rust-num-bigint0.4, rust-num-modular, rust-num-modular0.6, rust-num-prime, rust-zmij, rust-zstd, rust-zstd-safe, rust-zstd-safe7, rust-zstd-sys, rust-zstd0.13, …</p>
+</li>
+</ul>
+<h2>Linux Weekly News (RSS)</h2>
+<ul>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1105913/">Videos from XDC 2026 are available</a></strong><br />
+  摘要：Videos from the 2026 X.Org Developers Conference (XDC) are now available on YouTube . XDC was held in Toronto, Ontario, Canada September 28-30.</p>
+</li>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1103190/">[$] Locking down hibernation for the winter</a></strong><br />
+  摘要：When a computer hibernates, the kernel writes the contents of memory to disk and then shuts the system down. Resuming from hibernation involves reading that data back into memory, and then having the kernel pick up where it left off. Unfortunately, the kernel does not have any way to know that the data it is reading back has not been tampered with, which is why lockdown , an optional kernel feature that attempts to prevent modifications to the running kernel, disables hibernation. Matthew Garrett, who has been working on lockdown for many years, has shared a patch set that aims to fix this problem. His solution must also protect against downgrade attacks (where an attacker reboots the computer with an older kernel version to bypass new protections), which complicates the implementation.</p>
+</li>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1105902/">Seven stable kernels with fixes for three Xen vulnerabilities</a></strong><br />
+  摘要：Hot on the heels of the previous two stable kernels , Greg Kroah-Hartman has announced the release of the 7.3.3 , 6.18.62 , 6.12.116 , 6.6.162 , 6.1.192 , 5.15.225 , and 5.10.274 stable kernels. Each one only contains fixes for three use-after-free vulnerabilities announced today by the Xen security team. Two of the vulnerabilities could allow an attacker to cause a denial of service (DoS) for the entire Xen host machine with possible information leakage ( CVE-2026-100080 , CVE-2026-100082 ), and one may allow privilege escalation as well as a DoS of the host machine ( CVE-2026-100081 ). Users should, of course, upgrade if they are using Xen.</p>
+</li>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1105899/">Two stable kernels for Friday</a></strong><br />
+  摘要：Greg Kroah-Hartman has released the 7.3.2 and 6.18.61 stable kernels. Each contains quite a few changes throughout the tree; users are advised to upgrade.</p>
+</li>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1105881/">Security updates for Friday</a></strong><br />
+  摘要：Security updates have been issued by AlmaLinux (cockpit-files, container-tools:rhel8, delve, gcc-toolset-12-binutils, gimp:2.8, glibc, go-toolset:rhel8, kernel, libfastjson, mariadb:10.3, mod_auth_openidc:2.3, mysql:8.0, php:8.0, pki-core:10.6 and pki-deps:10.6, squid:4, tang, tesseract, thunderbird, and virt:rhel and virt-devel:rhel), Debian (chromium, ntfs-3g, puppet-agent, and trapperkeeper-authorization-clojure), Fedora (freerdp, goose, gpsd, hatch, perl-HTTP-Headers-ActionPack, perl-MIME-tools, perl-Plack, perl-Starman, proftpd, python-mistune, ruby-build, rust-crypto-bigint, rust-ctutils, rust-elliptic-curve, rust-num-bigint, rust-num-bigint0.4, rust-num-modular, rust-num-modular0.6, rust-num-prime, rust-zmij, rust-zstd, rust-zstd-safe, rust-zstd-safe7, rust-zstd-sys, rust-zstd0.13, …</p>
+</li>
+</ul>
+<h2>The New Stack</h2>
+<ul>
+<li>
+<p><strong><a href="https://thenewstack.io/harness-engineering-coding-agents/">AI agents are getting more complex. Developers shouldn’t have to babysit them.</a></strong><br />
+  摘要：What if your coding agent could catch its own mistakes before you ever reviewed its work?&#160; A few years ago, The post AI agents are getting more complex. Developers shouldn&#8217;t have to babysit them. appeared first on The New Stack .</p>
+</li>
+<li>
+<p><strong><a href="https://thenewstack.io/cognition-flash-private-weights/">Cognition turned an open model into a coding beast. But it won’t release the weights.</a></strong><br />
+  摘要：Cognition built its newest coding model on a foundation that anyone can download, yet the company is keeping its own The post Cognition turned an open model into a coding beast. But it won&#8217;t release the weights. appeared first on The New Stack .</p>
+</li>
+<li>
+<p><strong><a href="https://thenewstack.io/meta-muse-specialized-models/">Meta’s best AI model now trains the one most of its users get</a></strong><br />
+  摘要：Starting on Friday, everyone using Meta&#8217;s Muse agent and Meta AI gets new models the company trained using Muse Wonder, The post Meta’s best AI model now trains the one most of its users get appeared first on The New Stack .</p>
+</li>
+<li>
+<p><strong><a href="https://thenewstack.io/cursor-ai-app-deployment/">“Most apps never make it off localhost”: Cursor takes on Lovable and Replit with fully managed app deployment</a></strong><br />
+  摘要：AI coding agents have certainly made it easier to transform an idea into a working application. However, getting that application The post &#8220;Most apps never make it off localhost&#8221;: Cursor takes on Lovable and Replit with fully managed app deployment appeared first on The New Stack .</p>
+</li>
+<li>
+<p><strong><a href="https://thenewstack.io/gvisor-cncf-kubernetes-open-source/">Kubernetes, mark II? Why Google’s giving away gVisor, a code sandbox used by Anthropic and OpenAI</a></strong><br />
+  摘要：Google wants to emulate one of its biggest ever open-source success stories, donating three core AI agent infrastructure projects to The post Kubernetes, mark II? Why Google&#8217;s giving away gVisor, a code sandbox used by Anthropic and OpenAI appeared first on The New Stack .</p>
+</li>
+</ul>
+<h2>Hacker News</h2>
+<ul>
+<li>
+<p><strong><a href="https://github.com/anomalyco/rune">Rune: A native GPU-rendered Rust UI framework for macOS, Windows, Linux and web</a></strong><br />
+  摘要：Rune: A native GPU-rendered Rust UI framework for macOS, Windows, Linux and web</p>
+</li>
+<li>
+<p><strong><a href="https://news.ycombinator.com/item?id=50394231">I tried to connect every GPU on the planet together (kinda)</a></strong><br />
+  摘要：Nowadays, unless you’re training a frontier model from scratch, finding spare GPU capacity for training and post-training on some cloud is manageable. But a lot of the time, I’m just too lazy to move my work or even go through the signup processes and deal with their limits and regions and shit. So I wasted a lot of money keeping GPUs idle or gambling on a paused instance, crossing my fingers that the node would still be available when I wanted it again (usually didn’t work). So here’s my journey trying to automate this process, and it was a lot harder than you might think. 1. Shared File System “Just mount a network filesystem… duhh.” Well, not so fast. Many providers have random restrictions and sandboxed compute; the RunPod containers I tested, for example, didn’t expose FUSE. To build …</p>
+</li>
+<li>
+<p><strong><a href="https://www.theregister.com/os-platforms/2026/11/06/crowd-fave-linux-mint-update-approaches-fresh-from-autumn-release-of-cinnamon-desktop/5307951">Crowd fave Linux Mint update approaches</a></strong><br />
+  摘要：Crowd fave Linux Mint update approaches</p>
+</li>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1102738/">The campaign to push Northstar Browser into Linux distributions</a></strong><br />
+  摘要：The campaign to push Northstar Browser into Linux distributions</p>
+</li>
+<li>
+<p><strong><a href="https://hothardware.com/news/openai-just-found-nearly-1000-ways-to-gain-root-access-in-linux">OpenAI Just Found Nearly 1k Ways to Gain Root Access in Linux</a></strong><br />
+  摘要：OpenAI Just Found Nearly 1k Ways to Gain Root Access in Linux</p>
+</li>
+<li>
+<p><strong><a href="https://gno.security/repairer/">Show HN: Repairer – close the breach when a Linux flaw goes public</a></strong><br />
+  摘要：As we&#x27;ve seen with the Ubuntu critical CVE-2026-98432 (CVSS 9.8), AI-dicovered zero day exploit are being reported at an exponential rate and we don&#x27;t have the process for dealing with the flood of exploits in real time. What we need is an AI-based system for autopatching systems based on real time information. The vendor&#x27;s fix can take days or weeks to be out (is the Ubuntu thing patched yet?) and meanwhile the grid is vulnerable to exploitation, especially AI worms. Repairer is a small program that runs on each of your servers. The day an exploit goes public it puts up a stopgap that blocks it, and once the real fix is up it takes the stopgap back off by itself. A stopgap only takes something away — drop certain packets, turn off a kernel module or service, remove a setuid…</p>
+</li>
+</ul>
+<h2>CNCF Blog</h2>
+<ul>
+<li><strong><a href="https://www.cncf.io/blog/2026/11/06/faster-llm-inference-startup-what-you-need-to-know/">Faster LLM inference startup: What you need to know</a></strong><br />
+  摘要：Adding an inference replica creates capacity only after the new instance can serve requests. Between starting a process and generating a response, an LLM server may need to load weights, initialize GPU resources, compile kernels, capture...</li>
+</ul>
+<h2>Red Hat Blog</h2>
+<ul>
+<li><strong><a href="https://www.redhat.com/en/blog/5-minute-demo-how-manage-applications-scale-red-hat-openshift">5-minute demo: How to manage applications at scale with Red Hat OpenShift</a></strong><br />
+  摘要：Operating cloud-native applications at enterprise scale is rarely a single-cluster affair. As businesses continue to expand across public cloud providers, private datacenters, and edge locations, platform and security teams run into a common operational issue sprawl. Managing application lifecycles, configuration drift, and compliance rules across dozens—or hundreds—of disparate environments quickly makes security even more difficult and adds to operational overhead.Red Hat OpenShift addresses this challenge. By evolving from individual cluster management into a unified multicluster manage</li>
+</ul>
+<hr /></div>
+  </main>
+</body>
+</html>
