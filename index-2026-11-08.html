@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OS 领域每日洞察 - 2026-11-08</title>
+  <style>
+    :root {
+      --bg: #f6f4f0;
+      --bg-bar: #ebe8e3;
+      --bg-card: #fffefb;
+      --bg-card-hover: #f5f3ef;
+      --text: #2d2a26;
+      --text-muted: #5c5852;
+      --text-dim: #7a756e;
+      --accent: #5a7a9e;
+      --border: #ddd9d2;
+      --radius: 10px;
+      --font: "Segoe UI", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      font-size: 15px;
+    }
+
+    /* 门户顶栏 */
+    .masthead {
+      background: var(--bg-bar);
+      border-bottom: 1px solid var(--border);
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 0;
+    }
+    .masthead-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .masthead h1 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin: 0;
+      letter-spacing: -0.02em;
+      color: var(--text);
+    }
+    .masthead .meta {
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+    }
+
+    /* 主内容区：多栏门户布局 */
+    .main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 3rem;
+    }
+
+    /* 板块：每个 h2 为一个频道块 */
+    .content .section {
+      margin-bottom: 2.5rem;
+    }
+    .content h2 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+      margin: 0 0 1rem;
+      padding: 0.6rem 1rem;
+      background: var(--bg-bar);
+      border-radius: var(--radius);
+      border-left: 4px solid var(--accent);
+    }
+    .content h2:first-child { margin-top: 0; }
+
+    .content h2:has(+ h3) {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      border-left-color: var(--text-dim);
+    }
+
+    /* 板块内卡片网格（每个 h2 后的 ul） */
+    .content h2 + ul {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1rem;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .content h2 + ul li {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.15rem 1.2rem;
+      transition: background .15s, border-color .15s;
+    }
+    .content h2 + ul li:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--text-dim);
+    }
+    .content h2 + ul li strong {
+      display: block;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+      line-height: 1.4;
+    }
+    .content h2 + ul li p {
+      margin: 0 0 0.5rem;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.58;
+    }
+    .content h2 + ul li p:last-of-type { margin-bottom: 0; }
+    .content h2 + ul li a[href^="http"] {
+      font-size: 0.8125rem;
+      color: var(--accent);
+    }
+    .content h2 + ul li a[href^="http"]:hover { text-decoration: underline; }
+
+    .content .ref-section {
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+    .content h2 + h3 { margin-top: 1.25rem; }
+    .content h3 {
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--text-dim);
+      margin: 1rem 0 0.4rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .content h3 + ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 0.25rem;
+    }
+    .content h3 + ul li {
+      background: transparent;
+      border: none;
+      padding: 0.2rem 0;
+      font-size: 0.8125rem;
+    }
+    .content h3 + ul li strong { font-size: inherit; margin-bottom: 0; }
+    .content h3 + ul li a { color: var(--accent); }
+    .content h3 + ul li a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <header class="masthead">
+    <div class="masthead-inner">
+      <h1>OS 领域每日洞察 - 2026-11-08</h1>
+      <span class="meta">2026-11-08 05:00 UTC</span>
+    </div>
+  </header>
+  <main class="main">
+    <div class="content"><h1>OS 领域每日洞察 - 2026-11-08</h1>
+<p>（Gemini 未可用时，以下为按来源整理的条目，含<strong>新闻摘要</strong>与链接；摘要可能为原文语言。）</p>
+<h2>Lobsters</h2>
+<ul>
+<li>
+<p><strong><a href="https://opensourcesecurity.io/2026/10-embargo/">Dear Open Source Developers: It's OK not to embargo</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://goldstein.lol/posts/deno-security/">I’m not a fan of Deno’s security model (2024)</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://sunshowers.io/posts/sshole/">*sshole, or when are we finally going to get rid of C?</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://chimera-vocal-synth.vercel.app/">CHIMERA simulates organic sound with acoustic tubes</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://tomclancy.info/joshua-judges-ruth.html">Catching prompt injections hidden in PDFs</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://undeadly.org/cgi?action=article;sid=20261106104957">OpenBSD top(1) adds flag to show chroot, pledge and unveil status</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://www.bitdefender.com/en-us/blog/labs/ghostmap-android">GhostMap: The Android flaw that crashes your phone before you open the app</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://www.alpinelinux.org/posts/2026-11-05-openssh-password-authentication-bypass/">Alpine Linux : openssh-server password authentication bypass</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://lobste.rs/s/ipplhe/how_are_you_dealing_with_all_negative_side">How are you dealing with all the negative side effects of AI on the web?</a></strong><br />
+  摘要：It seems to me that the AI hype killed the web for good, but not for the reasons we immediately associate with it. Search engines now rank links full of slop at the top, which ironically make LLM summaries acceptable, not because they are better than what we had before (they are not), but because they at least mention the good links which are now buried at the bottom of the page. Also, they've been rate limiting ordinary users like crazy: more often than I'd like to, Google and DuckDuckGo now either show me either an error message or tell me to wait a bit. Sometimes I waste at least a minute refreshing the page and waiting for a result. I also can't browse GitHub freely without being logged in. Anubis is now everywhere, occasionally blocking me. I feel like my productivity has actually gon…</p>
+</li>
+<li>
+<p><strong><a href="https://op.tngl.io/meridian/">Meridian — an experimental web browser built on Servo and GPUI</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://www.redblobgames.com/blog/2026-09-27-jujutsu-experience/">Two Dimensional Version Control</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://vincent.bernat.ch/en/blog/2026-bunny-geodns">Scriptable GeoDNS: leaving AWS for Bunny</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://asahilinux.org/2026/11/progress-report-7-3/">Progress Report: Linux 7.3 - Asahi Linux</a></strong><br />
+  摘要：Comments</p>
+</li>
+</ul>
+<h2>Hacker News</h2>
+<ul>
+<li>
+<p><strong><a href="https://nosaka.ai/sentient/">Show HN: Sentient, Your Coding Agent Shouldn't Be a Black Box</a></strong><br />
+  摘要：after working quite rigorously for a few months with claude code, I found out that I was blindly approving permission requests for the sake of progressing my projects, this led me to realize that coding agents generate hundreds of commands underneath the covers which is necessary, but quite scary if you ask me. you&#x27;ve probably seen news recently about agents deleting databases or environments in production by accident. so i wanted to create something to gain visibility into what&#x27;s actually happening and potentially block things before they occur. coding agents often log everything that they&#x27;re doing, but even still, i want the ground level truth of what&#x27;s happening. that&#x27;s why i created sentient, written using claude code. it&#x27;s open source (mit license), runs …</p>
+</li>
+<li>
+<p><strong><a href="http://thelittleengineerthatcould.blogspot.com/2022/12/the-8-linux-computer.html">The $8 Linux Computer (2022)</a></strong><br />
+  摘要：The $8 Linux Computer (2022)</p>
+</li>
+<li>
+<p><strong><a href="https://asahilinux.org/2026/11/progress-report-7-3/">Asahi Linux Progress Linux 7.3</a></strong><br />
+  摘要：Asahi Linux Progress Linux 7.3</p>
+</li>
+<li>
+<p><strong><a href="https://www.theregister.com/os-platforms/2026/11/06/mac-lookalikes-multiply-as-linux-raids-apples-wardrobe/5308070">Mac lookalikes multiply as Linux raids Apple's wardrobe</a></strong><br />
+  摘要：Mac lookalikes multiply as Linux raids Apple's wardrobe</p>
+</li>
+<li>
+<p><strong><a href="https://davidbudzynski.github.io/2026/11/03/five-years-in-linux.html">Five Years in Linux</a></strong><br />
+  摘要：Five Years in Linux</p>
+</li>
+<li>
+<p><strong><a href="https://javimosch.github.io/linux-use/">Linux-use – agent-first GUI control for Linux</a></strong><br />
+  摘要：Linux-use – agent-first GUI control for Linux</p>
+</li>
+</ul>
+<h2>Phoronix</h2>
+<ul>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/OpenIndiana-2026.10">OpenIndiana 2026.10 Released With Updated Tools &amp; Compilers, New Apps</a></strong><br />
+  摘要：OpenIndiana Hipster 2026.10 is out today as the newest six-month update to this operating system based on Illumos and with the lineage tracing back to the fruitful Sun OpenSolaris days...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/GNU-Automake-1.20">Automake 1.20 Brings New Features, Desires To Re-Establish GNU As Leading Build System</a></strong><br />
+  摘要：Out today is GNU Automake 1.20 with the new --enable-jobserver option and opting for GPLv3+ licensing...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/HyprBSD">HyprBSD Provides Wayland-Based Desktop Built Atop FreeBSD, Complete With Steam Gaming</a></strong><br />
+  摘要：While FreeBSD has been working to improve its desktop and laptop experience, that work isn't yet shipping in released form for the OS installer and other ongoing efforts. Now there's a new desktop FreeBSD distribution on the scene with HyprBSD providing a Wayland-based desktop experience and with the Linux binary compatibility layer even an easy route to gaming with Steam...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Kmorph-Linux-Crash-Recovery">Kmorph Aims To Provide Rebootless Linux Kernel Crash Recovery</a></strong><br />
+  摘要：Kmorph aims to provide reboot-less kernel crash recovery for Linux systems and can yield as little as ~2 second downtime for recovering the Nginx web server or other important services in the case of a kernel crash...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/KDE-Plasma-6.9-Leak-Desktop">KDE Plasma 6.9 Will Stop Leaking Memory When Right Clicking Files/Folders On Desktop</a></strong><br />
+  摘要：With Plasma 6.8 stable approaching one month old, KDE developers continue ramping up work toward Plasma 6.9. Here is some of the interesting work they've been up to so far in November...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Vulkan-1.4.368">Vulkan 1.4.368 Released With New Extensions From Valve &amp; NVIDIA</a></strong><br />
+  摘要：Vulkan 1.4.368 is out as the newest weekly spec update for this high performance graphics and compute API...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Azure-Linux-3.0.2022">Microsoft's Azure Linux 3.0.2022 Ships With More Than 470 Security Fixes</a></strong><br />
+  摘要：Microsoft released Azure Linux 3.0.2022 on Friday night as the newest version of their in-house Linux distribution. Given the rampant AI/LLM-fueled bug reporting and security research, Azure Linux 3.0.2022 ends up incorporating more than 470 security fixes for different CVEs across the many open-source projects making up Azure Linux...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Asahi-Linux-7.3-Report">Asahi Linux Makes Progress On Gaming, More Apple Silicon Upstreaming</a></strong><br />
+  摘要：Given the recent Linux 7.3 upstream kernel release, the Asahi Linux project published a new status report to outline recent code they have upstreamed to the mainline kernel as well as other efforts taking shape in their downstream codebase...</p>
+</li>
+</ul>
+<h2>The New Stack</h2>
+<ul>
+<li>
+<p><strong><a href="https://thenewstack.io/scale-ai-code-reviews/">How we review 4x more AI code without reading every line</a></strong><br />
+  摘要：Do you need to read every line of AI-generated code to trust it?&#160; Not necessarily. Instead, check five things: the The post How we review 4x more AI code without reading every line appeared first on The New Stack .</p>
+</li>
+<li>
+<p><strong><a href="https://thenewstack.io/engineers-become-process-engineers/">In the software factory, engineers become process engineers</a></strong><br />
+  摘要：For most of software&#8217;s history, the scarce resource was people who could write code. Every process the industry built assumed The post In the software factory, engineers become process engineers appeared first on The New Stack .</p>
+</li>
+<li>
+<p><strong><a href="https://thenewstack.io/kiro-bots-agent-memory/">Why AWS wants developers to stop babysitting their AI agents</a></strong><br />
+  摘要：AWS first introduced Kiro, its agentic, spec-driven development environment, in July 2025. It also introduced Kiro Crew in August of The post Why AWS wants developers to stop babysitting their AI agents appeared first on The New Stack .</p>
+</li>
+</ul>
+<h2>CNCF Blog</h2>
+<ul>
+<li><strong><a href="https://www.cncf.io/blog/2026/11/07/we-organized-sustainability-month-heres-what-we-learned-%f0%9f%8c%b1/">We organized Sustainability Month. Here’s what we learned. 🌱</a></strong><br />
+  摘要：What do Kubernetes resource allocation, eBPF, carbon observability, and GPUs have in common? Quite a lot, actually. Especially when you start looking at them through the lens of environmental sustainability. This October, we brought these conversations...</li>
+</ul>
+<h2>Ars Technica</h2>
+<ul>
+<li>
+<p><strong><a href="https://arstechnica.com/science/2026/11/the-migration-that-transformed-africas-languages-genes-and-cultures/">The Bantu expansion changed Africa. Scientists are still tracing how.</a></strong><br />
+  摘要：Genes and archaeology are revealing how Bantu speakers spread across much of Africa.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/security/2026/11/british-soldier-ignored-order-to-pull-his-sim-card-then-got-blackmailed/">British soldier ignored order to pull his SIM card, then got blackmailed</a></strong><br />
+  摘要：Soldier told repeatedly to lock down devices before deploying, got sextorted, court-martialed.</p>
+</li>
+</ul>
+<h2>LWN.net</h2>
+<ul>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1105936/">Asahi Linux 7.3 progress report</a></strong><br />
+  摘要：The Asahi Linux developers have put out a new report on their progress toward a Linux distribution for Apple devices. Some time ago, we were made aware of multiple attempts to exploit our permissive licensing to hijack our work, with a direct view to replacing the project and aggressively monetising Linux on Apple Silicon. In some extreme cases, in-development feature code was being lifted straight out of our personal forks and published without attribution or lazily rewritten with LLM assistance to obfuscate its origin. The MIT licence explicitly allows this, and has no carveouts to protect against bad faith actors. As such, we made the difficult decision to begin the process of transitioning all of our repositories to the GNU General Public License version 2 or later. Going forward all A…</p>
+</li>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1105934/">Amutable Foundations: A Technical Overview</a></strong><br />
+  摘要：Lennart Poettering, Michael Vogt, and Joaquim Rocha have put together a detailed overview of what the Amutable Operating System (AOS) and associated infrastructure will look like. The image-based OS approach enables us to enforce some very strict but powerful security properties, which elevate the security posture of the system substantially above traditional Linux systems. Specifically, let's highlight seven major essential security properties of AOS here: No Shell + No SSH + No Language Interpreters . By default AOS does not install a UNIX shell, nor makes remote access via SSH available on the nodes. Moreover, we do not install any of the usual language interpreters (Python, Perl, …) by default. For most nodes a shell or interpreted language support is not required and it removes a whol…</p>
+</li>
+</ul>
+<h2>Linux Weekly News (RSS)</h2>
+<ul>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1105936/">Asahi Linux 7.3 progress report</a></strong><br />
+  摘要：The Asahi Linux developers have put out a new report on their progress toward a Linux distribution for Apple devices. Some time ago, we were made aware of multiple attempts to exploit our permissive licensing to hijack our work, with a direct view to replacing the project and aggressively monetising Linux on Apple Silicon. In some extreme cases, in-development feature code was being lifted straight out of our personal forks and published without attribution or lazily rewritten with LLM assistance to obfuscate its origin. The MIT licence explicitly allows this, and has no carveouts to protect against bad faith actors. As such, we made the difficult decision to begin the process of transitioning all of our repositories to the GNU General Public License version 2 or later. Going forward all A…</p>
+</li>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1105934/">Amutable Foundations: A Technical Overview</a></strong><br />
+  摘要：Lennart Poettering, Michael Vogt, and Joaquim Rocha have put together a detailed overview of what the Amutable Operating System (AOS) and associated infrastructure will look like. The image-based OS approach enables us to enforce some very strict but powerful security properties, which elevate the security posture of the system substantially above traditional Linux systems. Specifically, let's highlight seven major essential security properties of AOS here: No Shell + No SSH + No Language Interpreters . By default AOS does not install a UNIX shell, nor makes remote access via SSH available on the nodes. Moreover, we do not install any of the usual language interpreters (Python, Perl, …) by default. For most nodes a shell or interpreted language support is not required and it removes a whol…</p>
+</li>
+</ul>
+<h2>Kernel.org</h2>
+<ul>
+<li>
+<p><strong><a href="https://www.kernel.org/">7.3.3: stable</a></strong><br />
+  摘要：Version: 7.3.3 (stable) Released: 2026-11-06 Source: linux-7.3.3.tar.xz PGP Signature: linux-7.3.3.tar.sign Patch: full ( incremental ) ChangeLog: ChangeLog-7.3.3</p>
+</li>
+<li>
+<p><strong><a href="https://www.kernel.org/">6.18.62: longterm</a></strong><br />
+  摘要：Version: 6.18.62 (longterm) Released: 2026-11-06 Source: linux-6.18.62.tar.xz PGP Signature: linux-6.18.62.tar.sign Patch: full ( incremental ) ChangeLog: ChangeLog-6.18.62</p>
+</li>
+<li>
+<p><strong><a href="https://www.kernel.org/">6.12.116: longterm</a></strong><br />
+  摘要：Version: 6.12.116 (longterm) Released: 2026-11-06 Source: linux-6.12.116.tar.xz PGP Signature: linux-6.12.116.tar.sign Patch: full ( incremental ) ChangeLog: ChangeLog-6.12.116</p>
+</li>
+<li>
+<p><strong><a href="https://www.kernel.org/">6.6.162: longterm</a></strong><br />
+  摘要：Version: 6.6.162 (longterm) Released: 2026-11-06 Source: linux-6.6.162.tar.xz PGP Signature: linux-6.6.162.tar.sign Patch: full ( incremental ) ChangeLog: ChangeLog-6.6.162</p>
+</li>
+<li>
+<p><strong><a href="https://www.kernel.org/">6.1.192: longterm</a></strong><br />
+  摘要：Version: 6.1.192 (longterm) Released: 2026-11-06 Source: linux-6.1.192.tar.xz PGP Signature: linux-6.1.192.tar.sign Patch: full ( incremental ) ChangeLog: ChangeLog-6.1.192</p>
+</li>
+<li>
+<p><strong><a href="https://www.kernel.org/">5.15.225: longterm</a></strong><br />
+  摘要：Version: 5.15.225 (longterm) Released: 2026-11-06 Source: linux-5.15.225.tar.xz PGP Signature: linux-5.15.225.tar.sign Patch: full ( incremental ) ChangeLog: ChangeLog-5.15.225</p>
+</li>
+<li>
+<p><strong><a href="https://www.kernel.org/">5.10.274: longterm</a></strong><br />
+  摘要：Version: 5.10.274 (longterm) Released: 2026-11-06 Source: linux-5.10.274.tar.xz PGP Signature: linux-5.10.274.tar.sign Patch: full ( incremental ) ChangeLog: ChangeLog-5.10.274</p>
+</li>
+<li>
+<p><strong><a href="https://www.kernel.org/">next-20261105: linux-next</a></strong><br />
+  摘要：Version: next-20261105 (linux-next) Released: 2026-11-05</p>
+</li>
+<li>
+<p><strong><a href="https://www.kernel.org/">7.4-rc1: mainline</a></strong><br />
+  摘要：Version: 7.4-rc1 (mainline) Released: 2026-11-01 Source: linux-7.4-rc1.tar.gz Patch: full</p>
+</li>
+<li>
+<p><strong><a href="https://www.kernel.org/">7.2.15: stable</a></strong><br />
+  摘要：Version: 7.2.15 (EOL) (stable) Released: 2026-11-01 Source: linux-7.2.15.tar.xz PGP Signature: linux-7.2.15.tar.sign Patch: full ( incremental ) ChangeLog: ChangeLog-7.2.15</p>
+</li>
+</ul>
+<h2>Kubernetes Blog</h2>
+<ul>
+<li>
+<p><strong><a href="https://kubernetes.io/blog/2026/10/14/tracing-kueue-admission-with-headlamp/">Why Is My Kubernetes Job Still Pending? Tracing Kueue Admission with Headlamp</a></strong><br />
+  摘要：You submit a Kubernetes Job and wait for its Pods to appear. A minute passes. Then another. The Job is still suspended, there are no application logs, and there may not even be a Pod to inspect. In a cluster managed by Kueue , this can be completely normal. Kueue may still be deciding whether the Job can use the requested resources. The useful question is not only “Why is the Pod pending?” It is first “Has Kueue admitted the Workload?” The Kueue plugin for Headlamp brings that investigation into the Headlamp UI. Instead of reconstructing the admission path from several commands and large YAML objects, you can begin with the Workload, read its condition message, and follow links through the LocalQueue, ClusterQueue, ResourceFlavor, and Cohort. This article follows that Headlamp-first path. …</p>
+</li>
+<li>
+<p><strong><a href="https://kubernetes.io/blog/2026/09/14/csi-changed-block-tracking-beta/">Kubernetes Changed Block Tracking API - Beta Differences</a></strong><br />
+  摘要：Changed Block Tracking (CBT) support for CSI drivers shipped as Alpha in September 2025. With the March 2026 v1.0.0 release of the external-snapshot-metadata project, the feature moved to Beta . If you aren't yet familiar with changed block tracking for storage in Kubernetes, the Alpha announcement covers the motivation, the three primary components (the CSI SnapshotMetadata gRPC service, the SnapshotMetadataService CRD, and the external-snapshot-metadata sidecar), and a walkthrough of how to use the API. CBT currently applies to block volumes; file-volume and network file-share changed-list tracking is not covered by this feature. This post focuses on what is different in Beta. What's new in Beta The main change in that release was the promotion of the SnapshotMetadataService CRD from v1a…</p>
+</li>
+<li>
+<p><strong><a href="https://kubernetes.io/blog/2026/09/14/kubernetes-v1-37-memory-qos-graduates-to-beta/">Kubernetes v1.37: Memory QoS Graduates to Beta</a></strong><br />
+  摘要：Memory QoS has graduated to Beta in Kubernetes v1.37 and is now enabled by default. On Linux nodes running cgroup v2, the feature uses the memory controller to give the kernel better guidance on how to treat container memory. It was first introduced as Alpha in v1.22, and expanded in v1.36 with tiered memory reservation. This post covers what changed in v1.37, what the Beta promotion means for cluster operators, and how to configure the feature. What changed in v1.37 Memory QoS is Beta and enabled by default The MemoryQoS feature gate is now Beta in v1.37. This means every v1.37 kubelet has the feature gate turned on without any configuration change. Turning on the feature by default is safe because the default kubelet configuration does not enable memory throttling or memory reservation. …</p>
+</li>
+<li>
+<p><strong><a href="https://kubernetes.io/blog/2026/09/08/kubernetes-v1-37-advancing-workload-aware-scheduling/">Kubernetes v1.37: Advancing Workload-Aware Scheduling</a></strong><br />
+  摘要：AI/ML and complex batch workloads continue to push the boundaries of Kubernetes scheduling. Following the foundational workload-centric enhancements introduced in previous releases, Kubernetes v1.37 delivers the next major milestone in the Workload-Aware Scheduling (WAS) journey. In this release, the core Workload and PodGroup APIs—enabling gang scheduling—along with Workload-Aware Preemption (WAP) and shared DRA ResourceClaims for PodGroups, all graduate to Beta, solidifying their role in the Kubernetes ecosystem. To address the hierarchical scheduling requirements of modern high-performance distributed workloads, v1.37 introduces the new CompositePodGroup API. This new API allows expressing multi-level topology constraints, gang scheduling, and preemption policies for complex, heterogene…</p>
+</li>
+</ul>
+<hr /></div>
+  </main>
+</body>
+</html>
