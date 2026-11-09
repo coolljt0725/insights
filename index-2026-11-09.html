@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OS 领域每日洞察 - 2026-11-09</title>
+  <style>
+    :root {
+      --bg: #f6f4f0;
+      --bg-bar: #ebe8e3;
+      --bg-card: #fffefb;
+      --bg-card-hover: #f5f3ef;
+      --text: #2d2a26;
+      --text-muted: #5c5852;
+      --text-dim: #7a756e;
+      --accent: #5a7a9e;
+      --border: #ddd9d2;
+      --radius: 10px;
+      --font: "Segoe UI", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      font-size: 15px;
+    }
+
+    /* 门户顶栏 */
+    .masthead {
+      background: var(--bg-bar);
+      border-bottom: 1px solid var(--border);
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 0;
+    }
+    .masthead-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .masthead h1 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin: 0;
+      letter-spacing: -0.02em;
+      color: var(--text);
+    }
+    .masthead .meta {
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+    }
+
+    /* 主内容区：多栏门户布局 */
+    .main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 3rem;
+    }
+
+    /* 板块：每个 h2 为一个频道块 */
+    .content .section {
+      margin-bottom: 2.5rem;
+    }
+    .content h2 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+      margin: 0 0 1rem;
+      padding: 0.6rem 1rem;
+      background: var(--bg-bar);
+      border-radius: var(--radius);
+      border-left: 4px solid var(--accent);
+    }
+    .content h2:first-child { margin-top: 0; }
+
+    .content h2:has(+ h3) {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      border-left-color: var(--text-dim);
+    }
+
+    /* 板块内卡片网格（每个 h2 后的 ul） */
+    .content h2 + ul {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1rem;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .content h2 + ul li {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.15rem 1.2rem;
+      transition: background .15s, border-color .15s;
+    }
+    .content h2 + ul li:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--text-dim);
+    }
+    .content h2 + ul li strong {
+      display: block;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+      line-height: 1.4;
+    }
+    .content h2 + ul li p {
+      margin: 0 0 0.5rem;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.58;
+    }
+    .content h2 + ul li p:last-of-type { margin-bottom: 0; }
+    .content h2 + ul li a[href^="http"] {
+      font-size: 0.8125rem;
+      color: var(--accent);
+    }
+    .content h2 + ul li a[href^="http"]:hover { text-decoration: underline; }
+
+    .content .ref-section {
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+    .content h2 + h3 { margin-top: 1.25rem; }
+    .content h3 {
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--text-dim);
+      margin: 1rem 0 0.4rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .content h3 + ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 0.25rem;
+    }
+    .content h3 + ul li {
+      background: transparent;
+      border: none;
+      padding: 0.2rem 0;
+      font-size: 0.8125rem;
+    }
+    .content h3 + ul li strong { font-size: inherit; margin-bottom: 0; }
+    .content h3 + ul li a { color: var(--accent); }
+    .content h3 + ul li a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <header class="masthead">
+    <div class="masthead-inner">
+      <h1>OS 领域每日洞察 - 2026-11-09</h1>
+      <span class="meta">2026-11-09 05:01 UTC</span>
+    </div>
+  </header>
+  <main class="main">
+    <div class="content"><h1>OS 领域每日洞察 - 2026-11-09</h1>
+<p>（Gemini 未可用时，以下为按来源整理的条目，含<strong>新闻摘要</strong>与链接；摘要可能为原文语言。）</p>
+<h2>arXiv (cs.OS)</h2>
+<ul>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2611.08496">MobiInfer: Accelerating On-Device GUI Agents with Workload-Aware Inference</a></strong><br />
+  摘要：arXiv:2611.08496v1 Announce Type: new Abstract: Mobile GUI agents assist users in executing phone tasks through iterative observe-reason-act loops. However, deploy ing multimodal GUI agents directly on smartphones is challenging due to strict end-to-end latency requirements and significant memory overhead. We observe that GUI-agent work loads exhibit recurring workflows and structured I/O: their prompts contain reusable context, while their outputs follow fixed schemas with phase-dependent predictability. Based on this observation, we present MobiInfer, a workload-aware inference engine for on-device multimodal GUI agents. MobiInfer combines trajectory-aware prefix reuse, phase-indexed vocabulary specialization, and schema-guided speculative decoding to eliminate redundant prefill computat…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2611.08508">MeshRT: Compile-Time Governed Wafer-Scale Runtime for Low-Latency High-Throughput Inference</a></strong><br />
+  摘要：arXiv:2611.08508v1 Announce Type: new Abstract: Wafer-scale accelerators promise ultra-low-latency AI inference, but current system stacks still carry an unsustainably high cost premium. The reason is that many current and emerging inference techniques, such as batching and MoE, introduce runtime dynamism that existing wafer-scale systems cannot support efficiently. As a result, they must choose between two unsatisfactory options: accept suboptimal latency, or preserve low latency by restricting dynamic techniques, thereby limiting the models they can support and reducing aggregate throughput. This tradeoff significantly increases the cost of low-latency serving. We present MeshRT, the first wafer-scale system to achieve both ultra-low latency and high throughput for LLM inference. MeshRT …</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2611.08509">MorphSched: Workload-Aware Adaptive Scheduler Generation for Linux</a></strong><br />
+  摘要：arXiv:2611.08509v1 Announce Type: new Abstract: Modern Linux scheduling increasingly requires workload-specific policies to meet the dynamic performance needs of heterogeneous applications. The recent sched_ext framework enables custom BPF schedulers, but building practical policies still requires coordinating Rust user-space control logic, BPF scheduling callbacks, generated user-kernel interfaces, and strict eBPF verifier constraints. This paper presents MorphSched, an LLM-driven system for synthesizing complete Rust+BPF sched_ext schedulers. MorphSched profiles target workloads under Linux EEVDF to construct dynamic, workload-specific optimization objectives, and uses a scaffold-constrained generation pipeline to translate scheduling intent into deployable scheduler implementations. To …</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2611.08511">Akira: Towards Operating System Architecture for Agile Specialization</a></strong><br />
+  摘要：arXiv:2611.08511v1 Announce Type: new Abstract: Operating Systems (OS) specialization tailors abstractions and privileges to specific use cases, enabling configurable tradeoffs between performance and isolation. However, increasing application diversity makes low-cost and non-invasive agile specialization challenging. First, modular OS designs decompose the system into components and reduce coupling, but lack abstractions separating component implementations from OS configuration. Second, diverse workloads require different isolation strengths, yet existing OSs largely fix isolation models at design time, making isolation adaptation changes costly and invasive. To address these, we present Akira, an OS architecture that enables efficiently adapt OS composition and isolation. Akira introduc…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2611.08516">Aegis OS: A Transactional Multi-Tenant Operating System Runtime for Eliminating Authorization Fatigue in Autonomous Coding Agents</a></strong><br />
+  摘要：arXiv:2611.08516v1 Announce Type: new Abstract: Autonomous coding agents such as Google Antigravity (agy), Anthropic Claude Code (claude), and OpenAI Codex CLI (codex) execute multi-step software engineering workflows on workstations and cloud hosts. Existing agent environments face a Security-Autonomy Dilemma: operators must choose between per-action confirmation prompts, which interrupt workflows on 45%-57% of tool calls and induce authorization fatigue, or unconfined execution (--yolo / --dangerously-skip-permissions), which exposes host files, SSH/cloud credentials, and API tokens to prompt injection and hallucination risks. Furthermore, concurrent agents editing a shared working tree clobber one another's changes, while passing large artifacts inline through LLM context windows incurs…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2611.08638">MORTIS: Compiler-Guided KV-Cache Management for LLM Agent Programs</a></strong><br />
+  摘要：arXiv:2611.08638v1 Announce Type: new Abstract: Existing agent serving systems divide each prompt into a reusable prefix and an opaque suffix, managing the KV-cache at this coarse granularity without distinguishing the components within each part. We observe that prompt components differ in which LLM calls share their values and how long those values remain reusable, a property we term intra-prompt heterogeneity. Our key insight is that, in frameworks that generate prompts from typed LLM function calls, these components correspond to program variables, allowing compiler analysis to recover their sharing patterns and lifetimes. We present MORTIS, a compiler-serving co-design that combines this analysis with runtime observations to improve KV-cache management. MORTIS reorders prompt componen…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2512.24637">Towards Fully-fledged GPU Multitasking via Proactive Memory Scheduling</a></strong><br />
+  摘要：arXiv:2512.24637v3 Announce Type: replace Abstract: Limited HBM capacity has become the primary bottleneck for hosting a growing number of increasingly larger-scale GPU tasks. While demand paging extends capacity via host DRAM, it can incur order-of-magnitude slowdowns due to the massive working sets of GPU workloads. However, we observe that GPU memory accesses are inherently predictable from kernel launch arguments, prior executions, and the asynchronous execution nature. Leveraging this opportunity, we propose MSched, an OS-level scheduler that extends GPU context switching to include proactive working set preparation. This approach coalesces fragmented, eventual, and expensive page faults into a single efficient migration. MSched combines parameterized templates with page fault feedbac…</p>
+</li>
+</ul>
+<h2>arXiv (cs.LG)</h2>
+<ul>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2611.08490">FasterRW: An Efficient Prior-Assisted Random Walk Solver for Thermal Analysis</a></strong><br />
+  摘要：arXiv:2611.08490v1 Announce Type: new Abstract: Thermal simulation is becoming increasingly critical in modern IC design and manufacturing. Feynman--Kac random walk methods can estimate localized temperatures without solving the global field, but in practical settings without Dirichlet boundaries they require very long paths to control the truncation residual. This paper presents FasterRW, a continuation-value framework for accelerating Feynman--Kac thermal random walks. We prove a stopping-time residual identity showing that the expected tail after truncation equals the current attenuation weight multiplied by the temperature at the stopping location. This identity enables a prior-corrected single-point estimator: a cheap, noisy prior replaces the unknown continuation value, making the tr…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2611.08494">Embedding Consistent Recurrent Neural Networks in Finite Element Simulations for Path-Dependent Damage Prediction</a></strong><br />
+  摘要：arXiv:2611.08494v1 Announce Type: new Abstract: Capturing sheet-metal localisation physics with a trained surrogate inside a finite element (FEM) solver requires the surrogate to deliver consistent predictions irrespective of the solver's strain-increment count, which is difficult to control in non-linear explicit codes. We address this by re-implementing a trained recurrent neural network (RNN) damage criterion in Fortran and embed it as a live, increment-by-increment fracture criterion inside an Abaqus/Explicit user material subroutine (VUMAT), advancing the network state alongside the solver. Two architectures are compared: a SimpleRNN and the proposed Consistent RNN (ConsRNN), whose transition function is designed so that predictions converge as the strain path is refined rather than d…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2611.08495">Rethinking Data Selection as Distribution Matching on Semantic Manifolds</a></strong><br />
+  摘要：arXiv:2611.08495v1 Announce Type: new Abstract: Instruction tuning of large language models and large vision language models relies on massive training data, which incurs substantial computational and storage costs. Meanwhile, training data often contains redundancy, noise, and low quality samples. Existing data selection methods mostly rely on diversity, importance, or a combination of both, without explicitly constraining the distributional consistency between the selected subset and the full data in the embedding space. We propose QMAC, a quality aware multiband characteristic function matching method that formulates data selection as a joint optimization problem of distribution matching and quality filtering. QMAC matches the empirical characteristic functions of the selected subset an…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2611.08499">Generative Reconstruction of Full-Field Sensor States for Safety-Critical Digital Twins</a></strong><br />
+  摘要：arXiv:2611.08499v1 Announce Type: new Abstract: Accurate reconstruction of incomplete sensor fields is critical for state awareness in safety-critical digital twins (DTs). Thermocouples in high-temperature and radiation environments may drift, fail, or become intermittently unavailable, causing partial observability. This study develops a sparse-sensor reconstruction framework for Oregon State University's High Temperature Test Facility (HTTF) and evaluates six methods under intra- and inter-experiment protocols: three conditional generative models (i.e., a diffusion model [DM], variational autoencoder [VAE], and generative adversarial network [GAN]), two deterministic recurrent neural-network models, and ridge regression. For intra-experiment reconstruction within the PG{-}29 depressurize…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2611.08500">Adaptive Depth Aggregation in Graph Transformers for Long-Range Graph Reasoning</a></strong><br />
+  摘要：arXiv:2611.08500v1 Announce Type: new Abstract: Graph Transformers improve long-range node-to-node communication through global or structure-aware interactions. However, improving cross-node communication does not determine how computations produced at different depths should be combined. Standard residual streams accumulate successive computations with fixed unit coefficients shared across nodes. This fixed aggregation is a residual-interface constraint: once intermediate contributions have been produced, the interface cannot explicitly reweight them by node. We hypothesize that this constraint can create a depth-wise aggregation mismatch when the relative utility of these intermediate contributions varies across nodes and structural contexts. To study this hypothesis, we formalize Graph …</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2611.08502">Emergent Low-Dimensional Topological Dynamics Dictate Generalization and Escape Mechanics in Billion-Parameter Neural Networks</a></strong><br />
+  摘要：arXiv:2611.08502v1 Announce Type: new Abstract: The remarkable generalization of modern over-parameterized neural networks defies classical statistical learning bounds. Here we establish that optimization trajectories in billion-parameter models do not sample the ambient dimension $\mathbb{R}^N$ homogeneously; instead, they are dynamically constrained to a low-dimensional execution submanifold $\mathcal{M}<em _text_eff="\text{eff">{\text{exec}}$ (with empirically observed effective dimension $d</em>$ and analyzing stochastic Langevin diffusion on loss sublevel sets, we derive a rigorous Topological Generalization Bound grounded in projected subspace persistent homology. Furtherm…}} \le 12$). By equipping the parameter space with a regularized Hessian metric $g_{ij} = \nabla_i \nabla_j L + \epsilon \delta_{ij</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2611.08507">Does Country Matter? Evaluating Geographic Sensitivity of Large Language Models in Zero-Shot Chronic Kidney Disease Screening</a></strong><br />
+  摘要：arXiv:2611.08507v1 Announce Type: new Abstract: Large language models (LLMs) show strong zero-shot reasoning capabilities, yet their sensitivity to prompt context raises questions about reliability in deployment. This study investigates whether geographic context embedded in prompts influences LLM-based chronic kidney disease (CKD) screening, independent of any change in patient features. Using a community-based CKD dataset from Bangladesh (284 participants with 112 CKD and 172 non-CKD), we systematically varied the country attribute across 25 global contexts while holding all clinical inputs constant, and evaluated two open-weight LLMs (Qwen3 8B and Mistral 7B). Experiments were conducted on a common-correct subset of 156 participants for whom both models produced correct baseline predict…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2611.08512">Interpretable Multifidelity Learning with Kolmogorov-Arnold Networks for Spatiotemporal Nuclear Reactor Flow Modeling</a></strong><br />
+  摘要：arXiv:2611.08512v1 Announce Type: new Abstract: High-fidelity computational fluid dynamics (CFD) simulations of nuclear reactor systems are computationally expensive, motivating machine learning methods that reduce cost while preserving accuracy. Multifidelity surrogate modeling addresses this by combining inexpensive low-fidelity data with limited high-fidelity data. This work investigates whether the high-fidelity data required to predict the spatiotemporal mass flow rate across all 193 fuel assemblies of a pressurized water reactor (PWR) core can be reduced, comparing black-box multifidelity feedforward neural networks (MFNNs) with interpretable multifidelity Kolmogorov-Arnold Networks (MFKANs). Cross-fidelity correlation across the core is weak, making this a challenging multifidelity …</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2611.08522">What Are LLM Agents Actually Learning on Low-Budget Molecular Optimization Benchmarks?</a></strong><br />
+  摘要：arXiv:2611.08522v1 Announce Type: new Abstract: Recent work reports large gains for LLM agents on low-budget molecular optimization. We measure the contributions of online optimization, retrievable task information, and permissive oracle landscapes. On PMO at 50 oracle calls, a GPT-4o mini agent's sum AUC falls from 14.44 to 4.85 after task names and curated reference compounds are hidden. An identity-blinded condition that states only the oracle form (e.g., similarity to a hidden reference) scores 5.39, while a deterministic retrieval-only baseline with no LLM reaches 12.16 (84% of the full agent). A full 23-task 2x2 ablation and a three-seed replication on eight tasks support this interpretation. On a protein-targeted benchmark with an AutoDock Vina composite oracle, a single-edit random…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2611.08549">Evolutionary Adaptive Metric Learning: A Multi-Objective Framework for Learning Local Distance Functions in Nearest Neighbor Classification</a></strong><br />
+  摘要：arXiv:2611.08549v1 Announce Type: new Abstract: Nearest neighbour classifiers inherit the geometry of their distance function. Fixed distances and globally learned metrics apply the same geometry throughout the input space, although relevant feature directions may vary across regions. We propose EAML (Evolutionary Adaptive Metric Learning), a framework that learns instance-dependent positive-definite metrics through a low-dimensional parameterization. Each local metric combines an input-dependent diagonal scaling, generated by softmax interpolation between anchor points, with a global low-rank correlation component. A real-coded elitist genetic algorithm optimizes the parameters using a scalar objective combining leave-one-out prediction error, robustness, metric smoothness, and regulariza…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2611.08551">How Small Can We Go? Calibrating Activation-Cache Compression for SAE Training</a></strong><br />
+  摘要：arXiv:2611.08551v1 Announce Type: new Abstract: To train a sparse autoencoder (SAE), you need a massive cache of model activations. We look into the effects that compression has on an SAE in two ways: we keep the original fp32-trained SAE and pass the compressed cache into the same SAE to see how many feature activations stay the same (the frozen-SAE test), and we retrain an SAE on the compressed cache and see how many of the original features still exist (the retraining test). We found that in the retraining test, there is no clear scale for retained features. On a GPT-2 cache, rounding everything to fp16 keeps 60.6% of features, but changing one value in a million by the smallest step fp32 allows (a change eight orders of magnitude smaller) keeps only 70.5%. Meanwhile, changing the rando…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2611.08558">Minimum-Sufficient Knowledge and Computation for Wind Energy Predictive Analysis</a></strong><br />
+  摘要：arXiv:2611.08558v1 Announce Type: new Abstract: Resource-constrained cyber-physical decision systems often apply fixed sensing, knowledge, and computational pipelines despite state-dependent information needs. We introduce Minimum-Sufficient Knowledge and Computation (MSKC), a resource-aware computing principle: select the least-costly route meeting decision-risk and deployment constraints, escalating only when cheaper routes are insufficient. As proof of concept, we isolate adaptive knowledge routing, the decision underlying Knowledge-Guided Machine Learning (KGML), which conventionally injects external knowledge unconditionally rather than only where needed. We instantiate this for wind ramp-event predictive analysis, an edge-oriented decision-support task, evaluating local, relational, …</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2611.08559">PINNeval: A Comprehensive Evaluation Standard for Physics-Informed Neural Networks</a></strong><br />
+  摘要：arXiv:2611.08559v1 Announce Type: new Abstract: The Physics-Informed Neural Network (PINN) literature has produced a rapidly expanding catalogue of methods. We divide a PINN training pipeline systematically into four components and observe that many existing benchmarks study these components in isolation. These components are domain-importance adaptation, loss balancing, neural network architecture, and optimization scheme. Moreover, the studies set the surrounding and not considered components of the pipeline to a minimal default that is no longer representative of current best practice approaches. Conclusions drawn under such conditions may not transfer to competitive pipelines. In this work, we propose a new evaluation protocol that (1) treats the four components as an integrated system…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2611.08569">Not All Misalignment Is Alike: A Decomposed Benchmark for Emergent Misalignment</a></strong><br />
+  摘要：arXiv:2611.08569v1 Announce Type: new Abstract: Emergent misalignment (EM), in which fine-tuning on a narrow task induces misaligned behaviour on unrelated prompts, has been demonstrated across a wide range of datasets, model families, and training setups. Yet, most studies continue to rely on the evaluation approach introduced in the original EM paper, producing rates that are sensitive to the small set of evaluation questions used, the choice of judge, and the thresholds applied. These evaluations can also conflate misalignment with capability loss and offer little insight into the specific ways misalignment manifests. Differences in datasets, models, and fine-tuning configurations further make findings difficult to compare across studies. We introduce EMERGE, a decomposed benchmark that…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2611.08634">Benchmarking Machine Learning for Chaotic Three-Body Dynamics in Astrophysics</a></strong><br />
+  摘要：arXiv:2611.08634v1 Announce Type: new Abstract: Machine learning (ML) and generative AI have recently made impressive progress in understanding physics. We explore a hierarchy of prediction problems stemming from chaotic three-body systems and benchmark existing ML approaches, including general-purpose prediction algorithms and those that build on top of foundational physics models. We first simulate the trajectories of triple systems near the critical boundary of stable/unstable initial conditions. We then design a hierarchy of learning tasks, focusing mainly on two broad problems: stability prediction and trajectory prediction. The former classifies whether a given triple system has diverged or not up to a specific horizon, while the latter predicts the exact trajectory, both given suita…</p>
+</li>
+</ul>
+<h2>arXiv (cs.AI)</h2>
+<ul>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2611.08572">Enhancing Academic Advisement with Case-Based Reasoning</a></strong><br />
+  摘要：arXiv:2611.08572v1 Announce Type: new Abstract: This research involved the study of an application of Case-Based Reasoning (CBR) in the field of academic advising. Academic advisement has been recognised as an important function of higher education. However, there is a widespread desire to improve the advisement services provided by many educational institutions (e.g., colleges and universities) around the world. In the last ten years, CBR expert systems have made important contributions in many domains by applying CBR methodology to a variety of areas of human problem solving. However, to date, expert advisement systems have not been successfully applied to academic advisement, which seems to be a very appropriate domain for this technology. Academic advising is an important and time cons…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2611.08613">NormGym: Evaluating Normative Competence through Social Interaction</a></strong><br />
+  摘要：arXiv:2611.08613v1 Announce Type: new Abstract: Normative competence, the ability to infer socially enforced expectations from interaction and adjust behavior accordingly, is essential for agents operating in unfamiliar human communities. Yet existing evaluations largely test whether agents can recognize or apply norms they may already know, rather than whether they can acquire previously unknown norms from social interaction. We introduce NormGym, an interactive benchmark for normative competence in which a newcomer must infer a hidden, arbitrary norm while pursuing its own task in a multi-agent community. Success requires distinguishing what is possible from what is permitted, inferring the norm from observed behavior and sanctions, and applying it in new situations. NormGym contains div…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2611.08626">LLM-Based Feature Extraction for Multi-Criteria Inventory Classification</a></strong><br />
+  摘要：arXiv:2611.08626v1 Announce Type: new Abstract: E-commerce supply chains generate large volumes of customer feedback and operational data that remain underutilized in inventory management. Traditional inventory classification techniques such as ABC analysis rely primarily on annual dollar usage, while multi-criteria inventory classification (MCIC) methods extend this but still depend on structured quantitative data and do not utilize unstructured information available in modern supply chains. This paper proposes an LLM-based feature extraction approach that transforms unstructured sources such as customer reviews into quantitative features using vector embeddings and LLM-generated evaluation criteria. The enriched feature set is incorporated into an MCIC framework based on the Hadi-Vencheh…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2611.08640">Aspect-wise Pairwise Tournaments for Test-Time Selection</a></strong><br />
+  摘要：arXiv:2611.08640v1 Announce Type: new Abstract: Scaling test-time compute has proven highly effective at improving LLM reasoning. A popular method is best-of-n sampling, where a model generates many candidate solutions and one is selected. This motivates the question: how can we select the best candidate? When humans make choices, we find it more natural to compare two options than judge each in isolation. Additionally, when the options become complex, we like to judge the options one aspect at a time, such as comparing two job candidates on experience, communication, etc. In the test-time setting, candidate solutions should be judged in the same way. Here we introduce Aspect-wise Pairwise Tournaments (APT), which verifies by comparison and compares by aspect. Each matchup of a single elim…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2611.08644">Decision Context: Persistent Behavioral Learning for AI Agents</a></strong><br />
+  摘要：arXiv:2611.08644v1 Announce Type: new Abstract: LLM agents do not learn from corrections across sessions. A user fixes the same mistake at the start of every conversation. Existing agent memory systems primarily handle facts, such as preferences, entities, and conversational history, rather than procedural knowledge. We present Forge Decision Context (forge_dc), a system that captures behavioral signals from human corrections and self-assessed tool-call failures, compiles them into imperative RULE directives, and injects them at the decision points where they apply. We evaluate forge_dc alongside four predecessor approaches on DC-Bench, a new benchmark of 71 scenarios across nine behavioral dimensions, built from real executed agent traces in a deterministic mocked-tool environment. forge_…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2611.08647">IWIBench: Evaluating Gradient-Free Model Driven Intra-weight Injection</a></strong><br />
+  摘要：arXiv:2611.08647v1 Announce Type: new Abstract: Intra-weight injection lets one model change another model's behaviour by editing its weights directly, without gradients. Such edits can range from altering lexical associations to enforcing output formats or updating factual knowledge. Despite growing interest in these approaches, there has been no systematic way to evaluate how well models perform them. We introduce IWIBench, which measures a large editor model's ability to modify the weights of a smaller target model (typically Gemma 3 4B IT) to achieve one of ten classical text-editing objectives while preserving its other capabilities. Editors are limited to four tools for reading and writing weights, with bounded tensor access and a fixed budget for generating and inspecting rollouts. …</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2611.08666">Pdb or Not to Be: Comparing Debugging Interfaces With Pass$_{X}$@$k$</a></strong><br />
+  摘要：arXiv:2611.08666v1 Announce Type: new Abstract: Interactive debuggers are indispensable to human software development, yet coding agents overwhelmingly rely on edit-execute-observe loops, using common bash tools, test scripts, and print statements to debug via repeated shell commands. Stepping through a debugger provides live access to runtime state, which may enable different problem-solving capabilities. However, prior work typically introduces the debugger as an additional tool or through a new subagent, making its individual contribution difficult to isolate from the associated scaffold changes. To address this, we compare a debugger-only agent against a bash-only agent on all 500 SWE-bench Verified instances, holding the rest of the scaffold fixed. We evaluate both architectures on tw…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2611.08669">ChainFlow: Few-Step Latent Flow Matching for Speculative Decoding</a></strong><br />
+  摘要：arXiv:2611.08669v1 Announce Type: new Abstract: Speculative decoding has become a standard way to accelerate LLM inference: a lightweight drafter proposes tokens that the target verifies in one parallel pass. Existing drafters face trade-offs that limits their speedups: autoregressive drafters generate tokens one at a time, so drafting cost grows with draft length, while diffusion drafters generate tokens in parallel but predict each position independently, ignoring inter-token dependencies. We introduce ChainFlow, a new speculative decoding paradigm and the first flow-matching drafter conditioned on the target's hidden states. ChainFlow treats drafting as a short transport over hidden states, needing one or two flow steps instead of the many denoising steps of generation from noise. A var…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2611.08682">Transporting the Past: An Optimal Transport View of Backtracking Counterfactuals</a></strong><br />
+  摘要：arXiv:2611.08682v1 Announce Type: new Abstract: We study backtracking counterfactual inference for Structural Causal Models (SCMs) through the lens of optimal transport. In SCMs, a factual observation generally induces a posterior distribution over exogenous variables, making counterfactual inference inherently distributional. We introduce two complementary frameworks that transport this posterior onto the set of exogenous configurations satisfying a desired counterfactual query. The first constructs a natural pointwise projection and is suitable when the transported exogenous distribution can be used directly. The second enforces mutual independence among counterfactual exogenous variables, so that the transported variables remain interpretable as genuine exogenous noises of the same SCM.…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2611.08684">Cancellation Is Not Enough: What Retries Leave Behind in an Overloaded LLM Engine</a></strong><br />
+  摘要：arXiv:2611.08684v1 Announce Type: new Abstract: Clients and proxies in front of an LLM engine retry calls that time out. After a transient overload, these retries can keep the engine from recovering even when calls arrive below its capacity. Since the engine may keep computing for clients that have left, propagating cancellation looks like the natural remedy. In this paper, we test it on vLLM with overload experiments on three open models, and with scheduler traces of one that follow each client attempt to the execution it creates in the engine. We find that with retries on, cancellation alone did not restore service in any run, and only 12-38% of the calls that arrived after the overload were delivered. The traces suggest why: retries that vLLM ran typically started prefill less than half…</p>
+</li>
+</ul>
+<h2>Hacker News</h2>
+<ul>
+<li>
+<p><strong><a href="https://itsfoss.com/news/asahi-linux-drops-mit-for-gpl/">Asahi Linux Drops MIT, Goes Full GPL After AI Used to Steal Unreleased Code</a></strong><br />
+  摘要：Asahi Linux Drops MIT, Goes Full GPL After AI Used to Steal Unreleased Code</p>
+</li>
+<li>
+<p><strong><a href="https://republicka.life/terminal-velocity.html">Open Source Web Operating System Terminal Velocity</a></strong><br />
+  摘要：Open Source Web Operating System Terminal Velocity</p>
+</li>
+<li>
+<p><strong><a href="https://amirkarimi.dev/blog/2026/11/08/paste-markdown-anywhere-fully-formatted/">Paste Markdown formatted anywhere (Linux)</a></strong><br />
+  摘要：Paste Markdown formatted anywhere (Linux)</p>
+</li>
+<li>
+<p><strong><a href="https://github.com/ozkl/ruxis">Show HN: A kernel written in Rust that can boot Ubuntu with Plasma desktop</a></strong><br />
+  摘要：Ruxis is a kernel written by Opus 5.5 It implements Linux syscalls so that Linux programs can run on it. Currently, x86_64 and arm64 architectures are supported.</p>
+</li>
+<li>
+<p><strong><a href="https://kevinboone.me/cpmzork.html">Playing Zork 1 on a CP/M emulator on Linux (2021)</a></strong><br />
+  摘要：Playing Zork 1 on a CP/M emulator on Linux (2021)</p>
+</li>
+<li>
+<p><strong><a href="https://antisoftworks.com/antifind">Show HN: Search Everywhere at Once. Instantly</a></strong><br />
+  摘要：I&#x27;ve made AntiFind, to allow you to search everywhere at once, vastly increasing the efficiency of LLMs and your own searches: AntiFind indexes filesystems, not folders. It maintains a live view of storage by reading filesystem metadata directly. Because it understands the underlying filesystems, it can search across storage that the operating system is not currently exposing, including unmounted partitions. Allowing you to search for and play media from Linux in your Windows and the other way around. Without mounting the drives. This works on Linux, Windows and MacOS. The underlying idea is simple: instead of walking directories, read the filesystem&#x27;s file tables directly. Most tools discover the filesystem again every time you search. AntiFind reads the drive&#x27;s metadata in…</p>
+</li>
+<li>
+<p><strong><a href="https://respawnfirst.com/linux-script-emails-sam-altman-unused-ram-ram-altman/">RAM Altman: Linux Script Emails Sam Altman Daily How Much Unused RAM in Your PC</a></strong><br />
+  摘要：RAM Altman: Linux Script Emails Sam Altman Daily How Much Unused RAM in Your PC</p>
+</li>
+<li>
+<p><strong><a href="https://nickfa.ro/wiki/Codex_is_my_Linux_Janitor">Codex is my Linux Janitor</a></strong><br />
+  摘要：Codex is my Linux Janitor</p>
+</li>
+<li>
+<p><strong><a href="https://www.i-programmer.info/news/91-hardware/19197-the-esp32-s31-runs-linux.html">The ESP32 S31 Runs Linux</a></strong><br />
+  摘要：The ESP32 S31 Runs Linux</p>
+</li>
+<li>
+<p><strong><a href="http://thelittleengineerthatcould.blogspot.com/2024/04/hidden-dependencies-in-linux-binaries.html">Dependencies in Linux Binaries (2024)</a></strong><br />
+  摘要：Dependencies in Linux Binaries (2024)</p>
+</li>
+<li>
+<p><strong><a href="https://gravitylinux.org/">Linux for Your Mac</a></strong><br />
+  摘要：Linux for Your Mac</p>
+</li>
+</ul>
+<h2>Lobsters</h2>
+<ul>
+<li>
+<p><strong><a href="https://liblisa.nl/sem86/">Sem86: a full-system x86 emulator without hardcoded semantics</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://medium.com/@pia.fak.sunnanbo/i-hate-pull-requests-17836dd3cc38">I Dislike Pull Requests (2020)</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://isocpp.org/files/papers/P4454R0.pdf">Herb Sutter: When a language’s creator and its owners strongly disagree: C++26 post-DIS, historical experience, and paths forward</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://nayak.im/posts/optimizing-reference-deletion/">Optimizing reference deletions in Git</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://www.redox-os.org/news/virtualized-redox/">Virtualized Redox: from Virtio-FS to Cloud Hypervisor, and beyond</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://serd.es///2026/11/08/playing-with-stm32mp2.html">Playing with the STM32MP2</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://lobste.rs/s/umsitb/what_can_i_realistically_do_with_local_ai">What can I realistically do with local AI on a Mac mini M5 Pro (48GB)?</a></strong><br />
+  摘要：I just got a Mac mini with an M5 Pro (base CPU config) and 48GB of unified memory. I want to run as much AI locally as makes sense, but it's hard to separate what actually works day to day from benchmark hype. What I'd like to do: Coding: autocomplete and agentic workflows with local models Image generation Anything else genuinely useful: transcription, RAG over my notes, etc. Questions: Which models and quantizations fit comfortably in 48GB and are actually usable, not just "it runs"? Which runtime and tools: MLX, llama.cpp, Ollama, LM Studio, ComfyUI, something else? What's your setup, and what did you give up on and go back to cloud APIs for? Real tokens/sec numbers and "this was a waste of time" stories are especially welcome.</p>
+</li>
+<li>
+<p><strong><a href="https://jmmv.dev/2026/11/zkeys-intro.html">Unattended reboots with encrypted disks</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://lobste.rs/s/jbdtim/who_wants_crowdsource_llm_scans_articles">Who wants to crowdsource LLM scans of articles submitted to Lobste.rs?</a></strong><br />
+  摘要：Like many of us who value the human side of the web, I am looking for ways to keep slop at bay. It seems like LLM detection technology works reasonably well nowadays, with Pangram as the main provider. It is expensive, though! Assuming pangram scans are trustworthy, and it seems they are, we could create a centralized index of pangram scans of articles. I have already set up a prototype where I publish results of my own pangram scans. I could create more users, each tied to its own API key, so others can contribute with scans as well. This is way more resource efficient than everyone running their own scans. What do you think? Update: since this is receiving quite some attention, let me clarify one thing. I'm not proposing to change Lobste.rs itself. I'm wondering if there are enough peopl…</p>
+</li>
+<li>
+<p><strong><a href="https://amutable.com/blog/systemd-loves-rust">systemd loves Rust</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://maurycyz.com/misc/email/">A bit about email</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://neongd.com/articles/netbsd11-rpi4.gmi">NetBSD 11 desktop on a Raspberry Pi 4</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://noteflakes.com/articles/2026-11-07-introducing-project-steadfast">Introducing Project Steadfast</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://blog.nspawn.org/posts/nspawn-3-0-a-docker-compatible-engine-api-for-systemd-nspawn-containers/">Nspawn 3.0: A Docker-compatible Engine API for systemd-nspawn containers</a></strong><br />
+  摘要：Comments</p>
+</li>
+</ul>
+<h2>Phoronix</h2>
+<ul>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Linux-7.4-rc2-Released">Linux 7.4-rc2 Released With FAT32 Optimization, AMDGPU HDMI 2.2 Improvement</a></strong><br />
+  摘要：Linus Torvalds just released the second weekly release candidate of Linux 7.4 with some notable bug fixes and other changes routed in past the merge window. It's another big one in the AI era...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Linux-7.5-RK3568-AMD-AIE4">Linux 7.5 To Provide More AMD Ryzen AI NPU AIE4 Enablement</a></strong><br />
+  摘要：Even before the Linux v7.4 merge window was over, there were already two pull requests of drm-misc-next material targeting for what will be Linux 7.5. This week already saw the third drm-misc-next pull request of more feature patches targeting this next kernel version...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/AMD-PerfOpt-Tweaks-Linux-7.4">AMD PerfOpt Performance Boosting Code Tweaked For Linux 7.4-rc2</a></strong><br />
+  摘要：Of the many exciting changes in Linux 7.4, one of the exciting out-of-the-box performance improvements is the new "PerfOpt" functionality for AMD SoCs with integrated Radeon graphics. AMD PerfOpt can deliver some nice iGPU performance improvements especially for AI/LLM workloads. With today's Linux 7.4-rc2 kernel release there are a few tweaks to the PerfOpt code in the IOMMU area...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Yunsilicon-Linux-Network-Driver">Yunsilicon Working To Upstream Their High Performance Linux Network Driver</a></strong><br />
+  摘要：Yunsilicon is a Chinese semiconductor startup founded in 2021 that is working on producing high performance networking adapters and DPUs. Over the past month has been their first foray into posting patches to the Linux kernel mailing list and working to get their networking hardware supported by the mainline Linux kernel...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/GCC-17-Ends-Stage-1-Next-Week">GCC 17 Feature Development Ends Next Week</a></strong><br />
+  摘要：How time flies with the GCC 17 feature development set to end next week and transitioning over to a bug fixing focus...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Linux-Fix-BHI-Mitigation-Build">Linux Fixes Faulty Mitigation Selection For BHI Vulnerability</a></strong><br />
+  摘要：This week's batch of x86 fixes have been sent out ahead of the Linux 7.4-rc2 kernel releasing later today...</p>
+</li>
+</ul>
+<h2>The New Stack</h2>
+<ul>
+<li>
+<p><strong><a href="https://thenewstack.io/docusign-ai-engineering-adoption/">Moving from AI adoption to an AI operating model: How Docusign engineering went beyond tool rollout</a></strong><br />
+  摘要：Docusign rolled out AI coding tools across its engineering teams, expecting them to help developers write code faster and do The post Moving from AI adoption to an AI operating model: How Docusign engineering went beyond tool rollout appeared first on The New Stack .</p>
+</li>
+<li>
+<p><strong><a href="https://thenewstack.io/scaling-autonomous-agents-framework/">Scaling an autonomous agent from one team to fifty: A serverless-to-container decision framework</a></strong><br />
+  摘要：QA teams shipping complex products generate test failures around the clock. Every failure needs a bug ticket with steps, screenshots, The post Scaling an autonomous agent from one team to fifty: A serverless-to-container decision framework appeared first on The New Stack .</p>
+</li>
+<li>
+<p><strong><a href="https://thenewstack.io/perplexity-teammates-agent-orchestration/">Perplexity’s AI agents keep working after you close the tab</a></strong><br />
+  摘要：Perplexity&#8217;s new Teammates can coordinate multiple agents, remember where previous sessions left off, and keep working without another prompt. The The post Perplexity’s AI agents keep working after you close the tab appeared first on The New Stack .</p>
+</li>
+</ul>
+<h2>CNCF Blog</h2>
+<ul>
+<li>
+<p><strong><a href="https://www.cncf.io/blog/2026/11/08/lima-v2-3-native-on-windows-vmnet-on-linux-and-menu-tui/">Lima v2.3: Native on Windows, VMnet on Linux, and menu TUI</a></strong><br />
+  摘要：Back in July with v2.2, we added support for Windows guests. On November 6, we shipped v2.3 of Lima and now it runs without extra dependencies on Windows: VMs start through the same Host Compute System...</p>
+</li>
+<li>
+<p><strong><a href="https://www.cncf.io/blog/2026/11/02/the-linkerd-story-the-people-behind-the-service-mesh-a-new-documentary-premieres-at-kubecon-cloudnativecon-north-america-2026/">The Linkerd Story: The People Behind The Service Mesh — A new documentary premieres at KubeCon + CloudNativeCon North America 2026</a></strong><br />
+  摘要：Join CNCF and Buoyant on November 9 in Salt Lake City for the premiere of a new documentary celebrating a decade of Linkerd, the evolution of service mesh technology, and the people who helped make it...</p>
+</li>
+<li>
+<p><strong><a href="https://www.cncf.io/blog/2026/10/27/over-500-golden-kubestronauts-the-evolving-standard-for-cloud-native-mastery/">Over 500 Golden Kubestronauts: The evolving standard for cloud native mastery</a></strong><br />
+  摘要：Since launching the Kubestronaut program at KubeCon Paris in 2024, the community has grown faster than expected. Today, more than 570 professionals have reached an even higher bar: Golden Kubestronaut status. Becoming a standard Kubestronaut is...</p>
+</li>
+</ul>
+<h2>Ars Technica</h2>
+<ul>
+<li><strong><a href="https://arstechnica.com/science/2026/11/physicists-listened-to-electrical-noise-to-crack-a-superconductor-mystery/">Physicists listened to electrical noise to crack a superconductor mystery</a></strong><br />
+  摘要：Tuning in to electronic noise can tell us whether electrons have paired up or not.</li>
+</ul>
+<h2>Kubernetes Blog</h2>
+<ul>
+<li>
+<p><strong><a href="https://kubernetes.io/blog/2026/10/27/announcing-workload-conformance-wg/">Announcing the Workload Conformance Working Group</a></strong><br />
+  摘要：We are excited to announce that the Kubernetes community now has a Workload Conformance Working Group . The working group is writing a shared standard for how workloads behave at runtime on Kubernetes. To get it right, we need input from the people who build those workloads and from the people who run the clusters they're deployed on. Why workloads need a shared standard Certified Kubernetes tests the cluster, and Kubernetes AI Conformance tests whether a cluster can run AI and ML workloads. Nothing comparable exists for the workloads themselves, so cluster operators still check each application by hand before routine maintenance or a Kubernetes upgrade. The problems they find are familiar. A routine node drain is often how you discover that an application can't tolerate disruption. An upg…</p>
+</li>
+<li>
+<p><strong><a href="https://kubernetes.io/blog/2026/09/21/kubernetes-v1-37-pvc-last-used-time/">Kubernetes v1.37: Tracking When a PersistentVolumeClaim Was Last Used (Beta)</a></strong><br />
+  摘要：Kubernetes v1.37 promotes the PersistentVolumeClaimUnusedSinceTime feature gate to Beta (enabled by default). With this feature, the PersistentVolumeClaim (PVC) protection controller adds an Unused condition to each PVC, telling you whether any running pod currently references it — no custom tooling or cross-referencing required. For the API definition of PVC conditions, see the PersistentVolumeClaim API reference . Read on to learn how the Unused condition works and how to use it. Why track PVC usage? In large-scale Kubernetes clusters, it is common for users to create PVCs and then delete the associated pods without cleaning up the storage, because Kubernetes does not automatically delete PVCs when their pods are removed (to protect against accidental data loss). Over time, these orphane…</p>
+</li>
+<li>
+<p><strong><a href="https://kubernetes.io/blog/2026/09/15/kubernetes-v1-37-pod-level-resource-managers-beta/">Kubernetes v1.37: Pod-Level Resource Managers graduated to Beta</a></strong><br />
+  摘要：With the release of Kubernetes v1.37, the Pod-Level Resource Managers feature has graduated to Beta status (disabled by default)! First introduced as an Alpha feature in Kubernetes v1.36 , this enhancement builds on Pod-Level Resources by equipping Kubelet's Topology Manager, CPU Manager, and Memory Manager to use Pod-level resource declarations ( .spec.resources ) directly when making hardware placement decisions. Bringing pod-level resources to node managers Before this feature, obtaining exclusive NUMA-aligned CPU cores or memory for latency-critical applications forced cluster operators into an all-or-nothing choice: assign integer resource requests to every container in the Pod, or forfeit exclusive NUMA alignment entirely. For modern workloads running lightweight sidecars (such as lo…</p>
+</li>
+<li>
+<p><strong><a href="https://kubernetes.io/blog/2026/09/09/kubernetes-v1-37-node-lifecycle-conditions/">Kubernetes v1.37: Introducing Node Lifecycle Conditions</a></strong><br />
+  摘要：Kubernetes has many ways to describe what is happening on a Node. Readiness, taints, Pod state, labels, annotations, and provider-specific APIs each expose part of the picture. What has been missing is a shared, Kubernetes-owned way to say that a Node is draining , undergoing maintenance, or undergoing Graceful Node Shutdown . Kubernetes v1.37 introduces five well-known Node conditions that provide that description: DrainInProgress Drained MaintenancePlanned MaintenanceInProgress GracefulNodeShutdownInProgress The new Node lifecycle conditions Condition What it reports DrainInProgress The Node is actively being drained according to the administrator's chosen drain criteria. Drained The Node has reached the drain criteria selected by the administrator. MaintenancePlanned The Node is expecte…</p>
+</li>
+</ul>
+<hr /></div>
+  </main>
+</body>
+</html>
