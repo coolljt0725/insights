@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OS 领域每日洞察 - 2026-11-12</title>
+  <style>
+    :root {
+      --bg: #f6f4f0;
+      --bg-bar: #ebe8e3;
+      --bg-card: #fffefb;
+      --bg-card-hover: #f5f3ef;
+      --text: #2d2a26;
+      --text-muted: #5c5852;
+      --text-dim: #7a756e;
+      --accent: #5a7a9e;
+      --border: #ddd9d2;
+      --radius: 10px;
+      --font: "Segoe UI", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      font-size: 15px;
+    }
+
+    /* 门户顶栏 */
+    .masthead {
+      background: var(--bg-bar);
+      border-bottom: 1px solid var(--border);
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 0;
+    }
+    .masthead-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .masthead h1 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin: 0;
+      letter-spacing: -0.02em;
+      color: var(--text);
+    }
+    .masthead .meta {
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+    }
+
+    /* 主内容区：多栏门户布局 */
+    .main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 3rem;
+    }
+
+    /* 板块：每个 h2 为一个频道块 */
+    .content .section {
+      margin-bottom: 2.5rem;
+    }
+    .content h2 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+      margin: 0 0 1rem;
+      padding: 0.6rem 1rem;
+      background: var(--bg-bar);
+      border-radius: var(--radius);
+      border-left: 4px solid var(--accent);
+    }
+    .content h2:first-child { margin-top: 0; }
+
+    .content h2:has(+ h3) {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      border-left-color: var(--text-dim);
+    }
+
+    /* 板块内卡片网格（每个 h2 后的 ul） */
+    .content h2 + ul {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1rem;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .content h2 + ul li {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.15rem 1.2rem;
+      transition: background .15s, border-color .15s;
+    }
+    .content h2 + ul li:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--text-dim);
+    }
+    .content h2 + ul li strong {
+      display: block;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+      line-height: 1.4;
+    }
+    .content h2 + ul li p {
+      margin: 0 0 0.5rem;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.58;
+    }
+    .content h2 + ul li p:last-of-type { margin-bottom: 0; }
+    .content h2 + ul li a[href^="http"] {
+      font-size: 0.8125rem;
+      color: var(--accent);
+    }
+    .content h2 + ul li a[href^="http"]:hover { text-decoration: underline; }
+
+    .content .ref-section {
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+    .content h2 + h3 { margin-top: 1.25rem; }
+    .content h3 {
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--text-dim);
+      margin: 1rem 0 0.4rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .content h3 + ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 0.25rem;
+    }
+    .content h3 + ul li {
+      background: transparent;
+      border: none;
+      padding: 0.2rem 0;
+      font-size: 0.8125rem;
+    }
+    .content h3 + ul li strong { font-size: inherit; margin-bottom: 0; }
+    .content h3 + ul li a { color: var(--accent); }
+    .content h3 + ul li a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <header class="masthead">
+    <div class="masthead-inner">
+      <h1>OS 领域每日洞察 - 2026-11-12</h1>
+      <span class="meta">2026-11-12 05:00 UTC</span>
+    </div>
+  </header>
+  <main class="main">
+    <div class="content"><h1>OS 领域每日洞察 - 2026-11-12</h1>
+<p>（Gemini 未可用时，以下为按来源整理的条目，含<strong>新闻摘要</strong>与链接；摘要可能为原文语言。）</p>
+<h2>Hacker News</h2>
+<ul>
+<li>
+<p><strong><a href="https://forge-blog.github.io/posts/linux-kernel-3-month-lookback/">Lessons from 59 Linux Kernel Bug Reports</a></strong><br />
+  摘要：Lessons from 59 Linux Kernel Bug Reports</p>
+</li>
+<li>
+<p><strong><a href="https://www.microsoft.com/en-us/security/blog/2026/11/11/lessons-from-59-linux-kernel-bug-reports/">Lessons from 59 Linux Kernel Bug Reports</a></strong><br />
+  摘要：Lessons from 59 Linux Kernel Bug Reports</p>
+</li>
+<li>
+<p><strong><a href="https://github.com/osigurdson/mib">Show HN: mib – A 300KiB Vim-Style Markdown Scratchpad for Linux / Wayland</a></strong><br />
+  摘要：I tend to make a lot of scratch notes as a way to help me think. These usually don&#x27;t last very long and what does survive usually ends up in a git repo, a wiki or (most often) just gets thrown away. I was using Obsidian for this, but gosh, 4 or 5 Electron processes just for throwaway notes seemed like overkill. Neovim is a better fit but I like it just the way it is for coding and didn&#x27;t want to install any image plug-ins for that. mib is a bit like a basic Vim editor, with a few Obsidian features cherry-picked and a workflow optimized around scratch notes (with just 9 glorious pages - no files or folders to organize). It&#x27;s called &quot;mib&quot; because it is, and always will be under 1MiB (currently &lt; 300KiB). Its a fully local, native app that is smaller than some Java…</p>
+</li>
+<li>
+<p><strong><a href="https://vincent.bernat.ch/en/blog/2026-linux-performance-ipv4-ipv6-route-lookup">Performance evolution of route lookup on Linux</a></strong><br />
+  摘要：Performance evolution of route lookup on Linux</p>
+</li>
+<li>
+<p><strong><a href="https://mars-research.github.io/projects/atmo/">Atmosphere Verified Operating System</a></strong><br />
+  摘要：Atmosphere Verified Operating System</p>
+</li>
+<li>
+<p><strong><a href="https://strandsagents.com/blog/strands-box-linux-sandbox/">Strands Box: open-source agent sandbox for Linux and macOS</a></strong><br />
+  摘要：Strands Box: open-source agent sandbox for Linux and macOS</p>
+</li>
+<li>
+<p><strong><a href="https://github.com/YashwanthKamireddi/Skykeep">Show HN: I Rebuilt iCloud's Apps in Rust for Linux, Windows and Android</a></strong><br />
+  摘要：Show HN: I Rebuilt iCloud's Apps in Rust for Linux, Windows and Android</p>
+</li>
+<li>
+<p><strong><a href="https://itsfoss.com/help-linux-grow/">Ways You Can Help Linux Grow (Even If You Don't Know Coding)</a></strong><br />
+  摘要：Ways You Can Help Linux Grow (Even If You Don't Know Coding)</p>
+</li>
+<li>
+<p><strong><a href="https://kait2en.org/">KaiT2en, Linux on T2 MacBook pros</a></strong><br />
+  摘要：KaiT2en, Linux on T2 MacBook pros</p>
+</li>
+<li>
+<p><strong><a href="https://ptgmedia.pearsoncmg.com/images/9780131865051/downloads/013865056_Dike_book.pdf">User Mode Linux by Jeff Dike [pdf]</a></strong><br />
+  摘要：User Mode Linux by Jeff Dike [pdf]</p>
+</li>
+<li>
+<p><strong><a href="https://github.com/gmkurtzer/ginux">Greg Kurtzer's Ginux is now a userspace kernel</a></strong><br />
+  摘要：Greg Kurtzer's Ginux is now a userspace kernel</p>
+</li>
+</ul>
+<h2>LWN.net</h2>
+<ul>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1105460/">[$] LWN.net Weekly Edition for November 12, 2026</a></strong><br />
+  摘要：Inside this week's LWN.net Weekly Edition: Front : Synaptics patent claims; Git LLM polilcy; Hibernation and lockdown; User namespaces; glibc tunables. Briefs : *sshole; Amutable foundations; Asahi Linux 7.3; OpenIndiana 2026.10; Firefox 160; Quotes; ... Announcements : Newsletters, conferences, security updates, patches, and more.</p>
+</li>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1106903/">Zellij 0.46 released</a></strong><br />
+  摘要：Version 0.46 of the Zellij terminal workspace has been released. This release includes a major addition in Zellij: Zellij is now also a desktop terminal. To run it: zellij terminal . It works on linux, mac and windows. Nothing changes for the normal multiplexer - Zellij can still run inside another terminal. Both sessions are the same and can be shared. Additional features in this release include a GUI settings screen, session previews, and right-click menu. See this walkthrough for more on the 0.46 release.</p>
+</li>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1106901/">In Memoriam: Tim Peters 1952–2026</a></strong><br />
+  摘要：Guido van Rossum conveys the sad (and somewhat delayed) news of the passing of Tim Peters. It's hard to overestimate Tim's influence on Python. He's probably best known for writing the Zen of Python ( PEP 20 ), but to me he was a mentor and language co-designer long before that. Tim found Python not long after its initial release. His first deed was to convince me that Python should support mixed arithmetic between int and float, because most users would expect them to work that way. And he never stopped contributing.</p>
+</li>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1105134/">[$] Additional hardening for the glibc dynamic linker</a></strong><br />
+  摘要：The Node.js project recently had a security vulnerability that affected its Brotli decoder. The bug was a buffer overflow , but the particular way that official Node.js binaries are built for Linux meant that one of the main protections against turning a buffer overflow into remote code execution, address space layout randomization (ASLR) could not be turned on. If ASLR had been enabled, the bug would still be exploitable in theory, but much more difficult to exploit in practice. In response, the GNU C Library (glibc) is considering a new set of tunable settings to allow administrators to forbid programs that do not support ASLR. The new settings, while a welcome hardening measure, may not address the root problem.</p>
+</li>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1106876/">Security updates for Wednesday</a></strong><br />
+  摘要：Security updates have been issued by AlmaLinux (edk2), Debian (openexr, rsyslog, and srt), Fedora (alertmanager, dotnet11.0, gdal, mstflint, nextcloud, python-crate-ingredients, rust-ingredients, rust-pore, rust-pulldown-cmark, rust-rbw, rust-sequoia-sq, rust-siguldry-fedora-autopen, tigervnc, unbound, and zchunk), Gentoo (Brotli, git, and libde265), Mageia (mopidy, python-dulwich, rust-similar3, rclone, and sofia-sip), Oracle (dpdk, edk2, firefox, glibc, kernel, kernel-uek, nodejs-nodemon, nodejs22, nodejs:24, patch, ruby, ruby4.0, squid:4, and thunderbird), Red Hat (.NET 10.0, .NET 11.0, .NET 8.0, .NET 9.0, bind, bind9.16, bind9.18, buildah, c-ares, containernetworking-plugins, delve, flatpak-builder, gcc, gcc-toolset-15-gcc, gcc-toolset-16-gcc, go-fdo-client, go-fdo-server, golang-githu…</p>
+</li>
+</ul>
+<h2>Linux Weekly News (RSS)</h2>
+<ul>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1105460/">[$] LWN.net Weekly Edition for November 12, 2026</a></strong><br />
+  摘要：Inside this week's LWN.net Weekly Edition: Front : Synaptics patent claims; Git LLM polilcy; Hibernation and lockdown; User namespaces; glibc tunables. Briefs : *sshole; Amutable foundations; Asahi Linux 7.3; OpenIndiana 2026.10; Firefox 160; Quotes; ... Announcements : Newsletters, conferences, security updates, patches, and more.</p>
+</li>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1106903/">Zellij 0.46 released</a></strong><br />
+  摘要：Version 0.46 of the Zellij terminal workspace has been released. This release includes a major addition in Zellij: Zellij is now also a desktop terminal. To run it: zellij terminal . It works on linux, mac and windows. Nothing changes for the normal multiplexer - Zellij can still run inside another terminal. Both sessions are the same and can be shared. Additional features in this release include a GUI settings screen, session previews, and right-click menu. See this walkthrough for more on the 0.46 release.</p>
+</li>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1106901/">In Memoriam: Tim Peters 1952–2026</a></strong><br />
+  摘要：Guido van Rossum conveys the sad (and somewhat delayed) news of the passing of Tim Peters. It's hard to overestimate Tim's influence on Python. He's probably best known for writing the Zen of Python ( PEP 20 ), but to me he was a mentor and language co-designer long before that. Tim found Python not long after its initial release. His first deed was to convince me that Python should support mixed arithmetic between int and float, because most users would expect them to work that way. And he never stopped contributing.</p>
+</li>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1105134/">[$] Additional hardening for the glibc dynamic linker</a></strong><br />
+  摘要：The Node.js project recently had a security vulnerability that affected its Brotli decoder. The bug was a buffer overflow , but the particular way that official Node.js binaries are built for Linux meant that one of the main protections against turning a buffer overflow into remote code execution, address space layout randomization (ASLR) could not be turned on. If ASLR had been enabled, the bug would still be exploitable in theory, but much more difficult to exploit in practice. In response, the GNU C Library (glibc) is considering a new set of tunable settings to allow administrators to forbid programs that do not support ASLR. The new settings, while a welcome hardening measure, may not address the root problem.</p>
+</li>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1106876/">Security updates for Wednesday</a></strong><br />
+  摘要：Security updates have been issued by AlmaLinux (edk2), Debian (openexr, rsyslog, and srt), Fedora (alertmanager, dotnet11.0, gdal, mstflint, nextcloud, python-crate-ingredients, rust-ingredients, rust-pore, rust-pulldown-cmark, rust-rbw, rust-sequoia-sq, rust-siguldry-fedora-autopen, tigervnc, unbound, and zchunk), Gentoo (Brotli, git, and libde265), Mageia (mopidy, python-dulwich, rust-similar3, rclone, and sofia-sip), Oracle (dpdk, edk2, firefox, glibc, kernel, kernel-uek, nodejs-nodemon, nodejs22, nodejs:24, patch, ruby, ruby4.0, squid:4, and thunderbird), Red Hat (.NET 10.0, .NET 11.0, .NET 8.0, .NET 9.0, bind, bind9.16, bind9.18, buildah, c-ares, containernetworking-plugins, delve, flatpak-builder, gcc, gcc-toolset-15-gcc, gcc-toolset-16-gcc, go-fdo-client, go-fdo-server, golang-githu…</p>
+</li>
+</ul>
+<h2>Ars Technica</h2>
+<ul>
+<li>
+<p><strong><a href="https://arstechnica.com/gadgets/2026/11/ceo-jensen-huangs-job-is-suddenly-on-the-line-at-nvidia/">CEO Jensen Huang's job is suddenly on the line at Nvidia</a></strong><br />
+  摘要：The FBI is investigating as Nvidia’s board holds urgent talks over Huang’s future.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/tech-policy/2026/11/t-mobile-illegally-imposed-50-gb-cap-on-low-income-home-internet-plan-ny-says/">T-Mobile illegally imposed 50GB cap on low-income home Internet plan, NY says</a></strong><br />
+  摘要：Law requires 25Mbps home Internet. T-Mobile lowers speed to 600Kbps after 50GB cap.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/space/2026/11/anduril-demos-night-vision-sensor-for-tracking-satellites-in-darkness/">Anduril says its first satellite can see adversaries maneuver in orbital night</a></strong><br />
+  摘要："What's unique is it's got a huge dynamic range. We can see things in full dark."</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/space/2026/11/nasa-takes-an-all-hands-on-deck-approach-in-its-return-to-the-moon/">NASA's secret weapon in the lunar space race may be ... procurement reform?</a></strong><br />
+  摘要："The pace that's occurring, and the nature of the procurements, is unprecedented."</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/ai/2026/11/taiwans-chipmaking-giant-tsmc-to-invest-1b-in-anthropic-openai/">Taiwan’s chipmaking giant TSMC to invest $1B in Anthropic, OpenAI</a></strong><br />
+  摘要：Latest example of the AI boom’s circular financing comes as AI trade wobbles.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/tech-policy/2026/11/trump-admin-loses-fight-to-spy-on-random-journalists-linkedin-dms/">Trump admin loses fight to spy on random journalists’ LinkedIn DMs</a></strong><br />
+  摘要：Confidential sources “lifeblood” of free press, court rules in LinkedIn fight.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/gaming/2026/11/big-walk-used-ai-to-fix-a-bug-now-the-indie-gaming-world-is-having-a-reckoning/">Big Walk used AI to fix a bug. Now the indie gaming world is having a reckoning.</a></strong><br />
+  摘要：Any amount of AI coding is too much for many Independent Games Festival judges.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/gadgets/2026/11/apple-is-shuttering-its-28-year-old-online-community-forum/">Apple is shuttering its 28-year-old online community forum</a></strong><br />
+  摘要：Apple has already made the forum read-only.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/science/2026/11/ibm-to-offer-access-to-a-dual-processor-quantum-system-in-2027/">IBM to offer access to a dual-processor quantum system in 2027</a></strong><br />
+  摘要：The company plans on linking two 520-qubit chips before next year is over.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/cars/2026/11/toyota-resurrects-scion-with-right-hand-drive-kei-trucks/">Trump wanted little Kei trucks for America, Toyota makes it happen</a></strong><br />
+  摘要：Does this herald the start of a small car revolution, or is it a meaningless distraction?</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/ai/2026/11/signals-encryption-just-passed-an-ai-powered-mathematical-checkup/">Google DeepMind just mathematically verified key parts of Signal</a></strong><br />
+  摘要：The four-week project hints that AI could make formal verification far more practical.</p>
+</li>
+</ul>
+<h2>Lobsters</h2>
+<ul>
+<li>
+<p><strong><a href="https://lyra.horse/blog/2026/11/disinformation-machine/">How I accidentally became a millionaire</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://andrew-helmer.github.io/permute/">Andrew Kensler's permute(), a function for stateless, constant-time pseudorandom-order array iteration</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://emudhra.com/en/post/certificate-security-incident">eMudhra Statement on Recent Certificate Security Incident</a></strong><br />
+  摘要：See also: https://bugzilla.mozilla.org/show_bug.cgi?id=2083449#c82 Comments</p>
+</li>
+<li>
+<p><strong><a href="https://herecomesthemoon.net/2026/11/cpp26-failed-the-national-bodies/">For the first time, a C++ standard failed to pass the national bodies</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://hugovk.dev/blog/2026/lock-github-actions/">Lock your GitHub Actions</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://danbooru.donmai.us/forum_topics/38685.html">About the downtime and security incident</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://michael.bacarella.com/2026/11/10/false-smoke-alarm-jane-street-datacenter/">How a false smoke alarm almost drowned Jane Street's only NYC datacenter</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://blog.rust-lang.org/2026/11/11/gsoc-2026-results/">Google Summer of Code 2026 results</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://discuss.python.org/t/in-memoriam-tim-peters-1952-2026/110028">In Memoriam: Tim Peters 1952–2026</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://lobste.rs/s/nld6x3/what_are_some_no_ai_apps_companies">What are some "No AI" apps/companies/resources you know of?</a></strong><br />
+  摘要：Hey everyone I'm wondering if there's any useful/helpful list of apps, companies, or resources in general that avoid AI (they don't have to be vocally or openly "anti", but at least explicitly avoid it) that you know of? I'm not looking to start a discussion on what's good/bad or (un)worthy about AI, or who's for/against, just links and/or communities promoting this sentiment/position. For example, https://www.rebeltechalliance.org would be one of those resources. Thank you!</p>
+</li>
+<li>
+<p><strong><a href="https://blog.kate.land/posts/using-voltage-glitching-to-unlock-the-a100/">Using voltage glitching to unleash the A100 in my mining card</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://lobste.rs/s/miyll7/london_meetup_update">London meetup - update</a></strong><br />
+  摘要：Hi, After discovering that the original pub is indeed very busy on Sundays and finally finding a pub that will accept a large table booking, the Lobsters London meetup is now taking place at The Counting House, 50 Cornhill, London EC3V 3PD. We are meeting at 1pm on 15th November. See you there.</p>
+</li>
+<li>
+<p><strong><a href="https://lobste.rs/s/m43bas/how_do_you_actually_self_host_securely">How do you actually self-host securely?</a></strong><br />
+  摘要：I recognize that the title is rather vague, but I'm completely green when it comes to self-hosting, so I figured here would be a good place to ask for some pointers given the discussions I sometimes see happening in the comments. I tried researching first through DDG and Google, but (and I recognize this might be a skill issue) most things I found are either SEO slop or trying to sell/market some service. For some more context and to give a concrete example as to what I'm interested in, I got my hands on a Raspberry Pi which I'd like to use to start tinkering with self-hosting. My main goal would be to host my (static) website on it, potentially adding more things in the future. Some people I asked this question recommended solutions like Cloudflare Tunnels to make it secure, but using suc…</p>
+</li>
+</ul>
+<h2>Phoronix</h2>
+<ul>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/More-Intel-D-Series-Linux-7.5">Intel Continues Enabling The GPU D-Series "Crescent Island" Driver Support For Linux 7.5</a></strong><br />
+  摘要：Intel's intriguing Crescent Island Xe3P-based AI accelerator hardware now known as the Intel GPU D Series continues seeing a lot of Linux kernel driver activity. The upcoming Linux 7.5 kernel is continuing to build out the support for this upcoming hardware...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/review/amd-venice-nvidia-vera">AMD EPYC 9006 Venice vs. NVIDIA Vera Benchmarks For HPC Performance</a></strong><br />
+  摘要：Yesterday in the AMD EPYC 9006 "Venice" SP7 launch testing were reviews of the AMD EPYC 9996 256-core processor as well as the EPYC 9686F 96-core high frequency part. There were hundreds of benchmarks looking at the gen-on-gen performance from EPYC Turin to EPYC Venice as well as against the Intel Xeon 6 Granite Rapids competition. For those wondering about how AMD EPYC Venice is competing with NVIDIA's Vera CPU, this article provides a look at those results for a range of HPC workloads.</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/AMD-GFX13-Initial-Mesa">Initial AMD RDNA5/GFX13 Code Sent Out For Mesa RADV &amp; RadeonSI Drivers</a></strong><br />
+  摘要：After AMD posted GFX13 patches for the AMDGPU Linux driver earlier in the week, today they opened the Mesa merge request for introducing the very primitive GFX13 support for the RADV Vulkan and RadeonSI Gallium3D/OpenGL drivers...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/FreeBSD-Q3-2026-Report">FreeBSD Working To Establish An AI Policy After Polling Developers</a></strong><br />
+  摘要：The FreeBSD Project published its Q3'2026 status report on Tuesday that outlines a number of development initiatives to ongoing work around an AI policy for this BSD operating system...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/AMD-R300g-Better-Shaders-2026">ATI/AMD R300 To R500 GPUs See New 2026 OpenGL Linux Driver Optimizations</a></strong><br />
+  摘要：Over 24 years old, the ATI (AMD) Radeon R300 graphics processors are still seeing improvements in the open-source Linux driver space. Merged to Mesa 27.0-devel this week were a number of shader compiler optimizations for the R300g driver that benefits not only the original R300 series graphics cards but also the R400 and R500 (Radeon X1000 series) too...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/AMD-AOCC-6.0-Released">AMD AOCC 6.0 Brings Zen 6 Optimizations, New "aof" Fortran Compiler, aoc / aoc++ Branding</a></strong><br />
+  摘要：With yesterday's launch availability of the AMD EPYC 9006 "Venice" SP7 processors headlined by the incredibly fast EPYC 9996 and EPYC 9686F processors, AMD also launched AOCC 6.0 as the newest version of their in-house LLVM/Clang-based compiler stack...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Intel-CPU-Microcode-20261110">Intel Releases New CPU Microcode To Fix A Variety Of Functional Issues</a></strong><br />
+  摘要：Intel on Tuesday released the microcode-20261110 package that ships updated CPU microcode binaries for recent Intel Core (Ultra) and Xeon processors. The updated CPU microcode is for Core Gen 13 "Raptor Lake" and newer while on the Xeon server side is for Sapphire Rapids and newer. This is also the first time Clearwater Forest has seen microcode updates...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Haiku-OS-October-2026">Haiku OS Now Has A UFS Driver, Two &amp; Three Finger Tap Gestures</a></strong><br />
+  摘要：The BeOS-inspired Haiku open-source operating system project has seen new work on drivers and other improvements during the course of October...</p>
+</li>
+</ul>
+<h2>The New Stack</h2>
+<ul>
+<li>
+<p><strong><a href="https://thenewstack.io/anthropic-fable-opus-cost/">Anthropic built a model that beats Opus. It recommends Opus anyway.</a></strong><br />
+  摘要：Anthropic just released a coding model that beats Opus 5.5 on two major benchmarks and can complete certain difficult tasks The post Anthropic built a model that beats Opus. It recommends Opus anyway. appeared first on The New Stack .</p>
+</li>
+<li>
+<p><strong><a href="https://thenewstack.io/nvidia-donates-openshell-cncf/">Why Nvidia gave OpenShell to the CNCF</a></strong><br />
+  摘要：Nvidia this week donated OpenShell, its open-source runtime for securing and governing AI agents, to the Cloud Native Computing Foundation. The post Why Nvidia gave OpenShell to the CNCF appeared first on The New Stack .</p>
+</li>
+<li>
+<p><strong><a href="https://thenewstack.io/cloudwatch-accelerated-compute-insights/">Expensive accelerators, no workload-level visibility: Introducing Amazon CloudWatch accelerated compute insights</a></strong><br />
+  摘要：Accelerator bills have become one of the largest lines in the infrastructure budget. GPUs have become the most expensive resource The post Expensive accelerators, no workload-level visibility: Introducing Amazon CloudWatch accelerated compute insights appeared first on The New Stack .</p>
+</li>
+<li>
+<p><strong><a href="https://thenewstack.io/claude-fable-game-demos/">Anthropic’s Claude Fable 5.2 built a shooter in 1 prompt — and it only took 8 hours and $550</a></strong><br />
+  摘要：An Anthropic engineer gave Claude Fable 5.2 one prompt to build a first-person shooter and let it run for eight The post Anthropic’s Claude Fable 5.2 built a shooter in 1 prompt — and it only took 8 hours and $550 appeared first on The New Stack .</p>
+</li>
+<li>
+<p><strong><a href="https://thenewstack.io/aws-emulator-ai-agents/">AWS had its agents build a free and open emulator for AWS. They now maintain it, too.</a></strong><br />
+  摘要：AWS on Wednesday launched an emulator for AWS called AWS Emulator. That, by itself, is interesting and may raise some The post AWS had its agents build a free and open emulator for AWS. They now maintain it, too. appeared first on The New Stack .</p>
+</li>
+<li>
+<p><strong><a href="https://thenewstack.io/mcp-file-upload-extension/">Developers have been hacking around MCP’s file-upload problem for two years. A fix is taking shape.</a></strong><br />
+  摘要：The Model Context Protocol (MCP) has played an instrumental part in connecting AI assistants to external tools and data since The post Developers have been hacking around MCP’s file-upload problem for two years. A fix is taking shape. appeared first on The New Stack .</p>
+</li>
+<li>
+<p><strong><a href="https://thenewstack.io/specialized-ai-agent-workflows/">Why Nitric stopped asking one AI agent to do everything</a></strong><br />
+  摘要：We&#8217;re a team of five engineers, and we used to wake the on-call engineer three or four times a week The post Why Nitric stopped asking one AI agent to do everything appeared first on The New Stack .</p>
+</li>
+<li>
+<p><strong><a href="https://thenewstack.io/coreweave-tests-ai-integrations/">CoreWeave tests AI integrations on its cloud before you migrate</a></strong><br />
+  摘要：Moving an AI workload to another cloud means bringing more than a model and its data. Your serving layer, observability The post CoreWeave tests AI integrations on its cloud before you migrate appeared first on The New Stack .</p>
+</li>
+</ul>
+<h2>CNCF Blog</h2>
+<ul>
+<li>
+<p><strong><a href="https://www.cncf.io/blog/2026/11/11/introducing-cncf-user-groups-long-lived-homes-for-end-user-collaboration/">Introducing CNCF User Groups: Long-lived homes for End User collaboration</a></strong><br />
+  摘要：The CNCF End User Community is launching its User Group Program at KubeCon + CloudNativeCon North America. These are long-lived groups, each built around an industry vertical or problem domain, that serves the common need of...</p>
+</li>
+<li>
+<p><strong><a href="https://www.cncf.io/announcements/2026/11/11/meta-wins-cncf-end-user-case-study-contest-for-accelerating-ai-infrastructure-deployments-from-hours-to-minutes/">Meta Wins CNCF End User Case Study Contest for Accelerating AI Infrastructure Deployments From Hours to Minutes</a></strong><br />
+  摘要：Using Argo CD and Kargo, Meta is building a GitOps platform to streamline application delivery across 100 Kubernetes clusters supporting AI research and inference Key Highlights SALT LAKE CITY – KubeCon + CloudNativeCon North America 2026...</p>
+</li>
+<li>
+<p><strong><a href="https://www.cncf.io/announcements/2026/11/11/cncf-welcomes-adyen-as-platinum-end-user-member-to-advance-open-source-financial-infrastructure/">CNCF Welcomes Adyen as Platinum End User Member to Advance Open Source Financial Infrastructure</a></strong><br />
+  摘要：Operating over 100 Kubernetes clusters across €1.39T in volume, Adyen brings production-scale fintech expertise to CNCF governance and open source projects Key Highlights KUBECON + CLOUDNATIVECON NORTH AMERICA, SALT LAKE CITY – November 11, 2026 –...</p>
+</li>
+<li>
+<p><strong><a href="https://www.cncf.io/blog/2026/11/11/openshell-on-kubernetes-a-guide-for-platform-engineers/">OpenShell on Kubernetes: A guide for platform engineers</a></strong><br />
+  摘要：What OpenShell is AI agents do more than call APIs. They run shells, install packages, read files, and open network connections. Often they act on text they pulled from the internet a minute earlier. So every...</p>
+</li>
+<li>
+<p><strong><a href="https://www.cncf.io/blog/2026/11/11/platform-engineering-needs-to-become-more-humanand-less/">Platform engineering needs to become more human…and less</a></strong><br />
+  摘要：Even my family thinks I’m a little robotic. Logical, linear, sequential, methodical. But hey, I’m an engineer, and that’s part of what makes me good at my job. If I were operating on the same volatile...</p>
+</li>
+</ul>
+<h2>Red Hat Blog</h2>
+<ul>
+<li>
+<p><strong><a href="https://www.redhat.com/en/blog/guide-observability-red-hat-openshift-5">Guide to observability with Red Hat OpenShift 5</a></strong><br />
+  摘要：In Red Hat OpenShift 5, observability, powered by Red Hat OpenShift Lightspeed, transforms cluster management through 3 core capabilities designed to accelerate incident response while maintaining enterprise-grade safety and human control.Autonomous troubleshootingAfter you configure the Alertmanager adapter, Red Hat OpenShift Lightspeed takes it from there: The moment an alert fires, it automatically launches an investigation, functioning like a virtual site reliability engineer (SRE) without requiring a new alerting language. The agent inspects the cluster state, drafts an initial diagnosis,</p>
+</li>
+<li>
+<p><strong><a href="https://www.redhat.com/en/blog/unlocking-next-generation-workloads-whats-new-red-hat-openshift-virtualization-5">Unlocking next-generation workloads: What’s new in Red Hat OpenShift Virtualization 5</a></strong><br />
+  摘要：As organizations navigate rising hypervisor licensing costs, ongoing hardware scarcity and procurement delays, and the race to support AI workloads, IT teams face a difficult balancing act. Red Hat OpenShift Virtualization meets this challenge by giving enterprises a single platform to migrate legacy virtual machines (VMs), optimize physical resources, and adopt cloud-native workflows on their own schedules.The accelerating shift away from legacy virtualization vendors toward open, flexible alternatives has created a new industry standard. In our view, this market evolution is validated by Gar</p>
+</li>
+<li>
+<p><strong><a href="https://www.redhat.com/en/blog/red-hat-advanced-cluster-management-kubernetes-5">Red Hat Advanced Cluster Management for Kubernetes 5.0: Run your Kubernetes fleet with more control</a></strong><br />
+  摘要：A growing Kubernetes fleet brings more than compute. It also creates more places to search, policies to maintain, and upgrade paths to watch.That work adds up fast. Red Hat's 2026 fleet management research found that 85% of organizations grew their fleets during the prior year. Yet only 17% reported real-time visibility across every cluster.Red Hat Advanced Cluster Management for Kubernetes 5.0 helps close that gap. The release gives teams clearer fleet answers, stronger operations across constrained networks, and more controlled ways to make changes.The goal is simple: Run your Kubernetes fle</p>
+</li>
+<li>
+<p><strong><a href="https://www.redhat.com/en/blog/now-developer-preview-self-managed-red-hat-enterprise-linux-command-line-assistant">Now in Developer Preview: The self-managed Red Hat Enterprise Linux command-line assistant</a></strong><br />
+  摘要：The self-managed Red Hat Enterprise Linux (RHEL) command-line assistant is now available as a Developer Preview. Building on the offline RHEL command-line assistant Developer Preview, this release shifts control to you: Deploy on your own infrastructure, and choose an LLM inference provider that aligns with your needs, whether disconnected or connected. We have evolved the architecture to deliver a more flexible and powerful tool for RHEL system administrators. While we continue to offer our Red Hat-hosted RHEL command-line assistant experience for users who want a ready-to-use solution out o</p>
+</li>
+<li>
+<p><strong><a href="https://www.redhat.com/en/blog/latin-america-leads-investments-digital-sovereignty-it-ready-execute">Latin America leads investments in digital sovereignty, but is it ready to execute?</a></strong><br />
+  摘要：Digital sovereignty was once treated as a regulatory debate or an aspiration for the far future, but it has quickly evolved into a strategic and operational imperative for organizations worldwide. A new global study, conducted by Futurum Research and sponsored by Red Hat, reveals that digital sovereignty is now firmly at the top of technology leaders' agendas. Investment has accelerated significantly, growing by an average of 8.4% over 24 months across all regions. Latin America is leading this momentum with a growth rate exceeding 11.1%, outpacing North America (+8.1%), Asia-Pacific (+8%), an</p>
+</li>
+<li>
+<p><strong><a href="https://www.redhat.com/en/blog/introducing-red-hat-enterprise-linux-103-and-99">Introducing Red Hat Enterprise Linux 10.3 and 9.9</a></strong><br />
+  摘要：Today, we are proud to announce the availability of Red Hat Enterprise Linux (RHEL) 10.3 and RHEL 9.9. Today’s launch is about reinforcing the platform’s foundation to meet the evolving security, operational, and AI-driven demands of the modern enterprise.RHEL 10.3 and 9.9 deliver on this necessity by integrating zero trust architectures, and strengthening digital sovereignty, all while providing AI-augmented, production-ready diagnostic tools and upholding the uncompromising stability our customers expect.Proactive defense in the AI eraAI-driven threats move with unprecedented speed, whic</p>
+</li>
+<li>
+<p><strong><a href="https://www.redhat.com/en/blog/how-red-hat-openshift-5-simplifies-incident-diagnosis-supervised-ai">How Red Hat OpenShift 5 simplifies incident diagnosis with supervised AI</a></strong><br />
+  摘要：Prometheus metrics, traces, and logs are rarely missing in modern enterprise environments. Most platform teams already have plenty of telemetry at their disposal. The real bottleneck is the sheer volume of data a human must parse before taking meaningful action during an incident.On a busy cluster, this creates a familiar and exhausting pattern: an alert fires, an engineer opens 3 different consoles, brings up a Prometheus Query Language (PromQL) scratchpad, executes a log query, and spends 20 minutes debating whether the signal represents a genuine emergency or background noise. Alert fatigue</p>
+</li>
+<li>
+<p><strong><a href="https://www.redhat.com/en/blog/announcing-general-availability-mcp-server-red-hat-enterprise-linux">Announcing the general availability of MCP server for Red Hat Enterprise Linux</a></strong><br />
+  摘要：System administrators and developers have long relied on a mix of specialized tools, deep knowledge, and hard-earned intuition to keep Red Hat Enterprise Linux (RHEL) environments running smoothly. But as hybrid cloud footprints grow and infrastructure becomes more complex, finding the root cause of an issue can feel like searching for a needle in a digital haystack.To help with this, earlier this year, we introduced the Developer Preview of Model Context Protocol (MCP) server for Red Hat Enterprise Linux a bridge that connects large language models (LLMs) directly to your RHEL infrastructure.</p>
+</li>
+</ul>
+<h2>Kubernetes Blog</h2>
+<ul>
+<li><strong><a href="https://kubernetes.io/blog/2026/10/06/kubernetes-cgroups-v2-shift/">The Shift to cgroup v2 in Kubernetes: What You Need to Know</a></strong><br />
+  摘要：In Linux, cgroups (control groups) are a kernel feature used for managing system resources. Kubernetes uses cgroups to allocate resources like CPU and memory to containers, ensuring that applications run smoothly without interfering with each other. With the release of Kubernetes v1.31, support for v1 cgroup management moved into maintenance mode . Support for v2 cgroup management has been stable since Kubernetes v1.25. Compared with cgroup v1, cgroup v2 provides a single unified hierarchy, a more consistent interface, and a stronger foundation for resource isolation and modern resource-management features. Deprecation of cgroup v1 Kubernetes has deprecated cgroup v1 . Starting with Kubernetes v1.35, failCgroupV1 defaults to true , so the kubelet does not start on a cgroup v1 node by defau…</li>
+</ul>
+<hr /></div>
+  </main>
+</body>
+</html>
