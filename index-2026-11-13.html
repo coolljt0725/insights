@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OS 领域每日洞察 - 2026-11-13</title>
+  <style>
+    :root {
+      --bg: #f6f4f0;
+      --bg-bar: #ebe8e3;
+      --bg-card: #fffefb;
+      --bg-card-hover: #f5f3ef;
+      --text: #2d2a26;
+      --text-muted: #5c5852;
+      --text-dim: #7a756e;
+      --accent: #5a7a9e;
+      --border: #ddd9d2;
+      --radius: 10px;
+      --font: "Segoe UI", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      font-size: 15px;
+    }
+
+    /* 门户顶栏 */
+    .masthead {
+      background: var(--bg-bar);
+      border-bottom: 1px solid var(--border);
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 0;
+    }
+    .masthead-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .masthead h1 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin: 0;
+      letter-spacing: -0.02em;
+      color: var(--text);
+    }
+    .masthead .meta {
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+    }
+
+    /* 主内容区：多栏门户布局 */
+    .main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 3rem;
+    }
+
+    /* 板块：每个 h2 为一个频道块 */
+    .content .section {
+      margin-bottom: 2.5rem;
+    }
+    .content h2 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+      margin: 0 0 1rem;
+      padding: 0.6rem 1rem;
+      background: var(--bg-bar);
+      border-radius: var(--radius);
+      border-left: 4px solid var(--accent);
+    }
+    .content h2:first-child { margin-top: 0; }
+
+    .content h2:has(+ h3) {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      border-left-color: var(--text-dim);
+    }
+
+    /* 板块内卡片网格（每个 h2 后的 ul） */
+    .content h2 + ul {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1rem;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .content h2 + ul li {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.15rem 1.2rem;
+      transition: background .15s, border-color .15s;
+    }
+    .content h2 + ul li:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--text-dim);
+    }
+    .content h2 + ul li strong {
+      display: block;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+      line-height: 1.4;
+    }
+    .content h2 + ul li p {
+      margin: 0 0 0.5rem;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.58;
+    }
+    .content h2 + ul li p:last-of-type { margin-bottom: 0; }
+    .content h2 + ul li a[href^="http"] {
+      font-size: 0.8125rem;
+      color: var(--accent);
+    }
+    .content h2 + ul li a[href^="http"]:hover { text-decoration: underline; }
+
+    .content .ref-section {
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+    .content h2 + h3 { margin-top: 1.25rem; }
+    .content h3 {
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--text-dim);
+      margin: 1rem 0 0.4rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .content h3 + ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 0.25rem;
+    }
+    .content h3 + ul li {
+      background: transparent;
+      border: none;
+      padding: 0.2rem 0;
+      font-size: 0.8125rem;
+    }
+    .content h3 + ul li strong { font-size: inherit; margin-bottom: 0; }
+    .content h3 + ul li a { color: var(--accent); }
+    .content h3 + ul li a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <header class="masthead">
+    <div class="masthead-inner">
+      <h1>OS 领域每日洞察 - 2026-11-13</h1>
+      <span class="meta">2026-11-13 05:00 UTC</span>
+    </div>
+  </header>
+  <main class="main">
+    <div class="content"><h1>OS 领域每日洞察 - 2026-11-13</h1>
+<p>（Gemini 未可用时，以下为按来源整理的条目，含<strong>新闻摘要</strong>与链接；摘要可能为原文语言。）</p>
+<h2>Lobsters</h2>
+<ul>
+<li>
+<p><strong><a href="https://sunshowers.io/posts/glue-work/">Contra "Glue work considered harmful"</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://beyondloom.com/blog/postscript.html">Let’s Write a PostScript Interpreter</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://www.freebsd.org/status/report-2026-07-2026-09/">FreeBSD Status Report Third Quarter 2026</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://blog.rust-lang.org/2026/11/12/Rust-1.100.0/">Announcing Rust 1.100.0</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://ploum.net/2026-11-12-anti-marketing-gemini.html">The anti-marketing aspect of the Gemini network</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://libreagi.com/">libreagi - save OS models</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://stoppels.ch/2026/11/12/paths-in-pieces.html">Paths in pieces</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://monkeyisland.pages.dev/">The Secret of Monkey Island: all 13 versions side by side</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://letoverlambda.com/">The entirety of "Let Over Lambda" is now freely available online</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://tratt.net/laurie/blog/2026/adapting_cpython_for_yk.html">Adapting CPython for yk</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://dvratil.cz/2026/11/hijacking-samsung-tv-smart-hub-ads/">Hijacking Samsung TV Smart Hub Ads</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://ratfactor.com/cards/hello-baochip">Hello Baochip</a></strong><br />
+  摘要：Comments</p>
+</li>
+</ul>
+<h2>Phoronix</h2>
+<ul>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Codex-R600-UVD-FIx-Linux-7.5">OpenAI Codex Helps Uncover &amp; Fix A Nearly 20 Year Old Radeon Linux Driver Bug</a></strong><br />
+  摘要：Sent out today was the latest batch of AMD kernel graphics/compute driver patches destined for the Linux 7.5 merge window opening up at year's end/ Besides a lot of fixes and continued work around new IP enablement for upcoming GPUs, there is even a fix for old ATI/AMD Radeon R600 era hardware after help from OpenAI's Codex...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Rust-1.100-Released">Rust 1.100 Released With The "Never" Type Finally Stable</a></strong><br />
+  摘要：Rust 1.100 is out today as the newest version of this popular programming language...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/review/amd-epyc-zen6-smt">AMD Zen 6 SMT Proves Very Advantageous Even For 256 Core EPYC 9996</a></strong><br />
+  摘要：With the now-shipping AMD EPYC 9006 "Venice" SP7 server processors sporting up to 256 Zen 6(C) cores per socket, or 512 cores in a 2P configuration, you may be wondering if Simultaneous Multithreading (SMT) is still worthwhile on these increasingly high core count processors. Long story short, SMT on AMD Zen 6 is still definitely worthwhile from a performance and power perspective. I was curious myself and ran some benchmarks to explore the SMT impact on the 256-core EPYC 9996 as well as the 96-core high frequency EPYC 9686F processors.</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/PostgreSQL-52-CVEs">PostgreSQL Sees New Releases For 52 Security Vulnerabilities, 140+ Bug Fixes</a></strong><br />
+  摘要：PostgreSQL 18.7, 17.12, 16.16, 15.20, 14.25, and 19 RC2 all released today due to 52 new security issues being disclosed...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Khronos-Remote-Offloading-API">Khronos To Explore New High Level API For Remote Offloading</a></strong><br />
+  摘要：The Khronos Group, the industry consortium responsible for OpenGL, OpenCL, Vulkan, and other industry standard APIs has formed an exploratory group to evaluate the possibility of a high-level remote offloading API...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/ReactOS-Floppy-Disk-2026">ReactOS Gets Working Floppy Disk Support, VMware 3D Acceleration &amp; SMP Progress</a></strong><br />
+  摘要：ReactOS as the open-source operating system project working on Microsoft Windows driver and application compatibility had a pretty successful 2026. Following two hackfests, a lot of new features have landed recently for ReactOS and some others are nearing the finish line...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/NVIDIA-NvRoot-ForgePtr">NVIDIA NvRoot &amp; ForgePtr Vulnerabilities Published For Linux Driver, 25 More Coming</a></strong><br />
+  摘要：In addition to Jensen Huang resigning, coincidentally the embargo just expired on the first two of 25 more NVIDIA graphics driver security vulnerabilities coming. ForgePtr and NvRoot are particularly volatile for those renting GPU slices in the cloud...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/NVIDIA-Jensen-Huang-Resigns">NVIDIA CEO Jensen Huang Resigns</a></strong><br />
+  摘要：Following reports of two extramarital affairs, one with an alleged Chinese spy and the other with a VP that is a direct report to him, Jensen Huang is no longer CEO of NVIDIA...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Linux-7.5-ASUS-Transformer">Linux 7.5 To Improve Support For Old ASUS Transformer Hybrid Laptops/Tablets</a></strong><br />
+  摘要：For those that happen to have ASUS Transformer devices as the roughly decade old convertible/hybrid 2-in-1 laptop/tablet computers, the Linux 7.5 kernel in 2027 is improving support for these aging systems powered by either NVIDIA Tegra or Intel Atom SoCs...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Linux-7.5-Intel-Xe-vGPU-Profile">Intel Xe Driver Preparing SR-IOV Provisioning For vGPU Profiles</a></strong><br />
+  摘要：With the upcoming Linux 7.5 kernel cycle the Intel Xe graphics driver is preparing SR-IOV provisioning for vGPU profiles...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Polo-Wayland-Compositor-MATE">Polo Debuts As New Wayland Compositor For MATE Desktop</a></strong><br />
+  摘要：For those fond of the GNOME 2 forked MATE desktop but wanting to take it into the native Wayland world, Polo 1.0 released today as a new compositor option for modern desktop computing with MATE...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/AMD-Pensando-HWMON">Linux 7.5 To Enable Temperature / Voltage / Power Monitoring For AMD Pensando NICs</a></strong><br />
+  摘要：The Linux kernel already has network drivers for the AMD Pensando networking hardware while coming for Linux 7.5 is an Ionic HWMON driver to support hardware monitoring with temperature, voltage, and power monitoring for this high-end networking gear...</p>
+</li>
+</ul>
+<h2>Hacker News</h2>
+<ul>
+<li>
+<p><strong><a href="https://github.com/micha42-dot/uxzView">Show HN: As IrfanView isn't on Linux, I've vibe-coded my own image viewer</a></strong><br />
+  摘要：Show HN: As IrfanView isn't on Linux, I've vibe-coded my own image viewer</p>
+</li>
+<li>
+<p><strong><a href="https://skavish.github.io/bugsy-map/">Show HN: Bugsy – AI automation which runs my company</a></strong><br />
+  摘要：It started as a simple sentry ai triager and grew into a system which powers a lot of day-to-day operations in our company (~20 people). We use it for reporting and fixing bugs, code review, metrics, answer all kinds of questions and it is available from slack and our forum and channels. It is now such a big part of our life that I decided to map it out and share.</p>
+</li>
+<li>
+<p><strong><a href="https://www.kernel.org/doc/html/v4.16/process/howto.html">How to Do Linux Kernel Development</a></strong><br />
+  摘要：How to Do Linux Kernel Development</p>
+</li>
+<li>
+<p><strong><a href="https://news.ycombinator.com/item?id=50471281">Show HN: Kapso – Iterative learning from enterprise data</a></strong><br />
+  摘要：Hey HN! We&#x27;re Alireza and Majid building Leeroo ( https:&#x2F;&#x2F;leeroo.com&#x2F; ). Previously we’ve built AI systems for products with millions of users, including at LinkedIn and Meta. We’re now focusing on building AI systems for enterprise data. Today, we&#x27;re open-sourcing Kapso ( https:&#x2F;&#x2F;github.com&#x2F;Leeroo-AI&#x2F;kapso ), an engine that runs experiments, deploys the best solution, and learns from every run. The nature of data work is iterative: investigate, form hypotheses, experiment, and improve based on what you learn. This bottom-up process is the only way to deliver meaningful outcomes quickly in large, messy enterprise data environments. Consultants gathering context in meetings or teams defining a business ontology upfront to fit into the data has no…</p>
+</li>
+<li>
+<p><strong><a href="https://stealthium.io/blog/forgeptr">ForgePtr: Unprivileged kernel write in Nvidia Linux GPU driver (CVE-2026-47501)</a></strong><br />
+  摘要：ForgePtr: Unprivileged kernel write in Nvidia Linux GPU driver (CVE-2026-47501)</p>
+</li>
+<li>
+<p><strong><a href="https://github.com/piercefreeman/trustme">Show HN: Stop the app permission popups on macOS</a></strong><br />
+  摘要：Hey HN, I maintain a few Mac apps as side projects. Most of them involve permissions of some kind (microphone, screen recording) and I&#x27;ve always been annoyed by the abrupt permission granting popup that Mac will pop up whenever you request access: &quot;MyApp would like to access your microphone&quot; Don&#x27;t allow | Allow &quot;Allow MyApp to access devices on the local network&quot; Don&#x27;t allow | Allow etc etc I&#x27;m empathetic to Apple wanting to shock people out of their complacency - but the experience feels below the standard that people expect from their native apps. It feels almost adversarial. The Codex Computer Use onboarding was far better. It pops up a hovering window below the System Settings screen that you drag into the list. At this point you&#x27;ll just be …</p>
+</li>
+<li>
+<p><strong><a href="https://doug.sh/posts/gpu-bars-behind-a-pcie-switch/">Fitting Four 32 GB Resizable Bars Behind a PCIe Switch on Linux</a></strong><br />
+  摘要：Fitting Four 32 GB Resizable Bars Behind a PCIe Switch on Linux</p>
+</li>
+<li>
+<p><strong><a href="https://news.ycombinator.com/item?id=50467717">Tell HN: I'm working on original approaches to tag-based file organization</a></strong><br />
+  摘要：I&#x27;m creating a tool (starting with a TUI MVP) for exploring and managing user files with tags, breaking out of rigid hierarchical silos across devices. I&#x27;d love your feedback on how useful my approach could be to you. Here are the core features of my MVP, addressing typical concerns with tag-based&#x2F;non-hierarchical approaches, like efficient discovery, the tedium of creating&#x2F;managing tags, lock-in, and portability: - Query DSL: A simple but expressive query language is provided to search for files&#x2F;folders, based on their tags stored in a local db. Tags can be bare or categorized, and the categories can be user-defined or system generated. - Dynamic Virtual Folders: Guided drill-down file browsing via query-backed dynamic virtual folders as a first-class feature. Res…</p>
+</li>
+<li>
+<p><strong><a href="https://free-explorers.com/veshell">Show HN: Veshell – Your Linux apps on a map, not on a desktop</a></strong><br />
+  摘要：Show HN: Veshell – Your Linux apps on a map, not on a desktop</p>
+</li>
+<li>
+<p><strong><a href="https://www.theregister.com/offbeat/2026/11/11/linux-joins-heathrows-grounded-fleet-of-information-screens/5308738">Linux joins Heathrow's grounded fleet of information screens</a></strong><br />
+  摘要：Linux joins Heathrow's grounded fleet of information screens</p>
+</li>
+<li>
+<p><strong><a href="https://www.getlazarus.org/forums/topic/17/">I'm Working on a FOSS Linux Pinbal Simulation Engine</a></strong><br />
+  摘要：I'm Working on a FOSS Linux Pinbal Simulation Engine</p>
+</li>
+</ul>
+<h2>Red Hat Blog</h2>
+<ul>
+<li>
+<p><strong><a href="https://www.redhat.com/en/blog/friday-five-november-13-2026-red-hat">Friday Five — November 13, 2026 | Red Hat</a></strong><br />
+  摘要：Catch up on Red Hat's news at KubeConRed Hat’s KubeCon + CloudNativeCon North America 2026 Book of News gathers product announcements, partnerships, and open source milestones in one place—covering AI in production, Red Hat OpenShift 5, RHEL security updates, KubeVirt graduation, and Lightwell remediation work. Learn more SiliconANGLE - Red Hat adds agentic AI operations, stronger security in OpenShift 5 and RHEL updatesThis week Red Hat unveiled Red Hat OpenShift 5 with agentic Lightspeed troubleshooting, stronger multitenancy and post-quantum controls, plus simpler in-place upgrades. A</p>
+</li>
+<li>
+<p><strong><a href="https://www.redhat.com/en/blog/introducing-red-hat-advanced-cluster-security-kubernetes-5-bring-red-hat-enterprise-linux-virtual-machines-vulnerability-management">Introducing Red Hat Advanced Cluster Security for Kubernetes 5: Bring Red Hat Enterprise Linux virtual machines into vulnerability management</a></strong><br />
+  摘要：Your virtual machines (VM) run applications the business depends on. Managing vulnerabilities in those workloads remains essential as you bring them onto Red Hat OpenShift. Red Hat Advanced Cluster Security for Kubernetes 5 introduces vulnerability management for Red Hat Enterprise Linux (RHEL) VMs so your security team can extend its vulnerability management work to both VMs and containers.For organizations running VMs and containers on OpenShift, this is a significant addition. Your security team needs visibility into both, including the vulnerabilities inside the operating systems that supp</p>
+</li>
+<li>
+<p><strong><a href="https://www.redhat.com/en/blog/whats-new-red-hat-openshift-lightspeed-2">What's new in Red Hat OpenShift Lightspeed 2</a></strong><br />
+  摘要：Red Hat OpenShift Lightspeed started as a simple chat assistant, right there in the Red Hat OpenShift console. All you had to do was ask it a question, something like, "How do I expose my application with a route?" It would give you an answer, referencing the right page from the documentation, specific to your version of OpenShift (which is a big deal), et voila. Ask it why your pods were crashlooping, and it would help with diagnosing, telling you what to check, and in what order. But you still had to go into a terminal and work through the list yourself.While a set of instructions is great,</p>
+</li>
+<li>
+<p><strong><a href="https://www.redhat.com/en/blog/real-value-red-hat-openshift-subscription-1-supported-platform-vs-managing-50-open-source-projects">The real value of a Red Hat OpenShift subscription: 1 supported platform vs. managing 50 open source projects</a></strong><br />
+  摘要：Red Hat OpenShift is built on open source software. In fact, it’s composed of more than 50 different projects. You could download and install every one of those individual components directly and run them. Yet thousands of enterprises—including 58% of the top 50 companies in the Global Fortune 500—have opted to rely on Red Hat OpenShift subscriptions or cloud services to run their core banking, healthcare, and telecommunications operations.1The engineering “magic” in every subscription So what does a Red Hat OpenShift subscription get you? The individual projects are open source. Mak</p>
+</li>
+</ul>
+<h2>Ars Technica</h2>
+<ul>
+<li>
+<p><strong><a href="https://arstechnica.com/health/2026/11/in-reversal-american-cancer-society-urges-prostate-cancer-tests-for-all-men/">In reversal, American Cancer Society urges routine prostate cancer screening</a></strong><br />
+  摘要：Men aged 50–69 and at average risk should get PSA screening every two years.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/ai/2026/11/faa-expands-ai-advice-to-manage-air-traffic-congestion-across-entire-us-airspace/">FAA expands AI advice to manage air traffic congestion across entire US airspace</a></strong><br />
+  摘要：Airlines praised the AI tool, but the air traffic controllers’ union wasn’t involved.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/gadgets/2026/11/ars-live-can-the-cloud-survive-drone-strikes-on-data-centers/">Ars Live: What drone attacks on data centers mean for modern life in the cloud</a></strong><br />
+  摘要：A livestream Ars discussion is happening on November 17 at 1 pm Eastern Time.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/gaming/2026/11/the-elder-scrolls-most-obscure-adventure-gets-a-4k-pc-makeover/">The Elder Scrolls' most obscure adventure gets a 4K PC makeover</a></strong><br />
+  摘要：N-Gage exclusive Shadowkey gets an AI-coded glow-up with plenty of new features.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/google/2026/11/google-rolls-out-gemini-4-hydrogen-finally-replacing-3-8-flash/">Google rolls out Gemini 4 Hydrogen, finally replacing 3.8 Flash</a></strong><br />
+  摘要：Gemini 4 Hydrogen isn't getting a slow, security-conscious release like Carbon and Argon.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/tech-policy/2026/11/ukraine-says-spacex-starshield-is-restricted-again-spacex-claims-it-isnt/">Ukraine says it can’t stop Russian strikes because Starshield is limited again</a></strong><br />
+  摘要：Report: Ukraine suspects speeds limits are intended to help Russia in peace talks.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/tech-policy/2026/11/families-fight-to-keep-googles-disturbing-ai-off-school-issued-chromebooks/">Google faces calls for AI moratoriums in schools after Gemini pilot backlash</a></strong><br />
+  摘要：Families confront Google after teen’s lawsuit labels Gemini a “suicide coach.”</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/culture/2026/11/netflix-releases-new-trailer-for-ray-gunn/">Netflix releases new trailer for Ray Gunn</a></strong><br />
+  摘要："It's hard being the only honest players in a crooked game."</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/space/2026/11/building-a-rocket-is-hard-ast-spacemobile-thinks-its-simple/">Building a rocket is hard. AST SpaceMobile thinks it's "simple."</a></strong><br />
+  摘要："We're not doing this thing because we like rockets."</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/health/2026/11/mans-secret-use-of-synthetic-testosterone-for-cows-nearly-destroyed-his-heart/">Man's secret use of synthetic testosterone for cows nearly destroyed his heart</a></strong><br />
+  摘要：Doctors warn that such life-threatening cases are becoming more common.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/science/2026/11/the-amazing-disappearing-exoplanet/">The amazing disappearing exoplanet</a></strong><br />
+  摘要：An exoplanet seems to have stopped transiting in front of its host star.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/google/2026/11/google-pushes-privacy-angle-as-gemini-powered-smartglasses-debut-starting-at-395/">Google pushes privacy angle as Gemini-powered smartglasses debut starting at $395</a></strong><br />
+  摘要：The first Gemini smartglasses are a collab between Google, Samsung, Gentle Monster, and Warby Parker.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/gadgets/2026/11/hundreds-of-streaming-services-and-nothing-to-watch/">Hundreds of streaming services and nothing to watch</a></strong><br />
+  摘要：Most viewers wish there was a TV Guide for streaming.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/features/2026/11/review-apples-m6-imac-is-pricey-but-its-still-a-good-choice-for-a-clean-desk/">Review: Apple's M6 iMac is pricey, but it's still a good choice for a clean desk</a></strong><br />
+  摘要：Apple's M6 keeps the iMac current without shaking things up much.</p>
+</li>
+</ul>
+<h2>The New Stack</h2>
+<ul>
+<li>
+<p><strong><a href="https://thenewstack.io/gemini-4-hydrogen-orchestrator/">Google’s Gemini 4 coding agent now switches models mid-task — and finishes 19% faster</a></strong><br />
+  摘要：Google launched Gemini 4 Hydrogen on Thursday alongside a new system that changes how coding agents use AI models. Rather The post Google&#8217;s Gemini 4 coding agent now switches models mid-task — and finishes 19% faster appeared first on The New Stack .</p>
+</li>
+<li>
+<p><strong><a href="https://thenewstack.io/cursor-google-multiplayer-swarm/">Google’s coding agents now /swarm for one developer. Cursor’s go multiplayer so teammates’ agents can talk.</a></strong><br />
+  摘要：Coding agents are pretty good at working in parallel: one writes a new API endpoint, another updates the tests, while The post Google’s coding agents now /swarm for one developer. Cursor’s go multiplayer so teammates’ agents can talk. appeared first on The New Stack .</p>
+</li>
+<li>
+<p><strong><a href="https://thenewstack.io/chainguard-php-embargo-defense/">Chainguard defends its choice to break the PHP security embargo: “We own the decision.”</a></strong><br />
+  摘要：At KubeCon + CloudNativeCon North America 2026 this week, Chainguard co-founder and CTO Matt Moore defended the company&#8217;s decision to The post Chainguard defends its choice to break the PHP security embargo: &#8220;We own the decision.&#8221; appeared first on The New Stack .</p>
+</li>
+<li>
+<p><strong><a href="https://thenewstack.io/google-gemini-decisions-api/">Google built an AI model that can’t write a sentence — and that’s the point</a></strong><br />
+  摘要：Google&#8217;s new Gemini Decisions API, introduced Wednesday, is designed to handle the routine decisions that AI applications make thousands of The post Google built an AI model that can&#8217;t write a sentence — and that&#8217;s the point appeared first on The New Stack .</p>
+</li>
+<li>
+<p><strong><a href="https://thenewstack.io/machine-speed-vulnerability-discovery/">The death of the 14-day patch: Surviving machine-speed vulnerability discovery</a></strong><br />
+  摘要：For decades, enterprise vulnerability management ran on human time: A security researcher manually dissected a binary, traced execution paths, built The post The death of the 14-day patch: Surviving machine-speed vulnerability discovery appeared first on The New Stack .</p>
+</li>
+<li>
+<p><strong><a href="https://thenewstack.io/microsoft-ignite-2026/">See what AI looks like in production at Microsoft Ignite</a></strong><br />
+  摘要：If you&#8217;re deciding which AI pilots to move into production,&#160;Microsoft&#8217;s Satya Nadella and Judson Althoff&#8217;s opening keynote at Microsoft Ignite The post See what AI looks like in production at Microsoft Ignite appeared first on The New Stack .</p>
+</li>
+</ul>
+<h2>LWN.net</h2>
+<ul>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1107187/">Rust 1.100.0 released</a></strong><br />
+  摘要：Version 1.100.0 of the Rust language has been released. Notable changes include the stabilization of the never type , core parts of the Allocator API, reporting of unused dependencies in Cargo, and more.</p>
+</li>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1107173/">Glasswing overwhelms maintainers with underwhelming findings (VulnCheck)</a></strong><br />
+  摘要：Patrick Garrity of VulnCheck has written a blog post that looks at vulnerabilities found by Anthropic's Project Glasswing since it launched on April&#160;7, and finds it wanting: Of the 37,966 findings Anthropic reports, only 7,349 (19.4%) have been made public. Just 217 of those have been marked fixed. The more glaring number is that 4.4% (1,654) of the project's findings have already been marked as duplicates, 7.5x more duplicates than fixes. On top of that, 419 findings have been withdrawn. It seems odd that the ledger now claims a 94.2% true positive rate, up from 90.8% at launch, when more findings have been withdrawn or marked as duplicates than fixed, likely a feedback loop missing to the triage rates listed as "True Positives". [...] AI is a valuable tool for finding vulnerabilitie…</p>
+</li>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1107152/">Introducing Polo: a Wayland MATE compositor</a></strong><br />
+  摘要：Kerem Söke has announced the 1.0 release of Polo , a Wayland compositor for the MATE Desktop Environment : The idea is to keep MATE behaving as closely as possible to how it does on X11, rather than changing the desktop to fit a different compositor. [...] Window management, metacity, workspaces, tiling, XWayland, clipboard and clipman support, multiple monitors, display scaling, hotplugging, screenshots, screen sharing, and session management are all working. I've also added desktop effects: fade, zoom, zap, spin, squeemize, magic lamp, desktop cube, expo, and wobbly windows. Söke is looking for people to test Polo, particularly on multi-monitor setups, and report back with problems.</p>
+</li>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1105400/">[$] C++26 contract confusion</a></strong><br />
+  摘要：The International Organization for Standardization (ISO) has blessed seven C++ language revisions since 1998. The language is mostly developed by ISO's Working Group 21 , which considers proposed additions and amendments, integrates them into a document, and then presents that document to the main ISO body to be voted on as a standard. On October&#160;23, for the first time ever, ISO declined to ratify a document presented by Working Group 21, leaving the future of the C++26 standard in doubt. The decision was driven by controversy around a proposed new "contracts" feature that would add pre- and post-conditions to function signatures.</p>
+</li>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1107151/">Stenberg: 30 years of Internet transfers with curl</a></strong><br />
+  摘要：Daniel Stenberg reflects on the 30th anniversary of the curl project. libcurl runs in an estimated thirty billion installations today. It is a rough estimate since the majority of all libcurl users never tell us they use it, but we need to find it mentioned in their credit screens, open source license windows or their manuals. A super popular app might use libcurl today and not tomorrow, or vice versa, which can make the numbers shift by several billions overnight. In reality of course, once the pulse raise has calmed down and your ego is content, these numbers do not matter. In our corner of the world, things don't change notably when we go from a thousand installs to billions. We still work with similar people, in similar ways, with similar challenges.</p>
+</li>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1107146/">Security updates for Thursday</a></strong><br />
+  摘要：Security updates have been issued by Debian (aodh, apache2, dnspython, firefox-esr, mutt, octavia, spip, thunderbird, and watcher), Fedora (epiphany, firefox, freerdp, java-25-openjdk, java-latest-openjdk, libsoup3, perl-HTTP-Parser-XS, perl-libnet, php-getid3, pipx, python-crate-ingredients, python-pillow, python-robotframework, python3.9, rsync, rubygem-nokogiri, tpm2-tss, udns, and xorg-x11-server-Xwayland), Gentoo (curl, ImageMagick, libheif, and PCRE2), Mageia (nginx and python-django), Oracle (go-toolset:rhel8, libimobiledevice, nodejs:22, util-linux, and vim), Red Hat (.NET 10.0, .NET 8.0, .NET 9.0, cockpit, freerdp, gdb, go-fdo-client, grafana-pcp, ignition, kernel, kernel-rt, krb5, openssh, openssl, osbuild-composer, rpm, rsync, and webkit2gtk3), Slackware (git, httpd, and tigervn…</p>
+</li>
+</ul>
+<h2>Linux Weekly News (RSS)</h2>
+<ul>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1107187/">Rust 1.100.0 released</a></strong><br />
+  摘要：Version 1.100.0 of the Rust language has been released. Notable changes include the stabilization of the never type , core parts of the Allocator API, reporting of unused dependencies in Cargo, and more.</p>
+</li>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1107173/">Glasswing overwhelms maintainers with underwhelming findings (VulnCheck)</a></strong><br />
+  摘要：Patrick Garrity of VulnCheck has written a blog post that looks at vulnerabilities found by Anthropic's Project Glasswing since it launched on April&#160;7, and finds it wanting: Of the 37,966 findings Anthropic reports, only 7,349 (19.4%) have been made public. Just 217 of those have been marked fixed. The more glaring number is that 4.4% (1,654) of the project's findings have already been marked as duplicates, 7.5x more duplicates than fixes. On top of that, 419 findings have been withdrawn. It seems odd that the ledger now claims a 94.2% true positive rate, up from 90.8% at launch, when more findings have been withdrawn or marked as duplicates than fixed, likely a feedback loop missing to the triage rates listed as "True Positives". [...] AI is a valuable tool for finding vulnerabilitie…</p>
+</li>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1107152/">Introducing Polo: a Wayland MATE compositor</a></strong><br />
+  摘要：Kerem Söke has announced the 1.0 release of Polo , a Wayland compositor for the MATE Desktop Environment : The idea is to keep MATE behaving as closely as possible to how it does on X11, rather than changing the desktop to fit a different compositor. [...] Window management, metacity, workspaces, tiling, XWayland, clipboard and clipman support, multiple monitors, display scaling, hotplugging, screenshots, screen sharing, and session management are all working. I've also added desktop effects: fade, zoom, zap, spin, squeemize, magic lamp, desktop cube, expo, and wobbly windows. Söke is looking for people to test Polo, particularly on multi-monitor setups, and report back with problems.</p>
+</li>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1105400/">[$] C++26 contract confusion</a></strong><br />
+  摘要：The International Organization for Standardization (ISO) has blessed seven C++ language revisions since 1998. The language is mostly developed by ISO's Working Group 21 , which considers proposed additions and amendments, integrates them into a document, and then presents that document to the main ISO body to be voted on as a standard. On October&#160;23, for the first time ever, ISO declined to ratify a document presented by Working Group 21, leaving the future of the C++26 standard in doubt. The decision was driven by controversy around a proposed new "contracts" feature that would add pre- and post-conditions to function signatures.</p>
+</li>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1107151/">Stenberg: 30 years of Internet transfers with curl</a></strong><br />
+  摘要：Daniel Stenberg reflects on the 30th anniversary of the curl project. libcurl runs in an estimated thirty billion installations today. It is a rough estimate since the majority of all libcurl users never tell us they use it, but we need to find it mentioned in their credit screens, open source license windows or their manuals. A super popular app might use libcurl today and not tomorrow, or vice versa, which can make the numbers shift by several billions overnight. In reality of course, once the pulse raise has calmed down and your ego is content, these numbers do not matter. In our corner of the world, things don't change notably when we go from a thousand installs to billions. We still work with similar people, in similar ways, with similar challenges.</p>
+</li>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1107146/">Security updates for Thursday</a></strong><br />
+  摘要：Security updates have been issued by Debian (aodh, apache2, dnspython, firefox-esr, mutt, octavia, spip, thunderbird, and watcher), Fedora (epiphany, firefox, freerdp, java-25-openjdk, java-latest-openjdk, libsoup3, perl-HTTP-Parser-XS, perl-libnet, php-getid3, pipx, python-crate-ingredients, python-pillow, python-robotframework, python3.9, rsync, rubygem-nokogiri, tpm2-tss, udns, and xorg-x11-server-Xwayland), Gentoo (curl, ImageMagick, libheif, and PCRE2), Mageia (nginx and python-django), Oracle (go-toolset:rhel8, libimobiledevice, nodejs:22, util-linux, and vim), Red Hat (.NET 10.0, .NET 8.0, .NET 9.0, cockpit, freerdp, gdb, go-fdo-client, grafana-pcp, ignition, kernel, kernel-rt, krb5, openssh, openssl, osbuild-composer, rpm, rsync, and webkit2gtk3), Slackware (git, httpd, and tigervn…</p>
+</li>
+</ul>
+<h2>CNCF Blog</h2>
+<ul>
+<li>
+<p><strong><a href="https://www.cncf.io/announcements/2026/11/12/cncf-recognizes-cloud-native-champions-in-2026-community-awards/">CNCF Recognizes Cloud Native Champions in 2026 Community Awards</a></strong><br />
+  摘要：Annual awards honor leaders, maintainers, and documentarians building open source infrastructure Key Highlights KUBECON + CLOUDNATIVECON NORTH AMERICA, SALT LAKE CITY – November 12, 2026 – The Cloud Native Computing Foundation® (CNCF®), which builds sustainable ecosystems...</p>
+</li>
+<li>
+<p><strong><a href="https://www.cncf.io/blog/2026/11/12/gang-scheduling-and-topology-aware-placement-for-ai-training-in-kubernetes/">Gang scheduling and topology-aware placement for AI training in Kubernetes</a></strong><br />
+  摘要：Distributed AI training workloads impose complex scheduling requirements that Kubernetes&#8217;s built-in scheduler can&#8217;t meet. Kubernetes schedules pods individually and independently, but distributed training introduces two requirements that break this model: Pods must land on hardware with...</p>
+</li>
+</ul>
+<hr /></div>
+  </main>
+</body>
+</html>
