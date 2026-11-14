@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OS 领域每日洞察 - 2026-11-14</title>
+  <style>
+    :root {
+      --bg: #f6f4f0;
+      --bg-bar: #ebe8e3;
+      --bg-card: #fffefb;
+      --bg-card-hover: #f5f3ef;
+      --text: #2d2a26;
+      --text-muted: #5c5852;
+      --text-dim: #7a756e;
+      --accent: #5a7a9e;
+      --border: #ddd9d2;
+      --radius: 10px;
+      --font: "Segoe UI", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      font-size: 15px;
+    }
+
+    /* 门户顶栏 */
+    .masthead {
+      background: var(--bg-bar);
+      border-bottom: 1px solid var(--border);
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 0;
+    }
+    .masthead-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .masthead h1 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin: 0;
+      letter-spacing: -0.02em;
+      color: var(--text);
+    }
+    .masthead .meta {
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+    }
+
+    /* 主内容区：多栏门户布局 */
+    .main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 3rem;
+    }
+
+    /* 板块：每个 h2 为一个频道块 */
+    .content .section {
+      margin-bottom: 2.5rem;
+    }
+    .content h2 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+      margin: 0 0 1rem;
+      padding: 0.6rem 1rem;
+      background: var(--bg-bar);
+      border-radius: var(--radius);
+      border-left: 4px solid var(--accent);
+    }
+    .content h2:first-child { margin-top: 0; }
+
+    .content h2:has(+ h3) {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      border-left-color: var(--text-dim);
+    }
+
+    /* 板块内卡片网格（每个 h2 后的 ul） */
+    .content h2 + ul {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1rem;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .content h2 + ul li {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.15rem 1.2rem;
+      transition: background .15s, border-color .15s;
+    }
+    .content h2 + ul li:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--text-dim);
+    }
+    .content h2 + ul li strong {
+      display: block;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+      line-height: 1.4;
+    }
+    .content h2 + ul li p {
+      margin: 0 0 0.5rem;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.58;
+    }
+    .content h2 + ul li p:last-of-type { margin-bottom: 0; }
+    .content h2 + ul li a[href^="http"] {
+      font-size: 0.8125rem;
+      color: var(--accent);
+    }
+    .content h2 + ul li a[href^="http"]:hover { text-decoration: underline; }
+
+    .content .ref-section {
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+    .content h2 + h3 { margin-top: 1.25rem; }
+    .content h3 {
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--text-dim);
+      margin: 1rem 0 0.4rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .content h3 + ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 0.25rem;
+    }
+    .content h3 + ul li {
+      background: transparent;
+      border: none;
+      padding: 0.2rem 0;
+      font-size: 0.8125rem;
+    }
+    .content h3 + ul li strong { font-size: inherit; margin-bottom: 0; }
+    .content h3 + ul li a { color: var(--accent); }
+    .content h3 + ul li a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <header class="masthead">
+    <div class="masthead-inner">
+      <h1>OS 领域每日洞察 - 2026-11-14</h1>
+      <span class="meta">2026-11-14 05:00 UTC</span>
+    </div>
+  </header>
+  <main class="main">
+    <div class="content"><h1>OS 领域每日洞察 - 2026-11-14</h1>
+<p>（Gemini 未可用时，以下为按来源整理的条目，含<strong>新闻摘要</strong>与链接；摘要可能为原文语言。）</p>
+<h2>Phoronix</h2>
+<ul>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Wine-11.22-Released">Wine 11.22 Introduces x86 AVX Emulation On ARM64</a></strong><br />
+  摘要：Wine 11.22 is out today as the latest bi-weekly development release and inching quite closely toward the Wine 12.0 stable release preparations...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Cloudflare-Kitesurf-Open-Source">Cloudflare Open Sources Kitesurf: Their Web Browser For AI Agents</a></strong><br />
+  摘要：Earlier this year Cloudflare announced Kitesurf as a stateless web browser for AI agents. After building out its features, they have now made good on their word to open-source it...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/AMD-openSIL-Venice-Goal">AMD openSIL Achieves Its Production Goal With 6th Gen EPYC "Venice"</a></strong><br />
+  摘要：Since 2023 I and many open-source advocates have been very eager for AMD's openSIL project for delivering open-source CPU silicon initialization as a replacement to the traditional AGESA code. With Zen 5 there was proof-of-concept support that we have enjoyed with Coreboot on an MSI Ryzen motherboard and a Gigabyte EPYC server motherboard thanks to the Coreboot-based Dasharo ports by 3mdeb. The goal for production readiness was for Zen 6, but with this week's EPYC 9006 SP7 announcement the openSIL topic wasn't touched on. So I asked around...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/KDE-Frameworks-6.32">KDE Frameworks 6.32 Released With That Fix For USB File Transfer Notifications</a></strong><br />
+  摘要：KDE Frameworks 6.32 shipped today as the newest monthly update to this set of KDE components. Notable this month is a fix for the previously-reported 15 year old bug around inaccurate notifications for USB file transfers...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/AMD-HRX-Loom-Experiment">AMD Leverages AI + HRX Loom In Experiment For Quickly Porting 50 LLMs To Client GPUs</a></strong><br />
+  摘要：Following the recent release of HRX Loom v0.1 and leveraging an AI agent workflow, a team at AMD experimented with bringing 50 trending Hugging Face models over to AMD client GPUs. They accomplished this feat in just around three days, thanks to their HRX software work paired with the power of Ryzen AI Max "Strix Halo" hardware...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Linux-7.5-hwpoison-panic">Linux 7.5 To Include New hwpoison-panic Tool For Intentionally Crashing Your System</a></strong><br />
+  摘要：A new tool expected to be merged to the Linux 7.5 source tree provides a new exercise for the kernel and in the process bringing down the system...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/AMD-AOCL-6.0">AMD AOCL 6.0 Introduces New RNG Library, Initial Zen 6 CPU Optimizations</a></strong><br />
+  摘要：In addition to AOCC 6.0 releasing this week as their updated C/C++ compiler along with the new "AOF" Fortran compiler, AMD also released AOCL 6.0 as the AMD Optimizing CPU Libraries...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/XRAID-XFS-RAID">XRAID Publicly Released As New RAID Implementation For XFS</a></strong><br />
+  摘要：Longtime Linux developer Christoph Hellwig today announced the initial public release of XRAID. XRAID is a declustered parity RAID implementation integrated into the XFS file-system. XRAID is focused on RAID for zoned XFS deployments...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Linux-7.5-GlandaGPU-Driver">Linux 7.5 To Upstream Driver For New Glanda GPU</a></strong><br />
+  摘要：Sent out today was the drm-misc-next pull request for the week of new material to queue in DRM-Next until the Linux 7.5 merge window gets underway in late December. Most notable this week is the introduction of the new GlandaGPU driver...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Intel-GCC-Coral-Rapids-Razor">Intel Posts Initial GCC Compiler Code For Razor Lake &amp; Coral Rapids</a></strong><br />
+  摘要：One of the consistent wonderful praise I have for Intel over the past 22+ years of covering the Linux hardware scene has been their upstreaming of new CPU targets into the open-source compilers like GCC well ahead of product launches. Particularly with GCC on an annual feature release cycle and not being quickly picked up by new Linux distribution releases, Intel upstreaming their new CPU targets and ISA features at times years in advance of product releases has helped ensure smooth compiler ecosystem support by the time their products ship. The latest example, today they posted their patches providing new ISA features and enabling for both Coral Rapids and Razor Lake processors...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/NVIDIA-Upstream-vGPU-Nova">NVIDIA Highlights Their Open-Source vGPU Upstreaming Work Built Atop Nova</a></strong><br />
+  摘要：The Rust-based NVIDIA Linux kernel driver "Nova" is set to take on an important role in the official NVIDIA Linux driver stack of the future. This mainline kernel driver continues seeing a flurry of activity to bring it into a usable state and eventually parity and beyond compared to the existing out-of-tree NVIDIA Linux driver code or the incomplete and largely reverse engineered Nouveau kernel driver. Presented at this week's KVM Forum was the current status of NVIDIA bringing vGPU support to the upstream kernel...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Dasharo-ACPI-Fan-Control-Driver">Dasharo ACPI Fan Control Linux Driver Posted For Adjusting Fan Curves</a></strong><br />
+  摘要：The 3mdeb consulting firm that has ported their Coreboot-based open-source firmware stack to the likes of an AMD Ryzen AM5 motherboard from MSI and a Gigabyte EPYC server motherboard, among others, has posted a new Linux kernel driver for supporting fan controls with Dasharo firmware...</p>
+</li>
+</ul>
+<h2>Ars Technica</h2>
+<ul>
+<li>
+<p><strong><a href="https://arstechnica.com/space/2026/11/starship-flight-15-powers-to-orbit-setting-up-a-possible-catch-on-saturday/">Starship flight 15 powers to orbit—setting up a possible catch on Saturday</a></strong><br />
+  摘要：One way or another, the company will get some more data on Saturday.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/tech-policy/2026/11/faa-orders-third-nationwide-ground-stop-in-its-history/">FAA has lifted its third-ever nationwide ground stop</a></strong><br />
+  摘要：Secretary of Transportation Sean Duffy blamed obsolete equipment for the outage.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/health/2026/11/millions-in-us-use-unapproved-glp-1s-and-use-them-in-unapproved-ways/">Millions of Americans are not taking their GLP-1 drugs as prescribed</a></strong><br />
+  摘要：Cost and access barriers are pushing people to modified use and unapproved versions.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/features/2026/11/faa-expands-ai-advice-to-manage-air-traffic-congestion-across-entire-us-airspace/">FAA expands AI advice to manage air traffic congestion across entire US airspace</a></strong><br />
+  摘要：Airlines praised the AI tool, but the air traffic controllers’ union wasn’t involved.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/science/2026/11/in-elephants-the-resilience-of-communities-has-its-limits/">In elephants, the resilience of communities has its limits</a></strong><br />
+  摘要：In Sri Lanka, ecological change is shrinking a park's elephant population.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/tech-policy/2026/11/trump-jr-out-as-kalshi-advisor-after-his-firms-big-investment-in-polymarket/">Kalshi ditches Trump Jr. as advisor; CEO admitted "optics" weren't good</a></strong><br />
+  摘要：Trump son advised Kalshi and got equity while Trump admin helped Kalshi in lawsuits.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/ai/2026/11/ai-is-the-most-likely-reason-youll-die-openai-board-member-warns/">OpenAI board member worries an AI "takeover" of society could be months away</a></strong><br />
+  摘要：Researcher traces a path from AI reward hacking to potential human extinction.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/security/2026/11/windows-0-day-dropped-by-disgruntled-researcher-hands-hackers-system-rights/">Windows 0-day dropped by disgruntled researcher hands hackers System rights</a></strong><br />
+  摘要："SignDrop" exploit lets local users gain all-powerful System rights.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/tech-policy/2026/11/microsoft-blames-failed-server-health-checks-not-hackers-for-global-outage/">Microsoft’s global outage may be worse than Amazon's or CrowdStrike's, expert says</a></strong><br />
+  摘要：Governments, hospitals, courts scrambled by global Microsoft outage.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/science/2026/11/its-the-end-of-the-world-as-we-know-it-per-a-physicists-1960-prediction/">It's the end of the world as we know it, per a physicist's 1960 prediction</a></strong><br />
+  摘要：Heinz von Foerster thought population would grow exponentially and "squeeze" us all to death.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/culture/2026/11/screenless-gps-slate-auto-says-remember-the-road-atlas/">Screenless GPS: Slate Auto says, "Remember the road atlas"</a></strong><br />
+  摘要：What’s more fitting than a spiral-bound map for a bare-bones two-door pickup?</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/science/2026/11/scientists-warn-the-1-5c-climate-change-threshold-could-arrive-by-2029/">Scientists warn 1.5°C climate change threshold could arrive by 2029</a></strong><br />
+  摘要：Climate action has stalled for five years as fossil fuel development keeps growing.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/space/2026/11/rocket-report-starship-set-for-historic-test-flight-a-century-of-electron/">Rocket Report: Starship set for historic test flight; a century of Electron</a></strong><br />
+  摘要："You can simplify it as a big tank feeding engines."</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/gadgets/2026/11/specializeds-tarmac-sl9-s-level-is-built-to-wreck-your-zone-2-ride/">Specialized’s Tarmac SL9 S-Level is built to wreck your Zone 2 ride</a></strong><br />
+  摘要：Specialized’s second-fastest bike may be the smart buy.</p>
+</li>
+</ul>
+<h2>Hacker News</h2>
+<ul>
+<li>
+<p><strong><a href="https://www.eevblog.com/forum/testgear/oos-an-open-operating-system-for-the-rigol-scopes/">OOS – an open operating system for the Rigol Scopes</a></strong><br />
+  摘要：OOS – an open operating system for the Rigol Scopes</p>
+</li>
+<li>
+<p><strong><a href="https://homebrewserver.club/lm-studio-vs-ollama.html">LM Studio vs. Ollama on Linux: same model files, measured on an RTX 3090</a></strong><br />
+  摘要：LM Studio vs. Ollama on Linux: same model files, measured on an RTX 3090</p>
+</li>
+<li>
+<p><strong><a href="https://www.neowin.net/news/microsoft-office-alternative-euro-office-gets-windows-macos-and-linux-desktop-app/">MS Office alternative Euro-Office gets Windows, macOS, and Linux desktop app</a></strong><br />
+  摘要：MS Office alternative Euro-Office gets Windows, macOS, and Linux desktop app</p>
+</li>
+<li>
+<p><strong><a href="https://github.com/pawlowskialex/zd1">Show HN: Open-source firmware for 2011 Bowers and Wilkins Zeppelin Air</a></strong><br />
+  摘要：Just wanted to share something I&#x27;ve built. It&#x27;s fully reverse engineered, running on an old 2.4 Linux kernel I found on Nokia HD-1, but with a modern all-Rust userspace. Support Airplay 2 and Snapcast. The Airplay 2 implementation synchronizes with real Apple devices down to 1ms in the multi-room configuration. Spotify support is present, but it doesn&#x27;t work for me because of librespot key issues. It utilizes the MIPS co-processor cores I have found on it for audio decoding and crypto. There&#x27;s no FPU on the ARM nor the MIPS, so all the codecs are reimplemented in fixed-point math and made to fit the very small shared SRAM buffers. The DSP board firmware is also completely replaced. It fixes all the complaints I had about the original device: no source auto-switching, US…</p>
+</li>
+<li>
+<p><strong><a href="https://blog.malwaremustdie.org/2026/11/once-upon-time-linuxhajime-hexstring.html">MMD-0070-2026 Linux/Hajime (with hexstring tiny ARM ELF fileless spreader)</a></strong><br />
+  摘要：MMD-0070-2026 Linux/Hajime (with hexstring tiny ARM ELF fileless spreader)</p>
+</li>
+<li>
+<p><strong><a href="https://makandracards.com/operations/521736-systemd-run-alternative-screen">Use systemd-run as an alternative for screen</a></strong><br />
+  摘要：Use systemd-run as an alternative for screen</p>
+</li>
+</ul>
+<h2>The New Stack</h2>
+<ul>
+<li>
+<p><strong><a href="https://thenewstack.io/self-hosted-claude-managed-agents/">Anthropic now lets you self-host Claude Managed Agents. The catch? 8 hours to act if it flags a safety risk</a></strong><br />
+  摘要：Anthropic has unveiled a self-hosted version of its platform for building and running AI agents. Self-hosted Claude Managed Agents, as The post Anthropic now lets you self-host Claude Managed Agents. The catch? 8 hours to act if it flags a safety risk appeared first on The New Stack .</p>
+</li>
+<li>
+<p><strong><a href="https://thenewstack.io/elastic-ai-context-gap/">The context problem: It’s what’s really breaking AI agents at scale</a></strong><br />
+  摘要：AI models are getting smarter, tokens are getting cheaper, and agents are improving. But the context gap sits between the The post The context problem: It&#8217;s what&#8217;s really breaking AI agents at scale appeared first on The New Stack .</p>
+</li>
+<li>
+<p><strong><a href="https://thenewstack.io/deepseek-harness-cleanup-benchmark/">DeepSeek’s coding agent is too tidy for its own good — and benchmarks are punishing it</a></strong><br />
+  摘要：DeepSeek&#8217;s open-source coding agent is losing points on a major benchmark for a habit developers usually treat as good practice: The post DeepSeek’s coding agent is too tidy for its own good — and benchmarks are punishing it appeared first on The New Stack .</p>
+</li>
+<li>
+<p><strong><a href="https://thenewstack.io/ai-agents-retrieval-agent-ready-schema/">Here’s how to teach AI agents to search like human experts</a></strong><br />
+  摘要：Agentic retrieval is a hot topic for a reason: Every company wants to automate work, but they often just are The post Here&#8217;s how to teach AI agents to search like human experts appeared first on The New Stack .</p>
+</li>
+</ul>
+<h2>Lobsters</h2>
+<ul>
+<li>
+<p><strong><a href="https://mattbee.mataroa.blog/p/someones-impersonating-this-blog/">Someone's impersonating this blog</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://sofiabelen.github.io/projects/pointer-provenance-in-rust-vs-cpp/">Pointer Provenance in Rust vs C++</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://sable.moe/en/blog/link-previews-and-you/">Link Previews and You</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://alistair.sh/thenables">Fixing a WebKit bug to see if promises are made of train tracks</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://antonz.org/probabilistic-data-structures/">Probabilistic data structures in Go</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://antithesis.com/blog/2026/nethack/">Beating the frontier on NetHack</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://discourse.haskell.org/t/a-technical-vision-for-the-haskell-ecosystem/15078">A technical vision for the Haskell ecosystem</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://www.joshka.net/cell-borders/">Terminal borders that don't cost a cell</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://blog.ovalerio.net/archives/3359">The need for at least a third option</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://thunderseethe.dev/posts/ml-modules-for-mere-mortals/intro/">ML Modules for Mere Mortals</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://decoded.legal/blog/2026/11/running-a-law-firm-on-free-software-2026-edition/">Running a law firm on Free software (2026 edition)</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://lobste.rs/s/4bvg9z/what_are_you_doing_this_weekend">What are you doing this weekend?</a></strong><br />
+  摘要：Feel free to tell what you plan on doing this weekend and even ask for help or feedback. Please keep in mind it’s more than OK to do nothing at all too!</p>
+</li>
+<li>
+<p><strong><a href="https://alichraghi.github.io/blog/how-not-to-build-a-music-player">How Not to Build a Music Player</a></strong><br />
+  摘要：Comments</p>
+</li>
+</ul>
+<h2>Kernel.org</h2>
+<ul>
+<li>
+<p><strong><a href="https://www.kernel.org/">next-20261113: linux-next</a></strong><br />
+  摘要：Version: next-20261113 (linux-next) Released: 2026-11-13</p>
+</li>
+<li>
+<p><strong><a href="https://www.kernel.org/">7.3.4: stable</a></strong><br />
+  摘要：Version: 7.3.4 (stable) Released: 2026-11-10 Source: linux-7.3.4.tar.xz PGP Signature: linux-7.3.4.tar.sign Patch: full ( incremental ) ChangeLog: ChangeLog-7.3.4</p>
+</li>
+<li>
+<p><strong><a href="https://www.kernel.org/">6.18.63: longterm</a></strong><br />
+  摘要：Version: 6.18.63 (longterm) Released: 2026-11-10 Source: linux-6.18.63.tar.xz PGP Signature: linux-6.18.63.tar.sign Patch: full ( incremental ) ChangeLog: ChangeLog-6.18.63</p>
+</li>
+<li>
+<p><strong><a href="https://www.kernel.org/">6.12.117: longterm</a></strong><br />
+  摘要：Version: 6.12.117 (longterm) Released: 2026-11-10 Source: linux-6.12.117.tar.xz PGP Signature: linux-6.12.117.tar.sign Patch: full ( incremental ) ChangeLog: ChangeLog-6.12.117</p>
+</li>
+<li>
+<p><strong><a href="https://www.kernel.org/">7.4-rc2: mainline</a></strong><br />
+  摘要：Version: 7.4-rc2 (mainline) Released: 2026-11-09 Source: linux-7.4-rc2.tar.gz Patch: full ( incremental )</p>
+</li>
+<li>
+<p><strong><a href="https://www.kernel.org/">6.6.162: longterm</a></strong><br />
+  摘要：Version: 6.6.162 (longterm) Released: 2026-11-06 Source: linux-6.6.162.tar.xz PGP Signature: linux-6.6.162.tar.sign Patch: full ( incremental ) ChangeLog: ChangeLog-6.6.162</p>
+</li>
+<li>
+<p><strong><a href="https://www.kernel.org/">6.1.192: longterm</a></strong><br />
+  摘要：Version: 6.1.192 (longterm) Released: 2026-11-06 Source: linux-6.1.192.tar.xz PGP Signature: linux-6.1.192.tar.sign Patch: full ( incremental ) ChangeLog: ChangeLog-6.1.192</p>
+</li>
+<li>
+<p><strong><a href="https://www.kernel.org/">5.15.225: longterm</a></strong><br />
+  摘要：Version: 5.15.225 (longterm) Released: 2026-11-06 Source: linux-5.15.225.tar.xz PGP Signature: linux-5.15.225.tar.sign Patch: full ( incremental ) ChangeLog: ChangeLog-5.15.225</p>
+</li>
+<li>
+<p><strong><a href="https://www.kernel.org/">5.10.274: longterm</a></strong><br />
+  摘要：Version: 5.10.274 (longterm) Released: 2026-11-06 Source: linux-5.10.274.tar.xz PGP Signature: linux-5.10.274.tar.sign Patch: full ( incremental ) ChangeLog: ChangeLog-5.10.274</p>
+</li>
+<li>
+<p><strong><a href="https://www.kernel.org/">7.2.15: stable</a></strong><br />
+  摘要：Version: 7.2.15 (EOL) (stable) Released: 2026-11-01 Source: linux-7.2.15.tar.xz PGP Signature: linux-7.2.15.tar.sign Patch: full ( incremental ) ChangeLog: ChangeLog-7.2.15</p>
+</li>
+</ul>
+<h2>LWN.net</h2>
+<ul>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1103395/">[$] 25 years of Buildroot</a></strong><br />
+  摘要：Buildroot maintainer Peter Korsgaard gave a presentation about the long history of the build tool for embedded Linux systems at the 2026 Embedded Linux Conference Europe . In it, he covered more than just the past 25 years, looking at the current status of the project as well as what to expect in Buildroot's future. It was an interesting view inside this long-running project that has been a mainstay of the embedded-Linux world throughout almost all of this century.</p>
+</li>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1107473/">Announcing XRAID: declustered parity RAID for zoned XFS</a></strong><br />
+  摘要：Christoph Hellwig has announced the initial public release of XRAID&mdash;declustered parity RAID that is integrated into XFS. The two primary aims of XRAID are to support parity RAID on zoned devices like SMR hard drives, and to provide a fast RAID implementation without inherent data integrity problems. XRAID, just like zoned XFS also works on conventional hard drives and SSDs. Optimizing for SSD performance has not been a focus, but even without that, writes are up to 20 times faster than mdraid. [...] Work on XRAID has been ongoing for a year and a half, and while we aren't anywhere near ready for an upstream submission, we are interested in feedback and testing from a wider audience now. The current implementation supports zero to 2 parities. We did experiments with the SnapRAID parit…</p>
+</li>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1107472/">Security updates for Friday</a></strong><br />
+  摘要：Security updates have been issued by AlmaLinux (.NET 10.0, .NET 8.0, .NET 9.0, firefox, gcc, grafana, grafana-pcp, gstreamer1, gstreamer1-plugins-base, java-1.8.0-openjdk, kernel, kernel-rt, libimobiledevice, mingw-libpng, nginx:1.24, nodejs:22, nodejs:24, perl-CGI, perl-DBI, qt5-qtbase, tigervnc, vim, and xorg-x11-server), Debian (apache2, c-ares, linux-6.12, node-shell-quote, nova, parted, postgresql-17, python-django, sympa, and tomcat10), Fedora (cockpit, erlang-ssl_verify_fun, httpd, ignition, jackson-bom, jackson-core, jackson-databind, jackson-modules-base, libvirt, mod_http2, mongo-c-driver, poppler, prometheus, pylint, python-discovery, python-loguru, python-PyMuPDF, rabbitmq-server, rust-crypto-bigint, rust-ctutils, rust-elliptic-curve, rust-num-bigint, rust-num-bigint0.4, rust-n…</p>
+</li>
+</ul>
+<h2>Linux Weekly News (RSS)</h2>
+<ul>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1103395/">[$] 25 years of Buildroot</a></strong><br />
+  摘要：Buildroot maintainer Peter Korsgaard gave a presentation about the long history of the build tool for embedded Linux systems at the 2026 Embedded Linux Conference Europe . In it, he covered more than just the past 25 years, looking at the current status of the project as well as what to expect in Buildroot's future. It was an interesting view inside this long-running project that has been a mainstay of the embedded-Linux world throughout almost all of this century.</p>
+</li>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1107473/">Announcing XRAID: declustered parity RAID for zoned XFS</a></strong><br />
+  摘要：Christoph Hellwig has announced the initial public release of XRAID&mdash;declustered parity RAID that is integrated into XFS. The two primary aims of XRAID are to support parity RAID on zoned devices like SMR hard drives, and to provide a fast RAID implementation without inherent data integrity problems. XRAID, just like zoned XFS also works on conventional hard drives and SSDs. Optimizing for SSD performance has not been a focus, but even without that, writes are up to 20 times faster than mdraid. [...] Work on XRAID has been ongoing for a year and a half, and while we aren't anywhere near ready for an upstream submission, we are interested in feedback and testing from a wider audience now. The current implementation supports zero to 2 parities. We did experiments with the SnapRAID parit…</p>
+</li>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1107472/">Security updates for Friday</a></strong><br />
+  摘要：Security updates have been issued by AlmaLinux (.NET 10.0, .NET 8.0, .NET 9.0, firefox, gcc, grafana, grafana-pcp, gstreamer1, gstreamer1-plugins-base, java-1.8.0-openjdk, kernel, kernel-rt, libimobiledevice, mingw-libpng, nginx:1.24, nodejs:22, nodejs:24, perl-CGI, perl-DBI, qt5-qtbase, tigervnc, vim, and xorg-x11-server), Debian (apache2, c-ares, linux-6.12, node-shell-quote, nova, parted, postgresql-17, python-django, sympa, and tomcat10), Fedora (cockpit, erlang-ssl_verify_fun, httpd, ignition, jackson-bom, jackson-core, jackson-databind, jackson-modules-base, libvirt, mod_http2, mongo-c-driver, poppler, prometheus, pylint, python-discovery, python-loguru, python-PyMuPDF, rabbitmq-server, rust-crypto-bigint, rust-ctutils, rust-elliptic-curve, rust-num-bigint, rust-num-bigint0.4, rust-n…</p>
+</li>
+</ul>
+<h2>Red Hat Blog</h2>
+<ul>
+<li>
+<p><strong><a href="https://www.redhat.com/en/blog/we-came-we-connected-we-are-red-hat">We came. We connected. We are Red Hat.</a></strong><br />
+  摘要：When I joined Red Hat 27 years ago, we shipped Linux in boxes to retailers. A lot has changed since then. We’ve grown, evolved, and helped shape an industry that never stands still. But through it all, one thing has remained constant: the people who make Red Hat what it is. The way we show up for each other, bring different perspectives to the table, and make room for people to be themselves is at the heart of our culture. In a world that moves faster every day, taking the time to connect, celebrate one another, and give back matters more than ever.That’s what makes We Are Red Hat Week so</p>
+</li>
+<li>
+<p><strong><a href="https://www.redhat.com/en/blog/node-management-red-hat-openshift-5-bare-metal">Node management in Red Hat OpenShift 5: Server-level visibility for bare metal</a></strong><br />
+  摘要：Moving from vSphere to bare-metal Red Hat OpenShiftRed Hat OpenShift has supported bare metal from the start. But for much of its history, most deployments ran on top of an existing virtualization layer like VMware vSphere or Nutanix. That’s shifting. As more organizations adopt Red Hat OpenShift Virtualization and run virtual machines (VMs) directly on the platform, bare-metal deployments have become a much larger part of production workloads. That changes what you might expect from the console.When you transition from traditional virtualization to containerized environments, your mental mo</p>
+</li>
+<li>
+<p><strong><a href="https://www.redhat.com/en/blog/introducing-red-hat-cloud-extensions-sovereign-ai-clouds-your-own-infrastructure">Introducing Red Hat cloud extensions: Sovereign AI clouds on your own infrastructure</a></strong><br />
+  摘要：If you've spent the last year provisioning AI and infrastructure capacity for tenants who can't use a public cloud, you've felt this firsthand: the hardware is local, but the operational model still isn't. Keeping data on local soil is only the first step. True digital sovereignty demands hard multi-tenant isolation, operational control, and total freedom from vendor lock-in.Red Hat is introducing Red Hat cloud extensions, built on the Open Sovereign AI Cloud (OSAC) open source project, to help address that challenge. Red Hat cloud extensions let cloud providers offer Red Hat OpenShift cluster</p>
+</li>
+</ul>
+<h2>Kubernetes Blog</h2>
+<ul>
+<li>
+<p><strong><a href="https://kubernetes.io/blog/2026/10/14/tracing-kueue-admission-with-headlamp/">Why Is My Kubernetes Job Still Pending? Tracing Kueue Admission with Headlamp</a></strong><br />
+  摘要：You submit a Kubernetes Job and wait for its Pods to appear. A minute passes. Then another. The Job is still suspended, there are no application logs, and there may not even be a Pod to inspect. In a cluster managed by Kueue , this can be completely normal. Kueue may still be deciding whether the Job can use the requested resources. The useful question is not only “Why is the Pod pending?” It is first “Has Kueue admitted the Workload?” The Kueue plugin for Headlamp brings that investigation into the Headlamp UI. Instead of reconstructing the admission path from several commands and large YAML objects, you can begin with the Workload, read its condition message, and follow links through the LocalQueue, ClusterQueue, ResourceFlavor, and Cohort. This article follows that Headlamp-first path. …</p>
+</li>
+<li>
+<p><strong><a href="https://kubernetes.io/blog/2026/09/14/csi-changed-block-tracking-beta/">Kubernetes Changed Block Tracking API - Beta Differences</a></strong><br />
+  摘要：Changed Block Tracking (CBT) support for CSI drivers shipped as Alpha in September 2025. With the March 2026 v1.0.0 release of the external-snapshot-metadata project, the feature moved to Beta . If you aren't yet familiar with changed block tracking for storage in Kubernetes, the Alpha announcement covers the motivation, the three primary components (the CSI SnapshotMetadata gRPC service, the SnapshotMetadataService CRD, and the external-snapshot-metadata sidecar), and a walkthrough of how to use the API. CBT currently applies to block volumes; file-volume and network file-share changed-list tracking is not covered by this feature. This post focuses on what is different in Beta. What's new in Beta The main change in that release was the promotion of the SnapshotMetadataService CRD from v1a…</p>
+</li>
+<li>
+<p><strong><a href="https://kubernetes.io/blog/2026/09/14/kubernetes-v1-37-memory-qos-graduates-to-beta/">Kubernetes v1.37: Memory QoS Graduates to Beta</a></strong><br />
+  摘要：Memory QoS has graduated to Beta in Kubernetes v1.37 and is now enabled by default. On Linux nodes running cgroup v2, the feature uses the memory controller to give the kernel better guidance on how to treat container memory. It was first introduced as Alpha in v1.22, and expanded in v1.36 with tiered memory reservation. This post covers what changed in v1.37, what the Beta promotion means for cluster operators, and how to configure the feature. What changed in v1.37 Memory QoS is Beta and enabled by default The MemoryQoS feature gate is now Beta in v1.37. This means every v1.37 kubelet has the feature gate turned on without any configuration change. Turning on the feature by default is safe because the default kubelet configuration does not enable memory throttling or memory reservation. …</p>
+</li>
+<li>
+<p><strong><a href="https://kubernetes.io/blog/2026/09/08/kubernetes-v1-37-advancing-workload-aware-scheduling/">Kubernetes v1.37: Advancing Workload-Aware Scheduling</a></strong><br />
+  摘要：AI/ML and complex batch workloads continue to push the boundaries of Kubernetes scheduling. Following the foundational workload-centric enhancements introduced in previous releases, Kubernetes v1.37 delivers the next major milestone in the Workload-Aware Scheduling (WAS) journey. In this release, the core Workload and PodGroup APIs—enabling gang scheduling—along with Workload-Aware Preemption (WAP) and shared DRA ResourceClaims for PodGroups, all graduate to Beta, solidifying their role in the Kubernetes ecosystem. To address the hierarchical scheduling requirements of modern high-performance distributed workloads, v1.37 introduces the new CompositePodGroup API. This new API allows expressing multi-level topology constraints, gang scheduling, and preemption policies for complex, heterogene…</p>
+</li>
+</ul>
+<hr /></div>
+  </main>
+</body>
+</html>
