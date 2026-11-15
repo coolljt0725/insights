@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OS 领域每日洞察 - 2026-11-15</title>
+  <style>
+    :root {
+      --bg: #f6f4f0;
+      --bg-bar: #ebe8e3;
+      --bg-card: #fffefb;
+      --bg-card-hover: #f5f3ef;
+      --text: #2d2a26;
+      --text-muted: #5c5852;
+      --text-dim: #7a756e;
+      --accent: #5a7a9e;
+      --border: #ddd9d2;
+      --radius: 10px;
+      --font: "Segoe UI", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      font-size: 15px;
+    }
+
+    /* 门户顶栏 */
+    .masthead {
+      background: var(--bg-bar);
+      border-bottom: 1px solid var(--border);
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 0;
+    }
+    .masthead-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .masthead h1 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin: 0;
+      letter-spacing: -0.02em;
+      color: var(--text);
+    }
+    .masthead .meta {
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+    }
+
+    /* 主内容区：多栏门户布局 */
+    .main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 3rem;
+    }
+
+    /* 板块：每个 h2 为一个频道块 */
+    .content .section {
+      margin-bottom: 2.5rem;
+    }
+    .content h2 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+      margin: 0 0 1rem;
+      padding: 0.6rem 1rem;
+      background: var(--bg-bar);
+      border-radius: var(--radius);
+      border-left: 4px solid var(--accent);
+    }
+    .content h2:first-child { margin-top: 0; }
+
+    .content h2:has(+ h3) {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      border-left-color: var(--text-dim);
+    }
+
+    /* 板块内卡片网格（每个 h2 后的 ul） */
+    .content h2 + ul {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1rem;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .content h2 + ul li {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.15rem 1.2rem;
+      transition: background .15s, border-color .15s;
+    }
+    .content h2 + ul li:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--text-dim);
+    }
+    .content h2 + ul li strong {
+      display: block;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+      line-height: 1.4;
+    }
+    .content h2 + ul li p {
+      margin: 0 0 0.5rem;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.58;
+    }
+    .content h2 + ul li p:last-of-type { margin-bottom: 0; }
+    .content h2 + ul li a[href^="http"] {
+      font-size: 0.8125rem;
+      color: var(--accent);
+    }
+    .content h2 + ul li a[href^="http"]:hover { text-decoration: underline; }
+
+    .content .ref-section {
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+    .content h2 + h3 { margin-top: 1.25rem; }
+    .content h3 {
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--text-dim);
+      margin: 1rem 0 0.4rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .content h3 + ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 0.25rem;
+    }
+    .content h3 + ul li {
+      background: transparent;
+      border: none;
+      padding: 0.2rem 0;
+      font-size: 0.8125rem;
+    }
+    .content h3 + ul li strong { font-size: inherit; margin-bottom: 0; }
+    .content h3 + ul li a { color: var(--accent); }
+    .content h3 + ul li a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <header class="masthead">
+    <div class="masthead-inner">
+      <h1>OS 领域每日洞察 - 2026-11-15</h1>
+      <span class="meta">2026-11-15 05:00 UTC</span>
+    </div>
+  </header>
+  <main class="main">
+    <div class="content"><h1>OS 领域每日洞察 - 2026-11-15</h1>
+<p>（Gemini 未可用时，以下为按来源整理的条目，含<strong>新闻摘要</strong>与链接；摘要可能为原文语言。）</p>
+<h2>Hacker News</h2>
+<ul>
+<li>
+<p><strong><a href="https://linux.slashdot.org/story/26/11/14/0827227/linus-torvalds-wonders-if-linuxs-ai-prompted-patch-flood-has-peaked">Linus Torvalds Wonders If Linux's AI-Prompted Patch Flood Has Peaked</a></strong><br />
+  摘要：Linus Torvalds Wonders If Linux's AI-Prompted Patch Flood Has Peaked</p>
+</li>
+<li>
+<p><strong><a href="https://github.com/k0tletki/y623-mainline">Mainline Linux and blob-free userspace for the Yi 2K Pro WiFi camera</a></strong><br />
+  摘要：Mainline Linux and blob-free userspace for the Yi 2K Pro WiFi camera</p>
+</li>
+<li>
+<p><strong><a href="https://www.theregister.com/ai-and-ml/2026/11/13/another-linux-kernel-developer-steps-back-from-some-duties-due-to-overload/5309628">Another Linux kernel developer steps back from some duties due to overload</a></strong><br />
+  摘要：Another Linux kernel developer steps back from some duties due to overload</p>
+</li>
+<li>
+<p><strong><a href="https://fsfe.org/news/2026/news-20261113-01.html">Harald Welte receives EU SFS Award for work on Linux, GPL enforcement and more</a></strong><br />
+  摘要：Harald Welte receives EU SFS Award for work on Linux, GPL enforcement and more</p>
+</li>
+<li>
+<p><strong><a href="https://github.com/FURSOY/fursoy-cpu">Show HN: Fursoy – Out-of-order RV64IMAFDV core in SystemVerilog (Linux 6.6)</a></strong><br />
+  摘要：Show HN: Fursoy – Out-of-order RV64IMAFDV core in SystemVerilog (Linux 6.6)</p>
+</li>
+<li>
+<p><strong><a href="https://www.elastic.co/security-labs/threat-command/sansar-linux-cryptomining-malware">Linux cryptomining malware: Inside the SANSAR toolkit</a></strong><br />
+  摘要：Linux cryptomining malware: Inside the SANSAR toolkit</p>
+</li>
+<li>
+<p><strong><a href="https://jvns.ca/blog/2016/11/10/a-few-drawings-about-linux/">A few drawings about Linux (2016)</a></strong><br />
+  摘要：A few drawings about Linux (2016)</p>
+</li>
+</ul>
+<h2>Lobsters</h2>
+<ul>
+<li>
+<p><strong><a href="https://bvisness.me/periodic-oriented-programming/">Periodic-Oriented Programming for FIRST Robotics</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://jordi.inversethought.com/blog/25-of-my-favourite-modern-nes-games/">25 of my favourite modern NES games</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://dholms.leaflet.pub/3mu3p3ldwrc26">Reintroducing Spaces</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://saltysylvi.github.io/blog/parsing-nested-lists-in-bqn.html">Parsing nested lists in BQN</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://www.willett.io/posts/data/">Let Me Let You Own Your Data</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="http://blog.sesse.net/blog/tech/2026-11-13-19-51_solving_the_fox_game.html">Solving the fox game</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://goliath32.com/blog/ziphead.html">Creating a self booting ZIP archive</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://dfarq.homeip.net/what-happened-to-3com/">What happened to 3com?</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2605.29713">The Little Book of Generative AI Foundations: An Intuitive Mathematical Primer</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://blog.janestreet.com/writing-a-dsl-for-high-performance-parallel-programming-in-oxcaml/">Writing a DSL for high performance parallel programming in OxCaml</a></strong><br />
+  摘要：Comments</p>
+</li>
+</ul>
+<h2>Ars Technica</h2>
+<ul>
+<li>
+<p><strong><a href="https://arstechnica.com/space/2026/11/with-starship-catch-spacex-still-shows-it-can-dazzle-the-world/">SpaceX returned its Starship rocket on Saturday—but there's a catch</a></strong><br />
+  摘要：It felt like stepping into the future.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/science/2026/11/james-webb-telescope-finds-ice-older-than-the-star-it-orbits/">James Webb telescope finds ice older than the star it orbits</a></strong><br />
+  摘要：Radiation and collisions reshape the planetary building materials.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/science/2026/11/winemakers-are-learning-that-conservation-can-be-good-for-business/">Winemakers are learning that conservation can be good for business</a></strong><br />
+  摘要：Healthy soils, native plants, and fewer chemicals are helping vineyards adapt.</p>
+</li>
+</ul>
+<h2>The New Stack</h2>
+<ul>
+<li>
+<p><strong><a href="https://thenewstack.io/aws-emulator-verification-loops/">AWS Emulator proves agents need a verification loop. Realism is the hard part.</a></strong><br />
+  摘要：This week, Amazon Web Services released AWS Emulator, a local copy of AWS that coding agents can test against. It The post AWS Emulator proves agents need a verification loop. Realism is the hard part. appeared first on The New Stack .</p>
+</li>
+<li>
+<p><strong><a href="https://thenewstack.io/claude-fable-5-2-vs-fable-5-1/">Claude Fable 5.2 vs. Fable 5.1: Fewer refusals, with small savings on the login fix</a></strong><br />
+  摘要：Anthropic’s Claude Fable 5.2 promises fewer refusals and lower token prices, but those changes played out very differently in our The post Claude Fable 5.2 vs. Fable 5.1: Fewer refusals, with small savings on the login fix appeared first on The New Stack .</p>
+</li>
+<li>
+<p><strong><a href="https://thenewstack.io/ai-agent-search-ranking/">Web search for agents is here: Why ranking still decides the answer</a></strong><br />
+  摘要：AI agents have had a URL problem for a while. When an agent needs current information but has no search The post Web search for agents is here: Why ranking still decides the answer appeared first on The New Stack .</p>
+</li>
+<li>
+<p><strong><a href="https://thenewstack.io/ducklake-sql-lakehouse-metadata/">DuckLake 1.1 solves the absurd complexity of data lakes at AI scale</a></strong><br />
+  摘要：How much simpler could a data lakehouse get if an ordinary SQL database kept track of its files? That&#8217;s the The post DuckLake 1.1 solves the absurd complexity of data lakes at AI scale appeared first on The New Stack .</p>
+</li>
+<li>
+<p><strong><a href="https://thenewstack.io/anthropic-enterprise-developer-competition/">Anthropic wants you to build on Claude. There’s a catch.</a></strong><br />
+  摘要：Anthropic wants developers to build businesses on Claude, but its expansion into enterprise software is raising concerns among founders that The post Anthropic wants you to build on Claude. There’s a catch. appeared first on The New Stack .</p>
+</li>
+<li>
+<p><strong><a href="https://thenewstack.io/claude-fable-5-2-vs-gpt-6-astra/">Claude Fable 5.2 vs. GPT-6 Astra: A lower list price didn’t mean a lower bill</a></strong><br />
+  摘要：Anthropic is positioning its new model, Claude Fable 5.2, for demanding coding and technical work. Anthropic launched Fable 5.2 on The post Claude Fable 5.2 vs. GPT-6 Astra: A lower list price didn’t mean a lower bill appeared first on The New Stack .</p>
+</li>
+</ul>
+<h2>Phoronix</h2>
+<ul>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Redox-OS-Golang-GIMP">Redox OS Gets Golang Working, GIMP Ported &amp; Simplified AI Policy</a></strong><br />
+  摘要：The Rust-based Redox OS open-source operating system is now out with its October development summary that highlights recent software ports, progress on NUMA, and other enhancements made to this from-scratch platform...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Apple-M5-For-Linux-7.5">Basic Support For The Apple M5 Expected To Land For Linux 7.5</a></strong><br />
+  摘要：Very basic support for the Apple M5 SoC base model is expected to be merged for the Linux 7.5 kernel now that it's been queued into the "apple-soc/dt-7.5" Git branch...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/QEMU-VM-Memory-Tiering">Red Hat Working To Improve Memory Tiering For QEMU VMs To Save RAM</a></strong><br />
+  摘要：Red Hat engineers are working through a few possible approaches to enhance memory tiering for QEMU-based virtual machines to help in conserving memory. Ultimately they are after leveraging NVMe SSDs in more scenarios for QEMU VMs to save on RAM usage given today's sky high memory pricing...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Linux-Coral-Rapids-Razor-Lake">Intel Begins Linux Kernel Enablement For Coral Rapids &amp; Razor Lake</a></strong><br />
+  摘要：Along with Intel posting initial GCC compiler patches for Coral Rapids and Razor Lake processors, the first Linux kernel patch for these future Intel server and desktop/laptop processors have also arrived...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Emdoor-Linux-Platform-Driver">Rugged Emdoor Laptops Beginning To See Improved Linux Support</a></strong><br />
+  摘要：Emdoor that is a leading manufacturer of rugged laptops and tablets used by various industries is beginning to see improved Linux support thanks to a new platform driver being developed...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Plasma-6.9-XWayland-On-Demand">KDE Plasma 6.9 Finally Allows XWayland To Run On-Demand, New Wobbly Windows Presets</a></strong><br />
+  摘要：This Week in Plasma is out with its latest issue following a week of exciting developments toward the KDE Plasma 6.9 desktop...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/FreeBSD-15.2-Beta-2">FreeBSD 15.2 Beta 2 Delivers Updated OpenSSL, Bug Fixes</a></strong><br />
+  摘要：FreeBSD 15.2 Beta 1 debuted last week for this updated operating system bringing improved laptop/desktop hardware support, experimental cross-building of base packages on Linux and macOS, updated LLVM/Clang compiler, updated OpenZFS file-system support, and other improvements. Released overnight was FreeBSD 15.2 Beta 2...</p>
+</li>
+</ul>
+<h2>Kubernetes Blog</h2>
+<ul>
+<li>
+<p><strong><a href="https://kubernetes.io/blog/2026/10/27/announcing-workload-conformance-wg/">Announcing the Workload Conformance Working Group</a></strong><br />
+  摘要：We are excited to announce that the Kubernetes community now has a Workload Conformance Working Group . The working group is writing a shared standard for how workloads behave at runtime on Kubernetes. To get it right, we need input from the people who build those workloads and from the people who run the clusters they're deployed on. Why workloads need a shared standard Certified Kubernetes tests the cluster, and Kubernetes AI Conformance tests whether a cluster can run AI and ML workloads. Nothing comparable exists for the workloads themselves, so cluster operators still check each application by hand before routine maintenance or a Kubernetes upgrade. The problems they find are familiar. A routine node drain is often how you discover that an application can't tolerate disruption. An upg…</p>
+</li>
+<li>
+<p><strong><a href="https://kubernetes.io/blog/2026/09/21/kubernetes-v1-37-pvc-last-used-time/">Kubernetes v1.37: Tracking When a PersistentVolumeClaim Was Last Used (Beta)</a></strong><br />
+  摘要：Kubernetes v1.37 promotes the PersistentVolumeClaimUnusedSinceTime feature gate to Beta (enabled by default). With this feature, the PersistentVolumeClaim (PVC) protection controller adds an Unused condition to each PVC, telling you whether any running pod currently references it — no custom tooling or cross-referencing required. For the API definition of PVC conditions, see the PersistentVolumeClaim API reference . Read on to learn how the Unused condition works and how to use it. Why track PVC usage? In large-scale Kubernetes clusters, it is common for users to create PVCs and then delete the associated pods without cleaning up the storage, because Kubernetes does not automatically delete PVCs when their pods are removed (to protect against accidental data loss). Over time, these orphane…</p>
+</li>
+<li>
+<p><strong><a href="https://kubernetes.io/blog/2026/09/15/kubernetes-v1-37-pod-level-resource-managers-beta/">Kubernetes v1.37: Pod-Level Resource Managers graduated to Beta</a></strong><br />
+  摘要：With the release of Kubernetes v1.37, the Pod-Level Resource Managers feature has graduated to Beta status (disabled by default)! First introduced as an Alpha feature in Kubernetes v1.36 , this enhancement builds on Pod-Level Resources by equipping Kubelet's Topology Manager, CPU Manager, and Memory Manager to use Pod-level resource declarations ( .spec.resources ) directly when making hardware placement decisions. Bringing pod-level resources to node managers Before this feature, obtaining exclusive NUMA-aligned CPU cores or memory for latency-critical applications forced cluster operators into an all-or-nothing choice: assign integer resource requests to every container in the Pod, or forfeit exclusive NUMA alignment entirely. For modern workloads running lightweight sidecars (such as lo…</p>
+</li>
+<li>
+<p><strong><a href="https://kubernetes.io/blog/2026/09/09/kubernetes-v1-37-node-lifecycle-conditions/">Kubernetes v1.37: Introducing Node Lifecycle Conditions</a></strong><br />
+  摘要：Kubernetes has many ways to describe what is happening on a Node. Readiness, taints, Pod state, labels, annotations, and provider-specific APIs each expose part of the picture. What has been missing is a shared, Kubernetes-owned way to say that a Node is draining , undergoing maintenance, or undergoing Graceful Node Shutdown . Kubernetes v1.37 introduces five well-known Node conditions that provide that description: DrainInProgress Drained MaintenancePlanned MaintenanceInProgress GracefulNodeShutdownInProgress The new Node lifecycle conditions Condition What it reports DrainInProgress The Node is actively being drained according to the administrator's chosen drain criteria. Drained The Node has reached the drain criteria selected by the administrator. MaintenancePlanned The Node is expecte…</p>
+</li>
+</ul>
+<hr /></div>
+  </main>
+</body>
+</html>
