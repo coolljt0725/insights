@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OS 领域每日洞察 - 2026-11-16</title>
+  <style>
+    :root {
+      --bg: #f6f4f0;
+      --bg-bar: #ebe8e3;
+      --bg-card: #fffefb;
+      --bg-card-hover: #f5f3ef;
+      --text: #2d2a26;
+      --text-muted: #5c5852;
+      --text-dim: #7a756e;
+      --accent: #5a7a9e;
+      --border: #ddd9d2;
+      --radius: 10px;
+      --font: "Segoe UI", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      font-size: 15px;
+    }
+
+    /* 门户顶栏 */
+    .masthead {
+      background: var(--bg-bar);
+      border-bottom: 1px solid var(--border);
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 0;
+    }
+    .masthead-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .masthead h1 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin: 0;
+      letter-spacing: -0.02em;
+      color: var(--text);
+    }
+    .masthead .meta {
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+    }
+
+    /* 主内容区：多栏门户布局 */
+    .main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 3rem;
+    }
+
+    /* 板块：每个 h2 为一个频道块 */
+    .content .section {
+      margin-bottom: 2.5rem;
+    }
+    .content h2 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+      margin: 0 0 1rem;
+      padding: 0.6rem 1rem;
+      background: var(--bg-bar);
+      border-radius: var(--radius);
+      border-left: 4px solid var(--accent);
+    }
+    .content h2:first-child { margin-top: 0; }
+
+    .content h2:has(+ h3) {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      border-left-color: var(--text-dim);
+    }
+
+    /* 板块内卡片网格（每个 h2 后的 ul） */
+    .content h2 + ul {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1rem;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .content h2 + ul li {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.15rem 1.2rem;
+      transition: background .15s, border-color .15s;
+    }
+    .content h2 + ul li:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--text-dim);
+    }
+    .content h2 + ul li strong {
+      display: block;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+      line-height: 1.4;
+    }
+    .content h2 + ul li p {
+      margin: 0 0 0.5rem;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.58;
+    }
+    .content h2 + ul li p:last-of-type { margin-bottom: 0; }
+    .content h2 + ul li a[href^="http"] {
+      font-size: 0.8125rem;
+      color: var(--accent);
+    }
+    .content h2 + ul li a[href^="http"]:hover { text-decoration: underline; }
+
+    .content .ref-section {
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+    .content h2 + h3 { margin-top: 1.25rem; }
+    .content h3 {
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--text-dim);
+      margin: 1rem 0 0.4rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .content h3 + ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 0.25rem;
+    }
+    .content h3 + ul li {
+      background: transparent;
+      border: none;
+      padding: 0.2rem 0;
+      font-size: 0.8125rem;
+    }
+    .content h3 + ul li strong { font-size: inherit; margin-bottom: 0; }
+    .content h3 + ul li a { color: var(--accent); }
+    .content h3 + ul li a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <header class="masthead">
+    <div class="masthead-inner">
+      <h1>OS 领域每日洞察 - 2026-11-16</h1>
+      <span class="meta">2026-11-16 05:00 UTC</span>
+    </div>
+  </header>
+  <main class="main">
+    <div class="content"><h1>OS 领域每日洞察 - 2026-11-16</h1>
+<p>（Gemini 未可用时，以下为按来源整理的条目，含<strong>新闻摘要</strong>与链接；摘要可能为原文语言。）</p>
+<h2>arXiv (cs.OS)</h2>
+<ul>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2611.17824">TailGuard-GDS: Tail-Safe Control of GPU Storage Data Movement</a></strong><br />
+  摘要：arXiv:2611.17824v1 Announce Type: cross Abstract: AI runtimes move state between NVMe storage and GPU memory on critical paths. GPUDirect Storage (GDS) removes host staging, yet our eight-H100 measurements show it is not consistently tail-optimal for semantically identical GPU-buffer operations. The preferred path varies with operation, request size, concurrency, placement, and resource contention; bandwidth and tail-latency winners can disagree. Frameworks specify what moves and when, while GPU I/O stacks expose mechanisms; neither combines phase semantics with measured tail behavior to choose a delivery plan. We present TailGuard-GDS, a runtime that selects a semantically equivalent plan per application phase. It profiles plans varying backend, request shape, and placement, minimizes GPU…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2605.22781">DeltaBox: Millisecond-Scale Sandbox Checkpoint and Rollback for Stateful AI Agents</a></strong><br />
+  摘要：arXiv:2605.22781v3 Announce Type: replace Abstract: Emerging LLM-powered AI agent workloads, such as test-time tree search and reinforcement learning (RL), require high-frequency state exploration, relying on rapid checkpoint/restore (C/R) of the complete sandbox state, including files and process state. Existing mechanisms duplicate the entire state, causing hundreds of milliseconds to seconds of latency per C/R, which severely bottlenecks deep search and large-scale fan-outs. We observe that consecutive sandbox states between checkpoints differ only marginally. Therefore, instead of full duplication, a sandbox should only duplicate the changes between consecutive checkpoints (Key Insight), yet the lack of OS support makes this hard to realize. We propose a new OS-level abstraction, Delta…</p>
+</li>
+</ul>
+<h2>arXiv (cs.LG)</h2>
+<ul>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2611.17398">Alignment with Reflect-Reasoning: Learning How To Follow Principles</a></strong><br />
+  摘要：arXiv:2611.17398v1 Announce Type: new Abstract: The appropriate governing norms and principles for the alignment of Large Language Models (LLMs) often depend on cultural context and deployment application. However, most alignment techniques focus on training models to conform to human preferences or constitutional principles specified at training time and subsequently fixed. In practice, many deployers rely on system prompting to implement contextual norms and guardrails at inference time. Prior work has shown that post-generation reflective reasoning with critique and revision can improve conformance compared to simple system prompting, but such methods are limited to the reasoning abilities inherent in the trained model. We introduce Reflect-Reasoning, a training method that teaches mode…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2611.17412">WETW: Learning Pair-Specific Weighted Euclidean Distances for Efficient DTW Search</a></strong><br />
+  摘要：arXiv:2611.17412v1 Announce Type: new Abstract: Dynamic Time Warping (DTW) is the standard distance for similarity search over time series that are misaligned in time, but its cost is quadratic in the series length and lower bounds often prune few candidates, so search over large collections of long series is slow. Learned approximations embed the series to make comparisons cheap, yet compare every pair with the same fixed rule, usually the Euclidean distance, although DTW aligns each pair differently. We observe that, once a pair is aligned, DTW is a Euclidean distance over coordinates selected for that pair. Building on this view, we propose Weighted Euclidean Time Warping (WETW), a learned distance that adapts the comparison of fixed-length embeddings to each pair. A small symmetric net…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2611.17459">Classification with Large-Step Gradient Descent: Unifying Self-Stabilization and Convergence Rates</a></strong><br />
+  摘要：arXiv:2611.17459v1 Announce Type: new Abstract: Neural networks are often trained with gradient descent (GD) using step sizes that exceed classical stability thresholds, a regime where standard convergence theory no longer applies. Despite exhibiting non-monotonic loss and oscillatory dynamics, this regime frequently leads to faster convergence and better generalization. Existing theoretical perspectives offer complementary but incomplete insights: one identifies a self-stabilization mechanism that drives GD toward flat regions but does not yield convergence rates; another derives rigorous rates for specific losses but does not explain the underlying stabilization mechanism; and a third unifies these views for overparameterized least squares, but relies on the existence of a minimizer mani…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2611.17460">Unfinished-Bench: Measuring Rule Violations by Persistent Agents in Realistic Work Environments</a></strong><br />
+  摘要：arXiv:2611.17460v1 Announce Type: new Abstract: AI agents are increasingly equipped with persistence toward task completion to run delegated work autonomously for long periods, under many unstated constraints from internal documents and other people's authority. When completion requires violating a rule, the agent must decide alone, yet benchmarks of instruction-rule conflicts state the rule in the prompt or keep it hidden and do not evaluate persistence. We present Unfinished-Bench, a benchmark that gives models persistence in autonomous runs without a user, in realistic work environments with embedded rules. In each of its 97 scenarios across 7 organizations and 7 risk categories, the goal and the rule cannot both hold. We find that persistence raised violations of a rule in an internal …</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2611.17462">Diffusion Tree Sampling for Inference Time Adaptation of Crystal Generative Models</a></strong><br />
+  摘要：arXiv:2611.17462v1 Announce Type: new Abstract: Diffusion-based generative models have become strong priors over plausible crystal structures, but turning that prior into promising candidates requires steering toward several conflicting properties at once. Fine-tuning is expensive and produces a new model for every new objective, while differentiable guidance is not applicable to many real-world tasks. We instead adapt these generative models at inference time using Diffusion Tree Sampling (DTS), a Monte Carlo tree search procedure over the denoising trajectory. We make two technical contributions on top of DTS that are particularly relevant for AI-for-science applications. First, we show how to use existing property-conditional generative models (e.g., models fine-tuned for classifier-fre…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2611.17463">Availability-Aware Historical Feedback Learning for Electric Arc Furnace Temperature and Chemical Composition Prediction</a></strong><br />
+  摘要：arXiv:2611.17463v1 Announce Type: new Abstract: Electric arc furnace (EAF) steelmaking plays an increasingly important role in recycled and lower-carbon steel production. However, variability in charged materials, energy input, and operating conditions makes accurate prediction of molten steel temperature and final chemical composition challenging. Intermittent or delayed measurements limit the information available for timely prediction. This study develops an availability-aware historical-feedback learning framework for predicting EAF endpoint temperature and the final concentrations of twelve chemical elements. Eight industrial data sources are integrated into three progressively enriched predictor representations comprising 19 static, 39 temporal, and 47 history-informed features. Hist…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2611.17469">Improved Regret via Variance-Aware Policy Optimization in Adversarial MDPs</a></strong><br />
+  摘要：arXiv:2611.17469v1 Announce Type: new Abstract: We study episodic adversarial MDPs with unknown dynamics and full-information rewards and achieve regret with leading term $\widetilde O(\sqrt{H^3SAK})$. Here $H$ is the horizon, $S$ the total number of states across decision layers, $A$ the number of actions, and $K$ the number of episodes. This improves the two incomparable prior leading terms by factors $\sqrt{S/H}$ and $\sqrt{H^3}$, leaving a factor $\sqrt H$ to the lower-bound scale. We give a reduction from unknown to known dynamics for \emph{downstream-dependent} algorithms, whose policy at step $h$ is computed only from information at steps $h+1$ and onward. This reduces the remaining leading-order gap to finding a downstream-dependent known-dynamics algorithm with $\widetilde O(H\sqr…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2611.17472">Do Mixture-of-Experts Routers Benefit from Ensembling?</a></strong><br />
+  摘要：arXiv:2611.17472v1 Announce Type: new Abstract: Ensembles of neural networks have repeatedly been shown to outperform single networks. Ensemble theory attributes this gain to the accuracy of the individual members and the diversity among them. Mixture-of-experts models already combine many experts, but a single router decides how the experts are weighted for each input. Motivated by ensemble theory, we apply ensembling to the routing step: an ensemble of routers, trained jointly with the experts, proposes the expert weights. We systematically evaluate this approach using underparameterized networks on two image-classification and two tabular-regression tasks. We analyse each experiment with a performance-diversity decomposition of the router ensemble, which, to our knowledge, has not previ…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2611.17478">ERGo: Energy-Efficient Hybrid Graph Neural Network Training on Processing-In-Memory Architectures</a></strong><br />
+  摘要：arXiv:2611.17478v1 Announce Type: new Abstract: Processing-in-memory (PIM) has been proposed as an alternative computing paradigm for training Deep Neural Networks, including Graph Neural Networks (GNNs). Despite these advancements, training GNN workloads on PIM devices necessitates off-chip memory access. This off-chip access is expensive in terms of performance and energy, thereby impacting the overall energy efficiency of the training process on PIM platforms. In this paper, we propose a novel hybrid training framework called ERGo that automatically switches from a full-parameter phase to a parameter-efficient phase during the training process with negligible loss in predictive accuracy. The parameter-efficient phase employs low-rank representations of GNN weights, effectively reducing …</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2611.17484">SURFACE: Preference Distribution Matching on Pareto Fronts via Scalarization Steering</a></strong><br />
+  摘要：arXiv:2611.17484v1 Announce Type: new Abstract: Constructing a finite Pareto representation requires allocating a limited number of solutions across the Pareto front (PF). A desired preference distribution specifies this allocation by assigning more solutions to some PF regions and fewer to others. Scalarization generates Pareto solutions by varying objective weights and solving single-objective problems. However, a distribution of scalarization weights generally does not translate into the same distribution of Pareto solutions along the PF, because the weight-to-solution map is nonlinear and unknown in advance.To account for this distortion, we introduce SURFACE (Scalarization Updates for Redistributing Finite Approximations with Chart Estimation}), which adaptively updates scalarization …</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2611.17487">Identifying Latent Neural Dynamics with Recognition-Parametrised Gaussian Process Dynamical Systems</a></strong><br />
+  摘要：arXiv:2611.17487v1 Announce Type: new Abstract: Neural circuits are densely interconnected systems, and many neural computations are thought to be mediated by the dynamical evolution of activity within these recurrent networks, a hypothesis often referred to as "computation through dynamics". Under this view, understanding computation within real neural populations depends on building models of the dynamical rules governing the temporal evolution of recorded high-dimensional neural activity. Most commonly, such models depend on explicit generative parameterisations of (i) the (nonlinear) intrinsic dynamical flow field and stochasticity, (ii) the (nonlinear) mapping from dynamical state to neuronal activity, and (iii) the variability of individual neural responses given that dynamical state…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2611.17492">PF-Exec: Large-Scale UAV Relay Load Balancing with an Anchored Potential Direction Decider and a Per-Dimension Gain-Learning Executor</a></strong><br />
+  摘要：arXiv:2611.17492v1 Announce Type: new Abstract: Relay load balancing in large-scale UAV networks requires joint decisions on association, bandwidth, power and hovering position, while the dimension grows with the number of UAVs and each UAV sees only its local state. This paper splits the decision into two layers. An anchored potential direction decider emits a closed-form target at every instant and returns its direction only. A gain-learning executor maps a local observation into a positive gain per dimension, composes gain and target, and clips the action against the physical single-step bound; the two layers form PF-Exec. The unit gain is the default start, so the executor reduces to the pure potential policy before training. The load is first-order homogeneous in bandwidth, making the…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2611.17500">Adversarially Batched Online Learning</a></strong><br />
+  摘要：arXiv:2611.17500v1 Announce Type: new Abstract: We introduce adversarially batched online learning, where the learner may update its decision rule only at a restricted set of time steps. Equivalently, the time horizon is partitioned into batches, within which the learner must use a fixed policy. We study this model for four canonical problems: stochastic bandits, online convex optimization, prediction with expert advice, and adversarial bandits. For stochastic bandits, we identify a universal complexity measure based on relative batch growth and establish both gap-dependent and gap-independent regret bounds. We show that the multiplicative penalty relative to the standard gap-dependent complexity can grow superlinearly in batch hardness. For the remaining three, we show that the optimal re…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2611.17556">A Synthetic Benchmark for Target-Centric Causal Discovery in Industrial Processes</a></strong><br />
+  摘要：arXiv:2611.17556v1 Announce Type: new Abstract: Causal discovery promises to find which recorded variables drive a process target such as product quality, yield or energy use. Process data with known causes are rare, and in existing benchmarks the difficulty of identifying the causes of a target is either fixed by the recorded data or set for the whole graph. We present a synthetic benchmark for target-centric causal discovery in industrial processes. Its generator is a two-level structural causal model inspired by batch production, assembled from components that each model one phenomenon of process data, such as a control loop or a delayed effect. The graph is built around the target: without sensor error, every non-cause can be distinguished from the direct causes by conditioning on them…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2611.17560">Generative Design with Real-time Physics Explainability: Towards Product Definition in the Age of AI</a></strong><br />
+  摘要：arXiv:2611.17560v1 Announce Type: new Abstract: In this article, we explore opportunities from using generative AI in mechanical engineering. On the one hand, generative methods based on invertible neural networks have been recently proposed for the solution of inverse design problems, allowing to infer design parameters from performance labels. On the other hand, generative AI models have shown that they can act as real time capable surrogates for physics based simulations. Here we suggest that these two streams should be combined in a unified framework, where INN are used to control the design process from the customer requirements perspective and the generative simulation of the systems physics adds a layer of explainability, why the proposed design fulfils the requirements. As generati…</p>
+</li>
+</ul>
+<h2>arXiv (cs.AI)</h2>
+<ul>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2611.17338">When Should LLM Agents Forget? Memory Filtering Under Query-Critical Resolver Errors</a></strong><br />
+  摘要：arXiv:2611.17338v1 Announce Type: new Abstract: LLM memory systems often delete facts classified as stale. We show that this hard-filtering step can reduce downstream accuracy when resolver errors delete query-critical facts. Across three models, a controlled sensitivity intervention moves hard-drop from gains of +0.186 to +0.230 at perfect resolution to losses of -0.176 to -0.181 at the lowest tested reliability. Paired targeted interventions show that false-drop causes significantly greater degradation than false-keep, while a non-deleting baseline can still fail when incorrect labels steer generation. On a frozen 102/102 calibration/test split, a simple deployment-matched gate reaches 0.655 accuracy versus 0.641 for always hard-drop and 0.662 for test-informed oracle selection. Global-a…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2611.17339">Does the Ranking Hold? A Practitioner-Facing Audit of Hallucination Detectors on Small, Quantized, On-Device LLMs</a></strong><br />
+  摘要：arXiv:2611.17339v1 Announce Type: new Abstract: Hallucination detection for large language models is dominated by methods evaluated on 7B-70B research models with abundant sampling budgets and exact-match or ROUGE correctness labels. The small models practitioners actually ship on-device, Phi-3-mini, Llama-3.2-3B-Instruct, Qwen2.5-3B-Instruct, and Gemma-2-2B-Instruct, typically at 4-bit precision, sit outside this evidence base. We present a reproducible one-GPU audit of four detectors spanning three paradigms: length-normalized token-margin calibration, a lexical n-gram baseline, and two sampling-based consistency methods (semantic entropy and SelfCheckGPT-NLI) on two small open instruction-tuned models (Llama-3.2-3B-Instruct and Qwen2.5-3B-Instruct) loaded at 4-bit NF4 quantization on a …</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2611.17340">LoRAWeaver: Directional Adapter Routing in LoRA Representation Space</a></strong><br />
+  摘要：arXiv:2611.17340v1 Announce Type: new Abstract: Large language models are expensive to update through full retraining. Parameter-efficient fine-tuning reduces the cost of adaptation, but repeated adaptation creates a growing pool of task-specific LoRA adapters. This pool complicates adapter selection during inference. Existing routing and encoder-based methods often require retraining when new adapters are added, which limits their use in dynamic settings. This paper treats adapter routing as a representation alignment problem in the adapter-output space. The proposed training-free method selects adapters by matching adapter-conditioned query representations against task prototypes using cosine similarity. Experiments with LLaMA-2-7B and LLaMA-2-13B on a 48-task FLAN-v2 benchmark and on ou…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2611.17341">Tabular Population Priors as Structured Retrieval for EHR Medication Set Prediction</a></strong><br />
+  摘要：arXiv:2611.17341v1 Announce Type: new Abstract: Medication prediction from electronic health records is a fixed vocabulary structured prediction problem, yet recent clinical RAG systems often treat it like open ended case based reasoning: retrieve similar patient admissions and ask an LLM to infer a medication set. This retrieval object is indirect the model receives retrieved patient records while the target is a discrete set of medication class labels. We propose a more task aligned retrieval object: a tabular population prior ranked medication class candidates from a sparse condition medication co occurrence table estimated from training admissions. Using PACERAG as a fixed downstream pipeline and replacing only its patient retriever, this drop in swap improves F1 from 0.303 to 0.338 (+…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2611.17495">An Operationalization of Opaque Serial Depth</a></strong><br />
+  摘要：arXiv:2611.17495v1 Announce Type: new Abstract: Chain-of-thought (CoT) is currently a valuable tool for overseeing AI models, but some architectural shifts could significantly reduce CoT monitorability. We operationalize a measure that serves as a proxy for the amount of unverbalized serial cognition a model can perform, as a specific instantiation of the notion of opaque serial depth: roughly, the length of the longest path through a model's computation that does not pass through an interpretable bottleneck. Our main contribution is a particular standard for what counts as such a bottleneck. We define natural-language-rooted (NL-rooted) nodes as nodes that were initialized from a pre-training prior to produce human-understandable outputs, whose output space has not been expanded beyond th…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2611.17501">Advancing Quantization for R&amp;R Models with Microscaling Formats</a></strong><br />
+  摘要：arXiv:2611.17501v1 Announce Type: new Abstract: Recommendation and Ranking (R&amp;R) models, particularly in digital advertising, require massive inference throughput but exhibit extreme sensitivity to precision loss. Unlike Large Language Models (LLMs) that frequently tolerate quantization-induced accuracy drops of 1% or more, production-grade R&amp;R models enforce a stringent launch bar: model quality must remain within a 0.01% Normalized Entropy (NE) margin relative to the baseline, which commonly uses FP16 or FP32. This tight constraint has historically hindered the adoption of aggressive quantization in this domain. In this paper, we present an empirical evaluation of both MXFP8 and the 6-bit MXFP6 format for industrial-scale R&amp;R inference on the AMD MI350X architecture. To the b…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2611.17515">A Push Down the Mountain: Framing Effects and Internal State Interventions on Collusive Behavior in a Long-Horizon LLM Agent</a></strong><br />
+  摘要：arXiv:2611.17515v1 Announce Type: new Abstract: Can sustained gain-loss (valence) framing sway an LLM agent toward market manipulation? We place Gemma 3 12B into the seat of a defendant in the London silver-fixing litigation, in a market simulation built from real case transcripts. Across 260 simulations, the agent is asked to collude on the price of silver by a counterparty. We draw from behavioral economics to vary the counterparty's requests across four categorical frames: gain, loss, blame and credit. We also add pressure from the agent's management, as well as endorsement by another defendant. In Phase II, we extract the internal states induced by texts evoking each frame and rerun our experiment with those states injected at the model's layer 22. In Phase I, loss framing raised parti…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2611.17524">Model Annealing: Data-Efficient Learning through Review and Consolidation</a></strong><br />
+  摘要：arXiv:2611.17524v1 Announce Type: new Abstract: A small labelled dataset is memorized long before the training budget runs out, and the one-hot labels that remain to be fitted then mostly sharpen confidence. Model annealing spends the rest of the budget on review and consolidation, relearning from the network's own knowledge. Training is divided into episodes whose learning rate is raised again and cooled, every cooled state joins a memory of past selves, and each new episode learns from the labels, from the tempered predictions of this memory, and from adversarial dreams sought where student and memory disagree most. The memory averages predictions rather than weights, and the deployed network is the last student, so inference costs nothing extra. Across CIFAR-100, Tiny-ImageNet and Image…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2611.17532">Astrocyte Biocomputing: Astrocytic Contributions to Neural Network Computation</a></strong><br />
+  摘要：arXiv:2611.17532v1 Announce Type: new Abstract: Conductors are critical for the performance of an orchestra even though they do not emit sound. Basic research and clinical studies in the last decade are revealing that astrocytes may be the "conductors" of the "orchestra" that is the brain network: astrocytes make up approximately $50\%$ of all brain cells but do not emit electrical signals. Nevertheless, they may play critical roles in important cognitive brain functions, specifically learning, memory, and information processing. Here we consider the implications of these discoveries for brain-inspired machine learning (ML), where analogy is typically drawn between neurons and their electrical interactions. We highlight specific algorithms for two key astrocyte characteristics. The first c…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2611.17539">Verifiable pXRD: Hill-climbing pXRD structure determination with LLM agents</a></strong><br />
+  摘要：arXiv:2611.17539v1 Announce Type: new Abstract: Autonomous crystal-structure determination from powder X-ray diffraction (pXRD) remains a key bottleneck for self-driving materials laboratories. We formulate the task of pXRD structure determination as a verifiable agentic search problem: candidate structures can be assessed during inference through forward-simulated profile agreement and during evaluation through structural matching to a known reference. To benchmark progress, we introduce pXRD-Bench, a suite of 200 simulated single-phase problems spanning in-distribution structure determination, challenging and polymorphic structures, and controlled compositional and topological distribution shifts. Agent adaptation raises selected structural recovery from 27% to 69%, with further gains fr…</p>
+</li>
+</ul>
+<h2>Lobsters</h2>
+<ul>
+<li>
+<p><strong><a href="https://aphyr.com/posts/428-announcing-hegel-clj">Announcing Hegel-clj</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://citrons.xyz/journal/2026-04-13">Paint in the memory of other programs</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://nix.dev/manual/nix/2.35/advanced-topics/eval-profiler">Nix: Using the eval-profiler</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://fzakaria.com/2026/11/14/beer-drv-drv-drv">beer.drv.drv.drv</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://www.redox-os.org/news/this-month-261031/">This Month in Redox - October 2026</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://transactional.blog/talk/please-implement-a-quorum-database">Please Implement A Quorum Database</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://burntsushi.net/jiff/">A datetime library for Rust</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://www.ykiko.me/en/articles/2105384023094834022/">clice v1.0 Released: Welcome to Modern C++</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://bughunters.google.com/blog/preventing-cross-service-udp-loops-in-quic">Blog: Preventing Cross-Service UDP Loops in QUIC</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://jakub.jankiewicz.org/blog/ai-code-open-source/">All AI-generated code should be Open Source</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://theconsensus.dev/p/2026/11/08/c-memory-management-survey.html">Memory management in 40 major C projects, a survey</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://lucypero.com/lucynes.html">A NES emulator written in Odin</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://blog.kizu.dev/cursors/">cursor:pointer on buttons</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://gyptazy.com/blog/freebsd-bhyve-live-migration-support-rfc/">FreeBSD bhyve Live Migration: Moving VMs Between Hosts</a></strong><br />
+  摘要：Comments</p>
+</li>
+</ul>
+<h2>Hacker News</h2>
+<ul>
+<li>
+<p><strong><a href="https://twitter.com/GrapheneOS/status/2122079826257588569">Linux was created as a rejection of robust software architecture and tools</a></strong><br />
+  摘要：Linux was created as a rejection of robust software architecture and tools</p>
+</li>
+<li>
+<p><strong><a href="https://tangled.org/rockorager.dev/parcel">Parcel: A desktop mail client for Linux, built with Zig</a></strong><br />
+  摘要：Parcel: A desktop mail client for Linux, built with Zig</p>
+</li>
+<li>
+<p><strong><a href="https://news.ycombinator.com/item?id=50510691">Ask HN: Why don't operating systems provide complete SSD write accountability?</a></strong><br />
+  摘要：Excessive writes can wear out an SSD. So even one bug could kill your computer. (Not all SSDs are replaceable.) So why don&#x27;t operating systems always tell you precisely what app&#x2F;service is responsible for excessive writes so that you can turn off the app&#x2F;service and contact its authors?</p>
+</li>
+<li>
+<p><strong><a href="https://github.com/V4bel/NoisyTCP">NoisyTCP: Linux Kernel TCP Pre-Auth Remote Corruption (CVE-2026-99288)</a></strong><br />
+  摘要：NoisyTCP: Linux Kernel TCP Pre-Auth Remote Corruption (CVE-2026-99288)</p>
+</li>
+<li>
+<p><strong><a href="https://archive.org/details/manual_20260914">A Multitasking Universal Operating System for Atari ST Computers</a></strong><br />
+  摘要：A Multitasking Universal Operating System for Atari ST Computers</p>
+</li>
+<li>
+<p><strong><a href="https://github.com/oneamendez/crate-ios">Crate: Run Linux VMs on iPhone and iPad</a></strong><br />
+  摘要：Crate: Run Linux VMs on iPhone and iPad</p>
+</li>
+<li>
+<p><strong><a href="https://github.com/ElliotKillick/operating-system-design-review">Operating System Design Review</a></strong><br />
+  摘要：Operating System Design Review</p>
+</li>
+</ul>
+<h2>Ars Technica</h2>
+<ul>
+<li>
+<p><strong><a href="https://arstechnica.com/space/2026/11/vulcan-rocket-fails-during-launch-dealing-major-blow-to-spacex-competitors/">Vulcan rocket fails during launch, dealing major blow to SpaceX competitors</a></strong><br />
+  摘要：This was the first total mission failure in United Launch Alliance's 20-year history.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/science/2026/11/how-the-worlds-fires-changed-while-humanity-hit-pause/">How the world’s fires changed while humanity hit pause</a></strong><br />
+  摘要：COVID-19 lockdowns cut global fire activity by 12.3 percent.</p>
+</li>
+</ul>
+<h2>Phoronix</h2>
+<ul>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Linux-7.4-rc3-Released">Linux 7.4-rc3 Released: "The Usual Noise All Over"</a></strong><br />
+  摘要：The third weekly release candidate of Linux 7.4 is now available for testing...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/AMD-Hybrid-Capacity-Aware-Sched">AMD Posts Linux Patches For Capacity Aware Scheduling On Hybrid CPUs</a></strong><br />
+  摘要：On Saturday a new set of Linux kernel driver patches were posted by AMD for enabling Capacity Aware Scheduling on AMD heterogeneous/hybrid processors...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/IBM-VMs-ARM64-On-s390">IBM Talks Up Their New Ability For Handling ARM64 Guest VMs on s390 Hardware</a></strong><br />
+  摘要：One of the biggest surprises this year was IBM collaborating with Arm for "dual architecture" hardware. In addition to the IBM s390 hardware side, this "dual architecture" support for running ARM64 instructions on s390 also requires Linux KVM virtualization support with patches we've seen the past number of months and initial code merged for Linux 7.4...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/AMD-Root-Guest-ARG-Linux">AMD ARG "AMD Root Guest" Linux Patches Coming In 2027</a></strong><br />
+  摘要：A new feature of EPYC 9006 "Venice" server processors that isn't yet brought up in the public Linux software support is AMD Root Guest (ARG). The initial patches are expected in Q1'2027 for further enhancing the AMD SEV-SNP confidential computing experience...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/ASUS-Ascent-QN10-Linux">ASUS Ascent QN10 Mini PC Powered By Snapdragon X2 Elite Seeing Linux Support</a></strong><br />
+  摘要：In addition to a number of laptops powered by Qualcomm's Snapdragon X2 beginning to see Linux support, there's now a X2 Elite powered mini PC seeing Linux patches too...</p>
+</li>
+</ul>
+<h2>The New Stack</h2>
+<ul>
+<li>
+<p><strong><a href="https://thenewstack.io/duckdb-quack-database-protocol/">DuckDB has an answer to “bloated” database messages</a></strong><br />
+  摘要：Older database protocols were built before big data. Some still send results row by row, repeating details like column names The post DuckDB has an answer to “bloated” database messages appeared first on The New Stack .</p>
+</li>
+<li>
+<p><strong><a href="https://thenewstack.io/claude-fable-5-2-vs-opus-5-5/">Claude Fable 5.2 vs. Opus 5.5: Same scores at almost 4x the cost</a></strong><br />
+  摘要：Anthropic released Claude Fable 5.2 on November 9 and said it beats Claude Opus 5.5 in almost every capability the The post Claude Fable 5.2 vs. Opus 5.5: Same scores at almost 4x the cost appeared first on The New Stack .</p>
+</li>
+</ul>
+<h2>Kubernetes Blog</h2>
+<ul>
+<li>
+<p><strong><a href="https://kubernetes.io/blog/2026/09/22/sig-apps-spotlight/">Spotlight on SIG Apps</a></strong><br />
+  摘要：As Kubernetes adoption has grown, the conversation has shifted beyond running containers to managing increasingly complex application lifecycles. Modern platforms support stateless web services, stateful databases, batch processing, AI workloads, and platform services. At the same time, they must remain reliable during upgrades, scaling events, and infrastructure failures. Every Kubernetes user relies on SIG Apps, whether they realize it or not. Deployments, StatefulSets, DaemonSets, Jobs, and CronJobs form the foundation of how applications are deployed, updated, scaled, and operated across the Kubernetes ecosystem. SIG Apps is focused on improving workload resilience, refining application lifecycle management, and addressing the operational challenges that emerge when applications encoun…</p>
+</li>
+<li>
+<p><strong><a href="https://kubernetes.io/blog/2026/09/16/kubernetes-v1-37-hardening-container-storage/">Kubernetes v1.37: Hardening Container Storage with Bind Mount Options and EmptyDir Permissions</a></strong><br />
+  摘要：Kubernetes v1.37 brings important storage security features: emptyDir permission modes and bind mount options. They help application programmers and security professionals implement rigorous security policies, for example, prohibiting deletion of files across containers or execution of arbitrary binaries from writable volumes, directly in Kubernetes without any complicated circumvention. Linux storage and permission fundamentals Before diving into the new Kubernetes features, let us briefly review the low-level Linux security mechanisms that make them possible. Bind mount flags When Linux mounts or remounts a directory, Virtual File System (VFS) flags control what actions are permitted on that filesystem: noexec : Do not permit direct execution of any binaries on the mounted filesystem. no…</p>
+</li>
+<li>
+<p><strong><a href="https://kubernetes.io/blog/2026/09/10/kubernetes-v1-37-scheduler-preemption-for-in-place-pod-resize-alpha/">Kubernetes v1.37: Scheduler Preemption for In-Place Pod Resize (Alpha)</a></strong><br />
+  摘要：In Kubernetes, resource allocation has historically been a static decision made during a Pod's initial scheduling and placement. With the graduation of the core in-Place Pod resize feature to General Availability in v1.35, application developers and cluster operators gained the powerful ability to dynamically adjust CPU and memory allocations of running containers without incurring disruptive restarts or application downtime. However, in-place resizing introduced a unique resource scheduling gap: if a running Pod requested a resource scale-up that exceeded the host node's allocatable headroom, the Kubelet was forced to mark the request as Deferred . The Pod would remain parked in this state indefinitely, waiting for resources on the node to naturally free up. To bridge this scheduling gap,…</p>
+</li>
+</ul>
+<hr /></div>
+  </main>
+</body>
+</html>
