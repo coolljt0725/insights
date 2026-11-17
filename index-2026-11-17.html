@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OS 领域每日洞察 - 2026-11-17</title>
+  <style>
+    :root {
+      --bg: #f6f4f0;
+      --bg-bar: #ebe8e3;
+      --bg-card: #fffefb;
+      --bg-card-hover: #f5f3ef;
+      --text: #2d2a26;
+      --text-muted: #5c5852;
+      --text-dim: #7a756e;
+      --accent: #5a7a9e;
+      --border: #ddd9d2;
+      --radius: 10px;
+      --font: "Segoe UI", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      font-size: 15px;
+    }
+
+    /* 门户顶栏 */
+    .masthead {
+      background: var(--bg-bar);
+      border-bottom: 1px solid var(--border);
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 0;
+    }
+    .masthead-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .masthead h1 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin: 0;
+      letter-spacing: -0.02em;
+      color: var(--text);
+    }
+    .masthead .meta {
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+    }
+
+    /* 主内容区：多栏门户布局 */
+    .main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 3rem;
+    }
+
+    /* 板块：每个 h2 为一个频道块 */
+    .content .section {
+      margin-bottom: 2.5rem;
+    }
+    .content h2 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+      margin: 0 0 1rem;
+      padding: 0.6rem 1rem;
+      background: var(--bg-bar);
+      border-radius: var(--radius);
+      border-left: 4px solid var(--accent);
+    }
+    .content h2:first-child { margin-top: 0; }
+
+    .content h2:has(+ h3) {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      border-left-color: var(--text-dim);
+    }
+
+    /* 板块内卡片网格（每个 h2 后的 ul） */
+    .content h2 + ul {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1rem;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .content h2 + ul li {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.15rem 1.2rem;
+      transition: background .15s, border-color .15s;
+    }
+    .content h2 + ul li:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--text-dim);
+    }
+    .content h2 + ul li strong {
+      display: block;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+      line-height: 1.4;
+    }
+    .content h2 + ul li p {
+      margin: 0 0 0.5rem;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.58;
+    }
+    .content h2 + ul li p:last-of-type { margin-bottom: 0; }
+    .content h2 + ul li a[href^="http"] {
+      font-size: 0.8125rem;
+      color: var(--accent);
+    }
+    .content h2 + ul li a[href^="http"]:hover { text-decoration: underline; }
+
+    .content .ref-section {
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+    .content h2 + h3 { margin-top: 1.25rem; }
+    .content h3 {
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--text-dim);
+      margin: 1rem 0 0.4rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .content h3 + ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 0.25rem;
+    }
+    .content h3 + ul li {
+      background: transparent;
+      border: none;
+      padding: 0.2rem 0;
+      font-size: 0.8125rem;
+    }
+    .content h3 + ul li strong { font-size: inherit; margin-bottom: 0; }
+    .content h3 + ul li a { color: var(--accent); }
+    .content h3 + ul li a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <header class="masthead">
+    <div class="masthead-inner">
+      <h1>OS 领域每日洞察 - 2026-11-17</h1>
+      <span class="meta">2026-11-17 05:00 UTC</span>
+    </div>
+  </header>
+  <main class="main">
+    <div class="content"><h1>OS 领域每日洞察 - 2026-11-17</h1>
+<p>（Gemini 未可用时，以下为按来源整理的条目，含<strong>新闻摘要</strong>与链接；摘要可能为原文语言。）</p>
+<h2>Hacker News</h2>
+<ul>
+<li>
+<p><strong><a href="https://unkernel.dev">Unkernel: Linux kernel in WASM</a></strong><br />
+  摘要：Unkernel: Linux kernel in WASM</p>
+</li>
+<li>
+<p><strong><a href="https://computer.hotline.dev/">Show HN: Hotline Computer – Rootless Linux desktop container with Nix for agents</a></strong><br />
+  摘要：Show HN: Hotline Computer – Rootless Linux desktop container with Nix for agents</p>
+</li>
+<li>
+<p><strong><a href="https://www.provos.org/p/coordinating-ai-agents-across-operating-systems/">Coordinating Codex and Claude Across macOS, Linux, and Windows</a></strong><br />
+  摘要：Coordinating Codex and Claude Across macOS, Linux, and Windows</p>
+</li>
+<li>
+<p><strong><a href="https://github.com/meshapplied/goethe">Show HN: Goethe – turn your computer into an inference engine</a></strong><br />
+  摘要：Hi HN, I&#x27;m Matteo from meshapplied (YC W27), building this with Peter and Janos. We think you can and should own your inference, so we built software that actually supports that. Goethe turns a Linux machine with an NVIDIA GPU into an API your OpenAI, Anthropic compatible clients can call. <code>curl -fsSL https:&amp;#x2F;&amp;#x2F;goethe.sh&amp;#x2F;install.sh | bash goethe start</code> Limits: it&#x27;s Linux only rn and it supports Ampere or newer NVIDIA GPUs. Logging in with <code>goethe login</code> is optional and turns on the optimized kernels. Docs: <a href="https:&#x2F;&#x2F;goethe.sh&#x2F;docs">goethe.sh&#x2F;docs</a> I&#x27;d love to hear what breaks and what you&#x27;d want next.</p>
+</li>
+<li>
+<p><strong><a href="https://www.youtube.com/watch?v=5osOHhBWKOQ">Ken Guyton (Google) – Linux internals [video]</a></strong><br />
+  摘要：Ken Guyton (Google) – Linux internals [video]</p>
+</li>
+<li>
+<p><strong><a href="https://github.com/pithings/unkernel">A real Linux kernel, compiled to WebAssembly</a></strong><br />
+  摘要：A real Linux kernel, compiled to WebAssembly</p>
+</li>
+<li>
+<p><strong><a href="https://www.zdnet.com/innovation/ai-bug-reports-linux-windows/">Some Linux maintainers are quitting under AI bugs, but there are signs of hope</a></strong><br />
+  摘要：Some Linux maintainers are quitting under AI bugs, but there are signs of hope</p>
+</li>
+<li>
+<p><strong><a href="https://github.com/mr-anjaneyam/Emittr">Show HN: Nobody blocks a keyboard – Rooted Android as a physical USB Deck</a></strong><br />
+  摘要：Hey HN, I built Emittr because, i frequently deal with air-gapped or locked-down systems where USB storage is disabled and third party software cannot be installed. Nobody blocks a physical keyboard, so i used the Linux Kernel&#x27;s USB gadget subsystem (ConfigFS at &#x2F;dev&#x2F;hidg0) to turn a rooted android phone to a real USB HID Keyboard and mouse. 1. No installation on target device. It talks to motherboard USB controller, so it works in every locked down OS as well, BIOS, GRUB, etc. 2. Out of band bridge : we don&#x27;t store passwords or authenticators on rooted phone. Emittr exposes a web UI on LAN, so we can send keystrokes from our main phones. 3. Types long scripts (chatgpt debuggings), SSH keys or passwords at ~1000 WPM without touching the host&#x27;s clipboard. 4. OS can …</p>
+</li>
+<li>
+<p><strong><a href="https://twitter.com/GrapheneOS/status/2122074518437134627">GrapheneOS calls Linux a "human slop kernel" and slams its security flaws</a></strong><br />
+  摘要：GrapheneOS calls Linux a "human slop kernel" and slams its security flaws</p>
+</li>
+</ul>
+<h2>Phoronix</h2>
+<ul>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/HRX-Loom-0.2">AMD ROCm HRX's Loom 0.2 Expands C++ Support, Improved Targeting</a></strong><br />
+  摘要：AMD ROCm's HRX Loom as the compiler, runtime, and serving infrastructure for supporting AI agent workflows is out today with a new version...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/AlmaLinux-10.3-Released">AlmaLinux 10.3 Released With ModSecurity Restored, Various Updates</a></strong><br />
+  摘要：Following the recent Red Hat Enterprise Linux 10.3 release, AlmaLinux 10.3 is now available in production along with AlmaLinux 9.9...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/review/mrdimm-8800-12800-amd-epyc">MRDIMM 8800 MT/s vs. 12800 MT/s Memory Performance With AMD EPYC Venice</a></strong><br />
+  摘要：With last week's AMD EPYC 9006 SP7 availability and the AMD EPYC 9686F and EPYC 9996 processor reviews, one of the most frequent questions/comments was around the impact that the new MRDIMM-12800 memory had on these Zen 6 server processors compared to prior gen and the Intel/NVIDIA server competition. Given that curiosity over the MRDIMM-12800 impact, here are the EPYC 9686F 2P benchmarks when re-testing at 8800 MT/s memory speeds.</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Intel-GPU-270-Open-Performance">Intel Talks Up GPU D270 Performance &amp; Open-Source Software Support</a></strong><br />
+  摘要：For Supercomputing 2026 week, Intel published a blog post talking up their Intel GPU D Series "Crescent Island" hardware based on Xe3P...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Rust-Nightly-Parallel-Frontend">Rust Nightly To Begin Enabling Parallel Frontend By Default</a></strong><br />
+  摘要：While Rust's back-end has long been using multiple threads for compiling code, the Rust front-end has been executing sequentially by default. Finally, Rust Nightly is in the process of beginning to enable its parallel front-end by default to allow for more testing ahead of its eventual stabilization...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/GNU-Gawk-5.4.2">GNU's Gawk 5.4.2 Released With Big Performance Improvement</a></strong><br />
+  摘要：Gawk as the GNU's implementation of the AWK programming language is out with a new release for this tool commonly used for extracting data and pattern matching / data manipulation...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/LLVM-R600-Backend-To-Retire">LLVM's Old AMD R600 Compiler Backend Slated For Removal</a></strong><br />
+  摘要：The old ATI/AMD Radeon R600 back-end within the LLVM compiler codebase will likely be removed given it's become a legacy burden and doesn't have any current use by the modern Mesa driver stack...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/GCC-Native-AArch64-Darwin-Patch">GCC 17 Might Land Native AArch64 Darwin/macOS Support</a></strong><br />
+  摘要：After being in development since the GCC 10 days (2020) and already patched in the GCC compiler builds for Homebrew and MacPorts, the upstream GCC 17 compiler might finally land native AArch64 Darwin support for benefiting macOS with Apple Silicon...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Linux-7.5-NTFS-TMPFILE">Modern NTFS Driver Gaining O_TMPFILE Support With Linux 7.5</a></strong><br />
+  摘要：The modern NTFS Linux driver that was introduced with the "NTFS Resurrection" back in Linux 7.2 continues seeing new features enabled and other improvements made to this open-source NTFS read/write kernel driver. For the upcoming Linux 7.5 kernel cycle, O_TMPFILE support is being queued for temporary file handling...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Librem-5-v2-Announced">Purism Aiming To Deliver New Librem 5 Smartphone With RISC-V SoC</a></strong><br />
+  摘要：After the variety of delays and other challenges that Purism had with their Librem 5 smartphone, surprisingly, they are trying again now with the Librem 5 v2 smartphone being announced...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Fwupd-2.1.10-Released">Fwupd 2.1.10 Brings Fixes, New Synaptics Touchpad Supported</a></strong><br />
+  摘要：Lead Fwupd/LVFS developer Richard Hughes of Red Hat kicked off the new week by releasing Fwupd 2.1.10 as the newest stable release for performing firmware updates on Linux...</p>
+</li>
+</ul>
+<h2>Ars Technica</h2>
+<ul>
+<li>
+<p><strong><a href="https://arstechnica.com/ai/2026/11/robo-soldier-startup-backed-by-eric-trump-misses-payroll-may-collapse/">Robo-soldier startup backed by Eric Trump misses payroll, may collapse</a></strong><br />
+  摘要：Robotics startup misses payroll a year after CEO used funds for luxury home.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/gadgets/2026/11/microsoft-details-how-three-problems-combined-for-a-global-outage/">Three small failures combined to take down Microsoft 365</a></strong><br />
+  摘要：A hidden bug, shifting traffic, and reduced capacity led to cascading failures.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/science/2026/11/hyperscale-data-centers-use-2-of-us-electricity/">Hyperscale data centers use 2% of US electricity</a></strong><br />
+  摘要：Study attempts to tally hyperscalers’ energy use and emissions.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/tech-policy/2026/11/shareholders-sue-intel-its-ceo-and-cfo-after-stock-drops-28-6-percent-in-one-day/">Shareholders sue Intel, its CEO, and CFO after stock drops 28.6 percent in one day</a></strong><br />
+  摘要：The PC sales slump "more than offset” AI boom gains, shareholders say.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/tech-policy/2026/11/comcast-falsely-advertises-cable-internet-as-fiber-powered-att-lawsuit-says/">Comcast's "fiber-powered Wi-Fi" is just cable, AT&amp;T says in false advertising case</a></strong><br />
+  摘要：AT&#038;T demands Comcast give AT&#038;T profits it made from advertising cable as fiber.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/science/2026/11/supreme-court-keeps-injunction-against-dei-grant-defunding-in-place/">Supreme Court keeps injunction against DEI grant defunding in place</a></strong><br />
+  摘要：Appeals court ruling rejected grant cancellations on First Amendment grounds.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/space/2026/11/when-will-humans-actually-fly-on-starship/">When will humans actually fly on Starship?</a></strong><br />
+  摘要：All estimates of human spaceflight on Starship should be taken with a gigantic grain of salt.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/culture/2026/11/meet-the-new-james-bond-robert-pattinson/">Meet the new James Bond: Robert Pattinson</a></strong><br />
+  摘要：Producers cite "his fearlessness as an actor, his self-deprecating wit" and continual reinvention as factors.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/tech-policy/2026/11/us-moves-to-cut-chinas-remote-access-to-ai-chips/">US moves to cut China’s remote access to AI chips</a></strong><br />
+  摘要：Trump bets China won’t mind US blocking remote access to AI chips.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/health/2026/11/us-now-comfortable-with-children-dying-of-measles-as-death-toll-hits-10/">US now "comfortable" with children dying of measles as death toll hits 10</a></strong><br />
+  摘要：International authorities will announce US lost its elimination status Tuesday.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/ai/2026/11/jensen-huang-allies-build-a-war-room-to-get-him-back-at-nvidia/">Jensen Huang allies build a "war room" to get him back at Nvidia</a></strong><br />
+  摘要：Huang is weighing a return just days after resigning amid a deepening scandal.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/cars/2026/11/mercedes-clever-new-driving-assist-handles-complex-traffic-like-a-champ/">Mercedes' clever new driving assist handles complex traffic like a champ</a></strong><br />
+  摘要：The point-to-point driver assist is coming to the US and Germany in 2027.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/gadgets/2026/11/the-drone-delivery-boom-could-be-a-nightmare-for-people-traumatized-by-war/">Delivery drones are coming. For some with PTSD, that's a terrifying prospect.</a></strong><br />
+  摘要：For those who have lived under armed drones, the sound overhead can be distressing.</p>
+</li>
+</ul>
+<h2>Lobsters</h2>
+<ul>
+<li>
+<p><strong><a href="https://garyodernichts.blogspot.com/2026/11/improving-wii-us-wii-mode.html">Improving the Wii U's Wii Mode</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://lobste.rs/s/ki1l5r/proof_use_as_requirement_for_open_source">"Proof of use" as a requirement for open source contributions?</a></strong><br />
+  摘要：As an open source maintainer, I get a lot of AI slop PRs. Some of these have genuine value. Most address edge cases that almost never occur in real life. It's not that they're not fixing real problems, it's that they're fixing problems that nobody is ever likely to encounter. I'm experimenting with "proof of use" as a requirement for submissions. Specifically, you need to show me that your project that depends on my project before I'll look at your PR. "Proof of use" can be an existing open source project that imports mine (show me the git history!) or a clear description starting with "in our closed source project in production, we found that...". The specific problem that I want to address is ensuring that contributions from people genuinely depending on my software are handled, while fi…</p>
+</li>
+<li>
+<p><strong><a href="https://blog.startifact.com/posts/how-rust-changed-me/">How Rust Changed Me As A Developer</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://www.prux.org/posts/goodbye-swift-hello-rust/">On Leaving Swift for Rust</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://michael.bacarella.com/2026/11/16/janet-reno-vs-my-friend-coolio/">Janet Reno was talking about my friend Coolio (computer criminal)</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://aerogramme.deuxfleurs.fr/blog/2026-quality-imap-part-1/">Quality IMAP, Part 1: Your Mailbox Is A Database</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://blog.rust-lang.org/2026/11/16/enabling-parallel-frontend-on-nightly/">Enabling the parallel frontend on nightly</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://linebender.org/wiki/curves/squircle/">Squircles</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://jack.cab/blog/siterate.html">What is w2rt6byl5nf1opmc-a[.]com?</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://lobste.rs/s/isejqv/what_are_you_doing_this_week">What are you doing this week?</a></strong><br />
+  摘要：What are you doing this week? Feel free to share! Keep in mind it’s OK to do nothing at all, too.</p>
+</li>
+<li>
+<p><strong><a href="https://ingrids.space/posts/you-wont-win-at-copyright/">you won't win at copyright</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://iter.ca/post/ubo-uxss/">Universal XSS in uBlock Origin from website-driven element picker</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://yorickpeterse.com/articles/migrating-from-github-to-codeberg/">Migrating from GitHub to Codeberg</a></strong><br />
+  摘要：Comments</p>
+</li>
+</ul>
+<h2>The New Stack</h2>
+<ul>
+<li>
+<p><strong><a href="https://thenewstack.io/cncf-bryce-ai-agents/">AI agents were all over KubeCon. Production is another story</a></strong><br />
+  摘要：AI agents are testing systems that were originally built for people, and Jonathan Bryce thinks the cloud-native community has a The post AI agents were all over KubeCon. Production is another story appeared first on The New Stack .</p>
+</li>
+<li>
+<p><strong><a href="https://thenewstack.io/autonomous-ai-exploit-agents/">Google found hackers using autonomous AI agents to turn security patches into exploits</a></strong><br />
+  摘要：Google&#8217;s Threat Intelligence Group says attackers are using autonomous AI agents to reverse-engineer security patches, generate exploits, and attempt to The post Google found hackers using autonomous AI agents to turn security patches into exploits appeared first on The New Stack .</p>
+</li>
+<li>
+<p><strong><a href="https://thenewstack.io/opencode-browse-rust-rewrite/">Dax Raad rebuilt his browser tool in Rust for $60. Then memory use fell 97%.</a></strong><br />
+  摘要：OpenCode developer Dax Raad says he rebuilt the project&#8217;s browser automation tool in Rust for $60, replacing the parts of The post Dax Raad rebuilt his browser tool in Rust for $60. Then memory use fell 97%. appeared first on The New Stack .</p>
+</li>
+<li>
+<p><strong><a href="https://thenewstack.io/qwen4-max-alibaba-open-weights/">With Qwen4-Max, Alibaba puts the open source jacket back on the hanger</a></strong><br />
+  摘要：Alibaba has officially unveiled Qwen4-Max, the first model in its next-generation Qwen4 family, with a focus on complex professional tasks The post With Qwen4-Max, Alibaba puts the open source jacket back on the hanger appeared first on The New Stack .</p>
+</li>
+</ul>
+<h2>Kubernetes Blog</h2>
+<ul>
+<li>
+<p><strong><a href="https://kubernetes.io/blog/2026/11/16/ipvs-removal/">Scheduling the removal of the kube-proxy IPVS backend</a></strong><br />
+  摘要：The ipvs backend for kube-proxy was an experiment in providing a service proxy implementation with better performance than the iptables backend. While it succeeded in that goal, the kernel IPVS API has turned out to be a bad match for the Kubernetes Services API, and the ipvs backend was never able to implement all of the edge cases of Kubernetes Service functionality correctly. In Kubernetes 1.29, the project introduced the nftables backend for kube-proxy, which became GA in 1.33. Part of the plan behind adding the nftables backend was the idea that it would eventually replace both the iptables and ipvs backends. Because the ipvs backend in particular is complex, not 100% feature complete, and architecturally quite different from the other two backends (and thus more work to maintain), Ku…</p>
+</li>
+<li>
+<p><strong><a href="https://kubernetes.io/blog/2026/10/29/sig-arch-ai-conformance-2026/">From Working Group to SIG Architecture: spotlight on AI Conformance</a></strong><br />
+  摘要：In this SIG Architecture spotlight we talked with Janet Kuo (Google) and Yuan Tang (TensorScale AI) about the journey of AI Conformance in Kubernetes, from the initial Working Group to the integration SIG Architecture as a subproject. Introductions Frederico Muñoz and Kirti Goyal (FK): Hi Janet, Yuan, and thank you for the opportunity to learn a bit more about AI Conformance. Can you tell us a bit about yourselves and how you got involved in Kubernetes? Janet Kuo : I'm a Senior Staff Software Engineer at Google and have been a Kubernetes maintainer since 2015, joining the community just as we were racing toward the 1.0 launch. I started my journey writing the core workload controllers that standardized how applications are orchestrated on Kubernetes. Today, I lead SIG Apps as a Co-chair &amp;a…</p>
+</li>
+<li>
+<p><strong><a href="https://kubernetes.io/blog/2026/10/05/scaling-kubernetes-workloads-with-node-swap/">Scaling Kubernetes Workloads with Node Swap</a></strong><br />
+  摘要：Memory is often the first hard limit a Kubernetes cluster hits. Nodes run out of RAM long before they run out of CPU, and the new wave of agentic AI workloads makes this worse. These workloads demand large memory footprints to start up and run untrusted code, then sit idle waiting for the next prompt. That idle but resident memory is expensive, and it caps how many pods a node can hold. This is where swap helps. Kubernetes support for running nodes with swap enabled reached General Availability in v1.34, and by backing that swap with fast NVMe solid state drives (SSDs), a node can page out dormant memory and pack in far more pods. This post explains how we benchmarked that approach across three workloads, including CI/CD kernel builds, sandboxed headless browsers, and isolated Python runti…</p>
+</li>
+<li>
+<p><strong><a href="https://kubernetes.io/blog/2026/09/11/kubernetes-v1-37-native-histograms-beta/">Kubernetes v1.37: Native Histograms Graduates to Beta</a></strong><br />
+  摘要：I'm excited to announce that native histogram support for Kubernetes metrics is graduating to Beta and is enabled by default in Kubernetes v1.37! Native histograms (previously introduced as Alpha in Kubernetes v1.36 under KEP-5808 ) bring high-resolution, low-cardinality observability to Kubernetes metrics. By adopting Prometheus Native Histograms , Kubernetes components now expose latency and duration metrics with far greater accuracy while significantly reducing telemetry storage and scraping overhead. Why move beyond classic histograms? Since the early days of Kubernetes observability, duration and latency metrics (such as API server request latencies or scheduling durations) have relied on classic Prometheus histograms . Classic histograms require metric authors to define a static list…</p>
+</li>
+</ul>
+<h2>LWN.net</h2>
+<ul>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1102988/">[$] A new generation of futexes</a></strong><br />
+  摘要：Futexes are a kernel subsystem that provides support for fast mutexes in user space. While futexes can indeed be fast, they are not fast enough for a number of users. Partly as a result of that, the implementation of futexes has grown in complexity over the years, with two basic variants on offer. The desire for faster futexes remains, though, and that inspires new patches, including this series from Suleiman Souhlal adding a third futex class called "futex PING" for "priority inheritance next generation".</p>
+</li>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1107814/">Manjaro Project e.V. non-profit organization created</a></strong><br />
+  摘要：Frank Vandermeiren has announced the creation of the Manjaro Project e.V., a nonprofit organization in Germany that is independent of the Manjaro GmbH &amp; Co KG company. This is following a governance struggle that took place earlier this year between a number of Manjaro Linux contributors and Philip Müller, project lead and CEO of the Manjaro company. At the moment, we are still working on optimizing the new development infrastructure, which was partly necessitated by the ongoing (A.I.) bot attacks against our old infrastructure. However, as you may have noticed, the last Testing Updates and Stable Updates were initiated by the Manjaro Team without supervision from Philip Müller — with special thanks to @Yochanan for his hard work! Dennis ten Hoove has indicated that " a transfer of com…</p>
+</li>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1107811/">Security updates for Monday</a></strong><br />
+  摘要：Security updates have been issued by Debian (freedombox, kernel, libspreadsheet-xlsx-perl, network-manager-iodine, pdns-recursor, postgresql-15, radsecproxy, and sogo), Fedora (afflib, asahi-installer, below, cloc, dhcpcd, dnf5, epiphany, firefox, glib-networking, hugo, mingw-python3, mtools, mysql8.4, mysql9.7, proftpd, python-cramjam, python-fastar, python-h5io, python-PyMuPDF, python-uv-build, radicale, rubygem-loofah, rubygem-nokogiri, rust-archive-trait, rust-askalono-cli, rust-astral-html, rust-cargo-deny, rust-libcramjam0.8, rust-onefetch, rust-ptools, rust-sccache, rustup, uv, and xorg-x11-server), Gentoo (Apache HTTPD, rsync, and Tor), Oracle (cockpit, firefox, grafana, grafana-pcp, gstreamer1, gstreamer1-plugins-base, kernel, kernel-uek, mingw-libpng, nginx:1.24, perl-CGI, python…</p>
+</li>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1107606/">Kernel prepatch 7.4-rc3</a></strong><br />
+  摘要：The 7.4-rc3 kernel prepatch is out for testing. Linus declared: " It looks fairly normal, with drivers (networking and gpu) leading the charge. There's lots and lots of changes, but most of the actual patches are tiny. "</p>
+</li>
+</ul>
+<h2>Linux Weekly News (RSS)</h2>
+<ul>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1102988/">[$] A new generation of futexes</a></strong><br />
+  摘要：Futexes are a kernel subsystem that provides support for fast mutexes in user space. While futexes can indeed be fast, they are not fast enough for a number of users. Partly as a result of that, the implementation of futexes has grown in complexity over the years, with two basic variants on offer. The desire for faster futexes remains, though, and that inspires new patches, including this series from Suleiman Souhlal adding a third futex class called "futex PING" for "priority inheritance next generation".</p>
+</li>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1107814/">Manjaro Project e.V. non-profit organization created</a></strong><br />
+  摘要：Frank Vandermeiren has announced the creation of the Manjaro Project e.V., a nonprofit organization in Germany that is independent of the Manjaro GmbH &amp; Co KG company. This is following a governance struggle that took place earlier this year between a number of Manjaro Linux contributors and Philip Müller, project lead and CEO of the Manjaro company. At the moment, we are still working on optimizing the new development infrastructure, which was partly necessitated by the ongoing (A.I.) bot attacks against our old infrastructure. However, as you may have noticed, the last Testing Updates and Stable Updates were initiated by the Manjaro Team without supervision from Philip Müller — with special thanks to @Yochanan for his hard work! Dennis ten Hoove has indicated that " a transfer of com…</p>
+</li>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1107811/">Security updates for Monday</a></strong><br />
+  摘要：Security updates have been issued by Debian (freedombox, kernel, libspreadsheet-xlsx-perl, network-manager-iodine, pdns-recursor, postgresql-15, radsecproxy, and sogo), Fedora (afflib, asahi-installer, below, cloc, dhcpcd, dnf5, epiphany, firefox, glib-networking, hugo, mingw-python3, mtools, mysql8.4, mysql9.7, proftpd, python-cramjam, python-fastar, python-h5io, python-PyMuPDF, python-uv-build, radicale, rubygem-loofah, rubygem-nokogiri, rust-archive-trait, rust-askalono-cli, rust-astral-html, rust-cargo-deny, rust-libcramjam0.8, rust-onefetch, rust-ptools, rust-sccache, rustup, uv, and xorg-x11-server), Gentoo (Apache HTTPD, rsync, and Tor), Oracle (cockpit, firefox, grafana, grafana-pcp, gstreamer1, gstreamer1-plugins-base, kernel, kernel-uek, mingw-libpng, nginx:1.24, perl-CGI, python…</p>
+</li>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1107606/">Kernel prepatch 7.4-rc3</a></strong><br />
+  摘要：The 7.4-rc3 kernel prepatch is out for testing. Linus declared: " It looks fairly normal, with drivers (networking and gpu) leading the charge. There's lots and lots of changes, but most of the actual patches are tiny. "</p>
+</li>
+</ul>
+<h2>Red Hat Blog</h2>
+<ul>
+<li>
+<p><strong><a href="https://www.redhat.com/en/blog/unlocking-mission-critical-innovation-microsoft-azure-red-hat-openshift-il5-now-available-jwcc">Unlocking mission-critical innovation: Microsoft Azure Red Hat OpenShift IL5 is Now Available on JWCC</a></strong><br />
+  摘要：As previously announced, Microsoft Azure Red Hat OpenShift on Microsoft Azure Government (MAG) has officially achieved Impact Level 5 (IL5) certification. This fully managed application platform is now available on the Joint Warfighting Cloud Capability (JWCC) contract for streamlined procurement and consumption across the USA Department of War (DOW). This certification, which follows the IL4 certification achieved in July 2024, gives DOW agencies confidence in the access controls around their data. It provides the flexibility and choice to run mission-critical workloads in the exact environme</p>
+</li>
+<li>
+<p><strong><a href="https://www.redhat.com/en/blog/introducing-red-hat-openshift-service-mesh-35">Introducing Red Hat OpenShift Service Mesh 3.5</a></strong><br />
+  摘要：Red Hat OpenShift Service Mesh 3.5 is now generally available with Red Hat OpenShift Container Platform. Based on the Istio, Envoy, and Kiali projects, this release updates the version of Istio to 1.31 and Kiali to 2.33, and is supported on OpenShift Container Platform 4.20 and above, including Red Hat OpenShift 5.0. This release graduates multicluster with ambient mode, dual-stack IPv4/IPv6 with ambient mode, and Red Hat's zero trust workload identity manager (SPIRE) with sidecar mode to general availability, along with a substantial set of enhancements from Istio 1.31. Red Hat OpenShift 5.0</p>
+</li>
+<li>
+<p><strong><a href="https://www.redhat.com/en/blog/how-red-hat-openshift-console-connects-virtual-machines-networks-they-use">How Red Hat OpenShift console connects virtual machines to the networks they use</a></strong><br />
+  摘要：In Red Hat OpenShift Virtualization 4.21, we shipped networking workflows that simplify how you create and connect virtual machine (VM) networks. In OpenShift Virtualization 5, the web console builds on those workflows—the same Kubernetes networking model, with clickable paths on pages you already use.Which network is this VM on? Which VMs use this network? These new features answer those questions on the pages you already live in when something breaks at 2 AM.Building on the OpenShift Virtualization 4.21 foundationThis post builds on the VM networking workflows introduced in OpenShift Virtu</p>
+</li>
+</ul>
+<h2>CNCF Blog</h2>
+<ul>
+<li>
+<p><strong><a href="https://www.cncf.io/blog/2026/11/10/donating-kuberay-to-cncf/">Donating KubeRay to CNCF</a></strong><br />
+  摘要：The PARK stack (PyTorch, AI models, Ray, and Kubernetes) is emerging as the de facto open source standard for production AI. Within that stack, KubeRay has become the bridge connecting scalable AI applications built on Ray...</p>
+</li>
+<li>
+<p><strong><a href="https://www.cncf.io/announcements/2026/11/10/cncf-hits-major-milestones-with-global-community-growth-record-industry-investment-and-a-new-generation-of-projects-to-build-ai-systems-in-production/">CNCF Hits Major Milestones with Global Community Growth, Record Industry Investment and a New Generation of Projects to Build AI Systems in Production</a></strong><br />
+  摘要：New Sandbox projects, including Agent Substrate and OpenShell, expand CNCF’s portfolio to 231 projects as the community adds over 5.5 million cloud native developers in 12 months, welcomes eight Platinum memberships and brings together 82,000 attendees...</p>
+</li>
+<li>
+<p><strong><a href="https://www.cncf.io/announcements/2026/11/10/cncf-welcomes-coreweave-as-a-platinum-member-to-further-open-source-ai-infrastructure/">CNCF Welcomes CoreWeave as a Platinum Member to Further Open Source AI Infrastructure</a></strong><br />
+  摘要：Investment underscores CoreWeave&#8217;s continued push to build open, cloud native infrastructure for production AI at scale Key Highlights SAN FRANCISCO — November 10, 2026 — The Cloud Native Computing Foundation® (CNCF®), which builds sustainable ecosystems for...</p>
+</li>
+</ul>
+<hr /></div>
+  </main>
+</body>
+</html>
