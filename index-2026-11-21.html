@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OS 领域每日洞察 - 2026-11-21</title>
+  <style>
+    :root {
+      --bg: #f6f4f0;
+      --bg-bar: #ebe8e3;
+      --bg-card: #fffefb;
+      --bg-card-hover: #f5f3ef;
+      --text: #2d2a26;
+      --text-muted: #5c5852;
+      --text-dim: #7a756e;
+      --accent: #5a7a9e;
+      --border: #ddd9d2;
+      --radius: 10px;
+      --font: "Segoe UI", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      font-size: 15px;
+    }
+
+    /* 门户顶栏 */
+    .masthead {
+      background: var(--bg-bar);
+      border-bottom: 1px solid var(--border);
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 0;
+    }
+    .masthead-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .masthead h1 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin: 0;
+      letter-spacing: -0.02em;
+      color: var(--text);
+    }
+    .masthead .meta {
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+    }
+
+    /* 主内容区：多栏门户布局 */
+    .main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 3rem;
+    }
+
+    /* 板块：每个 h2 为一个频道块 */
+    .content .section {
+      margin-bottom: 2.5rem;
+    }
+    .content h2 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+      margin: 0 0 1rem;
+      padding: 0.6rem 1rem;
+      background: var(--bg-bar);
+      border-radius: var(--radius);
+      border-left: 4px solid var(--accent);
+    }
+    .content h2:first-child { margin-top: 0; }
+
+    .content h2:has(+ h3) {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      border-left-color: var(--text-dim);
+    }
+
+    /* 板块内卡片网格（每个 h2 后的 ul） */
+    .content h2 + ul {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1rem;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .content h2 + ul li {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.15rem 1.2rem;
+      transition: background .15s, border-color .15s;
+    }
+    .content h2 + ul li:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--text-dim);
+    }
+    .content h2 + ul li strong {
+      display: block;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+      line-height: 1.4;
+    }
+    .content h2 + ul li p {
+      margin: 0 0 0.5rem;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.58;
+    }
+    .content h2 + ul li p:last-of-type { margin-bottom: 0; }
+    .content h2 + ul li a[href^="http"] {
+      font-size: 0.8125rem;
+      color: var(--accent);
+    }
+    .content h2 + ul li a[href^="http"]:hover { text-decoration: underline; }
+
+    .content .ref-section {
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+    .content h2 + h3 { margin-top: 1.25rem; }
+    .content h3 {
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--text-dim);
+      margin: 1rem 0 0.4rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .content h3 + ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 0.25rem;
+    }
+    .content h3 + ul li {
+      background: transparent;
+      border: none;
+      padding: 0.2rem 0;
+      font-size: 0.8125rem;
+    }
+    .content h3 + ul li strong { font-size: inherit; margin-bottom: 0; }
+    .content h3 + ul li a { color: var(--accent); }
+    .content h3 + ul li a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <header class="masthead">
+    <div class="masthead-inner">
+      <h1>OS 领域每日洞察 - 2026-11-21</h1>
+      <span class="meta">2026-11-21 05:00 UTC</span>
+    </div>
+  </header>
+  <main class="main">
+    <div class="content"><h1>OS 领域每日洞察 - 2026-11-21</h1>
+<p>（Gemini 未可用时，以下为按来源整理的条目，含<strong>新闻摘要</strong>与链接；摘要可能为原文语言。）</p>
+<h2>Ars Technica</h2>
+<ul>
+<li>
+<p><strong><a href="https://arstechnica.com/tech-policy/2026/11/fcc-orders-california-to-stop-enforcing-phone-service-rules-against-att/">Trump FCC declares California isn't allowed to enforce phone service rules</a></strong><br />
+  摘要：FCC preempts state rules that require AT&#038;T to keep offering home phone service.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/space/2026/11/incoming-house-chair-threatens-spacex-funding-over-ukraine-controversy/">SpaceX's Starshield troubles in Ukraine could threaten its broader military business</a></strong><br />
+  摘要："Explain the changes that were made to the Starshield service in October 2026."</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/ai/2026/11/googles-latest-search-page-redesign-drops-the-search-button-adds-ai-sidebar/">Google rolls out new search homepage with AI chat history and no search button</a></strong><br />
+  摘要：Google search is making it even easier to access AI tools on the search page.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/ai/2026/11/meta-reconsiders-2030-net-zero-goal-amid-record-emissions-from-ai-data-centers/">Meta reconsiders 2030 net-zero goal amid record emissions from AI data centers</a></strong><br />
+  摘要：Meta is “re-evaluating” 2030 sustainability goals. Will others follow?</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/security/2026/11/a-leaky-ai-supply-chain-is-exposing-secret-user-data-at-an-alarming-rate/">Researcher plants 2m canaries into the AI supply chain. A privacy disaster surfaced.</a></strong><br />
+  摘要：Test using prompts with unique, trackable secrets proves that data doesn't stay private.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/science/2026/11/astronomers-watched-a-star-spiral-to-its-death-inside-a-giant-companion/">Watching as a giant star swallowed its neighbor and exploded</a></strong><br />
+  摘要：A recent brightening turned out to be from a star orbiting inside another.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/space/2026/11/nasas-new-moon-plan-is-taking-shape-but-some-big-questions-remain/">NASA’s new Moon plan is taking shape, but some big questions remain</a></strong><br />
+  摘要："We tend to have a lot of technical discussion and debate. That point will continue to be debated."</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/tech-policy/2026/11/prisons-get-ok-to-jam-contraband-phones-ctia-says-nearby-phones-will-be-jammed-too/">Prisons get OK to jam contraband phones. CTIA says nearby phones will be jammed too.</a></strong><br />
+  摘要：CTIA said jamming test showed "interference... up to two and a half miles away."</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/science/2026/11/outrage-questions-swirl-as-army-delays-blowing-up-stockpile-of-toxic-lead-azide/">Army delays detonating "catastrophically hazardous" lead azide amid fear, anger</a></strong><br />
+  摘要：Modeling predicts plume of neurotoxic lead could reach up to 100 miles away.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/gaming/2026/11/valve-says-it-might-have-to-raise-the-price-of-supply-limited-steam-machines/">Valve says it might have to raise the price of supply-limited Steam Machines</a></strong><br />
+  摘要："We don't yet know the number we are able to make, and at what price..."</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/gadgets/2026/11/how-faa-can-modernize-us-national-airspace-system-without-emergency-ground-stops/">US will soon announce root cause behind FAA nationwide ground stop</a></strong><br />
+  摘要：Former FAA insider on reducing the risks of upgrading a decades-old network.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/space/2026/11/spacex-lenders-dont-want-elon-musk-launching-their-collateral-into-space/">SpaceX lenders don’t want Elon Musk launching their collateral into space</a></strong><br />
+  摘要：Bondholders want SpaceX’s valuable chip collateral kept on Earth and within reach.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/space/2026/11/rocket-report-a-weekend-of-ups-and-downs-stoke-celebrates-engine-milestone/">Rocket Report: A weekend of ups and downs; Stoke celebrates engine milestone</a></strong><br />
+  摘要：Russia launched a Soyuz rocket with satellites to help enable drone attacks over Ukraine.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/tech-policy/2026/11/seminole-tribe-tries-to-stop-draftkings-illegal-gambling-in-florida/">Only the Seminole Tribe can offer online gambling in Florida—and they're furious at DraftKings</a></strong><br />
+  摘要：Gambling? We're just swapping contracts!</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/staff/2026/11/science-has-a-home-here-at-ars-please-help-keep-it-that-way/">Science has a home here at Ars—please help keep it that way</a></strong><br />
+  摘要：Your support for Ars matters more now than ever.</p>
+</li>
+</ul>
+<h2>Phoronix</h2>
+<ul>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Libreboot-Drops-AI-Policy">Libreboot Abandons Anti-AI Policy After One Month</a></strong><br />
+  摘要：Coreboot downstream Libreboot last month enacted an AI policy to forbid contributions made using AI/LLMs. Surprisingly, already, that anti-AI policy has been dropped with AI-based submissions now being permitted...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/GnuPG-GPGME-Critical">GnuPG's GPGME Affected By Critical Security Bug In Turn Affecting Mail Clients, Flatpak</a></strong><br />
+  摘要：Werner Koch announced a late Friday afternoon "critical security bug" affecting GnuPG's GPGME library - GnuPG Made Easy. Unfortunately this in turn affects GPGME users like most email clients, most XMPP clients, Flatpak, Samba, and other software...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Linux-7.5-DRM-8TB-mmap">Intel Preps Linux 7.5 Change To Better Handle Multiple GPUs With Lots Of VRAM</a></strong><br />
+  摘要：A change set to land for the upcoming Linux 7.5 kernel cycle expands the mmap range size for GEM/TTM buffer objects in the kernel graphics drivers from 1TB to now up to 8TB...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/GNOME-AMD-Content-Adaptive">AMD Contributes Integration For Content-Adaptive / Adaptive Backlight Modulation To GNOME</a></strong><br />
+  摘要：Merged today to GNOME's Mutter compositor is support for the Adaptive Backlight Modulation (ABM) DRM/KMS connector property and a "content-adaptive" API. This GNOME desktop improvement was contributed by AMD as part of modern AMD Ryzen AI laptops supporting Adaptive Backlight Modulation...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/review/system76-thelio-prime">System76 Thelio Prime: A Petite But Performant AMD-Powered Linux PC</a></strong><br />
+  摘要：After teasing the new System76 Thelio Prime last month, this week officially launched their redesigned Thelio Prime mini desktop PC. This AMD Ryzen 9000 series powered creation is quite small with an internal volume of just 9.78 liters but quite capable with up to the Ryzen 9 9900X being supported, AMD or NVIDIA discrete graphics options, up to 96GB of RAM, and up to 16TB of NVMe storage. I have been testing out the new Thelio Prime for the past few days so far and it's been stacking up as well as one of their best compact PCs yet.</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Fedora-Incident-Response-Policy">Fedora Incident Response Policy Drafted For Improving Workflow &amp; Security Disclosures</a></strong><br />
+  摘要：The Fedora Security Special Interest Group (SIG) drafted an Incident Response Policy for the Fedora project. This stems from shortcomings in the Fedora project brought to light during the XZ Utils security fiasco in their communications...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/AMDXDNA-1.0-Linux-Driver">AMDXDNA Driver Reaches Version 1.0, Ryzen AI NPU10 &amp; NPU11 Coming To Linux 7.5</a></strong><br />
+  摘要：With the upcoming Linux 7.5 kernel, the AMDXDNA accelerator driver for supporting the Ryzen AI NPUs is declaring version 1.0...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Rust-Coreutils-0.13">Rust Coreutils 0.13 Release Delivers More Performance, Better Compatibility</a></strong><br />
+  摘要：Rust Coreutils 0.13 released today as the newest feature update to this Rust-based re-implementation of GNU Coreutils that is used by Ubuntu Linux and other platforms...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Vulkan-AMDX-Ray-Tracing-Struct">Vulkan 1.4.369 Introduces New AMD Extension For Improving Ray-Tracing Performance</a></strong><br />
+  摘要：Vulkan 1.4.369 is out today with a new, currently-experimental Vulkan API extension from AMD to help further enhance ray-tracing performance with modern games...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Cloud-Hypervisor-55">Cloud Hypervisor 55 Released With AArch64 Nested Virtualization, Up To 990 ARM vCPUs</a></strong><br />
+  摘要：Cloud Hypervisor 55.0 was released on Thursday for this security-minded, cloud-focused virtual machine monitor (VMM) written in Rust. While it started off as an Intel open-source project, it's expanded in scope over time and with more organizations contributing. With the new Cloud Hypervisor 55, a number of ARM improvements to note...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Kwi-Terminal-First-Release">Kwi Sees First Release As KDE's New Terminal Emulator</a></strong><br />
+  摘要：Over the past number of weeks Kwi has been in development as a new KDE terminal emulator. Kwi is built off the Ghostty library and delivering magnificent performance over the existing Konsole terminal emulator. Today marks the project's first release...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/FFmpeg-9.1-Released">FFmpeg 9.1 Released With NVIDIA Optical Flow FRUC, APV Vulkan Encoder</a></strong><br />
+  摘要：Following the FFmpeg 9.1 release preparations that began last month, FFmpeg 9.1 is now formally released as the newest feature update to this widely-used, cross-platform multimedia library...</p>
+</li>
+</ul>
+<h2>Lobsters</h2>
+<ul>
+<li>
+<p><strong><a href="https://antithesis.com/blog/2026/verifying-formal-models/">Verifying formal models of Raft implementations</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://cwa-union.org/news/releases/internet-archive-workers-launch-union-campaign-communications-workers-america">Internet Archive Staffers Are Unionizing</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://www.alicecaml.org/blog/alice-v0-6-0/">Alice v0.6.0</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://alpo.ge/remark.pdf">Levent Alpoge Claims Proof of Riemann Hypothesis</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://spritely.institute/news/lisp-game-jam-devlog-polydraw.html">Lisp Game Jam devlog: Polydraw</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://www.masteringemacs.org/article/announcing-dreamcoder">DreamCoder: coding harness and IDE from the author of Mastering Emacs</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1102982/">Removing binder.c</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://lobste.rs/s/hneb5m/what_are_you_doing_this_weekend">What are you doing this weekend?</a></strong><br />
+  摘要：Feel free to tell what you plan on doing this weekend and even ask for help or feedback. Please keep in mind it’s more than OK to do nothing at all too!</p>
+</li>
+<li>
+<p><strong><a href="https://vim-classic.org/news/vim-8.3.1-released.html">Vim Classic 8.3.1 released</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://dbushell.com/2026/11/16/visited-links/">Visited links are purple</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://www.serpentine.com/posts/2026/announcing-jj-musubi/">Announcing jj-musubi: live sync for Jujutsu</a></strong><br />
+  摘要：Comments</p>
+</li>
+</ul>
+<h2>Hacker News</h2>
+<ul>
+<li>
+<p><strong><a href="https://katamaran.rs/">Show HN: Katamaran - Open-source Docker and Linux runtime for Apple Silicon</a></strong><br />
+  摘要：Show HN: Katamaran - Open-source Docker and Linux runtime for Apple Silicon</p>
+</li>
+<li>
+<p><strong><a href="https://github.com/imxieyi/Kernarium">Kernarium: Run real Linux kernel natively on iOS</a></strong><br />
+  摘要：Kernarium: Run real Linux kernel natively on iOS</p>
+</li>
+<li>
+<p><strong><a href="https://github.com/Sanne/incus-spawn">Isolated Linux workstations for autonomous AI agents</a></strong><br />
+  摘要：Isolated Linux workstations for autonomous AI agents</p>
+</li>
+<li>
+<p><strong><a href="https://www.theregister.com/os-platforms/2026/11/19/xxri-os-explores-the-lowest-end-of-the-linux-desktop/5311036">XXRI-OS explores the lowest end of the Linux desktop</a></strong><br />
+  摘要：XXRI-OS explores the lowest end of the Linux desktop</p>
+</li>
+<li>
+<p><strong><a href="https://www.techpowerup.com/355046/debian-linux-forms-gaming-hardware-team-for-handheld-and-bleeding-edge-hardware-testing">Debian Linux Forms Gaming Hardware Team for Handheld and Edge Hardware Testing</a></strong><br />
+  摘要：Debian Linux Forms Gaming Hardware Team for Handheld and Edge Hardware Testing</p>
+</li>
+<li>
+<p><strong><a href="https://blog.malwaremustdie.org/2026/11/mmd-073-2026-linuxeasyshell-new-rust.html">Linux/EasyShell, a new Rust RAT implant and beacon aims Linux and macOS</a></strong><br />
+  摘要：Linux/EasyShell, a new Rust RAT implant and beacon aims Linux and macOS</p>
+</li>
+<li>
+<p><strong><a href="https://secureblue.dev/">Secureblue: A security-focused desktop and server Linux operating system</a></strong><br />
+  摘要：Secureblue: A security-focused desktop and server Linux operating system</p>
+</li>
+<li>
+<p><strong><a href="https://signal.org/blog/protecting-your-privacy/">Restricting AI agents in mobile operating systems platforms from capturing data</a></strong><br />
+  摘要：Restricting AI agents in mobile operating systems platforms from capturing data</p>
+</li>
+<li>
+<p><strong><a href="https://github.com/jlruedab/clifr">A Linux time travel system</a></strong><br />
+  摘要：A Linux time travel system</p>
+</li>
+</ul>
+<h2>The New Stack</h2>
+<ul>
+<li>
+<p><strong><a href="https://thenewstack.io/opensearch-ai-agent-observability/">“We are not querying like humans anymore”: OpenSearch’s Bianca Lewis on why AI agent mistakes look like successes</a></strong><br />
+  摘要：This situation is more common than one might think: An AI agent calls the wrong API, gets a perfectly good The post “We are not querying like humans anymore”: OpenSearch’s Bianca Lewis on why AI agent mistakes look like successes appeared first on The New Stack .</p>
+</li>
+<li>
+<p><strong><a href="https://thenewstack.io/ai-agent-memory-boundaries/">Your AI agent’s “memory problem” may be something else</a></strong><br />
+  摘要：An agent may need additional context to continue when a user returns the next day. A workflow may resume from The post Your AI agent’s “memory problem” may be something else appeared first on The New Stack .</p>
+</li>
+<li>
+<p><strong><a href="https://thenewstack.io/anthropic-claude-code-verification/">Anthropic says Claude writes and reviews 90% of its team’s code. The catch is how it checks the work.</a></strong><br />
+  摘要：Anthropic says Claude writes and reviews roughly 90% of the code produced by the team building Claude Code, and the The post Anthropic says Claude writes and reviews 90% of its team&#8217;s code. The catch is how it checks the work. appeared first on The New Stack .</p>
+</li>
+</ul>
+<h2>LWN.net</h2>
+<ul>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1107830/">[$] Bringing the Agama installer to openSUSE Tumbleweed</a></strong><br />
+  摘要：The openSUSE Project has been working on the Agama installer for four years; it was the default installer for openSUSE&#160;Leap&#160;16.0 when it was released in 2025, and has been adopted by other openSUSE flavors as well. Now the project is gearing up to go all-in on Agama for Tumbleweed , the rolling-release edition that is meant to be where updates and new features land first. Even so, the community has concerns about losing some of YaST's legacy functionality and the impact on installing Tumbleweed on systems that have less RAM.</p>
+</li>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1108818/">Beyls: Wrapping up LLVM's relicensing effort</a></strong><br />
+  摘要：Kristof Beyls has published a summary to the LLVM discussion forum to announce that the project is declaring success and bringing its relicensing effort to a close after eight years. We've been asking past contributors to relicense their work since 2018. New contributions have come in under Apache-2.0 WITH LLVM-exception since January 19, 2019. Code contributed before that date was under LLVM's earlier licenses (UIUC/NCSA, plus MIT for some runtime libraries), so we needed permission from its authors to move it over. [...] Today, more than 99.5% of all lines of code ever contributed to LLVM are either covered by the new license, too small for copyright to apply, or no longer in the repository. Rather than trying to " chase the last tiny fraction forever " LLVM is winding up the effort. Any…</p>
+</li>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1108817/">Vim Classic 8.3.1 released</a></strong><br />
+  摘要：Version 8.3.1 of Vim Classic &mdash;a long-term support fork of Vim maintained without LLM assistance&mdash;has been released. This release includes applicable Vim patches up to Vim 8.2.3237, including numerous bug fixes, minor features, and compatibility improvements for Vim plugins. This release also removes Python 2 support from Vim Classic. The full list of changes in this release is available on sourcehut.</p>
+</li>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1108811/">Security updates for Friday</a></strong><br />
+  摘要：Security updates have been issued by AlmaLinux (bind9.18, bubblewrap, fence-agents, freerdp, grafana, grafana-pcp, gstreamer1-plugins-bad-free, jackson-core, jackson-databind, java-17-openjdk, java-21-openjdk, java-25-openjdk, kernel, kernel-rt, mysql8.4, mysql:8.4, qt5-qtbase, qt5-qtdeclarative, raptor2, resteasy, and sos), Debian (electrum, nginx, openjdk-17, pam-mysql, php8.2, and php8.4), Fedora (aws, bind9-next, blender, c-ares, composer, dr_libs, et, gh, incron, libaec, libfontenc, libXfont2, mtools, nebula, perl-Imager, perl-Text-JSCalendar, perl-Text-JSContact, php, python-loguru, python3.6, qpid-proton, roundcubemail, runc, and xen), Gentoo (nginx, PHP, and Ruby), Mageia (hplip), Oracle (.NET 10.0, .NET 11.0, .NET 8.0, .NET 9.0, bubblewrap, emacs, firefox, flatpak-builder, gcc, gi…</p>
+</li>
+</ul>
+<h2>Linux Weekly News (RSS)</h2>
+<ul>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1107830/">[$] Bringing the Agama installer to openSUSE Tumbleweed</a></strong><br />
+  摘要：The openSUSE Project has been working on the Agama installer for four years; it was the default installer for openSUSE&#160;Leap&#160;16.0 when it was released in 2025, and has been adopted by other openSUSE flavors as well. Now the project is gearing up to go all-in on Agama for Tumbleweed , the rolling-release edition that is meant to be where updates and new features land first. Even so, the community has concerns about losing some of YaST's legacy functionality and the impact on installing Tumbleweed on systems that have less RAM.</p>
+</li>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1108818/">Beyls: Wrapping up LLVM's relicensing effort</a></strong><br />
+  摘要：Kristof Beyls has published a summary to the LLVM discussion forum to announce that the project is declaring success and bringing its relicensing effort to a close after eight years. We've been asking past contributors to relicense their work since 2018. New contributions have come in under Apache-2.0 WITH LLVM-exception since January 19, 2019. Code contributed before that date was under LLVM's earlier licenses (UIUC/NCSA, plus MIT for some runtime libraries), so we needed permission from its authors to move it over. [...] Today, more than 99.5% of all lines of code ever contributed to LLVM are either covered by the new license, too small for copyright to apply, or no longer in the repository. Rather than trying to " chase the last tiny fraction forever " LLVM is winding up the effort. Any…</p>
+</li>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1108817/">Vim Classic 8.3.1 released</a></strong><br />
+  摘要：Version 8.3.1 of Vim Classic &mdash;a long-term support fork of Vim maintained without LLM assistance&mdash;has been released. This release includes applicable Vim patches up to Vim 8.2.3237, including numerous bug fixes, minor features, and compatibility improvements for Vim plugins. This release also removes Python 2 support from Vim Classic. The full list of changes in this release is available on sourcehut.</p>
+</li>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1108811/">Security updates for Friday</a></strong><br />
+  摘要：Security updates have been issued by AlmaLinux (bind9.18, bubblewrap, fence-agents, freerdp, grafana, grafana-pcp, gstreamer1-plugins-bad-free, jackson-core, jackson-databind, java-17-openjdk, java-21-openjdk, java-25-openjdk, kernel, kernel-rt, mysql8.4, mysql:8.4, qt5-qtbase, qt5-qtdeclarative, raptor2, resteasy, and sos), Debian (electrum, nginx, openjdk-17, pam-mysql, php8.2, and php8.4), Fedora (aws, bind9-next, blender, c-ares, composer, dr_libs, et, gh, incron, libaec, libfontenc, libXfont2, mtools, nebula, perl-Imager, perl-Text-JSCalendar, perl-Text-JSContact, php, python-loguru, python3.6, qpid-proton, roundcubemail, runc, and xen), Gentoo (nginx, PHP, and Ruby), Mageia (hplip), Oracle (.NET 10.0, .NET 11.0, .NET 8.0, .NET 9.0, bubblewrap, emacs, firefox, flatpak-builder, gcc, gi…</p>
+</li>
+</ul>
+<h2>CNCF Blog</h2>
+<ul>
+<li>
+<p><strong><a href="https://www.cncf.io/blog/2026/11/20/when-a-sync-window-closes-how-argo-cd-self-heal-skipped-the-migration-hook/">When a sync window closes: How Argo CD self-heal skipped the migration hook</a></strong><br />
+  摘要：The uncomfortable question A few days ago, a customer asked me a question that sounded simple: &#8220;Argo CD said the sync succeeded, so why didn&#8217;t our migration run?&#8221; They had pushed a release while a deny...</p>
+</li>
+<li>
+<p><strong><a href="https://www.cncf.io/blog/2026/11/19/how-to-support-your-app-on-kubernetes-environments-you-dont-control/">How to support your app on Kubernetes environments you don’t control</a></strong><br />
+  摘要：Running an application in Kubernetes is one thing, but supporting that application in Kubernetes environments your customers run is something else entirely. You don’t control the cluster configuration, its upgrade schedule, the surrounding tooling, or the...</p>
+</li>
+<li>
+<p><strong><a href="https://www.cncf.io/blog/2026/11/16/your-runtime-security-tool-is-not-your-baseline-silos-dressed-as-autonomy-in-cloud-native-teams/">Your runtime security tool is not your baseline: Silos dressed as autonomy in cloud native teams</a></strong><br />
+  摘要：A deadline creates pressure, and a team decides to solve its part of the problem directly. I once saw this play out in a Kubernetes security initiative. The team had capable engineers, a clear objective and...</p>
+</li>
+</ul>
+<h2>Red Hat Blog</h2>
+<ul>
+<li><strong><a href="https://www.redhat.com/en/blog/red-hat-microsoft-ignite-2026-partnership-action">Red Hat at Microsoft Ignite 2026: Partnership in action</a></strong><br />
+  摘要：Microsoft Ignite is one of the defining moments each year for the Red Hat and Microsoft partnership—and this year's show demonstrates how far that collaboration has come. Across joint engineering, go-to-market, and customer recognition, Red Hat and Microsoft showed what partnership looks like in practice: Co-engineered platforms, announcements customers can act on immediately, and an open source foundation underneath it all.Several headlines defined the week: A deeper virtualization alliance on Azure, and the general availability of both Azure Red Hat OpenShift with hosted control planes (HC</li>
+</ul>
+<h2>Kubernetes Blog</h2>
+<ul>
+<li>
+<p><strong><a href="https://kubernetes.io/blog/2026/10/27/announcing-workload-conformance-wg/">Announcing the Workload Conformance Working Group</a></strong><br />
+  摘要：We are excited to announce that the Kubernetes community now has a Workload Conformance Working Group . The working group is writing a shared standard for how workloads behave at runtime on Kubernetes. To get it right, we need input from the people who build those workloads and from the people who run the clusters they're deployed on. Why workloads need a shared standard Certified Kubernetes tests the cluster, and Kubernetes AI Conformance tests whether a cluster can run AI and ML workloads. Nothing comparable exists for the workloads themselves, so cluster operators still check each application by hand before routine maintenance or a Kubernetes upgrade. The problems they find are familiar. A routine node drain is often how you discover that an application can't tolerate disruption. An upg…</p>
+</li>
+<li>
+<p><strong><a href="https://kubernetes.io/blog/2026/09/21/kubernetes-v1-37-pvc-last-used-time/">Kubernetes v1.37: Tracking When a PersistentVolumeClaim Was Last Used (Beta)</a></strong><br />
+  摘要：Kubernetes v1.37 promotes the PersistentVolumeClaimUnusedSinceTime feature gate to Beta (enabled by default). With this feature, the PersistentVolumeClaim (PVC) protection controller adds an Unused condition to each PVC, telling you whether any running pod currently references it — no custom tooling or cross-referencing required. For the API definition of PVC conditions, see the PersistentVolumeClaim API reference . Read on to learn how the Unused condition works and how to use it. Why track PVC usage? In large-scale Kubernetes clusters, it is common for users to create PVCs and then delete the associated pods without cleaning up the storage, because Kubernetes does not automatically delete PVCs when their pods are removed (to protect against accidental data loss). Over time, these orphane…</p>
+</li>
+<li>
+<p><strong><a href="https://kubernetes.io/blog/2026/09/15/kubernetes-v1-37-pod-level-resource-managers-beta/">Kubernetes v1.37: Pod-Level Resource Managers graduated to Beta</a></strong><br />
+  摘要：With the release of Kubernetes v1.37, the Pod-Level Resource Managers feature has graduated to Beta status (disabled by default)! First introduced as an Alpha feature in Kubernetes v1.36 , this enhancement builds on Pod-Level Resources by equipping Kubelet's Topology Manager, CPU Manager, and Memory Manager to use Pod-level resource declarations ( .spec.resources ) directly when making hardware placement decisions. Bringing pod-level resources to node managers Before this feature, obtaining exclusive NUMA-aligned CPU cores or memory for latency-critical applications forced cluster operators into an all-or-nothing choice: assign integer resource requests to every container in the Pod, or forfeit exclusive NUMA alignment entirely. For modern workloads running lightweight sidecars (such as lo…</p>
+</li>
+<li>
+<p><strong><a href="https://kubernetes.io/blog/2026/09/09/kubernetes-v1-37-node-lifecycle-conditions/">Kubernetes v1.37: Introducing Node Lifecycle Conditions</a></strong><br />
+  摘要：Kubernetes has many ways to describe what is happening on a Node. Readiness, taints, Pod state, labels, annotations, and provider-specific APIs each expose part of the picture. What has been missing is a shared, Kubernetes-owned way to say that a Node is draining , undergoing maintenance, or undergoing Graceful Node Shutdown . Kubernetes v1.37 introduces five well-known Node conditions that provide that description: DrainInProgress Drained MaintenancePlanned MaintenanceInProgress GracefulNodeShutdownInProgress The new Node lifecycle conditions Condition What it reports DrainInProgress The Node is actively being drained according to the administrator's chosen drain criteria. Drained The Node has reached the drain criteria selected by the administrator. MaintenancePlanned The Node is expecte…</p>
+</li>
+</ul>
+<hr /></div>
+  </main>
+</body>
+</html>
