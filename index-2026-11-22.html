@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OS 领域每日洞察 - 2026-11-22</title>
+  <style>
+    :root {
+      --bg: #f6f4f0;
+      --bg-bar: #ebe8e3;
+      --bg-card: #fffefb;
+      --bg-card-hover: #f5f3ef;
+      --text: #2d2a26;
+      --text-muted: #5c5852;
+      --text-dim: #7a756e;
+      --accent: #5a7a9e;
+      --border: #ddd9d2;
+      --radius: 10px;
+      --font: "Segoe UI", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      font-size: 15px;
+    }
+
+    /* 门户顶栏 */
+    .masthead {
+      background: var(--bg-bar);
+      border-bottom: 1px solid var(--border);
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 0;
+    }
+    .masthead-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .masthead h1 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin: 0;
+      letter-spacing: -0.02em;
+      color: var(--text);
+    }
+    .masthead .meta {
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+    }
+
+    /* 主内容区：多栏门户布局 */
+    .main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 3rem;
+    }
+
+    /* 板块：每个 h2 为一个频道块 */
+    .content .section {
+      margin-bottom: 2.5rem;
+    }
+    .content h2 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+      margin: 0 0 1rem;
+      padding: 0.6rem 1rem;
+      background: var(--bg-bar);
+      border-radius: var(--radius);
+      border-left: 4px solid var(--accent);
+    }
+    .content h2:first-child { margin-top: 0; }
+
+    .content h2:has(+ h3) {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      border-left-color: var(--text-dim);
+    }
+
+    /* 板块内卡片网格（每个 h2 后的 ul） */
+    .content h2 + ul {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1rem;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .content h2 + ul li {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.15rem 1.2rem;
+      transition: background .15s, border-color .15s;
+    }
+    .content h2 + ul li:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--text-dim);
+    }
+    .content h2 + ul li strong {
+      display: block;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+      line-height: 1.4;
+    }
+    .content h2 + ul li p {
+      margin: 0 0 0.5rem;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.58;
+    }
+    .content h2 + ul li p:last-of-type { margin-bottom: 0; }
+    .content h2 + ul li a[href^="http"] {
+      font-size: 0.8125rem;
+      color: var(--accent);
+    }
+    .content h2 + ul li a[href^="http"]:hover { text-decoration: underline; }
+
+    .content .ref-section {
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+    .content h2 + h3 { margin-top: 1.25rem; }
+    .content h3 {
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--text-dim);
+      margin: 1rem 0 0.4rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .content h3 + ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 0.25rem;
+    }
+    .content h3 + ul li {
+      background: transparent;
+      border: none;
+      padding: 0.2rem 0;
+      font-size: 0.8125rem;
+    }
+    .content h3 + ul li strong { font-size: inherit; margin-bottom: 0; }
+    .content h3 + ul li a { color: var(--accent); }
+    .content h3 + ul li a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <header class="masthead">
+    <div class="masthead-inner">
+      <h1>OS 领域每日洞察 - 2026-11-22</h1>
+      <span class="meta">2026-11-22 05:00 UTC</span>
+    </div>
+  </header>
+  <main class="main">
+    <div class="content"><h1>OS 领域每日洞察 - 2026-11-22</h1>
+<p>（Gemini 未可用时，以下为按来源整理的条目，含<strong>新闻摘要</strong>与链接；摘要可能为原文语言。）</p>
+<h2>Phoronix</h2>
+<ul>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Linux-7.4-NVMe-NS-Parallel">Linux 7.4 To Remove NVMe Namespaces In Parallel For Faster Results</a></strong><br />
+  摘要：As part of this week's block subsystem fixes for the Linux 7.4-rc4 kernel release due out on Sunday are many bug fixes plus also a nice NVMe namespaces optimization...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Sashiko-AI-Performance-Review">Sashiko AI Introducing Linux Performance Specialist Review Stage</a></strong><br />
+  摘要：The Google-developed Sashiko for agentic AI code review initially focused on the Linux kernel continues helping to uncover new bugs and issues as new patches hit the kernel mailing list as well as those manually running this open-source AI software. In addition to recently introducing an experimental patch series design assessment, they are introducing another new skill for helping with performance/benchmark evaluation of kernel changes...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Intel-LInux-NPU-Driver-1.39.1">Intel Linux NPU Driver 1.39.1 Released With Nova Lake Support</a></strong><br />
+  摘要：Since last year there have been Linux patches for enabling the Intel Nova Lake NPU with its 6th Gen neural processing unit IP. Those patches were since mainlined with the Intel IVPU accelerator driver. Now the user-space Intel Linux NPU Driver was updated on Thursday with official Nova Lake support...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Debian-13.8-Released">Debian 13.8 Released With 150+ Security Updates</a></strong><br />
+  摘要：Debian 13.8 is out today as the newest ISO refresh for Debian 13 "Trixie" with 150 security updates noted along with many bug fixes...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/KDE-Plasma-6.9-Cursor-Blinking">KDE Plasma 6.9 Allows Adjusting The Text Cursor Blinking Rate, Other Improvements</a></strong><br />
+  摘要：It has been another busy week in the KDE development space with more feature work and fixes piling up for the upcoming Plasma 6.9 desktop...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/FreeDesktop.org-Redesigned-2026">FreeDesktop.org Launches Redesigned Website</a></strong><br />
+  摘要：FreeDesktop.org has been the hosting hub for the X.Org project, Wayland, and the Mesa projects to other notable open-source Linux desktop projects like PipeWire, GStreamer, and countless other projects. Since it's launch over two decades ago, it has basically looked the same... A bland Wiki. But on Friday a redesign of FreeDesktop.org was launched...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/FreeBSD-15.2-Beta-3">FreeBSD 15.2 Beta 3 Released Following 17 Security Advisories</a></strong><br />
+  摘要：The third weekly beta release of FreeBSD 15.2 is now available for testing. This comes with various bug fixes, updated OpenZFS code, and fixes for 17 FreeBSD security advisories that were made public this week...</p>
+</li>
+</ul>
+<h2>Lobsters</h2>
+<ul>
+<li>
+<p><strong><a href="https://pwn.ai/upload2shell/research.html">GhostScript CVE 2026-125396: "Upload2Shell"</a></strong><br />
+  摘要：Here's the NVD page for the CVE with some additional useful context . Comments</p>
+</li>
+<li>
+<p><strong><a href="https://feyor.sh/blog/nixos-bringup-on-an-alibaba-riscv-board/">NixOS bring-up on an Alibaba RISC-V board</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://sipacid.com/blog/port-scanning-for-mojang/">port scanning for mojang</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://linebender.org/blog/next-100-guis/">Advice for the next 100 Rust GUIs</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://progrium.xyz/articles/2026/single-binary-postgres">How I Got Postgres into a Single Binary</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://bwc9876.dev/blog/jj_todo/">TODOs JJ Style</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://blog.tymscar.com/posts/studiodisplayethernet/">My Monitor Was Cutting My Download Speed by 75%</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://herbsutter.com/2026/11/21/c26-is-done-again-trip-report-november-2026-iso-c-standards-meeting-buzios-brazil/">C++26 is done (again)! — Trip report: November 2026 ISO C++ standards meeting (Búzios, Brazil)</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://antonz.org/probabilistic-data-structures-2/">Probabilistic data structures in Go, part 2</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://tianyin.github.io/misc/pir_microsoft_365_11-12-2026.pdf">Microsoft 365 Outage - Post Incident Report</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://blog.tenstral.net/2026/11/new-fdo-website.html">Changes on freedesktop.org</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://slopstrap.mikelacher.com/l">Slopstrap: Make your site look hastily vibecoded</a></strong><br />
+  摘要：Comments</p>
+</li>
+</ul>
+<h2>Ars Technica</h2>
+<ul>
+<li>
+<p><strong><a href="https://arstechnica.com/culture/2026/11/review-godzilla-minus-zero-is-everything-we-could-want-in-a-sequel/">Review: Godzilla Minus Zero joins the list of truly stellar sequels</a></strong><br />
+  摘要：Director Takashi Yamazaki ups the ante by pitting Godzilla against one of the monster's greatest foes</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/science/2026/11/race-realism-isnt-realistic-and-it-isnt-good-science/">“Race realism” isn’t realistic—and it isn’t good science</a></strong><br />
+  摘要：Modern genetics does not support claims of innate racial differences in intelligence.</p>
+</li>
+</ul>
+<h2>The New Stack</h2>
+<ul>
+<li>
+<p><strong><a href="https://thenewstack.io/junior-developers-ai-agents-block/">“It is a rollercoaster ride”: Angie Jones of the Agentic AI Foundation on keeping up with AI agents</a></strong><br />
+  摘要：Only a few years ago, it would have been impossible to picture this scenario: A lead developer once gave 10 The post “It is a rollercoaster ride”: Angie Jones of the Agentic AI Foundation on keeping up with AI agents appeared first on The New Stack .</p>
+</li>
+<li>
+<p><strong><a href="https://thenewstack.io/ai-agent-code-review/">If we stop reading the code, what do we read?</a></strong><br />
+  摘要：&#8220;Human beings are too slow when dealing with code. So if we&#8217;re going to move at the speed of the The post If we stop reading the code, what do we read? appeared first on The New Stack .</p>
+</li>
+<li>
+<p><strong><a href="https://thenewstack.io/gpt-6-2-sol-vs-claude-opus-5-5/">GPT-6.2 Sol vs. Claude Opus 5.5: Not as accurate, but still might be the better buy</a></strong><br />
+  摘要：Claude Opus 5.5 is the model everyone wants to beat, and it has a mixed record in my tests since The post GPT-6.2 Sol vs. Claude Opus 5.5: Not as accurate, but still might be the better buy appeared first on The New Stack .</p>
+</li>
+<li>
+<p><strong><a href="https://thenewstack.io/ai-feature-flags-observability/">Dynatrace just laid out its AI observability playbook at KubeCon. Here’s why it matters for developers.</a></strong><br />
+  摘要：A new AI model goes live for a small group of users. Some of them start seeing errors. The build The post Dynatrace just laid out its AI observability playbook at KubeCon. Here’s why it matters for developers. appeared first on The New Stack .</p>
+</li>
+<li>
+<p><strong><a href="https://thenewstack.io/nvidia-droid-harness-nemotron/">Nvidia used 20,000 training examples to fix its AI’s mistakes. Its coding score jumped.</a></strong><br />
+  摘要：Nvidia used Factory&#8217;s Droid coding-agent harness to generate roughly 20,000 rows of post-training data for Nemotron 3 Ultra, the 550-billion-parameter The post Nvidia used 20,000 training examples to fix its AI&#8217;s mistakes. Its coding score jumped. appeared first on The New Stack .</p>
+</li>
+</ul>
+<h2>Hacker News</h2>
+<ul>
+<li>
+<p><strong><a href="https://github.com/android2linux/android2linux">Show HN: It's now easy to install Linux on an Android Phone – Android2linux</a></strong><br />
+  摘要：Hey HN! One of my biggest dreams (really) was to have a Linux phone. I tried to install on some phones in the past, even the ones that would be marked as compatible and it was always so difficult that I couldn&#x27;t really do it. Yesterday I decided to try again, this time using Claude to do most of the work. A couple hours later it runs postmarketOS as my second phone: 4G, SMS, a terminal, SSH. It took two fixes. U-Boot didn&#x27;t recognise my phone model, so I patched 14 bytes of its device-tree match strings. Then the modem wasn&#x27;t working, because the packaged TFTP server that lends the modem a folder mishandled its file-size queries but an upstream build fixed it. The repo is what came out of it: guides for any phone (but specific just for my xiaomi), an agent skill that follows…</p>
+</li>
+<li>
+<p><strong><a href="https://github.com/nzeuslab/nzeus-deck/blob/main/docs/WRITEUP.md">Getting Linux 7.2 onto a $40 handheld that hid its kernel as a Windows DLL</a></strong><br />
+  摘要：Getting Linux 7.2 onto a $40 handheld that hid its kernel as a Windows DLL</p>
+</li>
+<li>
+<p><strong><a href="https://twitter.com/bflycomputer/status/2115147446385049758">Pond: A Fresh Arch-Based Linux with Niri</a></strong><br />
+  摘要：Pond: A Fresh Arch-Based Linux with Niri</p>
+</li>
+<li>
+<p><strong><a href="https://github.com/tgaloppo/obfusecate">Show HN: Lightweight FUSE-based encrypted, compressed filesystem for Linux</a></strong><br />
+  摘要：A personal project for digging deeper into Linux system programming, ObFUSEcate implements a file backed virtual block device that automatically performs compression and encryption as blocks are accessed. This virtual device can be mounted via FUSE (requiring no root privileges) to provide, effectively, a &quot;live&quot; compressed, encrypted archive. Written in C++, and intended to have minimal dependencies, it has custom 32 bit arithmetic encoding&#x2F;decoding, ChaCha20-Poly1305 authenticated encryption, and CRC8 + XOR parity error-correction.</p>
+</li>
+</ul>
+<h2>Kubernetes Blog</h2>
+<ul>
+<li>
+<p><strong><a href="https://kubernetes.io/blog/2026/09/22/sig-apps-spotlight/">Spotlight on SIG Apps</a></strong><br />
+  摘要：As Kubernetes adoption has grown, the conversation has shifted beyond running containers to managing increasingly complex application lifecycles. Modern platforms support stateless web services, stateful databases, batch processing, AI workloads, and platform services. At the same time, they must remain reliable during upgrades, scaling events, and infrastructure failures. Every Kubernetes user relies on SIG Apps, whether they realize it or not. Deployments, StatefulSets, DaemonSets, Jobs, and CronJobs form the foundation of how applications are deployed, updated, scaled, and operated across the Kubernetes ecosystem. SIG Apps is focused on improving workload resilience, refining application lifecycle management, and addressing the operational challenges that emerge when applications encoun…</p>
+</li>
+<li>
+<p><strong><a href="https://kubernetes.io/blog/2026/09/16/kubernetes-v1-37-hardening-container-storage/">Kubernetes v1.37: Hardening Container Storage with Bind Mount Options and EmptyDir Permissions</a></strong><br />
+  摘要：Kubernetes v1.37 brings important storage security features: emptyDir permission modes and bind mount options. They help application programmers and security professionals implement rigorous security policies, for example, prohibiting deletion of files across containers or execution of arbitrary binaries from writable volumes, directly in Kubernetes without any complicated circumvention. Linux storage and permission fundamentals Before diving into the new Kubernetes features, let us briefly review the low-level Linux security mechanisms that make them possible. Bind mount flags When Linux mounts or remounts a directory, Virtual File System (VFS) flags control what actions are permitted on that filesystem: noexec : Do not permit direct execution of any binaries on the mounted filesystem. no…</p>
+</li>
+<li>
+<p><strong><a href="https://kubernetes.io/blog/2026/09/10/kubernetes-v1-37-scheduler-preemption-for-in-place-pod-resize-alpha/">Kubernetes v1.37: Scheduler Preemption for In-Place Pod Resize (Alpha)</a></strong><br />
+  摘要：In Kubernetes, resource allocation has historically been a static decision made during a Pod's initial scheduling and placement. With the graduation of the core in-Place Pod resize feature to General Availability in v1.35, application developers and cluster operators gained the powerful ability to dynamically adjust CPU and memory allocations of running containers without incurring disruptive restarts or application downtime. However, in-place resizing introduced a unique resource scheduling gap: if a running Pod requested a resource scale-up that exceeded the host node's allocatable headroom, the Kubelet was forced to mark the request as Deferred . The Pod would remain parked in this state indefinitely, waiting for resources on the node to naturally free up. To bridge this scheduling gap,…</p>
+</li>
+</ul>
+<hr /></div>
+  </main>
+</body>
+</html>
