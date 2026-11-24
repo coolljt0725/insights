@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OS 领域每日洞察 - 2026-11-24</title>
+  <style>
+    :root {
+      --bg: #f6f4f0;
+      --bg-bar: #ebe8e3;
+      --bg-card: #fffefb;
+      --bg-card-hover: #f5f3ef;
+      --text: #2d2a26;
+      --text-muted: #5c5852;
+      --text-dim: #7a756e;
+      --accent: #5a7a9e;
+      --border: #ddd9d2;
+      --radius: 10px;
+      --font: "Segoe UI", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      font-size: 15px;
+    }
+
+    /* 门户顶栏 */
+    .masthead {
+      background: var(--bg-bar);
+      border-bottom: 1px solid var(--border);
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 0;
+    }
+    .masthead-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .masthead h1 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin: 0;
+      letter-spacing: -0.02em;
+      color: var(--text);
+    }
+    .masthead .meta {
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+    }
+
+    /* 主内容区：多栏门户布局 */
+    .main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 3rem;
+    }
+
+    /* 板块：每个 h2 为一个频道块 */
+    .content .section {
+      margin-bottom: 2.5rem;
+    }
+    .content h2 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+      margin: 0 0 1rem;
+      padding: 0.6rem 1rem;
+      background: var(--bg-bar);
+      border-radius: var(--radius);
+      border-left: 4px solid var(--accent);
+    }
+    .content h2:first-child { margin-top: 0; }
+
+    .content h2:has(+ h3) {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      border-left-color: var(--text-dim);
+    }
+
+    /* 板块内卡片网格（每个 h2 后的 ul） */
+    .content h2 + ul {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1rem;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .content h2 + ul li {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.15rem 1.2rem;
+      transition: background .15s, border-color .15s;
+    }
+    .content h2 + ul li:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--text-dim);
+    }
+    .content h2 + ul li strong {
+      display: block;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+      line-height: 1.4;
+    }
+    .content h2 + ul li p {
+      margin: 0 0 0.5rem;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.58;
+    }
+    .content h2 + ul li p:last-of-type { margin-bottom: 0; }
+    .content h2 + ul li a[href^="http"] {
+      font-size: 0.8125rem;
+      color: var(--accent);
+    }
+    .content h2 + ul li a[href^="http"]:hover { text-decoration: underline; }
+
+    .content .ref-section {
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+    .content h2 + h3 { margin-top: 1.25rem; }
+    .content h3 {
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--text-dim);
+      margin: 1rem 0 0.4rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .content h3 + ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 0.25rem;
+    }
+    .content h3 + ul li {
+      background: transparent;
+      border: none;
+      padding: 0.2rem 0;
+      font-size: 0.8125rem;
+    }
+    .content h3 + ul li strong { font-size: inherit; margin-bottom: 0; }
+    .content h3 + ul li a { color: var(--accent); }
+    .content h3 + ul li a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <header class="masthead">
+    <div class="masthead-inner">
+      <h1>OS 领域每日洞察 - 2026-11-24</h1>
+      <span class="meta">2026-11-24 05:00 UTC</span>
+    </div>
+  </header>
+  <main class="main">
+    <div class="content"><h1>OS 领域每日洞察 - 2026-11-24</h1>
+<p>（Gemini 未可用时，以下为按来源整理的条目，含<strong>新闻摘要</strong>与链接；摘要可能为原文语言。）</p>
+<h2>Red Hat Blog</h2>
+<ul>
+<li>
+<p><strong><a href="https://www.redhat.com/en/blog/futurum-research-study-why-97-percent-enterprise-it-teams-cannot-survive-cloud-cutoff">Futurum Research study: Why 97 percent of enterprise IT teams cannot survive a cloud cutoff</a></strong><br />
+  摘要：Technology leaders rank digital sovereignty among their highest operational priorities, according to a new global research report, “Sovereignty is Control, Not Location” from Futurum Research. They assign dedicated executive roles, set up governance committees, and track compliance rules across borders. The study, sponsored by Red Hat, surveyed 1,940 technology and risk decision-makers across 28 countries in July and August 2026. The survey covered North America, EMEA, Asia-Pacific, and Latin America, spanning six industries: financial services, public sector and defense, healthcare and li</p>
+</li>
+<li>
+<p><strong><a href="https://www.redhat.com/en/blog/why-physical-ai-depends-open-source-foundation">Why physical AI depends on an open source foundation</a></strong><br />
+  摘要：From autonomous mobile robots and industrial equipment to drones, intelligent vehicles, and edge devices, AI is increasingly being embedded into machines that perceive, reason, and act in the physical world. This emerging category, often referred to as physical AI, is creating new opportunities for businesses to apply AI in environments where software doesn't just generate an answer. It helps machines perceive their environment, make decisions, and act on those decisions. A physical AI system doesn't operate on its own. Even if a device has AI onboard, behind the device are the software, netw</p>
+</li>
+<li>
+<p><strong><a href="https://www.redhat.com/en/blog/how-law-firm-used-ansible-playbooks-cut-global-server-deployment-times-30-minutes">How a law firm used Ansible Playbooks to cut global server deployment times to 30 minutes</a></strong><br />
+  摘要：When multi-hour server builds and manual ticketing queues threatened to slow down global operations, a law firm needed a way to scale up its infrastructure without overwhelming its lean engineering team. Modernizing its IT environment and aligning with industry standards required a fresh approach to operations.By adopting Red Hat Ansible Automation Platform, the organization shifted to a Configuration as Code (CaC) strategy for its global infrastructure. This transition eliminated operational bottlenecks, modernized workflows, and established a scalable framework for enterprise automation.Acce</p>
+</li>
+<li>
+<p><strong><a href="https://www.redhat.com/en/blog/how-write-standout-red-hat-summit-proposal">How to write a standout Red Hat Summit proposal</a></strong><br />
+  摘要：Every year, the Red Hat Summit review committee evaluates roughly 1,500 proposals to build a catalog of around 350 sessions.You may be wondering: What distinguishes a successful abstract from one that falls flat? Accepted proposals typically feature practical, real-world troubleshooting over high-level marketing.Attendees travel to Red Hat Summit to connect with peers, explore technical realities, and learn how other teams solve complex architectural challenges. They want to know what worked, what unexpected hurdles surfaced, and how the presenting team engineered a solution.If you're hoping t</p>
+</li>
+<li>
+<p><strong><a href="https://www.redhat.com/en/blog/azure-red-hat-openshift-hosted-control-planes-now-generally-available">Azure Red Hat OpenShift with hosted control planes is now generally available</a></strong><br />
+  摘要：Microsoft Azure Red Hat OpenShift with hosted control planes is now generally available to help teams reduce infrastructure costs, simplify Day 2 operations, and provision clusters with more flexibility.Jointly engineered, supported, and operated by Red Hat and Microsoft, Azure Red Hat OpenShift is a fully-managed application platform designed to help organizations build and deploy workloads at scale. Teams can deploy containers, virtual machines (VMs), and AI-enabled applications with a unified application platform that offers consistency across the hybrid cloud.​​What changes with hosted</p>
+</li>
+</ul>
+<h2>Lobsters</h2>
+<ul>
+<li>
+<p><strong><a href="https://www.friedgil.com/vpvnp/">What VP != VNP Means (In 3 Minutes)</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://dotat.at/@/2025-05-28-types.html">the algebra of dependent types (2025)</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://citrons.xyz/journal/2025-07-23">Lua for data representation</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://theconsensus.dev/p/2026/11/15/cgos-pointer-check.html">cgo's pointer check is all over the place</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://community.nlnetlabs.nl/t/release-roto-v0-14-0/3511">Release: Roto v0.14.0</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://deadsimpletech.com/blog/illiterate-programming">Illiterate Programming</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://news.uq.edu.au/2026-11-uq-researchers-send-unblockable-message-using-gravity">UQ researchers send an unblockable message using gravity</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://yogthos.net/posts/2026-11-23-b+trees.html">Swapping Jolt's sorted collections to a B+tree</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://sneakernet.eu/">Sneakernet</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://ladybird.org/posts/alpha/">Ladybird is now in alpha</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://lambdacreate.com/posts/held-together-by-spare-time">Held together by spare time: Reviving wiki.alpinelinux.org during PHP2Shell</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://aerogramme.deuxfleurs.fr/blog/2026-quality-imap-part-2/">Quality IMAP, Part 2: Mailbox Concurrency</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://lobste.rs/s/t8c4vj/what_are_you_doing_this_week">What are you doing this week?</a></strong><br />
+  摘要：What are you doing this week? Feel free to share! Keep in mind it’s OK to do nothing at all, too.</p>
+</li>
+</ul>
+<h2>Phoronix</h2>
+<ul>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Mesa-NVK-TTU-Instructions">Mesa's NVK NVIDIA Driver Another Step Closer To Vulkan Ray-Tracing</a></strong><br />
+  摘要：Mesa's NVK open-source NVIDIA Vulkan driver is one step closer toward eventually supporting Vulkan ray-tracing...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Zstandard-Zstd-1.6">Zstd 1.6 Released With Many Fixes, New Performance Optimizations</a></strong><br />
+  摘要：It's been a year and a half since the last Zstandard release (v1.5.7) while Zstandard 1.6.0 was tagged a short time ago as the next major step forward for this widely-used, open-source compression algorithm and implementation...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Ladybird-Browser-Alpha">Ladybird Web Browser/Engine Reaches Alpha</a></strong><br />
+  摘要：The Ladybird open-source desktop web browser built from scratch with its own independent web engine has now entered its alpha phase...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/RadeonSI-Radeon-Disable-Default">Mesa 27.0 RadeonSI Gallium3D Disables Radeon Kernel Driver Support By Default</a></strong><br />
+  摘要：As part of encouraging AMD Radeon Linux users to switch over to the AMDGPU kernel driver and/or upgrade their kernels, Mesa 27.0 with the RadeonSI Gallium3D driver is disabling its Radeon kernel driver compatibility by default. This affects the early GCN 1.0 and GCN 1.1 graphics processors that had been still using the legacy Radeon kernel driver by default up until about a year ago when it reached feature parity on the AMDGPU kernel driver. For now the Radeon kernel driver support in Mesa 27.0 is disabled by default but can be re-enabled, but eventually that Radeon kernel driver support by RadeonSI will be removed...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/review/amd-epyc-9006-7601">AMD EPYC Zen 6 vs. Zen 1 Performance: 12.1x Geo Mean In Less Than 10 Years, Up To 133x In AI</a></strong><br />
+  摘要：This month brought the availability of the new EPYC 9006 "Venice" SP7 Zen 6 server processors. We have seen excellent generational gains with the likes of the EPYC 9686F and EPYC 9996 over Zen 5 Turin CPUs as well as sharply outperforming the competition from Intel and NVIDIA. With the first-generation EPYC "Naples" processors having launched nearly ten years ago, I was curious to quantify AMD's server performance gains over the past decade. So up today is a look at how the EPYC 9996 and EPYC 9686F Zen 6 processors compare to the original EPYC Zen 1 flagship with the EPYC 7601 across real-world workloads for performance as well as power efficiency for some pretty epic gains.</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Jensen-Back-NVIDIA-CEO">Jensen Huang Reinstated As NVIDIA CEO &amp; Board Director</a></strong><br />
+  摘要：Jensen Huang has been reinstated as the NVIDIA CEO and Board Director...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Firefox-161">Firefox 161 Brings Per-Site VPN Toggling, Classic Themes Section</a></strong><br />
+  摘要：Mozilla Firefox 161 release binaries are now available for this newest bi-weekly feature release to this open-source web browser...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/XNU-Linux">XNU Linux Lets macOS Userspace Processes Run On Linux</a></strong><br />
+  摘要：XNU Linux is a new opens-source project allowing macOS user-space software to run on Linux by loading the macOS kernel into it. XNU Linux builds off Apple's open-source XNU kernel components of macOS while adapted to serve as a loadable Linux kernel module. Besides this XNU kernel module, this works on an otherwise unmodified ARM64 Linux system...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/LibreOffice-27.2-Alpha-1">LibreOffice 27.2 Alpha 1 Released For Testing</a></strong><br />
+  摘要：Ahead of the official roll-out in February, LibreOffice 27.2 Alpha 1 is now available for testing this updated open-source office suite...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/VKD3D-2.2-Released">VKD3D 2.2 Released With More Improvements For Direct3D 12 On Vulkan</a></strong><br />
+  摘要：Ahead of the Wine 12.0 release candidates expected to begin in December with the stable Wine 12.0 release then in early 2027, VKD3D 2.2 is now available for this Direct3D 12 on Vulkan API implementation...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Mesa-27.0-AVX-512-LLVMpipe">Mesa 27.0 Merges LLVMpipe AVX-512 Support</a></strong><br />
+  摘要：As a follow-up to the article last month around David Airlie and AI resurrecting AVX-512 support for Mesa's LLVMpipe software driver, that code is now merged for Mesa 27.0...</p>
+</li>
+</ul>
+<h2>Hacker News</h2>
+<ul>
+<li>
+<p><strong><a href="https://thegit.ai/desktop">TheGitAI Desktop App Is Available on macOS, Windows, and Linux</a></strong><br />
+  摘要：TheGitAI Desktop App Is Available on macOS, Windows, and Linux</p>
+</li>
+<li>
+<p><strong><a href="https://openai.com/index/introducing-shirudo/">Shirudo: OpenAI and Cisco's open-source runtime for shielding unpatched Linux</a></strong><br />
+  摘要：Shirudo: OpenAI and Cisco's open-source runtime for shielding unpatched Linux</p>
+</li>
+<li>
+<p><strong><a href="https://github.com/Tekush1/narayanastra">Show HN: Narayanastra – agentless Linux rootkit scanner (eBPF, io_uring) in Rust</a></strong><br />
+  摘要：Show HN: Narayanastra – agentless Linux rootkit scanner (eBPF, io_uring) in Rust</p>
+</li>
+<li>
+<p><strong><a href="https://www.theregister.com/os-platforms/2026/11/23/old-school-linux-desktops-find-fresh-routes-to-wayland/5311349">Old-school Linux desktops find fresh routes to Wayland</a></strong><br />
+  摘要：Old-school Linux desktops find fresh routes to Wayland</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/XNU-Linux">XNU Linux Lets macOS Userspace Processes Run on Linux</a></strong><br />
+  摘要：XNU Linux Lets macOS Userspace Processes Run on Linux</p>
+</li>
+<li>
+<p><strong><a href="https://modeloop.app/">Show HN: Modeloop – Design and simulate discrete-time controllers in the browser</a></strong><br />
+  摘要：Hi HN! I’d like to share a new model-based design environment with anyone interested in trying it out. It’s free and you can start modeling in the browser without installing any desktop software. It&#x27;s called Modeloop and we&#x27;ve spent some years to build but we think it has a lot of interesting features. DIAGRAMS In the diagram editor, you can build control algorithms by combining basic blocks from the standard library and use finite state machines (FSMs) to define operating modes and the transitions between them. You can organize your diagram into nested subsystems and schedule different functions to run at different rates. For example, you could run a motor’s current loop at 10 kHz, its speed loop at 1 kHz and its diagnostics at 100 Hz. You can also edit any model either graphica…</p>
+</li>
+<li>
+<p><strong><a href="https://maeto.saphal.me/">Show HN: I built Maeto, an SRv6 SD-WAN from scratch on Linux that you can break</a></strong><br />
+  摘要：Demo: https:&#x2F;&#x2F;maeto.saphal.me&#x2F; GitHub (mirror): https:&#x2F;&#x2F;github.com&#x2F;saphalpdyl&#x2F;Maeto Forgejo instance (issues &amp; planning): https:&#x2F;&#x2F;git.saphal.me&#x2F;saphalpdyl&#x2F;Maeto Small writeups about Maeto: https:&#x2F;&#x2F;blogs.saphal.me&#x2F;tags&#x2F;maeto&#x2F; --- About 5 months ago, I was tracking osvbng, a vBNG built on VPP. It was mentioned by folks on my previous Show HN, and I saw maintainers talk about Segment Routing support for it. Four months ago, I happened to be in a conversation about SD-WANs (Software-Defined WAN), and it got me thinking about Segment Routing again. So, I started Maeto that evening to learn about traffic engineering. Maeto intends to be a complete SD-WAN platform: covering everything from the customer edge all th…</p>
+</li>
+<li>
+<p><strong><a href="https://github.com/mikuta0407/win4wine">Win4wine – Run Windows Shell as the Linux Desktop on Wine</a></strong><br />
+  摘要：Win4wine – Run Windows Shell as the Linux Desktop on Wine</p>
+</li>
+<li>
+<p><strong><a href="https://furilabs.com/">Furilabs Linux Phone</a></strong><br />
+  摘要：Furilabs Linux Phone</p>
+</li>
+<li>
+<p><strong><a href="https://freenode.net/article/kernel-developer-proposes-native-linux-quic-sockets">Kernel developer proposes native Linux QUIC sockets</a></strong><br />
+  摘要：Kernel developer proposes native Linux QUIC sockets</p>
+</li>
+</ul>
+<h2>Ars Technica</h2>
+<ul>
+<li>
+<p><strong><a href="https://arstechnica.com/health/2026/11/trump-halts-iowa-detonation-says-new-governor-to-blame-if-it-blows-accidentally/">Trump halts Iowa detonation, says new governor to blame if it blows accidentally</a></strong><br />
+  摘要：The Army said on Sunday that it would carry out the detonation on Wednesday.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/tech-policy/2026/11/states-sue-spacex-to-stop-grok-from-generating-child-sex-images-revenge-porn/">States sue SpaceX to stop Grok from generating child sex images, revenge porn</a></strong><br />
+  摘要：X says every Grok output is screened, but state AGs say Grok is still making CSAM.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/space/2026/11/russia-will-launch-a-routine-iss-supply-mission-tomorrow-apparently-its-a-big-secret/">Russia will launch a routine ISS supply mission tomorrow—apparently, it's a big secret</a></strong><br />
+  摘要："I would ask you to please reach out to Roscosmos directly."</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/tech-policy/2026/11/surveillance-pricing-uses-our-personal-data-to-make-us-pay-more/">Surveillance pricing uses our personal data to make us pay more</a></strong><br />
+  摘要：Personalized pricing can mean unfair, and even biased, prices.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/tech-policy/2026/11/amazon-fights-delivery-protection-act-by-putting-stickers-on-its-packages/">Amazon fights Delivery Protection Act by putting stickers on its packages</a></strong><br />
+  摘要：Amazon now uses its packages for political purposes.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/space/2026/11/russia-may-launch-a-nuclear-armed-satellite-far-sooner-than-we-thought/">Reports: Russia may launch nuclear weapon into orbit as soon as next month</a></strong><br />
+  摘要：A nuclear detonation in space "could cause rapid and sudden loss or degradation of thousands of satellites."</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/culture/2026/11/marvel-crams-every-superhero-ever-into-avengers-doomsday-final-trailer/">Marvel crams every superhero ever into Avengers: Doomsday final trailer</a></strong><br />
+  摘要："All of you have lived stolen lives. But now you must give them back."</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/ai/2026/11/jensen-huang-reinstated-as-nvidia-ceo-board-chair/">Jensen Huang reinstated as Nvidia CEO, board chair</a></strong><br />
+  摘要：Trump says he spoke to the board and that Huang "did nothing wrong."</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/science/2026/11/cop31-ends-in-failure-as-countries-split-over-fossil-fuels-climate-finance/">COP31 ends in failure as countries split over fossil fuels, climate finance</a></strong><br />
+  摘要：COP31 ended without a consensus deal for the first time since 2009.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/cars/2026/11/f1-in-las-vegas-youve-never-seen-an-f1-race-like-this-before/">F1 in Las Vegas: You've never seen an F1 race like this before</a></strong><br />
+  摘要：There were 352 position changes, including 35 for the lead.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/gadgets/2026/11/a-triple-screen-portable-monitor-means-more-pixels-and-more-bulk/">Tri-screen portable monitors aren’t for the faint of heart</a></strong><br />
+  摘要：Three extra screens boost multitasking but can distract and overwhelm.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/reviews/2026/11/review-the-asus-proart-p16-offers-a-glimpse-of-a-future-powered-by-local-ai/">Review: The Asus ProArt P16 offers a glimpse of a future powered by local AI</a></strong><br />
+  摘要：The new Asus ProArt laptop costs up to $7,000, but it can run a gaggle of local AI agents.</p>
+</li>
+</ul>
+<h2>The New Stack</h2>
+<ul>
+<li>
+<p><strong><a href="https://thenewstack.io/anthropic-claude-ship-approvals/">Anthropic’s Claude Ship lets Claude approve routine pull requests</a></strong><br />
+  摘要：Anthropic on Monday launched&#160;Claude Ship, a set of three agents that can review pull requests (PRs), fix them, and approve The post Anthropic&#8217;s Claude Ship lets Claude approve routine pull requests appeared first on The New Stack .</p>
+</li>
+<li>
+<p><strong><a href="https://thenewstack.io/deepmind-lean-quantum-verification/">Google’s AI agents cut quantum computing costs 290-fold — now you can check their work</a></strong><br />
+  摘要：Google DeepMind has open-sourced the Lean 4 framework used to verify quantum algorithms developed by its Gemini 4 agents, including The post Google&#8217;s AI agents cut quantum computing costs 290-fold — now you can check their work appeared first on The New Stack .</p>
+</li>
+<li>
+<p><strong><a href="https://thenewstack.io/zai-glm54-loop-transformer/">Z.ai ran the same 28 layers twice — and claims its 750B model can rival a 3-trillion-parameter one</a></strong><br />
+  摘要：Z.ai released GLM-5.4 on Monday, introducing a Loop Transformer architecture that executes the same layers multiple times to increase computational The post Z.ai ran the same 28 layers twice — and claims its 750B model can rival a 3-trillion-parameter one appeared first on The New Stack .</p>
+</li>
+<li>
+<p><strong><a href="https://thenewstack.io/aws-strands-decider-v2/">AWS launches 5 new open decision models for AI agents</a></strong><br />
+  摘要：AWS on Monday launched Strands Decider v2, a family of five open decision models. The release comes only seven weeks The post AWS launches 5 new open decision models for AI agents appeared first on The New Stack .</p>
+</li>
+<li>
+<p><strong><a href="https://thenewstack.io/palo-alto-applied-computer-elastic-honeyhive/">Palo Alto and Elastic snap up AI startups. The prize? Enterprise trust and control.</a></strong><br />
+  摘要：They say that to understand where an industry is heading, you have to follow the money. And two acquisitions announced The post Palo Alto and Elastic snap up AI startups. The prize? Enterprise trust and control. appeared first on The New Stack .</p>
+</li>
+</ul>
+<h2>Kubernetes Blog</h2>
+<ul>
+<li>
+<p><strong><a href="https://kubernetes.io/blog/2026/11/23/kubernetes-v1-38-sneak-peek/">Kubernetes v1.38 Sneak Peek</a></strong><br />
+  摘要：As we get closer to the release date for Kubernetes v1.38, the project develops and matures, features may be deprecated, removed, or replaced with better ones for the project's overall health. This blog post outlines some of the planned changes for the Kubernetes v1.38 release that the release team feels you should be aware of for the continued maintenance of your Kubernetes environment and keeping up to date with the latest changes. The information listed below is based on the current status of the v1.38 release and may change before the actual release date. Deprecations and removals for Kubernetes v1.38 kubectl: WebSocket opt-out environment variables removed kubectl has used WebSockets instead of SPDY by default for kubectl exec , attach and cp since v1.30, and for kubectl port-forward …</p>
+</li>
+<li>
+<p><strong><a href="https://kubernetes.io/blog/2026/10/06/kubernetes-cgroups-v2-shift/">The Shift to cgroup v2 in Kubernetes: What You Need to Know</a></strong><br />
+  摘要：In Linux, cgroups (control groups) are a kernel feature used for managing system resources. Kubernetes uses cgroups to allocate resources like CPU and memory to containers, ensuring that applications run smoothly without interfering with each other. With the release of Kubernetes v1.31, support for v1 cgroup management moved into maintenance mode . Support for v2 cgroup management has been stable since Kubernetes v1.25. Compared with cgroup v1, cgroup v2 provides a single unified hierarchy, a more consistent interface, and a stronger foundation for resource isolation and modern resource-management features. Deprecation of cgroup v1 Kubernetes has deprecated cgroup v1 . Starting with Kubernetes v1.35, failCgroupV1 defaults to true , so the kubelet does not start on a cgroup v1 node by defau…</p>
+</li>
+</ul>
+<h2>LWN.net</h2>
+<ul>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1109269/">CachyOS November 2026 release</a></strong><br />
+  摘要：CachyOS , a performance-focused distribution based on Arch Linux , has announced its November&#160;2026 release. Notable changes in this release include a new recovery environment ("cachyos-recovery") for rolling back broken systems, Easy Anti-Cheat (EAC) v2 support for games that require EAC to run, version 2.0.0 of the CachyOS Package Installer, and more.</p>
+</li>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1109268/">Security updates for Monday</a></strong><br />
+  摘要：Security updates have been issued by AlmaLinux (buildah, cifs-utils, cockpit-files, cockpit-machines, container-tools:rhel8, curl, expat, fence-agents, flatpak, fltk, gfs2-utils, gimp:2.8, gnome-remote-desktop, grafana, gstreamer1-plugins-bad-free, java-1.8.0-openjdk, kernel, libgsf, libpcap, librabbitmq, libreoffice, mingw-expat, nginx, nginx:1.24, nginx:1.26, openssh, php8.4, php:7.4, php:8.2, podman, python-oauthlib, qt5-qt3d, rpm, rsync, skopeo, thunderbird, unbound, vim, xdg-desktop-portal, xfsprogs, and xorg-x11-server-Xwayland), Debian (anope, gpgme1.0, kernel, kitty, krb5, libeot, libgd2, linux-6.12, needrestart, network-manager-iodine, postfixadmin, python-django, ruby3.1, ruby3.3, sympa, and webkit2gtk), Fedora (aws, clamav, dash, fontconfig, fzf, mariadb-connector-c, maturin, mi…</p>
+</li>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1108909/">Seven stable kernels for Monday</a></strong><br />
+  摘要：Greg Kroah-Hartman has announced the 7.3.6 , 6.18.65 , 6.12.119 , 6.6.163 , 6.1.193 , 5.15.226 , and 5.10.275 stable kernels. Each of these contains quite a few patches throughout the tree&mdash;6.12.119 has the fewest with more than 1,700 patches, while 6.6.163 has more than 3,300. Users are advised to upgrade.</p>
+</li>
+</ul>
+<h2>Linux Weekly News (RSS)</h2>
+<ul>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1109269/">CachyOS November 2026 release</a></strong><br />
+  摘要：CachyOS , a performance-focused distribution based on Arch Linux , has announced its November&#160;2026 release. Notable changes in this release include a new recovery environment ("cachyos-recovery") for rolling back broken systems, Easy Anti-Cheat (EAC) v2 support for games that require EAC to run, version 2.0.0 of the CachyOS Package Installer, and more.</p>
+</li>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1109268/">Security updates for Monday</a></strong><br />
+  摘要：Security updates have been issued by AlmaLinux (buildah, cifs-utils, cockpit-files, cockpit-machines, container-tools:rhel8, curl, expat, fence-agents, flatpak, fltk, gfs2-utils, gimp:2.8, gnome-remote-desktop, grafana, gstreamer1-plugins-bad-free, java-1.8.0-openjdk, kernel, libgsf, libpcap, librabbitmq, libreoffice, mingw-expat, nginx, nginx:1.24, nginx:1.26, openssh, php8.4, php:7.4, php:8.2, podman, python-oauthlib, qt5-qt3d, rpm, rsync, skopeo, thunderbird, unbound, vim, xdg-desktop-portal, xfsprogs, and xorg-x11-server-Xwayland), Debian (anope, gpgme1.0, kernel, kitty, krb5, libeot, libgd2, linux-6.12, needrestart, network-manager-iodine, postfixadmin, python-django, ruby3.1, ruby3.3, sympa, and webkit2gtk), Fedora (aws, clamav, dash, fontconfig, fzf, mariadb-connector-c, maturin, mi…</p>
+</li>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1108909/">Seven stable kernels for Monday</a></strong><br />
+  摘要：Greg Kroah-Hartman has announced the 7.3.6 , 6.18.65 , 6.12.119 , 6.6.163 , 6.1.193 , 5.15.226 , and 5.10.275 stable kernels. Each of these contains quite a few patches throughout the tree&mdash;6.12.119 has the fewest with more than 1,700 patches, while 6.6.163 has more than 3,300. Users are advised to upgrade.</p>
+</li>
+</ul>
+<h2>CNCF Blog</h2>
+<ul>
+<li>
+<p><strong><a href="https://www.cncf.io/blog/2026/11/17/is-your-opentelemetry-pipeline-becoming-a-performance-bottleneck/">Is your OpenTelemetry pipeline becoming a performance bottleneck?</a></strong><br />
+  摘要：At Cloud Native Days Austria 2026, I presented a talk called How to Defeat OTel’s Silent Killer: The Performance Overhead, exploring a problem that is easy to overlook when building observability pipelines: the cost of collecting...</p>
+</li>
+<li>
+<p><strong><a href="https://www.cncf.io/blog/2026/11/11/introducing-cncf-user-groups-long-lived-homes-for-end-user-collaboration/">Introducing CNCF User Groups: Long-lived homes for End User collaboration</a></strong><br />
+  摘要：The CNCF End User Community is launching its User Group Program at KubeCon + CloudNativeCon North America. These are long-lived groups, each built around an industry vertical or problem domain, that serves the common need of...</p>
+</li>
+<li>
+<p><strong><a href="https://www.cncf.io/announcements/2026/11/11/meta-wins-cncf-end-user-case-study-contest-for-accelerating-ai-infrastructure-deployments-from-hours-to-minutes/">Meta Wins CNCF End User Case Study Contest for Accelerating AI Infrastructure Deployments From Hours to Minutes</a></strong><br />
+  摘要：Using Argo CD and Kargo, Meta is building a GitOps platform to streamline application delivery across 100 Kubernetes clusters supporting AI research and inference Key Highlights SALT LAKE CITY – KubeCon + CloudNativeCon North America 2026...</p>
+</li>
+<li>
+<p><strong><a href="https://www.cncf.io/announcements/2026/11/11/cncf-welcomes-adyen-as-platinum-end-user-member-to-advance-open-source-financial-infrastructure/">CNCF Welcomes Adyen as Platinum End User Member to Advance Open Source Financial Infrastructure</a></strong><br />
+  摘要：Operating over 100 Kubernetes clusters across €1.39T in volume, Adyen brings production-scale fintech expertise to CNCF governance and open source projects Key Highlights KUBECON + CLOUDNATIVECON NORTH AMERICA, SALT LAKE CITY – November 11, 2026 –...</p>
+</li>
+</ul>
+<hr /></div>
+  </main>
+</body>
+</html>
