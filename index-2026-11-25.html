@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OS 领域每日洞察 - 2026-11-25</title>
+  <style>
+    :root {
+      --bg: #f6f4f0;
+      --bg-bar: #ebe8e3;
+      --bg-card: #fffefb;
+      --bg-card-hover: #f5f3ef;
+      --text: #2d2a26;
+      --text-muted: #5c5852;
+      --text-dim: #7a756e;
+      --accent: #5a7a9e;
+      --border: #ddd9d2;
+      --radius: 10px;
+      --font: "Segoe UI", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      font-size: 15px;
+    }
+
+    /* 门户顶栏 */
+    .masthead {
+      background: var(--bg-bar);
+      border-bottom: 1px solid var(--border);
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 0;
+    }
+    .masthead-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .masthead h1 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin: 0;
+      letter-spacing: -0.02em;
+      color: var(--text);
+    }
+    .masthead .meta {
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+    }
+
+    /* 主内容区：多栏门户布局 */
+    .main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 3rem;
+    }
+
+    /* 板块：每个 h2 为一个频道块 */
+    .content .section {
+      margin-bottom: 2.5rem;
+    }
+    .content h2 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+      margin: 0 0 1rem;
+      padding: 0.6rem 1rem;
+      background: var(--bg-bar);
+      border-radius: var(--radius);
+      border-left: 4px solid var(--accent);
+    }
+    .content h2:first-child { margin-top: 0; }
+
+    .content h2:has(+ h3) {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      border-left-color: var(--text-dim);
+    }
+
+    /* 板块内卡片网格（每个 h2 后的 ul） */
+    .content h2 + ul {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1rem;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .content h2 + ul li {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.15rem 1.2rem;
+      transition: background .15s, border-color .15s;
+    }
+    .content h2 + ul li:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--text-dim);
+    }
+    .content h2 + ul li strong {
+      display: block;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+      line-height: 1.4;
+    }
+    .content h2 + ul li p {
+      margin: 0 0 0.5rem;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.58;
+    }
+    .content h2 + ul li p:last-of-type { margin-bottom: 0; }
+    .content h2 + ul li a[href^="http"] {
+      font-size: 0.8125rem;
+      color: var(--accent);
+    }
+    .content h2 + ul li a[href^="http"]:hover { text-decoration: underline; }
+
+    .content .ref-section {
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+    .content h2 + h3 { margin-top: 1.25rem; }
+    .content h3 {
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--text-dim);
+      margin: 1rem 0 0.4rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .content h3 + ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 0.25rem;
+    }
+    .content h3 + ul li {
+      background: transparent;
+      border: none;
+      padding: 0.2rem 0;
+      font-size: 0.8125rem;
+    }
+    .content h3 + ul li strong { font-size: inherit; margin-bottom: 0; }
+    .content h3 + ul li a { color: var(--accent); }
+    .content h3 + ul li a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <header class="masthead">
+    <div class="masthead-inner">
+      <h1>OS 领域每日洞察 - 2026-11-25</h1>
+      <span class="meta">2026-11-25 05:00 UTC</span>
+    </div>
+  </header>
+  <main class="main">
+    <div class="content"><h1>OS 领域每日洞察 - 2026-11-25</h1>
+<p>（Gemini 未可用时，以下为按来源整理的条目，含<strong>新闻摘要</strong>与链接；摘要可能为原文语言。）</p>
+<h2>Lobsters</h2>
+<ul>
+<li>
+<p><strong><a href="https://raw.githubusercontent.com/openai/math/main/preprints/The-matrix-multiplication-exponent-is-nine-fourths-November-24-2026/paper.pdf">Matrix Multiplication is Θ(n^2.25)</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://www.stylewarning.com/posts/faster-digit-extraction/">A faster algorithm for extracting hexadecimal digits of π</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://wheybags.com/blog/pokemon_childhood_version.html">Pokemon Childhood Version: A romhack where Mew is under the truck</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://blog.mozilla.org/en/mozilla/internet-policy/apple-ios-browser-engine-rules/">Why there are still no non-WebKit browsers on iOS</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://progrium.github.io/9ux/">9/UX: a Macintosh-inspired desktop for 9front</a></strong><br />
+  摘要：I have written a story about this on the Register, but of course I can't post that here. I think this is a quite astonishing effort and could make 9front considerably more usable... but it's bot-assisted, so I don't think they'll take it. Comments</p>
+</li>
+<li>
+<p><strong><a href="https://upki.rustls.dev/funding.html">Fund browser-grade certificate checking for every TLS client</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://mastodon.social/@pervognsen/117668394962974183">Per Vognsen on the effect of AVX-512 on lexing and parsing</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://it-notes.dragas.net/2026/11/17/beyond-linux-a-journey-through-the-open-source-ecosystem/">Beyond Linux: A Journey Through the Open Source Ecosystem</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://s.conao3.com/blog/2026/e4f733">I checked Clojure's core with Lean and found 17 unreported bugs</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://hex.pm/blog/security-incident-on-hexpm">Security incident on Hex.pm</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://rida.dev/blog/bypassing-ios-safari-60-fps-limit">Bypassing iOS Safari 60 FPS Limit</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://fzakaria.com/2026/11/23/2035-came-early">2035 came early</a></strong><br />
+  摘要：Comments</p>
+</li>
+</ul>
+<h2>Phoronix</h2>
+<ul>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/AMD-Zen-6-FRED-Benefits">Benchmarking The Performance Benefit Of FRED On AMD Zen 6</a></strong><br />
+  摘要：With the new EPYC 9006 SP7 Venice processors now shipping, one of the curious follow-up benchmarks I have been wanting to pursue is around quantifying the performance impact of Flexible Return and Event Delivery "FRED". After all, FRED showed very nice gains for Intel Panther Lake for first featuring FRED. Since then the Linux kernel has enabled FRED usage by default with capable CPUs, so all the EPYC 9006 benchmarks on Phoronix have already been with FRED, so here are some numbers when going ahead and forcing FRED off in the Linux kernel...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Linus-Torvalds-EXT4-AI-Big">Linus Torvalds: "Tell Your AI Companion To Get Its Act Together"</a></strong><br />
+  摘要：A big EXT4 pull request today intended for the Linux 7.4-rc5 kernel has set off Linus Torvalds. Over 41k lines of new code in this EXT4 pull request going in as "fixes".... Much of that being new KUnit test coverage to make it safer to validate AI-generated patches. And then a lot of AI generated patches themselves for the EXT4 file-system...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Pop-OS-26.04-Released">Pop!_OS 26.04 LTS Released With More COSMIC Apps, Remote Desktop &amp; More</a></strong><br />
+  摘要：System76 has a wonderful surprise today with the release of Pop!_OS 26.04 LTS as the newest iteration of their in-house Linux distribution now built atop the Ubuntu 26.04 LTS package base and incorporating their latest enhancements to their COSMIC desktop...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Ubuntu-AI-Desktop-Interact">Ubuntu Outlines Plans For Its AI-Powered New Way To Interact With The Ubuntu Desktop</a></strong><br />
+  摘要：Following Ubuntu 26.10 offering the Myna speech-to-text AI powered functionality in tech preview form and then a Snap appearing recently as a new design mock-up for an AI-powered launcher, Canonical today shared more plans on their AI-embraced Ubuntu desktop...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/review/ubuntu-2610-dell-xps-14">Ubuntu 26.10 Provides Some Performance Gains For Intel Panther Lake On The Dell XPS 14</a></strong><br />
+  摘要：The new Dell XPS 14 powered by Intel Core Ultra Series 3 (https://www.phoronix.com/review/dell-xps-14-panther-lake) "Panther Lake" is now available with Ubuntu 26.04 LTS pre-loaded. For those not concerned about sticking to an officially supported or Long Term Support (LTS) version, upgrading to the new Ubuntu 26.10 can help deliver some additional CPU and iGPU performance gains on Panther Lake.</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Collabora-Online-Half-Memory">Collabora Online Sharply Reduces Server Memory Use With New Optimization</a></strong><br />
+  摘要：The Collabora Online open-source web browser based office suite derived from LibreOffice is now able to use 50% less memory per document following an optimization to its copy-on-write memory handling...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/TornadoVM-8.2">TornadoVM 8.2 Released With ROCm HIP Backend For AMD GPUs</a></strong><br />
+  摘要：TornadoVM is the Java programming framework that allows Java code with OpenJDK 21+ to JIT compile to NVIDIA CUDA, OpenCL C, Apple Metal, and now even AMD ROCm HIP too. TornadoVM 8.2 is out today as the newest feature update for this Java framework for GPU kernel programming...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Linux-7.4-rc5-HID">HID Patches For Linux 7.4-rc5 Bring AI Fixes Plus New Hardware</a></strong><br />
+  摘要：Merged yesterday to Linux Git ahead of Linux 7.4-rc5 due out next weekend were the latest round of HID subsystem changes. The HID work was larger than desired at this stage of the Linux 7.4 cycle due to the continued flow of AI fixes, patch review being slower in recent weeks, and also the continued churn of new hardware support / workarounds...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/zlib-rs-0.6.9">zlib-rs 0.6.9 Released With Performance Improvements</a></strong><br />
+  摘要：The Trifecta Tech Foundation today released zlib-rs 0.6.9 as this implementation of Zlib written in the Rust programming language for what aims to be a safer Zlib...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/SUSE-Agama-Adding-AI-MCP">SUSE Rolling Out "The First AI-Ready OS Installer"</a></strong><br />
+  摘要：AI support by way of Model Context Protocol (MCP) server integration is now reaching Linux distribution installers...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Proton-11.0-3-Released">Proton 11.0-3 Released For Valve's Steam Play With More Games Now Playable</a></strong><br />
+  摘要：Overnight the Proton 11.0-3 downstream of Wine was released for powering Valve's Steam Play in running Windows games on Linux...</p>
+</li>
+</ul>
+<h2>Hacker News</h2>
+<ul>
+<li>
+<p><strong><a href="https://github.com/ading2210/linuxpdf">Linux running inside a PDF file via a RISC-V emulator</a></strong><br />
+  摘要：Linux running inside a PDF file via a RISC-V emulator</p>
+</li>
+<li>
+<p><strong><a href="https://waarm64.com/">Waarm64 emulates the hardware in the browser, not an operating system</a></strong><br />
+  摘要：Waarm64 emulates the hardware in the browser, not an operating system</p>
+</li>
+<li>
+<p><strong><a href="https://appleinsider.com/articles/26/11/24/xnulinux-can-run-macos-apps-in-linux-without-a-virtual-machine">XNULinux can run macOS apps in Linux without a virtual machine</a></strong><br />
+  摘要：XNULinux can run macOS apps in Linux without a virtual machine</p>
+</li>
+<li>
+<p><strong><a href="https://zozo123.github.io/deltaos-gym/">Show HN: DeltaOS Gym – Linux/eBPF coding tasks graded by proofs and kernel tests</a></strong><br />
+  摘要：Show HN: DeltaOS Gym – Linux/eBPF coding tasks graded by proofs and kernel tests</p>
+</li>
+<li>
+<p><strong><a href="https://zenodo.org/records/24123263">TA TA: A Human-Owned Autonomous Agent Operating System</a></strong><br />
+  摘要：TA TA: A Human-Owned Autonomous Agent Operating System</p>
+</li>
+</ul>
+<h2>Ars Technica</h2>
+<ul>
+<li>
+<p><strong><a href="https://arstechnica.com/space/2026/11/half-of-nasas-aging-mars-fleet-knocked-offline-by-technical-issues/">Half of NASA's aging Mars fleet knocked offline by technical issues</a></strong><br />
+  摘要：Perseverance is having trouble transmitting to Earth. Odyssey is rapidly burning through its waning fuel supply.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/gadgets/2026/11/microsofts-historic-cloud-outage-exposed-an-engineering-fog-of-war/">Microsoft's historic cloud outage exposed an engineering “fog of war”</a></strong><br />
+  摘要：Internal memos reveal a “Code Red” overhaul and ambitious one-hour recovery goals.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/ai/2026/11/whats-going-on-with-the-riemann-hypothesis/">What's going on with the Riemann hypothesis?</a></strong><br />
+  摘要：A new AI-assisted proof seems to be solid, but we're not sure what it tells us.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/health/2026/11/measles-death-toll-rises-to-14-as-national-case-tally-nears-6000/">Back-to-back measles deaths is our new reality; US tally now at 14</a></strong><br />
+  摘要：Wisconsin reports 3rd measles death today; Pennsylvania reported its 9th yesterday.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/gadgets/2026/11/faa-opens-probe-after-amazon-delivery-drone-clips-cable-crashes-into-garage/">Amazon drone crashes on garage after delivering shampoo, draws FAA probe</a></strong><br />
+  摘要：Amazon says Prime Air drones made “hundreds of thousands” of deliveries in 2026.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/space/2026/11/amazon-surges-launches-with-rival-spacex-after-ula-fails-to-deliver/">Amazon discovers Falcon 9 and Ariane 6 can deliver when nobody else can</a></strong><br />
+  摘要：Amazon has hundreds of satellites in storage waiting for rides to space.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/science/2026/11/how-brewers-can-protect-beers-from-smoke-tainted-hops/">How brewers can protect beers from smoke-tainted hops</a></strong><br />
+  摘要：Study: Brewers can still use up to 50% of smoke-tainted hops without affecting beer taste and aroma.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/tech-policy/2026/11/kalshi-makes-difficult-decision-to-halt-utah-trading-after-losing-court-fights/">Kalshi makes “difficult decision” to halt Utah trading after losing court fights</a></strong><br />
+  摘要：Kalshi’s pause in Utah draws cheers as critics bash ads and boo insider trading.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/ai/2026/11/tidal-will-ban-fully-ai-generated-music-on-december-9/">Tidal announces ban on AI-generated music; 27 million tracks will be deleted</a></strong><br />
+  摘要：AI songs account for 6.3 percent of Tidal's catalog, but it's about to be zero.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/cars/2026/11/fake-gears-and-real-911-dna-driving-porsches-electric-718-boxster/">Porsche 718 Boxster prototype drive: This electric roadster is real</a></strong><br />
+  摘要：Technical details are still limited, but we already know it's fun to drive.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/cars/2026/11/new-york-says-no-more-subscriptions-for-in-car-features-or-does-it/">No more heated seat subscriptions for cars in New York from 2027</a></strong><br />
+  摘要：Services with “ongoing costs” are a pretty big loophole in the new law.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/space/2026/11/nasa-may-get-2-billion-boost-as-white-house-seeks-to-accelerate-artemis/">NASA may get $2 billion boost as White House seeks to accelerate Artemis</a></strong><br />
+  摘要："Without this funding, activities would be delayed."</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/science/2026/11/homo-erectus-lived-in-the-rainforest-alongside-denisovans/">Homo erectus lived in the rainforest alongside Denisovans</a></strong><br />
+  摘要：You can learn a surprising amount from a few loose teeth.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/tech-policy/2026/11/how-trump-and-silicon-valley-forced-nvidia-to-take-jensen-huang-back/">How Trump and Silicon Valley forced Nvidia to take Jensen Huang back</a></strong><br />
+  摘要：Huang’s allies enlisted Trump and Vance to pressure Nvidia’s board into taking him back.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/security/2026/11/amazon-says-hackers-ai-agents-found-and-exploited-0-day-with-little-human-input/">Amazon says hackers' AI agents found and exploited 0-day with little human input</a></strong><br />
+  摘要：The Cairn AI framework is proving to be a boon for defenders and attackers.</p>
+</li>
+</ul>
+<h2>The New Stack</h2>
+<ul>
+<li>
+<p><strong><a href="https://thenewstack.io/teleport-agent-delegated-identity/">Please don’t give the robot my SSH keys: How to keep AI out of trouble</a></strong><br />
+  摘要：Say a developer asks an AI agent to find out why a Kubernetes pod keeps crashing. The agent needs logs. The post Please don&#8217;t give the robot my SSH keys: How to keep AI out of trouble appeared first on The New Stack .</p>
+</li>
+<li>
+<p><strong><a href="https://thenewstack.io/ai-coding-delivery-bottleneck/">Move fast, don’t break 100 apps: Dan Garfield on keeping AI-powered coding on the rails</a></strong><br />
+  摘要：An AI coding agent can give a product manager a working prototype before the next planning meeting. Which is great! The post Move fast, don’t break 100 apps: Dan Garfield on keeping AI-powered coding on the rails appeared first on The New Stack .</p>
+</li>
+<li>
+<p><strong><a href="https://thenewstack.io/confluent-kafka-rust-agents/">Confluent spent 3 months rewriting Kafka’s Java client in Rust with AI — and had to start over</a></strong><br />
+  摘要：Confluent spent nearly three months using AI coding agents to translate Apache Kafka&#8217;s Java client into Rust. The engineers discarded The post Confluent spent 3 months rewriting Kafka’s Java client in Rust with AI — and had to start over appeared first on The New Stack .</p>
+</li>
+<li>
+<p><strong><a href="https://thenewstack.io/claude-ship-automated-approvals/">Anthropic’s Claude Ship tackles the pull request bottleneck created by AI coding agents</a></strong><br />
+  摘要：A year after Claude Code creator Boris Cherny began relying on AI to write all his code, he&#8217;s looking to The post Anthropic&#8217;s Claude Ship tackles the pull request bottleneck created by AI coding agents appeared first on The New Stack .</p>
+</li>
+<li>
+<p><strong><a href="https://thenewstack.io/mcp-skills-tasks-claude/">As MCP turns two, Claude gets Skills over MCP and better support for long-running tasks</a></strong><br />
+  摘要：Anthropic on Tuesday marked the second anniversary of the Model Context Protocol (MCP) by bringing support for skills, long-running tasks, The post As MCP turns two, Claude gets Skills over MCP and better support for long-running tasks appeared first on The New Stack .</p>
+</li>
+<li>
+<p><strong><a href="https://thenewstack.io/kubernetes-gpu-inference-startup/">Getting a GPU is only the beginning. Ask AWS EKS.</a></strong><br />
+  摘要：Eight minutes is a long time to wait for another copy of an AI model to start serving traffic. It The post Getting a GPU is only the beginning. Ask AWS EKS. appeared first on The New Stack .</p>
+</li>
+<li>
+<p><strong><a href="https://thenewstack.io/openclaw-vincent-koc-interview/">OpenClaw at one: its chief architect on a year of explosive growth, wooing the enterprise, and being Meta’s muse</a></strong><br />
+  摘要：It&#8217;s been a whirlwind 12 months for OpenClaw, the open source personal AI agent used for everything from managing calendars The post OpenClaw at one: its chief architect on a year of explosive growth, wooing the enterprise, and being Meta&#8217;s muse appeared first on The New Stack .</p>
+</li>
+<li>
+<p><strong><a href="https://thenewstack.io/vercel-audited-zdr-inference/">Vercel will make AI providers prove they don’t keep prompts. Here’s why it matters for developers.</a></strong><br />
+  摘要：Since April, developers using Vercel&#8217;s AI Gateway have been able to request provider-level zero data retention (ZDR). Vercel says its The post Vercel will make AI providers prove they don&#8217;t keep prompts. Here&#8217;s why it matters for developers. appeared first on The New Stack .</p>
+</li>
+</ul>
+<h2>LWN.net</h2>
+<ul>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1109478/">Firefox 161.0 released</a></strong><br />
+  摘要：Version 161.0 of the Firefox web browser has been released. Notable changes in this release include the ability to assign a shortcut to copy the current tab's URL, addition of a menu item for Tab Groups , and the built-in VPN can be turned off or on for specific sites . There are also a number of security fixes in this release.</p>
+</li>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1109472/">Security updates for Tuesday</a></strong><br />
+  摘要：Security updates have been issued by AlmaLinux (aspell, curl, fence-agents, flatpak, flatpak-builder, freerdp, git-lfs, golang, grafana, grafana-pcp, gstreamer1-plugins-good, kernel, kernel-rt, libgsf, liblerc, mutter, netpbm, nodejs26, openssh, patch, perl-CGI, php, php:8.2, php:8.3, php:8.4, podman, python-oauthlib, python36:3.6, qt6-qtbase, rsync, ruby, ruby4.0, skopeo, sqlite, virt:rhel and virt-devel:rhel, wayland, webkit2gtk3, and xdg-desktop-portal), Debian (chromium, mediawiki, pymongo, and radsecproxy), Fedora (c-ares, clamav, libmodulemd, mimedefang, mycli, poppler, sqlite, tpm2-tss, xfsprogs, and xorg-x11-server-Xwayland), Gentoo (GPGME and GPL Ghostscript), Oracle (bind, bind9.18, cifs-utils, cockpit-files, cockpit-machines, curl, dovecot, edk2, expat, fence-agents, firefox, fr…</p>
+</li>
+</ul>
+<h2>Linux Weekly News (RSS)</h2>
+<ul>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1109478/">Firefox 161.0 released</a></strong><br />
+  摘要：Version 161.0 of the Firefox web browser has been released. Notable changes in this release include the ability to assign a shortcut to copy the current tab's URL, addition of a menu item for Tab Groups , and the built-in VPN can be turned off or on for specific sites . There are also a number of security fixes in this release.</p>
+</li>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1109472/">Security updates for Tuesday</a></strong><br />
+  摘要：Security updates have been issued by AlmaLinux (aspell, curl, fence-agents, flatpak, flatpak-builder, freerdp, git-lfs, golang, grafana, grafana-pcp, gstreamer1-plugins-good, kernel, kernel-rt, libgsf, liblerc, mutter, netpbm, nodejs26, openssh, patch, perl-CGI, php, php:8.2, php:8.3, php:8.4, podman, python-oauthlib, python36:3.6, qt6-qtbase, rsync, ruby, ruby4.0, skopeo, sqlite, virt:rhel and virt-devel:rhel, wayland, webkit2gtk3, and xdg-desktop-portal), Debian (chromium, mediawiki, pymongo, and radsecproxy), Fedora (c-ares, clamav, libmodulemd, mimedefang, mycli, poppler, sqlite, tpm2-tss, xfsprogs, and xorg-x11-server-Xwayland), Gentoo (GPGME and GPL Ghostscript), Oracle (bind, bind9.18, cifs-utils, cockpit-files, cockpit-machines, curl, dovecot, edk2, expat, fence-agents, firefox, fr…</p>
+</li>
+</ul>
+<h2>Red Hat Blog</h2>
+<ul>
+<li>
+<p><strong><a href="https://www.redhat.com/en/blog/why-your-ansible-automation-platform-instance-needs-its-own-disaster-recovery-plan">Why your Ansible Automation Platform instance needs its own disaster recovery plan</a></strong><br />
+  摘要：At an Ansible Automates event, we asked a room of IT leaders a simple question: Does your automation platform have its own high-availability and disaster recovery plan?Only a few hands went up.Red Hat and EDB teamed up to fix that by giving Red Hat Ansible Automation Platform a hardened database backend—powered by EDB Postgres® AI—and a verified recovery collection and solution guide for real-world outages.The platform behind your recovery needs protection, tooAutomation supports security patching, configuration management, deployments, and incident response. As more operational work depe</p>
+</li>
+<li>
+<p><strong><a href="https://www.redhat.com/en/blog/digital-sovereignty-paradox-closing-gap-between-compliance-and-operational-resilience">The digital sovereignty paradox: Closing the gap between compliance and operational resilience</a></strong><br />
+  摘要：For IT leaders across Europe and the Middle East, digital sovereignty has become an immediate, high-stakes operational test. Regional executives have spent years appointing governance committees and navigating mandates like GDPR for privacy, alongside NIS2 and DORA for operational resilience. Most organisations have invested heavily in local data residency.Yet a long regulatory history has not produced operational readiness. In a global study, conducted by Futurum Research and sponsored by Red Hat, surveying 1,940 IT decision-makers, two-thirds of respondents ranked digital sovereignty as a c</p>
+</li>
+<li>
+<p><strong><a href="https://www.redhat.com/en/blog/how-build-self-improving-rag-retrieval-pipeline-zenml-and-red-hat-openshift-ai">How to build a self-improving RAG retrieval pipeline with ZenML and Red Hat OpenShift AI</a></strong><br />
+  摘要：The emergence of retrieval-augmented generation (RAG) applications and AI agents promises to revolutionize how we interact with the vast amount of digital knowledge we have available today. But the effectiveness of these advanced systems depends on the quality of their underlying retrieval mechanisms. This is where it's indispensable that your machine learning operations (MLOps) framework is closely integrated with your underlying enterprise technology platform.Solving the enterprise knowledge retrieval bottleneckImagine a technical support engineer, or AI agent, at a large information technol</p>
+</li>
+<li>
+<p><strong><a href="https://www.redhat.com/en/blog/breaking-free-proprietary-lock-red-hat-and-codesys-deliver-software-defined-control-industrial-automation">Breaking free from proprietary lock-In: Red Hat and CODESYS deliver software-defined control for industrial automation</a></strong><br />
+  摘要：For decades, industrial automation has relied on proprietary programmable logic controllers (PLCs) that tightly bind control logic to specialized vendor hardware. While historically reliable, this closed architecture restricts flexibility, complicates fleet-wide updates, and traps machine builders in rigid vendor lock-in.Today, that paradigm is shifting. As manufacturers, machine builders (OEMs) and system integrators race to deploy data-driven analytics, edge AI, and advanced mechatronic coordination across distributed sites, closed hardware ecosystems can no longer keep pace. At the same tim</p>
+</li>
+</ul>
+<h2>CNCF Blog</h2>
+<ul>
+<li>
+<p><strong><a href="https://www.cncf.io/blog/2026/11/18/optimizing-kubernetes-admission-control-where-kyvernos-cel-admission-cost-actually-goes/">Optimizing Kubernetes admission control: Where Kyverno’s CEL admission cost actually goes</a></strong><br />
+  摘要：Kyverno&#8217;s CEL (Common Expression Language)-based engines exist to evaluate policy expressions. So when we profiled the admission path, we expected to find the bulk of the cost in CEL evaluation. It was not there. About 86%...</p>
+</li>
+<li>
+<p><strong><a href="https://www.cncf.io/announcements/2026/11/12/cncf-recognizes-cloud-native-champions-in-2026-community-awards/">CNCF Recognizes Cloud Native Champions in 2026 Community Awards</a></strong><br />
+  摘要：Annual awards honor leaders, maintainers, and documentarians building open source infrastructure Key Highlights KUBECON + CLOUDNATIVECON NORTH AMERICA, SALT LAKE CITY – November 12, 2026 – The Cloud Native Computing Foundation® (CNCF®), which builds sustainable ecosystems...</p>
+</li>
+<li>
+<p><strong><a href="https://www.cncf.io/blog/2026/11/12/gang-scheduling-and-topology-aware-placement-for-ai-training-in-kubernetes/">Gang scheduling and topology-aware placement for AI training in Kubernetes</a></strong><br />
+  摘要：Distributed AI training workloads impose complex scheduling requirements that Kubernetes&#8217;s built-in scheduler can&#8217;t meet. Kubernetes schedules pods individually and independently, but distributed training introduces two requirements that break this model: Pods must land on hardware with...</p>
+</li>
+</ul>
+<hr /></div>
+  </main>
+</body>
+</html>
