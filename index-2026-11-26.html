@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OS 领域每日洞察 - 2026-11-26</title>
+  <style>
+    :root {
+      --bg: #f6f4f0;
+      --bg-bar: #ebe8e3;
+      --bg-card: #fffefb;
+      --bg-card-hover: #f5f3ef;
+      --text: #2d2a26;
+      --text-muted: #5c5852;
+      --text-dim: #7a756e;
+      --accent: #5a7a9e;
+      --border: #ddd9d2;
+      --radius: 10px;
+      --font: "Segoe UI", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      font-size: 15px;
+    }
+
+    /* 门户顶栏 */
+    .masthead {
+      background: var(--bg-bar);
+      border-bottom: 1px solid var(--border);
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 0;
+    }
+    .masthead-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .masthead h1 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin: 0;
+      letter-spacing: -0.02em;
+      color: var(--text);
+    }
+    .masthead .meta {
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+    }
+
+    /* 主内容区：多栏门户布局 */
+    .main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 3rem;
+    }
+
+    /* 板块：每个 h2 为一个频道块 */
+    .content .section {
+      margin-bottom: 2.5rem;
+    }
+    .content h2 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+      margin: 0 0 1rem;
+      padding: 0.6rem 1rem;
+      background: var(--bg-bar);
+      border-radius: var(--radius);
+      border-left: 4px solid var(--accent);
+    }
+    .content h2:first-child { margin-top: 0; }
+
+    .content h2:has(+ h3) {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      border-left-color: var(--text-dim);
+    }
+
+    /* 板块内卡片网格（每个 h2 后的 ul） */
+    .content h2 + ul {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1rem;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .content h2 + ul li {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.15rem 1.2rem;
+      transition: background .15s, border-color .15s;
+    }
+    .content h2 + ul li:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--text-dim);
+    }
+    .content h2 + ul li strong {
+      display: block;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+      line-height: 1.4;
+    }
+    .content h2 + ul li p {
+      margin: 0 0 0.5rem;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.58;
+    }
+    .content h2 + ul li p:last-of-type { margin-bottom: 0; }
+    .content h2 + ul li a[href^="http"] {
+      font-size: 0.8125rem;
+      color: var(--accent);
+    }
+    .content h2 + ul li a[href^="http"]:hover { text-decoration: underline; }
+
+    .content .ref-section {
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+    .content h2 + h3 { margin-top: 1.25rem; }
+    .content h3 {
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--text-dim);
+      margin: 1rem 0 0.4rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .content h3 + ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 0.25rem;
+    }
+    .content h3 + ul li {
+      background: transparent;
+      border: none;
+      padding: 0.2rem 0;
+      font-size: 0.8125rem;
+    }
+    .content h3 + ul li strong { font-size: inherit; margin-bottom: 0; }
+    .content h3 + ul li a { color: var(--accent); }
+    .content h3 + ul li a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <header class="masthead">
+    <div class="masthead-inner">
+      <h1>OS 领域每日洞察 - 2026-11-26</h1>
+      <span class="meta">2026-11-26 05:00 UTC</span>
+    </div>
+  </header>
+  <main class="main">
+    <div class="content"><h1>OS 领域每日洞察 - 2026-11-26</h1>
+<p>（Gemini 未可用时，以下为按来源整理的条目，含<strong>新闻摘要</strong>与链接；摘要可能为原文语言。）</p>
+<h2>arXiv (cs.OS)</h2>
+<ul>
+<li><strong><a href="https://arxiv.org/abs/2610.35999">safeL4: Rethinking Safe-Language-Based Single Address Space Microkernels</a></strong><br />
+  摘要：arXiv:2610.35999v2 Announce Type: replace Abstract: Microkernels provide good features such as high security, safety, and flexibility, but their reliance on hardware-based isolation leads to heavy performance overhead, limiting their widespread adoption. Although constructing single-address-space microkernels based on safe language-based isolation is a promising approach to addressing the performance issue, this approach still faces challenges in maintaining the principle of minimality and enforcing capability-based, fine-grained access control over system resources. We propose safeL4, an approach to constructing microkernels based on safe languages. It guarantees minimality through low-level abstractions for unsafe operations, and implements a capability system based on the safe language'…</li>
+</ul>
+<h2>arXiv (cs.AI)</h2>
+<ul>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2611.33160">Context Scaling: A New Frontier of AI Scaling</a></strong><br />
+  摘要：arXiv:2611.33160v1 Announce Type: new Abstract: Many failures of deployed AI arise not from weak inference but from a mismatch between the state a task depends on and the context available when the system acts. Relevant user state, repository revisions, tool traces, sensor readings, or environment changes may be unavailable, distorted, or poorly selected. We call the effort to reduce this bottleneck context scaling. We frame a model as $P_\theta(d\mid c)$ within a system governed by three budgets: training $B_\theta$, decision-time $B_d$, and context-infrastructure $B_c$. Pretraining scaling invests in $\theta$; decision-time scaling searches, refines, or verifies decisions under supplied context; context scaling improves the system's capacity to acquire, represent, deliver, evaluate, and …</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2611.33161">Constraint-Aware Test-Time Scoring for LLM and VLM Candidate Selection</a></strong><br />
+  摘要：arXiv:2611.33161v1 Announce Type: new Abstract: When an LLM or VLM produces several candidate answers, picking the best one usually relies on the model's own confidence, a learned judge model, or a domain check. Each has a known weakness: an answer can be fluent but insecure, mathematically plausible but physically infeasible, or rated highly by a judge while quietly breaking a task requirement. We propose a scoring framework that combines a small set of hard checks every answer must pass with a wider set of softer checks whose scores are blended into one number per candidate. This adaptive scoring framework consists of three components: a drafting model that produces the candidates, a configuring model that selects and weights the checks for each task, and scoring models that rate propert…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2611.33165">AutoformBench: A Lean Formalization Benchmark for Advanced Mathematics</a></strong><br />
+  摘要：arXiv:2611.33165v1 Announce Type: new Abstract: AI systems are increasingly capable of producing machine-checked Lean proofs of advanced mathematical results. Real mathematical formalization, however, is not isolated theorem proving: it requires building the definitions and intermediate lemmas that connect a result to a formal library. Existing evaluations often provide isolated theorem statements in settings where much of this supporting theory is already available in Mathlib. We introduce AutoformBench, a benchmark of 341 Lean 4 formalization tasks drawn from 24 advanced mathematical sources. Lean-experienced mathematicians formalized and audited each target statement, leaving the corresponding Lean proof to the evaluated agent. Each problem is embedded in a broader mathematical developm…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2611.33190">General-Purpose Decision Models for AI Configuration Tuning</a></strong><br />
+  摘要：arXiv:2611.33190v1 Announce Type: new Abstract: AI configuration tuning searches for settings that improve the performance of AI systems under a limited budget. Existing tuners use different sampling and search policies, making the choice of decision strategy central to both tuning quality and cost. We investigate whether general-purpose decision models can guide tuning, using Jev as a deployed representative that returns structured choices and numeric scores across diverse tasks. To assess where it helps, we compare its use as an optimizer, performance predictor, and region guider against conventional methods and a large language model (LLM) on eight AI tuning tasks. Conventional optimizers attain rank 1 in six of eight comparisons. Similarly, established predictors outperform Jev in seve…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2611.33263">What, Who, and When: Structured Harm Assessment for Mental Health Safety via Short Reasoning</a></strong><br />
+  摘要：arXiv:2611.33263v1 Announce Type: new Abstract: The growing use of large language models (LLMs) for mental health support raises important safety concerns. Existing guard models primarily identify categories of harmful content, often overlooking the context needed to determine an appropriate response. We introduce a clinically grounded taxonomy that characterizes harm along three dimensions: what the harm is, who is involved, and when it occurs. It further separates harm characterization from intervention decisions, thus enabling safety policies to be specified outside the model weights through explicit, clinician-curated instructions that can be updated and audited. We validate the taxonomy with expert clinicians and validate a panel of LLM judges to scale annotation. Relabeling public be…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2611.33303">Certify What You Plant: Shortcut-Free Proof Depth in Logical Reasoning Data</a></strong><br />
+  摘要：arXiv:2611.33303v1 Announce Type: new Abstract: Procedurally generated logic problems are used to both evaluate and train reasoning in language models. Their difficulty is usually set by planting a proof, that is, by sampling a proof of the desired depth and stating its premises as the problem. However, a planted proof is only one possible proof. A problem can also have shorter proofs, or several unrelated ones, and its stated depth then overstates what solving it requires. We measure what a problem actually requires, relative to a stated set of inference rules. For each problem, we compute the steps every proof must make, the shortest proof, the number of minimal proofs and the indispensable premises, and export certificates that an independent checker verifies. Audits of eight datasets f…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2611.33304">The Platonic Representation Hypothesis in Jacobian-Space: Language and Vision Models Agree Approximately Up to a Rotation</a></strong><br />
+  摘要：arXiv:2611.33304v1 Announce Type: new Abstract: The Platonic Representation Hypothesis (PRH) posits that AI models converge toward a shared representation of the world, even when trained on different data modalities. Previous work has found evidence for the PRH in the activations of vision and language models. In this work, we ask whether vision and language models also converge in how they act on these representations: precisely, in how these internal representations affect the models' output. At a chosen layer of a transformer, the Jacobian lens gives every word in the vocabulary (or class in an image classifier) a vector in the hidden state: the vector that most increases the model's tendency to generate that word, at that position or later, or to predict that class. Collectively, these…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2611.33322">Brand Recall and Category Accuracy in Language Models: An Audit of 1,000 B2B SaaS Brands</a></strong><br />
+  摘要：arXiv:2611.33322v1 Announce Type: new Abstract: A language model can name a brand without classifying it correctly. This study measures these outcomes separately for 1,000 B2B SaaS brands across 333 product categories. On Gemma 4 12B, with no external retrieval, category prompts elicit 510 brands (51.0%). A separate five-candidate category probe ranks the reference label first for 787 brands, a distractor first for 194, and yields little separation for 19. Among the 981 separated rankings, the error rate is 19.8%. It falls to 3.5% for the 547 brands with a winner-to-runner-up log-probability margin above 0.6. These are within-cohort measurements, not calibrated confidence estimates. Exploratory regressions associate technical coverage with recall and an owned-properties composite with cate…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2611.33394">Confidence scores for gated automation of large language models</a></strong><br />
+  摘要：arXiv:2611.33394v1 Announce Type: new Abstract: AI agents built on large language models (LLMs) demonstrate strong capabilities in automated decision-making. However, LLMs may produce incorrect answers with high confidence, limiting their applicability in decisions that affect individuals and organizations. Reliable confidence scores are necessary to gate such decisions, and existing estimates are frequently unavailable or too coarse to support effective gating. This work uses supervised learning to train models to predict the correctness of LLM-generated answers, enabling automated confident responses and routing uncertain ones for human review. A linear confidence score head is fitted to the final-layer hidden state of the frozen LLM backbone, and text-only metamodels are trained as an a…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2611.33402">Partial Routing: Trace-Tuned Delegation for Resource-Efficient Agentic Workflows</a></strong><br />
+  摘要：arXiv:2611.33402v1 Announce Type: new Abstract: AI models vary enormously in capability and price. Model routing exploits this by sending easier tasks to cheaper models. However, a single agentic task often combines easy and difficult subtasks, making one model choice for the entire task inefficient. We introduce partial routing, which guides a frontier lead model to delegate suitable subtasks to a cheaper worker model. From both models' past runs, we identify recurring subtasks and measure each model's quality and cost on them. These measurements produce delegation guidance, with a parameter, $\delta$, controlling how much is delegated. The lead decides when and what to delegate during execution, without training either model. On held-out tasks from ViBench and Terminal-Bench 4.0, partial…</p>
+</li>
+</ul>
+<h2>Phoronix</h2>
+<ul>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Vulkan-Macs-Go-KosmicKrisp">KosmicKrisp Now The Go-To Solution For Vulkan On Macs In Place Of MoltenVK</a></strong><br />
+  摘要：While MoltenVK began as an initiative to layer the Vulkan API atop Apple's Metal for use on macOS and iOS, the KosmicKrisp effort spearheaded by LunarG is now the go-to solution for Vulkan API support on modern Apple devices...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/review/postgresql-19-benchmarks">PostgreSQL 19 Delivering Nice Performance Gains, Benchmarks On 6th Gen AMD EPYC Venice</a></strong><br />
+  摘要：Last week PostgreSQL 19.0 finally shipped after being delayed due to the AI/LLM burden facing open-source developers this year. The wait is worth it though as PostgreSQL 19 is showing some very nice performance gains over PostgreSQL 18 in my benchmarking. Here are some initial PostgreSQL 19 vs. 18 database server benchmarks on the new 6th Gen AMD EPYC Venice platform.</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/review/pop-os-2604-benchmarks">Pop!_OS 26.04 LTS vs. Pop!_OS 24.04 LTS Benchmarks</a></strong><br />
+  摘要：System76 released Pop!_OS 26.04 LTS yesterday as the newest version of their Ubuntu-derived Linux distribution featuring their in-house COSMIC desktop environment. For those curious about any performance differences out of Pop!_OS 26.04 LTS, I already have some benchmarks comparing it to the former 24.04 release since the new System76 Thelio Prime SFF PC has been shipping with 26.04 LTS since last week.</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Servo-0.8-October-2026">Servo Now Supports HTML Video Captions, Flutter Web Content Working</a></strong><br />
+  摘要：The Rust-based Servo open-source web browser engine and Servoshell demo browser enjoyed a lot of new features in October. Servo 0.8 debuted recently with all of their October changes and out today is a blog post to highlight their latest round of improvements...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/GNU-Linux-Libre-VIA-VT6656">GNU Linux-Libre Celebrates Reverse Engineered Firmware For Old 802.11 b/g WiFi Chipset</a></strong><br />
+  摘要：Coming as a surprise today was a new GNU Linux-libre kernel release for the older Linux 6.12 LTS kernel. Typically it's uncommon seeing new updates for old/LTS kernels announced by the project, but today they are celebrating a WiFi chipset now working with their sanitized version of the Linux kernel. If you don't mind using legacy 802.11 b/g WiFi, there is a newly endorsed driver option...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Linux-7.5-Intel-Xeon-P2PDMA">Linux 7.5 Whitelisting Intel Xeon Server CPUs For Peer-To-Peer DMA "P2PDMA"</a></strong><br />
+  摘要：For those making use of VMware virtualization or other scenarios, the upcoming Linux 7.5 kernel will see that peer-to-peer DMA "P2PDMA" is properly enabled for modern Intel Xeon servers. This follows a similar change already in place for AMD Zen-based platforms to ensure P2PDMA usage is properly whitelisted...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Linux-Kernel-Disable-Profi">Linux 7.4 Disables LLVM Profi Usage To Avoid Performance Hit, Pathological Build Times</a></strong><br />
+  摘要：A change merged this week to the Linux 7.4 kernel and also set to be back-ported to stable kernel branches is to disable use of LLVM's Profi flow-based profile inference algorithm when leveraging AutoFDO...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/2026-Firmware-MSI-PRO-Z690-Z790">3mdeb Updates Their Open-Source Coreboot-Based Firmware For MSI PRO Z690-A/Z790-P</a></strong><br />
+  摘要：Four years ago the 3mdeb firmware consulting firm managed an incredible feat in bringing Coreboot to a modern, retail desktop motherboard with the current Intel Core processors of the time. This was a port of their Coreboot-powered Dasharo firmware to the MSI PRO Z690-A motherboard and then to the newer MSI PRO Z790-P motherboard. Today they released updated firmware builds for those still making use of the Intel Alder Lake and Raptor Lake era hardware...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Alien-Arena-Flathub">Alien Arena Comes To Flathub, Rolls Out Many Optimizations</a></strong><br />
+  摘要：It's been a long while since hearing anything new out of Alien Arena, the open-source first person shooter game that is based on a sci-fi theme with a Quake II/III derived engine, but it's still alive and kicking. This week it also made its debut on Flathub to become even more accessible to Linux gamers...</p>
+</li>
+</ul>
+<h2>Lobsters</h2>
+<ul>
+<li>
+<p><strong><a href="https://aresluna.org/ui-style-guides/">UI style guides</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://jackkelly.name/blog/archives/2026/11/26/make_the_plan_a_value">Make the Plan a Value</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://lvignoli.eu/posts/2026-11-16-typed-indexes-in-zig/">Typed indexes in Zig</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://jmmv.dev/2026/11/entering-the-geminispace.html">Entering the Geminispace</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://leanprover.zulipchat.com/#narrow/channel/658556-Riemann-Hypothesis/topic/Cleaning.20up.20the.20proof/near/643702366">Generalized Riemann Hypothesis proof in Lean 4, in 76k lines (down from 17M)</a></strong><br />
+  摘要：This is a shortened version of Alpöge's Lean proof of RH and GRH for Dirichlet L-functions ( https://alpo.ge/remark.pdf ), which was about 17 million lines. There are two editions proving the same five theorems: a readable one at about 300,000 lines (start at grh/GUIDE.md) and a compact one at about 76,000. Github repo: https://github.com/lsernau/grh-lean Comments</p>
+</li>
+<li>
+<p><strong><a href="https://scottaaronson.blog/?p=10379">Scott Aaronson on recent complexity theory AI achievements</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://www.openwall.com/lists/oss-security/2026/11/25/9">Slow Ubuntu security response times</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://1password.com/blog/update-on-nov-2026-security-incident">Update on a security incident involving 1Password’s backend systems</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://servo.org/blog/2026/11/25/october-in-servo/">October in Servo: video captions and inert content</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://donsz.nl/blog/optimizing-rustcs-next-trait-solver">Optimizing Rustc's next trait solver</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://www.intruder.io/research/taking-over-us-treasury-subdomains-for-3-each">Taking over US Treasury subdomains for $3 each</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://www.marginalia.nu/log/a_141_marginalia_update/">Marginalia Search, Money, C++, Rust, AI, stuff</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://lucumr.pocoo.org/2026/11/25/poisoning/">Abolish Lock Poisoning</a></strong><br />
+  摘要：Comments</p>
+</li>
+</ul>
+<h2>Ars Technica</h2>
+<ul>
+<li>
+<p><strong><a href="https://arstechnica.com/space/2026/11/europes-hera-mission-returns-to-the-chaotic-scene-of-a-cosmic-smashup/">European spacecraft finds chaotic scene after asteroid deflection experiment</a></strong><br />
+  摘要："DART made a really, really large mess. However, we didn’t really know what kind of mess."</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/gadgets/2026/11/google-search-alternative-kagi-launches-gmail-rival/">Google search alternative Kagi launches Gmail rival</a></strong><br />
+  摘要：The pitch is an unusual combination of privacy promises and AI features.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/information-technology/2026/11/backblaze-explains-why-its-sharing-customer-information-with-advertisers/">Backblaze explains why it's sharing customer information with advertisers</a></strong><br />
+  摘要：Backblaze tells Ars it won't share users' backup, storage files with advertisers.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/space/2026/11/the-fcc-has-authorized-spacex-to-deploy-1-million-satellites/">The FCC has authorized SpaceX to deploy 1 million satellites</a></strong><br />
+  摘要：This constellation would increase the number of satellites in orbit by roughly 50-fold.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/gadgets/2026/11/ladybirds-new-alpha-shows-theres-life-beyond-chromium/">Ladybird browser's first downloadable alpha is surprisingly capable</a></strong><br />
+  摘要：An independent browser engine arrives on Linux and macOS, and we've tried it.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/tech-policy/2026/11/etsy-clarifies-ai-terms-after-seller-backlash/">Etsy clarifies AI terms after seller backlash</a></strong><br />
+  摘要：One veteran illustrator dismisses revisions as "sugar coating."</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/gadgets/2026/11/ars-live-recap-dont-expect-military-attacks-on-data-centers-to-stop/">Ars Live recap: Don’t expect military attacks on data centers to stop</a></strong><br />
+  摘要：Militaries have many reasons to target data centers and the cloud in wartime.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/tech-policy/2026/11/jury-convicts-huawei-of-stealing-us-trade-secrets-evading-iran-sanctions/">Guilty: Huawei faces steep penalties for stealing T-Mobile, Cisco trade secrets</a></strong><br />
+  摘要：Huawei didn’t try very hard to hide thefts of US trade secrets, DOJ says.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/health/2026/11/army-detonates-tons-of-lead-azide-as-local-residents-brace-for-toxic-plume/">Lead azide detonation sends clouds over Iowa as questions of health risks swirl</a></strong><br />
+  摘要：Prior modeling estimated the plume would cover hundreds of square miles.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/security/2026/11/a-familiar-iranian-hacking-group-has-found-a-new-way-to-cause-chaos/">A familiar Iranian hacking group has found a new way to cause chaos</a></strong><br />
+  摘要：France blames an Iranian cyber unit for sabotaging hundreds of supermarket freezers.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/ai/2026/11/ai-can-do-the-calculations-physicists-are-figuring-out-what-comes-next/">AI may soon change what it means to be a theoretical physicist</a></strong><br />
+  摘要：Frontier AI is already solving problems that once took top physicists a full day.</p>
+</li>
+</ul>
+<h2>Hacker News</h2>
+<ul>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2611.31547">Aftershock: Yesterday's Linux Kernel Bugs, Tomorrow's Android Exploits</a></strong><br />
+  摘要：Aftershock: Yesterday's Linux Kernel Bugs, Tomorrow's Android Exploits</p>
+</li>
+<li>
+<p><strong><a href="https://opensec.in/blog/nfs2root-cve-2026-99362">Nfs2root: A 12-year-old pre-auth remote root in the Linux kernel's NFS server</a></strong><br />
+  摘要：Nfs2root: A 12-year-old pre-auth remote root in the Linux kernel's NFS server</p>
+</li>
+<li>
+<p><strong><a href="https://github.com/swipt-automation/Swipterm">A Linux environment and Ghostty-based terminal for iOS</a></strong><br />
+  摘要：A Linux environment and Ghostty-based terminal for iOS</p>
+</li>
+<li>
+<p><strong><a href="https://carbonwarp.com/cpm/">Universal Package Manager for Linux</a></strong><br />
+  摘要：Universal Package Manager for Linux</p>
+</li>
+<li>
+<p><strong><a href="https://news.ycombinator.com/item?id=50645376">Show HN: Dualayer Hierarchy Standard (DHS) – Zero-FHS Layout for Musl and Glibc</a></strong><br />
+  摘要：Dualayer Hierarchy Standard (DHS: Repo: https:&#x2F;&#x2F;github.com&#x2F;Zainium-Dynamics&#x2F;dualayer-hierarchy-stand... Full Specification (23-page PDF): https:&#x2F;&#x2F;zainiumdynamics.tech&#x2F;dhs DHS 1.1 defines a layered filesystem hierarchy for immutable Linux systems where musl and glibc coexist side by side without conflict. Either C library can be primary; the distribution chooses. Root layout (no &#x2F;usr, &#x2F;bin, &#x2F;sbin, &#x2F;lib, &#x2F;lib64, &#x2F;etc, &#x2F;var, or &#x2F;boot at &#x2F;, not even as symlinks): &#x2F; |-- overlayer&#x2F; (the entire OS: all layers) |-- home&#x2F; (user home directories) |-- root&#x2F; (root home) |-- dev&#x2F; (devtmpfs) |-- proc&#x2F; (procfs) |-- sys&#x2F; (sysfs) |-- run&#x2F; (tmpfs; removable media at &#x2F;run&#x2F;media&amp;#x…</p>
+</li>
+<li>
+<p><strong><a href="https://securityboulevard.com/2026/11/cisco-and-openai-release-shirudo-tetragon-for-agents-defending-linux/">Cisco and OpenAI Release Shirudo: Tetragon for Agents Defending Linux</a></strong><br />
+  摘要：Cisco and OpenAI Release Shirudo: Tetragon for Agents Defending Linux</p>
+</li>
+<li>
+<p><strong><a href="https://www.academia.edu/181981981/Deterministic_High_Throughput_I_O_Comparative_Latency_and_Memory_Analysis_of_io_uring_vs_epoll_in_Distributed_Linux_Gateways">Show HN: Io_uring vs. Epoll – Deterministic Tail Latency in Linux Gateways</a></strong><br />
+  摘要：Show HN: Io_uring vs. Epoll – Deterministic Tail Latency in Linux Gateways</p>
+</li>
+<li>
+<p><strong><a href="https://wasm-thin-kernel-interfaces.github.io/WALI/">WALI: The WebAssembly Linux Interface</a></strong><br />
+  摘要：WALI: The WebAssembly Linux Interface</p>
+</li>
+<li>
+<p><strong><a href="https://bowerbird.gallery/">Show HN: Bowerbird, a private image organizer for Windows, Mac and Linux</a></strong><br />
+  摘要：A few months ago I started building a small tool for myself. I had folders full of images and wanted a fast way to browse, tag and rate them without uploading anything or signing up for anything. Think Eagle (which I use) but for images you already have. I&#x27;ve decided to launch it as a desktop app. It&#x27;s called Bowerbird. It&#x27;s now out for Windows, Mac and Linux. * Open any folder and see every image inside, including subfolders * You can rate and tag images * You can search and filter, and save those queries as smart folders * Your images stay where they are: no account or cloud * The app only connects to check for updates and licenses * You only pay once, no subscription * There&#x27;s a free 14 days trial It&#x27;s still early days so it&#x27;s on discount for a couple of we…</p>
+</li>
+<li>
+<p><strong><a href="https://sweeflow.app">Show HN: Sweeflow – Stream your Mac apps to your Linux machine</a></strong><br />
+  摘要：Show HN: Sweeflow – Stream your Mac apps to your Linux machine</p>
+</li>
+<li>
+<p><strong><a href="https://www.makeuseof.com/i-carried-my-whole-linux-desktop-on-a-usb-stick-for-a-week-and-the-laptop-i-plugged-into-never-knew/">I carried my whole Linux desktop on a USB stick for a week</a></strong><br />
+  摘要：I carried my whole Linux desktop on a USB stick for a week</p>
+</li>
+</ul>
+<h2>The New Stack</h2>
+<ul>
+<li>
+<p><strong><a href="https://thenewstack.io/anthropic-siren-sandbox-escape/">Anthropic set more than 1,700 traps for Claude — what it found is both reassuring and unsettling</a></strong><br />
+  摘要：As coding agents take on longer-running engineering tasks, Anthropic is examining how models behave when their execution environments fail to The post Anthropic set more than 1,700 traps for Claude — what it found is both reassuring and unsettling appeared first on The New Stack .</p>
+</li>
+<li>
+<p><strong><a href="https://thenewstack.io/openai-matrix-multiplication-exponent/">OpenAI claims to have solved a 57-year-old math problem at the heart of AI computation</a></strong><br />
+  摘要：OpenAI claims to have solved a problem that has occupied theoretical computer scientists since 1969. In a preprint published Tuesday The post OpenAI claims to have solved a 57-year-old math problem at the heart of AI computation appeared first on The New Stack .</p>
+</li>
+<li>
+<p><strong><a href="https://thenewstack.io/jetbrains-mellum2-1-instruct-coding-model/">JetBrains’ latest Mellum coding model uses 45% fewer tokens. It got there by not thinking.</a></strong><br />
+  摘要：JetBrains has launched a new variant of its open source coding model, one designed to tackle quick code edits, tool The post JetBrains&#8217; latest Mellum coding model uses 45% fewer tokens. It got there by not thinking. appeared first on The New Stack .</p>
+</li>
+</ul>
+<h2>LWN.net</h2>
+<ul>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1109691/">Dave Täht given the Jonathan B. Postel Service Award</a></strong><br />
+  摘要：The Internet Society has announced that the Jonathan B. Postel Service Award has been awarded to Dave Täht for his many efforts to improve the Internet. Täht's legacy can be found in community hubs in Nicaragua, where he worked to expand connectivity, and first discovered the urgency of solving bufferbloat. It can be found in every lag-free video call with a loved one. It can be found in outer space—Täht helped Starlink solve its latency challenges. And it can be found in the countless people he mentored and befriended over the years, who will not stop until bufferbloat stops getting in the way of band practice. Dave is still deeply missed by those of us who knew him; this is an award he richly deserved.</p>
+</li>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1103714/">[$] Tainting (or not) on manual driver binding</a></strong><br />
+  摘要：Early in the 7.4 merge window , Greg Kroah-Hartman applied a patch that caused the kernel to be marked as tainted whenever user space manually binds or unbinds a device driver to a device. This change was meant to be a defense against a flood of spurious bug reports generated by fuzzers, but it also turned out to get in the way of some real use cases. After some discussion, the patch has been reverted, but this situation hints at an area where better kernel interfaces are needed.</p>
+</li>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1109662/">Pop!_OS 26.04 LTS released</a></strong><br />
+  摘要：System76 has announced the release of Pop!_OS&#160;26.04&#160;LTS, which is based on Ubuntu&#160;26.04&#160;LTS. Notable features in this release include drawing tablet support, automatic updates, a number of new COSMIC applications, and more. Updates for users on Pop!_OS&#160;24.04&#160;LTS will be enabled in December. LWN last covered Pop!_OS and an early version of its COSMIC desktop in August 2024.</p>
+</li>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1109650/">Security updates for Wednesday</a></strong><br />
+  摘要：Security updates have been issued by AlmaLinux (emacs, go-toolset:rhel8, xorg-x11-server-Xwayland, and yggdrasil-worker-package-manager), Debian (flatpak, libeot, libzstd, mapserver, rails, request-tracker5, and runc), Fedora (age, chromium, cri-o1.35, cri-o1.36, cri-o1.37, fluxbox, git-annex, libreswan, mariadb-connector-c, mimedefang, mycli, nextcloud, openssh, perl-Data-Dump, php-smarty4, python-pydantic, python-pydantic-core, sbsigntools, and sqlite), Mageia (awslc, haproxy, java-11-openjdk, java-1.8.0-openjdk, miniupnpc, perl-Imager, python3-loguru, and scapy), Oracle (.NET 10.0, .NET 8.0, .NET 9.0, aspell, bind, buildah, cockpit, dogtag-pki, dovecot, emacs, fence-agents, fetchmail, flatpak, freerdp, gcc-toolset-15-gcc, glib2, go-fdo-server, grafana, gstreamer1-plugins-base, gstreamer…</p>
+</li>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1106537/">[$] Added indirection allows for larger BPF programs</a></strong><br />
+  摘要：The BPF verifier has historically worked by tracing every possible path of execution through a program, checking, at each instruction, that various safety properties hold. This works, but it can result in an exponential increase in the number of states that need checking in programs with complicated control-flow. Alexei Starovoitov, one of the kernel's core BPF maintainers, has shared a patch set that substantially reworks how the verifier tracks states, in order to reduce the size of that exponential explosion.</p>
+</li>
+</ul>
+<h2>Linux Weekly News (RSS)</h2>
+<ul>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1109691/">Dave Täht given the Jonathan B. Postel Service Award</a></strong><br />
+  摘要：The Internet Society has announced that the Jonathan B. Postel Service Award has been awarded to Dave Täht for his many efforts to improve the Internet. Täht's legacy can be found in community hubs in Nicaragua, where he worked to expand connectivity, and first discovered the urgency of solving bufferbloat. It can be found in every lag-free video call with a loved one. It can be found in outer space—Täht helped Starlink solve its latency challenges. And it can be found in the countless people he mentored and befriended over the years, who will not stop until bufferbloat stops getting in the way of band practice. Dave is still deeply missed by those of us who knew him; this is an award he richly deserved.</p>
+</li>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1103714/">[$] Tainting (or not) on manual driver binding</a></strong><br />
+  摘要：Early in the 7.4 merge window , Greg Kroah-Hartman applied a patch that caused the kernel to be marked as tainted whenever user space manually binds or unbinds a device driver to a device. This change was meant to be a defense against a flood of spurious bug reports generated by fuzzers, but it also turned out to get in the way of some real use cases. After some discussion, the patch has been reverted, but this situation hints at an area where better kernel interfaces are needed.</p>
+</li>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1109662/">Pop!_OS 26.04 LTS released</a></strong><br />
+  摘要：System76 has announced the release of Pop!_OS&#160;26.04&#160;LTS, which is based on Ubuntu&#160;26.04&#160;LTS. Notable features in this release include drawing tablet support, automatic updates, a number of new COSMIC applications, and more. Updates for users on Pop!_OS&#160;24.04&#160;LTS will be enabled in December. LWN last covered Pop!_OS and an early version of its COSMIC desktop in August 2024.</p>
+</li>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1109650/">Security updates for Wednesday</a></strong><br />
+  摘要：Security updates have been issued by AlmaLinux (emacs, go-toolset:rhel8, xorg-x11-server-Xwayland, and yggdrasil-worker-package-manager), Debian (flatpak, libeot, libzstd, mapserver, rails, request-tracker5, and runc), Fedora (age, chromium, cri-o1.35, cri-o1.36, cri-o1.37, fluxbox, git-annex, libreswan, mariadb-connector-c, mimedefang, mycli, nextcloud, openssh, perl-Data-Dump, php-smarty4, python-pydantic, python-pydantic-core, sbsigntools, and sqlite), Mageia (awslc, haproxy, java-11-openjdk, java-1.8.0-openjdk, miniupnpc, perl-Imager, python3-loguru, and scapy), Oracle (.NET 10.0, .NET 8.0, .NET 9.0, aspell, bind, buildah, cockpit, dogtag-pki, dovecot, emacs, fence-agents, fetchmail, flatpak, freerdp, gcc-toolset-15-gcc, glib2, go-fdo-server, grafana, gstreamer1-plugins-base, gstreamer…</p>
+</li>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1106537/">[$] Added indirection allows for larger BPF programs</a></strong><br />
+  摘要：The BPF verifier has historically worked by tracing every possible path of execution through a program, checking, at each instruction, that various safety properties hold. This works, but it can result in an exponential increase in the number of states that need checking in programs with complicated control-flow. Alexei Starovoitov, one of the kernel's core BPF maintainers, has shared a patch set that substantially reworks how the verifier tracks states, in order to reduce the size of that exponential explosion.</p>
+</li>
+</ul>
+<h2>Kernel.org</h2>
+<ul>
+<li>
+<p><strong><a href="https://www.kernel.org/">next-20261125: linux-next</a></strong><br />
+  摘要：Version: next-20261125 (linux-next) Released: 2026-11-25</p>
+</li>
+<li>
+<p><strong><a href="https://www.kernel.org/">7.3.6: stable</a></strong><br />
+  摘要：Version: 7.3.6 (stable) Released: 2026-11-23 Source: linux-7.3.6.tar.xz PGP Signature: linux-7.3.6.tar.sign Patch: full ( incremental ) ChangeLog: ChangeLog-7.3.6</p>
+</li>
+<li>
+<p><strong><a href="https://www.kernel.org/">6.18.65: longterm</a></strong><br />
+  摘要：Version: 6.18.65 (longterm) Released: 2026-11-23 Source: linux-6.18.65.tar.xz PGP Signature: linux-6.18.65.tar.sign Patch: full ( incremental ) ChangeLog: ChangeLog-6.18.65</p>
+</li>
+<li>
+<p><strong><a href="https://www.kernel.org/">6.12.119: longterm</a></strong><br />
+  摘要：Version: 6.12.119 (longterm) Released: 2026-11-23 Source: linux-6.12.119.tar.xz PGP Signature: linux-6.12.119.tar.sign Patch: full ( incremental ) ChangeLog: ChangeLog-6.12.119</p>
+</li>
+<li>
+<p><strong><a href="https://www.kernel.org/">6.6.163: longterm</a></strong><br />
+  摘要：Version: 6.6.163 (longterm) Released: 2026-11-23 Source: linux-6.6.163.tar.xz PGP Signature: linux-6.6.163.tar.sign Patch: full ( incremental ) ChangeLog: ChangeLog-6.6.163</p>
+</li>
+<li>
+<p><strong><a href="https://www.kernel.org/">6.1.193: longterm</a></strong><br />
+  摘要：Version: 6.1.193 (longterm) Released: 2026-11-23 Source: linux-6.1.193.tar.xz PGP Signature: linux-6.1.193.tar.sign Patch: full ( incremental ) ChangeLog: ChangeLog-6.1.193</p>
+</li>
+<li>
+<p><strong><a href="https://www.kernel.org/">5.15.226: longterm</a></strong><br />
+  摘要：Version: 5.15.226 (longterm) Released: 2026-11-23 Source: linux-5.15.226.tar.xz PGP Signature: linux-5.15.226.tar.sign Patch: full ( incremental ) ChangeLog: ChangeLog-5.15.226</p>
+</li>
+<li>
+<p><strong><a href="https://www.kernel.org/">5.10.275: longterm</a></strong><br />
+  摘要：Version: 5.10.275 (longterm) Released: 2026-11-23 Source: linux-5.10.275.tar.xz PGP Signature: linux-5.10.275.tar.sign Patch: full ( incremental ) ChangeLog: ChangeLog-5.10.275</p>
+</li>
+<li>
+<p><strong><a href="https://www.kernel.org/">7.4-rc4: mainline</a></strong><br />
+  摘要：Version: 7.4-rc4 (mainline) Released: 2026-11-22 Source: linux-7.4-rc4.tar.gz Patch: full ( incremental )</p>
+</li>
+<li>
+<p><strong><a href="https://www.kernel.org/">7.2.15: stable</a></strong><br />
+  摘要：Version: 7.2.15 (EOL) (stable) Released: 2026-11-01 Source: linux-7.2.15.tar.xz PGP Signature: linux-7.2.15.tar.sign Patch: full ( incremental ) ChangeLog: ChangeLog-7.2.15</p>
+</li>
+</ul>
+<h2>CNCF Blog</h2>
+<ul>
+<li><strong><a href="https://www.cncf.io/blog/2026/11/25/%f0%9f%9a%80-the-story-behind-drone-2-my-kubecon-cloudnativecon-north-america-2026-keynote/">🚀 The story behind “Drone 2”: My KubeCon + CloudNativeCon North America 2026 keynote</a></strong><br />
+  摘要：An open source adventure featuring Kubernetes, agent-substrate, kagent, AI agents, drones, and more! Just 30 seconds before going live for the KubeCon + CloudNativeCon NA 2026 closing keynote, “Cloud Native Without Limits: What Can AI Agents...</li>
+</ul>
+<h2>arXiv (cs.LG)</h2>
+<ul>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2611.31245">Local subspace encoding for spectral prediction: from TabPFN to operator-adaptive calibration</a></strong><br />
+  摘要：arXiv:2611.31245v1 Announce Type: new Abstract: TabPFN has already shown useful predictive performance on near-infrared spectra. RamanPFN subsequently proposed two spectral representations for tabular inference: Global Compositional Unmixing (GCU) and Local Vibrational Subspace Encoding (LVSE). We assess whether these representations also help on datasets assembled through the nirs4all ecosystem, and whether their value extends to classical calibration. We reanalyse completed experiments from a public spectral dataset catalogue. On a post-hoc subset of 61 matched numerical prediction tasks, after excluding ten class-code, metadata or semantically ambiguous targets, LVSE reduces RMSE relative to raw-spectrum TabPFN by 10.22%, 12.80% and 14.52% on average for checkpoints 2.5, 3 and 3.5, resp…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2611.31249">Actionwave: A Systematic Benchmark for Waveform-Centric Clinical Prediction Across Care Scenarios</a></strong><br />
+  摘要：arXiv:2611.31249v2 Announce Type: new Abstract: Continuous bedside waveforms record rapid physiological changes that can inform clinical decisions. Existing benchmarks examine selected prediction conditions, but it remains unclear how model advantages depend on signal duration, warning time, and available inputs across care settings. We introduce Actionwave, a benchmark for waveform-centric clinical prediction across intensive-care, operating-room, and emergency-department settings. Actionwave uses a common decision-time prediction interface and groups clinically grounded tasks by what is inferred and when. It varies conditions relevant to clinical use, including the warning required before an intervention. We compare diverse architectures and pretrained biosignal encoders under specified …</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2611.31271">Chain-of-Thought Is Not Explainability</a></strong><br />
+  摘要：arXiv:2611.31271v1 Announce Type: new Abstract: Chain-of-thought (CoT) allows language models to verbalise multi-step rationales before producing their final answer. While this technique often boosts task performance and offers an impression of transparency into the model's reasoning, this position paper argues that rationales generated by current CoT techniques can be misleading and are neither necessary nor sufficient for trustworthy interpretability. We analyse faithfulness as whether CoTs are not only human-interpretable but also reflect the model's underlying reasoning well enough to support responsible use. By synthesising evidence from prior work, we systematically show that verbalised chains are frequently unfaithful, diverging from the critical hidden computations that drive a mod…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2611.31292">Hidden Clues in WM-811K: Uncovering the Spatial Signals Behind Wafer Map Prediction</a></strong><br />
+  摘要：arXiv:2611.31292v1 Announce Type: new Abstract: WM-811K (also known as LSWMD) is a wafer map dataset first made publicly available in a 2015 paper by Wu et al. Convolutional neural networks have been used to achieve high classification accuracy on this dataset, yet it's not easy to decipher which features of the dataset are driving that performance. This study attempts to answer this specifically for WM-811K: how much of the predictive performance results from the wafer layout, the count of failed dies, their distance from the center and their exact 2-D location. After analyzing duplicate wafer maps, removing same wafer maps with conflicting labels and ensuring that the same manufacturing lot or exact same map doesn't appear in training, validation and test data, we were left with 25,513 d…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2611.31319">Conformalized Tree-Based Gradient Ensembles for Out-of-Distribution Detection and Plausible Recourse</a></strong><br />
+  摘要：arXiv:2611.31319v1 Announce Type: new Abstract: Counterfactual recourse provides actionable feature adjustments that reverse unfavourable predictions made by automated decision models. However, when recourse search optimizes purely against classifier confidence or narrow proxy scores over gradient-boosted decision trees (GBDT), search procedures can exploit boundary artifacts and low-density regions---an instance of Goodhart's law---yielding out-of-distribution (OOD) recommendations that appear favourable nominally while lacking manifold plausibility. In this paper, we study conformalized OOD gating coupled with actionability-constrained counterfactual search across two tabular benchmarks: Adult and Give Me Some Credit (GMSC). Calibrating finite-sample anomaly gates (gate_IF, gate_LOF, and…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2611.31320">Layer-Readout Interfaces in EEG Foundation Models: Predictive Accessibility and Cross-Dataset Transfer</a></strong><br />
+  摘要：arXiv:2611.31320v1 Announce Type: new Abstract: Intermediate layers often outperform final layers when foundation models are used as frozen feature extractors, but the source of this advantage is unclear. We study this question in EEG foundation models by separating three factors: how representations are read out, whether intermediate layers provide predictive utility beyond the final-layer interface, and whether useful depth structure transfers across datasets. Across five models and three tasks, improving the final-layer readout consistently recovers substantial predictive performance, yet intermediate layers remain advantageous within frozen extraction. We also find that layers selected on one dataset remain useful on another across five dataset pairs and four task families, and that a …</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2611.31321">Flagging Batch Shift in Flow Cytometry using Jeffreys Divergence between Gaussian Mixtures</a></strong><br />
+  摘要：arXiv:2611.31321v1 Announce Type: new Abstract: Machine learning models for clinical flow cytometry are usually evaluated on data drawn from their training distribution. In routine practice, however, acquisition conditions and reagents may change, potentially making predictions unreliable without warning. We propose a model agnostic criterion for prediction reliability based on a notion of distance from the training distribution: each patient sample is represented by a Gaussian mixture model, and its Jeffreys divergence to a reference fitted on the training data is estimated using Monte Carlo integration. We illustrate our approach on real-life shifted cohorts of acute myeloid leukaemia patients, using a classifier trained to predict NPM1 mutation status. First, we show graphically and sta…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2611.31333">Fusion Gains Depend on the Implementation and the Calibration Target: An 18-Task Study of Prediction Intervals with a Single-Source Fallback</a></strong><br />
+  摘要：arXiv:2611.31333v1 Announce Type: new Abstract: A fused model can benefit from an extra learning stage as well as from a second data source. We compare four fusion implementations with matched single-source learners on 18 regression tasks with prediction intervals. Across ten refits under group-wise calibration, linear stacking improved the interval score by 6.0% against a source model without a second stage and by 0.1% against its matched single source. The four implementations agreed on 3 of 18 tasks and gave opposite clear verdicts on 12, including 8 of the 10 tasks with naturally distinct sources. With pointwise calibration, they agreed on 5 tasks and gave opposite clear verdicts on 9. A development-set selector with a matched single-source fallback improved ten-refit task-averaged sco…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2611.31350">GHC:Expanding Residual Interfaces in Hyper-Connections</a></strong><br />
+  摘要：arXiv:2611.31350v1 Announce Type: new Abstract: Hyper-Connections expand residual capacity across parallel streams, yet restrict every branch to narrow read and write interfaces: each branch still reads a single stream mixture and writes scaled copies of one output vector to all streams. To lift this bottleneck, we propose Grouped Hyper-Connections (GHC). By partitioning each branch into parallel groups along attention heads or FFN channels, GHC supplies each group with a distinct stream mixture and aggregates their separate outputs into each stream with learned weights. Extensive experiments across dense and Mixture-of-Experts (MoE) models show that GHC consistently improves upon Identity Hyper-Connections (IHC) with negligible parameter and memory-access overhead, increasing training eff…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2611.31354">Detecting Harmful Short Videos in Toxic Diet Culture: A Governance-Ready Evidence Framework with Sparse Autoencoders</a></strong><br />
+  摘要：arXiv:2611.31354v1 Announce Type: new Abstract: Algorithmic content moderation is increasingly important for governing short-form video content, yet harmful-content detection research focuses primarily on prediction or limited explanations. This leaves a governance challenge underexplored: producing decision-linked evidence that supports the review and justification of moderation decisions. Using toxic diet culture as an empirical case, we conceptualize governance-ready evidence as computational traceability, evidence localization, policy grounding, and evidence inspectability. We develop the Sparse Autoencoder-based Policy-Aligned Contrastive Evidence (SPACE) framework in a pretrained SAE feature space derived from a large multimodal model. A global relevance gate and decomposable linear …</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2611.31431">CaLA: Causal Latent Adjustment for World Models under Adaptive Policies</a></strong><br />
+  摘要：arXiv:2611.31431v1 Announce Type: new Abstract: World models is answering <code>imagine" answers to</code>what-if'' questions via imagined rollouts. But rollouts collected by adaptive policies induce treatment-outcome confounding in imagined rollouts. We study this problem in Match-3 difficulty adjustment, where latent player skill influences both assigned difficulty and churn. We build a fully specified Match-3 SCM with sequential mechanics, adaptive assignment, and paired ground-truth interventions, on which unadjusted models fit to the logged trajectories select difficulty settings that raise churn. We then introduce Causal Latent Adjustment (CaLA), a DAG-constrained world model that infers a variational player representation from pretreatment history. Across our evaluations, CaLA provides the …</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2611.31436">Is 4 Bits Enough for EEG Sleep Staging? A Subject-Level Benchmark of MXFP4, NVFP4 and FP8</a></strong><br />
+  摘要：arXiv:2611.31436v1 Announce Type: new Abstract: Staging sleep on a wearable device keeps the raw electroencephalogram (EEG) private and saves the energy needed to transmit it. It also requires small, energy-efficient neural networks. We benchmark 13 post-training quantization (PTQ) configurations, from FP16 to the block-scaled 4-bit formats MXFP4 and NVFP4, for five-stage sleep staging from single-channel Fpz-Cz EEG. We use Sleep-EDF-78 (78 subjects), subject-wise cross-validation, three training seeds, value-exact emulation, and per-subject paired statistics. All 8- and 16-bit formats stay within 0.45 percentage points (pp) of FP32 Macro-F1. With 4-bit weights and activations, an epoch-wise CNN loses 1.98 to 3.04 pp, and a temporal-context network loses at most 1.19 pp. A same-encoder abl…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2611.31439">Transformers with Signatures: Towards Universal In-Context Learning in Path Space</a></strong><br />
+  摘要：arXiv:2611.31439v1 Announce Type: new Abstract: In-context learning (ICL) enables transformers to adapt to new tasks from demonstrations without updating their parameters. However, theoretical guarantees for transformers remain limited in general, and elusive in particular when target responses depend nonlinearly on the evolution of observed paths. We establish an ICL framework for path space, using path signature features. Building on the universal linear approximation property of signatures, we construct explicitly a causal softmax transformer with two attention heads per layer that emulates in-context Lasso. Under sparse signature approximation and suitable moment and concentration conditions, we establish finite-sample prediction error bounds. Our analysis goes beyond the IID data sett…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2611.31442">Small Learned Projections for Semantic-Reversal-Aware Retrieval with Spectral Acceleration: A Four-Domain Empirical Study</a></strong><br />
+  摘要：arXiv:2611.31442v1 Announce Type: new Abstract: Dense-embedding retrievers can fail adversarially: when a query is answered by a document A and reversed by a near-copy B that differs from A by a small meaning-changing edit (a "trap"), raw cosine over E5-Large-v2 places B in the top-10 for 82-100% of queries at a pool of 5,000. We study two things. First, a small learned projection W: R^1024 -&gt; R^d (d in {11, 32}), trained by a deterministic recipe on a declared set of cases, that suppresses the trap: for the declared cases, HN@10 = 0.0000 (no trap in the top-10) in all twelve (domain, pool-size) settings across four independent domains (legal, medical, patent, financial) and pools up to 100,000, while the correct paraphrase is retained for 93-99% of cases, under exact nearest-neighbour sea…</p>
+</li>
+<li>
+<p><strong><a href="https://arxiv.org/abs/2611.31479">Transferable, Time-Parallel Graph Dynamics via Space-Time Factorization</a></strong><br />
+  摘要：arXiv:2611.31479v1 Announce Type: new Abstract: Time-parallel neural operators (FNO and successors) have transformed PDE surrogates on regular grids. Mesh-based operators (MeshGraphNets, Transolver) extend operator learning to irregular geometries, but jointly learning across diverse topologies while retaining non-recurrent temporal evaluation remains challenging. We propose space-time factorization: partition the model into local temporal operators (learned, graph-independent) and a spatial mixer that propagates information across nodes without graph-dependent learned parameters. This structural condition lets the same parameters run on unseen graphs; non-recurrent instances also admit time-parallel evaluation. Accurate zero-shot transfer further depends on controlling three information l…</p>
+</li>
+</ul>
+<h2>Red Hat Blog</h2>
+<ul>
+<li>
+<p><strong><a href="https://www.redhat.com/en/blog/how-red-hat-and-odine-unify-sovereign-telco-cloud-management">How Red Hat and Odine unify sovereign telco cloud management</a></strong><br />
+  摘要：Red Hat has collaborated with Odine so their multiagent platform, MACE, runs natively on Red Hat OpenShift, with Red Hat OpenShift AI providing the supported, carrier-grade foundation for its AI capabilities. This allows MACE to operate within the same trusted, governed environment as service provider workloads, while natively orchestrating Red Hat OpenShift clusters.What is MACE?MACE is an agentic multicloud management platform designed to help service providers take control of their cloud, AI, and digital infrastructure environments through a unified, sovereign-by-design approach. Six specia</p>
+</li>
+<li>
+<p><strong><a href="https://www.redhat.com/en/blog/friday-five-november-20-2026-red-hat">Friday Five — November 20, 2026 | Red Hat</a></strong><br />
+  摘要：SiliconANGLE - Red Hat and Microsoft bring OpenShift virtual machines to AzureRed Hat and Microsoft are expanding OpenShift Virtualization on Azure with Microsoft’s direct virtualization technology, aiming for near-bare-metal hardware access for VMs alongside containers and AI workloads. Learn more IBM and Red Hat Bring Lightwell Network to Microsoft MarketplaceIBM and Red Hat made Lightwell Network available through Microsoft Marketplace private offers, giving customers a path to buy version-specific, backported open source vulnerability remediations that fit existing scanners, repositorie</p>
+</li>
+</ul>
+<h2>Kubernetes Blog</h2>
+<ul>
+<li>
+<p><strong><a href="https://kubernetes.io/blog/2026/10/14/tracing-kueue-admission-with-headlamp/">Why Is My Kubernetes Job Still Pending? Tracing Kueue Admission with Headlamp</a></strong><br />
+  摘要：You submit a Kubernetes Job and wait for its Pods to appear. A minute passes. Then another. The Job is still suspended, there are no application logs, and there may not even be a Pod to inspect. In a cluster managed by Kueue , this can be completely normal. Kueue may still be deciding whether the Job can use the requested resources. The useful question is not only “Why is the Pod pending?” It is first “Has Kueue admitted the Workload?” The Kueue plugin for Headlamp brings that investigation into the Headlamp UI. Instead of reconstructing the admission path from several commands and large YAML objects, you can begin with the Workload, read its condition message, and follow links through the LocalQueue, ClusterQueue, ResourceFlavor, and Cohort. This article follows that Headlamp-first path. …</p>
+</li>
+<li>
+<p><strong><a href="https://kubernetes.io/blog/2026/09/14/csi-changed-block-tracking-beta/">Kubernetes Changed Block Tracking API - Beta Differences</a></strong><br />
+  摘要：Changed Block Tracking (CBT) support for CSI drivers shipped as Alpha in September 2025. With the March 2026 v1.0.0 release of the external-snapshot-metadata project, the feature moved to Beta . If you aren't yet familiar with changed block tracking for storage in Kubernetes, the Alpha announcement covers the motivation, the three primary components (the CSI SnapshotMetadata gRPC service, the SnapshotMetadataService CRD, and the external-snapshot-metadata sidecar), and a walkthrough of how to use the API. CBT currently applies to block volumes; file-volume and network file-share changed-list tracking is not covered by this feature. This post focuses on what is different in Beta. What's new in Beta The main change in that release was the promotion of the SnapshotMetadataService CRD from v1a…</p>
+</li>
+<li>
+<p><strong><a href="https://kubernetes.io/blog/2026/09/14/kubernetes-v1-37-memory-qos-graduates-to-beta/">Kubernetes v1.37: Memory QoS Graduates to Beta</a></strong><br />
+  摘要：Memory QoS has graduated to Beta in Kubernetes v1.37 and is now enabled by default. On Linux nodes running cgroup v2, the feature uses the memory controller to give the kernel better guidance on how to treat container memory. It was first introduced as Alpha in v1.22, and expanded in v1.36 with tiered memory reservation. This post covers what changed in v1.37, what the Beta promotion means for cluster operators, and how to configure the feature. What changed in v1.37 Memory QoS is Beta and enabled by default The MemoryQoS feature gate is now Beta in v1.37. This means every v1.37 kubelet has the feature gate turned on without any configuration change. Turning on the feature by default is safe because the default kubelet configuration does not enable memory throttling or memory reservation. …</p>
+</li>
+</ul>
+<hr /></div>
+  </main>
+</body>
+</html>
