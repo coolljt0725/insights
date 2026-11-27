@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OS 领域每日洞察 - 2026-11-27</title>
+  <style>
+    :root {
+      --bg: #f6f4f0;
+      --bg-bar: #ebe8e3;
+      --bg-card: #fffefb;
+      --bg-card-hover: #f5f3ef;
+      --text: #2d2a26;
+      --text-muted: #5c5852;
+      --text-dim: #7a756e;
+      --accent: #5a7a9e;
+      --border: #ddd9d2;
+      --radius: 10px;
+      --font: "Segoe UI", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      font-size: 15px;
+    }
+
+    /* 门户顶栏 */
+    .masthead {
+      background: var(--bg-bar);
+      border-bottom: 1px solid var(--border);
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 0;
+    }
+    .masthead-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .masthead h1 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin: 0;
+      letter-spacing: -0.02em;
+      color: var(--text);
+    }
+    .masthead .meta {
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+    }
+
+    /* 主内容区：多栏门户布局 */
+    .main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 3rem;
+    }
+
+    /* 板块：每个 h2 为一个频道块 */
+    .content .section {
+      margin-bottom: 2.5rem;
+    }
+    .content h2 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+      margin: 0 0 1rem;
+      padding: 0.6rem 1rem;
+      background: var(--bg-bar);
+      border-radius: var(--radius);
+      border-left: 4px solid var(--accent);
+    }
+    .content h2:first-child { margin-top: 0; }
+
+    .content h2:has(+ h3) {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      border-left-color: var(--text-dim);
+    }
+
+    /* 板块内卡片网格（每个 h2 后的 ul） */
+    .content h2 + ul {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1rem;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .content h2 + ul li {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.15rem 1.2rem;
+      transition: background .15s, border-color .15s;
+    }
+    .content h2 + ul li:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--text-dim);
+    }
+    .content h2 + ul li strong {
+      display: block;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+      line-height: 1.4;
+    }
+    .content h2 + ul li p {
+      margin: 0 0 0.5rem;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.58;
+    }
+    .content h2 + ul li p:last-of-type { margin-bottom: 0; }
+    .content h2 + ul li a[href^="http"] {
+      font-size: 0.8125rem;
+      color: var(--accent);
+    }
+    .content h2 + ul li a[href^="http"]:hover { text-decoration: underline; }
+
+    .content .ref-section {
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+    .content h2 + h3 { margin-top: 1.25rem; }
+    .content h3 {
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--text-dim);
+      margin: 1rem 0 0.4rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .content h3 + ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 0.25rem;
+    }
+    .content h3 + ul li {
+      background: transparent;
+      border: none;
+      padding: 0.2rem 0;
+      font-size: 0.8125rem;
+    }
+    .content h3 + ul li strong { font-size: inherit; margin-bottom: 0; }
+    .content h3 + ul li a { color: var(--accent); }
+    .content h3 + ul li a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <header class="masthead">
+    <div class="masthead-inner">
+      <h1>OS 领域每日洞察 - 2026-11-27</h1>
+      <span class="meta">2026-11-27 05:01 UTC</span>
+    </div>
+  </header>
+  <main class="main">
+    <div class="content"><h1>OS 领域每日洞察 - 2026-11-27</h1>
+<p>（Gemini 未可用时，以下为按来源整理的条目，含<strong>新闻摘要</strong>与链接；摘要可能为原文语言。）</p>
+<h2>Hacker News</h2>
+<ul>
+<li>
+<p><strong><a href="https://github.com/vahmoh/Veda">An Agentic Driven Operating System Source Code</a></strong><br />
+  摘要：An Agentic Driven Operating System Source Code</p>
+</li>
+<li>
+<p><strong><a href="https://shirudo.today/blog/launch.html">Show HN: Shirudo.today: Virtual eBPF patching on stock Linux</a></strong><br />
+  摘要：OpenAI&#x27;s Shirudo needs kernel patches that still will take a couple more months, so we decided to make it available today. The threat model degrades to a compromised root, but makes the shirudo framework and shields available to stock linux kernels today. This enables patching a kernel vulnerability in hours instead of days.</p>
+</li>
+<li>
+<p><strong><a href="https://github.com/kagisearch/orion-linux">Orion for Linux</a></strong><br />
+  摘要：Orion for Linux</p>
+</li>
+<li>
+<p><strong><a href="https://github.com/doors-dev/neui">Show HN: Neui – Go web apps with a built-in AI agent</a></strong><br />
+  摘要：Neui is an AI agent and a web framework built as one stack. The core is a server-driven Go web framework ( https:&#x2F;&#x2F;github.com&#x2F;doors-dev&#x2F;doors ); neui ( https:&#x2F;&#x2F;github.com&#x2F;doors-dev&#x2F;neui ) turns each page into an agent harness. FEATURES: The agent sees &amp; operates UI. Annotate what agent can access (links, inputs, buttons), so agent sees it and can assist user with UI operations or even automate it with scripting. ~&gt;neui.Use{ Desc:&quot;submit the form&quot; } &lt;button&gt;Submit&lt;&#x2F;button&gt; or expose context data for the agent: &lt;div class=&quot;card&quot;&gt; ~neui.Data{Text: &quot;the product shown in the card&quot;, Object: product} ... &lt;&#x2F;div&gt; Dynamic tools, right in the markup Same way as you render a button to the use…</p>
+</li>
+<li>
+<p><strong><a href="https://michidk.github.io/sidebyside/">Show HN: Three Linux VMs in a browser tab, each running a different browser</a></strong><br />
+  摘要：Show HN: Three Linux VMs in a browser tab, each running a different browser</p>
+</li>
+<li>
+<p><strong><a href="https://github.com/YashwanthKamireddi/Skykeep">Show HN: Skykeep – bring your Linux or Windows PC into your Apple ecosystem</a></strong><br />
+  摘要：hi hn i made skykeep i use an iphone and switched from mac to linux.i missed how everything just synced so i built the apps myself notes reminders calendar contacts icloud drive and photos all syncing with the iphone</p>
+</li>
+<li>
+<p><strong><a href="https://github.com/takashiidobe/slate">Show HN: Slate, a C to Rust Transpiler for multiple targets</a></strong><br />
+  摘要：Hey HN, For the past half year I&#x27;ve been working on Slate, my C to Rust transpiler. Slate parses C code as gcc&#x2F;clang&#x2F;msvc would, and then translates code to rust. The best supported &quot;flavor&quot; as I call them is clang, with clang flavor I&#x27;ve been able to translate the Linux kernel (built for x86_64 defconfig) and booted the built vmlinux to a busybox shell. Code is here: https:&#x2F;&#x2F;github.com&#x2F;takashiidobe&#x2F;slate-linux . Same for projects like Cpython: https:&#x2F;&#x2F;github.com&#x2F;takashiidobe&#x2F;slate-python , and SQLite: https:&#x2F;&#x2F;github.com&#x2F;takashiidobe&#x2F;slate-sqlite . For an example of a multi-target build, I translated zlib to all targets slate supports with 9 features: https:&#x2F;&#x2F;github.com&#x2F;takashiidobe&#x2;…</p>
+</li>
+<li>
+<p><strong><a href="https://github.com/shiolabs/nami">Nami – Your whole Linux setup in one file, on any distro</a></strong><br />
+  摘要：Nami – Your whole Linux setup in one file, on any distro</p>
+</li>
+<li>
+<p><strong><a href="https://lore.kernel.org/lkml/CAHk-=whyUfwzMDMTpih8Xs1MxmhwTCDAc_YwUSZG79vXFMLU=Q@mail.gmail.com/">Linus Torvalds: "Tell Your AI Companion to Get Its Act Together"</a></strong><br />
+  摘要：Linus Torvalds: "Tell Your AI Companion to Get Its Act Together"</p>
+</li>
+<li>
+<p><strong><a href="https://github.com/grfdsasdvef/awesome-ebpf-linux-tracing">Show HN: Production eBPF and XDP Tracing Toolkit for Linux Kernel Performance</a></strong><br />
+  摘要：Show HN: Production eBPF and XDP Tracing Toolkit for Linux Kernel Performance</p>
+</li>
+<li>
+<p><strong><a href="https://github.com/progrium/hyper9">H9 runs native Plan 9 (9front) programs on macOS, Linux, and Windows</a></strong><br />
+  摘要：H9 runs native Plan 9 (9front) programs on macOS, Linux, and Windows</p>
+</li>
+</ul>
+<h2>Phoronix</h2>
+<ul>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/AMD-RDNA5-Linux-7.5-Initial">Initial AMD RDNA5 Support To Appear In Linux 7.5</a></strong><br />
+  摘要：Earlier this month the initial AMD GFC13 / GC 13 IP patches were posted for that next-generation graphics IP block expected to be for the RDNA5 graphics processors. With coincidental timing, that initial RDNA5 graphics driver enablement work is now on track for landing in the Linux 7.5 kernel...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Omarchy-4.6-Released">Omarchy 4.6-RC1 Released With More Local AI Integration, Its Own File Manager</a></strong><br />
+  摘要：The Arch Linux based Omarchy distribution that continues seeing the backing of notable industry players is out with a new release. Omarchy 4.6 continues the project's quest of being a very AI forward Linux distribution and continuing to evolve more from its original Arch Linux and Hyprland customizations...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Linux-AI-Agent-Skills-Ready">It Looks Like AI Agent Skills Will Be Submitted For Linux 7.5</a></strong><br />
+  摘要：For the upcoming Linux 7.5 merge window happening in late December, it appears that AI agent skills will be submitted for adding in-tree documentation for instructing AI agents on different kernel processes...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Linux-Another-Net-Maintainer">Amid All The AI Generated Patches &amp; Bug Reports, Linux Gains Another Network Maintainer</a></strong><br />
+  摘要：Linux networking developers have previously said they've been "completely overwhelmed" with all the AI/LLM-driven activity from bug reports to patches over the past year. In an increasing number of cases, they end up diverting fixes to the next Linux kernel version due to the seemingly endless activity. All the AI activity around seldom used drivers and other networking areas also led to removing various old networking code. As some good news, another Linux developer has now been promoted to being an additional Linux networking subsystem maintainer...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Ubuntu-27.04-Snapshot-1">Ubuntu 27.04 Snapshot 1 Released For Testing</a></strong><br />
+  摘要：For those with extra time around the US Thanksgiving holiday, the first Tenacious Snapshot 1 was just released today as the first stepping stone toward Ubuntu 27.04...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Linux-7.4-Arc-B390-Performance">Linux 7.4 Delivers Some Performance Gains For Intel Panther Lake's Arc B390 Graphics</a></strong><br />
+  摘要：With the recently reviewed Dell XPS 14 laptop powered by Intel Core Ultra Series 3 "Panther Lake", it ships with Ubuntu 26.04 LTS as one of the Dell supported options. If aiming for maximizing the performance out of Panther Lake, upgrading to Ubuntu 26.10 provides some performance boosts. If wanting to take things even further, going with the in-development Linux 7.4 kernel provides some advantages particularly for the Arc B390 integrated Xe3 graphics...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/DXVK-3.2-Released">DXVK 3.2 Released With Present Timing Support</a></strong><br />
+  摘要：DXVK 3.2 is out today as the newest feature release for this Vulkan-based implementation of the Direct3D 8 through Direct3D 11 APIs that is used by Valve's Steam Play (Proton)...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Brush-0.5-Released">Brush 0.5 Passing 96+% Of Upstream Test Suite For Bash Shell Written In Rust</a></strong><br />
+  摘要：Brush as the open-source project providing a Bash/POSIX-compatible shell written in Rust is out with its newest feature release. With Brush 0.5 they are passing over 96% of the upstream bash-completion test suite thanks to a variety of improvements made this release cycle. Most Bash scripts should be able to run unchanged under Brush...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/F2FS-Large-Folios-Coming">F2FS Getting Ready With Its Large Folios Support</a></strong><br />
+  摘要：In recent months there has been a lot of work done by developer Nanzhe Zhao on implementing support for large folios for most readable/writable files with the F2FS file-system in its buffered I/O paths. This can bring some performance benefits and it's looking like the work may be wrapped up in time for the Linux 7.5 kernel...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Intel-Xe-PCIe-FLR-Linux-7.5">Intel Xe Driver Gaining PCIe Function Level Reset "FLR" With Linux 7.5</a></strong><br />
+  摘要：Last week's drm-xe-next pull request of new Xe kernel driver material that Intel has ready for Linux 7.5 finally introduces PCIe Function Level Reset (FLR) support for this modern Intel graphics driver...</p>
+</li>
+</ul>
+<h2>Lobsters</h2>
+<ul>
+<li>
+<p><strong><a href="https://janlukas.blog/posts/ai-self-hosting">AI made self-hosting fun again</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://blainehansen.me/post/mainstream-verifiable-language/">The need for a formally verifiable mainstream programming language</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="http://www.linux-magazine.com/Online/Features/Taking-Email-Back">Taking Email Back</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://garagehq.deuxfleurs.fr/blog/2026-11-webadmin-release/">Garage v2.6.0 released with web admin, v1.x EoL &amp; other news</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://sunshowers.io/posts/on-poisoning/">In defense of lock poisoning in Rust (2025)</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://www.taniwha.com/~paul/not.html">Understanding "You are not expected to understand this."</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://www.jeffgeerling.com/blog/2026/ansible-fails-become-ubuntu2604/">Ansible Fails waiting for privilege escalation on Ubuntu 26</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://quin.fyi/posts/how-winhelp-files-work.html">How WinHelp files work</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://fzakaria.com/2026/11/25/browser-tabs-as-a-container-runtime">Browser tabs as a container runtime</a></strong><br />
+  摘要：Comments</p>
+</li>
+</ul>
+<h2>Red Hat Blog</h2>
+<ul>
+<li>
+<p><strong><a href="https://www.redhat.com/en/blog/friday-five-november-27-2026-red-hat">Friday Five — November 27, 2026 | Red Hat</a></strong><br />
+  摘要：The Application Security Podcast - Red Hat’s Mike McGrath: The AI Vulnerability Horror Stories Are TrueRed Hat's vice president of Lightwell engineering Mike McGrath discusses how AI has lowered the barrier to finding and exploiting vulnerabilities in open source code, and how Lightwell remediates production dependencies without forcing disruptive upgrades. Learn more Fast Forward - How IBM CIO Matt Lyteson uses Project Lightwell to protect his company's software supply chainIBM's CIO Matt Lyteson discusses using Project Lightwell to remediate open source library vulnerabilities in place.</p>
+</li>
+<li>
+<p><strong><a href="https://www.redhat.com/en/blog/red-hat-microsoft-ignite-2026-partnership-action">Red Hat at Microsoft Ignite 2026: Partnership in action</a></strong><br />
+  摘要：Microsoft Ignite is one of the defining moments each year for the Red Hat and Microsoft partnership—and this year's show demonstrates how far that collaboration has come. Across joint engineering, go-to-market, and customer recognition, Red Hat and Microsoft showed what partnership looks like in practice: Co-engineered platforms, announcements customers can act on immediately, and an open source foundation underneath it all.Several headlines defined the week: A deeper virtualization alliance on Azure, and the general availability of both Azure Red Hat OpenShift with hosted control planes (HC</p>
+</li>
+</ul>
+<h2>The New Stack</h2>
+<ul>
+<li>
+<p><strong><a href="https://thenewstack.io/cloudflare-agent-search-endpoint/">Cloudflare now lets websites add search for AI agents with a single toggle. Site owners foot the query bill.</a></strong><br />
+  摘要：Cloudflare has announced a new feature that makes it easier for AI agents to find and retrieve relevant information from The post Cloudflare now lets websites add search for AI agents with a single toggle. Site owners foot the query bill. appeared first on The New Stack .</p>
+</li>
+<li>
+<p><strong><a href="https://thenewstack.io/protecting-enterprise-ai-data/">AI wrote the code. Can your test data tell you if it works?</a></strong><br />
+  摘要：As organizations invest in AI, many are discovering a new bottleneck: obtaining data that is both protected and useful. Engineering The post AI wrote the code. Can your test data tell you if it works? appeared first on The New Stack .</p>
+</li>
+<li>
+<p><strong><a href="https://thenewstack.io/ai-agents-remote-sandboxes/">A developer ran 50 agents at once. Then his Mac became the bottleneck.</a></strong><br />
+  摘要：As developers move from working with individual AI coding agents to orchestrating dozens of concurrent sessions, the hardware they use The post A developer ran 50 agents at once. Then his Mac became the bottleneck. appeared first on The New Stack .</p>
+</li>
+<li>
+<p><strong><a href="https://thenewstack.io/cognition-devin-automated-engineering/">Cognition’s new engineers aren’t even downloading code anymore — they build entirely through Devin</a></strong><br />
+  摘要：Some engineers joining Cognition no longer set up local development environments. Instead, Devin has become their primary interface for software The post Cognition’s new engineers aren’t even downloading code anymore — they build entirely through Devin appeared first on The New Stack .</p>
+</li>
+</ul>
+<h2>Ars Technica</h2>
+<ul>
+<li>
+<p><strong><a href="https://arstechnica.com/cars/2026/11/ford-unveils-the-gt41-as-it-hopes-to-win-le-mans-again/">Ford unveils the GT41 as it hopes to win Le Mans again</a></strong><br />
+  摘要：Ford enters the World Endurance Championship in 2027 with the new prototype.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/science/2026/11/draining-peatlands-is-responsible-for-a-few-percent-of-our-global-warming/">Draining peatlands is responsible for a few percent of our global warming</a></strong><br />
+  摘要：Detailed estimate going back to 1800 shows how much carbon is being liberated.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/features/2026/11/from-minimalist-to-maximalist-ars-staffers-show-off-their-home-offices/">From minimalist to maximalist: Ars staffers show off their home offices</a></strong><br />
+  摘要：Our home offices range from tasteful to "please explain yourself."</p>
+</li>
+</ul>
+<h2>LWN.net</h2>
+<ul>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1109990/">Security updates for Thursday</a></strong><br />
+  摘要：Security updates have been issued by AlmaLinux (cifs-utils, cjose, cockpit-machines, containernetworking-plugins, dhcp, edk2, firewalld, fltk, freerdp, gdm, ghostscript, grafana, kernel, librabbitmq, netpbm, nginx:1.24, nginx:1.26, openscap, openssl, php, python-botocore, qt6-qt3d, resource-agents, rsync, ruby, ruby:2.5, ruby:3.3, ruby:4.0, skopeo, spice, thunderbird, and webkit2gtk3), Debian (exim4, firefox-esr, librsvg, lrzsz, roundcube, shadow, and thunderbird), Fedora (chromium, cri-o1.35, cri-o1.36, dotnet10.0, dotnet11.0, dotnet8.0, dotnet9.0, firefox, fluidsynth, kernel, libreswan, mingw-dbus, perl-Config-General, perl-HTTP-Body, perl-libnet, perl-SQL-Abstract, poppler, radicale, sbsigntools, webkitgtk, and xorg-x11-server-Xwayland), Mageia (php), Oracle (dpdk, gcc-toolset-15-gcc, g…</p>
+</li>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1107830/">[$] Bringing the Agama installer to openSUSE Tumbleweed</a></strong><br />
+  摘要：The openSUSE Project has been working on the Agama installer for four years; it was the default installer for openSUSE&#160;Leap&#160;16.0 when it was released in 2025, and has been adopted by other openSUSE flavors as well. Now the project is gearing up to go all-in on Agama for Tumbleweed , the rolling-release edition that is meant to be where updates and new features land first. Even so, the community has concerns about losing some of YaST's legacy functionality and the impact on installing Tumbleweed on systems that have less RAM.</p>
+</li>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1108818/">Beyls: Wrapping up LLVM's relicensing effort</a></strong><br />
+  摘要：Kristof Beyls has published a summary to the LLVM discussion forum to announce that the project is declaring success and bringing its relicensing effort to a close after eight years. We've been asking past contributors to relicense their work since 2018. New contributions have come in under Apache-2.0 WITH LLVM-exception since January 19, 2019. Code contributed before that date was under LLVM's earlier licenses (UIUC/NCSA, plus MIT for some runtime libraries), so we needed permission from its authors to move it over. [...] Today, more than 99.5% of all lines of code ever contributed to LLVM are either covered by the new license, too small for copyright to apply, or no longer in the repository. Rather than trying to " chase the last tiny fraction forever " LLVM is winding up the effort. Any…</p>
+</li>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1108817/">Vim Classic 8.3.1 released</a></strong><br />
+  摘要：Version 8.3.1 of Vim Classic &mdash;a long-term support fork of Vim maintained without LLM assistance&mdash;has been released. This release includes applicable Vim patches up to Vim 8.2.3237, including numerous bug fixes, minor features, and compatibility improvements for Vim plugins. This release also removes Python 2 support from Vim Classic. The full list of changes in this release is available on sourcehut.</p>
+</li>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1108811/">Security updates for Friday</a></strong><br />
+  摘要：Security updates have been issued by AlmaLinux (bind9.18, bubblewrap, fence-agents, freerdp, grafana, grafana-pcp, gstreamer1-plugins-bad-free, jackson-core, jackson-databind, java-17-openjdk, java-21-openjdk, java-25-openjdk, kernel, kernel-rt, mysql8.4, mysql:8.4, qt5-qtbase, qt5-qtdeclarative, raptor2, resteasy, and sos), Debian (electrum, nginx, openjdk-17, pam-mysql, php8.2, and php8.4), Fedora (aws, bind9-next, blender, c-ares, composer, dr_libs, et, gh, incron, libaec, libfontenc, libXfont2, mtools, nebula, perl-Imager, perl-Text-JSCalendar, perl-Text-JSContact, php, python-loguru, python3.6, qpid-proton, roundcubemail, runc, and xen), Gentoo (nginx, PHP, and Ruby), Mageia (hplip), Oracle (.NET 10.0, .NET 11.0, .NET 8.0, .NET 9.0, bubblewrap, emacs, firefox, flatpak-builder, gcc, gi…</p>
+</li>
+</ul>
+<h2>Linux Weekly News (RSS)</h2>
+<ul>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1109990/">Security updates for Thursday</a></strong><br />
+  摘要：Security updates have been issued by AlmaLinux (cifs-utils, cjose, cockpit-machines, containernetworking-plugins, dhcp, edk2, firewalld, fltk, freerdp, gdm, ghostscript, grafana, kernel, librabbitmq, netpbm, nginx:1.24, nginx:1.26, openscap, openssl, php, python-botocore, qt6-qt3d, resource-agents, rsync, ruby, ruby:2.5, ruby:3.3, ruby:4.0, skopeo, spice, thunderbird, and webkit2gtk3), Debian (exim4, firefox-esr, librsvg, lrzsz, roundcube, shadow, and thunderbird), Fedora (chromium, cri-o1.35, cri-o1.36, dotnet10.0, dotnet11.0, dotnet8.0, dotnet9.0, firefox, fluidsynth, kernel, libreswan, mingw-dbus, perl-Config-General, perl-HTTP-Body, perl-libnet, perl-SQL-Abstract, poppler, radicale, sbsigntools, webkitgtk, and xorg-x11-server-Xwayland), Mageia (php), Oracle (dpdk, gcc-toolset-15-gcc, g…</p>
+</li>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1107830/">[$] Bringing the Agama installer to openSUSE Tumbleweed</a></strong><br />
+  摘要：The openSUSE Project has been working on the Agama installer for four years; it was the default installer for openSUSE&#160;Leap&#160;16.0 when it was released in 2025, and has been adopted by other openSUSE flavors as well. Now the project is gearing up to go all-in on Agama for Tumbleweed , the rolling-release edition that is meant to be where updates and new features land first. Even so, the community has concerns about losing some of YaST's legacy functionality and the impact on installing Tumbleweed on systems that have less RAM.</p>
+</li>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1108818/">Beyls: Wrapping up LLVM's relicensing effort</a></strong><br />
+  摘要：Kristof Beyls has published a summary to the LLVM discussion forum to announce that the project is declaring success and bringing its relicensing effort to a close after eight years. We've been asking past contributors to relicense their work since 2018. New contributions have come in under Apache-2.0 WITH LLVM-exception since January 19, 2019. Code contributed before that date was under LLVM's earlier licenses (UIUC/NCSA, plus MIT for some runtime libraries), so we needed permission from its authors to move it over. [...] Today, more than 99.5% of all lines of code ever contributed to LLVM are either covered by the new license, too small for copyright to apply, or no longer in the repository. Rather than trying to " chase the last tiny fraction forever " LLVM is winding up the effort. Any…</p>
+</li>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1108817/">Vim Classic 8.3.1 released</a></strong><br />
+  摘要：Version 8.3.1 of Vim Classic &mdash;a long-term support fork of Vim maintained without LLM assistance&mdash;has been released. This release includes applicable Vim patches up to Vim 8.2.3237, including numerous bug fixes, minor features, and compatibility improvements for Vim plugins. This release also removes Python 2 support from Vim Classic. The full list of changes in this release is available on sourcehut.</p>
+</li>
+<li>
+<p><strong><a href="https://lwn.net/Articles/1108811/">Security updates for Friday</a></strong><br />
+  摘要：Security updates have been issued by AlmaLinux (bind9.18, bubblewrap, fence-agents, freerdp, grafana, grafana-pcp, gstreamer1-plugins-bad-free, jackson-core, jackson-databind, java-17-openjdk, java-21-openjdk, java-25-openjdk, kernel, kernel-rt, mysql8.4, mysql:8.4, qt5-qtbase, qt5-qtdeclarative, raptor2, resteasy, and sos), Debian (electrum, nginx, openjdk-17, pam-mysql, php8.2, and php8.4), Fedora (aws, bind9-next, blender, c-ares, composer, dr_libs, et, gh, incron, libaec, libfontenc, libXfont2, mtools, nebula, perl-Imager, perl-Text-JSCalendar, perl-Text-JSContact, php, python-loguru, python3.6, qpid-proton, roundcubemail, runc, and xen), Gentoo (nginx, PHP, and Ruby), Mageia (hplip), Oracle (.NET 10.0, .NET 11.0, .NET 8.0, .NET 9.0, bubblewrap, emacs, firefox, flatpak-builder, gcc, gi…</p>
+</li>
+</ul>
+<h2>CNCF Blog</h2>
+<ul>
+<li>
+<p><strong><a href="https://www.cncf.io/blog/2026/11/20/when-a-sync-window-closes-how-argo-cd-self-heal-skipped-the-migration-hook/">When a sync window closes: How Argo CD self-heal skipped the migration hook</a></strong><br />
+  摘要：The uncomfortable question A few days ago, a customer asked me a question that sounded simple: &#8220;Argo CD said the sync succeeded, so why didn&#8217;t our migration run?&#8221; They had pushed a release while a deny...</p>
+</li>
+<li>
+<p><strong><a href="https://www.cncf.io/blog/2026/11/19/how-to-support-your-app-on-kubernetes-environments-you-dont-control/">How to support your app on Kubernetes environments you don’t control</a></strong><br />
+  摘要：Running an application in Kubernetes is one thing, but supporting that application in Kubernetes environments your customers run is something else entirely. You don’t control the cluster configuration, its upgrade schedule, the surrounding tooling, or the...</p>
+</li>
+<li>
+<p><strong><a href="https://www.cncf.io/blog/2026/11/16/your-runtime-security-tool-is-not-your-baseline-silos-dressed-as-autonomy-in-cloud-native-teams/">Your runtime security tool is not your baseline: Silos dressed as autonomy in cloud native teams</a></strong><br />
+  摘要：A deadline creates pressure, and a team decides to solve its part of the problem directly. I once saw this play out in a Kubernetes security initiative. The team had capable engineers, a clear objective and...</p>
+</li>
+</ul>
+<h2>Kubernetes Blog</h2>
+<ul>
+<li>
+<p><strong><a href="https://kubernetes.io/blog/2026/10/27/announcing-workload-conformance-wg/">Announcing the Workload Conformance Working Group</a></strong><br />
+  摘要：We are excited to announce that the Kubernetes community now has a Workload Conformance Working Group . The working group is writing a shared standard for how workloads behave at runtime on Kubernetes. To get it right, we need input from the people who build those workloads and from the people who run the clusters they're deployed on. Why workloads need a shared standard Certified Kubernetes tests the cluster, and Kubernetes AI Conformance tests whether a cluster can run AI and ML workloads. Nothing comparable exists for the workloads themselves, so cluster operators still check each application by hand before routine maintenance or a Kubernetes upgrade. The problems they find are familiar. A routine node drain is often how you discover that an application can't tolerate disruption. An upg…</p>
+</li>
+<li>
+<p><strong><a href="https://kubernetes.io/blog/2026/09/21/kubernetes-v1-37-pvc-last-used-time/">Kubernetes v1.37: Tracking When a PersistentVolumeClaim Was Last Used (Beta)</a></strong><br />
+  摘要：Kubernetes v1.37 promotes the PersistentVolumeClaimUnusedSinceTime feature gate to Beta (enabled by default). With this feature, the PersistentVolumeClaim (PVC) protection controller adds an Unused condition to each PVC, telling you whether any running pod currently references it — no custom tooling or cross-referencing required. For the API definition of PVC conditions, see the PersistentVolumeClaim API reference . Read on to learn how the Unused condition works and how to use it. Why track PVC usage? In large-scale Kubernetes clusters, it is common for users to create PVCs and then delete the associated pods without cleaning up the storage, because Kubernetes does not automatically delete PVCs when their pods are removed (to protect against accidental data loss). Over time, these orphane…</p>
+</li>
+<li>
+<p><strong><a href="https://kubernetes.io/blog/2026/09/15/kubernetes-v1-37-pod-level-resource-managers-beta/">Kubernetes v1.37: Pod-Level Resource Managers graduated to Beta</a></strong><br />
+  摘要：With the release of Kubernetes v1.37, the Pod-Level Resource Managers feature has graduated to Beta status (disabled by default)! First introduced as an Alpha feature in Kubernetes v1.36 , this enhancement builds on Pod-Level Resources by equipping Kubelet's Topology Manager, CPU Manager, and Memory Manager to use Pod-level resource declarations ( .spec.resources ) directly when making hardware placement decisions. Bringing pod-level resources to node managers Before this feature, obtaining exclusive NUMA-aligned CPU cores or memory for latency-critical applications forced cluster operators into an all-or-nothing choice: assign integer resource requests to every container in the Pod, or forfeit exclusive NUMA alignment entirely. For modern workloads running lightweight sidecars (such as lo…</p>
+</li>
+</ul>
+<hr /></div>
+  </main>
+</body>
+</html>
