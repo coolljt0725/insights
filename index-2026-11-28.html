@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OS 领域每日洞察 - 2026-11-28</title>
+  <style>
+    :root {
+      --bg: #f6f4f0;
+      --bg-bar: #ebe8e3;
+      --bg-card: #fffefb;
+      --bg-card-hover: #f5f3ef;
+      --text: #2d2a26;
+      --text-muted: #5c5852;
+      --text-dim: #7a756e;
+      --accent: #5a7a9e;
+      --border: #ddd9d2;
+      --radius: 10px;
+      --font: "Segoe UI", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      font-size: 15px;
+    }
+
+    /* 门户顶栏 */
+    .masthead {
+      background: var(--bg-bar);
+      border-bottom: 1px solid var(--border);
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 0;
+    }
+    .masthead-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .masthead h1 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin: 0;
+      letter-spacing: -0.02em;
+      color: var(--text);
+    }
+    .masthead .meta {
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+    }
+
+    /* 主内容区：多栏门户布局 */
+    .main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 3rem;
+    }
+
+    /* 板块：每个 h2 为一个频道块 */
+    .content .section {
+      margin-bottom: 2.5rem;
+    }
+    .content h2 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+      margin: 0 0 1rem;
+      padding: 0.6rem 1rem;
+      background: var(--bg-bar);
+      border-radius: var(--radius);
+      border-left: 4px solid var(--accent);
+    }
+    .content h2:first-child { margin-top: 0; }
+
+    .content h2:has(+ h3) {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      border-left-color: var(--text-dim);
+    }
+
+    /* 板块内卡片网格（每个 h2 后的 ul） */
+    .content h2 + ul {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1rem;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .content h2 + ul li {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.15rem 1.2rem;
+      transition: background .15s, border-color .15s;
+    }
+    .content h2 + ul li:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--text-dim);
+    }
+    .content h2 + ul li strong {
+      display: block;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+      line-height: 1.4;
+    }
+    .content h2 + ul li p {
+      margin: 0 0 0.5rem;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.58;
+    }
+    .content h2 + ul li p:last-of-type { margin-bottom: 0; }
+    .content h2 + ul li a[href^="http"] {
+      font-size: 0.8125rem;
+      color: var(--accent);
+    }
+    .content h2 + ul li a[href^="http"]:hover { text-decoration: underline; }
+
+    .content .ref-section {
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+    .content h2 + h3 { margin-top: 1.25rem; }
+    .content h3 {
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--text-dim);
+      margin: 1rem 0 0.4rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .content h3 + ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 0.25rem;
+    }
+    .content h3 + ul li {
+      background: transparent;
+      border: none;
+      padding: 0.2rem 0;
+      font-size: 0.8125rem;
+    }
+    .content h3 + ul li strong { font-size: inherit; margin-bottom: 0; }
+    .content h3 + ul li a { color: var(--accent); }
+    .content h3 + ul li a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <header class="masthead">
+    <div class="masthead-inner">
+      <h1>OS 领域每日洞察 - 2026-11-28</h1>
+      <span class="meta">2026-11-28 05:00 UTC</span>
+    </div>
+  </header>
+  <main class="main">
+    <div class="content"><h1>OS 领域每日洞察 - 2026-11-28</h1>
+<p>（Gemini 未可用时，以下为按来源整理的条目，含<strong>新闻摘要</strong>与链接；摘要可能为原文语言。）</p>
+<h2>Hacker News</h2>
+<ul>
+<li>
+<p><strong><a href="https://unkernel.dev">Unkernel: Real Linux kernel, compiled to WebAssembly</a></strong><br />
+  摘要：Unkernel: Real Linux kernel, compiled to WebAssembly</p>
+</li>
+<li>
+<p><strong><a href="https://itsfoss.com/opinion/self-hosting-rising/">Self-Hosting Is Rising and Linux Users Are Leading This Revolution</a></strong><br />
+  摘要：Self-Hosting Is Rising and Linux Users Are Leading This Revolution</p>
+</li>
+<li>
+<p><strong><a href="https://www.cnx-software.com/2026/11/27/usb-rea-generates-a-linux-driver-for-your-windows-only-usb-gadget/">USB-rea generates a Linux driver for your Windows-only USB gadget</a></strong><br />
+  摘要：USB-rea generates a Linux driver for your Windows-only USB gadget</p>
+</li>
+<li>
+<p><strong><a href="https://www.winehq.org/announce/11.23">Wine 11.23 – Run Windows Applications on Linux, BSD, Solaris and macOS</a></strong><br />
+  摘要：Wine 11.23 – Run Windows Applications on Linux, BSD, Solaris and macOS</p>
+</li>
+<li>
+<p><strong><a href="https://medium.com/@linuxjedi2000/the-missing-layer-in-linux-observability-historical-operating-system-state-1eb53ce53eba">Linux Observability: Historical Operating System State</a></strong><br />
+  摘要：Linux Observability: Historical Operating System State</p>
+</li>
+</ul>
+<h2>Phoronix</h2>
+<ul>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Wine-11.23-Released">Wine 11.23 Released With Support For ARM64 macOS, AVX In 32-bit Emulation On ARM64</a></strong><br />
+  摘要：We are getting close to the Wine 12.0 release candidate phase but out today is Wine 11.23 as the latest bi-weekly development release continuing to land new features into Wine...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/review/gmktec-evo-x2">GMKtec EVO-X2 AMD Ryzen AI Max+ Strix Halo Mini PC</a></strong><br />
+  摘要：For those in the market for an AMD Ryzen AI Max+ mini PC but not able to procure the likes of the Ryzen AI Halo or Framework Desktop in your region or with elevated pricing, another Strix Halo option that's been available is the GMKtec EVO-X2. I recently received a review sample of the GMKtec EVO-X2 and put it through a variety of benchmarks in seeing how the performance stacks up against the flagship Ryzen AI Halo and Framework Desktop offerings as well as the BOSGAME VTA-439 powered by the AMD Ryzen AI 9 HX 470 for reference plus also the Dell Pro Max GB10 powered by the NVIDIA GB10 SoC.</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Earthqaic-Gallium3D-Mesa-27.0">New "Earthqaic" Gallium3D Driver Merged For Mesa 27.0</a></strong><br />
+  摘要：Merged today to Mesa Git is a brand new Gallium3D driver: Earthqaic...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Linux-Drops-VME-Bus-User">Linux Dropping Last Of The 1980's VersaModular Eurocard "VME" vme_user Code Over AI/LLM Noise</a></strong><br />
+  摘要：The Linux kernel is removing more old driver code due to AI/LLMs generating more noise over this unused, obsolete code within the source tree. Following various old ISA and PCMCIA code removed, ham radio, ISDN, and other old network code, the latest vintage artifact set to be stripped out of the Linux kernel is around the VersaModular Eurocard "VME" bus vme_user driver from the 1980s...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Linux-Mint-27-Beta">Linux Mint 27 Beta Released With New Apps, Full Wayland Support</a></strong><br />
+  摘要：Ahead of the official release expected around Christmas, the beta of Linux Mint 27 was announced today for testing...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/systemd-263-rc1">systemd 263-rc1 Ships Initial Rust Code, Experimental Pseudo TTY Broker &amp; Manifest</a></strong><br />
+  摘要：Systemd 263-rc1 was just tagged in gearing up for this next major release. Systemd 263 brings initial support for using the Rust programming language for creating new Rust programs. Plus systemd 263 ships with a new pseudo TTY broker service, a manifest tool, a new keyring service and much more...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Intel-Efficient-64-bit-e64-ANV">Intel's Vulkan Linux Driver Now Enables Efficient 64-bit Mode "e64" By Default</a></strong><br />
+  摘要：Debuting with the upcoming Intel Nova Lake P processors with their Xe3P integrated graphics is a new efficient 64-bit addressing mode "e64". This efficient 64-bit addressing mode for the future Intel GPUs provides native 64-bit shader memory addressing as a replacement to the 32-bit offset mode used by Intel GPU shaders up to now. As of the latest Mesa Git code, the Intel ANV Vulkan driver is enabling the e64 mode by default...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/ZenSMU-Linux-TUI-GUI">ZenSMU Provides A Rust CLI/TUI &amp; GUI For AMD Ryzen Monitoring/Tweaking</a></strong><br />
+  摘要：In the absence of any official AMD Ryzen Master utility for Linux to extensively monitor your Ryzen processor and overclocking/tweaking the CPU, there are a few unofficial, open-source utilities out there that aim for a similar intent. One of the new ones is ZenSMU that provides both a CLI/TUI interface and a proper Linux desktop GUI...</p>
+</li>
+<li>
+<p><strong><a href="https://www.phoronix.com/news/Intel-Compute-26.44.40734.8">Intel Compute Runtime 26.44.40734.8 Had OpenCL 3.1 But Reverted, More Performance</a></strong><br />
+  摘要：Intel on Thursday released their Compute Runtime 26.44.40734.8 release as the latest feature update to this open-source GPU compute stack used on Linux and Windows...</p>
+</li>
+</ul>
+<h2>Lobsters</h2>
+<ul>
+<li>
+<p><strong><a href="https://research.vu.nl/files/447013431/afroozehphdthesis%20-%2069280d90f0bfd.pdf">FastLanes: Next-gen File Format</a></strong><br />
+  摘要：performance because this format optimizes SIMD support etc. Comments</p>
+</li>
+<li>
+<p><strong><a href="https://www.imperialviolet.org/2026/11/15/proofauto2.html">Proof automation in a language</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://gist.github.com/seanjensengrey/f971c20d05d4d0efc0781f2f3c0353da">x86 is an octal machine</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://datastar-instant-intent.ndyg.cross.stream/corrosive/">Why optimistic updates are corrosive</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://pub.roddie.digital/3n3aavxi6hc2g">Objections to .php application being published on ICANN site</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://system76.com/blog/post/pop_os-26-04-lts-has-landed">Pop!_OS 26.04 LTS Has Landed</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://www.buildyourownpaint.com/en">Build your own Paint</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://blog.ktz.me/black-friday-hard-drive-prices-are-messed-up/">Hard Drive pricing has gotten bad</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://cetra3.github.io/blog/state-of-allocators-2026-finally-stabilised/">The State of Allocators in 2026 - Finally Stabilised</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://lobste.rs/s/locqp9/what_are_you_doing_this_weekend">What are you doing this weekend?</a></strong><br />
+  摘要：Feel free to tell what you plan on doing this weekend and even ask for help or feedback. Please keep in mind it’s more than OK to do nothing at all too!</p>
+</li>
+<li>
+<p><strong><a href="https://www.well-typed.com/blog/2026/11/exception-best-practices/">Exception Best Practices</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://roboticoverlords.org/tinyhat">Tiny Hat: a new Linux distro dedicated to retro gamedev</a></strong><br />
+  摘要：Tiny Hat uses only around 100MB of RAM after booting, and can be booted from a &gt;= 1GB memory stick. It comes with a few small games, an easy way to install and run more games and several example programs for getting into retro game development. It also uses a modern stack of libraries, with dwl / Wayland, SDL3 and GTK4. One possible use is to buy a cheap x86 machine for younger members of a family, to completely brain wash inspire them into getting into graphics programming and appreciating retro games, perhaps as a Christmas present. At least a few people have found it fun so far, so I wanted to share it. Comments</p>
+</li>
+<li>
+<p><strong><a href="https://blog.pimalaya.org/pimalaya-goes-stable/">Pimalaya goes stable</a></strong><br />
+  摘要：Comments</p>
+</li>
+<li>
+<p><strong><a href="https://www.draketo.de/software/curb-ai-impact">Curb impacts of AI on programming to maintain EU sovereignty</a></strong><br />
+  摘要：Comments</p>
+</li>
+</ul>
+<h2>The New Stack</h2>
+<ul>
+<li>
+<p><strong><a href="https://thenewstack.io/aws-nitro-sandboxes-agents/">AWS Nitro Sandboxes give AI agents a place to run</a></strong><br />
+  摘要：A coding agent has written a script and wants to run it. The script may do exactly what the developer The post AWS Nitro Sandboxes give AI agents a place to run appeared first on The New Stack .</p>
+</li>
+<li>
+<p><strong><a href="https://thenewstack.io/ntt-space-computing-networking/">Houston, we have a networking problem: Why NTT thinks space computing is the final frontier</a></strong><br />
+  摘要：After cloud computing comes space computing, obviously, right? There&#8217;s a neat irony here: Real-world clouds can interfere with optical satellite The post Houston, we have a networking problem: Why NTT thinks space computing is the final frontier appeared first on The New Stack .</p>
+</li>
+<li>
+<p><strong><a href="https://thenewstack.io/vercel-workflow-sdk-harness/">Vercel’s CEO thinks the next big AI speedup won’t come from smarter models</a></strong><br />
+  摘要：Some of the biggest gains in AI performance over the past year have come from improvements to the harness, not The post Vercel’s CEO thinks the next big AI speedup won’t come from smarter models appeared first on The New Stack .</p>
+</li>
+<li>
+<p><strong><a href="https://thenewstack.io/vmware-private-cloud-kubernetes/">A year from now, VMware wants AI troubleshooting your private cloud</a></strong><br />
+  摘要：A developer who needs two containers to test a change or modification has a different problem from a platform engineer The post A year from now, VMware wants AI troubleshooting your private cloud appeared first on The New Stack .</p>
+</li>
+<li>
+<p><strong><a href="https://thenewstack.io/cognition-swe21-coding-model/">Same coding model, 10x the token speed. How did Cognition do it?</a></strong><br />
+  摘要：This week, Cognition announced SWE-2.1, its latest in-house coding model trained with reinforcement learning (RL) on Moonshot AI’s open-weight model, The post Same coding model, 10x the token speed. How did Cognition do it? appeared first on The New Stack .</p>
+</li>
+</ul>
+<h2>Ars Technica</h2>
+<ul>
+<li>
+<p><strong><a href="https://arstechnica.com/shopping/2026/11/the-best-black-friday-deals-ars-could-find/">The best Black Friday deals Ars could find</a></strong><br />
+  摘要：Perhaps some commerce, to help all the Turkey Day leftovers go down easier?</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/tech-policy/2026/11/intel-faced-a-choice-give-trump-10-or-face-the-consequences/">Intel faced a choice: Give Trump 10% or face the consequences</a></strong><br />
+  摘要：Intel faced pressure to surrender a 10% stake to unlock billions in promised grants.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/shopping/2026/11/books-bikes-and-the-burbs-these-are-ars-staffs-holiday-gift-picks-for-2026/">Books, bikes, and The Burbs: These are Ars staff’s holiday gift picks for 2026</a></strong><br />
+  摘要：We polled the Ars staff about their favorite pickups this year; here's the list.</p>
+</li>
+<li>
+<p><strong><a href="https://arstechnica.com/cars/2026/11/volvos-big-batteries-we-drive-its-updated-2028-plug-in-hybrids/">Volvo's big batteries: We drive its updated 2028 plug-in hybrids</a></strong><br />
+  摘要：There’s just one thing we still don’t know: How much will they cost?</p>
+</li>
+</ul>
+<h2>LWN.net</h2>
+<ul>
+<li><strong><a href="https://lwn.net/Articles/1110189/">Security updates for Friday</a></strong><br />
+  摘要：Security updates have been issued by AlmaLinux (gdm, ghostscript, gnome-remote-desktop, grafana, kernel, kernel-rt, mariadb10.11, and virt:rhel and virt-devel:rhel), Debian (exim4, kernel, node-dompurify, and pam), Fedora (chromium, cockpit, forgejo, haveged, jupyterlab, kernel, mariadb10.11, mariadb11.8, mkvtoolnix, mosquitto, mozilla-ublock-origin, nodejs24, python-notebook, ruby, ruby-build, tpm2-tss, valkey, varnish, wordpress, xen, xq, and zstd), Gentoo (FreeType and ImageMagick), Mageia (flatpak, php8.4-mongodb, php8.5-mongodb, and unrtf), Oracle (cockpit-machines, flatpak-builder, grafana-pcp, httpd, mutter, nginx:1.24, openssl, and webkit2gtk3), Red Hat (container-tools:rhel8, grafana, grafana-pcp, java-17-openjdk, java-21-openjdk, java-25-openjdk, kernel, kernel-rt, mysql8.4, ruby…</li>
+</ul>
+<h2>Linux Weekly News (RSS)</h2>
+<ul>
+<li><strong><a href="https://lwn.net/Articles/1110189/">Security updates for Friday</a></strong><br />
+  摘要：Security updates have been issued by AlmaLinux (gdm, ghostscript, gnome-remote-desktop, grafana, kernel, kernel-rt, mariadb10.11, and virt:rhel and virt-devel:rhel), Debian (exim4, kernel, node-dompurify, and pam), Fedora (chromium, cockpit, forgejo, haveged, jupyterlab, kernel, mariadb10.11, mariadb11.8, mkvtoolnix, mosquitto, mozilla-ublock-origin, nodejs24, python-notebook, ruby, ruby-build, tpm2-tss, valkey, varnish, wordpress, xen, xq, and zstd), Gentoo (FreeType and ImageMagick), Mageia (flatpak, php8.4-mongodb, php8.5-mongodb, and unrtf), Oracle (cockpit-machines, flatpak-builder, grafana-pcp, httpd, mutter, nginx:1.24, openssl, and webkit2gtk3), Red Hat (container-tools:rhel8, grafana, grafana-pcp, java-17-openjdk, java-21-openjdk, java-25-openjdk, kernel, kernel-rt, mysql8.4, ruby…</li>
+</ul>
+<h2>Kubernetes Blog</h2>
+<ul>
+<li>
+<p><strong><a href="https://kubernetes.io/blog/2026/09/22/sig-apps-spotlight/">Spotlight on SIG Apps</a></strong><br />
+  摘要：As Kubernetes adoption has grown, the conversation has shifted beyond running containers to managing increasingly complex application lifecycles. Modern platforms support stateless web services, stateful databases, batch processing, AI workloads, and platform services. At the same time, they must remain reliable during upgrades, scaling events, and infrastructure failures. Every Kubernetes user relies on SIG Apps, whether they realize it or not. Deployments, StatefulSets, DaemonSets, Jobs, and CronJobs form the foundation of how applications are deployed, updated, scaled, and operated across the Kubernetes ecosystem. SIG Apps is focused on improving workload resilience, refining application lifecycle management, and addressing the operational challenges that emerge when applications encoun…</p>
+</li>
+<li>
+<p><strong><a href="https://kubernetes.io/blog/2026/09/16/kubernetes-v1-37-hardening-container-storage/">Kubernetes v1.37: Hardening Container Storage with Bind Mount Options and EmptyDir Permissions</a></strong><br />
+  摘要：Kubernetes v1.37 brings important storage security features: emptyDir permission modes and bind mount options. They help application programmers and security professionals implement rigorous security policies, for example, prohibiting deletion of files across containers or execution of arbitrary binaries from writable volumes, directly in Kubernetes without any complicated circumvention. Linux storage and permission fundamentals Before diving into the new Kubernetes features, let us briefly review the low-level Linux security mechanisms that make them possible. Bind mount flags When Linux mounts or remounts a directory, Virtual File System (VFS) flags control what actions are permitted on that filesystem: noexec : Do not permit direct execution of any binaries on the mounted filesystem. no…</p>
+</li>
+<li>
+<p><strong><a href="https://kubernetes.io/blog/2026/09/10/kubernetes-v1-37-scheduler-preemption-for-in-place-pod-resize-alpha/">Kubernetes v1.37: Scheduler Preemption for In-Place Pod Resize (Alpha)</a></strong><br />
+  摘要：In Kubernetes, resource allocation has historically been a static decision made during a Pod's initial scheduling and placement. With the graduation of the core in-Place Pod resize feature to General Availability in v1.35, application developers and cluster operators gained the powerful ability to dynamically adjust CPU and memory allocations of running containers without incurring disruptive restarts or application downtime. However, in-place resizing introduced a unique resource scheduling gap: if a running Pod requested a resource scale-up that exceeded the host node's allocatable headroom, the Kubelet was forced to mark the request as Deferred . The Pod would remain parked in this state indefinitely, waiting for resources on the node to naturally free up. To bridge this scheduling gap,…</p>
+</li>
+</ul>
+<hr /></div>
+  </main>
+</body>
+</html>
